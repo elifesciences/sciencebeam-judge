@@ -10,7 +10,7 @@ pip install -r requirements.txt
 
 # GROBID Like Evaluation
 
-This evaluation is replicating closely the GROBID's [End-to-end evaluation](http://grobid.readthedocs.io/en/latest/End-to-end-evaluation/).
+This evaluation is replicating closely the GROBID's [End-to-end evaluation](http://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) and it's [results](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc).
 
 It is provided as a reference evaluation.
 
