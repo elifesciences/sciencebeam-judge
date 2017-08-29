@@ -361,7 +361,7 @@ def tqdm_multiprocessing_map(f, iterable, processes=None):
         result.append(x)
       return result
 
-def evaluate_results(data_path, field_names, **other_options):
+def evaluate_results(data_path, field_names, sequential, **other_options):
   get_logger().info("data path: %s", data_path)
   sub_directory_names = sorted([
     os.path.join(data_path, s)
@@ -369,14 +369,26 @@ def evaluate_results(data_path, field_names, **other_options):
     if os.path.isdir(os.path.join(data_path, s))
   ])
   get_logger().info("sub directories: %s", len(sub_directory_names))
-  results = tqdm_multiprocessing_map(
-    partial(
+  if sequential:
+    process_sub_directory = partial(
+      collect_results_for_directory,
+      field_names=field_names,
+      **other_options
+    )
+    results = [
+      process_sub_directory(sub_directory)
+      for sub_directory in sub_directory_names
+    ]
+  else:
+    process_sub_directory = partial(
       collect_results_for_directory_log_exception,
       field_names=field_names,
       **other_options
-    ),
-    sub_directory_names
-  )
+    )
+    results = tqdm_multiprocessing_map(
+      process_sub_directory,
+      sub_directory_names
+    )
   debug_enabled = False
   if debug_enabled:
     get_logger().debug('results:\n%s', json.dumps(results, sort_keys=True, indent=2))
@@ -428,6 +440,11 @@ def parse_args():
     default=['abstract', 'authors', 'first_author', 'keywords', 'title'],
     help='comma separated list of fields to process'
   )
+  parser.add_argument(
+    '--sequential',
+    action='store_true',
+    help='Disables parallel processing. Useful for debugging.'
+  )
   args = parser.parse_args()
   return args
 
@@ -442,7 +459,8 @@ def main():
     xml_mapping_filename=options.xml_mapping,
     target_suffix=options.target_suffix,
     prediction_suffix=options.prediction_suffix,
-    field_names=options.fields
+    field_names=options.fields,
+    sequential=options.sequential
   )
   get_logger().info("done")
 
