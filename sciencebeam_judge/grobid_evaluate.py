@@ -12,6 +12,7 @@ from functools import partial
 from contextlib import contextmanager
 import logging
 
+from six import raise_from
 from six.moves.configparser import ConfigParser
 
 from lxml import etree as ET
@@ -64,7 +65,10 @@ def strip_namespace(it):
   return it
 
 def parse_ignore_namespace(xml_filename):
-  return strip_namespace(ET.iterparse(xml_filename)).root
+  try:
+    return strip_namespace(ET.iterparse(xml_filename)).root
+  except ET.XMLSyntaxError as e:
+    raise_from(RuntimeError('failed to process {}'.format(xml_filename)), e)
 
 def parse_xml(xml_filename, xml_mapping, fields=None):
   root = parse_ignore_namespace(xml_filename)
