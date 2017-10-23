@@ -1,8 +1,11 @@
 from __future__ import division
 
+from io import BytesIO
+
 import numpy as np
 
 from sciencebeam_judge.evaluation_utils import (
+  parse_xml,
   normalize_whitespace,
   strip_punctuation_and_whitespace,
   exact_score,
@@ -17,6 +20,33 @@ from sciencebeam_judge.evaluation_utils import (
 SOME_TEXT = 'test 123'
 
 is_close = lambda a, b: np.allclose([a], [b])
+
+class TestParseXml(object):
+  def test_should_parse_single_value_properties(self):
+    xml = b'<root><parent><p1>value1</p1><p2>value2</p2></parent></root>'
+    xml_mapping = {
+      'root': {
+        'prop1': 'parent/p1',
+        'prop2': 'parent/p2'
+      }
+    }
+    result = parse_xml(BytesIO(xml), xml_mapping)
+    assert result == {
+      'prop1': ['value1'],
+      'prop2': ['value2']
+    }
+
+  def test_should_parse_multi_value_properties(self):
+    xml = b'<root><parent><p1>value1</p1><p1>value2</p1></parent></root>'
+    xml_mapping = {
+      'root': {
+        'prop1': 'parent/p1'
+      }
+    }
+    result = parse_xml(BytesIO(xml), xml_mapping)
+    assert result == {
+      'prop1': ['value1', 'value2']
+    }
 
 class TestNormalizeWhitespace(object):
   def test_replace_line_feed_with_space(self):
