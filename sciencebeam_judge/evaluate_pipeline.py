@@ -20,7 +20,7 @@ from sciencebeam_judge.beam_utils.workaround_textio import (
   WriteToText
 )
 
-from sciencebeam_judge.grobid_evaluate import (
+from sciencebeam_judge.evaluation_utils import (
   parse_xml,
   parse_xml_mapping,
   score_results,
