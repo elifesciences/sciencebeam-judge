@@ -4,7 +4,7 @@ from __future__ import division
 import re
 from difflib import SequenceMatcher
 
-from six import raise_from
+from six import raise_from, string_types
 from six.moves.configparser import ConfigParser
 
 from lxml import etree as ET
@@ -27,9 +27,12 @@ def get_full_text_ignore_children(e, children_to_ignore):
     for c in e
   ])
 
-def parse_xml_mapping(xml_mapping_filename):
+def parse_xml_mapping(xml_mapping_filename_or_fp):
   config = ConfigParser()
-  config.read(xml_mapping_filename)
+  if isinstance(xml_mapping_filename_or_fp, string_types):
+    config.read(xml_mapping_filename_or_fp)
+  else:
+    config.readfp(xml_mapping_filename_or_fp)
   return {
     k: dict(config.items(k))
     for k in config.sections()
