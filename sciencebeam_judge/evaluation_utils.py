@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from __future__ import division
+
 import re
 from difflib import SequenceMatcher
 
@@ -69,6 +71,7 @@ def parse_xml(source, xml_mapping, fields=None):
 
 FULL_PUNCTUATIONS = u"([ •*,:;?.!/)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0"
 WHITE_SPACE = u" \t\n\r\u00A0"
+NBSP = unichr(160)
 
 FULL_PUNCTUATION_AND_WHITESPACE_REGEX = re.compile(
   u'[{}]'.format(re.escape(FULL_PUNCTUATIONS + WHITE_SPACE)))
@@ -76,7 +79,7 @@ FULL_PUNCTUATION_AND_WHITESPACE_REGEX = re.compile(
 WHITESPACE_REGEX = re.compile(r'\s+')
 
 def normalize_whitespace(s):
-  return WHITESPACE_REGEX.sub(' ', s)
+  return WHITESPACE_REGEX.sub(' ', s).replace(NBSP, ' ')
 
 def strip_punctuation_and_whitespace(s):
   return FULL_PUNCTUATION_AND_WHITESPACE_REGEX.sub('', s)
