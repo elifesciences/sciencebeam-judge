@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import division
@@ -64,14 +65,14 @@ def strip_namespace(it):
       el.tag = el.tag.split('}', 1)[1]  # strip all namespaces
   return it
 
-def parse_ignore_namespace(xml_filename):
+def parse_ignore_namespace(source):
   try:
-    return strip_namespace(ET.iterparse(xml_filename)).root
+    return strip_namespace(ET.iterparse(source)).root
   except ET.XMLSyntaxError as e:
-    raise_from(RuntimeError('failed to process {}'.format(xml_filename)), e)
+    raise_from(RuntimeError('failed to process {}'.format(source)), e)
 
-def parse_xml(xml_filename, xml_mapping, fields=None):
-  root = parse_ignore_namespace(xml_filename)
+def parse_xml(source, xml_mapping, fields=None):
+  root = parse_ignore_namespace(source)
   if not root.tag in xml_mapping:
     raise Exception("unrecognised tag: {} (available: {})".format(root.tag, xml_mapping.sections()))
   mapping = xml_mapping[root.tag]
@@ -92,11 +93,11 @@ def parse_xml(xml_filename, xml_mapping, fields=None):
   }
   return result
 
-FULL_PUNCTUATIONS = "([ •*,:;?.!/)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0"
-WHITE_SPACE = " \t\n\r\u00A0"
+FULL_PUNCTUATIONS = u"([ •*,:;?.!/)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0"
+WHITE_SPACE = u" \t\n\r\u00A0"
 
 FULL_PUNCTUATION_AND_WHITESPACE_REGEX = re.compile(
-  '[{}]'.format(re.escape(FULL_PUNCTUATIONS + WHITE_SPACE)))
+  u'[{}]'.format(re.escape(FULL_PUNCTUATIONS + WHITE_SPACE)))
 
 WHITESPACE_REGEX = re.compile(r'\s+')
 
@@ -117,7 +118,7 @@ def levenshtein_score(expected, actual):
 def ratcliff_obershelp_score(expected, actual):
   return SequenceMatcher(None, expected, actual).ratio()
 
-def score_obj(expected, actual, value_f, threshold=1):
+def score_obj(expected, actual, value_f, threshold=1, include_values=False):
   binary_expected = 1 if len(expected) > 0 else 0
   # actual will be a false positive (1) if it is populated but expected is not,
   # otherwise it will be positive if it meets the threshold
@@ -131,7 +132,7 @@ def score_obj(expected, actual, value_f, threshold=1):
   tn = 1 if len(actual) == 0 and len(expected) == 0 else 0
   fp = 1 if not tp and len(actual) > 0 else 0
   fn = 1 if not tn and len(actual) == 0 else 0
-  return {
+  d = {
     'expected_something': len(expected) > 0,
     'actual_something': len(actual) > 0,
     'score': value,
@@ -142,8 +143,12 @@ def score_obj(expected, actual, value_f, threshold=1):
     'binary_expected': binary_expected,
     'binary_actual': binary_actual
   }
+  if include_values:
+    d['expected'] = expected
+    d['actual'] = actual
+  return d
 
-def score_list(expected, actual):
+def score_list(expected, actual, include_values=False):
   # sep = '\n'
   sep = ''
   expected_str = normalize_whitespace(sep.join(expected)).lower()
@@ -152,30 +157,34 @@ def score_list(expected, actual):
     'exact': score_obj(
       expected_str,
       actual_str,
-      exact_score
+      exact_score,
+      include_values=include_values
     ),
     'soft': score_obj(
       strip_punctuation_and_whitespace(expected_str),
       strip_punctuation_and_whitespace(actual_str),
-      exact_score
+      exact_score,
+      include_values=include_values
     ),
     'levenshtein': score_obj(
       expected_str,
       actual_str,
       levenshtein_score,
-      0.8
+      0.8,
+      include_values=include_values
     ),
     'ratcliff_obershelp': score_obj(
       expected_str,
       actual_str,
       ratcliff_obershelp_score,
-      0.95
+      0.95,
+      include_values=include_values
     )
   }
 
-def score_results(expected, actual):
+def score_results(expected, actual, include_values=False):
   return {
-    k: score_list(expected[k], actual[k])
+    k: score_list(expected[k], actual[k], include_values=include_values)
     for k in expected.keys()
   }
 
