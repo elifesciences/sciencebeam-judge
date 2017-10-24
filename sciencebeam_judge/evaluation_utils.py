@@ -58,7 +58,10 @@ def strip_namespace(it):
 
 def parse_ignore_namespace(source, filename=None):
   try:
-    return strip_namespace(ET.iterparse(source)).root
+    result = strip_namespace(ET.iterparse(source, recover=True))
+    if result.root is None:
+      raise RuntimeError('invalid xml {}'.format(filename or source))
+    return result.root
   except ET.XMLSyntaxError as e:
     raise_from(RuntimeError('failed to process {}'.format(filename or source)), e)
 
