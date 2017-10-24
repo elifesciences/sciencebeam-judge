@@ -110,8 +110,18 @@ def ReadFilePairs(x):
 def EvaluateFilePairs(x, xml_mapping, field_names):
   prediction_content = x['prediction_content']
   target_content = x['target_content']
-  prediction_xml = parse_xml(BytesIO(prediction_content), xml_mapping, fields=field_names)
-  target_xml = parse_xml(BytesIO(target_content), xml_mapping, fields=field_names)
+  prediction_xml = parse_xml(
+    BytesIO(prediction_content),
+    xml_mapping,
+    fields=field_names,
+    filename=x['prediction_file']
+  )
+  target_xml = parse_xml(
+    BytesIO(target_content),
+    xml_mapping,
+    fields=field_names,
+    filename=x['target_file']
+  )
   d = dict(x)
   d['evaluation_results'] = score_results(target_xml, prediction_xml, include_values=True)
   return d
