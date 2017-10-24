@@ -1,5 +1,6 @@
 /venv
 /.vscode
 /.cache
+/*.egg-info
 
 *.pyc
