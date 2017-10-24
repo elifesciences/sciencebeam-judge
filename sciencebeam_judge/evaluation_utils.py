@@ -56,14 +56,14 @@ def strip_namespace(it):
       el.tag = el.tag.split('}', 1)[1]  # strip all namespaces
   return it
 
-def parse_ignore_namespace(source):
+def parse_ignore_namespace(source, filename=None):
   try:
     return strip_namespace(ET.iterparse(source)).root
   except ET.XMLSyntaxError as e:
-    raise_from(RuntimeError('failed to process {}'.format(source)), e)
+    raise_from(RuntimeError('failed to process {}'.format(filename or source)), e)
 
-def parse_xml(source, xml_mapping, fields=None):
-  root = parse_ignore_namespace(source)
+def parse_xml(source, xml_mapping, fields=None, filename=None):
+  root = parse_ignore_namespace(source, filename=filename)
   if not root.tag in xml_mapping:
     raise Exception("unrecognised tag: {} (available: {})".format(root.tag, xml_mapping.sections()))
   mapping = xml_mapping[root.tag]
