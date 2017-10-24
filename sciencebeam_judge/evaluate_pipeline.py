@@ -239,7 +239,7 @@ def flatten_summary_results(summary_by_scoring_method, field_names=None):
   return flat_result
 
 def format_csv_rows(rows):
-  get_logger().info('format_csv_rows, rows: %s', rows)
+  get_logger().debug('format_csv_rows, rows: %s', rows)
   out = BytesIO()
   writer = csv.writer(out)
   writer.writerows([
@@ -250,7 +250,7 @@ def format_csv_rows(rows):
     for row in rows
   ])
   result = out.getvalue().decode('utf-8').rstrip('\r\n')
-  get_logger().info('format_csv_rows, result: %s', result)
+  get_logger().debug('format_csv_rows, result: %s', result)
   return result
 
 def FormatCsv(x):
@@ -258,7 +258,7 @@ def FormatCsv(x):
 
 def DictToList(fields):
   def wrapper(x):
-    get_logger().info('DictToList: %s -> %s', fields, x)
+    get_logger().debug('DictToList: %s -> %s', fields, x)
     return [x.get(field) for field in fields]
   return wrapper
 
@@ -275,7 +275,7 @@ class WriteDictCsv(beam.PTransform):
       "ToList" >> beam.Map(DictToList(self.columns)) |
       "Format" >> beam.Map(FormatCsv) |
       "LogFormattedCsv" >> MapSpy(
-        lambda x: get_logger().info('formatted csv: %s', x)
+        lambda x: get_logger().debug('formatted csv: %s', x)
       ) |
       "Write" >> WriteToText(
         self.path,
@@ -307,14 +307,14 @@ def configure_pipeline(p, opt):
       EvaluateFilePairs,
       xml_mapping=xml_mapping,
       field_names=field_names
-    ))
+    )) |
+    "LogEvaluationResults" >> MapSpy(
+      lambda x: get_logger().info('eval out: %.50s...', x['evaluation_results'])
+    )
   )
 
   _ = (
     evaluation_results |
-    "LogEvaluationResults" >> MapSpy(
-      lambda x: get_logger().info('out: %s', x['evaluation_results'])
-    ) |
     "FlattenEvaluationResults" >> beam.FlatMap(
       FlattenEvaluationResults(field_names=field_names)
     ) |
@@ -328,12 +328,11 @@ def configure_pipeline(p, opt):
   _ = (
     evaluation_results |
     "ExtractEvaluationResults" >> beam.Map(lambda x: x['evaluation_results']) |
-    "LogEvalResults" >> MapSpy(lambda x: get_logger().info('!!!!! eval out: %s', str(x)[:150])) |
     "ByScoringMethod" >> beam.Map(lambda x: scoring_method_as_top_level_key(x)) |
     "CombineResults" >> beam.CombineGlobally(
       combine_and_compact_scores_by_scoring_method
     ) |
-    "LogCombinedResults" >> MapSpy(lambda x: get_logger().info('combined out: %s', str(x)[:1350])) |
+    "LogCombinedResults" >> MapSpy(lambda x: get_logger().info('combined out: %.50s...', x)) |
     "Summarise" >> beam.Map(
       lambda x: summarise_results_by_scoring_method(x, field_names)
     ) |
@@ -341,7 +340,7 @@ def configure_pipeline(p, opt):
       flatten_summary_results,
       field_names=field_names
     )) |
-    "LogSummary" >> MapSpy(lambda x: get_logger().info('summary out: %s', str(x)[:1350])) |
+    "LogSummary" >> MapSpy(lambda x: get_logger().info('summary out: %.50s...', x)) |
     "WriteSummaryToCsv" >> WriteDictCsv(
       os.path.join(opt.output_path, 'summary'),
       file_name_suffix='.csv',
