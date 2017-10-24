@@ -16,6 +16,7 @@ from sciencebeam_judge.evaluation_utils import (
   parse_xml,
   parse_xml_mapping,
   score_results,
+  summarise_binary_results,
   comma_separated_str_to_list
 )
 
@@ -23,9 +24,6 @@ flatten = lambda l: [item for sublist in l for item in sublist]
 
 def get_logger():
   return logging.getLogger(__name__)
-
-def mean(data):
-  return sum(data) / len(data)
 
 def get_filename_basename(filename):
   return os.path.splitext(filename)[0]
@@ -83,51 +81,11 @@ def collect_results_for_directory_log_exception(sub_directory_path, **kwargs):
     get_logger().exception('failed to process directory', exc_info=e)
     return None
 
-def summary_score(sum_scores):
-  tp = sum_scores['true_positive']
-  fp = sum_scores['false_positive']
-  fn = sum_scores['false_negative']
-  tn = sum_scores['true_negative']
-  accuracy = (tp + tn) / (tp + fp + tn + fn) if tp + fp + tn + fn > 0 else 0
-  precision = tp / (tp + fp) if tp + fp > 0 else 0
-  recall = tp / (tp + fn + fp) if tp + fn > 0 else 0
-  f1 = 2 * (precision * recall) / (precision + recall) if precision + recall > 0 else 0
-  return {
-    'accuracy': accuracy,
-    'precision': precision,
-    'recall': recall,
-    'f1': f1
-  }
-
-def sum_scores_with_true_negative(scores, total_fields):
-  tp = sum([s['true_positive'] for s in scores])
-  fp = sum([s['false_positive'] for s in scores])
-  fn = sum([s['false_negative'] for s in scores])
-  tn = total_fields - tp - fp - fn
-  return {
-    'true_positive': tp,
-    'false_positive': fp,
-    'false_negative': fn,
-    'true_negative': tn
-  }
-
-def summarise_binary_results(scores, keys):
+def format_summarised_results(summarised_results, keys):
   score_fields = ['accuracy', 'precision', 'recall', 'f1']
-  total_fields = sum([
-    s['true_positive'] + s['false_negative'] + 2 * s['false_positive']
-    for s in flatten([scores[k] for k in keys])
-  ])
-  sum_scores_map = {k: sum_scores_with_true_negative(scores[k], total_fields) for k in keys}
-  summary_score_map = {k: summary_score(sum_scores_map[k]) for k in keys}
-  summary_scores = [(k, summary_score_map[k]) for k in keys]
-  micro_avg_scores = summary_score({
-    k: sum(sum_scores[k] for sum_scores in sum_scores_map.values())
-    for k in ['true_positive', 'false_negative', 'false_positive', 'true_negative']
-  })
-  macro_avg_scores = {
-    f: mean([summary_score_map[k][f] for k in keys]) if len(keys) > 0 else 0
-    for f in score_fields
-  }
+  summary_scores = [(k, summarised_results['by-field'][k]['scores']) for k in keys]
+  micro_avg_scores = summarised_results['micro']
+  macro_avg_scores = summarised_results['macro']
   rows = [
     ['label'] + score_fields,
     []
@@ -149,6 +107,12 @@ def summarise_binary_results(scores, keys):
   column_widths = [20, 10, 10, 10, 10, 20]
   rows = [[x.rjust(c, ' ') for x, c in zip(row, column_widths)] for row in rows]
   return '\n'.join([' '.join(row) for row in rows])
+
+def summarise_and_format_binary_results(scores, keys):
+  return format_summarised_results(
+    summarise_binary_results(scores, keys),
+    keys
+  )
 
 def summarise_results(results, keys):
   available_keys = set(flatten([r.keys() for r in results]))
@@ -181,19 +145,19 @@ def summarise_results(results, keys):
 
 
   """.format(
-    exact_results=summarise_binary_results({
+    exact_results=summarise_and_format_binary_results({
       k: [r[k]['exact'] for r in results]
       for k in keys
     }, keys),
-    soft_results=summarise_binary_results({
+    soft_results=summarise_and_format_binary_results({
       k: [r[k]['soft'] for r in results]
       for k in keys
     }, keys),
-    levenshtein_results=summarise_binary_results({
+    levenshtein_results=summarise_and_format_binary_results({
       k: [r[k]['levenshtein'] for r in results]
       for k in keys
     }, keys),
-    ratcliff_obershelp_results=summarise_binary_results({
+    ratcliff_obershelp_results=summarise_and_format_binary_results({
       k: [r[k]['ratcliff_obershelp'] for r in results]
       for k in keys
     }, keys)

@@ -13,6 +13,11 @@ import editdistance
 IGNORE_MARKER = '_ignore_'
 IGNORE_MARKER_WITH_SPACE = ' ' + IGNORE_MARKER + ' '
 
+flatten = lambda l: [item for sublist in l for item in sublist]
+
+def mean(data):
+  return sum(data) / len(data)
+
 def get_full_text(e):
   return "".join(e.itertext())
 
@@ -166,6 +171,73 @@ def score_results(expected, actual, include_values=False):
   return {
     k: score_list(expected[k], actual[k], include_values=include_values)
     for k in expected.keys()
+  }
+
+def sum_scores_with_true_negative(scores, total_fields):
+  tp = sum([s['true_positive'] for s in scores])
+  fp = sum([s['false_positive'] for s in scores])
+  fn = sum([s['false_negative'] for s in scores])
+  tn = total_fields - tp - fp - fn
+  return {
+    'true_positive': tp,
+    'false_positive': fp,
+    'false_negative': fn,
+    'true_negative': tn
+  }
+
+def precision_for_tp_fp(tp, fp, na=0):
+  return tp / (tp + fp) if tp + fp > 0 else na
+
+def recall_for_tp_fn_fp(tp, fn, fp, na=0):
+  return tp / (tp + fn + fp) if tp + fn > 0 else na
+
+def f1_for_precision_recall(precision, recall, na=0):
+  return 2 * (precision * recall) / (precision + recall) if precision + recall > 0 else na
+
+def summary_score(sum_scores):
+  tp = sum_scores['true_positive']
+  fp = sum_scores['false_positive']
+  fn = sum_scores['false_negative']
+  tn = sum_scores['true_negative']
+  accuracy = (tp + tn) / (tp + fp + tn + fn) if tp + fp + tn + fn > 0 else 0
+  precision = precision_for_tp_fp(tp, fp)
+  recall = recall_for_tp_fn_fp(tp, fn, fp)
+  f1 = f1_for_precision_recall(precision, recall)
+  return {
+    'accuracy': accuracy,
+    'precision': precision,
+    'recall': recall,
+    'f1': f1
+  }
+
+def summarise_binary_results(scores, keys):
+  score_fields = ['accuracy', 'precision', 'recall', 'f1']
+  total_fields = sum([
+    s['true_positive'] + s['false_negative'] + 2 * s['false_positive']
+    for s in flatten([scores[k] for k in keys])
+  ])
+  sum_scores_map = {k: sum_scores_with_true_negative(scores[k], total_fields) for k in keys}
+  summary_score_map = {k: summary_score(sum_scores_map[k]) for k in keys}
+  total_sums = {
+    k: sum(sum_scores[k] for sum_scores in sum_scores_map.values())
+    for k in ['true_positive', 'false_negative', 'false_positive', 'true_negative']
+  }
+  micro_avg_scores = summary_score(total_sums)
+  macro_avg_scores = {
+    f: mean([summary_score_map[k][f] for k in keys]) if len(keys) > 0 else 0
+    for f in score_fields
+  }
+  return {
+    'by-field': {
+      k: {
+        'total': sum_scores_map[k],
+        'scores': summary_score_map.get(k)
+      }
+      for k in keys
+    },
+    'total': total_sums,
+    'micro': micro_avg_scores,
+    'macro': macro_avg_scores
   }
 
 def comma_separated_str_to_list(s):
