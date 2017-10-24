@@ -29,10 +29,11 @@ Or running it in the cloud with a single worker:
 ./evaluate.sh --data-path gs://your-bucket/PMC_sample_1943 --target-suffix=.nxml --prediction-suffix=.tei-header.xml --cloud --num_workers=1
 ```
 
-The ouput path will contain two CSV files:
+The ouput path will contain the following files:
 
 * `results-*.csv`: The detailed evaluation of every field
 * `summary-*.csv`: The overall evaluation
+* `grobid-formatted-summary-*.txt`: The summary formatted à la GROBID (see below)
 
 Note: while the _accuracy_ is included, it it is not a good measure for comparison. Use the calculated _f1_ score instead.
 
@@ -53,6 +54,4 @@ For example:
 ./grobid-evaluate-directory.sh --data-path PMC_sample_1943 --target-suffix=.nxml --prediction-suffix=.tei-header.xml
 ```
 
-This type of evaluation doesn't currently support to be run in the cloud
-
-Note: this uses the same calculations used to produce the CSV
+This command is not cloud ready. Use the `evaluate.sh` command instead, which will generate the GROBID output as well.

@@ -11,12 +11,15 @@ from contextlib import contextmanager
 import logging
 
 from tqdm import tqdm
+from six import itervalues
 
 from sciencebeam_judge.evaluation_utils import (
   parse_xml,
   parse_xml_mapping,
   score_results,
-  summarise_binary_results,
+  combine_and_compact_scores_by_scoring_method,
+  summarise_results_by_scoring_method,
+  scoring_method_as_top_level_key,
   comma_separated_str_to_list
 )
 
@@ -108,14 +111,12 @@ def format_summarised_results(summarised_results, keys):
   rows = [[x.rjust(c, ' ') for x, c in zip(row, column_widths)] for row in rows]
   return '\n'.join([' '.join(row) for row in rows])
 
-def summarise_and_format_binary_results(scores, keys):
-  return format_summarised_results(
-    summarise_binary_results(scores, keys),
-    keys
-  )
-
-def summarise_results(results, keys):
-  available_keys = set(flatten([r.keys() for r in results]))
+def format_summary_by_scoring_method(scores_by_scoring_method, keys):
+  available_keys = set(flatten([
+    scores_for_scoring_method['by-field'].keys()
+    for scores_for_scoring_method in itervalues(scores_by_scoring_method)
+  ]))
+  print('available_keys:', available_keys, ', keys:', keys)
   keys = [k for k in keys if k in available_keys]
   return\
   """
@@ -145,22 +146,33 @@ def summarise_results(results, keys):
 
 
   """.format(
-    exact_results=summarise_and_format_binary_results({
-      k: [r[k]['exact'] for r in results]
-      for k in keys
-    }, keys),
-    soft_results=summarise_and_format_binary_results({
-      k: [r[k]['soft'] for r in results]
-      for k in keys
-    }, keys),
-    levenshtein_results=summarise_and_format_binary_results({
-      k: [r[k]['levenshtein'] for r in results]
-      for k in keys
-    }, keys),
-    ratcliff_obershelp_results=summarise_and_format_binary_results({
-      k: [r[k]['ratcliff_obershelp'] for r in results]
-      for k in keys
-    }, keys)
+    exact_results=format_summarised_results(
+      scores_by_scoring_method['exact'],
+      keys
+    ),
+    soft_results=format_summarised_results(
+      scores_by_scoring_method['soft'],
+      keys
+    ),
+    levenshtein_results=format_summarised_results(
+      scores_by_scoring_method['levenshtein'],
+      keys
+    ),
+    ratcliff_obershelp_results=format_summarised_results(
+      scores_by_scoring_method['ratcliff_obershelp'],
+      keys
+    )
+  )
+
+def summarise_results(results, keys):
+  return format_summary_by_scoring_method(
+    summarise_results_by_scoring_method(
+      combine_and_compact_scores_by_scoring_method(
+        [scoring_method_as_top_level_key(r) for r in results]
+      ),
+      keys
+    ),
+    keys
   )
 
 @contextmanager

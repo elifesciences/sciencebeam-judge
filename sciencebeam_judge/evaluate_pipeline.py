@@ -31,6 +31,10 @@ from sciencebeam_judge.evaluation_utils import (
   comma_separated_str_to_list
 )
 
+from sciencebeam_judge.grobid_evaluate import (
+  format_summary_by_scoring_method as format_grobid_summary
+)
+
 def get_logger():
   return logging.getLogger(__name__)
 
@@ -328,7 +332,7 @@ def configure_pipeline(p, opt):
     )
   )
 
-  _ = (
+  summary = (
     evaluation_results |
     "ExtractEvaluationResults" >> beam.Map(lambda x: x['evaluation_results']) |
     "ByScoringMethod" >> beam.Map(lambda x: scoring_method_as_top_level_key(x)) |
@@ -338,7 +342,11 @@ def configure_pipeline(p, opt):
     "LogCombinedResults" >> MapSpy(lambda x: get_logger().info('combined out: %.50s...', x)) |
     "Summarise" >> beam.Map(
       lambda x: summarise_results_by_scoring_method(x, field_names)
-    ) |
+    )
+  )
+
+  _ = (
+    summary |
     "FlattenSummary" >> beam.FlatMap(partial(
       flatten_summary_results,
       field_names=field_names
@@ -348,6 +356,17 @@ def configure_pipeline(p, opt):
       os.path.join(opt.output_path, 'summary'),
       file_name_suffix='.csv',
       columns=DEFAULT_SUMMARY_OUTPUT_COLUMNS
+    )
+  )
+
+  _ = (
+    summary |
+    "FormatGrobidEvaluation" >> beam.Map(
+      lambda x: format_grobid_summary(x, field_names)
+    ) |
+    "WriteGrobidFormattedEvaluation" >> WriteToText(
+      os.path.join(opt.output_path, 'grobid-formatted-summary'),
+      file_name_suffix='.txt'
     )
   )
 
