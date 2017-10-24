@@ -204,11 +204,14 @@ def FlattenEvaluationResults(field_names):
     return flat_result
   return wrapper
 
-def flatten_summary_results(summary_by_scoring_method):
+def flatten_summary_results(summary_by_scoring_method, field_names=None):
   C = SummaryOutputColumns
   flat_result = []
   for scoring_method, summary in iteritems(summary_by_scoring_method):
-    for field_name, field_summary in iteritems(summary['by-field']):
+    for field_name in (field_names or summary['by-field'].keys()):
+      field_summary = summary['by-field'].get(field_name)
+      if not field_summary:
+        continue
       field_totals = field_summary['total']
       field_scores = field_summary['scores']
       flat_result.append({
@@ -334,7 +337,10 @@ def configure_pipeline(p, opt):
     "Summarise" >> beam.Map(
       lambda x: summarise_results_by_scoring_method(x, field_names)
     ) |
-    "FlattenSummary" >> beam.FlatMap(flatten_summary_results) |
+    "FlattenSummary" >> beam.FlatMap(partial(
+      flatten_summary_results,
+      field_names=field_names
+    )) |
     "LogSummary" >> MapSpy(lambda x: get_logger().info('summary out: %s', str(x)[:1350])) |
     "WriteSummaryToCsv" >> WriteDictCsv(
       os.path.join(opt.output_path, 'summary'),
