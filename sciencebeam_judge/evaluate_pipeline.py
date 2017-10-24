@@ -18,7 +18,9 @@ from apache_beam.options.pipeline_options import PipelineOptions, SetupOptions
 from six import iteritems, string_types
 
 from sciencebeam_judge.beam_utils.utils import (
-  MapOrLog
+  MapOrLog,
+  MapSpy,
+  TransformAndLog
 )
 
 from sciencebeam_judge.evaluation_utils import (
@@ -41,15 +43,6 @@ def get_logger():
 def create_fn_api_runner():
   from apache_beam.runners.portability.fn_api_runner import FnApiRunner
   return FnApiRunner()
-
-def Spy(f):
-  def spy_wrapper(x):
-    f(x)
-    return x
-  return spy_wrapper
-
-def MapSpy(f):
-  return beam.Map(Spy(f))
 
 def find_matching_filenames(pattern):
   return [x.path for x in FileSystems.match([pattern])[0].metadata_list]
@@ -279,9 +272,10 @@ class WriteDictCsv(beam.PTransform):
     return (
       pcoll |
       "ToList" >> beam.Map(DictToList(self.columns)) |
-      "Format" >> beam.Map(FormatCsv) |
-      "LogFormattedCsv" >> MapSpy(
-        lambda x: get_logger().debug('formatted csv: %s', x)
+      "Format" >> TransformAndLog(
+        beam.Map(FormatCsv),
+        log_prefix='formatted csv: ',
+        log_level='debug'
       ) |
       "Utf8Encode" >> beam.Map(lambda x: x.encode('utf-8')) |
       "Write" >> WriteToText(
@@ -307,16 +301,21 @@ def configure_pipeline(p, opt):
       'prediction_suffix': opt.prediction_suffix,
       'target_suffix': opt.target_suffix
     }]) |
-    "FindFilePairs" >> beam.FlatMap(FindFilePairs) |
-    "LogFilePairs" >> MapSpy(lambda x: get_logger().info('out: %s', x)) |
+    "FindFilePairs" >> TransformAndLog(
+      beam.FlatMap(FindFilePairs),
+      log_prefix='file pairs: ',
+      log_level='debug'
+    ) |
     "ReadFilePairs" >> beam.Map(ReadFilePairs) |
-    "EvaluateFilePairs" >> MapOrLog(partial(
-      EvaluateFilePairs,
-      xml_mapping=xml_mapping,
-      field_names=field_names
-    )) |
-    "LogEvaluationResults" >> MapSpy(
-      lambda x: get_logger().info('eval out: %.50s...', x['evaluation_results'])
+    "EvaluateFilePairs" >> TransformAndLog(
+      MapOrLog(partial(
+        EvaluateFilePairs,
+        xml_mapping=xml_mapping,
+        field_names=field_names
+      )),
+      log_prefix='eval out: ',
+      log_value_fn=lambda x: x['evaluation_results'],
+      log_level='debug'
     )
   )
 
@@ -336,10 +335,13 @@ def configure_pipeline(p, opt):
     evaluation_results |
     "ExtractEvaluationResults" >> beam.Map(lambda x: x['evaluation_results']) |
     "ByScoringMethod" >> beam.Map(lambda x: scoring_method_as_top_level_key(x)) |
-    "CombineResults" >> beam.CombineGlobally(
-      combine_and_compact_scores_by_scoring_method
+    "CombineResults" >> TransformAndLog(
+      beam.CombineGlobally(
+        combine_and_compact_scores_by_scoring_method
+      ),
+      log_prefix='combined out: ',
+      log_level='debug'
     ) |
-    "LogCombinedResults" >> MapSpy(lambda x: get_logger().info('combined out: %.50s...', x)) |
     "Summarise" >> beam.Map(
       lambda x: summarise_results_by_scoring_method(x, field_names)
     )
@@ -347,11 +349,14 @@ def configure_pipeline(p, opt):
 
   _ = (
     summary |
-    "FlattenSummary" >> beam.FlatMap(partial(
-      flatten_summary_results,
-      field_names=field_names
-    )) |
-    "LogSummary" >> MapSpy(lambda x: get_logger().info('summary out: %.50s...', x)) |
+    "FlattenSummary" >> TransformAndLog(
+      beam.FlatMap(partial(
+        flatten_summary_results,
+        field_names=field_names
+      )),
+      log_prefix='summary out: ',
+      log_level='info'
+    ) |
     "WriteSummaryToCsv" >> WriteDictCsv(
       os.path.join(opt.output_path, 'summary'),
       file_name_suffix='.csv',
