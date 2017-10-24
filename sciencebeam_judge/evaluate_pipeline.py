@@ -457,7 +457,7 @@ def parse_args(argv=None):
   else:
     # Flags which need to be set for local runs.
     default_values = {
-      'runner': 'FnApiRunner',
+      'runner': 'DirectiRunner',
     }
 
   get_logger().info('default_values: %s', default_values)
