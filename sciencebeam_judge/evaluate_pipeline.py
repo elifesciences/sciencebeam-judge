@@ -436,7 +436,11 @@ def parse_args(argv=None):
   parsed_args = parser.parse_args(argv)
 
   if not parsed_args.output_path:
-    parsed_args.output_path = os.path.dirname(parsed_args.data_path.replace('/*/', '/'))
+    reduced_data_path = parsed_args.data_path.replace('/*/', '/')
+    parsed_args.output_path = os.path.join(
+      os.path.dirname(reduced_data_path),
+      os.path.basename(reduced_data_path + '-results')
+    )
   if parsed_args.num_workers:
     parsed_args.autoscaling_algorithm = 'NONE'
     parsed_args.max_num_workers = parsed_args.num_workers
