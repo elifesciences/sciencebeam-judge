@@ -26,18 +26,9 @@ from sciencebeam_judge.evaluation_utils import (
   score_results,
   scoring_method_as_top_level_key,
   combine_and_compact_scores_by_scoring_method,
-  combine_scores,
-  compact_scores,
-  summarise_binary_results,
   summarise_results_by_scoring_method,
   comma_separated_str_to_list
 )
-
-try:
-  from cStringIO import StringIO
-except ImportError:
-  from StringIO import StringIO
-
 
 def get_logger():
   return logging.getLogger(__name__)
