@@ -12,13 +12,10 @@ import csv
 
 import apache_beam as beam
 from apache_beam.io.filesystems import FileSystems
+from apache_beam.io.textio import WriteToText
 from apache_beam.options.pipeline_options import PipelineOptions, SetupOptions
 
 from six import iteritems, string_types
-
-from sciencebeam_judge.beam_utils.workaround_textio import (
-  WriteToText
-)
 
 from sciencebeam_judge.evaluation_utils import (
   parse_xml,
