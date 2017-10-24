@@ -2,9 +2,10 @@
 from __future__ import division
 
 import re
+import logging
 from difflib import SequenceMatcher
 
-from six import raise_from, string_types
+from six import iteritems, raise_from, string_types
 from six.moves.configparser import ConfigParser
 
 from lxml import etree as ET
@@ -14,6 +15,12 @@ IGNORE_MARKER = '_ignore_'
 IGNORE_MARKER_WITH_SPACE = ' ' + IGNORE_MARKER + ' '
 
 flatten = lambda l: [item for sublist in l for item in sublist]
+
+def get_logger():
+  return logging.getLogger(__name__)
+
+def force_list(x):
+  return x if isinstance(x, list) else [x]
 
 def mean(data):
   return sum(data) / len(data)
@@ -173,17 +180,19 @@ def score_results(expected, actual, include_values=False):
     for k in expected.keys()
   }
 
-def sum_scores_with_true_negative(scores, total_fields):
+def sum_scores_with_true_negative(scores, total_fields=None):
   tp = sum([s['true_positive'] for s in scores])
   fp = sum([s['false_positive'] for s in scores])
   fn = sum([s['false_negative'] for s in scores])
-  tn = total_fields - tp - fp - fn
-  return {
+  d = {
     'true_positive': tp,
     'false_positive': fp,
-    'false_negative': fn,
-    'true_negative': tn
+    'false_negative': fn
   }
+  if total_fields is not None:
+    tn = total_fields - tp - fp - fn
+    d['true_negative'] = tn
+  return d
 
 def precision_for_tp_fp(tp, fp, na=0):
   return tp / (tp + fp) if tp + fp > 0 else na
@@ -210,8 +219,55 @@ def summary_score(sum_scores):
     'f1': f1
   }
 
+def scoring_method_as_top_level_key(scores):
+  d = dict()
+  for k_field, scoring_methods in iteritems(scores):
+    for k_scoring_method, results in iteritems(scoring_methods):
+      d.setdefault(k_scoring_method, {})[k_field] = results
+  return d
+
+def compact_scores(scores, total_fields=None, keys=None):
+  if not scores:
+    return {}
+  if keys is None:
+    keys = scores.keys()
+  return {
+    k: sum_scores_with_true_negative(scores[k], total_fields)
+    for k in keys
+  }
+
+def combine_scores(list_of_scores, keys=None):
+  if not list_of_scores:
+    return {}
+  combined_scores = dict()
+  for scores in list_of_scores:
+    for k, v in iteritems(scores):
+      if keys is None or k in keys:
+        combined_scores.setdefault(k, []).extend(
+          v if isinstance(v, list) else [v]
+        )
+  return combined_scores
+
+def combine_and_compact_scores_by_scoring_method(list_of_scores):
+  if not list_of_scores:
+    return {}
+  combined_scores = dict()
+  for scores in list_of_scores:
+    for k_scoring_method, scores_by_field in iteritems(scores):
+      combined_scores.setdefault(k_scoring_method, []).append(
+        scores_by_field
+      )
+  return {
+    k_scoring_method: compact_scores(combine_scores(list_of_scores_by_field))
+    for k_scoring_method, list_of_scores_by_field in iteritems(combined_scores)
+  }
+
 def summarise_binary_results(scores, keys):
+  # get_logger().info('summarise_binary_results, scores: %s', scores)
+  scores = {k: force_list(x) for k, x in iteritems(scores)}
   score_fields = ['accuracy', 'precision', 'recall', 'f1']
+  # if not isinstance(scores, list):
+  #   scores = [scores]
   total_fields = sum([
     s['true_positive'] + s['false_negative'] + 2 * s['false_positive']
     for s in flatten([scores[k] for k in keys])
@@ -238,6 +294,13 @@ def summarise_binary_results(scores, keys):
     'total': total_sums,
     'micro': micro_avg_scores,
     'macro': macro_avg_scores
+  }
+
+def summarise_results_by_scoring_method(scores, keys):
+  # get_logger().info('!!!!! scores: %s', scores)
+  return {
+    k_scoring_method: summarise_binary_results(scores_by_field, keys=keys)
+    for k_scoring_method, scores_by_field in iteritems(scores)
   }
 
 def comma_separated_str_to_list(s):

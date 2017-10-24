@@ -13,7 +13,11 @@ from sciencebeam_judge.evaluation_utils import (
   levenshtein_score,
   ratcliff_obershelp_score,
   score_list,
+  scoring_method_as_top_level_key,
   score_results,
+  compact_scores,
+  combine_scores,
+  combine_and_compact_scores_by_scoring_method,
   summarise_binary_results,
   precision_for_tp_fp,
   recall_for_tp_fn_fp,
@@ -154,6 +158,163 @@ class TestScoreResults(object):
     assert result['_exact']['soft']['score'] == 1
     assert result['_partial']['exact']['score'] == 0
     assert result['_partial']['soft']['score'] == 1
+
+class TestScoringMethodAsTopLevelKey(object):
+  def test_should_move_scoring_method_up(self):
+    assert scoring_method_as_top_level_key({
+      'key1': {
+        'exact': {
+          'true_positive': 0,
+          'false_positive': 1,
+          'false_negative': 0
+        }, 'soft': {
+          'true_positive': 1,
+          'false_positive': 0,
+          'false_negative': 0
+        }
+      }
+    }) == {
+      'exact': {
+        'key1': {
+          'true_positive': 0,
+          'false_positive': 1,
+          'false_negative': 0
+        }
+      },
+      'soft': {
+        'key1': {
+          'true_positive': 1,
+          'false_positive': 0,
+          'false_negative': 0
+        }
+      }
+    }
+
+class TestCompactScores(object):
+  def test_should_total_scores_by_key(self):
+    scores = {
+      'key1': [{
+        'true_positive': 1,
+        'false_positive': 0,
+        'false_negative': 0
+      }, {
+        'true_positive': 0,
+        'false_positive': 1,
+        'false_negative': 0
+      }],
+      'key2': [{
+        'true_positive': 1,
+        'false_positive': 0,
+        'false_negative': 1
+      }]
+    }
+    result = compact_scores(scores)
+    assert result == {
+      'key1': {
+        'true_positive': 1,
+        'false_positive': 1,
+        'false_negative': 0
+      },
+      'key2': {
+        'true_positive': 1,
+        'false_positive': 0,
+        'false_negative': 1
+      }
+    }
+
+class TestCombineScores(object):
+  def test_should_combine_scores_by_key(self):
+    list_of_scores = [{
+      'key1': {
+        'true_positive': 1,
+        'false_positive': 0,
+        'false_negative': 0
+      }
+    }, {
+      'key1': {
+        'true_positive': 0,
+        'false_positive': 1,
+        'false_negative': 0
+      },
+    }, {
+      'key2': {
+        'true_positive': 1,
+        'false_positive': 0,
+        'false_negative': 1
+      }
+    }]
+    combined_scores = {
+      'key1': [{
+        'true_positive': 1,
+        'false_positive': 0,
+        'false_negative': 0
+      }, {
+        'true_positive': 0,
+        'false_positive': 1,
+        'false_negative': 0
+      }],
+      'key2': [{
+        'true_positive': 1,
+        'false_positive': 0,
+        'false_negative': 1
+      }]
+    }
+    result = combine_scores(list_of_scores)
+    assert result == combined_scores
+
+class TestCombineAndCompactScoresByScoringMethod(object):
+  def test_x(self):
+    list_of_scores = [{
+      'exact': {
+        'key1': {
+          'true_positive': 1,
+          'false_positive': 0,
+          'false_negative': 0
+        }
+      }
+    }, {
+      'exact': {
+        'key1': {
+          'true_positive': 0,
+          'false_positive': 1,
+          'false_negative': 0
+        }
+      },
+      'soft': {
+        'key1': {
+          'true_positive': 1,
+          'false_positive': 0,
+          'false_negative': 0
+        },
+        'key2': {
+          'true_positive': 0,
+          'false_positive': 0,
+          'false_negative': 1
+        }
+      }
+    }]
+    combined_scores = {
+      'exact': {
+        'key1': {
+          'true_positive': 1,
+          'false_positive': 1,
+          'false_negative': 0
+        }
+      },
+      'soft': {
+        'key1': {
+          'true_positive': 1,
+          'false_positive': 0,
+          'false_negative': 0
+        },
+        'key2': {
+          'true_positive': 0,
+          'false_positive': 0,
+          'false_negative': 1
+        }
+      }
+    }
+    assert combine_and_compact_scores_by_scoring_method(list_of_scores) == combined_scores
 
 class TestSummariseBinaryResults(object):
   def test_should_return_zero_results_for_no_values(self):

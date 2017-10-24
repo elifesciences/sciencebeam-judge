@@ -24,6 +24,12 @@ from sciencebeam_judge.evaluation_utils import (
   parse_xml,
   parse_xml_mapping,
   score_results,
+  scoring_method_as_top_level_key,
+  combine_and_compact_scores_by_scoring_method,
+  combine_scores,
+  compact_scores,
+  summarise_binary_results,
+  summarise_results_by_scoring_method,
   comma_separated_str_to_list
 )
 
@@ -126,7 +132,6 @@ class OutputColumns(object):
   PREDICTION_FILE = 'prediction_file'
   TARGET_FILE = 'target_file'
   FIELD_NAME = 'field_name'
-  FIELD_NAME = 'field_name'
   EVALUATION_METHOD = 'evaluation_method'
   TP = 'tp'
   FP = 'fp'
@@ -146,6 +151,31 @@ DEFAULT_OUTPUT_COLUMNS = [
   OutputColumns.TN,
   OutputColumns.EXPECTED,
   OutputColumns.ACTUAL
+]
+
+class SummaryOutputColumns(object):
+  EVALUATION_METHOD = 'evaluation_method'
+  FIELD_NAME = 'field_name'
+  STATS_NAME = 'stats_name'
+  TP = 'tp'
+  FP = 'fp'
+  FN = 'fn'
+  TN = 'tn'
+  PRECISION = 'precision'
+  RECALL = 'recall'
+  F1 = 'f1'
+
+DEFAULT_SUMMARY_OUTPUT_COLUMNS = [
+  SummaryOutputColumns.EVALUATION_METHOD,
+  SummaryOutputColumns.FIELD_NAME,
+  SummaryOutputColumns.STATS_NAME,
+  SummaryOutputColumns.TP,
+  SummaryOutputColumns.FP,
+  SummaryOutputColumns.FN,
+  SummaryOutputColumns.TN,
+  SummaryOutputColumns.PRECISION,
+  SummaryOutputColumns.RECALL,
+  SummaryOutputColumns.F1
 ]
 
 def FlattenEvaluationResults(field_names):
@@ -171,6 +201,35 @@ def FlattenEvaluationResults(field_names):
         })
     return flat_result
   return wrapper
+
+def flatten_summary_results(summary_by_scoring_method):
+  C = SummaryOutputColumns
+  flat_result = []
+  for scoring_method, summary in iteritems(summary_by_scoring_method):
+    for field_name, field_summary in iteritems(summary['by-field']):
+      field_totals = field_summary['total']
+      field_scores = field_summary['scores']
+      flat_result.append({
+        C.EVALUATION_METHOD: scoring_method,
+        C.FIELD_NAME: field_name,
+        C.TP: field_totals['true_positive'],
+        C.FP: field_totals['false_positive'],
+        C.FN: field_totals['false_negative'],
+        C.TN: field_totals['true_negative'],
+        C.PRECISION: field_scores['precision'],
+        C.RECALL: field_scores['recall'],
+        C.F1: field_scores['f1']
+      })
+    for stats_name in ['micro', 'macro']:
+      stats = summary[stats_name]
+      flat_result.append({
+        C.EVALUATION_METHOD: scoring_method,
+        C.STATS_NAME: stats_name,
+        C.PRECISION: stats['precision'],
+        C.RECALL: stats['recall'],
+        C.F1: stats['f1']
+      })
+  return flat_result
 
 def format_csv_rows(rows):
   get_logger().info('format_csv_rows, rows: %s', rows)
@@ -218,34 +277,68 @@ class WriteDictCsv(beam.PTransform):
       )
     )
 
+def combine_evaluation_results(evaluation_results):
+  get_logger().info('!!!!!!!!!! evaluation_results: %s (%d)', str(evaluation_results)[:50], len(evaluation_results))
+  return combine_and_compact_scores_by_scoring_method(
+    [scores for scores in evaluation_results]
+  )
+
 def configure_pipeline(p, opt):
   xml_mapping = parse_xml_mapping(opt.xml_mapping)
   field_names = opt.fields
   output_columns = DEFAULT_OUTPUT_COLUMNS
   # read the files and create a collection with filename, content tuples
-  pcoll = p | beam.Create([{
-    'data_path': opt.data_path,
-    'prediction_suffix': opt.prediction_suffix,
-    'target_suffix': opt.target_suffix
-  }])
-  pcoll |= "FindFilePairs" >> beam.FlatMap(FindFilePairs)
-  pcoll |= "LogFilePairs" >> MapSpy(lambda x: get_logger().info('out: %s', x))
-  pcoll |= "ReadFilePairs" >> beam.Map(ReadFilePairs)
-  pcoll |= "EvaluateFilePairs" >> beam.Map(partial(
-    EvaluateFilePairs,
-    xml_mapping=xml_mapping,
-    field_names=field_names
-  ))
-  pcoll |= "LogEvaluationResults" >> MapSpy(
-    lambda x: get_logger().info('out: %s', x['evaluation_results'])
+  evaluation_results = (
+    p |
+    beam.Create([{
+      'data_path': opt.data_path,
+      'prediction_suffix': opt.prediction_suffix,
+      'target_suffix': opt.target_suffix
+    }]) |
+    "FindFilePairs" >> beam.FlatMap(FindFilePairs) |
+    "LogFilePairs" >> MapSpy(lambda x: get_logger().info('out: %s', x)) |
+    "ReadFilePairs" >> beam.Map(ReadFilePairs) |
+    "EvaluateFilePairs" >> beam.Map(partial(
+      EvaluateFilePairs,
+      xml_mapping=xml_mapping,
+      field_names=field_names
+    ))
   )
-  pcoll |= "FlattenEvaluationResults" >> beam.FlatMap(
-    FlattenEvaluationResults(field_names=field_names)
+
+  _ = (
+    evaluation_results |
+    "LogEvaluationResults" >> MapSpy(
+      lambda x: get_logger().info('out: %s', x['evaluation_results'])
+    ) |
+    "FlattenEvaluationResults" >> beam.FlatMap(
+      FlattenEvaluationResults(field_names=field_names)
+    ) |
+    "WriteEvaluationToCsv" >> WriteDictCsv(
+      os.path.join(opt.output_path, 'results'),
+      file_name_suffix='.csv',
+      columns=DEFAULT_OUTPUT_COLUMNS
+    )
   )
-  pcoll |= "WriteToCsv" >> WriteDictCsv(
-    os.path.join(opt.output_path, 'results'),
-    file_name_suffix='.csv',
-    columns=output_columns
+
+  _ = (
+    evaluation_results |
+    "ExtractEvaluationResults" >> beam.Map(lambda x: x['evaluation_results']) |
+    "LogEvalResults" >> MapSpy(lambda x: get_logger().info('!!!!! eval out: %s', str(x)[:150])) |
+    "ByScoringMethod" >> beam.Map(lambda x: scoring_method_as_top_level_key(x)) |
+    "CombineResults" >> beam.CombineGlobally(
+      combine_and_compact_scores_by_scoring_method
+    ) |
+    "LogCombinedResults" >> MapSpy(lambda x: get_logger().info('combined out: %s', str(x)[:1350])) |
+    "Summarise" >> beam.Map(
+      lambda x: summarise_results_by_scoring_method(x, field_names)
+    ) |
+    "FlattenSummary" >> beam.FlatMap(flatten_summary_results) |
+    "LogSummary" >> MapSpy(lambda x: get_logger().info('summary out: %s', str(x)[:1350])) |
+    "WriteSummaryToCsv" >> WriteDictCsv(
+      os.path.join(opt.output_path, 'summary'),
+      file_name_suffix='.csv',
+      columns=DEFAULT_SUMMARY_OUTPUT_COLUMNS
+    )
   )
 
 def get_cloud_project():
