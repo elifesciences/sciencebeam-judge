@@ -17,6 +17,10 @@ from apache_beam.options.pipeline_options import PipelineOptions, SetupOptions
 
 from six import iteritems, string_types
 
+from sciencebeam_judge.beam_utils.utils import (
+  MapOrLog
+)
+
 from sciencebeam_judge.evaluation_utils import (
   parse_xml,
   parse_xml_mapping,
@@ -302,7 +306,7 @@ def configure_pipeline(p, opt):
     "FindFilePairs" >> beam.FlatMap(FindFilePairs) |
     "LogFilePairs" >> MapSpy(lambda x: get_logger().info('out: %s', x)) |
     "ReadFilePairs" >> beam.Map(ReadFilePairs) |
-    "EvaluateFilePairs" >> beam.Map(partial(
+    "EvaluateFilePairs" >> MapOrLog(partial(
       EvaluateFilePairs,
       xml_mapping=xml_mapping,
       field_names=field_names
