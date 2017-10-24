@@ -265,10 +265,11 @@ class WriteDictCsv(beam.PTransform):
       "LogFormattedCsv" >> MapSpy(
         lambda x: get_logger().debug('formatted csv: %s', x)
       ) |
+      "Utf8Encode" >> beam.Map(lambda x: x.encode('utf-8')) |
       "Write" >> WriteToText(
         self.path,
         file_name_suffix=self.file_name_suffix,
-        header=format_csv_rows([self.columns])
+        header=format_csv_rows([self.columns]).encode('utf-8')
       )
     )
 
