@@ -456,7 +456,7 @@ def parse_args(argv=None):
   else:
     # Flags which need to be set for local runs.
     default_values = {
-      'runner': 'DirectiRunner',
+      'runner': 'DirectRunner',
     }
 
   get_logger().info('default_values: %s', default_values)
