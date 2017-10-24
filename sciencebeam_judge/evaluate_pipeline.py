@@ -161,6 +161,7 @@ class SummaryOutputColumns(object):
   FP = 'fp'
   FN = 'fn'
   TN = 'tn'
+  ACCURACY = 'accuracy'
   PRECISION = 'precision'
   RECALL = 'recall'
   F1 = 'f1'
@@ -173,6 +174,7 @@ DEFAULT_SUMMARY_OUTPUT_COLUMNS = [
   SummaryOutputColumns.FP,
   SummaryOutputColumns.FN,
   SummaryOutputColumns.TN,
+  SummaryOutputColumns.ACCURACY,
   SummaryOutputColumns.PRECISION,
   SummaryOutputColumns.RECALL,
   SummaryOutputColumns.F1
@@ -216,6 +218,7 @@ def flatten_summary_results(summary_by_scoring_method):
         C.FP: field_totals['false_positive'],
         C.FN: field_totals['false_negative'],
         C.TN: field_totals['true_negative'],
+        C.ACCURACY: field_scores['accuracy'],
         C.PRECISION: field_scores['precision'],
         C.RECALL: field_scores['recall'],
         C.F1: field_scores['f1']
@@ -225,6 +228,7 @@ def flatten_summary_results(summary_by_scoring_method):
       flat_result.append({
         C.EVALUATION_METHOD: scoring_method,
         C.STATS_NAME: stats_name,
+        C.ACCURACY: stats['accuracy'],
         C.PRECISION: stats['precision'],
         C.RECALL: stats['recall'],
         C.F1: stats['f1']
@@ -278,7 +282,6 @@ class WriteDictCsv(beam.PTransform):
     )
 
 def combine_evaluation_results(evaluation_results):
-  get_logger().info('!!!!!!!!!! evaluation_results: %s (%d)', str(evaluation_results)[:50], len(evaluation_results))
   return combine_and_compact_scores_by_scoring_method(
     [scores for scores in evaluation_results]
   )
@@ -286,7 +289,6 @@ def combine_evaluation_results(evaluation_results):
 def configure_pipeline(p, opt):
   xml_mapping = parse_xml_mapping(opt.xml_mapping)
   field_names = opt.fields
-  output_columns = DEFAULT_OUTPUT_COLUMNS
   # read the files and create a collection with filename, content tuples
   evaluation_results = (
     p |
