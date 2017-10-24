@@ -1,12 +1,41 @@
 # Pre-requistes
 
-* Python 2 or 3
+- Python 2.7 ([currently Apache Beam doesn't support Python 3](https://issues.apache.org/jira/browse/BEAM-1373))
+- [Apache Beam](https://beam.apache.org/get-started/quickstart-py/)
 
 # Setup
 
 ```bash
 pip install -r requirements.txt
 ```
+
+# Evaluation to CSV
+
+```bash
+./evaluate-directory.sh --data-path=<data path> [--output-path=<output path] [--target-suffix=<file suffix>] [--prediction-suffix=<file suffix>] [--cloud] [--num_workers=<number of workers>]
+```
+
+By default the output path will be _data-path_ + `-results`.
+
+For example:
+
+```bash
+./evaluate.sh --data-path PMC_sample_1943 --target-suffix=.nxml --prediction-suffix=.tei-header.xml
+```
+
+Or running it in the cloud with a single worker:
+
+```bash
+./evaluate.sh --data-path gs://your-bucket/PMC_sample_1943 --target-suffix=.nxml --prediction-suffix=.tei-header.xml --cloud --num_workers=1
+```
+
+The ouput path will contain two CSV files:
+
+* `results-*.csv`: The detailed evaluation of every field
+* `summary-*.csv`: The overall evaluation
+
+Note: while the _accuracy_ is included, it it is not a good measure for comparison. Use the calculated _f1_ score instead.
+
 
 # GROBID Like Evaluation
 
@@ -23,3 +52,7 @@ For example:
 ```bash
 ./grobid-evaluate-directory.sh --data-path PMC_sample_1943 --target-suffix=.nxml --prediction-suffix=.tei-header.xml
 ```
+
+This type of evaluation doesn't currently support to be run in the cloud
+
+Note: this uses the same calculations used to produce the CSV
