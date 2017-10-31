@@ -58,12 +58,15 @@ def zip_by_keys(d1, d2):
     for k in sorted(set(d1.keys()) | set(d2.keys()))
   )
 
-def FindFilePairs(x):
+DEFAULT_DATA_PATTERN = '*/*'
+
+def FindFilePairs(x, data_pattern=DEFAULT_DATA_PATTERN):
   data_path = x['data_path']
   prediction_suffix = x['prediction_suffix']
   target_suffix = x['target_suffix']
-  prediction_pattern = os.path.join(data_path, '*/*' + prediction_suffix)
-  target_pattern = os.path.join(data_path, '*/*' + target_suffix)
+  get_logger().info('data_pattern: %s', data_pattern)
+  prediction_pattern = os.path.join(data_path, data_pattern + prediction_suffix)
+  target_pattern = os.path.join(data_path, data_pattern + target_suffix)
   all_prediction_files = find_matching_filenames(prediction_pattern)
   all_target_files = find_matching_filenames(target_pattern)
   get_logger().info(
@@ -301,7 +304,10 @@ def configure_pipeline(p, opt):
       'target_suffix': opt.target_suffix
     }]) |
     "FindFilePairs" >> TransformAndLog(
-      beam.FlatMap(FindFilePairs),
+      beam.FlatMap(partial(
+        FindFilePairs,
+        data_pattern=opt.data_pattern
+      )),
       log_prefix='file pairs: ',
       log_level='debug'
     ) |
@@ -407,6 +413,12 @@ def parse_args(argv=None):
     type=str,
     required=True,
     help='path to data directory containing sub directories with target and predicted XML'
+  )
+  parser.add_argument(
+    '--data-pattern',
+    type=str,
+    default=DEFAULT_DATA_PATTERN,
+    help='the pattern within data path'
   )
   parser.add_argument(
     '--target-suffix',
