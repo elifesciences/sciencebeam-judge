@@ -265,7 +265,17 @@ def combine_and_compact_scores_by_scoring_method(list_of_scores):
     for k_scoring_method, list_of_scores_by_field in iteritems(combined_scores)
   }
 
-def summarise_binary_results(scores, keys):
+def combine_and_compact_scores_by_scoring_method_with_count(list_of_scores_with_count):
+  return (
+    combine_and_compact_scores_by_scoring_method(
+      list_of_scores for list_of_scores, _ in list_of_scores_with_count
+    ),
+    sum(
+      count for _, count in list_of_scores_with_count
+    )
+  )
+
+def summarise_binary_results(scores, keys, count=None):
   # get_logger().info('summarise_binary_results, scores: %s', scores)
   scores = {k: force_list(x) for k, x in iteritems(scores)}
   score_fields = ['accuracy', 'precision', 'recall', 'f1']
@@ -296,15 +306,27 @@ def summarise_binary_results(scores, keys):
     },
     'total': total_sums,
     'micro': micro_avg_scores,
-    'macro': macro_avg_scores
+    'macro': macro_avg_scores,
+    'count': count
   }
 
-def summarise_results_by_scoring_method(scores, keys):
+def summarise_results_by_scoring_method(scores, keys, count=None):
   # get_logger().info('!!!!! scores: %s', scores)
   return {
-    k_scoring_method: summarise_binary_results(scores_by_field, keys=keys)
+    k_scoring_method: summarise_binary_results(
+      scores_by_field,
+      keys=keys,
+      count=count
+    )
     for k_scoring_method, scores_by_field in iteritems(scores)
   }
+
+def summarise_results_by_scoring_method_with_count(scores_with_count, keys):
+  return summarise_results_by_scoring_method(
+    scores_with_count[0],
+    keys,
+    count=scores_with_count[1]
+  )
 
 def comma_separated_str_to_list(s):
   s = s.strip()

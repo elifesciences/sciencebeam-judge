@@ -27,8 +27,8 @@ from sciencebeam_judge.evaluation_utils import (
   parse_xml_mapping,
   score_results,
   scoring_method_as_top_level_key,
-  combine_and_compact_scores_by_scoring_method,
-  summarise_results_by_scoring_method,
+  combine_and_compact_scores_by_scoring_method_with_count,
+  summarise_results_by_scoring_method_with_count,
   comma_separated_str_to_list
 )
 
@@ -155,6 +155,7 @@ DEFAULT_OUTPUT_COLUMNS = [
 ]
 
 class SummaryOutputColumns(object):
+  DOCUMENT_COUNT = 'document_count'
   EVALUATION_METHOD = 'evaluation_method'
   FIELD_NAME = 'field_name'
   STATS_NAME = 'stats_name'
@@ -168,6 +169,7 @@ class SummaryOutputColumns(object):
   F1 = 'f1'
 
 DEFAULT_SUMMARY_OUTPUT_COLUMNS = [
+  SummaryOutputColumns.DOCUMENT_COUNT,
   SummaryOutputColumns.EVALUATION_METHOD,
   SummaryOutputColumns.FIELD_NAME,
   SummaryOutputColumns.STATS_NAME,
@@ -209,6 +211,7 @@ def flatten_summary_results(summary_by_scoring_method, field_names=None):
   C = SummaryOutputColumns
   flat_result = []
   for scoring_method, summary in iteritems(summary_by_scoring_method):
+    count = summary['count']
     for field_name in (field_names or summary['by-field'].keys()):
       field_summary = summary['by-field'].get(field_name)
       if not field_summary:
@@ -216,6 +219,7 @@ def flatten_summary_results(summary_by_scoring_method, field_names=None):
       field_totals = field_summary['total']
       field_scores = field_summary['scores']
       flat_result.append({
+        C.DOCUMENT_COUNT: count,
         C.EVALUATION_METHOD: scoring_method,
         C.FIELD_NAME: field_name,
         C.TP: field_totals['true_positive'],
@@ -230,6 +234,7 @@ def flatten_summary_results(summary_by_scoring_method, field_names=None):
     for stats_name in ['micro', 'macro']:
       stats = summary[stats_name]
       flat_result.append({
+        C.DOCUMENT_COUNT: count,
         C.EVALUATION_METHOD: scoring_method,
         C.STATS_NAME: stats_name,
         C.ACCURACY: stats['accuracy'],
@@ -287,11 +292,6 @@ class WriteDictCsv(beam.PTransform):
       )
     )
 
-def combine_evaluation_results(evaluation_results):
-  return combine_and_compact_scores_by_scoring_method(
-    [scores for scores in evaluation_results]
-  )
-
 def configure_pipeline(p, opt):
   xml_mapping = parse_xml_mapping(opt.xml_mapping)
   field_names = opt.fields
@@ -340,15 +340,16 @@ def configure_pipeline(p, opt):
     evaluation_results |
     "ExtractEvaluationResults" >> beam.Map(lambda x: x['evaluation_results']) |
     "ByScoringMethod" >> beam.Map(lambda x: scoring_method_as_top_level_key(x)) |
+    "PairWithOne" >> beam.Map(lambda x: (x, 1)) |
     "CombineResults" >> TransformAndLog(
       beam.CombineGlobally(
-        combine_and_compact_scores_by_scoring_method
+        combine_and_compact_scores_by_scoring_method_with_count
       ),
       log_prefix='combined out: ',
       log_level='debug'
     ) |
     "Summarise" >> beam.Map(
-      lambda x: summarise_results_by_scoring_method(x, field_names)
+      lambda x: summarise_results_by_scoring_method_with_count(x, field_names)
     )
   )
 
