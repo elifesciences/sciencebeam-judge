@@ -19,7 +19,6 @@ from six import iteritems, string_types
 
 from sciencebeam_judge.beam_utils.utils import (
   MapOrLog,
-  MapSpy,
   TransformAndLog
 )
 
