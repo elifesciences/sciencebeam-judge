@@ -1,15 +1,17 @@
-# Pre-requistes
+# ScienceBeam Judge
+
+## Pre-requistes
 
 - Python 2.7 ([currently Apache Beam doesn't support Python 3](https://issues.apache.org/jira/browse/BEAM-1373))
 - [Apache Beam](https://beam.apache.org/get-started/quickstart-py/)
 
-# Setup
+## Setup
 
 ```bash
 pip install -r requirements.txt
 ```
 
-# Evaluation to CSV
+## Evaluation to CSV
 
 ```bash
 ./evaluate-directory.sh --data-path=<data path> [--output-path=<output path] [--target-suffix=<file suffix>] [--prediction-suffix=<file suffix>] [--cloud] [--num_workers=<number of workers>]
@@ -31,14 +33,13 @@ Or running it in the cloud with a single worker:
 
 The ouput path will contain the following files:
 
-* `results-*.csv`: The detailed evaluation of every field
-* `summary-*.csv`: The overall evaluation
-* `grobid-formatted-summary-*.txt`: The summary formatted à la GROBID (see below)
+- `results-*.csv`: The detailed evaluation of every field
+- `summary-*.csv`: The overall evaluation
+- `grobid-formatted-summary-*.txt`: The summary formatted à la GROBID (see below)
 
 Note: while the _accuracy_ is included, it it is not a good measure for comparison. Use the calculated _f1_ score instead.
 
-
-# GROBID Like Evaluation
+## GROBID Like Evaluation
 
 This evaluation is replicating closely the GROBID's [End-to-end evaluation](http://grobid.readthedocs.io/en/latest/End-to-end-evaluation/) and it's [results](https://github.com/kermitt2/grobid/tree/master/grobid-trainer/doc).
 
