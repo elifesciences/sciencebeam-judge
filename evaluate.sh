@@ -2,4 +2,4 @@
 
 set -e
 
-python -m sciencebeam_judge.evaluate_pipeline $@
+python -m sciencebeam_judge.evaluation_pipeline $@
