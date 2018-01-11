@@ -1,5 +1,8 @@
 # ScienceBeam Judge
 
+[![Build Status](https://travis-ci.org/elifesciences/sciencebeam-judge.svg?branch=develop)](https://travis-ci.org/elifesciences/sciencebeam-judge)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 ## Pre-requistes
 
 - Python 2.7 ([currently Apache Beam doesn't support Python 3](https://issues.apache.org/jira/browse/BEAM-1373))
