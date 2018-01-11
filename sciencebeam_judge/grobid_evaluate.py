@@ -118,6 +118,13 @@ def format_summary_by_scoring_method(scores_by_scoring_method, keys):
   ]))
   print('available_keys:', available_keys, ', keys:', keys)
   keys = [k for k in keys if k in available_keys]
+  if not scores_by_scoring_method:
+    return ''
+  if 'exact' not in scores_by_scoring_method:
+    raise ValueError(
+      'invalid scores_by_scoring_method, expected "exact", but had: %s' %
+      scores_by_scoring_method.keys()
+    )
   return\
   """
   ======= Strict Matching ======= (exact matches)
