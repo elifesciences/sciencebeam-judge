@@ -55,6 +55,8 @@ from sciencebeam_judge.grobid_evaluate import (
   format_summary_by_scoring_method as format_grobid_summary
 )
 
+from .xpath_functions import register_functions
+
 def get_logger():
   return logging.getLogger(__name__)
 
@@ -372,7 +374,12 @@ def add_main_args(parser):
   parser.add_argument(
     '--fields',
     type=comma_separated_str_to_list,
-    default=['abstract', 'authors', 'first_author', 'keywords', 'title'],
+    default=[
+      'abstract',
+      'author_surnames', 'first_author_surname',
+      'author_full_names', 'first_author_full_name',
+      'keywords', 'title'
+    ],
     help='comma separated list of fields to process'
   )
 
@@ -408,6 +415,8 @@ def parse_args(argv=None):
   return args
 
 def run(argv=None):
+  register_functions()
+
   args = parse_args(argv)
 
   # We use the save_main_session option because one or more DoFn's in this
