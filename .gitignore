@@ -3,6 +3,7 @@
 /.cache
 /.temp
 /*.egg-info
+/build
 
 .ipynb_checkpoints
 
