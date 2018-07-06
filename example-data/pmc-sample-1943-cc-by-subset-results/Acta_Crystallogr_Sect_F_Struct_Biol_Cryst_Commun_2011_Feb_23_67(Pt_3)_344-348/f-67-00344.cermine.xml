@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns:xlink="http://www.w3.org/1999/xlink">
+  <front>
+    <journal-meta>
+      <journal-title-group>
+        <journal-title>Acta Cryst.</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">1744-3091</issn>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.1107/S174430911100337X</article-id>
+      <title-group>
+        <article-title>Refolding, crystallization and preliminary X-ray crystallographic study of the whole extracellular regions of nectins</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <string-name>Laboratory of Supramolecular Crystallography</string-name>
+          <xref ref-type="aff" rid="aff2">2</xref>
+          <xref ref-type="aff" rid="aff3">3</xref>
+          <xref ref-type="aff" rid="aff4">4</xref>
+        </contrib>
+        <aff id="aff0">
+          <label>0</label>
+          <institution>Division of Membrane Dynamics, Department of Physiology and Cell Biology, Kobe University Graduate School of Medicine</institution>
+          ,
+          <addr-line>Kobe 650-0017</addr-line>
+          ,
+          <country country="JP">Japan</country>
+        </aff>
+        <aff id="aff1">
+          <label>1</label>
+          <institution>Division of Molecular and Cellular Biology, Department of Biochemistry and Molecular Biology, Kobe University Graduate School of Medicine</institution>
+          ,
+          <addr-line>Kobe 650-0017</addr-line>
+          ,
+          <country country="JP">Japan</country>
+        </aff>
+        <aff id="aff2">
+          <label>2</label>
+          <institution>Hirotaka Narita</institution>
+        </aff>
+        <aff id="aff3">
+          <label>3</label>
+          <institution>Research Center for Structural and Functional Proteomics, Institute for Protein Research, Osaka University</institution>
+          ,
+          <addr-line>Suita 565-0871</addr-line>
+          ,
+          <country country="JP">Japan</country>
+        </aff>
+        <aff id="aff4">
+          <label>4</label>
+          <institution>Yasunori Yamamoto</institution>
+        </aff>
+      </contrib-group>
+      <pub-date>
+        <year>2011</year>
+      </pub-date>
+      <volume>67</volume>
+      <fpage>344</fpage>
+      <lpage>348</lpage>
+      <history>
+        <date date-type="accepted">
+          <day>25</day>
+          <month>1</month>
+          <year>2011</year>
+        </date>
+        <date date-type="received">
+          <day>19</day>
+          <month>11</month>
+          <year>2010</year>
+        </date>
+      </history>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec-1">
+      <title>1. Introduction</title>
+      <p>
+        Cell adhesion molecules are the primary mediators for various types
+of cell?cell junctions and play essential roles in various cellular
+processes, including morphogenesis, differentiation, proliferation and
+migration
+        <xref ref-type="bibr" rid="ref4 ref7">(Harris &amp; Tepass, 2010; Ogita &amp; Takai, 2006)</xref>
+        . In polarized
+epithelial cells, cell?cell junctions comprise several adhesive
+apparatuses including tight junctions (TJs), adherens junctions (AJs),
+desmosomes and gap junctions. AJs regulate TJ formation and the
+establishment of the apical?basal polarity at cell?cell adhesion sites
+        <xref ref-type="bibr" rid="ref10 ref12">(Takai, Ikeda et al., 2008)</xref>
+        . Nectins, which are immunoglobulin-like
+cell adhesion molecules, and cadherins, which are Ca2+-dependent
+cell adhesion molecules, localize at AJs and have essential
+cooperative roles in AJ formation. Nectins initiate AJ formation before
+cadherins form cell?cell adhesions. Initial cell?cell contacts are
+formed between two neighbouring cells by nectins, and cadherins are
+then recruited to the nectin-based adhesion sites to form strong cell?
+cell adhesions. TJs are formed at the apical side of AJs. Together,
+nectins and cadherins mediate TJ formation by recruiting junctional
+adhesion molecules (JAMs), followed by claudins and occludins, to
+the apical side of AJs.
+      </p>
+      <p>
+        Nectins comprise a family of four members, nectin-1, nectin-2,
+nectin-3 and nectin-4, each with multiple isoforms
+        <xref ref-type="bibr" rid="ref11 ref6">(Takai et al., 2003;
+Ogita et al., 2010)</xref>
+        . Most nectin-family members are membrane
+glycoproteins with an extracellular N-terminal variable region-like
+domain, two extracellular constant region-like domains, a
+transmembrane region and a cytoplasmic tail. All nectins, except for
+nectin-1 , nectin-1 , nectin-3 and nectin-4, contain a PDZ-binding
+motif (E/A-X-Y-V) in their cytoplasmic tail. Through this sequence
+the nectins can bind afadin, which itself binds to an actin filament and
+-catenin.
+      </p>
+      <p>
+        Two nectin molecules on the surface of the same cell first form
+cis-dimers, which is followed by the formation of trans-dimers of the
+cis-dimers on apposing cells, resulting in the formation of cell?cell
+adhesions
+        <xref ref-type="bibr" rid="ref10 ref12">(Takai, Miyoshi et al., 2008)</xref>
+        . Heterophilic
+trans-interactions have been detected between nectin-1 and nectin-3, between
+nectin-2 and nectin-3 and between nectin-1 and nectin-4. In addition
+to their cell adhesion activity, nectin-1 and nectin-2, but not nectin-3
+or nectin-4, serve as entry receptors for -herpesviruses by binding
+the virus-envelope glycoprotein gD with different specificities
+        <xref ref-type="bibr" rid="ref1 ref13 ref13 ref3 ref5 ref9">(Cocchi et al., 1998; Sakisaka et al., 2001; Lopez et al., 2000; Geraghty
+et al., 1998; Warner et al., 1998)</xref>
+        . While nectin-1 shows activity as a
+receptor for herpes simplex virus type 1 (HSV-1), HSV-2,
+pseudorabies virus (PRV) and bovine herpesvirus type 1, nectin-2 mediates
+the entry of HSV-2 and PRV.
+      </p>
+      <p>To further understand how nectin-family members form
+cisinteractions and trans-interactions, structural information on the
+extracellular region of nectin-family members is fundamental. Here,
+we report the refolding, crystallization and preliminary X-ray
+crystallographic analyses of the extracellular regions of nectin-1 and
+nectin-2. To our knowledge, this is the first report of the
+crystallization of the whole extracellular regions of nectins.</p>
+    </sec>
+    <sec id="sec-2">
+      <title>2. Materials and methods</title>
+      <p>2.1. Protein expression and purification of inclusion bodies</p>
+      <p>Genes encoding the extracellular region of human nectin-1
+(nectin-1-EC; residues 30?335) or mouse nectin-2 (nectin-2-EC;
+residues 32?339) were PCR-amplified using the Expand High Fidelity
+PCR system (Roche) from respective full-length cDNAs using
+primer A (50-TAGGATCCGTCCCAGGCGTCCACTCC-30;
+nectin1 , forward) and primer B
+(50-TAGCGGCCGCTTCTGTGATATTGACCTCCACC-30; nectin-1 , reverse) or primer C
+(50-TAGGATCCGCAGGATGTGCGAGTTCAAGTGC-30; nectin-2 , forward)
+and primer D
+(50-TAGCGGCCGCGTCTCGCACCAGGATGACCT-30; nectin-2 , reverse). The PCR products were inserted into the
+pGEM-T Easy vector (Promega), which contains 30-T overhangs at
+the insertion site. Target genes were isolated by digestion of the
+plasmids with the restriction enzymes BamHI and NotI and were
+confirmed by DNA sequencing. This was followed by ligation into the
+T7 promoter expression vector pET21b (Novagen) in frame with a
+C-terminal 6 His tag. Each recombinant plasmid was transformed
+into Escherichia coli BL21 (DE3) cells (Novagen).</p>
+      <p>The cells were cultured in Luria?Bertani broth containing
+100 mg ml 1 ampicillin at 310 K until the OD600 reached 0.5?0.7.
+Protein expression was induced at 298 K by the addition of isopropyl
+-d-1-thiogalactopyranoside to a final concentration of 0.4 mM.
+At 16 h post-induction the cells were harvested by centrifugation,
+suspended in phosphate-buffered saline containing 40 mg ml 1 hen
+egg-white lysozyme, subjected to two cycles of freezing and thawing
+and sonicated until the lysate was homogeneous. Centrifugation of
+these lysates at 10 000g for 20 min yielded inclusion bodies.</p>
+      <p>The inclusion bodies were washed four times with a buffer
+consisting of 20 mM Tris?HCl pH 7.5, 300 mM NaCl, 1 mM EDTA, 0.5%
+Triton X-100 and 1 mM DTT and were dissolved in a buffer consisting
+of 50 mM MES?NaOH pH 6.0, 8 M urea, 1 mM EDTA and 1 mM
+DTT. This mixture was slowly rotated overnight at 277 K before
+centrifugation at 10 000g for 20 min to remove insoluble materials.
+The yields of inclusion bodies were 0.1 g for nectin-1-EC and 0.2 g
+for nectin-2-EC per litre of culture.</p>
+      <p>Unfolded proteins were refolded by 300-fold dilution into
+refolding solution A [500 mM l-arginine, 100 mM Tris?HCl pH 9.0,
+2 mM oxidized glutathione (GSSG) and 1 mM reduced glutathione
+(GSH)] in the case of nectin-1-EC or refolding solution B (500 mM
+l-arginine, 100 mM Tris?HCl pH 9.0, 10 mM GSSG, 0.1 mM GSH)
+in the case of nectin-2-EC, followed by incubation for 48 h at 277 K.
+After concentration using a 10 000 molecular-weight cutoff
+ultrafiltration membrane (GE Healthcare), the samples were subjected to
+size-exclusion chromatography on a HiLoad 16/60 Superdex 200 pg
+column (GE Healthcare) to separate correctly folded proteins from
+aggregated forms. These fractions were dialyzed against 20 mM MES
+pH 6.0 to precipitate almost-misfolded proteins, filtered using an
+Ultrafree-MC GV 0.22 mm (Millipore) and applied onto a HiTrap SP
+HP column (5 ml; GE Healthcare) followed by a Mono Q column
+(1 ml; GE Healthcare). The protein yields were 0.5 mg for
+nectin-1EC and 10 mg for nectin-2-EC from 100 mg inclusion bodies.
+2.2. Optimization of refolding conditions and protein purification</p>
+      <p>The standard conditions for refolding nectin-1-EC and nectin-2-EC
+were as follows: 400 mM l-arginine, 100 mM Tris?HCl pH 9.0,
+2.5 mM GSH, 2.5 mM GSSG and 100 mg ml 1 unfolded protein.
+Small-scale refolding assays (1 ml) were performed to investigate the
+effects of changing the l-arginine concentration from 100 to 600 mM
+(for nectin-1-EC), the pH from 7.0 to 9.0 (for nectin-1-EC), the
+GSSG:GSH ratio from 10.0:0.1 mM to 0.1:10.0 mM (for both
+nectin1-EC and nectin-2-EC) and the concentration of unfolded protein
+from 25 to 200 mg ml 1 (for nectin-1-EC). In each case, the unfolded
+protein solutions were diluted at least 300-fold into each of the
+refolding solutions such that only one parameter was varied while the
+other parameters were kept at the standard conditions.</p>
+      <p>The solutions were incubated at 277 K for 48 h and then subjected
+to size-exclusion chromatography on a Superdex 200 10/300 GL
+column using an A¨KTA FPLC system (GE Healthcare; Figs. 1a?1d).
+A peak at an elution volume of 15.5 ml corresponded to the
+correctly folded protein containing native intramolecular disulfide
+bonds. Aggregates containing intermolecular disulfide bonds eluted
+in the void volume ( 8.5 ml).
+2.3. Crystallization</p>
+      <p>Purified nectin-1-EC and nectin-2-EC were dialyzed against
+solutions C (20 mM Tris?HCl pH 7.5, 150 mM NaCl) and D (20 mM Tris?
+HCl pH 9.0, 150 mM NaCl), respectively, and then concentrated to 5
+and 4 mg ml 1, respectively, using a Vivaspin 6 10k (GE Healthcare).
+The homogeneous proteins were analyzed by screening additives
+using dynamic light scattering with a Zetasizer Nano ZS (Malvern
+Instruments) to determine their suitability for crystallization. In the
+presence of 0.2 M NDSB201 nectin-1-EC and nectin-2-EC were
+monodisperse. Initial crystallization trials were performed using a
+Phoenix liquid-handling system (Art Robbins Instruments) at 296 K
+using SaltRx 1, SaltRx 2, 50%(v/v) (half concentration) PEGRx 1,
+50%(v/v) PEGRx 2, 50%(v/v) PEG/Ion 1 and 50%(v/v) PEG/Ion 2.
+The volume of the reservoir solution was 60 ml. The drops consisted
+of 0.2 ml of both the protein and reservoir solution.</p>
+      <p>In the presence of 0.4 M NDSB201, nectin-1-EC and nectin-2-EC
+crystals were obtained using both polyethylene glycol and salt
+conditions as the reservoir. The initial crystallization conditions for
+nectin-1-EC and nectin-2-EC were further refined by changing the
+pH, precipitant concentration and additives. The most promising
+crystals of nectin-1-EC were observed in drops comprised of equal
+volumes of nectin-1-EC solution [20 mM Tris?HCl pH 7.5, 150 mM
+NaCl and 6%(w/v) 1,6-hexanediol] and precipitant solution [50 mM
+citric acid, 50 mM bis-Tris propane and 1?3%(v/v) PEG 3350] at
+296 K (Fig. 2a). Crystals of nectin-1-EC could be obtained even if the
+crystallization conditions contained no NDSB201, and the NDSB201
+did not influence the diffraction quality of the crystals. The most
+promising crystals of nectin-2-EC were observed in drops comprised
+of equal volumes of nectin-2-EC solution (20 mM Tris-HCl pH 9.0,
+150 mM NaCl and 0.35 M NDSD201) and precipitant solution
+2.4. Data collection</p>
+      <p>To improve the diffraction quality of the nectin-1-EC crystals, the
+crystals were subjected to dehydration with increasing concentrations
+of PEG 300. The crystals were transferred in a large number of steps
+from harvesting buffer [20 mM Tris?HCl pH 7.5, 150 mM NaCl,
+6%(w/v) 1,6-hexanediol, 50 mM citric acid, 50 mM bis-Tris propane
+and 5%(v/v) PEG 3350] to harvesting buffer including 25%(v/v) PEG
+300 at 277 K. Before freezing with liquid nitrogen, the crystals were
+equilibrated in the final buffer for 3 d. This procedure markedly
+improved the resolution limit of the crystals from 5 to 2.8 A?.
+The nectin-2-EC crystals were soaked in a cryoprotection solution
+consisting of 20 mM Tris?HCl pH 9.0, 150 mM NaCl, 0.4 M
+NDSB201, 45 mM citric acid, 55 mM bis-Tris propane, 4.0 M sodium
+nitrate and 14%(v/v) ethylene glycol by stepwise transfer at room
+temperature.</p>
+      <p>
+        Diffraction data sets were collected from nectin-1-EC and
+nectin2-EC crystals on the BL44XU beamline at the SPring-8 synchrotron
+facility (Harima, Hyogo, Japan) at 100 K using a DIP6040
+imagingplate detector (MAC Science/Bruker AXS). A total of 60 frames of
+data were collected for nectin-1-EC in three runs with a translation
+of 70 mm along the rotation axis. The nectin-1-EC data-collection
+parameters included a crystal-to-detector distance of 540 mm, an
+oscillation angle of 0.5 and an exposure time of 20 s per frame at a
+wavelength of 0.9000 A? (Fig. 3a). For nectin-2-EC, a total of 70
+frames of data were collected with a crystal-to-detector distance of
+400 mm, an oscillation angle of 0.5 and an exposure time of 2 s per
+frame at a wavelength of 0.9000 A? (Fig. 3b). All data sets were
+processed and scaled with the HKL-2000 program package
+        <xref ref-type="bibr" rid="ref8">(Otwinowski &amp; Minor, 1997)</xref>
+        . Data-collection statistics are summarized in
+Table 1.
+      </p>
+    </sec>
+    <sec id="sec-3">
+      <title>3. Results and discussion</title>
+      <p>The extracellular regions of nectin-1 and nectin-2 fused with a
+C-terminal 6 His tag were expressed as inclusion bodies in E. coli
+BL21 (DE3). After solubilizing the inclusion bodies in 8 M urea,
+supported in part by a Targeted Proteins Research Program (TPRP)
+grant from the Ministry of Education, Culture, Sports, Science and
+Technology (MEXT) of Japan (to MS).</p>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <ref id="ref1">
+        <mixed-citation>
+          <string-name>
+            <surname>Cocchi</surname>
+            ,
+            <given-names>F.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Menotti</surname>
+            ,
+            <given-names>L.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mirandola</surname>
+            ,
+            <given-names>P.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Lopez</surname>
+            ,
+            <given-names>M.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Campadelli-Fiume</surname>
+            ,
+            <given-names>G.</given-names>
+          </string-name>
+          (
+          <year>1998</year>
+          ).
+          <source>J. Virol</source>
+          .
+          <volume>72</volume>
+          ,
+          <fpage>9992</fpage>
+          -
+          <lpage>10002</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref2">
+        <mixed-citation>
+          <source>Collaborative Computational Project, Number</source>
+          <volume>4</volume>
+          (
+          <year>1994</year>
+          ).
+          <source>Acta Cryst. D50</source>
+          ,
+          <fpage>760</fpage>
+          -
+          <lpage>763</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref3">
+        <mixed-citation>
+          <string-name>
+            <surname>Geraghty</surname>
+            ,
+            <given-names>R. J.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Krummenacher</surname>
+            ,
+            <given-names>C.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Cohen</surname>
+            ,
+            <given-names>G. H.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Eisenberg</surname>
+            ,
+            <given-names>R. J.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Spear</surname>
+            ,
+            <given-names>P. G.</given-names>
+          </string-name>
+          (
+          <year>1998</year>
+          ). Science,
+          <volume>280</volume>
+          ,
+          <fpage>1618</fpage>
+          -
+          <lpage>1620</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref4">
+        <mixed-citation>
+          <string-name>
+            <surname>Harris</surname>
+            ,
+            <given-names>T. J.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Tepass</surname>
+            ,
+            <given-names>U.</given-names>
+          </string-name>
+          (
+          <year>2010</year>
+          ).
+          <source>Nature Rev. Mol. Cell Biol</source>
+          .
+          <volume>11</volume>
+          ,
+          <fpage>502</fpage>
+          -
+          <lpage>514</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref5">
+        <mixed-citation>
+          <string-name>
+            <surname>Lopez</surname>
+            ,
+            <given-names>M.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Cocchi</surname>
+            ,
+            <given-names>F.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Menotti</surname>
+            ,
+            <given-names>L.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Avitabile</surname>
+            ,
+            <given-names>E.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Dubreuil</surname>
+            ,
+            <given-names>P.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>CampadelliFiume</surname>
+            ,
+            <given-names>G.</given-names>
+          </string-name>
+          (
+          <year>2000</year>
+          ).
+          <source>J. Virol</source>
+          .
+          <volume>74</volume>
+          ,
+          <fpage>1267</fpage>
+          -
+          <lpage>1274</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref6">
+        <mixed-citation>
+          <string-name>
+            <surname>Ogita</surname>
+            ,
+            <given-names>H.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Rikitake</surname>
+            ,
+            <given-names>Y.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Miyoshi</surname>
+            ,
+            <given-names>J.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Takai</surname>
+            ,
+            <given-names>Y.</given-names>
+          </string-name>
+          (
+          <year>2010</year>
+          ).
+          <source>Proc. Jpn Acad. Ser. B Phys. Biol. Sci</source>
+          .
+          <volume>86</volume>
+          ,
+          <fpage>621</fpage>
+          -
+          <lpage>629</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref7">
+        <mixed-citation>
+          <string-name>
+            <surname>Ogita</surname>
+            ,
+            <given-names>H.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Takai</surname>
+            ,
+            <given-names>Y.</given-names>
+          </string-name>
+          (
+          <year>2006</year>
+          ).
+          <source>IUBMB Life</source>
+          ,
+          <volume>58</volume>
+          ,
+          <fpage>334</fpage>
+          -
+          <lpage>343</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref8">
+        <mixed-citation>
+          <string-name>
+            <surname>Otwinowski</surname>
+            ,
+            <given-names>Z.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Minor</surname>
+            ,
+            <given-names>W.</given-names>
+          </string-name>
+          (
+          <year>1997</year>
+          ).
+          <source>Methods Enzymol</source>
+          .
+          <volume>276</volume>
+          ,
+          <fpage>307</fpage>
+          -
+          <lpage>326</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref9">
+        <mixed-citation>
+          <string-name>
+            <surname>Sakisaka</surname>
+            ,
+            <given-names>T.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Taniguchi</surname>
+            ,
+            <given-names>T.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Nakanishi</surname>
+            ,
+            <given-names>H.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Takahashi</surname>
+            ,
+            <given-names>K.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Miyahara</surname>
+            ,
+            <given-names>M.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ikeda</surname>
+            ,
+            <given-names>W.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Yokoyama</surname>
+            ,
+            <given-names>S.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Peng</surname>
+            ,
+            <given-names>Y.-F.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Yamanishi</surname>
+            ,
+            <given-names>K.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Takai</surname>
+            ,
+            <given-names>Y.</given-names>
+          </string-name>
+          (
+          <year>2001</year>
+          ).
+          <source>J. Virol</source>
+          .
+          <volume>75</volume>
+          ,
+          <fpage>4734</fpage>
+          -
+          <lpage>4743</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref10">
+        <mixed-citation>
+          <string-name>
+            <surname>Takai</surname>
+            ,
+            <given-names>Y.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ikeda</surname>
+            ,
+            <given-names>W.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ogita</surname>
+            ,
+            <given-names>H.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Rikitake</surname>
+            ,
+            <given-names>Y.</given-names>
+          </string-name>
+          (
+          <year>2008</year>
+          ).
+          <source>Annu. Rev. Cell Dev. Biol</source>
+          .
+          <volume>24</volume>
+          ,
+          <fpage>309</fpage>
+          -
+          <lpage>342</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref11">
+        <mixed-citation>
+          <string-name>
+            <surname>Takai</surname>
+            ,
+            <given-names>Y.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Irie</surname>
+            ,
+            <given-names>K.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Shimizu</surname>
+            ,
+            <given-names>K.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Sakisaka</surname>
+            ,
+            <given-names>T.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Ikeda</surname>
+            ,
+            <given-names>W.</given-names>
+          </string-name>
+          (
+          <year>2003</year>
+          ).
+          <source>Cancer Sci</source>
+          .
+          <volume>94</volume>
+          ,
+          <fpage>655</fpage>
+          -
+          <lpage>667</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref12">
+        <mixed-citation>
+          <string-name>
+            <surname>Takai</surname>
+            ,
+            <given-names>Y.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Miyoshi</surname>
+            ,
+            <given-names>J.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ikeda</surname>
+            ,
+            <given-names>W.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Ogita</surname>
+            ,
+            <given-names>H.</given-names>
+          </string-name>
+          (
+          <year>2008</year>
+          ).
+          <source>Nature Rev. Mol. Cell Biol</source>
+          .
+          <volume>9</volume>
+          ,
+          <fpage>603</fpage>
+          -
+          <lpage>615</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref13">
+        <mixed-citation>
+          <string-name>
+            <surname>Warner</surname>
+            ,
+            <given-names>M. S.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Geraghty</surname>
+            ,
+            <given-names>R. J.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Martinez</surname>
+            ,
+            <given-names>W. M.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Montgomery</surname>
+            ,
+            <given-names>R. I.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Whitbeck</surname>
+            ,
+            <given-names>J. C.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Xu</surname>
+            ,
+            <given-names>R.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Eisenberg</surname>
+            ,
+            <given-names>R. J.</given-names>
+          </string-name>
+          , Cohen,
+          <string-name>
+            <given-names>G. H.</given-names>
+            &amp;
+            <surname>Spear</surname>
+          </string-name>
+          ,
+          <string-name>
+            <surname>P. G.</surname>
+          </string-name>
+          (
+          <year>1998</year>
+          ). Virology,
+          <volume>246</volume>
+          ,
+          <fpage>179</fpage>
+          -
+          <lpage>189</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref14">
+        <mixed-citation>
+          <string-name>
+            <surname>Zhang</surname>
+            ,
+            <given-names>P.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mueller</surname>
+            ,
+            <given-names>S.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Morais</surname>
+            ,
+            <given-names>M. C.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Bator</surname>
+            ,
+            <given-names>C. M.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Bowman</surname>
+            ,
+            <given-names>V. D.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Hafenstein</surname>
+            ,
+            <given-names>S.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Wimmer</surname>
+            ,
+            <given-names>E.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Rossmann</surname>
+            ,
+            <given-names>M. G.</given-names>
+          </string-name>
+          (
+          <year>2008</year>
+          ).
+          <source>Proc. Natl Acad. Sci. USA</source>
+          ,
+          <volume>105</volume>
+          ,
+          <fpage>18284</fpage>
+          -
+          <lpage>18289</lpage>
+          .
+        </mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+

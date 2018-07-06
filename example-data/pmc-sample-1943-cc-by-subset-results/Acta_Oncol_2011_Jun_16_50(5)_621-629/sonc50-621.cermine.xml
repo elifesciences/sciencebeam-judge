@@ -1,0 +1,1651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns:xlink="http://www.w3.org/1999/xlink">
+  <front>
+    <journal-meta>
+      <journal-title-group>
+        <journal-title>X.</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0284-186X</issn>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.3109/0284186X.2011.573626</article-id>
+      <title-group>
+        <article-title>Management of cutaneous metastases using electrochemotherapy</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <string-name>LOUISE WICHMANN MATTHIESSEN</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>RICHARD LING CHALMERS</string-name>
+          <xref ref-type="aff" rid="aff3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>DAVID CHRISTOPHER GEORGE SAINSBURY</string-name>
+          <xref ref-type="aff" rid="aff3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>SIVAKUMAR VEERAMANI</string-name>
+          <xref ref-type="aff" rid="aff3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>GARETH KESSELL</string-name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>ALISON CLAIRE HUMPHREYS</string-name>
+          <xref ref-type="aff" rid="aff2">2</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>JANE ELISABETH BOND</string-name>
+          <xref ref-type="aff" rid="aff3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>TOBIAN MUIR</string-name>
+          <xref ref-type="aff" rid="aff3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>JULIE GEHL</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <aff id="aff0">
+          <label>0</label>
+          <institution>Center for Experimental Drug and Gene Electrotransfer (C</institution>
+        </aff>
+        <aff id="aff1">
+          <label>1</label>
+          <institution>Department of Anaesthesia, James Cook University Hospital</institution>
+          ,
+          <addr-line>Middlesbrough</addr-line>
+          ,
+          <country country="UK">UK</country>
+        </aff>
+        <aff id="aff2">
+          <label>2</label>
+          <institution>Department of Oncology, James Cook University Hospital</institution>
+          ,
+          <addr-line>Middlesbrough</addr-line>
+          ,
+          <country country="UK">UK</country>
+        </aff>
+        <aff id="aff3">
+          <label>3</label>
+          <institution>Department of Reconstructive Plastic Surgery, James Cook University Hospital</institution>
+          ,
+          <addr-line>Middlesbrough</addr-line>
+          ,
+          <country country="UK">UK</country>
+        </aff>
+        <aff id="aff4">
+          <label>4</label>
+          <institution>EDGE), Department of Oncology, Copenhagen University Hospital Herlev</institution>
+          ,
+          <country country="DK">Denmark</country>
+        </aff>
+      </contrib-group>
+      <pub-date>
+        <year>2011</year>
+      </pub-date>
+      <volume>573626</volume>
+      <fpage>621</fpage>
+      <lpage>629</lpage>
+      <abstract>
+        <p>Background. Cutaneous metastases may cause considerable discomfort as a consequence of ulceration, oozing, bleeding and pain. Electrochemotherapy has proven to be highly effective in the treatment of cutaneous metastases. Electrochemotherapy utilises pulses of electricity to increase the permeability of the cell membrane and thereby augment the effect of chemotherapy. For the drug bleomycin, the effect is enhanced several hundred-fold, enabling once-only treatment. The primary endpoint of this study is to evaluate the efficacy of electrochemotherapy as a palliative treatment. Methods. This phase II study is a collaboration between two centres, one in Denmark and the other in the UK. Patients with cutaneous metastases of any histology were included. Bleomycin was administered intratumourally or intravenously followed by application of electric pulses to the tumour site. Results. Fifty-two patients were included. Complete and partial response rate was 68% and 18%, respectively, for cutaneous metastases 3 cm and 8% and 23%, respectively, for cutaneous metastases 3 cm. Treatment was well-tolerated by patients, including the elderly, and no serious adverse events were observed. Conclusions. ECT is an efficient and safe treatment and clinicians should not hesitate to use it even in the elderly.</p>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec-1">
+      <title>-</title>
+      <p>
+        A cutaneous metastasis can be defined as ?a
+neoplastic lesion arising from another neoplasm with which
+there is no longer continuity? [
+        <xref ref-type="bibr" rid="ref1">1</xref>
+        ]. Cutaneous
+metastases account for 0.7% to 9% of all metastases [
+        <xref ref-type="bibr" rid="ref2">2</xref>
+        ].
+Breast cancer accounts for 51% of the total cases of
+cutaneous metastases, while malignant melanoma
+accounts for 18% [
+        <xref ref-type="bibr" rid="ref3">3</xref>
+        ].
+      </p>
+      <p>The management of cutaneous metastases often
+presents a challenge for the clinician as they may be
+widespread and may recur after radiotherapy or
+chemotherapy. In some cases, patients may have stable
+disease in sites other than the skin, and clinicians
+may be reluctant to use systemic chemotherapy for
+the skin metastases alone.</p>
+      <p>
+        Electrochemotherapy (ECT) is a rapidly
+emerging and effective treatment option for cutaneous
+metastases from malignant tumours [
+        <xref ref-type="bibr" rid="ref4 ref5 ref6">4?6</xref>
+        ]. ECT uses
+local application of short duration, electric pulses
+directly to the tumour cells via an electrode, causing
+destabilisation of the cell membrane and thereby
+making it transiently permeable
+(electropermeabilisation ? Figure 1) [
+        <xref ref-type="bibr" rid="ref7">7</xref>
+        ]. Bleomycin, a
+chemotherapeutic agent used in the treatment of cancer, is under
+normal conditions unable to freely diffuse through
+the plasma membrane. However,
+electropermeabilisation allows this otherwise poorly permeating agent
+to enter the cell cytosol, thereby greatly increasing
+its concentration within the tumour cell (Figure 2).
+In high concentrations, such as those achieved with
+ECT, bleomycin can cause cell death within a few
+minutes [
+        <xref ref-type="bibr" rid="ref8">8</xref>
+        ]. Preclinical studies have demonstrated a
+300- to 700- fold increase in bleomycin cytotoxicity
+using this method of drug delivery [
+        <xref ref-type="bibr" rid="ref10 ref11 ref9">9?11</xref>
+        ].
+      </p>
+      <p>
+        ECT was originally employed for treatment of
+metastatic head and neck cancer [
+        <xref ref-type="bibr" rid="ref12">12</xref>
+        ] and has since
+been used in the treatment of cutaneous metastases
+from tumours independent of histology [
+        <xref ref-type="bibr" rid="ref13 ref14 ref5">5,13,14</xref>
+        ].
+ECT can be used where surgery is not an option and
+is also efficient in chemotherapy-resistant and
+radiotherapy-resistant lesions [
+        <xref ref-type="bibr" rid="ref15 ref5">5,15</xref>
+        ]. Treatment may
+provide palliation particularly where there is pain or
+bleeding from cutaneous metastases [
+        <xref ref-type="bibr" rid="ref16">16</xref>
+        ]. It is well
+tolerated with few side-effects, allows for immediate
+recovery and can be repeated [
+        <xref ref-type="bibr" rid="ref4 ref5">4,5</xref>
+        ]. In 2006 a
+European study was published (the ESOPE study)
+[
+        <xref ref-type="bibr" rid="ref5">5</xref>
+        ] and with that the standard operating procedures
+[
+        <xref ref-type="bibr" rid="ref17">17</xref>
+        ] which describe the ECT procedures in detail.
+      </p>
+      <p>The present study aims at continuing the
+exploration of ECT as a highly effective treatment in order to
+improve and evaluate its benefits.To this end, we created
+the International Network for Sharing Practice in
+ElectroChemoTherapy (INSPECT) database, the purpose
+of which is to gather, share and publish clinical data and
+experience. This is the first report from this network.</p>
+    </sec>
+    <sec id="sec-2">
+      <title>Patients and methods</title>
+      <sec id="sec-2-1">
+        <title>Study design</title>
+        <p>Patients were recruited consecutively at two
+institutions: Copenhagen University Hospital Herlev,
+Denmark and James Cook University Hospital,
+Middlesbrough, UK. The primary endpoint was
+response rate. Secondary endpoints included safety
+and response rate according to size.</p>
+        <p>Patients at Herlev Hospital with cutaneous
+metastases, for whom no further surgery or conventional
+treatment was feasible, could be offered treatment
+with ECT within the framework of a non-randomised
+phase II study. Approval was granted by the local
+ethics committee and the Danish Medicines Agency.</p>
+        <p>Approval in the UK was granted in 2007 by the
+clinical effectiveness subcommittee for treatment of
+metastatic skin and subcutaneous lesions, palliation
+of bleeding or painful lesions and primary
+treatment of cancers not amenable to surgical excision or
+conventional treatments.</p>
+        <p>Patients fulfilling the inclusion criteria were
+sequentially enrolled and all patients signed informed
+consent before inclusion.</p>
+        <p>Patients eligible for inclusion had histologically
+proven malignant cancer with measurable cutaneous
+or subcutaneous tumour nodules suitable for
+application of electric pulses. Patients had been offered
+standard treatment options, were 18 years old,
+had ECOG performance status 2, had an expected
+life expectancy of at least three months and, where
+appropriate, were using adequate contraception. A
+platelet count 50 mia/l was required, with a
+prothrombin time 40 s and an activated partial
+thromboplastin time in the normal range.</p>
+        <p>Patients were ineligible if they had previously
+had allergic reactions to bleomycin or to any of the
+components required for anaesthesia, if the
+cumulative dose of 250 mg bleomycin/m2 (400.000 IU
+bleomycin/m2) had previously been exceeded, had chronic
+renal dysfunction (serum creatinine 150 ?mol/l) or
+acute lung infection.</p>
+        <p>Follow-up was planned for up to six months.
+Patients who had been started on systemic
+antineoplastic treatment after ECT were excluded from the
+study at that time.</p>
+      </sec>
+      <sec id="sec-2-2">
+        <title>Procedure</title>
+        <p>
+          The ECT sessions were performed based on the
+standard operating procedures for
+electrochemotherapy [
+          <xref ref-type="bibr" rid="ref17">17</xref>
+          ]. Bleomycin was administrated either
+intratumourally (i.t.) or intravenously (i.v). The
+decision to treat either i.t. or i.v. was based on the
+number of cutaneous metastases to be treated and
+the size of the metastases.
+        </p>
+        <p>General anaesthesia, was preferred for multiple
+metastases, large metastases ( 3 cm), metastases
+adhering to the periosteum or situated in sensitive
+regions (e.g. face and scalp), and in accordance with
+patient preference.</p>
+      </sec>
+      <sec id="sec-2-3">
+        <title>Injection of bleomycin</title>
+      </sec>
+      <sec id="sec-2-4">
+        <title>Intratumoural treatment (for small or few cutaneous</title>
+        <p>metastases). Bleomycin was injected into the
+cutaneous metastases according to size. Pulses were
+delivered after administration of the drug (all pulses must
+be administrated within 10 minutes of bleomycin
+injection).</p>
+        <p>
+          Intravenous treatment (for large or many cutaneous
+metastases). Bleomycin was injected intravenously
+(15000 IU/m2 15 U/m2 which is approximately
+equal to 8.5 mg/m2 bleomycin depending on the
+activity of the drug and the manufacturer). Pulses
+were delivered 8?28 minutes following injection
+when bleomycin is known to be present in high
+concentration in the tumour [
+          <xref ref-type="bibr" rid="ref18 ref19">18,19</xref>
+          ].
+        </p>
+      </sec>
+      <sec id="sec-2-5">
+        <title>Anaesthesia</title>
+      </sec>
+      <sec id="sec-2-6">
+        <title>Local anaesthesia (for small or few cutaneous metastases).</title>
+        <p>Lidocaine with epinephrine was injected around the
+metastasis (Figure 1).The electrode was placed in and
+around the metastasis and the pulses administered.</p>
+        <p>Under local anaesthesia, patients do not feel the
+insertion of the electrode needles but do feel a brief
+local muscle contraction upon administration of the
+electrical impulse.</p>
+      </sec>
+      <sec id="sec-2-7">
+        <title>General anaesthesia (for large or many cutaneous</title>
+        <p>
+          metastases). Anaesthesia for electrochemotherapy
+(ECT) was tailored to the patient?s condition, the
+position of the lesions, the extent of treatment and the
+special considerations pertaining to general
+anaesthesia and the use of bleomycin [
+          <xref ref-type="bibr" rid="ref20">20</xref>
+          ].
+        </p>
+        <p>Depending on the clinician?s choice, one of the
+following electrodes was used: 1) Type I electrodes:
+two plates with a 6 mm gap between the plates; 2)
+Type II electrodes: two parallel rows of needles with
+4 mm between the rows; 3) Type III electrodes: a
+hexagonal array of electrodes with 7.9 mm between the
+needles.</p>
+        <p>Electric pulses (eight pulses of 100 ?s duration)
+were delivered using a square wave electroporator
+(IGEA, Carpi, Italy).The applied voltage was 1.3 kV/
+cm for plate electrodes and 1.0 kV/cm for needle
+electrodes, i.e. for the type II needle electrode with
+a 4 mm gap between the needles the applied voltage
+was 400 V. For type I and II electrodes, the pulses
+are applied with 1 Hz or 5 kHz, whereas for type III
+electrodes, pulses can only be applied with 5 kHz.
+Electrodes were single use. The duration of the
+procedure was recorded from the start of the bleomycin
+injection to the completed delivery of the last pulse.
+After ECT, the treated metastases were covered with
+standard dressings where necessary.</p>
+      </sec>
+      <sec id="sec-2-8">
+        <title>Tumour response and safety assessment</title>
+        <p>
+          Evaluation of the tumour response was by
+measurement of the extension or regression of the treated
+metastases. This was documented using digital
+photography. A maximum of seven cutaneous
+metastases per patient were registered as target lesions
+in order not to skew data by inclusion of patients
+with very large numbers of cutaneous metastases.
+The response was registered for each target lesion
+and new cutaneous metastases were not considered
+in response evaluation but could be treated in a
+second ECT session. The response rate was
+evaluated similarly to the Response Evaluation Criteria
+in Solid Tumours (RECIST version 1.0) [
+          <xref ref-type="bibr" rid="ref21">21</xref>
+          ]:
+Complete response (CR) was defined as
+disappearance of the target lesion; partial response (PR) with
+at least 30% decrease in the diameter of the target
+lesion; progressive disease (PD) with at least 20%
+increase in the diameter of the target lesion and
+stable disease (SD) with neither sufficient shrinkage
+to qualify for PR or sufficient increase to qualify for
+PD. In some cases with exophytic ulcerated tumours
+evaluation was not possible due to crust formation
+(Figure 3).
+        </p>
+        <p>Safety was reported in the form of adverse events
+using Common Toxicity Criteria version 3.0. Patients
+were asked if they would potentially agree for another
+session as a measure of how patients felt about the
+treatment procedure.</p>
+      </sec>
+      <sec id="sec-2-9">
+        <title>Statistical consideration</title>
+        <p>Descriptive methods were employed for statistical
+analysis using SPSS 13.0.</p>
+        <p>Patients were followed for six months, but
+excluded from further evaluation if new
+antineoplastic treatment was started within the six months.</p>
+        <p>All patients treated with ECT were included for
+evaluation of efficacy and safety.</p>
+      </sec>
+    </sec>
+    <sec id="sec-3">
+      <title>Results</title>
+      <sec id="sec-3-1">
+        <title>Patient population</title>
+        <p>A total of 52 patients with cutaneous metastases
+were enrolled between June 2007 and April 2010.
+Table I presents patient characteristics at baseline.
+Fifty-one patients underwent
+electrochemotherapy for 196 cutaneous metastases from primarily
+malignant melanoma or breast cancer (Figure 3). In
+one patient with malignant melanoma in the head
+region, treatment was not given due to poor lung
+function.</p>
+        <p>Forty-five patients were evaluable for safety and
+toxicity, and 24 patients with 97 cutaneous metastases
+had a follow-up of 60 days or more. Eleven patients
+received a second treatment with ECT.</p>
+        <p>The median diameter of the cutaneous metastases
+was 12 mm ranging from 1 mm to 200 mm.
+Locations of the cutaneous metastases are presented in
+Table I.</p>
+      </sec>
+      <sec id="sec-3-2">
+        <title>Treatment</title>
+        <p>Treatment data are listed in Table II.</p>
+        <p>Patients treated with i.v. or i.t. administration of
+bleomycin had a median number of three treated
+cutaneous metastases. The median size of the
+cutaneous metastases treated with i.v. bleomycin was
+10 mm (range 1?200 mm) and for i.t. 9 mm (range
+1?50 mm).</p>
+      </sec>
+      <sec id="sec-3-3">
+        <title>Anaesthesia</title>
+        <p>Of the 51 treatments, 28 (55%) were performed
+under general anaesthesia and 23 (45%) were
+performed under local anaesthesia (see Table III). There
+was no statistical difference between number of
+nodules per patient and choice of anaesthesia.</p>
+      </sec>
+      <sec id="sec-3-4">
+        <title>Choice of electrode</title>
+        <p>The electrodes used for treatment were as follows:
+type II electrodes for 119 (61%) of the cutaneous
+metastases; type III electrodes for 47 (24%); type I
+electrodes for 21 (11%); both type I and II electrodes
+for two (1%) and both type II and III electrodes for
+seven (4%).</p>
+      </sec>
+      <sec id="sec-3-5">
+        <title>Duration of procedure</title>
+        <p>Data on duration were available for 42 procedures.</p>
+        <p>The median duration of a treatment session from
+start of bleomycin administration to last pulse
+delivered was 20 min (range 5 min to 1 hour and 9 min)
+for local anaesthesia and 25 min (range 11 min to
+1 hour 27 min) for general anaesthesia (see Table II).</p>
+        <p>Patients Total</p>
+        <p>(N 52)
+1Number of patients at or above a given age.
+2ECOG Eastern Cooperative Oncology Group.
+3Maximum seven metastases per patient registered, for 51 patients.
+4No significant differences among distribution of diagnosis of primary tumour among centres could be observed (p</p>
+      </sec>
+      <sec id="sec-3-6">
+        <title>Treatment response</title>
+        <p>Six patients were lost to follow-up before
+evaluation due to systemic disease progression. Forty five
+patients with 162 treated cutaneous metastases had
+a median follow-up of 79 days (range 8?180),
+and 24 patients with 97 nodules had a follow-up
+60 days. Responses are presented in Table II.</p>
+        <p>For patients with a follow-up 60 days, CR was
+observed in 58 (60%) metastases, PR was observed in
+18 (19%) metastases, SD was observed in 11 (11%)
+metastases and PD in seven (7%) metastases. Response
+was not evaluable in three (3%) metastases.</p>
+      </sec>
+      <sec id="sec-3-7">
+        <title>Safety</title>
+        <p>No serious adverse events (SAE) were observed.</p>
+        <p>Reported adverse events were flu-like symptoms
+one to two days after treatment (five patients, 10%),
+pain in the treated area one to two days after
+treatment (five patients, 10%), ulceration of treated area
+(two patients, 4%), cough (one patient, 2%),
+allergic skin reaction (one patient, 2%) and anxiety (one
+patient, 2%). There was no CTC grade 3 or 4
+toxicity. Most side-effects were seen when treated
+under general anaesthesia with systemic
+administration of bleomycin.
+All Patients (n
+51)</p>
+        <p>All Patients (%)</p>
+        <p>Middlesbrough
+1Data available for 42 patients, the time is from start of chemotherapy administration till the last pulse was given. This means it does not
+include time anaesthesia. One patient with the procedure lasting 1 hour and 9 min was treated in local anaesthesia with i.t. injection of
+bleomycin had three nodules where treatment of the first nodule was finished before the anaesthesia of the next nodule began. One patient
+with the procedure lasting 1 hour and 27 min was treated in general anaesthesia with i.t. injection of bleomycin had seven nodules where
+treatment of the first nodule was finished before injection of bleomycin in the next nodule. This explains why some procedures lasted
+longer than one would expect.
+224 patients with 97 metastases with a follow-up 60 days.
+3Maximum seven metastases per patient registered.</p>
+        <p>Of the 51 patients treated, 46 (90%) would agree to
+another treatment, four (8%) would not agree to another
+treatment and one patient is not accounted for.</p>
+      </sec>
+    </sec>
+    <sec id="sec-4">
+      <title>Discussion</title>
+      <sec id="sec-4-1">
+        <title>Cutaneous metastases: A challenge in cancer treatment</title>
+        <p>Cutaneous metastases or recurrent malignant disease
+in the skin, particularly after treatment of malignant
+melanoma, head and neck carcinoma or breast
+cancer, is often difficult to manage. Patients have
+often received multimodal treatment with surgery,
+radiotherapy and chemotherapy and are faced with
+obviously progressing disease. The uncontrolled
+cutaneous metastases can, in many ways, adversely
+affect self-esteem and body image. The cutaneous
+metastases and the treatment of the cutaneous
+metastases will seldom affect life expectancy, but may be
+very important for the patient?s quality of life.</p>
+      </sec>
+      <sec id="sec-4-2">
+        <title>Electrochemotherapy</title>
+        <p>
+          Electrochemotherapy is a method where the
+combination of electric pulses and bleomycin increases the
+cytotoxicity of bleomycin 300?700 times [
+          <xref ref-type="bibr" rid="ref10 ref11 ref9">9?11</xref>
+          ].When
+electric pulses are delivered to tissue in the presence of
+bleomycin, the cell membrane becomes permeable and
+bleomycin enters the cell where it is trapped.The large
+increase in bleomycin cytotoxicity makes it possible to
+do ?once-only? treatment suitable for the palliative
+patient. The clinical effectiveness of ECT was first
+demonstrated in head and neck squamous cell tumour
+nodules in 1991 [
+          <xref ref-type="bibr" rid="ref22">22</xref>
+          ]. Subsequent clinical investigation
+has shown that ECT using bleomycin is also a feasible
+and effective treatment for cutaneous and
+subcutaneous metastases of other malignancies [
+          <xref ref-type="bibr" rid="ref14">14</xref>
+          ].
+        </p>
+        <p>
+          The ESOPE study in 2006 [
+          <xref ref-type="bibr" rid="ref5">5</xref>
+          ] produced
+standard operating procedures for ECT treatment
+(including dosage, pulse parameters, electric pulse
+generators and electrodes), pain control and
+indications for treatment. The ESOPE study demonstrated
+that electrochemotherapy is an easy, highly effective
+and safe treatment for small ( 3 cm) cutaneous or
+subcutaneous metastases of various malignancies.
+The objective response rate after one treatment
+was 85%. Similar results have been demonstrated
+by Campana et al. [
+          <xref ref-type="bibr" rid="ref13">13</xref>
+          ] and additionally by many
+case-reports and smaller studies [
+          <xref ref-type="bibr" rid="ref23 ref24 ref25">23?25</xref>
+          ].
+        </p>
+      </sec>
+      <sec id="sec-4-3">
+        <title>Electrochemotherapy in routine use</title>
+        <p>In the present study we have tried to manage
+cutaneous metastases with ECT as a routine procedure in
+two cancer centres. The primary endpoint of this
+study was response rate.</p>
+        <p>
+          Fifty one patients from Denmark and the UK
+were treated for 192 cutaneous metastases with
+ECT ? the majority with either malignant melanoma
+or breast cancer. This is in agreement with breast
+cancer being the most common malignancy with
+cutaneous metastases in women and malignant
+melanoma being the most common in men [
+          <xref ref-type="bibr" rid="ref3">3</xref>
+          ].
+        </p>
+        <p>ECT treatment in this study was provided as a
+palliative procedure to patients with performance status
+2. A broad spectrum of patients was included, which
+is reflected in six patients lost to follow-up before any
+evaluation and only 24 patients having a follow-up 60
+days. Some patients travelled long distances to reach the
+centre offering ECT which hindered follow-up, and
+some patients had systemic progression during follow-up
+and were offered other antineoplastic treatment. These
+factors may explain the relative high rate of patients lost
+to follow-up before any evaluation and only 47% of
+patients having a follow-up period 60 days.</p>
+        <p>
+          The classic RECIST criteria [
+          <xref ref-type="bibr" rid="ref21">21</xref>
+          ] were unsuitable
+as tumour assessment in evaluation of ECT treatment
+as RECIST includes measurable lesions in other organs
+if present, a minimum size of 1 cm and a maximum
+five lesions per organ. Also the aim of ECT is local and
+not systemic control. Instead, the definitions of CR,
+PR, PD and SD from RECIST were adapted and
+seven cutaneous metastases were registered as target
+lesions. This seems a feasible way to evaluate ECT.
+        </p>
+        <p>
+          In this study, objective response rate (OR) for
+patients with a follow-up period of 60 days was 86%
+for cutaneous metastases 3 cm and 31% for
+cutaneous metastases 3 cm. The metastases were divided
+into smaller or larger than 3 cm to enable comparison
+with previous studies. The response rate for the
+cutaneous metastases 3 cm is similar to the ESOPE [
+          <xref ref-type="bibr" rid="ref5">5</xref>
+          ]
+and other studies [
+          <xref ref-type="bibr" rid="ref13 ref23 ref24">13,23,24</xref>
+          ], whereas for larger
+metastases, the OR is considerably lower, which is in
+agreement with previous observations [
+          <xref ref-type="bibr" rid="ref13">13</xref>
+          ]. In patients
+with large volume disease, the purpose is not
+necessarily to eradicate the cutaneous metastases, but to
+obtain palliative relief in terms of decreased odour,
+exudate and bleeding. Therefore, SD can be the aim
+of ECT treatment for large volume disease. However,
+in the management of small cutaneous metastases,
+control and disappearance of cutaneous metastases
+can be the aim of treatment. Due to the low incidence
+of complications, treatment can be repeated several
+times in order maintain local control or obtain control
+if not achieved by the first treatment. In this study 11
+of the 51 patients were resubmitted for treatment,
+either due to new metastases or progression of
+previously treated metastases, with no SAE?s observed.
+        </p>
+      </sec>
+      <sec id="sec-4-4">
+        <title>ECT and its place in oncological practice</title>
+        <p>For patients with cutaneous metastases, local control
+during their remaining life period is the goal of
+treatment. Regional and local techniques such as palliative
+surgery, re-irradiation, hyperthermia, isolated limb
+perfusion and isolated limb infusion can be offered to
+patients with cutaneous metastases in order to provide
+local symptom control. When offering treatment to
+patients, the risk of complications and toxicity should
+always be carefully addressed and the likely benefit
+should always be compared with the risks to the patient.
+Electrochemotherapy offers a minimally invasive local
+treatment with swift symptomatic relief and few
+sideeffects. ECT can also, as shown in this study with 48%
+of patients being 70 years, be offered to elderly patients
+for whom other treatments may not be a possibility.</p>
+        <p>In this study, treatment was performed at two
+different centres ? a department of plastic surgery
+and a department of oncology ? with similar results.
+This demonstrates that the treatment functions
+well in different types of units. ECT may easily be
+implemented as limited training is needed.</p>
+      </sec>
+    </sec>
+    <sec id="sec-5">
+      <title>Conclusion</title>
+      <p>In conclusion, our results in concordance with
+previous studies suggest ECT is an efficient treatment that
+may improve quality of life in patients with
+metastatic disease and clinicians should not hesitate to use
+it even for elderly patients. ECT is simple to
+administer, and can therefore be implemented by smaller
+hospital units with resultant benefits for patients.</p>
+      <p>In our two centres, we concurrently found ECT
+to be an excellent treatment choice for the patient
+suffering from cutaneous metastasis where other
+treatments have failed.</p>
+      <p>We would recommend that more centres offer
+ECT and that referral for this once-only and simple
+treatment should be considered.</p>
+    </sec>
+    <sec id="sec-6">
+      <title>Acknowledgements</title>
+      <p>Julie Gehl is a research fellow of the Royal Swedish
+Academy, supported by the Acta Oncologica
+Foundation. Igea (Capri, Italy) is running the INSPECT
+database, but the database is controlled by a steering
+committee independent of IGEA. Fransesca de
+Terlizzi from IGEA should be thanked for her help with
+maintaining the database and doing the data extracts.
+There is no conflict of interest to be declared.
+Declaration of interest: The authors report no
+conflicts of interest. The authors alone are responsible
+for the content and writing of the paper.</p>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <ref id="ref1">
+        <mixed-citation>
+          [1]
+          <string-name>
+            <surname>Schwartz</surname>
+            <given-names>RA.</given-names>
+          </string-name>
+          <article-title>Cutaneous metastatic disease</article-title>
+          .
+          <source>J Am Acad Dermatol</source>
+          <year>1995</year>
+          ;
+          <volume>33</volume>
+          :
+          <fpage>161</fpage>
+          -
+          <lpage>82</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref2">
+        <mixed-citation>
+          [2]
+          <string-name>
+            <surname>Rolz-Cruz</surname>
+            <given-names>G</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kim</surname>
+            <given-names>CC</given-names>
+          </string-name>
+          .
+          <article-title>Tumor invasion of the skin</article-title>
+          .
+          <source>Dermatol Clin</source>
+          <year>2008</year>
+          ;
+          <volume>26</volume>
+          :
+          <fpage>89</fpage>
+          -
+          <lpage>102</lpage>
+          , viii.
+        </mixed-citation>
+      </ref>
+      <ref id="ref3">
+        <mixed-citation>
+          [3]
+          <string-name>
+            <surname>Lookingbill</surname>
+            <given-names>DP</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Spangler</surname>
+            <given-names>N</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Helm</surname>
+            <given-names>KF</given-names>
+          </string-name>
+          .
+          <article-title>Cutaneous metastases in patients with metastatic carcinoma: A retrospective study of 4020 patients</article-title>
+          .
+          <source>J Am Acad Dermatol</source>
+          <year>1993</year>
+          ;
+          <volume>29</volume>
+          :
+          <fpage>228</fpage>
+          -
+          <lpage>36</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref4">
+        <mixed-citation>
+          [4]
+          <string-name>
+            <surname>Heller</surname>
+            <given-names>R</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Jaroszeski</surname>
+            <given-names>MJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Reintgen</surname>
+            <given-names>DS</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Puleo</surname>
+            <given-names>CA</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>DeConti</surname>
+            <given-names>RC</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gilbert</surname>
+            <given-names>RA</given-names>
+          </string-name>
+          , et al.
+          <article-title>Treatment of cutaneous and subcutaneous tumors with electrochemotherapy using intralesional bleomycin</article-title>
+          .
+          <source>Cancer</source>
+          <year>1998</year>
+          ;
+          <volume>83</volume>
+          :
+          <fpage>148</fpage>
+          -
+          <lpage>57</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref5">
+        <mixed-citation>
+          [5]
+          <string-name>
+            <surname>Marty</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Sersa</surname>
+            <given-names>G</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Garbay</surname>
+            <given-names>JR</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gehl</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Collins</surname>
+            <given-names>CG</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Snoj</surname>
+            <given-names>M</given-names>
+          </string-name>
+          , et al.
+          <article-title>Electrochemotherapy, An easy, highly effective and safe treatment of cutaneous and subcutaneous metastases: Results of ESOPE (European Standard Operating Procedures of Electrochemotherapy) study</article-title>
+          .
+          <source>EJC Supplements</source>
+          <year>2006</year>
+          ;
+          <volume>4</volume>
+          :
+          <fpage>3</fpage>
+          -
+          <lpage>13</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref6">
+        <mixed-citation>
+          [6]
+          <string-name>
+            <surname>Mir</surname>
+            <given-names>LM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Glass</surname>
+            <given-names>LF</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Sersa</surname>
+            <given-names>G</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Teissie</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Domenge</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Miklavcic</surname>
+            <given-names>D</given-names>
+          </string-name>
+          , et al.
+          <article-title>Effective treatment of cutaneous and subcutaneous malignant tumours by electrochemotherapy</article-title>
+          .
+          <source>Br J Cancer</source>
+          <year>1998</year>
+          ;
+          <volume>77</volume>
+          :
+          <fpage>2336</fpage>
+          -
+          <lpage>42</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref7">
+        <mixed-citation>
+          [7]
+          <string-name>
+            <surname>Gehl</surname>
+            <given-names>J.</given-names>
+          </string-name>
+          <string-name>
+            <surname>Electroporation</surname>
+          </string-name>
+          <article-title>: Theory and methods, perspectives for drug delivery, gene therapy and research</article-title>
+          .
+          <source>Acta Physiol Scand</source>
+          <year>2003</year>
+          ;
+          <volume>177</volume>
+          :
+          <fpage>437</fpage>
+          -
+          <lpage>47</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref8">
+        <mixed-citation>
+          [8]
+          <string-name>
+            <surname>Tounekti</surname>
+            <given-names>O</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Pron</surname>
+            <given-names>G</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Belehradek</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Jr.</surname>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mir</surname>
+            <given-names>LM</given-names>
+          </string-name>
+          .
+          <article-title>Bleomycin, an apoptosis-mimetic drug that induces two types of cell death depending on the number of molecules internalized</article-title>
+          .
+          <source>Cancer Res</source>
+          <year>1993</year>
+          ;
+          <volume>53</volume>
+          :
+          <fpage>5462</fpage>
+          -
+          <lpage>9</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref9">
+        <mixed-citation>
+          [9]
+          <string-name>
+            <surname>Gehl</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Skovsgaard</surname>
+            <given-names>T</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mir</surname>
+            <given-names>LM</given-names>
+          </string-name>
+          .
+          <article-title>Enhancement of cytotoxicity by electropermeabilization: An improved method for screening drugs</article-title>
+          .
+          <source>Anticancer Drugs</source>
+          <year>1998</year>
+          ;
+          <volume>9</volume>
+          :
+          <fpage>319</fpage>
+          -
+          <lpage>25</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref10">
+        <mixed-citation>
+          [10]
+          <string-name>
+            <surname>Orlowski</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Belehradek Jr</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Paoletti</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mir</surname>
+            <given-names>LM</given-names>
+          </string-name>
+          .
+          <article-title>Transient electropermeabilization of cells in culture. Increase of the cytotoxicity of anticancer drugs</article-title>
+          .
+          <source>Biochem Pharmacol</source>
+          <year>1988</year>
+          ;
+          <volume>37</volume>
+          :
+          <fpage>4727</fpage>
+          -
+          <lpage>33</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref11">
+        <mixed-citation>
+          [11]
+          <string-name>
+            <surname>Jaroszeski</surname>
+            <given-names>MJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Dang</surname>
+            <given-names>V</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Pottinger</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Hickey</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gilbert</surname>
+            <given-names>R</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Heller</surname>
+            <given-names>R</given-names>
+          </string-name>
+          .
+          <article-title>Toxicity of anticancer agents mediated by electroporation in vitro</article-title>
+          .
+          <source>Anticancer Drugs</source>
+          <year>2000</year>
+          ;
+          <volume>11</volume>
+          :
+          <fpage>201</fpage>
+          -
+          <lpage>8</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref12">
+        <mixed-citation>
+          [12]
+          <string-name>
+            <surname>Belehradek</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Domenge</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Luboinski</surname>
+            <given-names>B</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Orlowski</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Belehradek</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Jr.</surname>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mir</surname>
+            <given-names>LM</given-names>
+          </string-name>
+          .
+          <article-title>Electrochemotherapy, a new antitumor treatment. First clinical phase I-II trial</article-title>
+          .
+          <source>Cancer</source>
+          <year>1993</year>
+          ;
+          <volume>72</volume>
+          :
+          <fpage>3694</fpage>
+          -
+          <lpage>700</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref13">
+        <mixed-citation>
+          [13]
+          <string-name>
+            <surname>Campana</surname>
+            <given-names>LG</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mocellin</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Basso</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Puccetti</surname>
+            <given-names>O</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>De Salvo</surname>
+            <given-names>GL</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Chiarion-Sileni</surname>
+            <given-names>V</given-names>
+          </string-name>
+          , et al.
+          <article-title>Bleomycin-based electrochemotherapy: Clinical outcome from a single institution's experience with 52 patients</article-title>
+          .
+          <source>Ann Surg Oncol</source>
+          <year>2009</year>
+          ;
+          <volume>16</volume>
+          :
+          <fpage>191</fpage>
+          -
+          <lpage>9</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref14">
+        <mixed-citation>
+          [14]
+          <string-name>
+            <surname>Gothelf</surname>
+            <given-names>A</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mir</surname>
+            <given-names>LM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gehl</surname>
+            <given-names>J</given-names>
+          </string-name>
+          .
+          <article-title>Electrochemotherapy: Results of cancer treatment using enhanced delivery of bleomycin by electroporation</article-title>
+          .
+          <source>Cancer Treat Rev</source>
+          <year>2003</year>
+          ;
+          <volume>29</volume>
+          :
+          <fpage>371</fpage>
+          -
+          <lpage>87</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref15">
+        <mixed-citation>
+          [15]
+          <string-name>
+            <surname>Rodriguez-Cuevas</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Barroso-Bravo</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Manza-Estrada</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Cristobal-Martinez</surname>
+            <given-names>L</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gonzalez-Rodriguez</surname>
+            <given-names>E.</given-names>
+          </string-name>
+          <article-title>Electrochemotherapy in primary and metastatic skin tumors: Phase II trial using intralesional bleomycin</article-title>
+          .
+          <source>Arch Med Res</source>
+          <year>2001</year>
+          ;
+          <volume>32</volume>
+          :
+          <fpage>273</fpage>
+          -
+          <lpage>6</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref16">
+        <mixed-citation>
+          [16]
+          <string-name>
+            <surname>Gehl</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Geertsen</surname>
+            <given-names>PF</given-names>
+          </string-name>
+          .
+          <article-title>Efficient palliation of haemorrhaging malignant melanoma skin metastases by electrochemotherapy</article-title>
+          .
+          <source>Melanoma Res</source>
+          <year>2000</year>
+          ;
+          <volume>10</volume>
+          :
+          <fpage>585</fpage>
+          -
+          <lpage>9</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref17">
+        <mixed-citation>
+          [17]
+          <string-name>
+            <surname>Mir</surname>
+            <given-names>LM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gehl</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Sersa</surname>
+            <given-names>G</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Collins</surname>
+            <given-names>CG</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Garbay</surname>
+            <given-names>JR</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Billard</surname>
+            <given-names>V</given-names>
+          </string-name>
+          , et al.
+          <article-title>Standard operating procedures of the electrochemotherapy: Instructions for the use of bleomycin or cisplatin administered either systemically or locally and electric pulses delivered by the CliniporatorTM by means of invasive or non-invasive electrodes</article-title>
+          .
+          <source>EJC Supplements</source>
+          <year>2006</year>
+          ;
+          <volume>4</volume>
+          :
+          <fpage>14</fpage>
+          -
+          <lpage>25</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref18">
+        <mixed-citation>
+          [18]
+          <string-name>
+            <surname>Domenge</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Orlowski</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Luboinski</surname>
+            <given-names>B</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>De</surname>
+            <given-names>BT</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Schwaab</surname>
+            <given-names>G</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Belehradek</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Jr.</surname>
+          </string-name>
+          , et al.
+          <article-title>Antitumor electrochemotherapy: New advances in the clinical protocol</article-title>
+          .
+          <source>Cancer</source>
+          <year>1996</year>
+          ;
+          <volume>77</volume>
+          :
+          <fpage>956</fpage>
+          -
+          <lpage>63</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref19">
+        <mixed-citation>
+          [19]
+          <string-name>
+            <surname>Hall</surname>
+            <given-names>SW</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Strong</surname>
+            <given-names>JE</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Broughton</surname>
+            <given-names>A</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Frazier</surname>
+            <given-names>ML</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Benjamin</surname>
+            <given-names>RS</given-names>
+          </string-name>
+          .
+          <article-title>Bleomycin clinical pharmacology by radioimmunoassay</article-title>
+          .
+          <source>Cancer Chemother Pharmacol</source>
+          <year>1982</year>
+          ;
+          <volume>9</volume>
+          :
+          <fpage>22</fpage>
+          -
+          <lpage>5</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref20">
+        <mixed-citation>
+          [20]
+          <string-name>
+            <surname>Mathes</surname>
+            <given-names>DD</given-names>
+          </string-name>
+          .
+          <article-title>Bleomycin and hyperoxia exposure in the operating room</article-title>
+          .
+          <source>Anesth Analg</source>
+          <year>1995</year>
+          ;
+          <volume>81</volume>
+          :
+          <fpage>624</fpage>
+          -
+          <lpage>9</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref21">
+        <mixed-citation>
+          [21]
+          <string-name>
+            <surname>Therasse</surname>
+            <given-names>P</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Arbuck</surname>
+            <given-names>SG</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Eisenhauer</surname>
+            <given-names>EA</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Wanders</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kaplan</surname>
+            <given-names>RS</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Rubinstein</surname>
+            <given-names>L</given-names>
+          </string-name>
+          , et al.
+          <article-title>New guidelines to evaluate the response to treatment in solid tumors</article-title>
+          .
+          <source>European Organization for Research and Treatment of Cancer</source>
+          ,
+          <article-title>National Cancer Institute of the United States, National Cancer Institute of Canada</article-title>
+          .
+          <source>J Natl Cancer Inst</source>
+          <year>2000</year>
+          ;
+          <volume>92</volume>
+          :
+          <fpage>205</fpage>
+          -
+          <lpage>16</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref22">
+        <mixed-citation>
+          [22]
+          <string-name>
+            <surname>Mir</surname>
+            <given-names>LM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Belehradek</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Domenge</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Orlowski</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Poddevin</surname>
+            <given-names>B</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Belehradek</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Jr.</surname>
+          </string-name>
+          , et al. [
+          <article-title>Electrochemotherapy, a new antitumor treatment: first clinical trial]</article-title>
+          .
+          <string-name>
+            <surname>C R Acad Sci</surname>
+            <given-names>III</given-names>
+          </string-name>
+          <year>1991</year>
+          ;
+          <volume>313</volume>
+          :
+          <fpage>613</fpage>
+          -
+          <lpage>8</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref23">
+        <mixed-citation>
+          [23]
+          <string-name>
+            <surname>Quaglino</surname>
+            <given-names>P</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mortera</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Osella-Abate</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Barberis</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Illengo</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Rissone</surname>
+            <given-names>M</given-names>
+          </string-name>
+          , et al.
+          <article-title>Electrochemotherapy with intravenous bleomycin in the local treatment of skin melanoma metastases</article-title>
+          .
+          <source>Ann Surg Oncol</source>
+          <year>2008</year>
+          ;
+          <volume>15</volume>
+          :
+          <fpage>2215</fpage>
+          -
+          <lpage>22</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref24">
+        <mixed-citation>
+          [24]
+          <string-name>
+            <surname>Tijink</surname>
+            <given-names>BM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>De</surname>
+            <given-names>BR</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Van Dongen</surname>
+            <given-names>GA</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Leemans</surname>
+            <given-names>CR</given-names>
+          </string-name>
+          .
+          <article-title>How we do it: Chemo-electroporation in the head and neck for otherwise untreatable patients</article-title>
+          .
+          <source>Clin Otolaryngol</source>
+          <year>2006</year>
+          ;
+          <volume>31</volume>
+          :
+          <fpage>447</fpage>
+          -
+          <lpage>51</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref25">
+        <mixed-citation>
+          [25]
+          <string-name>
+            <surname>Larkin</surname>
+            <given-names>JO</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Collins</surname>
+            <given-names>CG</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Aarons</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Tangney</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Whelan</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>O'Reily S</surname>
+          </string-name>
+          , et al.
+          <article-title>Electrochemotherapy: Aspects of preclinical development and early clinical experience</article-title>
+          .
+          <source>Ann Surg</source>
+          <year>2007</year>
+          ;
+          <volume>245</volume>
+          :
+          <fpage>469</fpage>
+          -
+          <lpage>79</lpage>
+          .
+        </mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+

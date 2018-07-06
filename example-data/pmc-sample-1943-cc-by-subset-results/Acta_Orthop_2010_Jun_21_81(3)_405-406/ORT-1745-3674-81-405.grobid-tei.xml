@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-06T16:41+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Resection arthroplasty for luxation of the manubrio-sternal joint in rheumatoid arthritis-a case report</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+				<date type="published" when="2010">2010</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Marloes</forename><forename type="middle">W J L</forename><surname>Schmitz</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Maarten</forename><forename type="middle">C</forename><surname>De Waal Malefijt</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hedwig</forename><forename type="middle">A</forename></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">M</forename><surname>Van Heereveld</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Rheumatology</orgName>
+								<orgName type="institution">Radboud University Nijmegen Medical Centre</orgName>
+								<address>
+									<country key="NL">the Netherlands</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">Departments of 1 Orthopaedics</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Resection arthroplasty for luxation of the manubrio-sternal joint in rheumatoid arthritis-a case report</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Acta Orthopaedica</title>
+						<imprint>
+							<biblScope unit="volume">81</biblScope>
+							<biblScope unit="issue">3</biblScope>
+							<biblScope unit="page" from="405" to="406"/>
+							<date type="published" when="2010">2010</date>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.3109/17453674.2010.480940</idno>
+					<note type="submission">Submitted 09-09-25. Accepted 09-11-02</note>
+					<note>405 Open Access -This article is distributed under the terms of the Creative Commons Attribution Noncommercial License which permits any noncommercial use, distribution, and reproduction in any medium, provided the source is credited.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract/>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>In 1950, Bogdan and Clark first described 5 cases of painful rheumatoid involvement of the MSJ. In 2 cases, the symptoms disappeared spontaneously after just 1 month. In 1 case, the pain was relieved by aspirin and in the other 2 cases no treat- ment was mentioned. <ref type="bibr" target="#b3">In 1979</ref><ref type="bibr" target="#b3">, Rapoport et al. (1979</ref> described an RA patient with a painful anterior subluxation of the sternal body on the manubrium. No treatment was discussed, how- ever. In 1981, Wiseman described a patient with rheumatoid arthritis with posterior dislocation of the manubrium on the sternum, and pointed out that complaints in this area could be the result of a dislocation. <ref type="bibr" target="#b0">Khong and Rooney (1982)</ref> reviewed approximately 400 patients with classical RA. 10 of them had a subluxation of the MSJ, all of whom had substantial swelling over the MSJ with crepitus and deformity. Erosions and subluxation were found on lateral radiographs of the sternum in all 10 cases. The authors referred to <ref type="bibr" target="#b2">Laitinen et al. (1970)</ref> and <ref type="bibr" target="#b1">Kormano (1970)</ref> who had also reported that the MSJ is often involved in RA, but seldom leads to significant clinical problems. They did not mention the exact symptoms of the patients with subluxation of the MSJ, and nothing was written about the patients' desire for treatment of their symptoms, if this should be available. <ref type="bibr" target="#b3">Rapoport et al. (1979)</ref>, <ref type="bibr" target="#b7">Holt and Rooney (1980)</ref>, <ref type="bibr" target="#b4">Wiseman (1981)</ref>, <ref type="bibr" target="#b0">Khong and Rooney (1982)</ref>, and <ref type="bibr" target="#b8">Kelly et al. (1986)</ref> described 12 RA patients in total with thoracic kyphosis and MSJ dislo- cation. In the patients they described, 11 had severe kyphosis- as in our patient. <ref type="bibr" target="#b8">Kelly et al. (1986)</ref> described the anatomical development of MSJ as the reason that it can be involved in RA, and described the role of kyphosis in transmitting force via the first rib to the manubrium, which can lead to dislocation.</p></div>		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Manubriosternal joint subluxation in rheumatoid arthritis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T K</forename><surname>Khong</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">J</forename><surname>Rooney</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Reumatol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="712" to="717" />
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">A micrographic an histological study of the manubrio-sternal joint in rheumatoid arthritis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Kormano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Rheumatol Scand</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="47" to="59" />
+			<date type="published" when="1970" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Involvement of the manubrio-sternal articulation in rheumatoid arthritis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Laitinen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Saksanen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Suoranta</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Rheumatol Scand</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="40" to="46" />
+			<date type="published" when="1970" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Manubrio-sternal joint subluxation in rheumatiod arthritis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R J</forename><surname>Rapoport</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G F</forename><surname>Carrera</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Kozin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Reumatol</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page" from="1" to="74" />
+			<date type="published" when="1979" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Dislocation of the manubriosternal joint in rheumatoid arthritis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Wiseman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann Rheum Dis</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="307" to="315" />
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<monogr>
+		<title level="m" type="main">We have not found any reports on the treatment of symptomatic MSJ luxation</title>
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Manubrio-sternal joint in rheumatoid arthritis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Bogdan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Clark</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Br Med J</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page" from="1361" to="1363" />
+			<date type="published" when="1950" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Manubriosternal joint subluxation in rheumatoid arthritis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">E</forename><surname>Holt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">J</forename><surname>Rooney</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Rheumatol</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="260" to="262" />
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Manubriosternal joint dislocation in rheumatoid arthritis: the role of thoracic kyphosis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M C</forename><surname>Kelly</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N D</forename><surname>Hopkinson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Zaphiropoulos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann Rheum Dis</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="345" to="353" />
+			<date type="published" when="1986" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>
