@@ -20,10 +20,26 @@ from sciencebeam_judge.evaluation_utils import (
   combine_and_compact_scores_by_scoring_method,
   summarise_results_by_scoring_method,
   scoring_method_as_top_level_key,
-  comma_separated_str_to_list
+  comma_separated_str_to_list,
+  ScoreMeasures
 )
 
 flatten = lambda l: [item for sublist in l for item in sublist]
+
+HEADER_BY_SCORE_MEASURE = {
+  ScoreMeasures.EXACT: (
+    "======= Strict Matching ======= (exact matches)"
+  ),
+  ScoreMeasures.SOFT: (
+    "======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)"
+  ),
+  ScoreMeasures.LEVENSHTEIN: (
+    "==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)"
+  ),
+  ScoreMeasures.RATCLIFF_OBERSHELP: (
+    "= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)"
+  )
+}
 
 def get_logger():
   return logging.getLogger(__name__)
@@ -125,51 +141,28 @@ def format_summary_by_scoring_method(scores_by_scoring_method, keys):
       'invalid scores_by_scoring_method, expected "exact", but had: %s' %
       scores_by_scoring_method.keys()
     )
-  return\
-  """
-  ======= Strict Matching ======= (exact matches)
+  score_outputs = []
+  score_measures = [
+    ScoreMeasures.EXACT, ScoreMeasures.SOFT,
+    ScoreMeasures.LEVENSHTEIN, ScoreMeasures.RATCLIFF_OBERSHELP
+  ]
+  for measure in score_measures:
+    if measure in scores_by_scoring_method:
+      score_outputs.append(
+        """
+  {header}
 
   ===== Field-level results =====
 
-  {exact_results}
-
-  ======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
-
-  ===== Field-level results =====
-
-  {soft_results}
-
-  ==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
-
-  ===== Field-level results =====
-
-  {levenshtein_results}
-
-  = Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
-
-  ===== Field-level results =====
-
-  {ratcliff_obershelp_results}
-
-
-  """.format(
-    exact_results=format_summarised_results(
-      scores_by_scoring_method['exact'],
-      keys
-    ),
-    soft_results=format_summarised_results(
-      scores_by_scoring_method['soft'],
-      keys
-    ),
-    levenshtein_results=format_summarised_results(
-      scores_by_scoring_method['levenshtein'],
-      keys
-    ),
-    ratcliff_obershelp_results=format_summarised_results(
-      scores_by_scoring_method['ratcliff_obershelp'],
-      keys
-    )
-  )
+  {results}
+        """.format(
+        header=HEADER_BY_SCORE_MEASURE[measure],
+        results=format_summarised_results(
+          scores_by_scoring_method[measure],
+          keys
+        ).rstrip()
+      ))
+  return "\n\n".join(score_outputs)
 
 def summarise_results(results, keys):
   return format_summary_by_scoring_method(
