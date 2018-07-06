@@ -5,14 +5,16 @@
 
                  label   accuracy  precision     recall         f1
 
-            abstract      88.52      25.00      22.22      23.53
-             authors      93.44      60.00      60.00      60.00
-        first_author      96.72      80.00      80.00      80.00
-            keywords      96.72     100.00      66.67      80.00
-               title      93.44      60.00      60.00      60.00
+            abstract      92.05      25.00      22.22      23.53
+     author_surnames      95.45      60.00      60.00      60.00
+first_author_surname      97.73      80.00      80.00      80.00
+   author_full_names      94.32      50.00      50.00      50.00
+first_author_full_name      97.73      80.00      80.00      80.00
+            keywords      97.73     100.00      66.67      80.00
+               title      95.45      60.00      60.00      60.00
 
-          all fields      93.77      61.90      57.78      59.77      (micro average)
-               93.77      65.00      57.78      60.71 (macro average)
+          all fields      95.78      62.90      60.00      61.42      (micro average)
+               95.78      65.00      59.84      61.93 (macro average)
 
   ======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
 
@@ -20,14 +22,16 @@
 
                  label   accuracy  precision     recall         f1
 
-            abstract      88.52      25.00      22.22      23.53
-             authors      93.44      60.00      60.00      60.00
-        first_author      96.72      80.00      80.00      80.00
-            keywords      96.72     100.00      66.67      80.00
-               title      93.44      60.00      60.00      60.00
+            abstract      91.86      25.00      22.22      23.53
+     author_surnames      95.35      60.00      60.00      60.00
+first_author_surname      97.67      80.00      80.00      80.00
+   author_full_names      96.51      70.00      70.00      70.00
+first_author_full_name      97.67      80.00      80.00      80.00
+            keywords      97.67     100.00      66.67      80.00
+               title      95.35      60.00      60.00      60.00
 
-          all fields      93.77      61.90      57.78      59.77      (micro average)
-               93.77      65.00      57.78      60.71 (macro average)
+          all fields      96.01      66.13      63.08      64.57      (micro average)
+               96.01      67.86      62.70      64.79 (macro average)
 
   ==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
 
@@ -35,14 +39,16 @@
 
                  label   accuracy  precision     recall         f1
 
-            abstract      89.66      37.50      33.33      35.29
-             authors      94.83      70.00      70.00      70.00
-        first_author      96.55      80.00      80.00      80.00
-            keywords      96.55     100.00      66.67      80.00
-               title      94.83      70.00      70.00      70.00
+            abstract      92.68      37.50      33.33      35.29
+     author_surnames      96.34      70.00      70.00      70.00
+first_author_surname      97.56      80.00      80.00      80.00
+   author_full_names      97.56      80.00      80.00      80.00
+first_author_full_name      97.56      80.00      80.00      80.00
+            keywords      97.56     100.00      66.67      80.00
+               title      96.34      70.00      70.00      70.00
 
-          all fields      94.48      69.05      64.44      66.67      (micro average)
-               94.48      71.50      64.00      67.06 (macro average)
+          all fields      96.52      72.58      69.23      70.87      (micro average)
+               96.52      73.93      68.57      70.76 (macro average)
 
   = Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
 
@@ -50,14 +56,16 @@
 
                  label   accuracy  precision     recall         f1
 
-            abstract      89.66      37.50      33.33      35.29
-             authors      94.83      70.00      70.00      70.00
-        first_author      96.55      80.00      80.00      80.00
-            keywords      96.55     100.00      66.67      80.00
-               title      94.83      70.00      70.00      70.00
+            abstract      92.68      37.50      33.33      35.29
+     author_surnames      96.34      70.00      70.00      70.00
+first_author_surname      97.56      80.00      80.00      80.00
+   author_full_names      97.56      80.00      80.00      80.00
+first_author_full_name      97.56      80.00      80.00      80.00
+            keywords      97.56     100.00      66.67      80.00
+               title      96.34      70.00      70.00      70.00
 
-          all fields      94.48      69.05      64.44      66.67      (micro average)
-               94.48      71.50      64.00      67.06 (macro average)
+          all fields      96.52      72.58      69.23      70.87      (micro average)
+               96.52      73.93      68.57      70.76 (macro average)
 
 
   
