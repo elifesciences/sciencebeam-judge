@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns:xlink="http://www.w3.org/1999/xlink">
+  <front>
+    <journal-meta>
+      <journal-title-group>
+        <journal-title>Acta Cryst.</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">1600-5368</issn>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.1107/S1600536811016606</article-id>
+      <title-group>
+        <article-title>3-Allyl-1-{[3-(4-nitrophenyl)-4,5- dihydro-1,3-oxazol-5-yl]methyl}-1H- anthra[1,2-d]imidazole-2,6,11(3H)- trione</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <string-name>Zahra Afrakssou</string-name>
+          <email>afrakssou@yahoo.fr</email>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>Amal Haoudi</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>Fre´ de´ ric Capet</string-name>
+          <xref ref-type="aff" rid="aff3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>Christian Rolando</string-name>
+          <xref ref-type="aff" rid="aff2">2</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>Lahcen El Ammari</string-name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <aff id="aff0">
+          <label>0</label>
+          <institution>Laboratoire de Chimie Organique Applique ?e, Universite ? Sidi Mohamed Ben Abdallah, Faculte ? des Sciences et Techniques</institution>
+          ,
+          <addr-line>Route d'Immouzzer, BP 2202 Fe`s</addr-line>
+          ,
+          <country country="MA">Morocco</country>
+        </aff>
+        <aff id="aff1">
+          <label>1</label>
+          <institution>Laboratoire de Chimie du Solide Applique ?e, Faculte ? des Sciences, Universite ? Mohammed V-Agdal</institution>
+          ,
+          <addr-line>Avenue Ibn Battouta, BP 1014, Rabat</addr-line>
+          ,
+          <country country="MA">Morocco</country>
+        </aff>
+        <aff id="aff2">
+          <label>2</label>
+          <institution>USR 3290 Miniaturisation pour l'Analyse, la Synthe`se et la Prote ?omique, 59655 Villeneuve d'Ascq Cedex</institution>
+          ,
+          <addr-line>Universite ? Lille-1</addr-line>
+          ,
+          <country country="FR">France</country>
+        </aff>
+        <aff id="aff3">
+          <label>3</label>
+          <institution>Unite ? de Catalyse et de Chimie du Solide (UCCS), UMR 8181, Ecole Nationale Supe ?rieure de Chimie de Lille</institution>
+          ,
+          <country country="FR">France</country>
+        </aff>
+      </contrib-group>
+      <pub-date>
+        <year>2011</year>
+      </pub-date>
+      <volume>67</volume>
+      <fpage>3</fpage>
+      <lpage>14</lpage>
+      <history>
+        <date date-type="accepted">
+          <day>2</day>
+          <month>5</month>
+          <year>2011</year>
+        </date>
+        <date date-type="received">
+          <day>17</day>
+          <month>4</month>
+          <year>2011</year>
+        </date>
+      </history>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec-1">
+      <title>-</title>
+      <p>Key indicators: single-crystal X-ray study; T = 296 K; mean (C?C) = 0.003 A?;
+R factor = 0.040; wR factor = 0.111; data-to-parameter ratio = 14.1.
+The molecular structure of the title compound, C28H20N4O6,
+consists of three fused six-membered rings (A,B,C) and one
+five-membered ring (D). The latter is linked to an isoxazole
+ring (E) via a methylene unit. A 4-nitro-phenyl substituent (F)
+is attached to the isoxazole. The fused five and six-membered
+rings (C,D) are almost coplanar with an r.m.s. deviation of
+0.0345 A? and make a dihedral angle of 9.40 (8) with ring A.
+The isoxazole and 4-nitro-phenyl rings (E,F) are also almost
+coplanar with the imidazole and the fused adjacent ring (C,D),
+forming a dihedral angle of 11.4 (6) . The crystal packing
+displays intermolecular C?H O hydrogen bonding. An
+intramolecular C?H O interaction also occurs.</p>
+    </sec>
+    <sec id="sec-2">
+      <title>Related literature</title>
+      <p>
+        For the biological activity of anthraquinone derivatives, see:
+        <xref ref-type="bibr" rid="ref2">Agarwal et al. (2000)</xref>
+        ;
+        <xref ref-type="bibr" rid="ref3">Barnard et al. (1995)</xref>
+        ;
+        <xref ref-type="bibr" rid="ref5">Chen et al. (2007)</xref>
+        ;
+        <xref ref-type="bibr" rid="ref8">Haug et al. (2003)</xref>
+        ;
+        <xref ref-type="bibr" rid="ref9">Iizuka et al. (2004)</xref>
+        ;
+        <xref ref-type="bibr" rid="ref10">Koyamaa et al. (2002)</xref>
+        ;
+        <xref ref-type="bibr" rid="ref13">Su et al. (2005)</xref>
+        ;
+        <xref ref-type="bibr" rid="ref14">Wu et al. (2005)</xref>
+        ;
+        <xref ref-type="bibr" rid="ref15">Yen et al. (2000)</xref>
+        . For a
+derivative of the title compound, see:
+        <xref ref-type="bibr" rid="ref1">Afrakssou et al. (2010)</xref>
+        .
+For the use of related compounds as synthetic dyes, see:
+        <xref ref-type="bibr" rid="ref12">Simi et
+al. (1995)</xref>
+        . For puckering parameters, see:
+        <xref ref-type="bibr" rid="ref6">Cremer &amp; Pople
+(1975)</xref>
+        .
+      </p>
+    </sec>
+    <sec id="sec-3">
+      <title>Experimental</title>
+      <sec id="sec-3-1">
+        <title>Crystal data</title>
+        <p>C28H20N4O6
+Mr = 508.48
+Monoclinic, P21=n
+a = 10.0780 (3) A?
+b = 22.7094 (6) A?
+c = 11.2729 (3) A?
+= 113.809 (1)</p>
+      </sec>
+      <sec id="sec-3-2">
+        <title>Data collection</title>
+        <p>Bruker APEXII CCD</p>
+        <p>diffractometer
+Absorption correction: multi-scan
+(SADABS, Bruker, 2009)</p>
+        <p>Tmin = 0.704, Tmax = 0.745</p>
+      </sec>
+      <sec id="sec-3-3">
+        <title>Refinement</title>
+        <p>R[F 2 &gt; 2 (F 2)] = 0.040
+wR(F 2) = 0.111
+S = 1.00
+4828 reflections</p>
+        <p>V = 2360.41 (11) A?3
+Z = 4
+Mo K radiation</p>
+        <p>= 0.10 mm 1
+T = 296 K
+0.40 0.14</p>
+        <p>0.11 mm
+47772 measured reflections
+4828 independent reflections
+2998 reflections with I &gt; 2 (I)
+Rint = 0.048
+343 parameters
+H-atom parameters constrained
+max = 0.12 e A? 3
+min = 0.15 e A? 3
+H
+Symmetry codes: (i) x þ 12; y þ 32; z þ 12; (ii) x þ 1; y þ 2; z.</p>
+        <p>
+          Data collection: APEX2
+          <xref ref-type="bibr" rid="ref4">(Bruker, 2009)</xref>
+          ; cell refinement:
+SAINTPlus
+          <xref ref-type="bibr" rid="ref4">(Bruker, 2009)</xref>
+          ; data reduction: SAINT-Plus; program(s) used to
+solve structure: SHELXS97
+          <xref ref-type="bibr" rid="ref11">(Sheldrick, 2008)</xref>
+          ; program(s) used to
+refine structure: SHELXL97
+          <xref ref-type="bibr" rid="ref11">(Sheldrick, 2008)</xref>
+          ; molecular graphics:
+ORTEP-3 for Windows
+          <xref ref-type="bibr" rid="ref7">(Farrugia, 1997)</xref>
+          ; software used to prepare
+material for publication: SHELXL97.
+        </p>
+        <p>Supplementary data and figures for this paper are available from the
+IUCr electronic archives (Reference: IM2283).</p>
+        <p>C28H20N4O6
+supplementary materials
+3-Allyl-1-{[3-(4-nitrophenyl)-4,5-dihydro-1,3-oxazol-5-yl]methyl}-1H-anthra[1,2-d]imidazole2,6,11(3H)-trione</p>
+        <sec id="sec-3-3-1">
+          <title>Comment</title>
+          <p>
+            Recently, a number of pharmacological tests revealed that anthraquinone derivatives present various biological activities
+including antifungal
+            <xref ref-type="bibr" rid="ref2">(Agarwal et al., 2000)</xref>
+            , antimicrobial
+            <xref ref-type="bibr" rid="ref14">(Wu et al., 2005)</xref>
+            , anticancer
+            <xref ref-type="bibr" rid="ref10 ref13 ref5">(Koyamaa et al., 2002; Su et al.,
+2005; Chen et al., 2007)</xref>
+            , antioxidant
+            <xref ref-type="bibr" rid="ref15 ref9">(Yen et al., 2000; Iizuka et al., 2004)</xref>
+            , and antihuman cytomegalovirus activity
+            <xref ref-type="bibr" rid="ref3">(Barnard
+et al., 1995)</xref>
+            .
+          </p>
+          <p>
+            Aminoanthraquinone derivatives are a class of compounds largely used as phytotherapeutic drugs (laxatives, sedatives
+and antikidney and antibladder stones) and colouring agents (in the food, cosmetics and textile)
+            <xref ref-type="bibr" rid="ref12">(Simi et al., 1995)</xref>
+            .
+Anthraquinone derivatives have also been utilized for the activation of human telomerase reverse transcriptase expression
+            <xref ref-type="bibr" rid="ref8">(Haug
+et al., 2003)</xref>
+            , and they act as telomerase inhibitors or activators.
+          </p>
+          <p>
+            Due to their importance, in a previous study we have synthesized
+1,3-diallyl-1H-anthra[1,2-d]imidazole-2,6,11(3H)-trione
+            <xref ref-type="bibr" rid="ref1">(Afrakssou et al., 2010)</xref>
+            . Here we have focused on the reactivity of the exocyclic C=C bond of the allyl substituents
+towards nitriloxides. The latter are produced as intermediates in the dehydrohalogenation of 4-nitrobenzaldoxime by a solution
+of sodium hypochlorite. The oxime then reacts with 1,3-diallyl-1H-anthra[1,2-d] imidazole-2,6,11(3H)-trione in a biphasic
+medium (water-chloroform) at 0°C during 4 h to a unique cycloadduct 3-allyl-1-[3
+-(4-nitro-phenyl)-4,5-dihydro-isoxazole5-ylmethyl] -1,3-dihydro-anthra [1,2 d] imidazole-2,6,11-trione (Scheme 1). Due to this reaction sequence a racemate of the
+title compound which shows a stereogenic center at C(17) is formed.
+          </p>
+          <p>
+            Fig.1 shows the molecular plot of the crystal structure of the title compound. The isoxazole (E) adopts an envelope
+conformation on C(17) as indicated by the
+            <xref ref-type="bibr" rid="ref6">Cremer &amp; Pople (1975)</xref>
+            puckering parameters Q2 = 0.2117 (19) Å and ?2 =
+141.6 (5)°. Moreover, ring (B) has a twisted conformation, with puckering parameters Q = 0.1480 (19) Å, ? = 114.6 (8) ° and
+? = 139.7 (8) °, whereas all other rings are planar. The dihedral angles between fused five and six-membered rings (C,D) and
+the isoxazole ring (E) is 11.4 (6)°. The torsion angle between C27?C26?N2?C1 is 87.42 (0.22)°. In the crystal, adjacent
+molecules are linked by intermolecular C?H···O hydrogen bonding as shown in Fig. 2 and Table 1.
+          </p>
+        </sec>
+        <sec id="sec-3-3-2">
+          <title>Experimental</title>
+          <p>To a solution of 1,3-diallyl-1H-anthra[1,2-d] imidazole-2,6,11(3H)-trione (0.3 g, 0.87 mmol) and 4-nitrobenzaldoxime (0.36
+g, 2.17 mmol) in chloroform (16 ml) was added dropwise a 24% sodium hypochlorite solution (8 ml) at 273 K. Stirring was
+continued for 4 h. The organic layer was dried over Na2SO4 and the solvent was evaporated under reduced pressure. The
+residue was then purified by column chromatography on silica gel using a mixture of hexane/ethyl acetate (1/1) as eluent. The
+title compound is formed as a racemate (Yield: 35%). Orange crystals are isolated after the solvent was allowed to evaporate.</p>
+        </sec>
+        <sec id="sec-3-3-3">
+          <title>Refinement Figures</title>
+          <p>The reflections (0 2 0) and (0 1 1) were omitted because the difference between their calculated and observed intensities
+are very large. They are affected by the beamstop.
+3-Allyl-1-{[3-(4-nitrophenyl)-4,5-dihydro-1,3-oxazol-5-yl]methyl}-1H- anthra[1,2-d]imidazole-2,6,11(3H)-trione</p>
+          <p>F(000) = 1056
+Dx = 1.431 Mg m?3
+Melting point: 471 K
+Mo K? radiation, ? = 0.71073 Å
+Cell parameters from 7395 reflections
+? = 2.4?21.5°
+µ = 0.10 mm?1
+T = 296 K
+Prism, yellow
+0.40 × 0.14 × 0.11 mm
+4828 independent reflections
+2998 reflections with I &gt; 2?(I)
+Rint = 0.048
+?max = 26.4°, ?min = 2.5°</p>
+          <p>Fractional atomic coordinates and isotropic or equivalent isotropic displacement parameters (Å2)
+Atomic displacement parameters (Å2)</p>
+          <p>U11</p>
+          <p>U22</p>
+          <p>U33</p>
+          <p>U12</p>
+          <p>U13</p>
+          <p>U23
+Geometric parameters (Å, °)
+Hydrogen-bond geometry (Å, °)
+D?H···A
+C7?H7···O1i
+C18?H18B···O2ii
+supplementary materials
+Fig. 1
+supplementary materials
+sup-9</p>
+        </sec>
+      </sec>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <ref id="ref1">
+        <mixed-citation>
+          <string-name>
+            <surname>Afrakssou</surname>
+            ,
+            <given-names>Z.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Rodi</surname>
+            ,
+            <given-names>Y. K.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Zouihri</surname>
+            ,
+            <given-names>H.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Essassi</surname>
+            ,
+            <given-names>E. M.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Ng</surname>
+            ,
+            <given-names>S. W.</given-names>
+          </string-name>
+          (
+          <year>2010</year>
+          ).
+          <source>Acta Cryst. E66</source>
+          ,
+          <year>o1851</year>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref2">
+        <mixed-citation>
+          <string-name>
+            <surname>Agarwal</surname>
+            ,
+            <given-names>S. K.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Singh</surname>
+            ,
+            <given-names>S. S.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Verma</surname>
+            ,
+            <given-names>S.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Kumar</surname>
+            ,
+            <given-names>S.</given-names>
+          </string-name>
+          (
+          <year>2000</year>
+          ).
+          <source>J. Ethnopharmacol</source>
+          .
+          <volume>72</volume>
+          ,
+          <fpage>43</fpage>
+          -
+          <lpage>46</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref3">
+        <mixed-citation>
+          <string-name>
+            <surname>Barnard</surname>
+            ,
+            <given-names>D. L.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Fairbairn</surname>
+            ,
+            <given-names>D. W.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>O'Neill</surname>
+            ,
+            <given-names>K. L.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gage</surname>
+            ,
+            <given-names>T. L.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Sidwell</surname>
+            ,
+            <given-names>R. W.</given-names>
+          </string-name>
+          (
+          <year>1995</year>
+          ).
+          <source>Antivir. Res</source>
+          .
+          <volume>28</volume>
+          ,
+          <fpage>317</fpage>
+          -
+          <lpage>321</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref4">
+        <mixed-citation>
+          <string-name>
+            <surname>Bruker</surname>
+          </string-name>
+          (
+          <year>2009</year>
+          ).
+          <article-title>APEX2, SAINT-Plus and SADABS. Bruker AXS Inc</article-title>
+          .,
+          <string-name>
+            <surname>Madison</surname>
+          </string-name>
+          , Wisconsin, USA.
+        </mixed-citation>
+      </ref>
+      <ref id="ref5">
+        <mixed-citation>
+          <string-name>
+            <surname>Chen</surname>
+            ,
+            <given-names>S. H.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Lin</surname>
+            ,
+            <given-names>K. Y.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Chang</surname>
+            ,
+            <given-names>C. C.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Fang</surname>
+            ,
+            <given-names>C. L.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Lin</surname>
+            ,
+            <given-names>C. P.</given-names>
+          </string-name>
+          (
+          <year>2007</year>
+          ).
+          <source>Food Chem. Toxicol</source>
+          .
+          <volume>45</volume>
+          ,
+          <fpage>2296</fpage>
+          -
+          <lpage>2303</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref6">
+        <mixed-citation>
+          <string-name>
+            <surname>Cremer</surname>
+            ,
+            <given-names>D.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Pople</surname>
+            ,
+            <given-names>J. A.</given-names>
+          </string-name>
+          (
+          <year>1975</year>
+          ).
+          <source>J. Am. Chem. Soc</source>
+          .
+          <volume>97</volume>
+          ,
+          <fpage>1354</fpage>
+          -
+          <lpage>1358</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref7">
+        <mixed-citation>
+          <string-name>
+            <surname>Farrugia</surname>
+            ,
+            <given-names>L. J.</given-names>
+          </string-name>
+          (
+          <year>1997</year>
+          ).
+          <source>J. Appl. Cryst</source>
+          .
+          <volume>30</volume>
+          ,
+          <fpage>565</fpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref8">
+        <mixed-citation>
+          <string-name>
+            <surname>Haug</surname>
+            ,
+            <given-names>H. S.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Chiou</surname>
+            ,
+            <given-names>J. F.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Fong</surname>
+            ,
+            <given-names>Y.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Hou</surname>
+            ,
+            <given-names>C. C.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Lu</surname>
+            ,
+            <given-names>Y. C.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Wang</surname>
+            ,
+            <given-names>J. Y.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Shih</surname>
+            ,
+            <given-names>J. W.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Pan</surname>
+            ,
+            <given-names>Y. R.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Lin</surname>
+            ,
+            <given-names>J. J.</given-names>
+          </string-name>
+          (
+          <year>2003</year>
+          ).
+          <source>J. Med. Chem</source>
+          .
+          <volume>46</volume>
+          ,
+          <fpage>3300</fpage>
+          -
+          <lpage>3307</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref9">
+        <mixed-citation>
+          <string-name>
+            <surname>Iizuka</surname>
+            ,
+            <given-names>A.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Iijima</surname>
+            ,
+            <given-names>O. T.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kondo</surname>
+            ,
+            <given-names>K.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Itakura</surname>
+            ,
+            <given-names>H.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Yoshie</surname>
+            ,
+            <given-names>F.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Miyamoto</surname>
+            ,
+            <given-names>H.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kubo</surname>
+            ,
+            <given-names>M.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Higuchi</surname>
+            ,
+            <given-names>M.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Takeda</surname>
+            ,
+            <given-names>H.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Matsumiy</surname>
+            ,
+            <given-names>T.</given-names>
+          </string-name>
+          (
+          <year>2004</year>
+          ).
+          <source>J. Ethnopharmacol</source>
+          .
+          <volume>91</volume>
+          ,
+          <fpage>89</fpage>
+          -
+          <lpage>94</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref10">
+        <mixed-citation>
+          <string-name>
+            <surname>Koyamaa</surname>
+            ,
+            <given-names>J.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Morita</surname>
+            ,
+            <given-names>I.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Tagahara</surname>
+            ,
+            <given-names>K.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Nobukuni</surname>
+            ,
+            <given-names>Y.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mukainaka</surname>
+            ,
+            <given-names>T.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kuchide</surname>
+            ,
+            <given-names>M.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Tokuda</surname>
+            ,
+            <given-names>H.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Nishino</surname>
+            ,
+            <given-names>H.</given-names>
+          </string-name>
+          (
+          <year>2002</year>
+          ).
+          <source>Cancer Lett</source>
+          .
+          <volume>182</volume>
+          ,
+          <fpage>135</fpage>
+          -
+          <lpage>139</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref11">
+        <mixed-citation>
+          <string-name>
+            <surname>Sheldrick</surname>
+            ,
+            <given-names>G. M.</given-names>
+          </string-name>
+          (
+          <year>2008</year>
+          ).
+          <source>Acta Cryst. A64</source>
+          ,
+          <fpage>112</fpage>
+          -
+          <lpage>122</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref12">
+        <mixed-citation>
+          <string-name>
+            <surname>Simi</surname>
+            ,
+            <given-names>S.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Morelli</surname>
+            ,
+            <given-names>S.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gervasi</surname>
+            ,
+            <given-names>P. G.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Rainaldi</surname>
+            ,
+            <given-names>G.</given-names>
+          </string-name>
+          (
+          <year>1995</year>
+          ).
+          <source>Mutat. Res</source>
+          .
+          <volume>347</volume>
+          ,
+          <fpage>151</fpage>
+          -
+          <lpage>156</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref13">
+        <mixed-citation>
+          <string-name>
+            <surname>Su</surname>
+            ,
+            <given-names>Y. T.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Chang</surname>
+            ,
+            <given-names>H. L.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Shyue</surname>
+            ,
+            <given-names>S. K.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Hsu</surname>
+            ,
+            <given-names>S. L.</given-names>
+          </string-name>
+          (
+          <year>2005</year>
+          ).
+          <source>Biochem. Pharmacol</source>
+          .
+          <volume>70</volume>
+          ,
+          <fpage>229</fpage>
+          -
+          <lpage>241</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref14">
+        <mixed-citation>
+          <string-name>
+            <surname>Wu</surname>
+            ,
+            <given-names>Y. W.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gao</surname>
+          </string-name>
+          , W. Y.,
+          <string-name>
+            <surname>Xiao</surname>
+            ,
+            <given-names>X. H.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Liu</surname>
+            ,
+            <given-names>Y.</given-names>
+          </string-name>
+          (
+          <year>2005</year>
+          ).
+          <source>Thermochim. Acta</source>
+          ,
+          <volume>429</volume>
+          ,
+          <fpage>167</fpage>
+          -
+          <lpage>170</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref15">
+        <mixed-citation>
+          <string-name>
+            <surname>Yen</surname>
+            ,
+            <given-names>G. C.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Duh</surname>
+            ,
+            <given-names>P. D.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Chuang</surname>
+            ,
+            <given-names>D. Y.</given-names>
+          </string-name>
+          (
+          <year>2000</year>
+          ).
+          <source>Food Chem</source>
+          .
+          <volume>70</volume>
+          ,
+          <fpage>437</fpage>
+          -
+          <lpage>441</lpage>
+          .
+        </mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+
