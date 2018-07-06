@@ -1,0 +1,1338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns:xlink="http://www.w3.org/1999/xlink">
+  <front>
+    <journal-meta>
+      <journal-title-group>
+        <journal-title>Acta Cryst.</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0907-4449</issn>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.1107/S0907444911008754</article-id>
+      <title-group>
+        <article-title>Pi sampling: a methodical and flexible approach to initial macromolecular crystallization screening research papers</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <string-name>Fabrice Gorrec</string-name>
+          <email>fgorrec@mrc-lmb.cam.ac.uk</email>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>Colin M. Palmer</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>Guillaume Lebon</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>Tony Warne</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <aff id="aff0">
+          <label>0</label>
+          <institution>MRC Laboratory of Molecular Biology</institution>
+          ,
+          <addr-line>Hills Road, Cambridge CB2 0QH, England</addr-line>
+        </aff>
+      </contrib-group>
+      <pub-date>
+        <year>2011</year>
+      </pub-date>
+      <volume>67</volume>
+      <fpage>463</fpage>
+      <lpage>470</lpage>
+      <history>
+        <date date-type="accepted">
+          <day>7</day>
+          <month>3</month>
+          <year>2011</year>
+        </date>
+        <date date-type="received">
+          <day>4</day>
+          <month>1</month>
+          <year>2011</year>
+        </date>
+      </history>
+      <abstract>
+        <p>The Pi sampling method is derived from the incomplete factorial approach to macromolecular crystallization screen design. The resulting 'Pi screens' have a modular distribution of a given set of up to 36 stock solutions. Maximally diverse conditions can be produced by taking into account the properties of the chemicals used in the formulation and the concentrations of the corresponding solutions. The Pi sampling method has been implemented in a web-based application that generates screen formulations and recipes. It is particularly adapted to screens consisting of 96 different conditions. The flexibility and efficiency of Pi sampling is demonstrated by the crystallization of soluble proteins and of an integral membrane-protein sample.</p>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec-1">
+      <title>1. Introduction</title>
+      <p>
+        A crucial aspect of macromolecular crystallographic studies is
+finding suitable conditions for the crystallization of a sample.
+This can be difficult because many factors alter the
+crystallization behaviour of macromolecules, including the type and
+the concentration of the chemicals employed to formulate the
+conditions
+        <xref ref-type="bibr" rid="ref17">(McPherson, 1990)</xref>
+        . A condition includes at least
+a precipitant and most conditions also include a buffer and an
+additive. During the initial crystallization experiments, the
+structure of the macromolecule is not known and hence the
+most efficient formulation cannot be predicted. As a
+consequence, one should be cautious when making initial
+assumptions and limiting choices in subsequent optimizations
+        <xref ref-type="bibr" rid="ref19">(Rupp,
+2003)</xref>
+        . Nonetheless, the number of initial crystallization
+conditions cannot be unreasonably large since purified protein is
+often difficult and expensive to produce in large quantities.
+      </p>
+      <p>
+        There are essentially two approaches to restrict an initial
+screen to a limited number of crystallization conditions. Firstly,
+a sparse-matrix formulation can be used, which consists of
+an empirically derived combination of components based on
+known or published crystallization conditions
+        <xref ref-type="bibr" rid="ref10">(Jancarik &amp;
+Kim, 1991)</xref>
+        . Secondly, an incomplete factorial formulation can
+be generated in which selected components are combined
+to prepare new conditions in accordance with principles
+of randomization and balance
+        <xref ref-type="bibr" rid="ref4">(Carter &amp; Carter, 1979)</xref>
+        .
+Numerous commercial screens based on these two main
+approaches are available. Automated systems have been
+implemented at the Medical Research Council (MRC)
+Laboratory of Molecular Biology (LMB) to test these as
+routine initial screens using the 96-well crystallization plate
+format
+        <xref ref-type="bibr" rid="ref21">(Stock et al., 2005)</xref>
+        . However, for various reasons, many
+laboratories opt for a minimal screen
+        <xref ref-type="bibr" rid="ref12">(Kimber et al., 2003)</xref>
+        and still perform at least some aspects of the work manually
+        <xref ref-type="bibr" rid="ref2">(Bergfors, 2007)</xref>
+        .
+      </p>
+      <p>
+        Here, we present a development based on the incomplete
+factorial formulation: the Pi sampling method. The name of
+the method was inspired by the story of Archimedes, who used
+the ?method of exhaustion? (i.e. an empirical approach) with a
+96-sided polygon in order to reach the first good numerical
+approximation of
+        <xref ref-type="bibr" rid="ref20">(Smith, 1958)</xref>
+        . Pi sampling uses modular
+arithmetic to form combinations of three stock solutions
+across a 96-condition grid. Maximally diverse conditions can
+be produced by taking into account the properties of the
+chemicals used in the formulation and the concentrations of
+the corresponding stock solutions. We have implemented this
+approach in a web-based application called Pi Sampler: user
+input consists of the details of up to 36 stock solutions, from
+which the application generates the formulations for a
+96-condition screen. The Pi sampling method is intended to
+help laboratories to test new crystallization-screen
+formulations on a day-to-day basis based on the properties of the
+macromolecules investigated, as has been performed
+previously with RNA
+        <xref ref-type="bibr" rid="ref7">(Doudna et al., 1993)</xref>
+        .
+      </p>
+      <p>Firstly, we tested Pi sampling with ten commercially
+available soluble proteins. For this, the ?Pi minimal screen? was
+employed including a wide variety of well known chemicals
+frequently used for macromolecular crystallization.</p>
+      <p>
+        We then investigated the impact of Pi sampling on the
+crystallization of a G-protein-coupled receptor (GPCR) that
+had been difficult to crystallize: the adenosine A2A receptor
+(construct A2AR-GL31). We formulated another Pi screen, the
+?Pi-PEG screen?, taking into consideration general
+observations made about crystallization of integral membrane-protein
+samples. Previous crystallization experiments on another
+GPCR (the 1-adrenergic receptor) had indicated that the use
+of simple proprietary screens formulated with poly(ethylene
+glycol) (PEG) and buffers gave a greater yield of crystals than
+all commercially available screens, including those geared
+towards membrane proteins
+        <xref ref-type="bibr" rid="ref23">(Warne et al., 2009)</xref>
+        , and the 2.7 A?
+resolution structure was solved using conditions optimized
+from a proprietary screen essentially based on PEGs
+        <xref ref-type="bibr" rid="ref22">(Warne
+et al., 2008)</xref>
+        . This has been observed previously with other
+membrane-protein targets
+        <xref ref-type="bibr" rid="ref15">(Lemieux et al., 2003)</xref>
+        . In addition,
+mixtures of polyethylene glycols have been used successfully
+to develop a minimal screen
+        <xref ref-type="bibr" rid="ref3">(Brzozowski &amp; Walton, 2001)</xref>
+        and
+to study crystal structures of the Kir potassium channel
+        <xref ref-type="bibr" rid="ref5">(Clarke et al., 2010)</xref>
+        . Such mixtures were incorporated into the
+Pi-PEG screen.
+      </p>
+    </sec>
+    <sec id="sec-2">
+      <title>2. Methods</title>
+    </sec>
+    <sec id="sec-3">
+      <title>2.1. Pi sampling</title>
+      <p>Pi sampling begins with up to 36 stock solutions, divided
+into three sets of 12. The first set of solutions is used in the
+screen at constant concentration. The second and third sets
+are added according to a gradient between specified minimum
+and maximum concentrations. Typically, the first set is
+composed of buffers and the second and third sets are precipitants/
+additives.</p>
+      <p>The combinations of three stock solutions (one from each
+set) are generated according to Fig. 1, where 1?12 refer to the
+IDs for solutions of the first set, A?M to those of the second
+set and N?X to those of the third set. The number in each cell
+shows which solution of the first set will be combined with the
+corresponding solutions of the second and third sets. Blank
+spaces show when no such combinations are generated.</p>
+      <p>Fig. 2 summarizes the distribution of the stock solutions in a
+standard 96-condition plate layout (i.e. 12 columns and eight
+rows).</p>
+      <p>Set 1: each solution (ID 1?12) is seen in the eight conditions
+forming a column of the plate. A variable should be
+associated with the stock solutions. The variable corresponds to
+a property of the solution selected (e.g. pH, molecular weight
+of the main chemical, absorption properties or others).
+values increase from left to right in the screen layout.</p>
+      <p>Set 2: each solution (ID A?L) is represented once in each
+row. The final concentrations decrease gradually from the top
+to the bottom of the screen layout, forming a gradient. The
+distribution of solutions A?L is based on the sequence of
+values established for set 1: the positions of the solutions shift
+across five columns and down one row. Solutions A?L should
+also be associated with a variable and hence a sequence is
+formed for the distribution of the third set of solutions.</p>
+      <p>Set 3: each solution (ID M?X) is also represented once in
+each row. The final concentrations increase gradually from the
+top to the bottom of the screen, forming another gradient. The
+solutions M?X are distributed with the same modulo
+arithmetic operation as previously, but with respect to the values
+of solutions A?L. For example, solution M is mixed with
+solution A in the first row, solution F in the second row,
+solution K in the third row and so on, as shown in Fig. 2. This
+means that both the second and third sets are arranged
+according to the same modulo arithmetic operation (5 modulo
+12); however, when looking at the plate layout, the positions
+of solutions M?X shift across ten columns and down one row.
+2.2. Pi Sampler</p>
+      <p>
+        Pi Sampler can be accessed via the internet at http://
+pisampler.mrc-lmb.cam.ac.uk/. Users can enter the details
+of up to 36 stock solutions, including stock concentrations,
+desired screen concentration ranges and values. The
+application then generates a 96-condition screen formulation
+following the Pi sampling method described above.
+Formulations, recipes and total required volumes of stock solutions are
+presented and may conveniently be downloaded in
+commaseparated variable format (CSV), allowing the user to import
+them into other software for automated screen making
+        <xref ref-type="bibr" rid="ref6">(Cox &amp;
+Weber, 1987)</xref>
+        , formulation analysis
+        <xref ref-type="bibr" rid="ref18 ref9">(Hedderich et al., 2011)</xref>
+        and data mining
+        <xref ref-type="bibr" rid="ref11">(Kantardjieff &amp; Rupp, 2004)</xref>
+        . The parameters
+used to generate the screen can also be saved and uploaded in
+the same format. Further details and instructions can be found
+on the website.
+      </p>
+    </sec>
+    <sec id="sec-4">
+      <title>2.3. Pi minimal screen preparation and crystallization assays with commercially available soluble proteins</title>
+      <p>The final formulation of the Pi minimal screen can be found
+in Table 1. There are 36 starting stock solutions overall. Each
+solution composing the first set (ID 1?12) is a mixture of an
+acid with its corresponding base (e.g. HEPES pH 7.5: 1 M
+HEPES solution mixed with 1 M HEPES sodium salt in order
+to reach pH 7.5), except for buffer 11 (AMPD mixed with Tris
+base). Note that this is also true for the precipitant phosphate
+(phosphate system: sodium dihydrogen phosphate/dipotassium
+hydrogen phosphate). Values of pH (4.0?9.5) were chosen as
+the variable for the first set, whilst arbitrary values were
+chosen for additives of various natures composing the second
+set (ID A?L). Eventually, a few conditions were made without
+additive/buffer because of chemical incompatibilities (Table 1).</p>
+      <p>
+        Highest purity grade chemicals (Molecular Biology grade
+when available) were purchased from Sigma?Aldrich to
+prepare 36 stock solutions. The solutions were mixed in 96
+Falcon tubes. The screen was dispensed into ?MRC original
+plates?
+        <xref ref-type="bibr" rid="ref21">(96-well, two-drop, Swissci; Stock et al., 2005)</xref>
+        .
+      </p>
+      <p>Commercial proteins that had been crystallized before were
+chosen to prepare test samples. Protein concentrations were
+chosen randomly between 7 and 150 mg ml 1 (Table 2).
+Vapour-diffusion experiments were set up at 295 K, mixing
+two different sample: condition ratios (1:3 and 3:1) to give a
+final volume of 400 nl. The plates were then stored at 291 K. A
+condition was considered to be a hit when at least one of the
+two corresponding drops contained crystals with well known
+morphology after one week. Table 3 shows the ?hits per
+condition? observed and the corresponding results expected for
+the binomial distribution (see x4.2).</p>
+    </sec>
+    <sec id="sec-5">
+      <title>2.4. Pi-PEG screen preparation and crystallization assays with a GPCR</title>
+      <p>The final formulation of the Pi-PEG screen can be found in
+Table 4. The formulation can also be generated using Pi
+Sampler by loading the Pi-PEG example data. The pH values
+(4.8?8.8) were chosen as the variable for the buffers
+composing set 1 (ID 1?12), whilst molecular weight was
+chosen for set 2 (PEGs A?L, final concentration range 0?
+22.5%). The same 12 PEGs were used for set 3 (PEGs M?X,
+final concentration range 0?45%). General details of the
+preparation are similar to x2.3, but there are 24 stock solutions
+at the start (instead of 36). Vapour-diffusion experiments were
+set up at 277 K, mixing sample and condition in a 1:1 ratio to
+give a final volume of 200 nl. The preparation of A2AR-GL31
+will be published elsewhere (Lebon et al., submitted work).
+Crystal X-ray screening was performed at the Diamond
+Conc.</p>
+      <p>Unit
+Set 2
+ID
+Set 3
+ID</p>
+    </sec>
+    <sec id="sec-6">
+      <title>4. Discussion</title>
+    </sec>
+    <sec id="sec-7">
+      <title>4.1. Pi sampling</title>
+      <p>In order to understand the rationale
+behind the modular arithmetic
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+H
+I
+J
+K
+L
+A
+B
+C
+D
+E
+F
+G
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+A
+B
+J
+K
+L
+A
+B
+C
+D
+E
+F
+G
+H
+I
+E
+F
+G
+H
+I
+J
+K
+L
+A
+B
+C
+D
+L
+A
+B
+C
+D
+E
+F
+G
+H</p>
+      <p>Name
+Set 3
+ID
+T
+U
+V
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+M
+N
+employed for the Pi sampling, it may help to imagine, on a 12 h
+clock, a series of events occurring every 5 h. The first event is
+at noon, the second at 5 pm, then 10 pm, then 3 am etc.
+Eventually, there is a succession of 12 events occurring at
+different hours, with as much time as possible in between each
+event. If we now look at combinations of three components,
+there are originally 123 or 1728 possibilities. Pi Sampler
+generates 96 of these combinations that correspond to
+conditions that are distant in properties. The variety between
+samples, we compared the results obtained with what would be
+expected if each condition had the same probability of hits
+overall (Table 3). This can be approximated by a binomial
+distribution. The probability of success for the binomial
+distribution is the observed probability for ten attempts: 116/
+(10</p>
+      <p>
+        96) = 0.12083. The 2 statistic for the data is 3.48. This
+can be compared with the quantiles of a 2 distribution with
+two degrees of freedom, which gives a p value of 0.18
+(calculations not shown). This
+2 test indicates that no
+conditions are obvious outliers with regard to success or
+failure. There are, however, a multitude of possible biases
+implied when proceeding with crystallization experiments
+(which would be even more accentuated with the use of novel
+samples); hence, any statistical analysis should be taken
+with precaution. Nonetheless, it is interesting to see that the
+analysis of the distribution is in accordance with the original
+approach based on balanced randomization
+        <xref ref-type="bibr" rid="ref19 ref4">(Carter &amp; Carter,
+1979; Rupp, 2003)</xref>
+        .
+      </p>
+      <p>
+        In addition, the conditions of the Pi minimal screen show
+no identities to the extensive list of conditions (7230) from
+commercial screens stored in the ?PICKScreens? database
+        <xref ref-type="bibr" rid="ref18 ref9">(Hedderich et al., 2011)</xref>
+        .
+      </p>
+    </sec>
+    <sec id="sec-8">
+      <title>4.3. The Pi-PEG screen</title>
+      <p>
+        The extent of effects on crystallization for precipitants such
+as PEGs is correlated with their concentrations
+        <xref ref-type="bibr" rid="ref16">(McPherson,
+1976)</xref>
+        and molecular weights
+        <xref ref-type="bibr" rid="ref8">(Forsythe et al., 2002)</xref>
+        . The
+PiPEG screen covers a wide range of parameters (kinetics of
+equilibrium, protein stabilization etc.). In addition, the
+concentrations of the two different PEGs in a condition can be
+adjusted for condition optimization
+        <xref ref-type="bibr" rid="ref21">(Stock et al., 2005)</xref>
+        and for
+crystal cryoprotection
+        <xref ref-type="bibr" rid="ref1">(Berejnov et al., 2006)</xref>
+        . Furthermore, the
+PICKScreens database shows that the Pi-PEG screen is
+unique (as for the Pi minimal screen; see x4.2).
+      </p>
+      <p>
+        Samples of A2AR-GL31 purified in a number of different
+detergents rarely crystallized in commercially available
+screens used at the LMB
+        <xref ref-type="bibr" rid="ref21">(Stock et al., 2005)</xref>
+        and when they did
+the crystal quality was not sufficient for structure
+determination. The first quality crystals were recently obtained using the
+Pi-PEG screen.
+      </p>
+    </sec>
+    <sec id="sec-9">
+      <title>5. Conclusions</title>
+      <p>We have demonstrated that the Pi sampling is a methodical
+and flexible approach to initial screening for macromolecular
+crystallization. Two unique screens produced de novo have
+resulted from this strategy. The Pi minimal screen potentially
+has an ideal formulation for crystallization of novel soluble
+protein samples. The Pi-PEG screen is a tailor-made screen for
+GPCRs and potentially other membrane proteins generated
+by biasing the formulation towards components known to be
+essential.</p>
+      <p>
+        Further screens can be formulated with the Pi Sampler on a
+day-to-day basis in order to test chemicals and techniques,
+with the aim of increasing the yield of quality crystals. Also,
+new crystallization techniques are constantly emerging for
+macromolecular targets such as membrane proteins and hence
+formulations with special considerations are required: one
+may want to formulate screens compatible with the lipidic
+cubic phase (LCP) concept
+        <xref ref-type="bibr" rid="ref14">(Landau &amp; Rosenbusch, 1996)</xref>
+        or
+make extensive use of detergents
+        <xref ref-type="bibr" rid="ref13">(Koszelak-Rosenblum et al.,
+2009)</xref>
+        .
+      </p>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <ref id="ref1">
+        <mixed-citation>
+          <string-name>
+            <surname>Berejnov</surname>
+            ,
+            <given-names>V.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Husseini</surname>
+            ,
+            <given-names>N. S.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Alsaied</surname>
+            ,
+            <given-names>O. A.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Thorne</surname>
+            ,
+            <given-names>R. E.</given-names>
+          </string-name>
+          (
+          <year>2006</year>
+          ).
+          <source>J. Appl. Cryst</source>
+          .
+          <volume>39</volume>
+          ,
+          <fpage>244</fpage>
+          -
+          <lpage>251</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref2">
+        <mixed-citation>
+          <string-name>
+            <surname>Bergfors</surname>
+            ,
+            <given-names>T.</given-names>
+          </string-name>
+          (
+          <year>2007</year>
+          ).
+          <source>Methods Mol. Biol</source>
+          .
+          <volume>363</volume>
+          ,
+          <fpage>131</fpage>
+          -
+          <lpage>151</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref3">
+        <mixed-citation>
+          <string-name>
+            <surname>Brzozowski</surname>
+            ,
+            <given-names>A. M.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Walton</surname>
+            ,
+            <given-names>J.</given-names>
+          </string-name>
+          (
+          <year>2001</year>
+          ).
+          <source>J. Appl. Cryst</source>
+          .
+          <volume>34</volume>
+          ,
+          <fpage>97</fpage>
+          -
+          <lpage>101</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref4">
+        <mixed-citation>
+          <string-name>
+            <surname>Carter</surname>
+            ,
+            <given-names>C. W.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Carter</surname>
+            ,
+            <given-names>C. W.</given-names>
+          </string-name>
+          (
+          <year>1979</year>
+          ).
+          <source>J. Biol. Chem</source>
+          .
+          <volume>254</volume>
+          ,
+          <fpage>12219</fpage>
+          -
+          <lpage>12223</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref5">
+        <mixed-citation>
+          <string-name>
+            <surname>Clarke</surname>
+            ,
+            <given-names>O. B.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Caputo</surname>
+            ,
+            <given-names>A. T.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Hill</surname>
+            ,
+            <given-names>A. P.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Vandenberg</surname>
+            ,
+            <given-names>J. I.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Smith</surname>
+            ,
+            <given-names>B. J.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Gulbis</surname>
+            ,
+            <given-names>J. M.</given-names>
+          </string-name>
+          (
+          <year>2010</year>
+          ). Cell,
+          <volume>141</volume>
+          ,
+          <fpage>1018</fpage>
+          -
+          <lpage>1029</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref6">
+        <mixed-citation>
+          <string-name>
+            <surname>Cox</surname>
+            ,
+            <given-names>M. J.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Weber</surname>
+            ,
+            <given-names>P. C.</given-names>
+          </string-name>
+          (
+          <year>1987</year>
+          ).
+          <source>J. Appl. Cryst</source>
+          .
+          <volume>20</volume>
+          ,
+          <fpage>366</fpage>
+          -
+          <lpage>373</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref7">
+        <mixed-citation>
+          <string-name>
+            <surname>Doudna</surname>
+            ,
+            <given-names>J. A.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Grosshans</surname>
+            ,
+            <given-names>C.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gooding</surname>
+            ,
+            <given-names>A.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Kundrot</surname>
+            ,
+            <given-names>C. E.</given-names>
+          </string-name>
+          (
+          <year>1993</year>
+          ).
+          <source>Proc. Natl Acad. Sci. USA</source>
+          ,
+          <volume>90</volume>
+          ,
+          <fpage>7829</fpage>
+          -
+          <lpage>7833</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref8">
+        <mixed-citation>
+          <string-name>
+            <surname>Forsythe</surname>
+            ,
+            <given-names>E. L.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Maxwell</surname>
+            ,
+            <given-names>D. L.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Pusey</surname>
+            ,
+            <given-names>M.</given-names>
+          </string-name>
+          (
+          <year>2002</year>
+          ).
+          <source>Acta Cryst. D58</source>
+          ,
+          <fpage>1601</fpage>
+          -
+          <lpage>1605</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref9">
+        <mixed-citation>
+          <string-name>
+            <surname>Hedderich</surname>
+            ,
+            <given-names>T.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Marcia</surname>
+            ,
+            <given-names>M.</given-names>
+          </string-name>
+          , Ko¨ pke,
+          <string-name>
+            <given-names>J.</given-names>
+            &amp;
+            <surname>Michel</surname>
+          </string-name>
+          ,
+          <string-name>
+            <surname>H.</surname>
+          </string-name>
+          (
+          <year>2011</year>
+          ).
+          <source>Cryst. Growth Des</source>
+          .
+          <volume>11</volume>
+          ,
+          <fpage>488</fpage>
+          -
+          <lpage>491</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref10">
+        <mixed-citation>
+          <string-name>
+            <surname>Jancarik</surname>
+            ,
+            <given-names>J.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Kim</surname>
+            ,
+            <given-names>S.-H.</given-names>
+          </string-name>
+          (
+          <year>1991</year>
+          ).
+          <source>J. Appl. Cryst</source>
+          .
+          <volume>24</volume>
+          ,
+          <fpage>409</fpage>
+          -
+          <lpage>411</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref11">
+        <mixed-citation>
+          <string-name>
+            <surname>Kantardjieff</surname>
+            ,
+            <given-names>K. A.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Rupp</surname>
+            ,
+            <given-names>B.</given-names>
+          </string-name>
+          (
+          <year>2004</year>
+          ). Bioinformatics,
+          <volume>20</volume>
+          ,
+          <fpage>2162</fpage>
+          -
+          <lpage>2168</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref12">
+        <mixed-citation>
+          <string-name>
+            <surname>Kimber</surname>
+            ,
+            <given-names>M. S.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Vallee</surname>
+            ,
+            <given-names>F.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Houston</surname>
+            ,
+            <given-names>S.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Necakov</surname>
+            ,
+            <given-names>A.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Skarina</surname>
+            ,
+            <given-names>T.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Evdokimova</surname>
+            ,
+            <given-names>E.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Beasley</surname>
+            ,
+            <given-names>S.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Christendat</surname>
+            ,
+            <given-names>D.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Savchenko</surname>
+            ,
+            <given-names>A.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Arrowsmith</surname>
+            ,
+            <given-names>C. H.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Vedadi</surname>
+            ,
+            <given-names>M.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gerstein</surname>
+            ,
+            <given-names>M.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Edwards</surname>
+            ,
+            <given-names>A. M.</given-names>
+          </string-name>
+          (
+          <year>2003</year>
+          ). Proteins,
+          <volume>51</volume>
+          ,
+          <fpage>562</fpage>
+          -
+          <lpage>568</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref13">
+        <mixed-citation>
+          <string-name>
+            <surname>Koszelak-Rosenblum</surname>
+            ,
+            <given-names>M.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Krol</surname>
+            ,
+            <given-names>A.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mozumdar</surname>
+            ,
+            <given-names>N.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Wunsch</surname>
+            ,
+            <given-names>K.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ferin</surname>
+            ,
+            <given-names>A.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Cook</surname>
+            ,
+            <given-names>E.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Veatch</surname>
+            ,
+            <given-names>C. K.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Nagel</surname>
+            ,
+            <given-names>R.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Luft</surname>
+            ,
+            <given-names>J. R.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Detitta</surname>
+            ,
+            <given-names>G. T.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Malkowski</surname>
+            ,
+            <given-names>M. G.</given-names>
+          </string-name>
+          (
+          <year>2009</year>
+          ).
+          <source>Protein Sci. 18</source>
+          ,
+          <fpage>1828</fpage>
+          -
+          <lpage>1839</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref14">
+        <mixed-citation>
+          <string-name>
+            <surname>Landau</surname>
+            ,
+            <given-names>E. M.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Rosenbusch</surname>
+            ,
+            <given-names>J. P.</given-names>
+          </string-name>
+          (
+          <year>1996</year>
+          ).
+          <source>Proc. Natl Acad. Sci. USA</source>
+          ,
+          <volume>93</volume>
+          ,
+          <fpage>14532</fpage>
+          -
+          <lpage>14535</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref15">
+        <mixed-citation>
+          <string-name>
+            <surname>Lemieux</surname>
+            ,
+            <given-names>M. J.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Song</surname>
+            ,
+            <given-names>J.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kim</surname>
+            ,
+            <given-names>M. J.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Huang</surname>
+            ,
+            <given-names>Y.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Villa</surname>
+            ,
+            <given-names>A.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Auer</surname>
+            ,
+            <given-names>M.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Li</surname>
+            ,
+            <given-names>X.-D.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Wang</surname>
+            ,
+            <given-names>D.-N.</given-names>
+          </string-name>
+          (
+          <year>2003</year>
+          ).
+          <source>Protein Sci</source>
+          .
+          <volume>12</volume>
+          ,
+          <fpage>2748</fpage>
+          -
+          <lpage>2756</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref16">
+        <mixed-citation>
+          <string-name>
+            <surname>McPherson</surname>
+            ,
+            <given-names>A.</given-names>
+          </string-name>
+          (
+          <year>1976</year>
+          ).
+          <source>J. Biol. Chem</source>
+          .
+          <volume>251</volume>
+          ,
+          <fpage>6300</fpage>
+          -
+          <lpage>6303</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref17">
+        <mixed-citation>
+          <string-name>
+            <surname>McPherson</surname>
+            ,
+            <given-names>A.</given-names>
+          </string-name>
+          (
+          <year>1990</year>
+          ).
+          <source>Eur. J. Biochem. 189</source>
+          ,
+          <fpage>1</fpage>
+          -
+          <lpage>23</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref18">
+        <mixed-citation>
+          <string-name>
+            <surname>Morris</surname>
+            ,
+            <given-names>C.</given-names>
+          </string-name>
+          et al. (
+          <year>2011</year>
+          ).
+          <source>Acta Cryst. D67</source>
+          ,
+          <fpage>249</fpage>
+          -
+          <lpage>260</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref19">
+        <mixed-citation>
+          <string-name>
+            <surname>Rupp</surname>
+            ,
+            <given-names>B.</given-names>
+          </string-name>
+          (
+          <year>2003</year>
+          ).
+          <source>J. Struct. Biol</source>
+          .
+          <volume>142</volume>
+          ,
+          <fpage>162</fpage>
+          -
+          <lpage>169</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref20">
+        <mixed-citation>
+          <string-name>
+            <surname>Smith</surname>
+            ,
+            <given-names>D. E.</given-names>
+          </string-name>
+          (
+          <year>1958</year>
+          ). History of Mathematics. New York: Dover Publications.
+        </mixed-citation>
+      </ref>
+      <ref id="ref21">
+        <mixed-citation>
+          <string-name>
+            <surname>Stock</surname>
+            ,
+            <given-names>D.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Perisic</surname>
+            ,
+            <given-names>O.</given-names>
+          </string-name>
+          &amp;
+          <article-title>Lo¨ we</article-title>
+          , J. (
+          <year>2005</year>
+          ).
+          <source>Prog. Biophys. Mol. Biol</source>
+          .
+          <volume>88</volume>
+          ,
+          <fpage>311</fpage>
+          -
+          <lpage>327</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref22">
+        <mixed-citation>
+          <string-name>
+            <surname>Warne</surname>
+            ,
+            <given-names>T.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Serrano-Vega</surname>
+            ,
+            <given-names>M. J.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Baker</surname>
+            ,
+            <given-names>J. G.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Moukhametzianov</surname>
+            ,
+            <given-names>R.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Edwards</surname>
+            ,
+            <given-names>P. C.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Henderson</surname>
+            ,
+            <given-names>R.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Leslie</surname>
+            ,
+            <given-names>A. G.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Tate</surname>
+            ,
+            <given-names>C. G.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Schertler</surname>
+            ,
+            <given-names>G. F.</given-names>
+          </string-name>
+          (
+          <year>2008</year>
+          ).
+          <source>Nature (London)</source>
+          ,
+          <volume>454</volume>
+          ,
+          <fpage>486</fpage>
+          -
+          <lpage>491</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref23">
+        <mixed-citation>
+          <string-name>
+            <surname>Warne</surname>
+            ,
+            <given-names>T.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Serrano-Vega</surname>
+            ,
+            <given-names>M. J.</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Tate</surname>
+            ,
+            <given-names>C. G.</given-names>
+          </string-name>
+          &amp;
+          <string-name>
+            <surname>Schertler</surname>
+            ,
+            <given-names>G. F.</given-names>
+          </string-name>
+          (
+          <year>2009</year>
+          ).
+          <source>Protein Expr. Purif</source>
+          .
+          <volume>65</volume>
+          ,
+          <fpage>204</fpage>
+          -
+          <lpage>213</lpage>
+          .
+        </mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+

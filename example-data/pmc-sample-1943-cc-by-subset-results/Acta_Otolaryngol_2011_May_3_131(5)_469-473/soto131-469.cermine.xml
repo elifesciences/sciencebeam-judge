@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns:xlink="http://www.w3.org/1999/xlink">
+  <front>
+    <journal-meta>
+      <journal-title-group>
+        <journal-title>Acta Oto-Laryngologica</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0001-6489</issn>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.3109/00016489.2010.533697</article-id>
+      <title-group>
+        <article-title>Visualization and assessment of saccular duct and endolymphatic sinus</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <string-name>HIDEO YAMANE</string-name>
+          <email>ent-yamane@med.osaka-cu.ac.jp</email>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>MASAHIRO TAKAYAMA</string-name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>KISHIKO SUNAMI</string-name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>HIRAMORI SAKAMOTO</string-name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>TOSHIO IMOTO</string-name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>MATTI ANNIKO</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <aff id="aff0">
+          <label>0</label>
+          <institution>Department of Otorhinolaryngology and Head &amp; Neck Surgery, Uppsala University Hospital</institution>
+          ,
+          <addr-line>Uppsala</addr-line>
+          ,
+          <country country="SE">Sweden</country>
+        </aff>
+        <aff id="aff1">
+          <label>1</label>
+          <institution>Department of Otorhinolaryngology, Osaka City University Graduate School of Medicine</institution>
+          ,
+          <addr-line>Osaka</addr-line>
+          ,
+          <country country="JP">Japan</country>
+        </aff>
+      </contrib-group>
+      <pub-date>
+        <year>2011</year>
+      </pub-date>
+      <volume>131</volume>
+      <fpage>469</fpage>
+      <lpage>473</lpage>
+      <abstract>
+        <p>Conclusion: The saccular duct and endolymphatic sinus run in the bony groove, before reaching the orifice of the vestibular aqueduct. We first clinically visualized this sulciform groove using three-dimensional (3D) cone beam CT images. This strategy can be useful to assess the condition of the saccular duct and endolymphatic sinus concerning the longitudinal flow system of endolymph. Objective: To assess the saccular duct and endolymphatic sinus in the endolymphatic system in order to advance clinical studies on inner ear dysfunction. Methods: The sulciform groove of the saccular duct and endolymphatic sinus of human subjects was analyzed by cone beam CT and compared with that of a cadaver. Results: We could obtain reconstructed 3D CT images of the sulciform groove of the saccular duct and endolymphatic sinus using several CT window levels.</p>
+      </abstract>
+      <kwd-group>
+        <kwd>Cochlea</kwd>
+        <kwd>saccule</kwd>
+        <kwd>bony groove</kwd>
+        <kwd>longitudinal flow</kwd>
+        <kwd>CT image</kwd>
+        <kwd>endolymphatic hydrops</kwd>
+        <kwd>endolymphatic duct</kwd>
+        <kwd>rendering</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec-1">
+      <title>Introduction</title>
+      <p>
+        The saccule connects with two ducts, the reuniting
+and saccular ducts, which are respectively the paths of
+endolymph. These paths are important in the
+longitudinal flow theory [
+        <xref ref-type="bibr" rid="ref1">1</xref>
+        ], whereby the endolymph goes
+directly from the cochlea to the endolymphatic sac.
+This theory explains the cause of Meniere?s disease,
+which exhibits endolymphatic hydrops [
+        <xref ref-type="bibr" rid="ref2 ref3">2,3</xref>
+        ]. From
+this viewpoint, the vestibular aqueduct that follows
+the saccular duct was initially clinically visualized and
+used as a diagnostic tool for Meniere?s disease [
+        <xref ref-type="bibr" rid="ref4 ref5">4,5</xref>
+        ].
+      </p>
+      <p>
+        We also clinically analyzed the reuniting duct by
+visualizing it with three-dimensional computed
+tomography (3D CT) to diagnose Meniere?s disease
+[
+        <xref ref-type="bibr" rid="ref6 ref7 ref8">6?8</xref>
+        ]. However, the saccular duct has not been
+clinically visualized. The reason is that the saccular duct is
+membranous, facing endolymph inside and
+perilymph outside, and so CT and MRI have limitations
+for visualizing it. The saccular duct becomes
+endolymphatic sinus running in the bony sulciform groove
+before ending in the vestibular aqueduct, which may
+be visualized in 3D CT images as a bony substance,
+like the bony groove of the reuniting duct (YT groove)
+in a previous study [
+        <xref ref-type="bibr" rid="ref6 ref7">6,7</xref>
+        ].
+      </p>
+      <p>In the present study, we investigated whether the
+saccular duct and endolymphatic sinus could be
+demonstrated on clinical images using cone beam
+3D CT.</p>
+    </sec>
+    <sec id="sec-2">
+      <title>Material and methods</title>
+      <p>
+        We investigated the saccular duct and endolymphatic
+sinus and their sulciform groove in the temporal
+bones of bilaterally healthy ears of 12 controls (6 males
+and 6 females; mean age 58.4 years, range 35?79
+years), which had been included in a previous study
+[
+        <xref ref-type="bibr" rid="ref8">8</xref>
+        ] employing cone beam CT (3D Accuitomo; J.
+Morita Mfg Corp., Kyoto, Japan) and the temporal
+bone of a cadaver donated to our medical university of
+anatomy, with the consent of the deceased and our
+university, to compare the findings in human subjects
+with those in the cadaver.
+      </p>
+      <p>CT images were investigated using cone beam
+CT to obtain images under the following
+conditions: 80 kV, 6 mA, voxel 0.125 0.125
+0.125 mm, slice thickness 0.5 mm. CT images of
+this region were taken as a column with a diameter
+and height of 6 cm. Reconstructed 3D images of the
+inner ear were obtained using rendering software
+(IVIEW; J. Morita Mfg Corp.) using a perspective
+view with a viewing angle of 15 and a 0.25 mm
+voxel (0.25 0.25 0.25 mm).</p>
+      <p>
+        To obtain 3D CT images of the saccular duct and
+endolymphatic sinus in accordance with cadaver
+specimens, we adopted the landmarks reported in
+a previous study to reduce discrepancies due to
+rendering effect [
+        <xref ref-type="bibr" rid="ref7">7</xref>
+        ]. 3D CT images are manipulated
+so that the saccule, YT groove, and vestibular
+portion of the posterior semicircular canal and ridge of
+the cochlea just sloping down to the vestibule in
+front are all viewed in one frame. With this view, the
+bony sulciform groove of the saccular duct and
+endolymphatic sinus is visible. Then, this image
+can be manipulated through pitch or yaw to yield
+a view from directly above the sulciform groove to
+decrease the artifact by rendering effects. Also,
+several CT window levels were used in one view
+to visualize the groove from the surrounding
+      </p>
+      <p>Cochlea</p>
+      <p>IAC
+A sulciform groove from the saccular fossa to the
+orifice of the vestibular aqueduct in which the saccular
+duct and endolymphatic sinus run could be localized
+in the cadaver specimen (Figure 1A?D). The
+sulciform groove of the endolymphatic sinus was distinct
+but that of the saccular duct was unclear (Figures 1C
+and 2A). Employing a direction in which the
+saccule and saccular duct and endolymphatic sinus
+can be seen from directly above, the groove-like 3D
+CT image of the saccular duct and endolymphatic
+sinus were consistent with macroscopic findings
+(Figure 2A?C). This groove-like image was made
+up of two colors when CT was imaged with these
+bone and soft tissue CT window levels (Figure 2C).
+Further, this image was consistent with macroscopic
+cadaveric findings because there was a torn
+membranous labyrinth around the groove that could be
+imaged as soft tissue by CT.</p>
+      <p>Groove-like 3D CT images of the saccular duct
+and endolymphatic sinus were obtained in all
+12 human subjects. The aspects of the groove were
+similar among the 12 healthy subjects (Figures 3
+and 4).</p>
+      <p>The images of the groove reconstructed using
+several CT window levels such as a high or low
+density of bone revealed more accurate images
+(Figure 3B and C), especially the lumen of the</p>
+      <p>Cochlea</p>
+      <p>IAC
+OS</p>
+      <p>SR</p>
+      <p>CR</p>
+      <p>UR
+groove, which was more manifested
+three-dimensionally compared with single CT window levels
+(Figure 3A?C).</p>
+    </sec>
+    <sec id="sec-3">
+      <title>Discussion</title>
+      <p>
+        The vestibular aqueduct has been assessed in
+relation to the etiology of Meniere?s disease, where
+the endolymphatic duct runs and reaches the
+endolymphatic sac. This clinical strategy is based on the
+fact that idiopathic endolymphatic hydrops, a
+pathological entity of Meniere?s disease, is caused by the
+blockage of endolymph in the endolymphatic duct or
+sac [
+        <xref ref-type="bibr" rid="ref10 ref9">9,10</xref>
+        ].
+      </p>
+      <p>However, there are few reports on the saccular duct
+and endolymphatic sinus despite these sites and the
+vestibular aqueduct being directly connected.</p>
+      <p>
+        Most saccular duct and endolymphatic sinus
+studies are limited to animal experiments or specimens of
+human temporal bone [
+        <xref ref-type="bibr" rid="ref10 ref3">3,10</xref>
+        ], because the saccular
+duct and endolymphatic sinus are too small and
+membranous to assess clinically. The saccular duct
+and endolymphatic sinus are not a bony groove
+themselves but run in the bony groove, which could be
+visualized clinically using 3D CT. When the saccular
+duct or endolymphatic sinus is involved as a lesion in
+inner ear disease, their bony grooves may reflect the
+lesional effect. A similar strategy was adopted to assess
+      </p>
+      <p>IAC
+duct directly connects with the saccule, we cannot
+deny the possibility that dislodged otoconia from
+the saccule may enter the saccular duct or
+endolymphatic sinus in a similar manner to that in the
+reuniting duct.</p>
+      <p>Investigating the saccular duct and endolymphatic
+sinus will provide novel information regarding inner
+ear diseases caused by longitudinal flow disturbances
+of endolymph, especially Meniere?s disease. We will
+also further investigate the role of these architectures.</p>
+    </sec>
+    <sec id="sec-4">
+      <title>Acknowledgment</title>
+      <p>We greatly appreciate the valuable technical
+assistance of Dr Hiroshi Aradate of J. Morita Mfg Corp.
+Declaration of interest: The authors report no
+conflicts of interest. The authors alone are responsible
+for the content and writing of the paper.</p>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <ref id="ref1">
+        <mixed-citation>
+          [1]
+          <string-name>
+            <surname>Guild</surname>
+            <given-names>SR.</given-names>
+          </string-name>
+          <article-title>The circulation of the endolymph</article-title>
+          .
+          <source>Am J Anat</source>
+          <year>1927</year>
+          ;
+          <volume>39</volume>
+          :
+          <fpage>57</fpage>
+          -
+          <lpage>81</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref2">
+        <mixed-citation>
+          [2]
+          <string-name>
+            <surname>Kimura</surname>
+            <given-names>RS</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Schuknecht</surname>
+            <given-names>HF</given-names>
+          </string-name>
+          .
+          <article-title>Membranous hydrops in the inner ear of the guinea pig after obliteration of the endolymphatic sac</article-title>
+          .
+          <source>Pract Otorhinolaryngol</source>
+          <year>1965</year>
+          ;
+          <volume>27</volume>
+          :
+          <fpage>343</fpage>
+          -
+          <lpage>54</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref3">
+        <mixed-citation>
+          [3]
+          <string-name>
+            <surname>Kitamura</surname>
+            <given-names>K</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Schuknecht</surname>
+            <given-names>H</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kimura</surname>
+            <given-names>R</given-names>
+          </string-name>
+          .
+          <article-title>Cochlear hydrops is associated with collapsed saccule and ductus reuniens</article-title>
+          .
+          <source>Ann Otol</source>
+          <year>1982</year>
+          ;
+          <volume>91</volume>
+          :
+          <fpage>5</fpage>
+          -
+          <lpage>13</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref4">
+        <mixed-citation>
+          [4]
+          <string-name>
+            <surname>Stahle</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Wilbrand</surname>
+            <given-names>H.</given-names>
+          </string-name>
+          <article-title>The vestibular aqueduct in patients with Meniere's disease. A tomographic and clinical investigation</article-title>
+          .
+          <source>Acta Otolaryngol</source>
+          <year>1974</year>
+          ;
+          <volume>78</volume>
+          :
+          <fpage>36</fpage>
+          -
+          <lpage>48</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref5">
+        <mixed-citation>
+          [5]
+          <string-name>
+            <surname>Yamamoto</surname>
+            <given-names>E</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mizukami</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Isono</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ohmura</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Hirono</surname>
+            <given-names>Y.</given-names>
+          </string-name>
+          <article-title>Observation of the external aperture of the vestibular aqueduct using three-dimensional surface reconstruction imaging</article-title>
+          .
+          <source>Laryngoscope</source>
+          <year>1991</year>
+          ;
+          <volume>101</volume>
+          :
+          <fpage>480</fpage>
+          -
+          <lpage>3</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref6">
+        <mixed-citation>
+          [6]
+          <string-name>
+            <surname>Yamane</surname>
+            <given-names>H</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Takayama</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Sunami</surname>
+            <given-names>K</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Sakamoto</surname>
+            <given-names>H</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mchizuki</surname>
+            <given-names>K</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Inoue</surname>
+            <given-names>Y</given-names>
+          </string-name>
+          .
+          <article-title>Three-dimensional images of the reuniting duct using cone beam CT</article-title>
+          .
+          <source>Acta Otolaryngol</source>
+          <year>2009</year>
+          ;
+          <volume>129</volume>
+          :
+          <fpage>493</fpage>
+          -
+          <lpage>6</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref7">
+        <mixed-citation>
+          [7]
+          <string-name>
+            <surname>Yamane</surname>
+            <given-names>H</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Takayama</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Sunami</surname>
+            <given-names>K</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Sakamoto</surname>
+            <given-names>H</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Anniko</surname>
+            <given-names>M.</given-names>
+          </string-name>
+          <article-title>Assessment of the reuniting duct by threedimensional CT rendering</article-title>
+          .
+          <source>Acta Otolaryngol</source>
+          <year>2009</year>
+          ;
+          <volume>129</volume>
+          :
+          <fpage>1166</fpage>
+          -
+          <lpage>8</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref8">
+        <mixed-citation>
+          [8]
+          <string-name>
+            <surname>Yamane</surname>
+            <given-names>H</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Takayama</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Sunami</surname>
+            <given-names>K</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Sakamoto</surname>
+            <given-names>H</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Imoto</surname>
+            <given-names>T</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Anniko</surname>
+            <given-names>M.</given-names>
+          </string-name>
+          <article-title>Blockage of reuniting duct in Meniere's disease</article-title>
+          .
+          <source>Acta Otolaryngol</source>
+          <year>2010</year>
+          ;
+          <volume>130</volume>
+          :
+          <fpage>233</fpage>
+          -
+          <lpage>9</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref9">
+        <mixed-citation>
+          [9]
+          <string-name>
+            <surname>Kimura</surname>
+            <given-names>RS</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Schuknecht</surname>
+            <given-names>HF</given-names>
+          </string-name>
+          .
+          <article-title>Membranous hydrops in the inner ear of the guinea pig after obliteration of the endolymphatic sac</article-title>
+          .
+          <source>Pract Otorhinolaryngol</source>
+          <year>1965</year>
+          ;
+          <volume>27</volume>
+          :
+          <fpage>343</fpage>
+          -
+          <lpage>54</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref10">
+        <mixed-citation>
+          [10]
+          <string-name>
+            <surname>Schuknecht</surname>
+            <given-names>HF</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Rüther</surname>
+            <given-names>A</given-names>
+          </string-name>
+          .
+          <article-title>Blockage of longitudinal flow in the endolymphatic hydrops</article-title>
+          .
+          <source>Eur Arch Otorhinolaryngol</source>
+          <year>1991</year>
+          ;
+          <volume>248</volume>
+          :
+          <fpage>209</fpage>
+          -
+          <lpage>17</lpage>
+          .
+        </mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+
