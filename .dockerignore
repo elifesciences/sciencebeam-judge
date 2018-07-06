@@ -6,6 +6,8 @@ dist
 .travis.yml
 Jenkinsfile
 
+.ipynb_checkpoints
+
 .cache
 .models
 .temp
