@@ -86,3 +86,63 @@ class TestJatsXpathFunctions(object):
       )
       register_functions()
       assert list(xml.xpath('jats-full-name(//contrib)')) == []
+
+  class TestAffString(object):
+    def test_should_return_institution(self):
+      xml = E.article(
+        E.aff(
+          E('institution', {'content-type': 'orgname'}, 'Organisation 1')
+        )
+      )
+      register_functions()
+      assert list(xml.xpath('jats-aff-string(//aff)')) == ['Organisation 1']
+
+    def test_should_join_multiple_institutions(self):
+      xml = E.article(
+        E.aff(
+          E('institution', {'content-type': 'orgname'}, 'Organisation 1'),
+          E('institution', {'content-type': 'orgdiv1'}, 'Division 1')
+        )
+      )
+      register_functions()
+      assert list(xml.xpath('jats-aff-string(//aff)')) == ['Organisation 1, Division 1']
+
+    def test_should_join_institution_with_city_country(self):
+      xml = E.article(
+        E.aff(
+          E('institution', {'content-type': 'orgname'}, 'Organisation 1'),
+          E.city('City 1'),
+          E.country('Country 1')
+        )
+      )
+      register_functions()
+      assert list(xml.xpath('jats-aff-string(//aff)')) == ['Organisation 1, City 1, Country 1']
+
+    def test_should_join_institution_with_addr_line(self):
+      xml = E.article(
+        E.aff(
+          E('institution', {'content-type': 'orgname'}, 'Organisation 1'),
+          E('addr-line', 'Addr Line 1')
+        )
+      )
+      register_functions()
+      assert list(xml.xpath('jats-aff-string(//aff)')) == ['Organisation 1, Addr Line 1']
+
+    def test_should_return_aff_text_without_label(self):
+      xml = E.article(
+        E.aff(
+          'Affiliation 1'
+        )
+      )
+      register_functions()
+      assert list(xml.xpath('jats-aff-string(//aff)')) == ['Affiliation 1']
+
+    def test_should_return_aff_text_excluding_label(self):
+      xml = E.article(
+        E.aff(
+          E.label('1'),
+          'Affiliation 1'
+        )
+      )
+      register_functions()
+      assert list(xml.xpath('jats-aff-string(//aff)')) == ['Affiliation 1']
