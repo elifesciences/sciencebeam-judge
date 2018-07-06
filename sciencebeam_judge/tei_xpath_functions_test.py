@@ -2,6 +2,11 @@ from lxml.builder import E
 
 from .tei_xpath_functions import register_functions
 
+def _tei_with_authors(*authors):
+  return E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
+    *authors
+  ))))))
+
 class TestTeiXpathFunctions(object):
   class TestAuthors(object):
     def test_should_return_single_author_node(self):
@@ -11,9 +16,7 @@ class TestTeiXpathFunctions(object):
           E.surname('Thomson')
         )
       )
-      xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
-        author
-      ))))))
+      xml = _tei_with_authors(author)
       register_functions()
       assert list(xml.xpath('tei-authors(.)')) == [author]
 
@@ -25,9 +28,7 @@ class TestTeiXpathFunctions(object):
           E.surname('Thomson')
         )
       )
-      xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
-        author
-      ))))))
+      xml = _tei_with_authors(author)
       register_functions()
       assert list(xml.xpath('tei-full-name(//persName)')) == ['Tom Thomson']
 
@@ -39,9 +40,7 @@ class TestTeiXpathFunctions(object):
           E.surname('Thomson')
         )
       )
-      xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
-        author
-      ))))))
+      xml = _tei_with_authors(author)
       register_functions()
       assert list(xml.xpath('tei-full-name(//persName)')) == ['Tom T Thomson']
 
@@ -52,9 +51,7 @@ class TestTeiXpathFunctions(object):
           E.surname('Thomson')
         )
       )
-      xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
-        author
-      ))))))
+      xml = _tei_with_authors(author)
       register_functions()
       assert list(xml.xpath('tei-full-name(//author)')) == ['Tom Thomson']
 
@@ -64,9 +61,7 @@ class TestTeiXpathFunctions(object):
           E.forename('Tom')
         )
       )
-      xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
-        author
-      ))))))
+      xml = _tei_with_authors(author)
       register_functions()
       assert list(xml.xpath('tei-full-name(//author)')) == ['Tom']
 
@@ -77,9 +72,7 @@ class TestTeiXpathFunctions(object):
           E.surname()
         )
       )
-      xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
-        author
-      ))))))
+      xml = _tei_with_authors(author)
       register_functions()
       assert list(xml.xpath('tei-full-name(//author)')) == ['Tom']
 
