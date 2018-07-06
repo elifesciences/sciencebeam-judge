@@ -5,7 +5,7 @@ import re
 import logging
 from difflib import SequenceMatcher
 
-from six import iteritems, raise_from, string_types
+from six import iteritems, raise_from, string_types, text_type
 from six.moves.configparser import ConfigParser
 
 from lxml import etree as ET
@@ -26,7 +26,10 @@ def mean(data):
   return sum(data) / len(data)
 
 def get_full_text(e):
-  return "".join(e.itertext())
+  try:
+    return "".join(e.itertext())
+  except AttributeError:
+    return text_type(e)
 
 def get_full_text_ignore_children(e, children_to_ignore):
   if children_to_ignore is None or len(children_to_ignore) == 0:
