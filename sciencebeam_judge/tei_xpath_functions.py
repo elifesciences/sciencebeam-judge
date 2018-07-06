@@ -47,8 +47,23 @@ def fn_tei_authors(_, nodes):
     )
   ]
 
+def _aff_string(aff):
+  return ', '.join(
+    _text(
+      aff.findall('orgName') +
+      aff.findall('address/addrLine') +
+      aff.findall('address/postCode') +
+      aff.findall('address/settlement') +
+      aff.findall('address/country')
+    )
+  )
+
+def fn_tei_aff_string(_, nodes):
+  return [_aff_string(node) for node in nodes]
+
 def register_functions(ns=None):
   if ns is None:
     ns = etree.FunctionNamespace(None)
   ns['tei-full-name'] = fn_tei_full_name
   ns['tei-authors'] = fn_tei_authors
+  ns['tei-aff-string'] = fn_tei_aff_string

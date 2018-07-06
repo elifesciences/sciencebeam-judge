@@ -2,6 +2,8 @@ import logging
 
 from lxml import etree
 
+from sciencebeam_gym.utils.xml import get_text_content
+
 LOGGER = logging.getLogger(__name__)
 
 def _name_node(node):
@@ -50,8 +52,25 @@ def fn_jats_authors(_, nodes):
     )
   ]
 
+def _aff_string(aff):
+  result = ', '.join(
+    _text(
+      aff.findall('institution') +
+      aff.findall('addr-line') +
+      aff.findall('city') +
+      aff.findall('country')
+    )
+  )
+  if not result:
+    result = get_text_content(aff, exclude=aff.findall('label'))
+  return result
+
+def fn_jats_aff_string(_, nodes):
+  return [_aff_string(node) for node in nodes]
+
 def register_functions(ns=None):
   if ns is None:
     ns = etree.FunctionNamespace(None)
   ns['jats-full-name'] = fn_jats_full_name
   ns['jats-authors'] = fn_jats_authors
+  ns['jats-aff-string'] = fn_jats_aff_string
