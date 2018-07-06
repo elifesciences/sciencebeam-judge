@@ -1,0 +1,1554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns:xlink="http://www.w3.org/1999/xlink">
+  <front>
+    <journal-meta>
+      <journal-title-group>
+        <journal-title>Foundation Acta Paediatrica</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0803-5253</issn>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.1111/j.1651-2227.2010.02102.x</article-id>
+      <title-group>
+        <article-title>Placental programming of blood pressure in Indian children</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <string-name>Nicola R Winder (nw@mrc.soton.ac.uk)</string-name>
+          <email>nw@mrc.soton.ac.uk</email>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>Ghattu V Krishnaveni</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>Jacqueline C Hill</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>Chitra LS Karat</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>Caroline HD Fall</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>Sargoor R Veena</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>David JP Barker</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <aff id="aff0">
+          <label>0</label>
+          <institution>1.MRC Lifecourse Epidemiology Unit, Southampton General Hospital, University of Southampton, Southampton, UK 2.Epidemiology Research Unit, CSI Holdsworth Memorial Hospital</institution>
+          ,
+          <addr-line>Mysore 570021</addr-line>
+          ,
+          <country country="IN">India</country>
+        </aff>
+      </contrib-group>
+      <pub-date>
+        <year>2011</year>
+      </pub-date>
+      <volume>100</volume>
+      <fpage>653</fpage>
+      <lpage>660</lpage>
+      <history>
+        <date date-type="accepted">
+          <day>23</day>
+          <month>11</month>
+          <year>2010</year>
+        </date>
+        <date date-type="received">
+          <day>26</day>
+          <month>8</month>
+          <year>2010</year>
+        </date>
+        <date date-type="revised">
+          <day>20</day>
+          <month>10</month>
+          <year>2010</year>
+        </date>
+      </history>
+      <abstract>
+        <p>Aim: To determine whether the size and shape of the placental surface predict blood pressure in childhood. Methods: We studied blood pressure in 471 nine-year-old Indian children whose placental length, breadth and weight were measured in a prospective birth cohort study. Results: In the daughters of short mothers (&lt;median height), systolic blood pressure (SBP) rose as placental breadth increased (b = 0.69 mmHg ? cm, p = 0.05) and as the ratio of placental surface area to birthweight increased (p = 0.0003). In the daughters of tall mothers, SBP rose as the difference between placental length and breadth increased (b = 1.40 mmHg ? cm, p = 0.007), that is as the surface became more oval. Among boys, associations with placental size were only statistically significant after adjusting for current BMI and height. After adjustment, SBP rose as placental breadth, area and weight decreased (for breadth b = )0.68 mmHg ? cm, p &lt; 0.05 for all three measurements).</p>
+      </abstract>
+      <kwd-group>
+        <kwd>eol&gt;Birth size</kwd>
+        <kwd>Blood pressure</kwd>
+        <kwd>Indian children</kwd>
+        <kwd>Maternal height</kwd>
+        <kwd>Placental surface</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec-1">
+      <title>INTRODUCTION</title>
+      <p>
+        People whose birthweights were towards the lower end of
+the normal range have higher blood pressures and are at
+increased risk of developing hypertension in later life (
+        <xref ref-type="bibr" rid="ref1 ref2 ref3">1?3</xref>
+        ).
+This is thought to reflect foetal programming, the process by
+which malnutrition and other adverse influences during
+development alter gene expression and programme the
+body?s structures and function for life (
+        <xref ref-type="bibr" rid="ref4 ref5">4,5</xref>
+        ). These adverse
+influences may also slow foetal growth, leading to low
+birthweight (
+        <xref ref-type="bibr" rid="ref6">6</xref>
+        ). A baby?s birthweight reflects its success in
+obtaining nutrients from its mother. The source of these
+nutrients is not only the mother?s current diet but her
+metabolism, which is a product of her lifetime?s nutrition
+(
+        <xref ref-type="bibr" rid="ref7">7</xref>
+        ). Height is one indicator of a woman?s nutrition in early
+life (
+        <xref ref-type="bibr" rid="ref8">8</xref>
+        ), and women who are short have lower rates of
+protein synthesis during pregnancy than do women who are tall
+(
+        <xref ref-type="bibr" rid="ref9">9</xref>
+        ).
+      </p>
+      <p>
+        A baby?s birthweight also depends on the placenta?s
+ability to transport nutrients to it from its mother (
+        <xref ref-type="bibr" rid="ref6">6</xref>
+        ). Small
+babies generally have small placentas (
+        <xref ref-type="bibr" rid="ref10">10</xref>
+        ), which suggests
+that placental size is an indicator of placental function. In
+some circumstances, however, an undernourished baby can
+expand its placental surface to extract more nutrients from
+the mother (
+        <xref ref-type="bibr" rid="ref11">11</xref>
+        ). This leads to high placental weight in
+relation to birthweight. Both low placental weight and high
+placental weight in relation to birthweight have been shown
+to predict later hypertension (
+        <xref ref-type="bibr" rid="ref12 ref13 ref14">12?14</xref>
+        ). Placental weight has
+inconsistent associations with blood pressure levels in
+children. There are reported associations between increased
+levels of blood pressure and low placental weight and a high
+ratio of placental weight to birthweight (
+        <xref ref-type="bibr" rid="ref15 ref16">15,16</xref>
+        ). Other
+studies have found no associations (
+        <xref ref-type="bibr" rid="ref17">17</xref>
+        ). While the size of the
+placenta is linked to foetal nutrition, which nutrients are
+delivered to the foetus is conditional on their availability in
+the maternal circulation. This will be related to the mother?s
+body size. The effects of placental size on later hypertension
+are conditioned by the mother?s body size (
+        <xref ref-type="bibr" rid="ref11">11</xref>
+        ) because her
+body is the source of nutrients.
+      </p>
+      <p>The weight of the placenta does not distinguish its
+thickness from its surface area. To increase the surface for
+nutrient and oxygen exchange, the placenta can expand its
+invasion across the surface of the uterine lining or invade
+the maternal spiral arteries more deeply. The long-term
+consequences of these may be different.</p>
+      <p>
+        The surface of the placenta is generally described as oval
+or round. To measure the ovality, two so-called diameters of
+the surface were routinely recorded in some hospitals (
+        <xref ref-type="bibr" rid="ref11">11</xref>
+        ).
+The maximal diameter described the length of the surface,
+while the lesser one bisecting it at right angles described the
+breadth. Studies in Finland and Holland have shown that
+hypertension in the offspring in later life is related to the
+size of the placental surface (
+        <xref ref-type="bibr" rid="ref11">11</xref>
+        ). This relation depends
+more on the breadth of the surface than on its length.
+      </p>
+      <p>
+        We measured the length and breadth of the placental
+surface in a study of newborn babies in Mysore, South India
+(
+        <xref ref-type="bibr" rid="ref18">18</xref>
+        ). The children?s blood pressures were measured at the
+age of 9 years. We hypothesized that blood pressure levels
+would be related to the size of the placental surface and
+would relate more to the breadth than the length. We also
+hypothesized that the associations would depend on the
+mother?s height. The relation between placental size and
+later hypertension differs in the two sexes (
+        <xref ref-type="bibr" rid="ref19">19</xref>
+        ). We
+therefore examined boys and girls separately.
+      </p>
+    </sec>
+    <sec id="sec-2">
+      <title>METHODS</title>
+      <p>
+        In 1997, the Mysore Parthenon study recruited pregnant
+women attending the antenatal clinic at the Holdsworth
+Memorial Hospital (HMH) in Mysore, South India (
+        <xref ref-type="bibr" rid="ref18 ref20">18,20</xref>
+        ).
+The hospital ethical committee approved the study, and
+informed written consent was obtained from the parents
+and children. All women who had a singleton pregnancy
+and who were not diabetic before pregnancy were eligible.
+Out of 1233 eligible women, 830 (67%) took part in the
+study. At 30 ± 2 weeks of gestation, their body size was
+measured, including their height, using standardized
+methods. One hundred and fifty-six women delivered elsewhere
+and were not followed up any further: the remaining 674
+women delivered live-born babies at HMH. Seven babies
+were stillborn and four had major congenital abnormalities.
+Neonatal anthropometric measurements were made on the
+remaining 663 within 72 h of birth by one of the four
+trained measurers, again using standardized methods.
+Weight was measured using digital weighing scales (Seca,
+Germany); crown-heel length was measured using a
+Harpenden neonatal stadiometer (CMS instruments, London,
+UK); head circumference was measured with blank
+anthropometric tape, marked and measured against a fixed ruler.
+      </p>
+      <p>Placental dimensions were measured in 653 of the babies.
+The placentae were initially checked for completeness, and
+the cord clamp was released to allow the blood to drain.
+The amnion was stripped off, and the chorion was trimmed
+close to the placental edge. The cord was cut flush with the
+placenta, and any obvious clots were removed. The placenta
+was weighed using an electronic weighing machine. It was
+then placed on a flat surface, with the cotyledons facing
+upwards. The longest diameter (length) was identified by
+eye and measured using a graduated transparent plastic
+ruler placed on the surface. The diameter perpendicular to
+the length was defined as the breadth and was measured in
+the same way.</p>
+      <sec id="sec-2-1">
+        <title>Postnatal follow-up</title>
+        <p>The children were followed up annually from birth until
+5 years of age, and every six months thereafter. Eight
+children were excluded because of major medical conditions,
+while a further 25 children died. Ninety-one children did
+not attend the nine and a half year follow-up (nine
+untraceable, 26 moved away and 56 declined to participate)
+so that 539 children were examined (Figure 1). Further
+anthropometry was carried out including weight (Salter,
+Tonbridge, Kent, UK), height (Microtoise; CMS
+instruments) and mid-upper arm circumference. Systolic and
+diastolic blood pressures were measured in the left arm using
+an automated blood pressure monitor (Dinamap8100,
+Criticon, FL, USA). Appropriate-sized cuffs were selected
+for use based on the mid-upper arm circumference. Two
+recordings were made after five minutes seated at rest, and
+the average taken. The observers were unaware of the
+neonatal measurements of the children. The techniques used by
+different observers were standardized by regular intra- and
+inter-observer variation studies.</p>
+      </sec>
+      <sec id="sec-2-2">
+        <title>Analysis sample</title>
+        <p>Blood pressure was recorded for all 539 children who
+attended the 9.5-year follow-up. Because placental size is
+increased in gestational diabetes, we excluded from the
+analysis 35 children whose mothers developed diabetes
+during gestation and 25 children for whom maternal glucose
+tolerance test data were missing. We included seven
+children born to mothers who developed hypertension and 29
+babies born preterm. Placental measurements were missing
+for eight children, and hence our study sample comprises
+the remaining 471 children with complete measurements of
+the placenta.</p>
+      </sec>
+      <sec id="sec-2-3">
+        <title>Statistical methods</title>
+        <p>
+          The data included the weight of the placenta and the length
+and breadth of its surface. Placental area was calculated
+assuming an elliptical surface, using the maximal diameter
+(length) · lesser diameter (breadth) · p ? 4 (
+          <xref ref-type="bibr" rid="ref11">11</xref>
+          ). We
+calculated the difference between the length and breadth of the
+surface and the ratio of placental area to birthweight. We
+examined associations between placental variables and
+blood pressure using linear regression, unadjusted and then
+adjusted for the child?s body mass index (BMI) and height
+at 9.5 years; where p values from adjusted models are used,
+this is stated. We used linear regression to examine
+interactions between the effects on blood pressure of placental size
+and maternal height. Among girls, there were interactions
+between the effects of placental size and maternal height
+(see Results); and, as in the analyses of the Helsinki Birth
+Cohort (
+          <xref ref-type="bibr" rid="ref11 ref19">11,19</xref>
+          ), we examined separate models for girls born
+to mothers above and below the median height (154.5 cm).
+There were no similar interactions between placental size
+and maternal height in boys.
+        </p>
+      </sec>
+    </sec>
+    <sec id="sec-3">
+      <title>RESULTS</title>
+      <p>
+        Table 1 shows the mean measurements of the 471 mothers,
+placentas, babies and children. None of the mothers
+smoked tobacco. At birth, boys were larger than girls, but
+their placental size was similar. Twelve boys and eight girls
+had systolic hypertension, using standard criteria (
+        <xref ref-type="bibr" rid="ref21">21</xref>
+        ).
+      </p>
+      <p>There were no significant differences in birthweight or
+any of the placental measurements between the 471
+1998 ? 1999</p>
+      <p>667744wwomomenedneldiveelrievdearteHdMaHt HMH
+children included in the study sample and the 118 children
+who were eligible but who were not included, either
+because of incomplete placental measurements or because
+830 women recruited
+(consented to participate in the study)</p>
+      <p>663 live births
+(without major anomalies)
+653 observed placentae
+630 children eligible for follow-up
+403 did not participate
+156 delivered elsewhere
+7 stillbirths
+4 major anomalies
+25 deaths
+8 major medical problems
+9 untraceable
+26 moved away
+56 declined to
+participate
+8 children missing placenta data
+60 children from mothers with
+gestational diabetes/missing data
+for gestational diabetes
+261.6 cm vs. 255.1 cm p = 0.2; placental weight: 0.408 kg
+vs. 0.411 kg p = 0.8). However, there was a significant
+difference in maternal height between these two groups:
+154.3 cm vs. 156.4 cm, p = 0.0002).</p>
+      <p>Among boys, neither systolic nor diastolic pressure was
+related to birthweight, head circumference, birth length or
+the length of gestation. Table 2 shows the trends in blood
+pressure with placental size. Systolic pressure tended to rise
+as placental breadth, weight and area decreased. These trends
+became statistically significant after adjusting for the child?s
+current BMI and height (for breadth b = )0.68 mmHg ? cm).
+The trends with breadth and weight also became statistically
+significant after adjusting for birth weight (p = 0.04 for
+breadth and p = 0.03 for weight). Systolic pressure tended to
+rise as the ratio of placental area to birth weight decreased;
+however, this trend was not statistically significant. Diastolic
+pressure was unrelated to placental size.</p>
+      <p>Among girls, systolic and diastolic pressure fell as
+birthweight increased (systolic pressure fell by 4.2 mmHg per kg
+increase in birthweight, 95% CI 1.4?6.9, p = 0.003;
+diastolic pressure fell by 2.6 mmHg per kg increase, 95% CI
+0.3?4.9, p = 0.03, after adjusting for current BMI). Systolic
+pressure in girls also fell as birth length increased
+(p = 0.04, adjusted for current BMI). It was not related to
+head circumference or to the length of gestation. Table 2
+shows the trends in blood pressure with placental size.
+Systolic blood pressure rose as the ratio of area to birthweight
+increased. Diastolic blood pressure fell as placental weight
+increased. In Table 3, the trends in blood pressure with
+placental size among girls are divided according to the
+mother?s median height. Among girls whose mothers?
+height was below the median, systolic pressure rose as
+placental breadth increased (b = 0.69 mmHg ? cm) and as the
+ratio of placental area to birthweight increased. In a
+simultaneous regression, both larger placental area and lower
+birthweight were associated with higher systolic pressure
+(p = 0.001 and 0.002, respectively). Diastolic pressure also
+rose as the ratio of placental area to birthweight increased;
+however, this was a weaker trend than that for systolic
+pressure.</p>
+      <p>Among girls whose mothers? height was above the
+median, there were no trends in systolic blood pressure with
+either placental length, breadth or area (Table 3), but
+systolic pressure rose as the difference between the diameters
+increased (b = 1.40 mmHg ? cm, p = 0.007), that is as the
+placental surface became more oval. In contrast to systolic
+pressure, diastolic pressure rose as placental breadth, length
+and area decreased, but was unrelated to the difference
+between diameters. The differing trends in systolic pressure
+with placental size in the two maternal height groups were
+Systolic
+blood pressure (mmHg)
+The means are unadjusted.
+p values were obtained by linear regression using all variables as continuous.
+*p values adjusted for the child?s current body mass index and height.
+statistically significant (p for interaction = 0.03 for breadth,
+0.02 for area ? birthweight, and 0.03 for the difference
+between length and breadth).</p>
+    </sec>
+    <sec id="sec-4">
+      <title>DISCUSSION</title>
+      <p>
+        We found that the blood pressures of 9-year-old children in
+south India were related to the size and shape of the
+placental surface at birth. We suggest that these associations reflect
+the role of placental function in programming blood
+pressure (
+        <xref ref-type="bibr" rid="ref22">22</xref>
+        ). Consistent with findings in the Helsinki birth
+Cohort, we found different associations in boys and girls
+(
+        <xref ref-type="bibr" rid="ref19">19</xref>
+        ). Boys grow faster than girls from an early stage of
+gestation, even from before implantation, and this makes them
+more vulnerable if their nutrition is compromised (
+        <xref ref-type="bibr" rid="ref23 ref8">8,23</xref>
+        ).
+More newborn boys than girls have retarded growth and
+placental abnormalities, and most of them die during the
+perinatal period (
+        <xref ref-type="bibr" rid="ref24">24</xref>
+        ). The associations between blood
+pressure and placental size were modified by adjustment for the
+child?s current body size. This reflects the known
+association between raised blood pressure and rapid postnatal
+growth (
+        <xref ref-type="bibr" rid="ref3">3</xref>
+        ).
+      </p>
+      <p>
+        We found that three different placental phenotypes
+predicted raised blood pressure depending on the child?s sex
+and the mother?s height. Common to each phenotype was
+that blood pressure was related to the shape or size of the
+placental surface and to the breadth rather than to the
+length. Many studies have shown that raised blood pressure
+in children and adults is related to lower birthweight within
+the normal range (
+        <xref ref-type="bibr" rid="ref1 ref15 ref16 ref17 ref2 ref3">1?3,15?17</xref>
+        ). This suggests that blood
+The means are unadjusted.
+p values were obtained by linear regression using all variables as continuous.
+*p values adjusted for the child?s current body mass index and height.
+pressure levels are linked to foetal malnutrition (
+        <xref ref-type="bibr" rid="ref6">6</xref>
+        ). We now
+examine each of the three placental phenotypes and discuss
+their possible relation to foetal malnutrition.
+      </p>
+      <sec id="sec-4-1">
+        <title>Boys, small placental surface</title>
+        <p>
+          In boys, higher systolic blood pressure was associated with
+smaller placental area. This association depended on
+reduction in placental breadth rather than length. This is
+consistent with findings among men in Holland, in whom
+hypertension was related to a short placental breadth but
+not to length (
+          <xref ref-type="bibr" rid="ref25">25</xref>
+          ). One suggestion is that tissue along the
+breadth is more closely related to nutrient delivery to the
+foetus than tissue along the length of the surface, and
+shorter breadth results in lesser delivery (
+          <xref ref-type="bibr" rid="ref26">26</xref>
+          ). The length
+and breadth of the placental surface are established by
+growth of the chorionic surface in mid-gestation. We
+suggest that reduced growth in placental breadth is associated
+with foetal malnutrition and raised blood pressure in
+boys.
+        </p>
+        <p>
+          Among boys, the effects of placental size on blood
+pressure were not conditioned by the mothers? height. In the
+Helsinki Birth Cohort (
+          <xref ref-type="bibr" rid="ref19">19</xref>
+          ), the effects of placental surface
+area on hypertension were not related to the mother?s
+height in men, but were stronger among women with short
+mothers. This led to the suggestion that, compared to boys,
+the nutrition of girls in utero depends more on the mothers?
+lifetime nutrition and metabolism, reflected in her height
+than on the mothers? diet in pregnancy (
+          <xref ref-type="bibr" rid="ref19">19</xref>
+          ).
+        </p>
+      </sec>
+      <sec id="sec-4-2">
+        <title>Girls, large placental surface</title>
+        <p>
+          In girls whose mother?s height was below the median, raised
+systolic pressure was associated with a large placental area
+in relation to birthweight. This association is therefore
+opposite to that seen in the Helsinki cohort, in which
+hypertension was associated with smaller placental area,
+especially in women with shorter mothers (
+          <xref ref-type="bibr" rid="ref19">19</xref>
+          ). Again, the
+association in our study depended more on the breadth of
+the placental surface than on its length. A study of men and
+women born in a maternity hospital in Preston, UK, showed
+that high placental weight in relation to birthweight was
+associated with later hypertension in the offspring (
+          <xref ref-type="bibr" rid="ref13">13</xref>
+          ).
+Measurements of the placental surface were not available.
+This observation has been replicated, and high placental
+weight in relation to birthweight has also been shown to
+predict coronary heart disease (
+          <xref ref-type="bibr" rid="ref14 ref27">14,27</xref>
+          ). In response to
+maternal undernutrition in mid-gestation, foetal lambs are
+able to extend the area of the placenta by expanding the
+individual cotyledons (
+          <xref ref-type="bibr" rid="ref28">28</xref>
+          ). This increases the area available
+for nutrient and oxygen exchange and, if normal nutrition is
+restored in late gestation, there is a larger lamb than there
+would otherwise have been. This is profitable for the farmer,
+and manipulation of placental size by changing the pasture
+of pregnant ewes is standard practice in sheep farming.
+There is evidence that a similar process occurs in humans
+and involves broadening of the placental surface rather than
+elongation (
+          <xref ref-type="bibr" rid="ref11 ref19">11,19</xref>
+          ). Compensatory placental expansion may
+be beneficial in some circumstances, but if the
+compensation is inadequate, and the foetus continues to be
+undernourished, the need to share its nutrients with an enlarged
+placenta may become an added metabolic burden that has
+long-term costs, which includes raised blood pressure.
+        </p>
+      </sec>
+      <sec id="sec-4-3">
+        <title>Girls, oval placental surface</title>
+        <p>
+          In girls whose mothers? height was above the median
+higher, systolic pressure was predicted by a larger difference
+between the breadth and length of the placental surface that
+is by a more oval-shaped surface. In contrast, diastolic
+pressure was not predicted by the shape of the surface but by its
+size, pressures rising with decreasing placental area. In
+pregnancies complicated by pre-eclampsia, a disorder that
+is initiated by impaired implantation, the placental surface
+is oval (
+          <xref ref-type="bibr" rid="ref26">26</xref>
+          ). We therefore suggest that the association
+between systolic pressure and an oval placenta reflects
+disruption of the processes of implantation, which includes
+spiral artery invasion and recruitment, with consequent
+foetal malnutrition. The association between small placental
+area and diastolic pressure may reflect reduced expansion
+of the chorionic surface in mid-gestation. We can offer no
+explanation as to why impaired implantation would affect
+systolic pressure while reduced expansion of the chorionic
+surface would affect diastolic pressure.
+        </p>
+      </sec>
+      <sec id="sec-4-4">
+        <title>Strengths and limitations of the study</title>
+        <p>In the Parthenon study, placental and newborn size and
+childhood blood pressure were measured by trained
+research staff according to standard protocols. None of
+the mothers smoked, and only seven had
+pregnancyinduced hypertension. The study has achieved high
+follow-up rates in the children; 80% of the original live-born
+babies of nondiabetic mothers and 84% of surviving
+children were studied at 9 years. The study is based on births
+in one hospital in Mysore, and the participants may
+therefore be unrepresentative of the whole Mysore population.
+At the time of the study, the Holdsworth Memorial
+Hospital was one of three large maternity units in Mysore. It
+is situated in a relatively poor area of the city, and most
+of the patients come from ?lower middle-class and
+middle-class? families. However, it is not a specialist referral
+hospital, and most women choose to deliver there
+because of its proximity to home. We do not think loss to
+follow-up would have introduced significant bias.
+Although the mothers of the children included in our
+study sample were significantly shorter than those lost to
+follow-up, differences in birthweight and placental
+measurements between these groups were small.</p>
+      </sec>
+    </sec>
+    <sec id="sec-5">
+      <title>CONCLUSION</title>
+      <p>We suggest that variations in three normal processes of
+placentation lead to foetal undernutrition and consequent
+raised blood pressure. The processes are those that
+accompany implantation and expansion of the chorionic surface
+in mid-gestation and compensatory expansion of the
+chorionic surface in late gestation. In girls, the effects of these
+disruptions on blood pressure are conditioned by the mother?s
+early nutrition as indicated by her height.</p>
+    </sec>
+    <sec id="sec-6">
+      <title>ACKNOWLEDGEMENTS</title>
+      <p>This study was funded by the Medical Research Council,
+UK, the Parthenon Trust, Switzerland and the Wellcome
+Trust, UK. We thank the mothers and children who
+participated, and the HMH obstetric staff in Mysore and
+Annamma, Lalitha, Lalitha Kala, Baby Balappa, Savitha, Gopal
+Singh, Swarna, Surekha, Jayakumar, Geetha, Saroja,
+Chachyamma, Kiran and Stephen who made a significant
+contribution to the study. We are grateful to Dr BDR Paul,
+former director and Dr SC Karat, current medical director
+of HMH and also to late Dr Lovesome David, head of the
+department of obstetrics, for their support. We also
+acknowledge the support of Sneha-India.</p>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <ref id="ref1">
+        <mixed-citation>
+          1.
+          <string-name>
+            <surname>Law</surname>
+            <given-names>CM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>de</surname>
+            <given-names>SM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Osmond</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Fayers</surname>
+            <given-names>PM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Barker</surname>
+            <given-names>DJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Cruddas</surname>
+            <given-names>AM</given-names>
+          </string-name>
+          , et al.
+          <article-title>Initiation of hypertension in utero and its amplification throughout life</article-title>
+          .
+          <source>Br Med J</source>
+          <year>1993</year>
+          ;
+          <volume>306</volume>
+          :
+          <fpage>24</fpage>
+          -
+          <lpage>7</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref2">
+        <mixed-citation>
+          2.
+          <string-name>
+            <surname>Adair</surname>
+            <given-names>L</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Dahly</surname>
+            <given-names>D.</given-names>
+          </string-name>
+          <article-title>Developmental determinants of blood pressure in adults</article-title>
+          .
+          <source>Annu Rev Nutr</source>
+          <year>2005</year>
+          ;
+          <volume>25</volume>
+          :
+          <fpage>407</fpage>
+          -
+          <lpage>34</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref3">
+        <mixed-citation>
+          3.
+          <string-name>
+            <surname>Eriksson</surname>
+            <given-names>JG</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Forsen</surname>
+            <given-names>TJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kajantie</surname>
+            <given-names>E</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Osmond</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Barker</surname>
+            <given-names>DJP</given-names>
+          </string-name>
+          .
+          <article-title>Childhood growth and hypertension in later life</article-title>
+          .
+          <source>Hypertension</source>
+          <year>2007</year>
+          ;
+          <volume>49</volume>
+          :
+          <fpage>1415</fpage>
+          -
+          <lpage>21</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref4">
+        <mixed-citation>
+          4.
+          <string-name>
+            <surname>Barker</surname>
+            <given-names>DJP</given-names>
+          </string-name>
+          .
+          <article-title>Fetal origins of coronary heart disease</article-title>
+          .
+          <source>Br Med J</source>
+          <year>1995</year>
+          ;
+          <volume>311</volume>
+          :
+          <fpage>171</fpage>
+          -
+          <lpage>4</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref5">
+        <mixed-citation>
+          5.
+          <string-name>
+            <surname>Barker</surname>
+            <given-names>DJP</given-names>
+          </string-name>
+          .
+          <article-title>Mothers, babies and disease in later life, 2nd edn</article-title>
+          . Churchill Livingstone, Edinburgh,
+          <year>1998</year>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref6">
+        <mixed-citation>
+          6.
+          <string-name>
+            <surname>Harding</surname>
+            <given-names>JE</given-names>
+          </string-name>
+          .
+          <article-title>The nutritional basis of the fetal origins of adult disease</article-title>
+          .
+          <source>Int J Epidemiol</source>
+          <year>2001</year>
+          ;
+          <volume>30</volume>
+          :
+          <fpage>15</fpage>
+          -
+          <lpage>23</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref7">
+        <mixed-citation>
+          7.
+          <string-name>
+            <surname>Jackson</surname>
+            <given-names>AA</given-names>
+          </string-name>
+          .
+          <article-title>All that glitters</article-title>
+          .
+          <source>Br Nutr Foundation Annual Lecture. Nutr Bull</source>
+          <year>2000</year>
+          ;
+          <volume>25</volume>
+          :
+          <fpage>11</fpage>
+          -
+          <lpage>24</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref8">
+        <mixed-citation>
+          8.
+          <string-name>
+            <surname>Tanner</surname>
+            <given-names>JM</given-names>
+          </string-name>
+          .
+          <article-title>Fetus into man, 2nd edn</article-title>
+          . Castlemead, Ware,
+          <year>1989</year>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref9">
+        <mixed-citation>
+          9.
+          <string-name>
+            <surname>Duggleby</surname>
+            <given-names>SL</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Jackson</surname>
+            <given-names>AA</given-names>
+          </string-name>
+          .
+          <article-title>Relationship of maternal protein turnover and lean body mass during pregnancy and birth length</article-title>
+          .
+          <source>Clin Sci</source>
+          <year>2001</year>
+          ;
+          <volume>101</volume>
+          :
+          <fpage>65</fpage>
+          -
+          <lpage>72</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref10">
+        <mixed-citation>
+          10.
+          <string-name>
+            <surname>Sibley</surname>
+            <given-names>CP</given-names>
+          </string-name>
+          and
+          <string-name>
+            <surname>Boyd</surname>
+            <given-names>RDH</given-names>
+          </string-name>
+          .
+          <article-title>Mechanisms of transfer across the human placenta</article-title>
+          .
+          <source>In: Polin RA</source>
+          and Fox WW editors.
+          <source>Fetal and neonatal physiology. Saunders</source>
+          , Philadelphia,
+          <year>1992</year>
+          :
+          <fpage>62</fpage>
+          -
+          <lpage>74</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref11">
+        <mixed-citation>
+          11.
+          <string-name>
+            <surname>Barker</surname>
+            <given-names>DJP</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Thornburg</surname>
+            <given-names>KL</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Osmond</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kajantie</surname>
+            <given-names>E</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Eriksson</surname>
+            <given-names>JG</given-names>
+          </string-name>
+          .
+          <article-title>The surface area of the placenta and hypertension in the offspring in later life</article-title>
+          .
+          <source>Int J Dev Biol</source>
+          <year>2010</year>
+          ;
+          <volume>54</volume>
+          :
+          <fpage>525</fpage>
+          -
+          <lpage>30</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref12">
+        <mixed-citation>
+          12.
+          <string-name>
+            <surname>Barker</surname>
+            <given-names>DJP</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Bull</surname>
+            <given-names>AR</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Osmond</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Simmonds</surname>
+            <given-names>SJ</given-names>
+          </string-name>
+          .
+          <article-title>Fetal and placental size and risk of hypertension in adult life</article-title>
+          .
+          <source>Br Med J</source>
+          <year>1990</year>
+          ;
+          <volume>301</volume>
+          :
+          <fpage>259</fpage>
+          -
+          <lpage>62</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref13">
+        <mixed-citation>
+          13.
+          <string-name>
+            <surname>Campbell</surname>
+            <given-names>DM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Hall</surname>
+            <given-names>MH</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Barker</surname>
+            <given-names>DJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Cross</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Shiell</surname>
+            <given-names>AW</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Godfrey</surname>
+            <given-names>KM</given-names>
+          </string-name>
+          .
+          <article-title>Diet in pregnancy and the offspring's blood pressure 40 years later</article-title>
+          .
+          <source>Br J Obstet Gynaecol</source>
+          <year>1996</year>
+          ;
+          <volume>103</volume>
+          :
+          <fpage>273</fpage>
+          -
+          <lpage>80</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref14">
+        <mixed-citation>
+          14.
+          <string-name>
+            <surname>Eriksson</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Forsen</surname>
+            <given-names>T</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Tuomilehto</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Osmond</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Barker D</surname>
+          </string-name>
+          .
+          <article-title>Fetal and childhood growth and hypertension in adult life</article-title>
+          .
+          <source>Hypertension</source>
+          <year>2000</year>
+          ;
+          <volume>36</volume>
+          :
+          <fpage>790</fpage>
+          -
+          <lpage>4</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref15">
+        <mixed-citation>
+          15.
+          <string-name>
+            <surname>Moore</surname>
+            <given-names>VM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Miller</surname>
+            <given-names>AG</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Boulton</surname>
+            <given-names>TJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Cockington</surname>
+            <given-names>RA</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Craug</surname>
+            <given-names>IH</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Magarey</surname>
+            <given-names>AM</given-names>
+          </string-name>
+          , et al.
+          <article-title>Placental weight, birth measurements, and blood pressure at age 8 years</article-title>
+          .
+          <source>Arch Dis Child</source>
+          <year>1996</year>
+          ;
+          <volume>74</volume>
+          :
+          <fpage>538</fpage>
+          -
+          <lpage>41</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref16">
+        <mixed-citation>
+          16.
+          <string-name>
+            <surname>Taylor</surname>
+            <given-names>SJC</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Whincup</surname>
+            <given-names>PH</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Cook</surname>
+            <given-names>DG</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Papacosta</surname>
+            <given-names>O</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Walker</surname>
+            <given-names>M.</given-names>
+          </string-name>
+          <article-title>Size at birth and blood pressure; cross sectional study in 8- 11 year old children</article-title>
+          .
+          <source>Br Med J</source>
+          <year>1997</year>
+          ;
+          <volume>314</volume>
+          :
+          <fpage>475</fpage>
+          -
+          <lpage>80</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref17">
+        <mixed-citation>
+          17.
+          <string-name>
+            <surname>Whincup</surname>
+            <given-names>P</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Cook</surname>
+            <given-names>D</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Papacosta</surname>
+            <given-names>O</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Walker</surname>
+            <given-names>M.</given-names>
+          </string-name>
+          <article-title>Birth weight and blood pressure: cross sectional and longitudinal relations in childhood</article-title>
+          .
+          <source>Br Med J</source>
+          <year>1995</year>
+          ;
+          <volume>311</volume>
+          :
+          <fpage>773</fpage>
+          -
+          <lpage>6</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref18">
+        <mixed-citation>
+          18.
+          <string-name>
+            <surname>Hill</surname>
+            <given-names>JC</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Krishnaveni</surname>
+            <given-names>GV</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Annamma</surname>
+            <given-names>I</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Leary</surname>
+            <given-names>SD</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Fall</surname>
+            <given-names>CHD</given-names>
+          </string-name>
+          .
+          <article-title>Glucose tolerance in pregnancy in South India: relationships to neonatal anthropometry</article-title>
+          .
+          <source>Acta Obstet Gynecol Scand</source>
+          <year>2005</year>
+          ;
+          <volume>84</volume>
+          :
+          <fpage>159</fpage>
+          -
+          <lpage>65</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref19">
+        <mixed-citation>
+          19.
+          <string-name>
+            <surname>Eriksson</surname>
+            <given-names>JG</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kajantie</surname>
+            <given-names>E</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Osmond</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Thornburg</surname>
+            <given-names>K</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Barker</surname>
+            <given-names>DJP</given-names>
+          </string-name>
+          .
+          <article-title>Boys live dangerously in the womb</article-title>
+          .
+          <source>Am J Hum Biol</source>
+          <year>2010</year>
+          ;
+          <volume>22</volume>
+          :
+          <fpage>330</fpage>
+          -
+          <lpage>5</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref20">
+        <mixed-citation>
+          20.
+          <string-name>
+            <surname>Krishnaveni</surname>
+            <given-names>GV</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Veena</surname>
+            <given-names>SR</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Hill</surname>
+            <given-names>JC</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kehoe</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Karat</surname>
+            <given-names>SC</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Fall</surname>
+            <given-names>CHD</given-names>
+          </string-name>
+          .
+          <article-title>Intrauterine exposure to maternal diabetes is associated with higher adiposity and insulin resistance and clustering of cardiovascular risk markers in Indian children</article-title>
+          .
+          <source>Diabetes Care</source>
+          <year>2010</year>
+          ;
+          <volume>33</volume>
+          :
+          <fpage>402</fpage>
+          -
+          <lpage>4</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref21">
+        <mixed-citation>
+          21.
+          <string-name>
+            <surname>National High Blood Pressure Educational Program Working</surname>
+          </string-name>
+          <article-title>Group on High Blood Pressure and Adolescents. The fourth report on the diagnosis, evaluation and treatment of high blood pressure in children and adolescents</article-title>
+          .
+          <source>Pediatrics</source>
+          <year>2004</year>
+          ;
+          <volume>114</volume>
+          :
+          <fpage>555</fpage>
+          -
+          <lpage>76</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref22">
+        <mixed-citation>
+          22.
+          <string-name>
+            <surname>Jansson</surname>
+            <given-names>T</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Powell</surname>
+            <given-names>TL</given-names>
+          </string-name>
+          .
+          <article-title>Role of the placenta in fetal programming: underlying mechanisms and potential interventional approaches</article-title>
+          .
+          <source>Clin Sci</source>
+          <year>2007</year>
+          ;
+          <volume>113</volume>
+          :
+          <fpage>1</fpage>
+          -
+          <lpage>13</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref23">
+        <mixed-citation>
+          23.
+          <string-name>
+            <surname>Pedersen</surname>
+            <given-names>JF</given-names>
+          </string-name>
+          .
+          <article-title>Ultrasound evidence of sexual differences in fetal size in first trimester</article-title>
+          .
+          <source>Br Med J</source>
+          <year>1980</year>
+          ;
+          <volume>281</volume>
+          :
+          <fpage>1253</fpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref24">
+        <mixed-citation>
+          24.
+          <string-name>
+            <surname>Di Renzo</surname>
+            <given-names>GC</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Rosati</surname>
+            <given-names>A</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Sarti</surname>
+            <given-names>RD</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Cruciani</surname>
+            <given-names>L</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Cutuli</surname>
+            <given-names>AM</given-names>
+          </string-name>
+          .
+          <article-title>Does fetal sex affect pregnancy outcome?</article-title>
+          <source>Gend Med</source>
+          <year>2007</year>
+          ;
+          <volume>4</volume>
+          :
+          <fpage>19</fpage>
+          -
+          <lpage>30</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref25">
+        <mixed-citation>
+          25.
+          <string-name>
+            <surname>Barker</surname>
+            <given-names>DJP</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kajantie</surname>
+            <given-names>E</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Eriksson</surname>
+            <given-names>JG</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Alwasel</surname>
+            <given-names>SH</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Fall</surname>
+            <given-names>CHD</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Roseboom</surname>
+            <given-names>TJ</given-names>
+          </string-name>
+          , et al.
+          <article-title>The maternal and placental origins of chronic disease</article-title>
+          . In:
+          <string-name>
+            <surname>Burton</surname>
+            <given-names>GJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Barker</surname>
+            <given-names>DJP</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Moffett</surname>
+            <given-names>A</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Thornburg</surname>
+            <given-names>K</given-names>
+          </string-name>
+          editors.
+          <article-title>The placenta and human developmental programming</article-title>
+          . Cambridge University Press, Cambridge,
+          <year>2010</year>
+          :
+          <fpage>5</fpage>
+          -
+          <lpage>16</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref26">
+        <mixed-citation>
+          26.
+          <string-name>
+            <surname>Kajantie</surname>
+            <given-names>E</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Thornburg</surname>
+            <given-names>K</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Eriksson</surname>
+            <given-names>JG</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Osmond</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <article-title>Barker DJP</article-title>
+          .
+          <article-title>In preeclampsia, the placenta grows slowly along its minor axis</article-title>
+          .
+          <source>Int J Dev Biol</source>
+          <year>2010</year>
+          ;
+          <volume>54</volume>
+          :
+          <fpage>469</fpage>
+          -
+          <lpage>73</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref27">
+        <mixed-citation>
+          27.
+          <string-name>
+            <surname>Martyn</surname>
+            <given-names>CN</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Barker</surname>
+            <given-names>DJP</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Osmond</surname>
+            <given-names>C</given-names>
+          </string-name>
+          .
+          <article-title>Mothers pelvic size, fetal growth and death from stroke in men</article-title>
+          .
+          <source>Lancet</source>
+          <year>1996</year>
+          ;
+          <volume>348</volume>
+          :
+          <fpage>1264</fpage>
+          -
+          <lpage>8</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref28">
+        <mixed-citation>
+          28.
+          <string-name>
+            <surname>McCrabb</surname>
+            <given-names>GJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Egan</surname>
+            <given-names>AR</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Hosking</surname>
+            <given-names>BJ</given-names>
+          </string-name>
+          .
+          <article-title>Maternal undernutrition during mid-pregnancy in sheep; variable effects on placental growth</article-title>
+          .
+          <source>J Agric Sci</source>
+          <year>1992</year>
+          ;
+          <volume>118</volume>
+          :
+          <fpage>127</fpage>
+          -
+          <lpage>32</lpage>
+          .
+        </mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+

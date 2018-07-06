@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-05T20:49+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">On the function of the mammalian renal papilla and the peristalsis of the surrounding pelvis</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Bodil</forename><surname>Schmidt-Nielsen</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Physiology</orgName>
+								<orgName type="institution">University of Florida</orgName>
+								<address>
+									<settlement>Gainesville</settlement>
+									<region>FL</region>
+									<country key="US">USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Bent</forename><surname>Schmidt-Nielsen</surname></persName>
+							<affiliation key="aff1">
+								<address>
+									<addrLine>Loring Rd</addrLine>
+									<settlement>Lexington, Lexington</settlement>
+									<region>MA, MA</region>
+									<country>USA, USA</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">On the function of the mammalian renal papilla and the peristalsis of the surrounding pelvis</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1111/j.1748-1716.2011.02261.x</idno>
+					<note type="submission">Received 11 December 2010, revision requested 9 Jan 2011, revision received 18 January 2011, accepted 22 January 2011 Correspondence: Bent Schmidt-</note>
+					<note>REVIEW Re-use of this article is permitted in accordance with the Terms and Conditions set out at http:// wileyonlinelibrary.com/ onlineopen#OnlineOpen_Terms *Bodil Schmidt-Nielsen&apos;s son Bent Schmidt-Nielsen assisted in the writing of the final version of the paper and has been included as corresponding author in accordance with her desire.</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>concentrating mechanism</term>
+					<term>kidney</term>
+					<term>peristalsis</term>
+					<term>renal papilla</term>
+					<term>renal pelvis</term>
+					<term>water removal</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>This is an informal personal review of the development over time of my ideas about the concentrating mechanism of the mammalian renal papilla. It had been observed that animals with a need to produce a concentrated urine have a long renal papilla. I saw the function of the long papilla in desert rodents as an elongation of the counter-current concentrating mechanism of the inner medulla. This model led me to overlook contrary evidence. For example, in many experiments, the final urine has a higher osmolality than that of the tissue at the tip of the papilla. In addition, we had observations of the peristalsis of the renal pelvis surrounding the papilla. The urine concentration falls if the peristalsis is stopped. I was wrong; together, these lines of evidence show that the renal papilla is not just an elongation of the inner medulla. We are left without a full explanation of the concentrating mechanism of the mammalian renal papilla. It is hoped that other researchers will tackle this interesting problem.</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Abstract</head><p>This is an informal personal review of the development over time of my ideas about the concentrating mechanism of the mammalian renal papilla. It had been observed that animals with a need to produce a concentrated urine have a long renal papilla. I saw the function of the long papilla in desert rodents as an elongation of the counter-current concentrating mechanism of the inner medulla. This model led me to overlook contrary evidence. For example, in many experiments, the final urine has a higher osmolality than that of the tissue at the tip of the papilla. In addition, we had observations of the peristalsis of the renal pelvis surrounding the papilla. The urine concentra- tion falls if the peristalsis is stopped. I was wrong; together, these lines of evidence show that the renal papilla is not just an elongation of the inner medulla. We are left without a full explanation of the concentrating mech- anism of the mammalian renal papilla. It is hoped that other researchers will tackle this interesting problem. Keywords concentrating mechanism, kidney, peristalsis, renal papilla, renal pelvis, water removal.</p><p>My interest in how some mammalian kidneys can produce highly concentrated urine goes back to 1947- 1948 when I first worked with desert rodents in Arizona. As young research associates in Dr Laurence Irving's laboratory, my husband Knut and I were given the exciting problem of finding out how desert rodents manage to exist entirely without drinking water.</p><p>Working in a small desert laboratory in the Santa Rita Mountains in Arizona, we soon found that Kangaroo rats and several other desert rodents live and thrive on a diet of dry seeds only without access to drinking water. As I collected and analysed urine from the animals, I marvelled at these high concentrations of urea and salt in the samples. At that time I made up my mind to learn kidney physiology. Little was known about kidney function; in fact, so little was known that a specialist was quoted as saying: 'All we really know about the kidney is that it makes urine.' It struck me as very interesting that the kangaroo rats and several other desert rodents have very long renal papillae. At that time, my husband, Knut, got hold of a dissertation by Ivar Sperber in Sweden. Examining all of Sperber's drawings of various mammalian kidneys, I found that all animals with a long renal papilla were from arid environments (see <ref type="figure" target="#fig_0">Figure 1)</ref>. Conversely, animals from moist habitats have a very short or no papilla at all. A few years later, the counter-current hypothesis was proposed and I assumed that the renal papilla could be looked at as an elongation of the inner medulla and therefore as a part of the counter-current system. According to the counter-current hypothesis, the urine concentration would follow the tissue con- centration gradient. This is clearly not the case in the papilla.</p><p>In 1964, Bruno Truniger and I found that urea concentration in the tissue stopped increasing at the border between the renal papilla and the upper part of the inner medulla. In the papilla, the concentration remained lower than in the urine (see <ref type="figure" target="#fig_1">Figure 2</ref>). The upper points in the figure are from animals on a high- protein diet and are the ones of interest here. A graduate student of mine, Susan Zell, did careful studies on a number of different desert rodents. In all cases, the urine osmolality far exceeded the tissue osmolality in any part of the papilla. <ref type="figure" target="#fig_2">Figure 3</ref> shows an example of her results for the desert rodent Acomys. The concentration in the urine was more than 1000 mOsm higher than that in the tissue.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>The peristaltic mechanism</head><p>My interest in studying the peristalsis of the renal papilla stems from a chance observation. I had invited Karl Ullrich from Berlin to the US to collaborate with me. As we were preparing an animal for micro-puncture after we had injected lissamine green to colour the urine, we noticed that the peristalsis moved the blue- green urine in waves through the collecting ducts in the renal papilla. This intrigued me and I decided to study the peristalsis further. Another observation showed the importance of the peristalsis. In a collaborative study with Carl Gottschalk on the counter-current mecha- nism, his assistant would prepare antidiuretic animals for micro-puncture studies. For a better access, she would remove the pelvic wall surrounding the papilla. To our surprise, this procedure resulted in increased urine production with a lower osmolality in the   prepared animals. At that point, we did not understand the meaning of the observation. Later, together with Bruce Graves, I started studies of the peristalsis.</p><p>There is a film clip of peristaltic waves in the supplemental materials.</p><p>To track the peristalsis, we trans-illuminated the papilla with a fibre-optic light and recorded the light coming through the papilla on a chart recorder (see <ref type="figure" target="#fig_3">Figure 4</ref>). You can see the peristaltic contraction and relaxation phases clearly on the figure. To study the effect of the peristalsis on the renal papilla, we wanted to stop the action. Using the snare shown in <ref type="figure" target="#fig_4">Figure 5</ref>, we stopped the peristalsis at relaxed and contracted phases, as indicated in <ref type="figure">Figure 6</ref>, and rapidly fixed the tissue by pouring fixative directly on the preparation. <ref type="figure">Figure 7</ref> is a schematic diagram of the papilla. As you can see, the entire papilla including the papillary epithelium is surrounded by the contractile pelvic wall. On the left of <ref type="figure">Figure 8</ref> are cross sections of a contracted papilla and on the right are sections of a relaxed papilla (cf. <ref type="figure">Fig. 6</ref>). You can clearly see the contracted pelvic wall as a dark outline on the left. <ref type="figure" target="#fig_7">Figure 9</ref> shows higher magnification cross sections 300 lm from the tip. We counted the number of collecting ducts in each cross section to define the segments of the papilla. We measured cell volumes by cutting out the relevant portions of micrographs of serial sections and weighing them. <ref type="figure" target="#fig_0">Figure 10</ref> shows our results for cell volumes along the length of relaxed and contracted papilla. As you can see, epithelial cell volume is actually greater in the contracted papilla. And for the collecting duct cells, the effect is stronger and increases along the length of the papilla.</p><p>To study the physiological effect of the peristalsis, Bruce Graves and I performed experiments on pelvic paralysis or removal of the pelvis. Similar experiments were also performed in Mark Knepper's laboratory ( <ref type="bibr" target="#b3">Pruitt et al. 2006</ref>). One kidney in the live rat was treated and the other was sham operated as a control. Either paralysis with Xylocaine or surgical removal of the pelvis significantly reduces the papillary osmolality.</p><p>In 2002, together with an artist in Gainesville, I created an animated cartoon of my proposed model of the effect of the peristalsis on the function of the renal papilla.</p><p>A film clip narrated by myself at that time is available in the supplemental materials.</p><p>Hypothesis on how the renal pelvic peristaltic pumping of the papilla might contribute to the concentrating mechanism [This section is a mildly edited transcript of the video. It should be noted that the hypothesis shown in the video and in the following transcript is incomplete. In particular, an accounting of the forces moving water is far from complete. I suggest that this is a fertile area for future research].</p><p>On the basis of experimental findings by a number of investigators including us, I shall now present a hypothesis and an animation on how the renal pelvic peristaltic pumping of the papilla might contribute to the concentrating mechanism. The model deals only with mammals with a relatively long papilla. The  highest degree of urinary concentration is found in mammals with a long renal papilla. In these, the peristalsis has the strongest effect on the papilla. I suggest that the kidney papilla works as a pump through alternating positive and negative pressures generated by the peristaltic contractions of the pelvic wall.</p><p>(1) Water moves into the collecting duct cells as a result of the small positive hydrostatic pressure on the walls of the cells, generated by the peristaltic wave pushing the fluid through the collecting ducts. (2) Fluid moves out of the cells as a result of the negative pressure generated by the elastic forces, which expand the papilla during rebound. (3) Fluid is removed from the interstitium by the vasa recta, which contain no blood at the time the fluid enters.</p><p>(4) The animated model shows a hamster papilla in cross section and then in a longitudinal section. (5) To concentrate the urine in the collecting ducts, water must be removed from the collecting duct fluid. (6) Partly, this water removal is caused by the accu- mulation of solutes in the papillary interstitium.</p><p>The model presented here tries to explain how the hydrostatic pressure generated by the pelvic wall peristalsis could contribute to the removal of water from the collecting duct urine. It does not deal with the solute. Water movements through a membrane result from the difference in water potential in the two compartments separated by the membrane. Water potential is decreased by solutes in solution and increased by hydrostatic pressure. Water moves through water channels (aquaporins). As shown by Mark Knepper and his colleagues <ref type="bibr" target="#b2">(Nielsen et al. 2002)</ref>, water leaves the collecting ducts lumen through the aquaporin water channels in the plasma membranes of the collecting ducts cells. Aquaporin-2, the antidiuretic hormone-sensitive water channel, is present in the apical membrane of the collecting duct cells.</p><p>Water molecules move through the aquaporins by single-file diffusion without entrainment of solutes.</p><p>Urea moves by diffusion through urea transporters. Water can leave the collecting duct cells through the water channels, aquaporins three and four, which also permit solutes to pass through.</p><p>In the animated model, the sequence of the events occurring in the papilla is shown at low urine flow.   </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>The peristaltic mechanism proposed above is currently incomplete. Our knowledge of the papillary concen- trating mechanism is insufficient to explain its action. However, the data clearly show that the papilla is an important part of the overall concentrating mecha- nism.</p><p>The mammalian kidney has two concentrating mech- anisms. One is the counter-current mechanism that establishes a concentration gradient in the renal tissue increasing from cortex to the inner medulla by the addition of solutes to the tissue. The other less well understood concentrating mechanism is based on removal of water from the collecting duct fluid to conserve water for the organism. The data have shown that the increase in urine osmolality in the renal papilla is due to water removal. Fluid of a much lower osmolality than that of the final urine is removed from the collecting ducts. The forces responsible for this water movement are not yet understood. For example, Zell's observations <ref type="figure" target="#fig_2">(Fig. 3)</ref> of urine osmolalities more than 1000 mOsm kg )1 greater than that of the tissue would suggest osmotic pressure differences greater than 25 bar. Such pressures are far greater than can reason- ably be generated by the peristalsis. The peristalsis of the pelvic wall enclosing the papilla is nevertheless an essential component of the concentrating mechanism. If peristalsis is disabled by removal of the pelvic wall or by paralysis with Xylocaine, the concentrating ability is significantly reduced ( <ref type="bibr" target="#b3">Pruitt et al. 2006</ref>).</p><p>At the Arizona Symposium <ref type="bibr" target="#b0">(Dantzler 2006</ref>), it was suggested anecdotally by Bill Dantzler that the renal papilla functions differently from the inner medulla. It is not just an elongation of the inner medulla. This comment triggered a rethinking of my ideas. Many of my previous findings strongly support such a proposal. <ref type="bibr" target="#b1">Knepper et al. (2003)</ref> have written an excellent review of the concentrating mechanism of the renal inner medulla. They have also shown that aquaporins are present in the papilla. These presumably play an important role in the concentrating mechanism.</p><p>Some insects also have a remarkable concentrating ability in their excretory organs. Such insects might use a related mechanism. When I gave the August Krogh lecture at the American Physiological Society <ref type="bibr">(SchmidtNielsen 1995)</ref>, I compared the concentrating mecha- nism in insects with that of desert rodents. Insects have amazing powers of conserving water. There again, we do not fully understand the mechanism. However, the insects have a mechanically strong chitinous tissue that is muscular and packed with mitochondria.</p><p>We are left with many problems yet to be solved. My father would quote Piet Hein saying, 'Problems worthy of attack prove their worth by hitting back.' </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of interest</head><p>There are no conflicts of interest.</p><p>I thank Erik Hviid Larsen for inviting me to give this presentation at the August Krogh symposium 2010. I also thank Bent Schmidt-Nielsen for all his help in organizing my presentation and manuscript preparation.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1</head><label>1</label><figDesc>Figure 1 Contrasting kidney anatomy from dry and wet environments. Adapted from Sperber (1944) p. 317. The kidney from the desert rodent Psammomys has a long papilla, while the water dwelling Hydromys has no apparent papilla (Sperber 1944).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 2</head><label>2</label><figDesc>Figure 2 Distribution of urea in urine and renal tissue in rats on high-protein (solid triangles) and low-protein, high salt diet (open circles). U/P, urine-to-plasma ratio; t/P, tissueto-plasma ratio (Truniger &amp; Schmidt-Nielsen 1964).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Figure 3</head><label>3</label><figDesc>Figure 3 Average osmolality of bladder urine compared with average osmolality of papillary tissue from antidiuretic Acomys cahirinus killed by decapitation. Bladder urine was collected 30 min after spontaneous micturation (Zell 1973).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 Fibre</head><label>4</label><figDesc>Figure 4 Fibre-optic recording of renal pelvic peristalsis in the hamster showing the phases of contraction and relaxation (Schmidt-Nielsen 1987).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5</head><label>5</label><figDesc>Figure 5 Drawing of the snare used to stop the peristalsis at a specific phase. The loop was placed loosely around the papilla about 1 mm from the tip (Schmidt-Nielsen &amp; Graves 1982).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head>( 1 )</head><label>1</label><figDesc>Figure 7 Schematic drawing of a hamster papilla with part of the pelvic wall and papillary epithelium cut away to show the structures (Schmidt-Nielsen &amp; Graves 1982).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Figure 6 FibreFigure 8</head><label>68</label><figDesc>Figure 6 Fibre-optic recording of renal pelvic peristalsis showing the stopping of the peristalsis with the snare at contracted and relaxed phases (Schmidt-Nielsen &amp; Graves 1982).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_7"><head>Figure 9</head><label>9</label><figDesc>Figure 9 Higher magnification cross sections of the papilla 300 lm from the tip showing the changes in collecting duct cells in the contracted (a) and relaxed (b) peristaltic phases (Schmidt-Nielsen &amp; Graves 1982).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_8"><head>Figure 10</head><label>10</label><figDesc>Figure 10 Computed volumes of the various structures in papillae stopped and fixed in the contracted phase (CP) and the relaxed phase (RP). The volumes are calculated in segments representing the volume between two papillary cross sections containing the following numbers of collecting ducts: 1, 5-10; # 2, 10-15; # 3, 15-20; # 4, 20-25. Each point represents the mean AE SEM of four papillae (Schmidt-Nielsen &amp; Graves 1982).</figDesc></figure>
+
+			<note place="foot">Acta Physiol 2011, 202, 379-385 B Schmidt-Nielsen and B Schmidt-Nielsen AE Function of mammalian renal papilla</note>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Supporting Information</head><p>Additional Supporting Information may be found in the online version of this article.</p><p>Video Clip S1. Syrian hamster kidney papilla. Infused with lissamine green. Showing waves of green colored urine pushed by the peristalsis.</p><p>Video Clip S2. A cartoon animation showing a proposed model of the concentrating mechanism of the renal papilla under peristalsis. The animated model shows a hamster papilla in cross section and then in a longitudinal section.</p><p>Please note: Wiley-Blackwell are not responsible for the content or functionality of any supporting material supplied by the authors. Any Queries (other than missing material) should be directed to the correspond- ing author for the article.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Unpublished remarks. The William H. Dantzler Symposium</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><forename type="middle">H</forename><surname>Dantzler</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006-04-06" />
+			<pubPlace>Tucson, AZ</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Concentration of solutes in the renal inner medulla: interstitial hyaluronan as a mechano-osmotic transducer</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Knepper</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">M</forename><surname>Saidel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><forename type="middle">C</forename><surname>Hascall</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Dwyer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am J Physiol Renal Physiol</title>
+		<imprint>
+			<biblScope unit="volume">284</biblScope>
+			<biblScope unit="page" from="433" to="446" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Aquaporins in the kidney: from molecules to medicine</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Nielsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Frøkiaer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Marples</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T.-H</forename><surname>Kwon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Agre</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Knepper</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physiol Rev</title>
+		<imprint>
+			<biblScope unit="volume">82</biblScope>
+			<biblScope unit="page" from="205" to="244" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Effect of peristaltic contractions of the renal pelvic wall on solute concentrations of the renal inner medulla in the hamster</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">E C</forename><surname>Pruitt</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Knepper</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Graves</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Schmidt-Nielsen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am J Physiol Renal Physiol</title>
+		<imprint>
+			<biblScope unit="volume">290</biblScope>
+			<biblScope unit="page" from="892" to="896" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">The renal pelvis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Schmidt-Nielsen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Kidney Int</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="621" to="628" />
+			<date type="published" when="1987" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">August Krogh Lecture. The renal concentrating mechanism in insects and mammals: a new hypothesis involving hydrostatic pressures</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Schmidt-Nielsen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am J Physiol Regul Integr Comp Physiol</title>
+		<imprint>
+			<biblScope unit="volume">268</biblScope>
+			<biblScope unit="page" from="1087" to="1100" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Changes in fluid compartments in hamster renal papilla due to peristalsis in the pelvic wall</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Schmidt-Nielsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Graves</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Society of Nephrology</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="613" to="625" />
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+	<note>Kidney Int</note>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Studies on the mammalian kidney</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Sperber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Zoologiska Bidrag Frå n Uppsala</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="249" to="431" />
+			<date type="published" when="1944" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Intrarenal distribution of urea and related compounds: effects of nitrogen intake</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Truniger</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Schmidt-Nielsen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am J Physiol</title>
+		<imprint>
+			<biblScope unit="volume">207</biblScope>
+			<biblScope unit="page" from="971" to="978" />
+			<date type="published" when="1964" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">R</forename><surname>Zell</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1973" />
+			<pubPlace>Cleveland, OH, USA</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Case Western Reserve University</orgName>
+		</respStmt>
+	</monogr>
+<note type="report_type">PhD Thesis</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

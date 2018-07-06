@@ -1,0 +1,1779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns:xlink="http://www.w3.org/1999/xlink">
+  <front>
+    <journal-meta>
+      <journal-title-group>
+        <journal-title>Acta Anaesthesiol Scand</journal-title>
+      </journal-title-group>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.1111/j.1399-6576.2010.02338.x</article-id>
+      <title-group>
+        <article-title>Phosphate-containing dialysis solution prevents hypophosphatemia during continuous renal replacement therapy</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <string-name>M. BROMAN</string-name>
+          <email>marcus.broman@skane.se</email>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>O. CARLSSON</string-name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>H. FRIBERG</string-name>
+          <xref ref-type="aff" rid="aff0">0</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>A. WIESLANDER</string-name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <string-name>G. GODALY</string-name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <aff id="aff0">
+          <label>0</label>
+          <institution>Department of Anaesthesiology and Intensive Care, Lund University Hospital</institution>
+          ,
+          <addr-line>Lund</addr-line>
+          ,
+          <country country="SE">Sweden</country>
+        </aff>
+        <aff id="aff1">
+          <label>1</label>
+          <institution>Gambro Lundia AB</institution>
+          ,
+          <addr-line>Lund</addr-line>
+          ,
+          <country country="SE">Sweden</country>
+        </aff>
+      </contrib-group>
+      <pub-date>
+        <year>2011</year>
+      </pub-date>
+      <volume>55</volume>
+      <fpage>39</fpage>
+      <lpage>45</lpage>
+      <abstract>
+        <p>Background: Hypophosphatemia occurs in up to 80% of the patients during continuous renal replacement therapy (CRRT). Phosphate supplementation is time-consuming and the phosphate level might be dangerously low before normophosphatemia is re-established. This study evaluated the possibility to prevent hypophosphatemia during CRRT treatment by using a new commercially available phosphate-containing dialysis fluid. Methods: Forty-two heterogeneous intensive care unit patients, admitted between January 2007 and July 2008, undergoing hemodiafiltration, were treated with a new Gambro dialysis solution with 1.2 mM phosphate (Phoxilium) or with standard medical treatment (Hemosol B0). The patients were divided into three groups: group 1 (n 5 14) receiving standard medical treatment and intravenous phosphate supplementation as required, group 2 (n 5 14) receiving the phosphate solution as dialysate solution and Hemosol B0 as replacement solution and group 3 (n 5 14) receiving the phosphate-containing solution as both dialysate and replacement solutions.</p>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec-1">
+      <title>-</title>
+      <p>Treplacement therapy (CRRT) will require
+phos</p>
+      <p>HE majority of patients on continuous renal
+phate supplementation shortly after CRRT
+initiation.1 One reason is that critically ill patients
+present several conditions predisposing
+hypophosphatemia such as sepsis, alcohol withdrawal,
+malnutrition, catecholamines, intravenous glucose
+infusion, hyperventilation, diuretics and
+rhabdomyolysis.2?4 Another reason is the CRRT technique
+that achieves high clearance of small solutes, such
+as phosphate.5?9 In addition, low serum phosphate
+levels may also occur in the setting of extracellular
+to intracellular shifts that occur with respiratory
+alkalosis, high blood concentrations of stress
+horResults: Standard medical treatment resulted in
+hypophosphatemia in 11 of 14 of the patients (group 1) compared
+with five of 14 in the patients receiving phosphate solution
+as the dialysate solution and Hemosol B0 as the
+replacement solution (group 2). Patients treated with the
+phosphate-containing dialysis solution (group 3) experienced
+stable serum phosphate levels throughout the study.
+Potassium, ionized calcium, magnesium, pH, pCO2 and
+bicarbonate remained unchanged throughout the study.
+Conclusion: The new phosphate-containing replacement
+and dialysis solution reduces the variability of serum
+phosphate levels during CRRT and eliminates the
+incidence of hypophosphatemia.
+mones (i.e., insulin, glucagon, adrenalin, cortisol)
+and with refeeding syndrome.</p>
+      <p>As phosphate is a constituent of enzymes and
+intermediate phosphorylated compounds, it plays
+a key role in cellular metabolism and is essential in
+several biological processes. Serum phosphate
+concentration is maintained between 0.81 and
+1.45 mmol/l. By convention, hypophosphatemia is
+often graded as mild (o0.81 mmol/l), moderate
+(o0.61 mmol/l) and severe (o0.32 mmol/l). Severe
+hypophosphatemia has been linked to increased
+mortality in surgical intensive care patients7 and
+was recently shown to serve as an independent
+mortality predictor in sepsis.10 Symptoms of
+hypophosphatemia are usually only seen in patients
+with moderate or severe hypophosphatemia and
+include ventilatory muscle weakness, cardiac
+failure, insulin resistance, hemolysis, impaired
+platelet and white blood cell function,
+rhabdomyolysis, and, in rare cases, neurologic disorders.3,11?17
+However, all these alternations have been shown
+to reverse by simply correcting the phosphate
+levels.3,7,12,13,18?20 Phosphate is supplemented
+intravenously in symptomatic patients, but
+phosphate has also been added directly to the
+dialysate and replacement fluids,1,21,22 with a risk
+of precipitation with calcium.</p>
+      <p>The development of many electrolyte
+disturbances in the intensive care unit (ICU) could be
+prevented by the use of better adapted dialysis
+fluids. This study evaluated the possibility to achieve
+and maintain a normal phosphate balance over time
+in patients on CRRT by using a new
+phosphatecontaining dialysis fluid and replacement fluid.</p>
+    </sec>
+    <sec id="sec-2">
+      <title>Methods</title>
+      <sec id="sec-2-1">
+        <title>Fluid composition and study design</title>
+        <p>We used a new phosphate-containing solution for
+dialysis that in addition to standard electrolytes also
+contains 4.0 mmol of potassium and 1.2 mmol of
+Hemosol B0
+(mmol/l)</p>
+        <p>Phosphate containing
+dialysis solution (mmol/l)
+phosphate (Phoxilium, Gambro Lundia AB, Lund,
+Sweden, Table 1). As a control, we used our routine
+dialysis solution that does not contain phosphate
+(Hemosol B0, Gambro Lundia AB, Table 1). At our
+ICU at Lund University Hospital we applied three
+regimes, half a year each, for all patients requiring
+CRRT treatment. The treatment mode used was
+CVVHDF. During the first period (group 1), all the
+patients received dialysate solution and replacement
+solution that did not contain phosphate (Hemosol
+B0), during the next half year (group 2), all patients
+requiring CRRT treatment received the
+phosphatecontaining solution as dialysis solution and a
+phosphate-free replacement solution (Hemosol B0) and
+finally during the last half year period (group 3), the
+patients received the phosphate-containing solution
+both as a dialysis solution and as a replacement
+solution. Blood sampling was performed according
+to normal routines at our department, but the
+physicians in charge continuously modified the CRRT
+treatment settings and the phosphate
+supplementation according to the patients? ongoing clinical needs.
+The physicians treating the patients did not have
+knowledge of the study setting during the
+treatments, but they were fully aware of the fluids and
+their contents.</p>
+      </sec>
+      <sec id="sec-2-2">
+        <title>Patients and CRRT treatments</title>
+        <p>After acceptance by the Regional Ethical Review
+Board (DNR 570/2008), Lund University, Sweden,
+we evaluated retrospectively the first 14 patients
+who did not fulfill the exclusion criteria in each
+group, a total of 42 consecutive patients (Table 2).
+Patients were excluded if they had chronic kidney
+disease, if they had received intermittent dialysis
+before the ICU stay, if the CRRT treatment lasted
+Group 1</p>
+        <p>Group 2</p>
+        <p>Group 3
+o10 h or if they were under the age of 18 years. In
+all patients, the Gambro Prismaflex CRRT machine
+with the CVVHDF modality and a Hospal M100
+filter (Hospal Industrie, Meyziew, France) was used.
+The blood flow, the dialysis fluid flow, the
+replacement fluid flow, the anticoagulation used and the
+fluid removal were set according to the patients?
+conditions and requirements. Of the replacement
+fluid, 500 ml/h was postfilter and the rest was
+prefilter in each treatment according to the general
+standard at the department. Intravenous phosphate
+addition was prescribed when serum phosphate was
+o0.8 mmol/l, also according to the general standard
+at the department. Nutrition was given only if the
+patients were hemodynamically stable as parenteral
+or enteral or both during the study period.</p>
+      </sec>
+      <sec id="sec-2-3">
+        <title>Clinical parameters of the patients</title>
+        <p>All patients had regular measurements of serum
+sodium, potassium, ionized calcium, pH, pCO2 and
+bicarbonate either from an arterial line or from a
+central venous line before the start and regularly
+every fourth hour all through the CRRT treatment
+during 1, 2, 3, 4 and maximum 5 days. For
+phosphate and magnesium analyses, blood samples
+were taken at 5:00 hours in the morning and at
+17:00 hours in the afternoon before the start and
+during the CRRT treatment days. Blood samples
+were analyzed at the hospital laboratory
+(Labora*Differences between groups were not statistically significant. Numbers in parentheses are range, unless stated otherwise.
+wWe scored RIFLE-risk (R, risk; I, injury; F, failure; L, loss of kidney function; E, end-stage kidney disease) as 1, injury as 2, and failure
+as 3.
+zThe dialysis dose in CRRT is expressed in terms of ml of effluent (dialysate1ultrafiltrate) per kg of body weight (BW) per hour (ml/kg/
+h).23
+§Statistical differences were as follows: between groups 1 and 2 (P 5 0.046), between groups 1 and 3 (P 0.001), and between
+groups 2 and 3 (P 5 0.003).
+tory for Clinical Chemistry, Lund University
+Hospital, Lund, Sweden). The results are presented as
+means SD for normal distributed data, median
+and range for remaining data.</p>
+        <p>In addition, baseline characteristics of study
+patients and delivered CRRT were registered (Table 3).</p>
+        <p>Hypophosphatemia has been defined as condition
+where the serum phosphate level is o0.81 mmol/l.</p>
+      </sec>
+      <sec id="sec-2-4">
+        <title>Statistics</title>
+        <p>One-way repeated measures analysis of variance
+was used. The statistical program used was
+SigmaStat, version 3.5, for Windows XP. Differences were
+considered to be significant for Po0.05.</p>
+      </sec>
+    </sec>
+    <sec id="sec-3">
+      <title>Results</title>
+      <p>Main diagnoses leading to intensive care of the
+study groups, baseline characteristics, timing of
+initiation of CRRT, ultrafiltration rate, duration of
+the CRRT and anticoagulation were statistically
+similar between the three groups (Tables 2 and 3).</p>
+      <p>
+        The incidence of hypophosphatemia occurred in
+11 of 14 patients in group 1, where the patients did
+not receive the phosphate-containing dialysis
+solution, but received phosphate intravenously based
+on the serum phosphate values (Fig. 1). In group 2,
+where the patients received a
+phosphate-containing solution as the dialysis solution and a
+phosGroup 1
+63 (43?86)
+80 (53?116)
+7 (50)
+28.1 (
+        <xref ref-type="bibr" rid="ref19 ref20 ref21 ref22 ref23 ref24 ref25 ref26 ref27 ref28 ref29 ref30 ref31 ref32 ref33 ref34 ref35 ref36">19?44</xref>
+        )
+37
+82 (
+        <xref ref-type="bibr" rid="ref17 ref18 ref19 ref20 ref21 ref22 ref23 ref24 ref25 ref26 ref27 ref28 ref29 ref30 ref31 ref32 ref33 ref34 ref35 ref36">17?278</xref>
+        )
+CVVHDF
+23.7 (
+        <xref ref-type="bibr" rid="ref13 ref14 ref15 ref16 ref17 ref18 ref19 ref20 ref21 ref22 ref23 ref24 ref25 ref26 ref27 ref28 ref29 ref30 ref31 ref32 ref33 ref34 ref35 ref36">13?45</xref>
+        )
+85.3%
+None 3
+Heparine 9
+Prostacycline 1
+11 (
+        <xref ref-type="bibr" rid="ref1 ref10 ref11 ref12 ref13 ref14 ref15 ref16 ref17 ref18 ref19 ref2 ref20 ref21 ref22 ref23 ref24 ref25 ref26 ref27 ref28 ref29 ref3 ref30 ref31 ref32 ref33 ref34 ref35 ref4 ref5 ref6 ref7 ref8 ref9">0?35</xref>
+        )
+      </p>
+      <p>
+        Group 2
+68 (37?88)
+86 (56?124)
+7 (50)
+26 (
+        <xref ref-type="bibr" rid="ref13 ref14 ref15 ref16 ref17 ref18 ref19 ref20 ref21 ref22 ref23 ref24 ref25 ref26 ref27 ref28 ref29 ref30 ref31 ref32 ref33 ref34 ref35 ref36">13?36</xref>
+        )
+39
+115 (37?207)
+CVVHDF
+21.9 (
+        <xref ref-type="bibr" rid="ref15 ref16 ref17 ref18 ref19 ref20 ref21 ref22 ref23 ref24 ref25 ref26 ref27 ref28 ref29 ref30">15?30</xref>
+        )
+87.5%
+None 2
+Heparine 11
+Prostacycline 1
+3 (
+        <xref ref-type="bibr" rid="ref1 ref10 ref11 ref12 ref13 ref2 ref3 ref4 ref5 ref6 ref7 ref8 ref9">0?13</xref>
+        )
+      </p>
+      <p>
+        Group 3
+67 (53?83)
+79 (41?130)
+5 (
+        <xref ref-type="bibr" rid="ref36">36</xref>
+        )
+23.2 (
+        <xref ref-type="bibr" rid="ref15 ref16 ref17 ref18 ref19 ref20 ref21 ref22 ref23 ref24 ref25 ref26 ref27 ref28 ref29">15?29</xref>
+        )
+39
+96 (
+        <xref ref-type="bibr" rid="ref29 ref30 ref31 ref32 ref33 ref34 ref35 ref36">29?210</xref>
+        )
+CVVHDF
+18 (
+        <xref ref-type="bibr" rid="ref10 ref11 ref12 ref13 ref14 ref15 ref16 ref17 ref18 ref19 ref20">10?20</xref>
+        )
+91.8%
+None 2
+Heparine 10
+Prostacycline 2
+0 (0)
+      </p>
+      <p>Group 1</p>
+      <p>Group 2
+phate-free solution as the replacement solution,
+five of 14 patients had at least one episode of
+hypophosphatemia (Fig. 1). No episodes of
+hypophosphatemia were detected in group 3.</p>
+      <p>The serum phosphate level was 1.90 mmol/l at
+baseline and 0.99 mmol/l during CRRT treatment in
+group 1. In group 2, the corresponding values were
+1.54 and 1.20 mmol/l, and in group 3, they were 1.83
+and 1.43 mmol/l (Table 5). However, due to the
+simultaneous intake of enteral/parenteral solutions,
+two of 14 of the patients in group 3 had a temporary
+increase in serum phosphate (o1.9 mmol/l), but
+there were no cases of hyperphosphatemia that
+required a withdrawal of the phosphate-containing
+dialysis solution from the treatment.</p>
+      <p>Phosphate intake was from nutrition and from
+intravenous supplementation. The average
+phosphate input calculated from the total nutrition was
+18 mmol/CRRT treatment/day for all groups.
+Short-acting insulin was administered as infusion
+in order to achieve a blood glucose level between 5
+and 8 mmol/l. Phosphate was supplemented
+intravenously if serum phosphate declined to
+o0.80 mmol/l. In group 1, the average phosphate
+supplementation was 10 mmol/CRRT treatment/
+day. In group 2, the average supplementation was
+5 mmol/CRRT treatment and day, and in group 3,
+there was no intravenous supplementation.</p>
+      <p>There was a decline in phosphate levels during
+CRRT treatment in both groups 1 and 2. In group 1,
+serum phosphate declined constantly, although the
+patients received phosphate supplementation
+in2.5
+Fig. 2. Serum phosphate levels during the continuous renal
+replacement therapy treatment. Group 1, receiving Hemosol B0
+(diamond), group 2, receiving the phosphate-containing dialysis
+fluid as the dialysis fluid and Hemosol B0 as the replacement fluid
+(triangle), and group 3, receiving the phosphate-containing
+dialysis fluid (square). Groups 2 and 3 were statistically compared
+with group 1. n 5 14 patients/group, **Po0.01, ***Po0.001.
+travenously (Fig. 2). In group 2, the phosphate
+levels were unstable and reached a low level in
+the end of the study. In group 3, where the patients
+received a phosphate-containing solution both as
+the dialysis solution and the replacement solution,
+none of the patients had episodes of
+hypophosphatemia (Fig. 2). Phosphate remained stable in
+this patient population during the entire study.</p>
+      <p>For group 3, we also evaluated any adverse event
+in sodium, potassium and magnesium homeostasis.
+There was a significant increase in sodium
+(P 0.001) and a slight increase in ionized calcium
+(P 5 0.029), whereas potassium and magnesium
+remained stable during the entire study as
+summarized in Table 4. A comparison between the study
+groups revealed that there was a significant
+difference in phosphate (P 0.001), ionized calcium
+(P 5 0.004) and bicarbonate (P 5 0.045) between the
+groups (Table 5). The pH and pCO2 measurements
+were obtained at baseline and rapidly declined
+toward normal values after starting the CRRT
+treatment and remained essentially unchanged during
+the treatment in all groups (Table 4).</p>
+    </sec>
+    <sec id="sec-4">
+      <title>Discussion</title>
+      <p>This study demonstrates that the new
+phosphatecontaining dialysis solution is safe, reduces the
+variability of serum phosphate levels during
+*P 0.001 within the group.
+wDifferences within the group were not statistically significant.
+zP 5 0.029 within the group.</p>
+      <p>Serum values (mmol/l, kPa) during CRRT with the
+phosphatecontaining dialysis fluid.</p>
+      <p>Group 1 Group 2 Group 3</p>
+      <p>Before During Before During Before During
+Phosphate* 1.90
+Ionized Caw 1.10
+pHz 7.24
+pCO2z 5.59
+Bicarbonate§ 18
+Mean values of each day of all the patients.
+*P 0.001 between the groups during the CRRT treatment.
+wP 5 0.004 between the groups during the CRRT treatment.
+zDifferences between the groups were not statistically
+significant.
+§P 5 0.045 between the groups during the CRRT treatment.</p>
+      <p>CRRT and reduces the incidence of
+hypophosphatemia.</p>
+      <p>Various protocols for intravenous phosphate
+supplementation have been studied in the last 30
+years. Today, there is a trend toward the use of
+larger and faster boluses of phosphate because of
+high failure of repletion (20?70%) and the need for
+additional phosphate administration.24?31 Authors
+usually agree that larger amounts of phosphate are
+needed to correct total body deficit, but their fear of
+adverse reactions has prompted a restrained
+attitude. Recent studies on ICU patients confirm that a
+relatively rapid infusion of potassium phosphate is
+safe if baseline serum potassium is below
+4.5 mmol/l.1 The infusion rate is thus consequently
+limited by the serum potassium levels, and also by
+serum calcium levels, as high phosphate serum
+levels could induce hypocalcemia, as phosphate
+could precipitate with calcium in blood vessels and
+tissues. Recently, phosphate has been injected into
+dialysis solutions during treatment, but there is a
+risk of precipitation.1,21,22 We evaluated whether
+phosphate-containing solutions for dialysis and
+replacement simplify phosphate replacement even
+further.</p>
+      <p>Serum solute concentrations (mmol/l) during CRRT with the phosphate containing dialysis fluid for patients in group 3.</p>
+      <p>Before</p>
+      <p>The frequency of phosphate disturbances in
+critically ill patients is high, although the figure
+varies considerably depending on the study,
+between 8.8% and 80%.32,33 In our study, the
+incidence of hypophosphatemia during CRRT was 79%
+in the control group. The incidence of
+hypophosphatemia was lower (35%) in patients receiving
+the phosphate-containing solution as the dialysis
+solution and Hemosol B0 as the replacement
+solution. There were no episodes of hypophosphatemia
+in patients receiving only the phosphate-containing
+solution, but there was an incidence of mild
+(&gt;1.9 mmol/l) hyperphosphatemia in 14% of these
+patients. This is probably due to the simultaneous
+intake of nutritional support, but the phosphate
+levels were only marginally elevated without
+physiological consequences and did not require
+withdrawal of the phosphate-containing dialysis
+solution from the patient.</p>
+      <p>The amount of phosphate required to correct
+total body deficit is variable and depends on the
+cause of hypophosphatemia and the chronicity of
+the process.3,11,24 The many physiological
+rearrangements in ICU patients may explain the need for
+larger amounts required for repletion. In our study,
+phosphate addition was necessary for patients in
+groups 1 and 2. This is representative of our
+experience, where the majority of patients on
+CRRT require phosphate supplementation shortly
+after CRRT initiation despite nutritional support.</p>
+      <p>Malnourished alcoholic patients have a larger
+deficit due to long-standing negative phosphate
+balance. Malnutrition induces a re-feeding syndrome
+that has been reported after only 48 h of fasting in
+the ICU.2 The distribution volume for phosphate
+might be increased,24 while insulin, carbohydrate,
+and catecholamine administration act to decrease
+the serum phosphate concentration.2,3,11,34</p>
+      <p>The incidence of hypophosphatemia in this
+study was 10% of the 42 patients before the start
+of CRRT. The incidence of hyperphosphatemia was
+52%, which is slightly lower than that found in
+other studies, where 65?80% of patients present
+hyperphosphatemia before the start of the
+CRRT.8,35 Phosphate was within normal limits in
+38% of patients even before the beginning of
+CRRT. The new dialysis fluid contains 30 mM
+bicarbonate compared with 32 mM in Hemosol
+B0. With prescribed CRRT clearances of 20 ml/
+kg/h, most acid?base disturbances can be
+managed with bicarbonate compositions of 25?
+35 mM.36 The normal serum range for bicarbonate
+is 22?30 mmol/l, which was achieved in patients
+in all groups, although the increase in group 1
+was most significant. Ionized calcium increased in
+all groups during treatment time, but the increase
+was less marked in groups 2 and 3. There is a
+possibility that the slow increase in bicarbonate
+and ionized calcium could reflect the differences
+in the ion content between Hemosol B0 and the
+phosphate-containing dialysis fluid, although
+these differences could also be due to the
+limitations of this study. The fact that this was a
+retrospective observational study, without other
+intervention but for the dialysis solutions, means
+that bias due to the patients? illnesses and due to
+other treatments could affect ion concentrations.</p>
+      <p>Even the phosphate concentration in parenteral
+and enteral nutrition cannot be completely
+excluded, although this would not alter the basic
+results of the study.</p>
+      <p>The next objective of the study was to evaluate
+whether the administered phosphate could alter
+calcium and potassium homeostasis. Phosphate
+could theoretically precipitate with calcium, which
+could lead to hypocalcemia in the patients. We
+found that the phosphate-containing dialysis fluid
+did not induce hypocalcemia during CRRT.
+Another important concern was whether this fluid
+would cause potassium overload, as potassium
+phosphate is used instead of sodium phosphate.</p>
+      <p>We found that the phosphate-containing dialysis
+fluid did not induce hyperkalemia either.
+Potassium phosphate was favored over sodium
+phosphate because potassium usually has to be added
+to CRRT solutions. In addition, there were no
+disturbances of magnesium levels.</p>
+      <p>The present study shows that by using the
+phosphate-containing fluid both as the dialysis fluid and
+the replacement fluid, we could eliminate the
+episodes of hypophosphatemia. The new
+phosphatecontaining dialysis fluid simplified the phosphate
+control and avoided rapid phosphate fluctuations
+with intravenous bolus administration.</p>
+    </sec>
+    <sec id="sec-5">
+      <title>Acknowledgements</title>
+      <p>Competing interests: The authors have not disclosed any
+potential competing interests. The ICU department of Lund
+University Hospital has paid an ordinary price for the
+phosphatecontaining dialysis solution used in the study. Gambro has
+approved a Research Grant, which has been paid to the ICU
+department of Lund University Hospital. Gambro has not had
+any insight in how the Research Grant has been used. An
+independent statistician has monitored the raw data and the
+statistics.</p>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <ref id="ref1">
+        <mixed-citation>
+          1.
+          <string-name>
+            <surname>Troyanov</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Geadah</surname>
+            <given-names>D</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ghannoum</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Cardinal</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Leblanc</surname>
+            <given-names>M.</given-names>
+          </string-name>
+          <article-title>Phosphate addition to hemodiafiltration solutions during continuous renal replacement therapy</article-title>
+          .
+          <source>Intensive Care Med</source>
+          <year>2004</year>
+          ;
+          <volume>30</volume>
+          :
+          <fpage>1662</fpage>
+          -
+          <lpage>5</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref2">
+        <mixed-citation>
+          2.
+          <string-name>
+            <surname>Marik</surname>
+            <given-names>PE</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Bedigian</surname>
+            <given-names>MK</given-names>
+          </string-name>
+          .
+          <article-title>Refeeding hypophosphatemia in critically ill patients in an intensive care unit. A prospective study</article-title>
+          .
+          <source>Arch Surg</source>
+          <year>1996</year>
+          ;
+          <volume>131</volume>
+          :
+          <fpage>1043</fpage>
+          -
+          <lpage>7</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref3">
+        <mixed-citation>
+          3.
+          <string-name>
+            <surname>Bugg</surname>
+            <given-names>NC</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Jones</surname>
+            <given-names>JA</given-names>
+          </string-name>
+          .
+          <article-title>Hypophosphataemia. Pathophysiology, effects and management on the intensive care unit</article-title>
+          .
+          <source>Anaesthesia</source>
+          <year>1998</year>
+          ;
+          <volume>53</volume>
+          :
+          <fpage>895</fpage>
+          -
+          <lpage>902</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref4">
+        <mixed-citation>
+          4.
+          <string-name>
+            <surname>Skulberg</surname>
+            <given-names>A</given-names>
+          </string-name>
+          Sr.
+          <article-title>Glucose: a potential killer</article-title>
+          .
+          <source>Acta Anaesthesiol Scand</source>
+          <year>2009</year>
+          ;
+          <volume>53</volume>
+          :
+          <fpage>684</fpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref5">
+        <mixed-citation>
+          5.
+          <string-name>
+            <surname>Peppers</surname>
+            <given-names>MP</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Geheb</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Desai</surname>
+            <given-names>T.</given-names>
+          </string-name>
+          <article-title>Endocrine crises. Hypophosphatemia and hyperphosphatemia</article-title>
+          .
+          <source>Crit Care Clin</source>
+          <year>1991</year>
+          ;
+          <volume>7</volume>
+          :
+          <fpage>201</fpage>
+          -
+          <lpage>14</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref6">
+        <mixed-citation>
+          6.
+          <string-name>
+            <surname>Elisaf</surname>
+            <given-names>MS</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Siamopoulos</surname>
+            <given-names>KC</given-names>
+          </string-name>
+          .
+          <article-title>Mechanisms of hypophosphataemia in alcoholic patients</article-title>
+          .
+          <source>Int J Clin Pract</source>
+          <year>1997</year>
+          ;
+          <volume>51</volume>
+          :
+          <fpage>501</fpage>
+          -
+          <lpage>3</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref7">
+        <mixed-citation>
+          7.
+          <string-name>
+            <surname>Zazzo</surname>
+            <given-names>JF</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Troche</surname>
+            <given-names>G</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ruel</surname>
+            <given-names>P</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Maintenant</surname>
+            <given-names>J</given-names>
+          </string-name>
+          .
+          <article-title>High incidence of hypophosphatemia in surgical intensive care patients: efficacy of phosphorus therapy on myocardial function</article-title>
+          .
+          <source>Intensive Care Med</source>
+          <year>1995</year>
+          ;
+          <volume>21</volume>
+          :
+          <fpage>826</fpage>
+          -
+          <lpage>31</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref8">
+        <mixed-citation>
+          8.
+          <string-name>
+            <surname>Tan</surname>
+            <given-names>HK</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Bellomo</surname>
+            <given-names>R</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>M'Pis</surname>
+            <given-names>DA</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ronco</surname>
+            <given-names>C</given-names>
+          </string-name>
+          .
+          <article-title>Phosphatemic control during acute renal failure: intermittent hemodialysis versus continuous hemodiafiltration</article-title>
+          .
+          <source>Int J Artif Organs</source>
+          <year>2001</year>
+          ;
+          <volume>24</volume>
+          :
+          <fpage>186</fpage>
+          -
+          <lpage>91</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref9">
+        <mixed-citation>
+          9.
+          <string-name>
+            <surname>Baldwin</surname>
+            <given-names>I</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Naka</surname>
+            <given-names>T</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Koch</surname>
+            <given-names>B</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Fealy</surname>
+            <given-names>N</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Bellomo</surname>
+            <given-names>R.</given-names>
+          </string-name>
+          <article-title>A pilot randomised controlled comparison of continuous venovenous haemofiltration and extended daily dialysis with filtration: effect on small solutes and acid-base balance</article-title>
+          .
+          <source>Intensive Care Med</source>
+          <year>2007</year>
+          ;
+          <volume>33</volume>
+          :
+          <fpage>830</fpage>
+          -
+          <lpage>5</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref10">
+        <mixed-citation>
+          10.
+          <string-name>
+            <surname>Shor</surname>
+            <given-names>R</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Halabe</surname>
+            <given-names>A</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Rishver</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Tilis</surname>
+            <given-names>Y</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Matas</surname>
+            <given-names>Z</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Fux</surname>
+            <given-names>A</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Boaz</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Weinstein</surname>
+            <given-names>J</given-names>
+          </string-name>
+          .
+          <article-title>Severe hypophosphatemia in sepsis as a mortality predictor</article-title>
+          .
+          <source>Ann Clin Lab Sci</source>
+          <year>2006</year>
+          ;
+          <volume>36</volume>
+          :
+          <fpage>67</fpage>
+          -
+          <lpage>72</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref11">
+        <mixed-citation>
+          11.
+          <string-name>
+            <surname>Stoff</surname>
+            <given-names>JS</given-names>
+          </string-name>
+          .
+          <article-title>Phosphate homeostasis and hypophosphatemia</article-title>
+          .
+          <source>Am J Med</source>
+          <year>1982</year>
+          ;
+          <volume>72</volume>
+          :
+          <fpage>489</fpage>
+          -
+          <lpage>95</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref12">
+        <mixed-citation>
+          12.
+          <string-name>
+            <surname>Brown</surname>
+            <given-names>GR</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Greenwood</surname>
+            <given-names>JK</given-names>
+          </string-name>
+          .
+          <article-title>Drug- and nutrition-induced hypophosphatemia: mechanisms and relevance in the critically ill</article-title>
+          .
+          <source>Ann Pharmacother</source>
+          <year>1994</year>
+          ;
+          <volume>28</volume>
+          :
+          <fpage>626</fpage>
+          -
+          <lpage>32</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref13">
+        <mixed-citation>
+          13.
+          <string-name>
+            <surname>Bollaert</surname>
+            <given-names>PE</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Levy</surname>
+            <given-names>B</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Nace</surname>
+            <given-names>L</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Laterre</surname>
+            <given-names>PF</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Larcan</surname>
+            <given-names>A</given-names>
+          </string-name>
+          .
+          <article-title>Hemodynamic and metabolic effects of rapid correction of hypophosphatemia in patients with septic shock</article-title>
+          .
+          <source>Chest</source>
+          <year>1995</year>
+          ;
+          <volume>107</volume>
+          :
+          <fpage>1698</fpage>
+          -
+          <lpage>701</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref14">
+        <mixed-citation>
+          14.
+          <string-name>
+            <surname>Paterson</surname>
+            <given-names>CR</given-names>
+          </string-name>
+          .
+          <article-title>Hypophosphataemia: a dangerous disorder</article-title>
+          .
+          <source>Nutrition</source>
+          <year>1996</year>
+          ;
+          <volume>12</volume>
+          :
+          <fpage>540</fpage>
+          -
+          <lpage>1</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref15">
+        <mixed-citation>
+          15.
+          <string-name>
+            <surname>Paula</surname>
+            <given-names>FJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Plens</surname>
+            <given-names>AE</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Foss</surname>
+            <given-names>MC</given-names>
+          </string-name>
+          .
+          <article-title>Effects of hypophosphatemia on glucose tolerance and insulin secretion</article-title>
+          .
+          <source>Horm Metab Res</source>
+          <year>1998</year>
+          ;
+          <volume>30</volume>
+          :
+          <fpage>281</fpage>
+          -
+          <lpage>4</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref16">
+        <mixed-citation>
+          16.
+          <string-name>
+            <surname>Ravenscroft</surname>
+            <given-names>AJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Valentine</surname>
+            <given-names>JM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Knappett PA</surname>
+          </string-name>
+          .
+          <article-title>Severe hypophosphataemia and insulin resistance in diabetic ketoacidosis</article-title>
+          .
+          <source>Anaesthesia</source>
+          <year>1999</year>
+          ;
+          <volume>54</volume>
+          :
+          <fpage>198</fpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref17">
+        <mixed-citation>
+          17.
+          <string-name>
+            <surname>Weber</surname>
+            <given-names>U</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Huppe</surname>
+            <given-names>T</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Niehaus</surname>
+            <given-names>L</given-names>
+          </string-name>
+          .
+          <article-title>CT and MRI in severe hypophosphataemia with central nervous system involvement</article-title>
+          .
+          <source>Neuroradiology</source>
+          <year>2000</year>
+          ;
+          <volume>42</volume>
+          :
+          <fpage>112</fpage>
+          -
+          <lpage>4</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref18">
+        <mixed-citation>
+          18.
+          <string-name>
+            <surname>Darsee</surname>
+            <given-names>JR</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Nutter</surname>
+            <given-names>DO</given-names>
+          </string-name>
+          .
+          <article-title>Reversible severe congestive cardiomyopathy in three cases of hypophosphatemia</article-title>
+          .
+          <source>Ann Intern Med</source>
+          <year>1978</year>
+          ;
+          <volume>89</volume>
+          :
+          <fpage>867</fpage>
+          -
+          <lpage>70</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref19">
+        <mixed-citation>
+          19.
+          <string-name>
+            <surname>Aubier</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Murciano</surname>
+            <given-names>D</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Lecocguic</surname>
+            <given-names>Y</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Viires</surname>
+            <given-names>N</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Jacquens</surname>
+            <given-names>Y</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Squara</surname>
+            <given-names>P</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Pariente</surname>
+            <given-names>R</given-names>
+          </string-name>
+          .
+          <article-title>Effect of hypophosphatemia on diaphragmatic contractility in patients with acute respiratory failure</article-title>
+          .
+          <source>N Engl J Med</source>
+          <year>1985</year>
+          ;
+          <volume>313</volume>
+          :
+          <fpage>420</fpage>
+          -
+          <lpage>4</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref20">
+        <mixed-citation>
+          20.
+          <string-name>
+            <surname>Williams</surname>
+            <given-names>JD</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Topley</surname>
+            <given-names>N</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Craig</surname>
+            <given-names>KJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Mackenzie</surname>
+            <given-names>RK</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Pischetsrieder</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Lage</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Passlick-Deetjen</surname>
+            <given-names>J</given-names>
+          </string-name>
+          .
+          <article-title>The Euro-balance trial: the effect of a new biocompatible peritoneal dialysis fluid (balance) on the peritoneal membrane</article-title>
+          .
+          <source>Kidney Int</source>
+          <year>2004</year>
+          ;
+          <volume>66</volume>
+          :
+          <fpage>408</fpage>
+          -
+          <lpage>18</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref21">
+        <mixed-citation>
+          21.
+          <string-name>
+            <surname>Gatchalian</surname>
+            <given-names>RA</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Popli</surname>
+            <given-names>A</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ejaz</surname>
+            <given-names>AA</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Leehey</surname>
+            <given-names>DJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kjellstrand</surname>
+            <given-names>CM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ing</surname>
+            <given-names>TS</given-names>
+          </string-name>
+          .
+          <article-title>Management of hypophosphatemia induced by high-flux hemodiafiltration for the treatment of vancomycin toxicity: intravenous phosphorus therapy versus use of a phosphorus-enriched dialysate</article-title>
+          .
+          <source>Am J Kidney Dis</source>
+          <year>2000</year>
+          ;
+          <volume>36</volume>
+          :
+          <fpage>1262</fpage>
+          -
+          <lpage>6</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref22">
+        <mixed-citation>
+          22.
+          <string-name>
+            <surname>Santiago</surname>
+            <given-names>MJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Lopez-Herce</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Urbano</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Bellon</surname>
+            <given-names>JM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>del Castillo</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Carrillo</surname>
+            <given-names>A</given-names>
+          </string-name>
+          .
+          <article-title>Hypophosphatemia and phosphate supplementation during continuous renal replacement therapy in children</article-title>
+          .
+          <source>Kidney Int</source>
+          <year>2009</year>
+          ;
+          <volume>75</volume>
+          :
+          <fpage>312</fpage>
+          -
+          <lpage>6</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref23">
+        <mixed-citation>
+          23.
+          <string-name>
+            <surname>Janssen van Doorn</surname>
+            <given-names>K</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Spapen</surname>
+            <given-names>H</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Geers</surname>
+            <given-names>C</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Diltoer</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Shabana</surname>
+            <given-names>W.</given-names>
+          </string-name>
+          <article-title>Sepsis-related acute kidney injury: a protective effect of drotrecogin alpha (activated) treatment?</article-title>
+          <source>Acta Anaesthesiol Scand</source>
+          <year>2008</year>
+          ;
+          <volume>52</volume>
+          :
+          <fpage>1259</fpage>
+          -
+          <lpage>64</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref24">
+        <mixed-citation>
+          24.
+          <string-name>
+            <surname>Lentz</surname>
+            <given-names>RD</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Brown</surname>
+            <given-names>DM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kjellstrand</surname>
+            <given-names>CM</given-names>
+          </string-name>
+          .
+          <article-title>Treatment of severe hypophosphatemia</article-title>
+          .
+          <source>Ann Intern Med</source>
+          <year>1978</year>
+          ;
+          <volume>89</volume>
+          :
+          <fpage>941</fpage>
+          -
+          <lpage>4</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref25">
+        <mixed-citation>
+          25.
+          <string-name>
+            <surname>Vannatta</surname>
+            <given-names>JB</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Whang</surname>
+            <given-names>R</given-names>
+          </string-name>
+          , Papper S.
+          <article-title>Efficacy of intravenous phosphorus therapy in the severely hypophosphatemic patient</article-title>
+          .
+          <source>Arch Intern Med</source>
+          <year>1981</year>
+          ;
+          <volume>141</volume>
+          :
+          <fpage>885</fpage>
+          -
+          <lpage>7</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref26">
+        <mixed-citation>
+          26.
+          <string-name>
+            <surname>Vannatta</surname>
+            <given-names>JB</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Andress</surname>
+            <given-names>DL</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Whang</surname>
+            <given-names>R</given-names>
+          </string-name>
+          , Papper S.
+          <article-title>High-dose intravenous phosphorus therapy for severe complicated hypophosphatemia</article-title>
+          .
+          <source>South Med J</source>
+          <year>1983</year>
+          ;
+          <volume>76</volume>
+          :
+          <fpage>1424</fpage>
+          -
+          <lpage>6</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref27">
+        <mixed-citation>
+          27.
+          <string-name>
+            <surname>Kingston</surname>
+            <given-names>M</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Al-Siba'i MB</surname>
+          </string-name>
+          .
+          <article-title>Treatment of severe hypophosphatemia</article-title>
+          .
+          <source>Crit Care Med</source>
+          <year>1985</year>
+          ;
+          <volume>13</volume>
+          :
+          <fpage>16</fpage>
+          -
+          <lpage>8</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref28">
+        <mixed-citation>
+          28.
+          <string-name>
+            <surname>Sacks</surname>
+            <given-names>GS</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Walker</surname>
+            <given-names>J</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Dickerson</surname>
+            <given-names>RN</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kudsk</surname>
+            <given-names>KA</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Brown</surname>
+            <given-names>RO</given-names>
+          </string-name>
+          .
+          <article-title>Observations of hypophosphatemia and its management in nutrition support</article-title>
+          .
+          <source>Nutr Clin Pract</source>
+          <year>1994</year>
+          ;
+          <volume>9</volume>
+          :
+          <fpage>105</fpage>
+          -
+          <lpage>8</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref29">
+        <mixed-citation>
+          29.
+          <string-name>
+            <surname>Clark</surname>
+            <given-names>CL</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Sacks</surname>
+            <given-names>GS</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Dickerson</surname>
+            <given-names>RN</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kudsk</surname>
+            <given-names>KA</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Brown</surname>
+            <given-names>RO</given-names>
+          </string-name>
+          .
+          <article-title>Treatment of hypophosphatemia in patients receiving specialized nutrition support using a graduated dosing scheme: results from a prospective clinical trial</article-title>
+          .
+          <source>Crit Care Med</source>
+          <year>1995</year>
+          ;
+          <volume>23</volume>
+          :
+          <fpage>1504</fpage>
+          -
+          <lpage>11</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref30">
+        <mixed-citation>
+          30.
+          <string-name>
+            <surname>Rosen</surname>
+            <given-names>GH</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Boullata</surname>
+            <given-names>JI</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>O'Rangers</surname>
+            <given-names>EA</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Enow</surname>
+            <given-names>NB</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Shin</surname>
+            <given-names>B</given-names>
+          </string-name>
+          .
+          <article-title>Intravenous phosphate repletion regimen for critically ill patients with moderate hypophosphatemia</article-title>
+          .
+          <source>Crit Care Med</source>
+          <year>1995</year>
+          ;
+          <volume>23</volume>
+          :
+          <fpage>1204</fpage>
+          -
+          <lpage>10</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref31">
+        <mixed-citation>
+          31.
+          <string-name>
+            <surname>Perreault</surname>
+            <given-names>MM</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ostrop</surname>
+            <given-names>NJ</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Tierney</surname>
+            <given-names>MG</given-names>
+          </string-name>
+          .
+          <article-title>Efficacy and safety of intravenous phosphate replacement in critically ill patients</article-title>
+          .
+          <source>Ann Pharmacother</source>
+          <year>1997</year>
+          ;
+          <volume>31</volume>
+          :
+          <fpage>683</fpage>
+          -
+          <lpage>8</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref32">
+        <mixed-citation>
+          32.
+          <string-name>
+            <surname>Charron</surname>
+            <given-names>T</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Bernard</surname>
+            <given-names>F</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Skrobik</surname>
+            <given-names>Y</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Simoneau</surname>
+            <given-names>N</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gagnon</surname>
+            <given-names>N</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Leblanc</surname>
+            <given-names>M.</given-names>
+          </string-name>
+          <article-title>Intravenous phosphate in the intensive care unit: more aggressive repletion regimens for moderate and severe hypophosphatemia</article-title>
+          .
+          <source>Intensive Care Med</source>
+          <year>2003</year>
+          ;
+          <volume>29</volume>
+          :
+          <fpage>1273</fpage>
+          -
+          <lpage>8</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref33">
+        <mixed-citation>
+          33.
+          <string-name>
+            <surname>Barak</surname>
+            <given-names>V</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Schwartz</surname>
+            <given-names>A</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Kalickman</surname>
+            <given-names>I</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Nisman</surname>
+            <given-names>B</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Gurman</surname>
+            <given-names>G</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Shoenfeld</surname>
+            <given-names>Y.</given-names>
+          </string-name>
+          <article-title>Prevalence of hypophosphatemia in sepsis and infection: the role of cytokines</article-title>
+          .
+          <source>Am J Med</source>
+          <year>1998</year>
+          ;
+          <volume>104</volume>
+          :
+          <fpage>40</fpage>
+          -
+          <lpage>7</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref34">
+        <mixed-citation>
+          34.
+          <string-name>
+            <surname>Walker</surname>
+            <given-names>K</given-names>
+          </string-name>
+          , Dallas Hall W,
+          <string-name>
+            <surname>Hurst</surname>
+            <given-names>W.</given-names>
+          </string-name>
+          <article-title>Serum inorganic phosphate</article-title>
+          . In: Stoneham M, ed.
+          <source>Clinical methods. London: Butterworth Publishers</source>
+          ,
+          <year>1990</year>
+          :
+          <fpage>895</fpage>
+          -
+          <lpage>9</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref35">
+        <mixed-citation>
+          35.
+          <string-name>
+            <surname>Morimatsu</surname>
+            <given-names>H</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Uchino</surname>
+            <given-names>S</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Bellomo</surname>
+            <given-names>R</given-names>
+          </string-name>
+          ,
+          <string-name>
+            <surname>Ronco</surname>
+            <given-names>C</given-names>
+          </string-name>
+          .
+          <article-title>Continuous veno-venous hemodiafiltration or hemofiltration: impact on calcium, phosphate and magnesium concentrations</article-title>
+          .
+          <source>Int J Artif Organs</source>
+          <year>2002</year>
+          ;
+          <volume>25</volume>
+          :
+          <fpage>512</fpage>
+          -
+          <lpage>9</lpage>
+          .
+        </mixed-citation>
+      </ref>
+      <ref id="ref36">
+        <mixed-citation>
+          36.
+          <string-name>
+            <surname>Kraus</surname>
+            <given-names>MA</given-names>
+          </string-name>
+          .
+          <article-title>Selection of dialysate and replacement fluids and management of electrolyte and acid-base disturbances</article-title>
+          .
+          <source>Semin Dial</source>
+          <year>2009</year>
+          ;
+          <volume>22</volume>
+          :
+          <fpage>137</fpage>
+          -
+          <lpage>40</lpage>
+          .
+        </mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+
