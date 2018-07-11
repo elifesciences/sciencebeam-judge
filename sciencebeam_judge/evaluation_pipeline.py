@@ -101,7 +101,8 @@ def ReadFilePairs(x):
 def evaluate_file_pairs(
   target_filename, target_content,
   prediction_filename, prediction_content,
-  xml_mapping, field_names, measures=None):
+  xml_mapping, field_names, measures=None,
+  convert_to_lower=False):
 
   get_logger().info(
     'processing: target: %s, prediction: %s', target_filename, prediction_filename
@@ -118,14 +119,19 @@ def evaluate_file_pairs(
     fields=field_names,
     filename=prediction_filename
   )
-  return score_results(target_xml, prediction_xml, include_values=True, measures=measures)
+  return score_results(
+    target_xml, prediction_xml, include_values=True,
+    measures=measures, convert_to_lower=convert_to_lower
+  )
 
-def EvaluateFilePairs(x, xml_mapping, field_names, measures=None):
+def EvaluateFilePairs(x, xml_mapping, field_names, measures=None, convert_to_lower=False):
   return extend_dict(x, {
     DataProps.EVALUTATION_RESULTS: evaluate_file_pairs(
       x[DataProps.TARGET_FILE_URL], x[DataProps.TARGET_CONTENT],
       x[DataProps.PREDICTION_FILE_URL], x[DataProps.PREDICTION_CONTENT],
-      xml_mapping, field_names, measures=measures
+      xml_mapping, field_names,
+      measures=measures,
+      convert_to_lower=convert_to_lower
     )
   })
 
@@ -270,7 +276,8 @@ def configure_pipeline(p, opt):
     EvaluateFilePairs,
     xml_mapping=xml_mapping,
     field_names=field_names,
-    measures=opt.measures
+    measures=opt.measures,
+    convert_to_lower=opt.convert_to_lower
   )
   evaluate_file_pairs_transform = (
     beam.Map(evaluate_file_pairs_fn) if opt.no_skip_errors
@@ -409,6 +416,11 @@ def add_main_args(parser):
     help='comma separated list of measures to process (valid values: %s)' % (
       ', '.join(ALL_SCORE_MEASURES)
     )
+  )
+
+  parser.add_argument(
+    '--convert-to-lower', action='store_true',
+    help='convert all text to lower case'
   )
 
   output_group = parser.add_argument_group('output')
