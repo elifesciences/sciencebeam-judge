@@ -48,7 +48,9 @@ from sciencebeam_judge.evaluation_utils import (
   scoring_method_as_top_level_key,
   combine_and_compact_scores_by_scoring_method_with_count,
   summarise_results_by_scoring_method_with_count,
-  comma_separated_str_to_list
+  comma_separated_str_to_list,
+  ScoreMeasures,
+  ALL_SCORE_MEASURES
 )
 
 from sciencebeam_judge.grobid_evaluate import (
@@ -56,6 +58,21 @@ from sciencebeam_judge.grobid_evaluate import (
 )
 
 from .xpath_functions import register_functions
+
+DEFAULT_EXTRACTION_FIELDS = [
+  'abstract',
+  'author_surnames', 'first_author_surname',
+  'author_full_names', 'first_author_full_name',
+  'author_aff_strings',
+  'section_titles',
+  # 'section_paragraphs',
+  'keywords', 'title'
+]
+
+DEFAULT_SCORE_MEASURES = [
+  ScoreMeasures.EXACT,
+  ScoreMeasures.LEVENSHTEIN
+]
 
 def get_logger():
   return logging.getLogger(__name__)
@@ -84,7 +101,7 @@ def ReadFilePairs(x):
 def evaluate_file_pairs(
   target_filename, target_content,
   prediction_filename, prediction_content,
-  xml_mapping, field_names):
+  xml_mapping, field_names, measures=None):
 
   get_logger().info(
     'processing: target: %s, prediction: %s', target_filename, prediction_filename
@@ -101,14 +118,14 @@ def evaluate_file_pairs(
     fields=field_names,
     filename=prediction_filename
   )
-  return score_results(target_xml, prediction_xml, include_values=True)
+  return score_results(target_xml, prediction_xml, include_values=True, measures=measures)
 
-def EvaluateFilePairs(x, xml_mapping, field_names):
+def EvaluateFilePairs(x, xml_mapping, field_names, measures=None):
   return extend_dict(x, {
     DataProps.EVALUTATION_RESULTS: evaluate_file_pairs(
       x[DataProps.TARGET_FILE_URL], x[DataProps.TARGET_CONTENT],
       x[DataProps.PREDICTION_FILE_URL], x[DataProps.PREDICTION_CONTENT],
-      xml_mapping, field_names
+      xml_mapping, field_names, measures=measures
     )
   })
 
@@ -249,6 +266,17 @@ def configure_pipeline(p, opt):
     DataProps.PREDICTION_FILE_URL: prediction_file_url
   } for target_file_url, prediction_file_url in zip(target_file_list, prediction_file_list)]
 
+  evaluate_file_pairs_fn = partial(
+    EvaluateFilePairs,
+    xml_mapping=xml_mapping,
+    field_names=field_names,
+    measures=opt.measures
+  )
+  evaluate_file_pairs_transform = (
+    beam.Map(evaluate_file_pairs_fn) if opt.no_skip_errors
+    else MapOrLog(evaluate_file_pairs_fn)
+  )
+
   evaluation_results = (
     p |
     beam.Create(file_pairs) |
@@ -267,11 +295,7 @@ def configure_pipeline(p, opt):
       MetricCounters.FILE_PAIRS
     ) |
     "EvaluateFilePairs" >> TransformAndLog(
-      MapOrLog(partial(
-        EvaluateFilePairs,
-        xml_mapping=xml_mapping,
-        field_names=field_names
-      )),
+      evaluate_file_pairs_transform,
       log_prefix='eval out: ',
       log_value_fn=lambda x: x['evaluation_results'],
       log_level='debug'
@@ -374,19 +398,28 @@ def add_main_args(parser):
   parser.add_argument(
     '--fields',
     type=comma_separated_str_to_list,
-    default=[
-      'abstract',
-      'author_surnames', 'first_author_surname',
-      'author_full_names', 'first_author_full_name',
-      'keywords', 'title'
-    ],
+    default=DEFAULT_EXTRACTION_FIELDS,
     help='comma separated list of fields to process'
+  )
+
+  parser.add_argument(
+    '--measures',
+    type=comma_separated_str_to_list,
+    default=DEFAULT_SCORE_MEASURES,
+    help='comma separated list of measures to process (valid values: %s)' % (
+      ', '.join(ALL_SCORE_MEASURES)
+    )
   )
 
   output_group = parser.add_argument_group('output')
   output_group.add_argument(
     '--output-path', required=True,
     help='Output directory to write results to.'
+  )
+
+  parser.add_argument(
+    '--no-skip-errors', action='store_true', default=True,
+    help='fail on evaluation error'
   )
 
   parser.add_argument(

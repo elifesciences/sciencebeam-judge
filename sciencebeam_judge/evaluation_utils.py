@@ -16,6 +16,19 @@ IGNORE_MARKER_WITH_SPACE = ' ' + IGNORE_MARKER + ' '
 
 flatten = lambda l: [item for sublist in l for item in sublist]
 
+class ScoreMeasures(object):
+  EXACT = 'exact'
+  SOFT = 'soft'
+  LEVENSHTEIN = 'levenshtein'
+  RATCLIFF_OBERSHELP = 'ratcliff_obershelp'
+
+ALL_SCORE_MEASURES = [
+  ScoreMeasures.EXACT,
+  ScoreMeasures.SOFT,
+  ScoreMeasures.LEVENSHTEIN,
+  ScoreMeasures.RATCLIFF_OBERSHELP
+]
+
 def get_logger():
   return logging.getLogger(__name__)
 
@@ -146,43 +159,59 @@ def score_obj(expected, actual, value_f, threshold=1, include_values=False):
     d['actual'] = actual
   return d
 
-def score_list(expected, actual, include_values=False):
+def score_list(expected, actual, include_values=False, measures=None):
   # sep = '\n'
   sep = ''
   expected_str = normalize_whitespace(sep.join(expected)).lower()
   actual_str = normalize_whitespace(sep.join(actual)).lower()
-  return {
-    'exact': score_obj(
-      expected_str,
-      actual_str,
-      exact_score,
-      include_values=include_values
-    ),
-    'soft': score_obj(
-      strip_punctuation_and_whitespace(expected_str),
-      strip_punctuation_and_whitespace(actual_str),
-      exact_score,
-      include_values=include_values
-    ),
-    'levenshtein': score_obj(
-      expected_str,
-      actual_str,
-      levenshtein_score,
-      0.8,
-      include_values=include_values
-    ),
-    'ratcliff_obershelp': score_obj(
-      expected_str,
-      actual_str,
-      ratcliff_obershelp_score,
-      0.95,
-      include_values=include_values
-    )
-  }
+  scores = {}
+  if not measures:
+    measures = ALL_SCORE_MEASURES
+  for measure in measures:
+    if measure == ScoreMeasures.EXACT:
+      scores[ScoreMeasures.EXACT] = score_obj(
+        expected_str,
+        actual_str,
+        exact_score,
+        include_values=include_values
+      )
+    elif measure == ScoreMeasures.SOFT:
+      scores[ScoreMeasures.SOFT] = score_obj(
+        strip_punctuation_and_whitespace(expected_str),
+        strip_punctuation_and_whitespace(actual_str),
+        exact_score,
+        include_values=include_values
+      )
+    elif measure == ScoreMeasures.LEVENSHTEIN:
+      scores[ScoreMeasures.LEVENSHTEIN] = score_obj(
+        expected_str,
+        actual_str,
+        levenshtein_score,
+        0.8,
+        include_values=include_values
+      )
+    elif measure == ScoreMeasures.RATCLIFF_OBERSHELP:
+      scores[ScoreMeasures.RATCLIFF_OBERSHELP] = score_obj(
+        expected_str,
+        actual_str,
+        ratcliff_obershelp_score,
+        0.95,
+        include_values=include_values
+      )
+    else:
+      raise AttributeError('invalid measure: %s' % measure)
+  if not scores:
+    raise AttributeError('no measures calculated')
+  return scores
 
-def score_results(expected, actual, include_values=False):
+def score_results(expected, actual, include_values=False, measures=None):
   return {
-    k: score_list(expected[k], actual[k], include_values=include_values)
+    k: score_list(
+      expected[k],
+      actual[k],
+      include_values=include_values,
+      measures=measures
+    )
     for k in expected.keys()
   }
 
