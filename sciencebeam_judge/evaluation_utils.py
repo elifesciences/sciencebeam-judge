@@ -159,11 +159,14 @@ def score_obj(expected, actual, value_f, threshold=1, include_values=False):
     d['actual'] = actual
   return d
 
-def score_list(expected, actual, include_values=False, measures=None):
+def score_list(expected, actual, include_values=False, measures=None, convert_to_lower=False):
   # sep = '\n'
   sep = ''
-  expected_str = normalize_whitespace(sep.join(expected)).lower()
-  actual_str = normalize_whitespace(sep.join(actual)).lower()
+  expected_str = normalize_whitespace(sep.join(expected))
+  actual_str = normalize_whitespace(sep.join(actual))
+  if convert_to_lower:
+    expected_str = expected_str.lower()
+    actual_str = actual_str.lower()
   scores = {}
   if not measures:
     measures = ALL_SCORE_MEASURES
@@ -204,13 +207,14 @@ def score_list(expected, actual, include_values=False, measures=None):
     raise AttributeError('no measures calculated')
   return scores
 
-def score_results(expected, actual, include_values=False, measures=None):
+def score_results(expected, actual, include_values=False, measures=None, convert_to_lower=False):
   return {
     k: score_list(
       expected[k],
       actual[k],
       include_values=include_values,
-      measures=measures
+      measures=measures,
+      convert_to_lower=convert_to_lower
     )
     for k in expected.keys()
   }

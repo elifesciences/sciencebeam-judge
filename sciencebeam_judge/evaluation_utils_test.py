@@ -145,6 +145,16 @@ class TestScoreList(object):
     assert is_close(result['levenshtein']['score'], 2 / 3)
     assert is_close(result['ratcliff_obershelp']['score'], 0.8)
 
+  def test_should_not_convert_to_lower_if_disabled(self):
+    result = score_list(['Abc'], ['aBC'], include_values=True, convert_to_lower=False)
+    assert result['exact']['expected'] == 'Abc'
+    assert result['exact']['actual'] == 'aBC'
+
+  def test_should_convert_to_lower_if_enabled(self):
+    result = score_list(['Abc'], ['aBC'], include_values=True, convert_to_lower=True)
+    assert result['exact']['expected'] == 'abc'
+    assert result['exact']['actual'] == 'abc'
+
 class TestScoreResults(object):
   def test_should_score_results_for_exact_match_and_partial_match(self):
     result = score_results({

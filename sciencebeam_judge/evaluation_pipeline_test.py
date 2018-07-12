@@ -112,5 +112,6 @@ class TestConfigurePipeline(BeamTest):
         PREDICTION_FILE_LIST[0], dummy_file_content(PREDICTION_FILE_LIST[0]),
         mocks['parse_xml_mapping'].return_value,
         opt.fields,
-        measures=opt.measures
+        measures=opt.measures,
+        convert_to_lower=opt.convert_to_lower
       )
