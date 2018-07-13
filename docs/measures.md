@@ -24,13 +24,13 @@ In this example the text for both, the converted XML and target XML would become
 
 ### Whitespace normalisation
 
-Example section title in document:
+Example manuscript title in document:
 
 > Homo naledi, a new species of the genus<br/>
 > Homo from the Dinaledi Chamber,<br/>
 > South Africa
 
-Section title in final XML:
+Manuscript title in final XML:
 
 > Homo naledi, a new species of the genus Homo from the Dinaledi Chamber, South Africa
 
