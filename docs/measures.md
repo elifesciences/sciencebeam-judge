@@ -78,11 +78,11 @@ When looking for exact matches, the measure is fairly clear. Either all of the c
 
 If say the expected value is:
 
-> Aedes ægypti control in urban areas: A systemic approach to a complex dynamic
+> Aedes **æ**gypti control in urban areas: A systemic approach to a complex dynamic
 
 and the actual value:
 
-> Aedes aegypti control in urban areas: A systemic approach to a complex dynamic
+> Aedes **ae**gypti control in urban areas: A systemic approach to a complex dynamic
 
 Using an exact match, this would get zero scores which might set the bar too high.
 
