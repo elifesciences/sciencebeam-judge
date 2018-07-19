@@ -2,7 +2,7 @@ from __future__ import division
 
 import logging
 
-import numpy as np
+from ..math import is_close
 
 from .scoring_type_string import STRING_SCORING_TYPE
 
@@ -10,8 +10,6 @@ from .scoring_type_string import STRING_SCORING_TYPE
 LOGGING = logging.getLogger(__name__)
 
 SOME_TEXT = 'test 123'
-
-is_close = lambda a, b: np.allclose([a], [b])
 
 class TestStringScoringType(object):
   def test_should_score_list_for_exact_match(self):

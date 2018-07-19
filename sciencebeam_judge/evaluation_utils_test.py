@@ -3,8 +3,6 @@ from __future__ import division
 import logging
 from io import BytesIO
 
-import numpy as np
-
 from sciencebeam_judge.evaluation_utils import (
   parse_xml_mapping,
   parse_xml,
@@ -15,8 +13,6 @@ try:
   from cStringIO import StringIO
 except ImportError:
   from StringIO import StringIO
-
-from .evaluation.math import is_close
 
 LOGGING = logging.getLogger(__name__)
 
