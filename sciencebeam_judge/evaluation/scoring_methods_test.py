@@ -1,9 +1,6 @@
 from __future__ import division
 
 import logging
-from io import BytesIO
-
-import pytest
 
 import numpy as np
 
@@ -13,17 +10,12 @@ from .scoring_methods import (
   ratcliff_obershelp_score
 )
 
-try:
-  from cStringIO import StringIO
-except ImportError:
-  from StringIO import StringIO
+from .math import is_close
 
 
 LOGGING = logging.getLogger(__name__)
 
 SOME_TEXT = 'test 123'
-
-is_close = lambda a, b: np.allclose([a], [b])
 
 class TestExactScore(object):
   def test_should_return_one_for_exact_match(self):

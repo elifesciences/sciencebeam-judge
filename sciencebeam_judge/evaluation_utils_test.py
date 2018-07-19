@@ -16,12 +16,11 @@ try:
 except ImportError:
   from StringIO import StringIO
 
+from .evaluation.math import is_close
 
 LOGGING = logging.getLogger(__name__)
 
 SOME_TEXT = 'test 123'
-
-is_close = lambda a, b: np.allclose([a], [b])
 
 class TestParseXmlMapping(object):
   def test_should_parse_multiple_sections(self):
