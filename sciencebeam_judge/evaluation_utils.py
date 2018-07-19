@@ -3,18 +3,11 @@ from __future__ import division
 
 import logging
 
-from six import iteritems, raise_from, text_type
+from six import raise_from, text_type
 
 from lxml import etree as ET
 
 from .utils.config import parse_config_as_dict
-
-from .evaluation.math import safe_mean
-
-from .evaluation.scoring_types import (
-  score_field_as_type,
-  get_field_scoring_type
-)
 
 IGNORE_MARKER = '_ignore_'
 IGNORE_MARKER_WITH_SPACE = ' ' + IGNORE_MARKER + ' '
@@ -78,22 +71,6 @@ def parse_xml(source, xml_mapping, fields=None, filename=None):
     for k in field_names
   }
   return result
-
-def score_results(
-  expected, actual, scoring_type_by_field_map=None,
-  include_values=False, measures=None, convert_to_lower=False):
-
-  return {
-    k: score_field_as_type(
-      expected[k],
-      actual[k],
-      include_values=include_values,
-      measures=measures,
-      convert_to_lower=convert_to_lower,
-      scoring_type=get_field_scoring_type(scoring_type_by_field_map, k)
-    )
-    for k in expected.keys()
-  }
 
 def comma_separated_str_to_list(s):
   s = s.strip()

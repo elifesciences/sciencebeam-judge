@@ -141,21 +141,3 @@ def resolve_scoring_type(scoring_type_str):
     return SCORING_TYPE_MAP[scoring_type_str or 'str']
   except KeyError:
     raise ValueError('unrecognised scoring type: %s' % scoring_type_str)
-
-def get_field_scoring_type(scoring_type_by_field_map, field_name):
-  if scoring_type_by_field_map is None:
-    scoring_type_by_field_map = {}
-  return resolve_scoring_type(scoring_type_by_field_map.get(
-    field_name,
-    scoring_type_by_field_map.get('default')
-  ))
-
-def score_field_as_type(
-  expected, actual, scoring_type, include_values=False, measures=None, convert_to_lower=False):
-
-  return scoring_type.score(
-    expected, actual,
-    include_values=include_values,
-    measures=measures,
-    convert_to_lower=convert_to_lower
-  )
