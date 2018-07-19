@@ -1,17 +1,16 @@
-from .scoring_type_list import LIST_SCORING_TYPE
-from .scoring_type_set import SET_SCORING_TYPE
+from .scoring_type_list import (
+  ORDERED_LIST_SCORING_TYPE,
+  UNORDERED_LIST_SCORING_TYPE,
+  SET_SCORING_TYPE
+)
 from .scoring_type_string import STRING_SCORING_TYPE
 
-class ScoringTypes(object):
-  STRING = STRING_SCORING_TYPE
-  LIST = LIST_SCORING_TYPE
-  SET = SET_SCORING_TYPE
-
 SCORING_TYPE_MAP = {
-  'str': ScoringTypes.STRING,
-  'string': ScoringTypes.STRING,
-  'list': ScoringTypes.LIST,
-  'set': ScoringTypes.SET
+  'str': STRING_SCORING_TYPE,
+  'string': STRING_SCORING_TYPE,
+  'list': ORDERED_LIST_SCORING_TYPE,
+  'ulist': UNORDERED_LIST_SCORING_TYPE,
+  'set': SET_SCORING_TYPE
 }
 
 def resolve_scoring_type(scoring_type_str):
