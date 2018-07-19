@@ -5,11 +5,12 @@ import re
 import logging
 from difflib import SequenceMatcher
 
-from six import iteritems, raise_from, string_types, text_type
-from six.moves.configparser import ConfigParser
+from six import iteritems, raise_from, text_type
 
 from lxml import etree as ET
 import editdistance
+
+from .utils.config import parse_config_as_dict
 
 IGNORE_MARKER = '_ignore_'
 IGNORE_MARKER_WITH_SPACE = ' ' + IGNORE_MARKER + ' '
@@ -38,6 +39,9 @@ def force_list(x):
 def mean(data):
   return sum(data) / len(data)
 
+def safe_mean(data, default_value=0):
+  return mean(data) if data else default_value
+
 def get_full_text(e):
   try:
     return "".join(e.itertext())
@@ -56,15 +60,7 @@ def get_full_text_ignore_children(e, children_to_ignore):
   ])
 
 def parse_xml_mapping(xml_mapping_filename_or_fp):
-  config = ConfigParser()
-  if isinstance(xml_mapping_filename_or_fp, string_types):
-    config.read(xml_mapping_filename_or_fp)
-  else:
-    config.readfp(xml_mapping_filename_or_fp)
-  return {
-    k: dict(config.items(k))
-    for k in config.sections()
-  }
+  return parse_config_as_dict(xml_mapping_filename_or_fp)
 
 def strip_namespace(it):
   for _, el in it:
@@ -115,6 +111,12 @@ WHITESPACE_REGEX = re.compile(r'\s+')
 def normalize_whitespace(s):
   return WHITESPACE_REGEX.sub(' ', s).replace(NBSP, ' ')
 
+def normalize_string(s, convert_to_lower=False):
+  s = normalize_whitespace(s)
+  if convert_to_lower:
+    s = s.lower()
+  return s
+
 def strip_punctuation_and_whitespace(s):
   return FULL_PUNCTUATION_AND_WHITESPACE_REGEX.sub('', s)
 
@@ -129,24 +131,61 @@ def levenshtein_score(expected, actual):
 def ratcliff_obershelp_score(expected, actual):
   return SequenceMatcher(None, expected, actual).ratio()
 
-def score_obj(expected, actual, value_f, threshold=1, include_values=False):
+IDENTITY_FN = lambda x: x
+
+class ScoringMethod(object):
+  def __init__(self, name, scoring_fn, threshold=1, preprocessing_fn=None):
+    self.name = name
+    self.scoring_fn = scoring_fn
+    self.threshold = threshold
+    self.preprocessing_fn = preprocessing_fn or IDENTITY_FN
+
+class ScoringMethods(object):
+  EXACT = ScoringMethod(
+    ScoreMeasures.EXACT, exact_score
+  )
+  SOFT = ScoringMethod(
+    ScoreMeasures.SOFT, exact_score, preprocessing_fn=strip_punctuation_and_whitespace
+  )
+  LEVENSHTEIN = ScoringMethod(
+    ScoreMeasures.LEVENSHTEIN, levenshtein_score, threshold=0.8
+  )
+  RATCLIFF_OBERSHELP = ScoringMethod(
+    ScoreMeasures.RATCLIFF_OBERSHELP, ratcliff_obershelp_score, threshold=0.95
+  )
+
+SCORING_METHODS_MAP = {
+  sm.name: sm
+  for sm in [
+    ScoringMethods.EXACT,
+    ScoringMethods.SOFT,
+    ScoringMethods.LEVENSHTEIN,
+    ScoringMethods.RATCLIFF_OBERSHELP
+  ]
+}
+
+def get_scoring_methods(measures=None):
+  if not measures:
+    measures = ALL_SCORE_MEASURES
+  return [SCORING_METHODS_MAP[k] for k in measures]
+
+def get_score_obj_for_score(expected, actual, score, threshold=1, include_values=False):
   binary_expected = 1 if len(expected) > 0 else 0
   # actual will be a false positive (1) if it is populated but expected is not,
   # otherwise it will be positive if it meets the threshold
-  value = value_f(expected, actual)
   binary_actual = (
     1
-    if len(actual) > 0 and (binary_expected == 0 or (binary_expected == 1 and value >= threshold))
+    if len(actual) > 0 and (binary_expected == 0 or (binary_expected == 1 and score >= threshold))
     else 0
   )
-  tp = 1 if len(actual) > 0 and len(expected) > 0 and value >= threshold else 0
+  tp = 1 if len(actual) > 0 and len(expected) > 0 and score >= threshold else 0
   tn = 1 if len(actual) == 0 and len(expected) == 0 else 0
   fp = 1 if not tp and len(actual) > 0 else 0
   fn = 1 if not tn and len(actual) == 0 else 0
   d = {
     'expected_something': len(expected) > 0,
     'actual_something': len(actual) > 0,
-    'score': value,
+    'score': score,
     'true_positive': tp,
     'true_negative': tn,
     'false_positive': fp,
@@ -159,6 +198,13 @@ def score_obj(expected, actual, value_f, threshold=1, include_values=False):
     d['actual'] = actual
   return d
 
+def score_obj(expected, actual, value_f, threshold=1, include_values=False):
+  return get_score_obj_for_score(
+    expected, actual,
+    value_f(expected, actual),
+    threshold=threshold, include_values=include_values
+  )
+
 def score_list(expected, actual, include_values=False, measures=None, convert_to_lower=False):
   # sep = '\n'
   sep = ''
@@ -168,53 +214,155 @@ def score_list(expected, actual, include_values=False, measures=None, convert_to
     expected_str = expected_str.lower()
     actual_str = actual_str.lower()
   scores = {}
-  if not measures:
-    measures = ALL_SCORE_MEASURES
-  for measure in measures:
-    if measure == ScoreMeasures.EXACT:
-      scores[ScoreMeasures.EXACT] = score_obj(
-        expected_str,
-        actual_str,
-        exact_score,
-        include_values=include_values
-      )
-    elif measure == ScoreMeasures.SOFT:
-      scores[ScoreMeasures.SOFT] = score_obj(
-        strip_punctuation_and_whitespace(expected_str),
-        strip_punctuation_and_whitespace(actual_str),
-        exact_score,
-        include_values=include_values
-      )
-    elif measure == ScoreMeasures.LEVENSHTEIN:
-      scores[ScoreMeasures.LEVENSHTEIN] = score_obj(
-        expected_str,
-        actual_str,
-        levenshtein_score,
-        0.8,
-        include_values=include_values
-      )
-    elif measure == ScoreMeasures.RATCLIFF_OBERSHELP:
-      scores[ScoreMeasures.RATCLIFF_OBERSHELP] = score_obj(
-        expected_str,
-        actual_str,
-        ratcliff_obershelp_score,
-        0.95,
-        include_values=include_values
-      )
-    else:
-      raise AttributeError('invalid measure: %s' % measure)
+  scoring_methods = get_scoring_methods(measures=measures)
+  for scoring_method in scoring_methods:
+    scores[scoring_method.name] = score_obj(
+      scoring_method.preprocessing_fn(expected_str),
+      scoring_method.preprocessing_fn(actual_str),
+      scoring_method.scoring_fn,
+      threshold=scoring_method.threshold,
+      include_values=include_values
+    )
   if not scores:
     raise AttributeError('no measures calculated')
   return scores
 
-def score_results(expected, actual, include_values=False, measures=None, convert_to_lower=False):
+def find_best_match_using_scoring_method(value, other_values, scoring_method):
+  best_value = None
+  best_score = None
+  for other_value in other_values:
+    score = score_obj(
+      value,
+      other_value,
+      scoring_method.scoring_fn,
+      scoring_method.threshold,
+      include_values=False
+    )['score']
+    if score == 1.0:
+      return other_value, score
+    if best_score is None or score > best_score:
+      best_value = other_value
+      best_score = score
+
+  if best_score is not None and best_score >= scoring_method.threshold:
+    return best_value, best_score
+  return None, None
+
+def to_set(x):
+  if isinstance(x, str):
+    return {x}
+  return set(x)
+
+def normalize_set(value, convert_to_lower=False):
   return {
-    k: score_list(
+    normalize_string(x, convert_to_lower=convert_to_lower) for x in value
+  }
+
+def set_to_str(x):
+  return ', '.join(sorted(x))
+
+def score_value_as_set_using_scoring_method(
+  expected, actual, scoring_method, include_values=False, convert_to_lower=False):
+
+  expected_set = normalize_set(to_set(expected), convert_to_lower=convert_to_lower)
+  actual_set = normalize_set(to_set(actual), convert_to_lower=convert_to_lower)
+  expected_str = set_to_str(expected_set)
+  actual_str = set_to_str(actual_set)
+  remaining_set = set(actual_set)
+  scores = []
+  if not expected_set and not actual_set:
+    return get_score_obj_for_score(
+      expected_str, actual_str, 1.0, include_values=include_values
+    )
+  for expected_item in expected_set:
+    best_value, best_score = find_best_match_using_scoring_method(
+      expected_item, remaining_set, scoring_method
+    )
+    if best_value is not None:
+      remaining_set.remove(best_value)
+      scores.append(best_score)
+    else:
+      return get_score_obj_for_score(
+        expected_str, actual_str, 0.0, include_values=include_values
+      )
+  if remaining_set:
+    return get_score_obj_for_score(
+      expected_str, actual_str, 0.0, include_values=include_values
+    )
+  return get_score_obj_for_score(
+      expected_str, actual_str, safe_mean(scores),
+      threshold=0.0, include_values=include_values
+    )
+
+def score_field_as_set(expected, actual, include_values=False, measures=None, convert_to_lower=False):
+  scoring_methods = get_scoring_methods(measures=measures)
+  scores = {}
+  for scoring_method in scoring_methods:
+    scores[scoring_method.name] = score_value_as_set_using_scoring_method(
+      expected,
+      actual,
+      scoring_method,
+      include_values=include_values,
+      convert_to_lower=convert_to_lower
+    )
+  return scores
+
+class ScoringType(object):
+  def __init__(self, score_field_fn):
+    self._score_field_fn = score_field_fn
+
+  def score(self, expected, actual, include_values=False, measures=None, convert_to_lower=False):
+    return self._score_field_fn(
+      expected, actual, include_values=include_values, measures=measures,
+      convert_to_lower=convert_to_lower
+    )
+
+class ScoringTypes(object):
+  STRING = ScoringType(score_list)
+  SET = ScoringType(score_field_as_set)
+
+SCORING_TYPE_MAP = {
+  'str': ScoringTypes.STRING,
+  'string': ScoringTypes.STRING,
+  'set': ScoringTypes.SET
+}
+
+def resolve_scoring_type(scoring_type_str):
+  try:
+    return SCORING_TYPE_MAP[scoring_type_str or 'str']
+  except KeyError:
+    raise ValueError('unrecognised scoring type: %s' % scoring_type_str)
+
+def get_field_scoring_type(scoring_type_by_field_map, field_name):
+  if scoring_type_by_field_map is None:
+    scoring_type_by_field_map = {}
+  return resolve_scoring_type(scoring_type_by_field_map.get(
+    field_name,
+    scoring_type_by_field_map.get('default')
+  ))
+
+def score_field_as_type(
+  expected, actual, scoring_type, include_values=False, measures=None, convert_to_lower=False):
+
+  return scoring_type.score(
+    expected, actual,
+    include_values=include_values,
+    measures=measures,
+    convert_to_lower=convert_to_lower
+  )
+
+def score_results(
+  expected, actual, scoring_type_by_field_map=None,
+  include_values=False, measures=None, convert_to_lower=False):
+
+  return {
+    k: score_field_as_type(
       expected[k],
       actual[k],
       include_values=include_values,
       measures=measures,
-      convert_to_lower=convert_to_lower
+      convert_to_lower=convert_to_lower,
+      scoring_type=get_field_scoring_type(scoring_type_by_field_map, k)
     )
     for k in expected.keys()
   }

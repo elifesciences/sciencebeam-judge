@@ -53,6 +53,11 @@ from sciencebeam_judge.evaluation_utils import (
   ALL_SCORE_MEASURES
 )
 
+from sciencebeam_judge.evaluation_config import (
+  parse_evaluation_config,
+  get_scoring_type_by_field_map_from_config
+)
+
 from sciencebeam_judge.grobid_evaluate import (
   format_summary_by_scoring_method as format_grobid_summary
 )
@@ -101,8 +106,8 @@ def ReadFilePairs(x):
 def evaluate_file_pairs(
   target_filename, target_content,
   prediction_filename, prediction_content,
-  xml_mapping, field_names, measures=None,
-  convert_to_lower=False):
+  xml_mapping, field_names,
+  **kwargs):
 
   get_logger().info(
     'processing: target: %s, prediction: %s', target_filename, prediction_filename
@@ -121,17 +126,15 @@ def evaluate_file_pairs(
   )
   return score_results(
     target_xml, prediction_xml, include_values=True,
-    measures=measures, convert_to_lower=convert_to_lower
+    **kwargs
   )
 
-def EvaluateFilePairs(x, xml_mapping, field_names, measures=None, convert_to_lower=False):
+def EvaluateFilePairs(x, **kwargs):
   return extend_dict(x, {
     DataProps.EVALUTATION_RESULTS: evaluate_file_pairs(
       x[DataProps.TARGET_FILE_URL], x[DataProps.TARGET_CONTENT],
       x[DataProps.PREDICTION_FILE_URL], x[DataProps.PREDICTION_CONTENT],
-      xml_mapping, field_names,
-      measures=measures,
-      convert_to_lower=convert_to_lower
+      **kwargs
     )
   })
 
@@ -252,6 +255,9 @@ def flatten_summary_results(summary_by_scoring_method, field_names=None):
 
 def configure_pipeline(p, opt):
   xml_mapping = parse_xml_mapping(opt.xml_mapping)
+  scoring_type_by_field_map = get_scoring_type_by_field_map_from_config(
+    parse_evaluation_config(opt.evaluation_config)
+  )
   field_names = opt.fields
 
   target_file_list = load_file_list(
@@ -272,15 +278,18 @@ def configure_pipeline(p, opt):
     DataProps.PREDICTION_FILE_URL: prediction_file_url
   } for target_file_url, prediction_file_url in zip(target_file_list, prediction_file_list)]
 
+  get_logger().debug('file_pairs: %s', file_pairs)
+
   evaluate_file_pairs_fn = partial(
     EvaluateFilePairs,
     xml_mapping=xml_mapping,
+    scoring_type_by_field_map=scoring_type_by_field_map,
     field_names=field_names,
     measures=opt.measures,
     convert_to_lower=opt.convert_to_lower
   )
   evaluate_file_pairs_transform = (
-    beam.Map(evaluate_file_pairs_fn) if opt.no_skip_errors
+    beam.Map(evaluate_file_pairs_fn) if not opt.skip_errors
     else MapOrLog(evaluate_file_pairs_fn)
   )
 
@@ -396,10 +405,17 @@ def add_main_args(parser):
     help='limit the number of file pairs to process'
   )
 
-  parser.add_argument(
+  config_group = parser.add_argument_group('config')
+  config_group.add_argument(
     '--xml-mapping', type=str,
     default='xml-mapping.conf',
     help='filename to the xml mapping configuration'
+  )
+
+  config_group.add_argument(
+    '--evaluation-config', type=str,
+    default='evaluation.conf',
+    help='filename to the evaluation configuration'
   )
 
   parser.add_argument(
@@ -429,8 +445,13 @@ def add_main_args(parser):
     help='Output directory to write results to.'
   )
 
-  parser.add_argument(
-    '--no-skip-errors', action='store_true', default=True,
+  skip_errors_group = parser.add_argument_group('skip errors')
+  skip_errors_group.add_argument(
+    '--skip-errors', dest='skip_errors', action='store_true', default=False,
+    help='skip and log evaluation error'
+  )
+  skip_errors_group.add_argument(
+    '--no-skip-errors', dest='skip_errors', action='store_false',
     help='fail on evaluation error'
   )
 
