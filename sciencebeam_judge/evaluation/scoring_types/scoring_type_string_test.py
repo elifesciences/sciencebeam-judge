@@ -4,7 +4,7 @@ import logging
 
 import numpy as np
 
-from .scoring_types import score_field_as_string
+from .scoring_type_string import score_field_as_string
 
 
 LOGGING = logging.getLogger(__name__)

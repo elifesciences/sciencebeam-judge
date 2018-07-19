@@ -1,3 +1,4 @@
+from .scoring_type_list import score_field_as_list
 from .scoring_type_set import score_field_as_set
 from .scoring_type_string import score_field_as_string
 
@@ -13,11 +14,13 @@ class ScoringType(object):
 
 class ScoringTypes(object):
   STRING = ScoringType(score_field_as_string)
+  LIST = ScoringType(score_field_as_list)
   SET = ScoringType(score_field_as_set)
 
 SCORING_TYPE_MAP = {
   'str': ScoringTypes.STRING,
   'string': ScoringTypes.STRING,
+  'list': ScoringTypes.LIST,
   'set': ScoringTypes.SET
 }
 
