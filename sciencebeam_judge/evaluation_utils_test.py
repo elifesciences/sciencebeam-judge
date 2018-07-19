@@ -8,7 +8,6 @@ import numpy as np
 from sciencebeam_judge.evaluation_utils import (
   parse_xml_mapping,
   parse_xml,
-  score_results,
   comma_separated_str_to_list
 )
 
@@ -74,20 +73,6 @@ class TestParseXml(object):
     assert result == {
       'prop1': ['value1', 'value2']
     }
-
-class TestScoreResults(object):
-  def test_should_score_results_for_exact_match_and_partial_match(self):
-    result = score_results({
-      '_exact': [SOME_TEXT],
-      '_partial': 'a b'
-    }, {
-      '_exact': [SOME_TEXT],
-      '_partial': 'ab'
-    })
-    assert result['_exact']['exact']['score'] == 1
-    assert result['_exact']['soft']['score'] == 1
-    assert result['_partial']['exact']['score'] == 0
-    assert result['_partial']['soft']['score'] == 1
 
 class TestCommaSeparatedStrToList(object):
   def test_should_parse_empty_str_as_empty_list(self):

@@ -44,8 +44,7 @@ from sciencebeam_gym.utils.file_list import (
 from sciencebeam_judge.evaluation_utils import (
   parse_xml,
   parse_xml_mapping,
-  comma_separated_str_to_list,
-  score_results
+  comma_separated_str_to_list
 )
 
 from sciencebeam_judge.evaluation_config import (
@@ -66,6 +65,10 @@ from .evaluation.score_aggregation import (
   scoring_method_as_top_level_key,
   combine_and_compact_scores_by_scoring_method_with_count,
   summarise_results_by_scoring_method_with_count
+)
+
+from .evaluation.document_scoring import (
+  score_results
 )
 
 from .xpath_functions import register_functions

@@ -16,12 +16,15 @@ from six import itervalues
 from sciencebeam_judge.evaluation_utils import (
   parse_xml,
   parse_xml_mapping,
-  score_results,
   comma_separated_str_to_list
 )
 
 from .evaluation.scoring_methods import (
   ScoreMeasures
+)
+
+from .evaluation.document_scoring import (
+  score_results
 )
 
 from .evaluation.score_aggregation import (
