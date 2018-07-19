@@ -24,7 +24,7 @@ from .evaluation.scoring_methods import (
 )
 
 from .evaluation.document_scoring import (
-  score_results
+  score_document_fields
 )
 
 from .evaluation.score_aggregation import (
@@ -101,7 +101,7 @@ def collect_results_for_directory(
   xml_mapping = parse_xml_mapping(xml_mapping_filename)
   target_xml = parse_xml(full_target_xml_filename, xml_mapping, fields=field_names)
   prediction_xml = parse_xml(full_prediction_xml_filename, xml_mapping, fields=field_names)
-  return score_results(target_xml, prediction_xml)
+  return score_document_fields(target_xml, prediction_xml)
 
 def collect_results_for_directory_log_exception(sub_directory_path, **kwargs):
   try:

@@ -20,7 +20,7 @@ def score_field_as_type(
     convert_to_lower=convert_to_lower
   )
 
-def score_results(
+def score_document_fields(
   expected, actual, scoring_type_by_field_map=None,
   include_values=False, measures=None, convert_to_lower=False):
 

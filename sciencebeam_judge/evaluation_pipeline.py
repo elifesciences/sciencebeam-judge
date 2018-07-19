@@ -68,7 +68,7 @@ from .evaluation.score_aggregation import (
 )
 
 from .evaluation.document_scoring import (
-  score_results
+  score_document_fields
 )
 
 from .xpath_functions import register_functions
@@ -133,7 +133,7 @@ def evaluate_file_pairs(
     fields=field_names,
     filename=prediction_filename
   )
-  return score_results(
+  return score_document_fields(
     target_xml, prediction_xml, include_values=True,
     **kwargs
   )

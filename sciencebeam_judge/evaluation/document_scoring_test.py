@@ -1,14 +1,14 @@
 from __future__ import division
 
 from .document_scoring import (
-  score_results
+  score_document_fields
 )
 
 SOME_TEXT = 'test 123'
 
-class TestScoreResults(object):
+class TestScoreDocumentFields(object):
   def test_should_score_results_for_exact_match_and_partial_match(self):
-    result = score_results({
+    result = score_document_fields({
       '_exact': [SOME_TEXT],
       '_partial': 'a b'
     }, {
