@@ -1,21 +1,11 @@
-from .scoring_type_list import score_field_as_list
-from .scoring_type_set import score_field_as_set
-from .scoring_type_string import score_field_as_string
-
-class ScoringType(object):
-  def __init__(self, score_field_fn):
-    self._score_field_fn = score_field_fn
-
-  def score(self, expected, actual, include_values=False, measures=None, convert_to_lower=False):
-    return self._score_field_fn(
-      expected, actual, include_values=include_values, measures=measures,
-      convert_to_lower=convert_to_lower
-    )
+from .scoring_type_list import LIST_SCORING_TYPE
+from .scoring_type_set import SET_SCORING_TYPE
+from .scoring_type_string import STRING_SCORING_TYPE
 
 class ScoringTypes(object):
-  STRING = ScoringType(score_field_as_string)
-  LIST = ScoringType(score_field_as_list)
-  SET = ScoringType(score_field_as_set)
+  STRING = STRING_SCORING_TYPE
+  LIST = LIST_SCORING_TYPE
+  SET = SET_SCORING_TYPE
 
 SCORING_TYPE_MAP = {
   'str': ScoringTypes.STRING,

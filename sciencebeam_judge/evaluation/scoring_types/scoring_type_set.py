@@ -9,6 +9,8 @@ from ..match_scoring import (
   get_match_score_obj_for_score
 )
 
+from .scoring_type import ScoringType
+
 def find_best_match_using_scoring_method(value, other_values, scoring_method):
   best_value = None
   best_score = None
@@ -70,17 +72,18 @@ def score_value_as_set_using_scoring_method(
       return to_match_score(0.0)
   return to_match_score(safe_mean(scores))
 
-def score_field_as_set(
-  expected, actual, include_values=False, measures=None, convert_to_lower=False):
+class SetScoringType(ScoringType):
+  def score(self, expected, actual, include_values=False, measures=None, convert_to_lower=False):
+    scoring_methods = get_scoring_methods(measures=measures)
+    scores = {}
+    for scoring_method in scoring_methods:
+      scores[scoring_method.name] = score_value_as_set_using_scoring_method(
+        expected,
+        actual,
+        scoring_method,
+        include_values=include_values,
+        convert_to_lower=convert_to_lower
+      )
+    return scores
 
-  scoring_methods = get_scoring_methods(measures=measures)
-  scores = {}
-  for scoring_method in scoring_methods:
-    scores[scoring_method.name] = score_value_as_set_using_scoring_method(
-      expected,
-      actual,
-      scoring_method,
-      include_values=include_values,
-      convert_to_lower=convert_to_lower
-    )
-  return scores
+SET_SCORING_TYPE = SetScoringType()
