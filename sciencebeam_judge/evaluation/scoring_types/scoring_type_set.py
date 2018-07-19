@@ -51,11 +51,14 @@ def score_value_as_set_using_scoring_method(
   expected_str = set_to_str(expected_set)
   actual_str = set_to_str(actual_set)
   remaining_set = set(actual_set)
+  to_match_score = lambda score: get_match_score_obj_for_score(
+    expected_str, actual_str, score, include_values=include_values
+  )
   scores = []
   if not expected_set and not actual_set:
-    return get_match_score_obj_for_score(
-      expected_str, actual_str, 1.0, include_values=include_values
-    )
+    return to_match_score(1.0)
+  if len(expected_set) != len(actual_set):
+    return to_match_score(0.0)
   for expected_item in expected_set:
     best_value, best_score = find_best_match_using_scoring_method(
       expected_item, remaining_set, scoring_method
@@ -64,17 +67,8 @@ def score_value_as_set_using_scoring_method(
       remaining_set.remove(best_value)
       scores.append(best_score)
     else:
-      return get_match_score_obj_for_score(
-        expected_str, actual_str, 0.0, include_values=include_values
-      )
-  if remaining_set:
-    return get_match_score_obj_for_score(
-      expected_str, actual_str, 0.0, include_values=include_values
-    )
-  return get_match_score_obj_for_score(
-      expected_str, actual_str, safe_mean(scores),
-      threshold=0.0, include_values=include_values
-    )
+      return to_match_score(0.0)
+  return to_match_score(safe_mean(scores))
 
 def score_field_as_set(
   expected, actual, include_values=False, measures=None, convert_to_lower=False):
