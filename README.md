@@ -15,6 +15,12 @@
 pip install -r requirements.txt
 ```
 
+## Configuration
+
+The [xml-mapping.conf](xml-mapping.conf) configures how fields should be extracted from the XML.
+
+The [evaluation.conf](evaluation.conf) allows further evaluation details to be configured.
+
 ## Evaluation to CSV
 
 You need to have a file list with the _target xml_ and _prediction xml_ files (both can be in the same file but have different columns or separate files where the lines are aligned to each other). Files can optionally be gzipped with the _.gz_ file extension.
