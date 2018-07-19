@@ -1,8 +1,8 @@
-from .normalization import normalize_whitespace
+from ..normalization import normalize_whitespace
 
-from .scoring_methods import get_scoring_methods
+from ..scoring_methods import get_scoring_methods
 
-from .match_scoring import score_obj
+from ..match_scoring import score_obj
 
 
 def score_list(expected, actual, include_values=False, measures=None, convert_to_lower=False):

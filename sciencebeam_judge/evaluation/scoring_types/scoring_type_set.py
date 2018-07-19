@@ -1,10 +1,10 @@
-from .math import safe_mean
+from ..math import safe_mean
 
-from .normalization import normalize_string
+from ..normalization import normalize_string
 
-from .scoring_methods import get_scoring_methods
+from ..scoring_methods import get_scoring_methods
 
-from .match_scoring import (
+from ..match_scoring import (
   score_obj,
   get_score_obj_for_score
 )

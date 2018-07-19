@@ -1,4 +1,4 @@
-from .scoring_types import (
+from .scoring_types.scoring_types import (
   resolve_scoring_type
 )
 
