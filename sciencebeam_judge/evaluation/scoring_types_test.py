@@ -1,7 +1,6 @@
 from __future__ import division
 
 import logging
-from io import BytesIO
 
 import pytest
 
@@ -13,11 +12,6 @@ from .scoring_types import (
   resolve_scoring_type,
   ScoringTypes
 )
-
-try:
-  from cStringIO import StringIO
-except ImportError:
-  from StringIO import StringIO
 
 
 LOGGING = logging.getLogger(__name__)
