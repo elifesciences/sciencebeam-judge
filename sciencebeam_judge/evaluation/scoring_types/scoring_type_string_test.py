@@ -13,7 +13,7 @@ SOME_TEXT = 'test 123'
 
 is_close = lambda a, b: np.allclose([a], [b])
 
-class TestScoreList(object):
+class TestScoreFieldAsString(object):
   def test_should_score_list_for_exact_match(self):
     result = score_field_as_string([SOME_TEXT], [SOME_TEXT])
     assert result['exact']['score'] == 1
