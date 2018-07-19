@@ -48,9 +48,7 @@ from sciencebeam_judge.evaluation_utils import (
   scoring_method_as_top_level_key,
   combine_and_compact_scores_by_scoring_method_with_count,
   summarise_results_by_scoring_method_with_count,
-  comma_separated_str_to_list,
-  ScoreMeasures,
-  ALL_SCORE_MEASURES
+  comma_separated_str_to_list
 )
 
 from sciencebeam_judge.evaluation_config import (
@@ -60,6 +58,11 @@ from sciencebeam_judge.evaluation_config import (
 
 from sciencebeam_judge.grobid_evaluate import (
   format_summary_by_scoring_method as format_grobid_summary
+)
+
+from .evaluation.scoring_methods import (
+  ScoreMeasures,
+  ALL_SCORE_MEASURES
 )
 
 from .xpath_functions import register_functions

@@ -10,11 +10,6 @@ import numpy as np
 from sciencebeam_judge.evaluation_utils import (
   parse_xml_mapping,
   parse_xml,
-  normalize_whitespace,
-  strip_punctuation_and_whitespace,
-  exact_score,
-  levenshtein_score,
-  ratcliff_obershelp_score,
   score_list,
   score_field_as_set,
   resolve_scoring_type,
@@ -28,7 +23,6 @@ from sciencebeam_judge.evaluation_utils import (
   recall_for_tp_fn_fp,
   f1_for_precision_recall,
   comma_separated_str_to_list,
-  FULL_PUNCTUATIONS,
   ScoringTypes
 )
 
@@ -94,50 +88,6 @@ class TestParseXml(object):
     assert result == {
       'prop1': ['value1', 'value2']
     }
-
-class TestNormalizeWhitespace(object):
-  def test_replace_line_feed_with_space(self):
-    assert normalize_whitespace('a\nb') == 'a b'
-
-  def test_replace_cr_with_space(self):
-    assert normalize_whitespace('a\rb') == 'a b'
-
-  def test_replace_tab_with_space(self):
-    assert normalize_whitespace('a\tb') == 'a b'
-
-  def test_replace_npsp_with_space(self):
-    assert normalize_whitespace(u'a\u00A0b') == u'a b'
-
-class TestStripPunctuationAndWhitespace(object):
-  def test_replace_punctuation_chars(self):
-    assert strip_punctuation_and_whitespace(u'a' + FULL_PUNCTUATIONS + 'b') == 'ab'
-
-class TestExactScore(object):
-  def test_should_return_one_for_exact_match(self):
-    assert exact_score(SOME_TEXT, SOME_TEXT) == 1
-
-  def test_should_return_zero_for_any_mismatch(self):
-    assert exact_score(SOME_TEXT, SOME_TEXT[:-1] + 'X') == 0
-
-class TestLevenshteinScore(object):
-  def test_should_return_one_for_exact_match(self):
-    assert levenshtein_score(SOME_TEXT, SOME_TEXT) == 1
-
-  def test_should_return_two_third_for_a_two_third_match(self):
-    assert is_close(levenshtein_score('axb', 'ayb'), 2 / 3)
-
-  def test_should_return_zero_for_no_match(self):
-    assert levenshtein_score('abc', 'xyz') == 0
-
-class TestRatcliffObershelpScore(object):
-  def test_should_return_one_for_exact_match(self):
-    assert ratcliff_obershelp_score(SOME_TEXT, SOME_TEXT) == 1
-
-  def test_should_return_0666_for_a_two_third_match(self):
-    assert is_close(ratcliff_obershelp_score('axb', 'ayb'), 2 / 3)
-
-  def test_should_return_zero_for_no_match(self):
-    assert ratcliff_obershelp_score('abc', 'xyz') == 0
 
 class TestScoreList(object):
   def test_should_score_list_for_exact_match(self):

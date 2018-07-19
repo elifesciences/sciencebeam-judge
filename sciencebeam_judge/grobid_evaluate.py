@@ -20,7 +20,10 @@ from sciencebeam_judge.evaluation_utils import (
   combine_and_compact_scores_by_scoring_method,
   summarise_results_by_scoring_method,
   scoring_method_as_top_level_key,
-  comma_separated_str_to_list,
+  comma_separated_str_to_list
+)
+
+from .evaluation.scoring_methods import (
   ScoreMeasures
 )
 

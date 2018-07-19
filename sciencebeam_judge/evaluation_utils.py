@@ -1,34 +1,27 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 
-import re
 import logging
-from difflib import SequenceMatcher
 
 from six import iteritems, raise_from, text_type
 
 from lxml import etree as ET
-import editdistance
 
 from .utils.config import parse_config_as_dict
+
+from .evaluation.normalization import (
+  normalize_whitespace,
+  normalize_string
+)
+
+from .evaluation.scoring_methods import (
+  get_scoring_methods
+)
 
 IGNORE_MARKER = '_ignore_'
 IGNORE_MARKER_WITH_SPACE = ' ' + IGNORE_MARKER + ' '
 
 flatten = lambda l: [item for sublist in l for item in sublist]
-
-class ScoreMeasures(object):
-  EXACT = 'exact'
-  SOFT = 'soft'
-  LEVENSHTEIN = 'levenshtein'
-  RATCLIFF_OBERSHELP = 'ratcliff_obershelp'
-
-ALL_SCORE_MEASURES = [
-  ScoreMeasures.EXACT,
-  ScoreMeasures.SOFT,
-  ScoreMeasures.LEVENSHTEIN,
-  ScoreMeasures.RATCLIFF_OBERSHELP
-]
 
 def get_logger():
   return logging.getLogger(__name__)
@@ -98,76 +91,6 @@ def parse_xml(source, xml_mapping, fields=None, filename=None):
     for k in field_names
   }
   return result
-
-FULL_PUNCTUATIONS = u"([ •*,:;?.!/)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0"
-WHITE_SPACE = u" \t\n\r\u00A0"
-NBSP = unichr(160)
-
-FULL_PUNCTUATION_AND_WHITESPACE_REGEX = re.compile(
-  u'[{}]'.format(re.escape(FULL_PUNCTUATIONS + WHITE_SPACE)))
-
-WHITESPACE_REGEX = re.compile(r'\s+')
-
-def normalize_whitespace(s):
-  return WHITESPACE_REGEX.sub(' ', s).replace(NBSP, ' ')
-
-def normalize_string(s, convert_to_lower=False):
-  s = normalize_whitespace(s)
-  if convert_to_lower:
-    s = s.lower()
-  return s
-
-def strip_punctuation_and_whitespace(s):
-  return FULL_PUNCTUATION_AND_WHITESPACE_REGEX.sub('', s)
-
-def exact_score(expected, actual):
-  return 1 if expected == actual else 0
-
-def levenshtein_score(expected, actual):
-  if len(expected) == 0 and len(actual) == 0:
-    return 1
-  return 1 - (editdistance.eval(expected, actual) / max(len(expected), len(actual)))
-
-def ratcliff_obershelp_score(expected, actual):
-  return SequenceMatcher(None, expected, actual).ratio()
-
-IDENTITY_FN = lambda x: x
-
-class ScoringMethod(object):
-  def __init__(self, name, scoring_fn, threshold=1, preprocessing_fn=None):
-    self.name = name
-    self.scoring_fn = scoring_fn
-    self.threshold = threshold
-    self.preprocessing_fn = preprocessing_fn or IDENTITY_FN
-
-class ScoringMethods(object):
-  EXACT = ScoringMethod(
-    ScoreMeasures.EXACT, exact_score
-  )
-  SOFT = ScoringMethod(
-    ScoreMeasures.SOFT, exact_score, preprocessing_fn=strip_punctuation_and_whitespace
-  )
-  LEVENSHTEIN = ScoringMethod(
-    ScoreMeasures.LEVENSHTEIN, levenshtein_score, threshold=0.8
-  )
-  RATCLIFF_OBERSHELP = ScoringMethod(
-    ScoreMeasures.RATCLIFF_OBERSHELP, ratcliff_obershelp_score, threshold=0.95
-  )
-
-SCORING_METHODS_MAP = {
-  sm.name: sm
-  for sm in [
-    ScoringMethods.EXACT,
-    ScoringMethods.SOFT,
-    ScoringMethods.LEVENSHTEIN,
-    ScoringMethods.RATCLIFF_OBERSHELP
-  ]
-}
-
-def get_scoring_methods(measures=None):
-  if not measures:
-    measures = ALL_SCORE_MEASURES
-  return [SCORING_METHODS_MAP[k] for k in measures]
 
 def get_score_obj_for_score(expected, actual, score, threshold=1, include_values=False):
   binary_expected = 1 if len(expected) > 0 else 0
