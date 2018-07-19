@@ -17,15 +17,19 @@ from sciencebeam_judge.evaluation_utils import (
   parse_xml,
   parse_xml_mapping,
   score_results,
-  combine_and_compact_scores_by_scoring_method,
-  summarise_results_by_scoring_method,
-  scoring_method_as_top_level_key,
   comma_separated_str_to_list
 )
 
 from .evaluation.scoring_methods import (
   ScoreMeasures
 )
+
+from .evaluation.score_aggregation import (
+  combine_and_compact_scores_by_scoring_method,
+  summarise_results_by_scoring_method,
+  scoring_method_as_top_level_key
+)
+
 
 flatten = lambda l: [item for sublist in l for item in sublist]
 
