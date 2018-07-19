@@ -8,17 +8,17 @@ from .normalization import (
   strip_punctuation_and_whitespace
 )
 
-class ScoreMeasures(object):
+class ScoringMethodNames(object):
   EXACT = 'exact'
   SOFT = 'soft'
   LEVENSHTEIN = 'levenshtein'
   RATCLIFF_OBERSHELP = 'ratcliff_obershelp'
 
 ALL_SCORE_MEASURES = [
-  ScoreMeasures.EXACT,
-  ScoreMeasures.SOFT,
-  ScoreMeasures.LEVENSHTEIN,
-  ScoreMeasures.RATCLIFF_OBERSHELP
+  ScoringMethodNames.EXACT,
+  ScoringMethodNames.SOFT,
+  ScoringMethodNames.LEVENSHTEIN,
+  ScoringMethodNames.RATCLIFF_OBERSHELP
 ]
 
 
@@ -44,16 +44,16 @@ class ScoringMethod(object):
 
 class ScoringMethods(object):
   EXACT = ScoringMethod(
-    ScoreMeasures.EXACT, exact_score
+    ScoringMethodNames.EXACT, exact_score
   )
   SOFT = ScoringMethod(
-    ScoreMeasures.SOFT, exact_score, preprocessing_fn=strip_punctuation_and_whitespace
+    ScoringMethodNames.SOFT, exact_score, preprocessing_fn=strip_punctuation_and_whitespace
   )
   LEVENSHTEIN = ScoringMethod(
-    ScoreMeasures.LEVENSHTEIN, levenshtein_score, threshold=0.8
+    ScoringMethodNames.LEVENSHTEIN, levenshtein_score, threshold=0.8
   )
   RATCLIFF_OBERSHELP = ScoringMethod(
-    ScoreMeasures.RATCLIFF_OBERSHELP, ratcliff_obershelp_score, threshold=0.95
+    ScoringMethodNames.RATCLIFF_OBERSHELP, ratcliff_obershelp_score, threshold=0.95
   )
 
 SCORING_METHODS_MAP = {

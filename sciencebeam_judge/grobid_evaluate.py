@@ -20,7 +20,7 @@ from sciencebeam_judge.evaluation_utils import (
 )
 
 from .evaluation.scoring_methods import (
-  ScoreMeasures
+  ScoringMethodNames
 )
 
 from .evaluation.document_scoring import (
@@ -37,16 +37,16 @@ from .evaluation.score_aggregation import (
 flatten = lambda l: [item for sublist in l for item in sublist]
 
 HEADER_BY_SCORE_MEASURE = {
-  ScoreMeasures.EXACT: (
+  ScoringMethodNames.EXACT: (
     "======= Strict Matching ======= (exact matches)"
   ),
-  ScoreMeasures.SOFT: (
+  ScoringMethodNames.SOFT: (
     "======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)"
   ),
-  ScoreMeasures.LEVENSHTEIN: (
+  ScoringMethodNames.LEVENSHTEIN: (
     "==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)"
   ),
-  ScoreMeasures.RATCLIFF_OBERSHELP: (
+  ScoringMethodNames.RATCLIFF_OBERSHELP: (
     "= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)"
   )
 }
@@ -153,8 +153,8 @@ def format_summary_by_scoring_method(scores_by_scoring_method, keys):
     )
   score_outputs = []
   score_measures = [
-    ScoreMeasures.EXACT, ScoreMeasures.SOFT,
-    ScoreMeasures.LEVENSHTEIN, ScoreMeasures.RATCLIFF_OBERSHELP
+    ScoringMethodNames.EXACT, ScoringMethodNames.SOFT,
+    ScoringMethodNames.LEVENSHTEIN, ScoringMethodNames.RATCLIFF_OBERSHELP
   ]
   for measure in score_measures:
     if measure in scores_by_scoring_method:

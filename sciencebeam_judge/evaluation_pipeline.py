@@ -57,7 +57,7 @@ from sciencebeam_judge.grobid_evaluate import (
 )
 
 from .evaluation.scoring_methods import (
-  ScoreMeasures,
+  ScoringMethodNames,
   ALL_SCORE_MEASURES
 )
 
@@ -84,8 +84,8 @@ DEFAULT_EXTRACTION_FIELDS = [
 ]
 
 DEFAULT_SCORE_MEASURES = [
-  ScoreMeasures.EXACT,
-  ScoreMeasures.LEVENSHTEIN
+  ScoringMethodNames.EXACT,
+  ScoringMethodNames.LEVENSHTEIN
 ]
 
 def get_logger():
