@@ -27,7 +27,7 @@ def get_match_score_obj_for_score(expected, actual, score, threshold=1, include_
     d['actual'] = actual
   return d
 
-def score_obj(expected, actual, value_f, threshold=1, include_values=False):
+def get_match_score_obj_for_score_fn(expected, actual, value_f, threshold=1, include_values=False):
   return get_match_score_obj_for_score(
     expected, actual,
     value_f(expected, actual),

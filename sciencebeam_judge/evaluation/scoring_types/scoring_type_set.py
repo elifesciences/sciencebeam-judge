@@ -5,7 +5,7 @@ from ..normalization import normalize_string
 from ..scoring_methods import get_scoring_methods
 
 from ..match_scoring import (
-  score_obj,
+  get_match_score_obj_for_score_fn,
   get_match_score_obj_for_score
 )
 
@@ -13,7 +13,7 @@ def find_best_match_using_scoring_method(value, other_values, scoring_method):
   best_value = None
   best_score = None
   for other_value in other_values:
-    score = score_obj(
+    score = get_match_score_obj_for_score_fn(
       value,
       other_value,
       scoring_method.scoring_fn,
