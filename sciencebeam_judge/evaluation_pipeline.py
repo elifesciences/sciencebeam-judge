@@ -58,7 +58,7 @@ from sciencebeam_judge.grobid_evaluate import (
 
 from .evaluation.scoring_methods import (
   ScoringMethodNames,
-  ALL_SCORE_MEASURES
+  ALL_SCORING_METHOD_NAMES
 )
 
 from .evaluation.score_aggregation import (
@@ -439,7 +439,7 @@ def add_main_args(parser):
     type=comma_separated_str_to_list,
     default=DEFAULT_SCORE_MEASURES,
     help='comma separated list of measures to process (valid values: %s)' % (
-      ', '.join(ALL_SCORE_MEASURES)
+      ', '.join(ALL_SCORING_METHOD_NAMES)
     )
   )
 

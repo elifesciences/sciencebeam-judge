@@ -14,7 +14,7 @@ class ScoringMethodNames(object):
   LEVENSHTEIN = 'levenshtein'
   RATCLIFF_OBERSHELP = 'ratcliff_obershelp'
 
-ALL_SCORE_MEASURES = [
+ALL_SCORING_METHOD_NAMES = [
   ScoringMethodNames.EXACT,
   ScoringMethodNames.SOFT,
   ScoringMethodNames.LEVENSHTEIN,
@@ -68,5 +68,5 @@ SCORING_METHODS_MAP = {
 
 def get_scoring_methods(measures=None):
   if not measures:
-    measures = ALL_SCORE_MEASURES
+    measures = ALL_SCORING_METHOD_NAMES
   return [SCORING_METHODS_MAP[k] for k in measures]
