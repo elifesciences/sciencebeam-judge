@@ -5,7 +5,7 @@ from ..scoring_methods import get_scoring_methods
 from ..match_scoring import score_obj
 
 
-def score_list(expected, actual, include_values=False, measures=None, convert_to_lower=False):
+def score_field_as_string(expected, actual, include_values=False, measures=None, convert_to_lower=False):
   # sep = '\n'
   sep = ''
   expected_str = normalize_whitespace(sep.join(expected))

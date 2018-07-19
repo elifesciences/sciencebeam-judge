@@ -1,5 +1,5 @@
 from .scoring_type_set import score_field_as_set
-from .scoring_type_string import score_list
+from .scoring_type_string import score_field_as_string
 
 class ScoringType(object):
   def __init__(self, score_field_fn):
@@ -12,7 +12,7 @@ class ScoringType(object):
     )
 
 class ScoringTypes(object):
-  STRING = ScoringType(score_list)
+  STRING = ScoringType(score_field_as_string)
   SET = ScoringType(score_field_as_set)
 
 SCORING_TYPE_MAP = {
