@@ -14,13 +14,6 @@ class ScoringMethodNames(object):
   LEVENSHTEIN = 'levenshtein'
   RATCLIFF_OBERSHELP = 'ratcliff_obershelp'
 
-ALL_SCORING_METHOD_NAMES = [
-  ScoringMethodNames.EXACT,
-  ScoringMethodNames.SOFT,
-  ScoringMethodNames.LEVENSHTEIN,
-  ScoringMethodNames.RATCLIFF_OBERSHELP
-]
-
 
 def exact_score(expected, actual):
   return 1 if expected == actual else 0
@@ -42,28 +35,27 @@ class ScoringMethod(object):
     self.threshold = threshold
     self.preprocessing_fn = preprocessing_fn or IDENTITY_FN
 
-class ScoringMethods(object):
-  EXACT = ScoringMethod(
+SCORING_METHODS = [
+  ScoringMethod(
     ScoringMethodNames.EXACT, exact_score
-  )
-  SOFT = ScoringMethod(
+  ),
+  ScoringMethod(
     ScoringMethodNames.SOFT, exact_score, preprocessing_fn=strip_punctuation_and_whitespace
-  )
-  LEVENSHTEIN = ScoringMethod(
+  ),
+  ScoringMethod(
     ScoringMethodNames.LEVENSHTEIN, levenshtein_score, threshold=0.8
-  )
-  RATCLIFF_OBERSHELP = ScoringMethod(
+  ),
+  ScoringMethod(
     ScoringMethodNames.RATCLIFF_OBERSHELP, ratcliff_obershelp_score, threshold=0.95
   )
+]
+
+ALL_SCORING_METHOD_NAMES = [
+  sm.name for sm in SCORING_METHODS
+]
 
 SCORING_METHODS_MAP = {
-  sm.name: sm
-  for sm in [
-    ScoringMethods.EXACT,
-    ScoringMethods.SOFT,
-    ScoringMethods.LEVENSHTEIN,
-    ScoringMethods.RATCLIFF_OBERSHELP
-  ]
+  sm.name: sm for sm in SCORING_METHODS
 }
 
 def get_scoring_methods(measures=None):
