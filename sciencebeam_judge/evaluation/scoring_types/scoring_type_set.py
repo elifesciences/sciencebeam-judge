@@ -6,7 +6,7 @@ from ..scoring_methods import get_scoring_methods
 
 from ..match_scoring import (
   score_obj,
-  get_score_obj_for_score
+  get_match_score_obj_for_score
 )
 
 def find_best_match_using_scoring_method(value, other_values, scoring_method):
@@ -53,7 +53,7 @@ def score_value_as_set_using_scoring_method(
   remaining_set = set(actual_set)
   scores = []
   if not expected_set and not actual_set:
-    return get_score_obj_for_score(
+    return get_match_score_obj_for_score(
       expected_str, actual_str, 1.0, include_values=include_values
     )
   for expected_item in expected_set:
@@ -64,14 +64,14 @@ def score_value_as_set_using_scoring_method(
       remaining_set.remove(best_value)
       scores.append(best_score)
     else:
-      return get_score_obj_for_score(
+      return get_match_score_obj_for_score(
         expected_str, actual_str, 0.0, include_values=include_values
       )
   if remaining_set:
-    return get_score_obj_for_score(
+    return get_match_score_obj_for_score(
       expected_str, actual_str, 0.0, include_values=include_values
     )
-  return get_score_obj_for_score(
+  return get_match_score_obj_for_score(
       expected_str, actual_str, safe_mean(scores),
       threshold=0.0, include_values=include_values
     )

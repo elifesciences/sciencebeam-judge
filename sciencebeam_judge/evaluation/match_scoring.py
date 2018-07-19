@@ -1,4 +1,4 @@
-def get_score_obj_for_score(expected, actual, score, threshold=1, include_values=False):
+def get_match_score_obj_for_score(expected, actual, score, threshold=1, include_values=False):
   binary_expected = 1 if len(expected) > 0 else 0
   # actual will be a false positive (1) if it is populated but expected is not,
   # otherwise it will be positive if it meets the threshold
@@ -28,7 +28,7 @@ def get_score_obj_for_score(expected, actual, score, threshold=1, include_values
   return d
 
 def score_obj(expected, actual, value_f, threshold=1, include_values=False):
-  return get_score_obj_for_score(
+  return get_match_score_obj_for_score(
     expected, actual,
     value_f(expected, actual),
     threshold=threshold, include_values=include_values
