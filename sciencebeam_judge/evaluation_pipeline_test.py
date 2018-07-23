@@ -14,6 +14,7 @@ from sciencebeam_judge.evaluation_pipeline import (
   parse_args
 )
 
+from .evaluation_config import get_scoring_type_by_field_map_from_config
 
 BASE_TEST_PATH = '.temp/test/evaluation-pipeline'
 
@@ -50,6 +51,7 @@ def get_default_args():
 def patch_conversion_pipeline(**kwargs):
   always_mock = {
     'parse_xml_mapping',
+    'parse_evaluation_config',
     'load_file_list',
     'read_all_from_path',
     'evaluate_file_pairs'
@@ -110,8 +112,11 @@ class TestConfigurePipeline(BeamTest):
       mocks['evaluate_file_pairs'].assert_called_with(
         TARGET_FILE_LIST[0], dummy_file_content(TARGET_FILE_LIST[0]),
         PREDICTION_FILE_LIST[0], dummy_file_content(PREDICTION_FILE_LIST[0]),
-        mocks['parse_xml_mapping'].return_value,
-        opt.fields,
+        xml_mapping=mocks['parse_xml_mapping'].return_value,
+        scoring_type_by_field_map=get_scoring_type_by_field_map_from_config(
+          mocks['parse_evaluation_config'].return_value
+        ),
+        field_names=opt.fields,
         measures=opt.measures,
         convert_to_lower=opt.convert_to_lower
       )

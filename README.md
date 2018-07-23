@@ -15,6 +15,12 @@
 pip install -r requirements.txt
 ```
 
+## Configuration
+
+The [xml-mapping.conf](xml-mapping.conf) configures how fields should be extracted from the XML.
+
+The [evaluation.conf](evaluation.conf) allows further evaluation details to be configured.
+
 ## Evaluation to CSV
 
 You need to have a file list with the _target xml_ and _prediction xml_ files (both can be in the same file but have different columns or separate files where the lines are aligned to each other). Files can optionally be gzipped with the _.gz_ file extension.
@@ -31,15 +37,22 @@ You need to have a file list with the _target xml_ and _prediction xml_ files (b
   [--num_workers=<number of workers>]
 ```
 
-For example:
+For example to evaluate the provide `example-data` for _cermine_ and _grobid-tei_:
 
 ```bash
 ./evaluate.sh \
-  --target-file-list /path/to/data/file-list-validation.tsv \
+  --target-file-list ./example-data/pmc-sample-1943-cc-by-subset/file-list.tsv \
   --target-file-column=xml_url \
-  --prediction-file-list /path/to/data/file-list-validation-prediction.tsv \
-  --output-path /path/to/evaluation-results \
-  --limit=100
+  --prediction-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/file-list-cermine.lst \
+  --output-path ./example-data/pmc-sample-1943-cc-by-subset-results/evaluation-results/cermine
+```
+
+```bash
+./evaluate.sh \
+  --target-file-list ./example-data/pmc-sample-1943-cc-by-subset/file-list.tsv \
+  --target-file-column=xml_url \
+  --prediction-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/file-list-grobid-tei.lst \
+  --output-path ./example-data/pmc-sample-1943-cc-by-subset-results/evaluation-results/grobid-tei
 ```
 
 Or running it in the cloud with a single worker:

@@ -16,27 +16,37 @@ from six import itervalues
 from sciencebeam_judge.evaluation_utils import (
   parse_xml,
   parse_xml_mapping,
-  score_results,
+  comma_separated_str_to_list
+)
+
+from .evaluation.scoring_methods import (
+  ScoringMethodNames
+)
+
+from .evaluation.document_scoring import (
+  score_document_fields
+)
+
+from .evaluation.score_aggregation import (
   combine_and_compact_scores_by_scoring_method,
   summarise_results_by_scoring_method,
-  scoring_method_as_top_level_key,
-  comma_separated_str_to_list,
-  ScoreMeasures
+  scoring_method_as_top_level_key
 )
+
 
 flatten = lambda l: [item for sublist in l for item in sublist]
 
 HEADER_BY_SCORE_MEASURE = {
-  ScoreMeasures.EXACT: (
+  ScoringMethodNames.EXACT: (
     "======= Strict Matching ======= (exact matches)"
   ),
-  ScoreMeasures.SOFT: (
+  ScoringMethodNames.SOFT: (
     "======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)"
   ),
-  ScoreMeasures.LEVENSHTEIN: (
+  ScoringMethodNames.LEVENSHTEIN: (
     "==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)"
   ),
-  ScoreMeasures.RATCLIFF_OBERSHELP: (
+  ScoringMethodNames.RATCLIFF_OBERSHELP: (
     "= Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)"
   )
 }
@@ -91,7 +101,7 @@ def collect_results_for_directory(
   xml_mapping = parse_xml_mapping(xml_mapping_filename)
   target_xml = parse_xml(full_target_xml_filename, xml_mapping, fields=field_names)
   prediction_xml = parse_xml(full_prediction_xml_filename, xml_mapping, fields=field_names)
-  return score_results(target_xml, prediction_xml)
+  return score_document_fields(target_xml, prediction_xml)
 
 def collect_results_for_directory_log_exception(sub_directory_path, **kwargs):
   try:
@@ -143,8 +153,8 @@ def format_summary_by_scoring_method(scores_by_scoring_method, keys):
     )
   score_outputs = []
   score_measures = [
-    ScoreMeasures.EXACT, ScoreMeasures.SOFT,
-    ScoreMeasures.LEVENSHTEIN, ScoreMeasures.RATCLIFF_OBERSHELP
+    ScoringMethodNames.EXACT, ScoringMethodNames.SOFT,
+    ScoringMethodNames.LEVENSHTEIN, ScoringMethodNames.RATCLIFF_OBERSHELP
   ]
   for measure in score_measures:
     if measure in scores_by_scoring_method:
