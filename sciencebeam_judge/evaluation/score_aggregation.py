@@ -70,13 +70,6 @@ def summary_score(sum_scores):
     'f1': f1
   }
 
-def scoring_method_as_top_level_key(scores):
-  d = dict()
-  for k_field, scoring_methods in iteritems(scores):
-    for k_scoring_method, results in iteritems(scoring_methods):
-      d.setdefault(k_scoring_method, {})[k_field] = results
-  return d
-
 def compact_scores(scores, total_fields=None, keys=None):
   if not scores:
     return {}
@@ -98,30 +91,6 @@ def combine_scores(list_of_scores, keys=None):
           v if isinstance(v, list) else [v]
         )
   return combined_scores
-
-def combine_and_compact_scores_by_scoring_method(list_of_scores):
-  if not list_of_scores:
-    return {}
-  combined_scores = dict()
-  for scores in list_of_scores:
-    for k_scoring_method, scores_by_field in iteritems(scores):
-      combined_scores.setdefault(k_scoring_method, []).append(
-        scores_by_field
-      )
-  return {
-    k_scoring_method: compact_scores(combine_scores(list_of_scores_by_field))
-    for k_scoring_method, list_of_scores_by_field in iteritems(combined_scores)
-  }
-
-def combine_and_compact_scores_by_scoring_method_with_count(list_of_scores_with_count):
-  return (
-    combine_and_compact_scores_by_scoring_method(
-      list_of_scores for list_of_scores, _ in list_of_scores_with_count
-    ),
-    sum(
-      count for _, count in list_of_scores_with_count
-    )
-  )
 
 def groupby_document_score_key(document_scores):
   key_fn = document_score_key_fn
@@ -187,24 +156,6 @@ def summarise_binary_results(scores, keys, count=None):
     'macro': macro_avg_scores,
     'count': count
   }
-
-def summarise_results_by_scoring_method(scores, keys, count=None):
-  # get_logger().info('!!!!! scores: %s', scores)
-  return {
-    k_scoring_method: summarise_binary_results(
-      scores_by_field,
-      keys=keys,
-      count=count
-    )
-    for k_scoring_method, scores_by_field in iteritems(scores)
-  }
-
-def summarise_results_by_scoring_method_with_count(scores_with_count, keys):
-  return summarise_results_by_scoring_method(
-    scores_with_count[0],
-    keys,
-    count=scores_with_count[1]
-  )
 
 def grouped_document_scores_to_scores_by_field_name(grouped_document_scores):
   return {

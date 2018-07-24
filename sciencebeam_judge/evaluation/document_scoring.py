@@ -74,19 +74,3 @@ def iter_score_document_fields(
         DocumentScoringProps.SCORING_METHOD: scoring_method,
         DocumentScoringProps.MATCH_SCORE: match_score
       }
-
-def score_document_fields(
-  expected, actual, scoring_type_by_field_map=None,
-  include_values=False, measures=None, convert_to_lower=False):
-
-  return {
-    k: score_field_as_type(
-      expected[k],
-      actual[k],
-      include_values=include_values,
-      measures=measures,
-      convert_to_lower=convert_to_lower,
-      scoring_type=get_field_scoring_type(scoring_type_by_field_map, k)
-    )
-    for k in expected.keys()
-  }
