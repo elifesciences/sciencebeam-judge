@@ -5,6 +5,7 @@ from __future__ import division
 import argparse
 import os
 import json
+from itertools import groupby
 from multiprocessing import Pool
 from functools import partial
 from contextlib import contextmanager
@@ -23,14 +24,20 @@ from .evaluation.scoring_methods import (
   ScoringMethodNames
 )
 
+from .evaluation.scoring_types.scoring_types import (
+  ScoringTypeNames
+)
+
 from .evaluation.document_scoring import (
-  score_document_fields
+  score_document_fields,
+  DocumentScoringProps
 )
 
 from .evaluation.score_aggregation import (
   combine_and_compact_scores_by_scoring_method,
   summarise_results_by_scoring_method,
-  scoring_method_as_top_level_key
+  scoring_method_as_top_level_key,
+  SummaryScoresProps
 )
 
 
@@ -173,6 +180,33 @@ def format_summary_by_scoring_method(scores_by_scoring_method, keys):
         ).rstrip()
       ))
   return "\n\n".join(score_outputs)
+
+def summarised_document_scores_to_scores_by_scoring_method(summarised_document_scores):
+  get_scoring_method_and_type = lambda summary_scores: (
+    summary_scores[DocumentScoringProps.SCORING_METHOD],
+    summary_scores[DocumentScoringProps.SCORING_TYPE]
+  )
+  d = {}
+  for scoring_method_and_type, grouped_summary_scores in groupby(
+    sorted(summarised_document_scores, key=get_scoring_method_and_type),
+    get_scoring_method_and_type
+  ):
+    scoring_method, scoring_type = scoring_method_and_type
+    grouped_summary_scores = list(grouped_summary_scores)
+    if scoring_type == ScoringTypeNames.STRING:
+      d[scoring_method] = grouped_summary_scores[0][SummaryScoresProps.SUMMARY_SCORES]
+    else:
+      get_logger().info(
+        'only considering results with single scoring type, found %d scores for %s (ignoring)',
+        len(grouped_summary_scores), scoring_method
+      )
+  return d
+
+def format_summarised_document_scores_as_grobid_report(summarised_document_scores, keys):
+  return format_summary_by_scoring_method(
+    summarised_document_scores_to_scores_by_scoring_method(summarised_document_scores),
+    keys
+  )
 
 def summarise_results(results, keys):
   return format_summary_by_scoring_method(
