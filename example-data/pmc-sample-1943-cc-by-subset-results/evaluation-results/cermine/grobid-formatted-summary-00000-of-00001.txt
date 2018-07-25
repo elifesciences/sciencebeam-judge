@@ -5,33 +5,15 @@
 
                  label   accuracy  precision     recall         f1
 
-            abstract      91.36      28.57      22.22      25.00
-     author_surnames      87.65       0.00       0.00       0.00
-first_author_surname      87.65       0.00       0.00       0.00
-   author_full_names      95.06      60.00      60.00      60.00
-first_author_full_name      96.30      70.00      70.00      70.00
-            keywords      95.06      66.67      33.33      44.44
-               title      96.30      70.00      70.00      70.00
+            abstract      86.79      28.57      22.22      25.00
+first_author_surname      81.13       0.00       0.00       0.00
+first_author_full_name      88.68      40.00      40.00      40.00
+               title      94.34      70.00      70.00      70.00
 
-          all fields      92.77      60.00      36.92      45.71      (micro average)
-               92.77      42.18      36.51      38.49 (macro average)
+          all fields      87.74      48.15      33.33      39.39      (micro average)
+               87.74      34.64      33.06      33.75 (macro average)
+        
 
-  ======== Soft Matching ======== (ignoring punctuation, case and space characters mismatches)
-
-  ===== Field-level results =====
-
-                 label   accuracy  precision     recall         f1
-
-            abstract      91.14      28.57      22.22      25.00
-     author_surnames      87.34       0.00       0.00       0.00
-first_author_surname      87.34       0.00       0.00       0.00
-   author_full_names      96.20      70.00      70.00      70.00
-first_author_full_name      97.47      80.00      80.00      80.00
-            keywords      94.94      66.67      33.33      44.44
-               title      96.20      70.00      70.00      70.00
-
-          all fields      92.95      65.00      40.00      49.52      (micro average)
-               92.95      45.03      39.37      41.35 (macro average)
 
   ==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
 
@@ -39,33 +21,11 @@ first_author_full_name      97.47      80.00      80.00      80.00
 
                  label   accuracy  precision     recall         f1
 
-            abstract      92.96      57.14      44.44      50.00
-     author_surnames      85.92       0.00       0.00       0.00
-first_author_surname      85.92       0.00       0.00       0.00
-   author_full_names      98.59      90.00      90.00      90.00
-first_author_full_name      97.18      80.00      80.00      80.00
-            keywords      95.77     100.00      50.00      66.67
+            abstract      89.36      57.14      44.44      50.00
+first_author_surname      78.72       0.00       0.00       0.00
+first_author_full_name      89.36      50.00      50.00      50.00
                title     100.00     100.00     100.00     100.00
 
-          all fields      93.76      85.00      52.31      64.76      (micro average)
-               93.76      61.02      52.06      55.24 (macro average)
-
-  = Ratcliff/Obershelp Matching = (Minimum Ratcliff/Obershelp similarity at 0.95)
-
-  ===== Field-level results =====
-
-                 label   accuracy  precision     recall         f1
-
-            abstract      93.42      57.14      44.44      50.00
-     author_surnames      86.84       0.00       0.00       0.00
-first_author_surname      86.84       0.00       0.00       0.00
-   author_full_names      94.74      60.00      60.00      60.00
-first_author_full_name      96.05      70.00      70.00      70.00
-            keywords      96.05     100.00      50.00      66.67
-               title      98.68      90.00      90.00      90.00
-
-          all fields      93.23      72.50      44.62      55.24      (micro average)
-               93.23      53.88      44.92      48.10 (macro average)
-
-
-  
+          all fields      89.36      70.37      48.72      57.58      (micro average)
+               89.36      51.79      48.61      50.00 (macro average)
+        

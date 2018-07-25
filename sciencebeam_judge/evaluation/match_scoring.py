@@ -1,3 +1,17 @@
+class MatchScoringProps(object):
+  EXPECTED_SOMETHING = 'expected_something'
+  ACTUAL_SOMETHING = 'actual_something'
+  SCORE = 'score'
+  TRUE_POSITIVE = 'true_positive'
+  TRUE_NEGATIVE = 'true_negative'
+  FALSE_POSITIVE = 'false_positive'
+  FALSE_NEGATIVE = 'false_negative'
+  BINARY_EXPECTED = 'binary_expected'
+  BINARY_ACTUAL = 'binary_actual'
+  EXPECTED = 'expected'
+  ACTUAL = 'actual'
+
+
 def get_match_score_obj_for_score(expected, actual, score, threshold=1, include_values=False):
   binary_expected = 1 if len(expected) > 0 else 0
   # actual will be a false positive (1) if it is populated but expected is not,
@@ -12,19 +26,19 @@ def get_match_score_obj_for_score(expected, actual, score, threshold=1, include_
   fp = 1 if not tp and len(actual) > 0 else 0
   fn = 1 if not tn and len(actual) == 0 else 0
   d = {
-    'expected_something': len(expected) > 0,
-    'actual_something': len(actual) > 0,
-    'score': score,
-    'true_positive': tp,
-    'true_negative': tn,
-    'false_positive': fp,
-    'false_negative': fn,
-    'binary_expected': binary_expected,
-    'binary_actual': binary_actual
+    MatchScoringProps.EXPECTED_SOMETHING: len(expected) > 0,
+    MatchScoringProps.ACTUAL_SOMETHING: len(actual) > 0,
+    MatchScoringProps.SCORE: score,
+    MatchScoringProps.TRUE_POSITIVE: tp,
+    MatchScoringProps.TRUE_NEGATIVE: tn,
+    MatchScoringProps.FALSE_POSITIVE: fp,
+    MatchScoringProps.FALSE_NEGATIVE: fn,
+    MatchScoringProps.BINARY_EXPECTED: binary_expected,
+    MatchScoringProps.BINARY_ACTUAL: binary_actual
   }
   if include_values:
-    d['expected'] = expected
-    d['actual'] = actual
+    d[MatchScoringProps.EXPECTED] = expected
+    d[MatchScoringProps.ACTUAL] = actual
   return d
 
 def get_match_score_obj_for_score_fn(expected, actual, value_f, threshold=1, include_values=False):

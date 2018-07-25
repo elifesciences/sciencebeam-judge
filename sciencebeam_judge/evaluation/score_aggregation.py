@@ -1,11 +1,32 @@
 from __future__ import division
 
+import logging
+
+from itertools import groupby
+
 from six import iteritems
+
+from sciencebeam_gym.utils.collection import extend_dict, iter_flatten
 
 from .math import safe_mean
 
+from .document_scoring import (
+  document_score_key_fn,
+  document_score_key_to_props,
+  DocumentScoringProps
+)
+
+
+LOGGER = logging.getLogger(__name__)
 
 flatten = lambda l: [item for sublist in l for item in sublist]
+
+class CombinedScoresProps(object):
+  MATCH_SCORES = 'match_scores'
+
+class SummaryScoresProps(object):
+  SUMMARY_SCORES = 'summary_scores'
+
 
 def force_list(x):
   return x if isinstance(x, list) else [x]
@@ -49,13 +70,6 @@ def summary_score(sum_scores):
     'f1': f1
   }
 
-def scoring_method_as_top_level_key(scores):
-  d = dict()
-  for k_field, scoring_methods in iteritems(scores):
-    for k_scoring_method, results in iteritems(scoring_methods):
-      d.setdefault(k_scoring_method, {})[k_field] = results
-  return d
-
 def compact_scores(scores, total_fields=None, keys=None):
   if not scores:
     return {}
@@ -78,33 +92,39 @@ def combine_scores(list_of_scores, keys=None):
         )
   return combined_scores
 
-def combine_and_compact_scores_by_scoring_method(list_of_scores):
-  if not list_of_scores:
-    return {}
-  combined_scores = dict()
-  for scores in list_of_scores:
-    for k_scoring_method, scores_by_field in iteritems(scores):
-      combined_scores.setdefault(k_scoring_method, []).append(
-        scores_by_field
-      )
-  return {
-    k_scoring_method: compact_scores(combine_scores(list_of_scores_by_field))
-    for k_scoring_method, list_of_scores_by_field in iteritems(combined_scores)
-  }
+def groupby_document_score_key(document_scores):
+  key_fn = document_score_key_fn
+  return groupby(
+    sorted(document_scores, key=key_fn), key_fn
+  )
 
-def combine_and_compact_scores_by_scoring_method_with_count(list_of_scores_with_count):
+def combine_and_compact_document_scores(document_scores):
+  document_scores = list(document_scores)
+  LOGGER.info('document_scores: %s', document_scores)
+  return [
+    extend_dict(document_score_key_to_props(document_score_key), {
+      DocumentScoringProps.MATCH_SCORE: sum_scores_with_true_negative(
+        [x[DocumentScoringProps.MATCH_SCORE] for x in grouped_document_scores]
+      )
+    })
+    for document_score_key, grouped_document_scores in groupby_document_score_key(document_scores)
+  ]
+
+def combine_and_compact_document_scores_with_count(document_scores_with_count):
+  LOGGER.info('document_scores_with_count: %s', document_scores_with_count)
   return (
-    combine_and_compact_scores_by_scoring_method(
-      list_of_scores for list_of_scores, _ in list_of_scores_with_count
-    ),
+    combine_and_compact_document_scores(iter_flatten(
+      list_of_scores for list_of_scores, _ in document_scores_with_count
+    )),
     sum(
-      count for _, count in list_of_scores_with_count
+      count for _, count in document_scores_with_count
     )
   )
 
 def summarise_binary_results(scores, keys, count=None):
-  # get_logger().info('summarise_binary_results, scores: %s', scores)
   scores = {k: force_list(x) for k, x in iteritems(scores)}
+  LOGGER.info('summarise_binary_results, scores.keys=%s, keys=%s', scores.keys(), keys)
+  keys = [k for k in keys if k in scores]
   score_fields = ['accuracy', 'precision', 'recall', 'f1']
   # if not isinstance(scores, list):
   #   scores = [scores]
@@ -137,19 +157,36 @@ def summarise_binary_results(scores, keys, count=None):
     'count': count
   }
 
-def summarise_results_by_scoring_method(scores, keys, count=None):
-  # get_logger().info('!!!!! scores: %s', scores)
+def grouped_document_scores_to_scores_by_field_name(grouped_document_scores):
   return {
-    k_scoring_method: summarise_binary_results(
-      scores_by_field,
-      keys=keys,
-      count=count
+    document_score[DocumentScoringProps.FIELD_NAME]: (
+      document_score[DocumentScoringProps.MATCH_SCORE]
     )
-    for k_scoring_method, scores_by_field in iteritems(scores)
+    for document_score in grouped_document_scores
   }
 
-def summarise_results_by_scoring_method_with_count(scores_with_count, keys):
-  return summarise_results_by_scoring_method(
+def summarise_combined_document_scores(document_scores, keys, count=None):
+  key_fn = lambda document_score: (
+    document_score[DocumentScoringProps.SCORING_TYPE],
+    document_score[DocumentScoringProps.SCORING_METHOD]
+  )
+  key_to_props = lambda key: {
+    DocumentScoringProps.SCORING_TYPE: key[0],
+    DocumentScoringProps.SCORING_METHOD: key[1]
+  }
+  return [
+    extend_dict(key_to_props(key), {
+      SummaryScoresProps.SUMMARY_SCORES: summarise_binary_results(
+        grouped_document_scores_to_scores_by_field_name(grouped_document_scores),
+        keys=keys,
+        count=count
+      )
+    })
+    for key, grouped_document_scores in groupby(sorted(document_scores, key=key_fn), key_fn)
+  ]
+
+def summarise_combined_document_scores_with_count(scores_with_count, keys):
+  return summarise_combined_document_scores(
     scores_with_count[0],
     keys,
     count=scores_with_count[1]

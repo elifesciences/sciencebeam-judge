@@ -1,46 +1,31 @@
+import logging
+
 import numpy as np
 
+from .document_scoring import DocumentScoringProps
+
 from .score_aggregation import (
-  scoring_method_as_top_level_key,
   compact_scores,
   combine_scores,
-  combine_and_compact_scores_by_scoring_method,
+  combine_and_compact_document_scores_with_count,
   summarise_binary_results,
+  summarise_combined_document_scores_with_count,
   precision_for_tp_fp,
   recall_for_tp_fn_fp,
-  f1_for_precision_recall
+  f1_for_precision_recall,
+  SummaryScoresProps
 )
 
-class TestScoringMethodAsTopLevelKey(object):
-  def test_should_move_scoring_method_up(self):
-    assert scoring_method_as_top_level_key({
-      'key1': {
-        'exact': {
-          'true_positive': 0,
-          'false_positive': 1,
-          'false_negative': 0
-        }, 'soft': {
-          'true_positive': 1,
-          'false_positive': 0,
-          'false_negative': 0
-        }
-      }
-    }) == {
-      'exact': {
-        'key1': {
-          'true_positive': 0,
-          'false_positive': 1,
-          'false_negative': 0
-        }
-      },
-      'soft': {
-        'key1': {
-          'true_positive': 1,
-          'false_positive': 0,
-          'false_negative': 0
-        }
-      }
-    }
+
+LOGGER = logging.getLogger(__name__)
+
+
+TP_MATCH_SCORE = {
+  'true_positive': 1,
+  'false_positive': 0,
+  'false_negative': 0
+}
+
 
 class TestCompactScores(object):
   def test_should_total_scores_by_key(self):
@@ -114,65 +99,31 @@ class TestCombineScores(object):
     result = combine_scores(list_of_scores)
     assert result == combined_scores
 
-class TestCombineAndCompactScoresByScoringMethod(object):
-  def test_x(self):
-    list_of_scores = [{
-      'exact': {
-        'key1': {
-          'true_positive': 1,
-          'false_positive': 0,
-          'false_negative': 0
-        }
-      }
-    }, {
-      'exact': {
-        'key1': {
-          'true_positive': 0,
-          'false_positive': 1,
-          'false_negative': 0
-        }
-      },
-      'soft': {
-        'key1': {
-          'true_positive': 1,
-          'false_positive': 0,
-          'false_negative': 0
-        },
-        'key2': {
-          'true_positive': 0,
-          'false_positive': 0,
-          'false_negative': 1
-        }
-      }
-    }]
-    combined_scores = {
-      'exact': {
-        'key1': {
-          'true_positive': 1,
-          'false_positive': 1,
-          'false_negative': 0
-        }
-      },
-      'soft': {
-        'key1': {
-          'true_positive': 1,
-          'false_positive': 0,
-          'false_negative': 0
-        },
-        'key2': {
-          'true_positive': 0,
-          'false_positive': 0,
-          'false_negative': 1
-        }
-      }
-    }
-    assert combine_and_compact_scores_by_scoring_method(list_of_scores) == combined_scores
+class TestCombineAndCompactDocumentScoresWithCount(object):
+  def test_should_combine_single_score(self):
+    document_scores_with_count = [([{
+      DocumentScoringProps.FIELD_NAME: 'field1',
+      DocumentScoringProps.SCORING_TYPE: 'string',
+      DocumentScoringProps.SCORING_METHOD: 'exact',
+      DocumentScoringProps.MATCH_SCORE: TP_MATCH_SCORE
+    }], 1)]
+    expected_combined_scores_with_count = ([{
+      DocumentScoringProps.FIELD_NAME: 'field1',
+      DocumentScoringProps.SCORING_TYPE: 'string',
+      DocumentScoringProps.SCORING_METHOD: 'exact',
+      DocumentScoringProps.MATCH_SCORE: TP_MATCH_SCORE
+    }], 1)
+    actual_combined_scores_with_count = combine_and_compact_document_scores_with_count(
+      document_scores_with_count
+    )
+    LOGGER.debug('expected_combined_scores_with_count: %s', expected_combined_scores_with_count)
+    LOGGER.debug('actual_combined_scores_with_count: %s', actual_combined_scores_with_count)
+    assert actual_combined_scores_with_count == expected_combined_scores_with_count
 
 class TestSummariseBinaryResults(object):
   def test_should_return_zero_results_for_no_values(self):
     scores = {
-      'key1': [
-      ]
+      'key1': []
     }
     result = summarise_binary_results(scores, keys=['key1'])
     key1_results = result.get('by-field', {}).get('key1', {})
@@ -181,6 +132,21 @@ class TestSummariseBinaryResults(object):
     assert key1_totals.get('false_positive') == 0
     assert key1_totals.get('false_negative') == 0
     assert key1_totals.get('true_negative') == 0
+
+  def test_should_ignore_scores_not_in_specified_keys(self):
+    scores = {
+      'key1': [],
+      'key2': []
+    }
+    result = summarise_binary_results(scores, keys=['key1'])
+    assert set(result.get('by-field', {}).keys()) == {'key1'}
+
+  def test_should_ignore_fields_without_a_score(self):
+    scores = {
+      'key1': []
+    }
+    result = summarise_binary_results(scores, keys=['key1', 'key2'])
+    assert set(result.get('by-field', {}).keys()) == {'key1'}
 
   def test_should_return_sum_individual_counts_and_calculate_f1(self):
     scores = {
@@ -274,3 +240,24 @@ class TestSummariseBinaryResults(object):
       micro_avg.get('precision'),
       micro_avg.get('recall')
     )
+
+class TestSummariseCombinedDocumentScoresWithCount(object):
+  def test_should_summarise_single_document_score(self):
+    combined_scores_with_count = ([{
+      DocumentScoringProps.FIELD_NAME: 'field1',
+      DocumentScoringProps.SCORING_TYPE: 'string',
+      DocumentScoringProps.SCORING_METHOD: 'exact',
+      DocumentScoringProps.MATCH_SCORE: TP_MATCH_SCORE
+    }], 1)
+    actual_summary_scores = summarise_combined_document_scores_with_count(
+      combined_scores_with_count, ['field1']
+    )
+    LOGGER.debug('actual_summary_scores: %s', actual_summary_scores)
+
+    assert len(actual_summary_scores) == 1
+    assert actual_summary_scores[0][DocumentScoringProps.SCORING_TYPE] == 'string'
+    assert actual_summary_scores[0][DocumentScoringProps.SCORING_METHOD] == 'exact'
+
+    summary_scores = actual_summary_scores[0][SummaryScoresProps.SUMMARY_SCORES]
+    field1_summary_scores = summary_scores['by-field']['field1']['scores']
+    assert field1_summary_scores['f1'] == 1

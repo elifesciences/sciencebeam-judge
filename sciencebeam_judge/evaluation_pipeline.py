@@ -53,7 +53,7 @@ from sciencebeam_judge.evaluation_config import (
 )
 
 from sciencebeam_judge.grobid_evaluate import (
-  format_summary_by_scoring_method as format_grobid_summary
+  format_summarised_document_scores_as_grobid_report
 )
 
 from .evaluation.scoring_methods import (
@@ -62,13 +62,14 @@ from .evaluation.scoring_methods import (
 )
 
 from .evaluation.score_aggregation import (
-  scoring_method_as_top_level_key,
-  combine_and_compact_scores_by_scoring_method_with_count,
-  summarise_results_by_scoring_method_with_count
+  combine_and_compact_document_scores_with_count,
+  summarise_combined_document_scores_with_count,
+  SummaryScoresProps
 )
 
 from .evaluation.document_scoring import (
-  score_document_fields
+  iter_score_document_fields,
+  DocumentScoringProps
 )
 
 from .xpath_functions import register_functions
@@ -133,10 +134,10 @@ def evaluate_file_pairs(
     fields=field_names,
     filename=prediction_filename
   )
-  return score_document_fields(
+  return list(iter_score_document_fields(
     target_xml, prediction_xml, include_values=True,
     **kwargs
-  )
+  ))
 
 def EvaluateFilePairs(x, **kwargs):
   return extend_dict(x, {
@@ -152,6 +153,7 @@ class OutputColumns(object):
   TARGET_FILE = 'target_file'
   FIELD_NAME = 'field_name'
   EVALUATION_METHOD = 'evaluation_method'
+  SCORING_TYPE = 'scoring_type'
   TP = 'tp'
   FP = 'fp'
   FN = 'fn'
@@ -164,6 +166,7 @@ DEFAULT_OUTPUT_COLUMNS = [
   OutputColumns.TARGET_FILE,
   OutputColumns.FIELD_NAME,
   OutputColumns.EVALUATION_METHOD,
+  OutputColumns.SCORING_TYPE,
   OutputColumns.TP,
   OutputColumns.FP,
   OutputColumns.FN,
@@ -175,6 +178,7 @@ DEFAULT_OUTPUT_COLUMNS = [
 class SummaryOutputColumns(object):
   DOCUMENT_COUNT = 'document_count'
   EVALUATION_METHOD = 'evaluation_method'
+  SCORING_TYPE = 'scoring_type'
   FIELD_NAME = 'field_name'
   STATS_NAME = 'stats_name'
   TP = 'tp'
@@ -189,6 +193,7 @@ class SummaryOutputColumns(object):
 DEFAULT_SUMMARY_OUTPUT_COLUMNS = [
   SummaryOutputColumns.DOCUMENT_COUNT,
   SummaryOutputColumns.EVALUATION_METHOD,
+  SummaryOutputColumns.SCORING_TYPE,
   SummaryOutputColumns.FIELD_NAME,
   SummaryOutputColumns.STATS_NAME,
   SummaryOutputColumns.TP,
@@ -201,36 +206,48 @@ DEFAULT_SUMMARY_OUTPUT_COLUMNS = [
   SummaryOutputColumns.F1
 ]
 
-def FlattenEvaluationResults(field_names):
-  def wrapper(x):
-    C = OutputColumns
-    prediction_file = x['prediction_file']
-    target_file = x['target_file']
-    results = x['evaluation_results']
-    flat_result = []
-    for field_name in field_names:
-      for evaluation_method, evaluation_result in iteritems(results[field_name]):
-        flat_result.append({
-          C.PREDICTION_FILE: os.path.basename(prediction_file),
-          C.TARGET_FILE: os.path.basename(target_file),
-          C.FIELD_NAME: field_name,
-          C.EVALUATION_METHOD: evaluation_method,
-          C.TP: evaluation_result['true_positive'],
-          C.FP: evaluation_result['false_positive'],
-          C.FN: evaluation_result['false_negative'],
-          C.TN: evaluation_result['true_negative'],
-          C.EXPECTED: evaluation_result['expected'],
-          C.ACTUAL: evaluation_result['actual']
-        })
-    return flat_result
-  return wrapper
+def flatten_evaluation_results(evaluation_results, field_names=None):
+  C = OutputColumns
+  prediction_file = evaluation_results[DataProps.PREDICTION_FILE_URL]
+  target_file = evaluation_results[DataProps.TARGET_FILE_URL]
+  results = evaluation_results[DataProps.EVALUTATION_RESULTS]
+  flat_result = []
+  for document_score in results:
+    get_logger().info('document_score: %s', document_score)
+    field_name = document_score[DocumentScoringProps.FIELD_NAME]
+    if field_name not in field_names:
+      continue
+    match_score = document_score[DocumentScoringProps.MATCH_SCORE]
+    get_logger().info('match_score: %s', match_score)
+    flat_result.append({
+      C.PREDICTION_FILE: os.path.basename(prediction_file),
+      C.TARGET_FILE: os.path.basename(target_file),
+      C.FIELD_NAME: field_name,
+      C.EVALUATION_METHOD: document_score[DocumentScoringProps.SCORING_METHOD],
+      C.SCORING_TYPE: document_score[DocumentScoringProps.SCORING_TYPE],
+      C.TP: match_score['true_positive'],
+      C.FP: match_score['false_positive'],
+      C.FN: match_score['false_negative'],
+      C.TN: match_score['true_negative'],
+      C.EXPECTED: match_score['expected'],
+      C.ACTUAL: match_score['actual']
+    })
+  return flat_result
 
-def flatten_summary_results(summary_by_scoring_method, field_names=None):
+def FlattenEvaluationResults(field_names):
+  return partial(flatten_evaluation_results, field_names=field_names)
+
+def flatten_summary_results(summarised_scores, field_names=None):
+  get_logger().debug('summarised_scores: %s', summarised_scores)
   C = SummaryOutputColumns
   flat_result = []
-  for scoring_method, summary in iteritems(summary_by_scoring_method):
+  for summarised_score in summarised_scores:
+    scoring_type = summarised_score[DocumentScoringProps.SCORING_TYPE]
+    scoring_method = summarised_score[DocumentScoringProps.SCORING_METHOD]
+    summary = summarised_score[SummaryScoresProps.SUMMARY_SCORES]
     count = summary['count']
-    for field_name in (field_names or summary['by-field'].keys()):
+    _field_names = field_names or summary['by-field'].keys()
+    for field_name in _field_names:
       field_summary = summary['by-field'].get(field_name)
       if not field_summary:
         continue
@@ -239,6 +256,7 @@ def flatten_summary_results(summary_by_scoring_method, field_names=None):
       flat_result.append({
         C.DOCUMENT_COUNT: count,
         C.EVALUATION_METHOD: scoring_method,
+        C.SCORING_TYPE: scoring_type,
         C.FIELD_NAME: field_name,
         C.TP: field_totals['true_positive'],
         C.FP: field_totals['false_positive'],
@@ -254,6 +272,7 @@ def flatten_summary_results(summary_by_scoring_method, field_names=None):
       flat_result.append({
         C.DOCUMENT_COUNT: count,
         C.EVALUATION_METHOD: scoring_method,
+        C.SCORING_TYPE: scoring_type,
         C.STATS_NAME: stats_name,
         C.ACCURACY: stats['accuracy'],
         C.PRECISION: stats['precision'],
@@ -342,17 +361,16 @@ def configure_pipeline(p, opt):
   summary = (
     evaluation_results |
     "ExtractEvaluationResults" >> beam.Map(lambda x: x[DataProps.EVALUTATION_RESULTS]) |
-    "ByScoringMethod" >> beam.Map(lambda x: scoring_method_as_top_level_key(x)) |
     "PairWithOne" >> beam.Map(lambda x: (x, 1)) |
     "CombineResults" >> TransformAndLog(
       beam.CombineGlobally(
-        combine_and_compact_scores_by_scoring_method_with_count
+        combine_and_compact_document_scores_with_count
       ),
       log_prefix='combined out: ',
       log_level='debug'
     ) |
     "Summarise" >> beam.Map(
-      lambda x: summarise_results_by_scoring_method_with_count(x, field_names)
+      lambda x: summarise_combined_document_scores_with_count(x, field_names)
     )
   )
 
@@ -376,7 +394,7 @@ def configure_pipeline(p, opt):
   _ = (
     summary |
     "FormatGrobidEvaluation" >> beam.Map(
-      lambda x: format_grobid_summary(x, field_names)
+      lambda x: format_summarised_document_scores_as_grobid_report(x, field_names)
     ) |
     "WriteGrobidFormattedEvaluation" >> WriteToText(
       os.path.join(opt.output_path, 'grobid-formatted-summary'),

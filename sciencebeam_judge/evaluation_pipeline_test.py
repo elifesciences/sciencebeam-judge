@@ -10,11 +10,24 @@ from sciencebeam_gym.beam_utils.testing import (
 
 import sciencebeam_judge.evaluation_pipeline as evaluation_pipeline
 from sciencebeam_judge.evaluation_pipeline import (
+  flatten_evaluation_results,
+  flatten_summary_results,
   configure_pipeline,
-  parse_args
+  parse_args,
+  DataProps,
+  OutputColumns,
+  SummaryOutputColumns
 )
 
+from .evaluation.match_scoring import MatchScoringProps
+from .evaluation.scoring_methods import ScoringMethodNames
+from .evaluation.scoring_types.scoring_types import ScoringTypeNames
+from .evaluation.document_scoring import DocumentScoringProps
+from .evaluation.score_aggregation import SummaryScoresProps
 from .evaluation_config import get_scoring_type_by_field_map_from_config
+
+
+LOGGER = logging.getLogger(__name__)
 
 BASE_TEST_PATH = '.temp/test/evaluation-pipeline'
 
@@ -41,6 +54,22 @@ MIN_ARGV = [
   '--prediction-file-list=' + PREDICTION_FILE_LIST_PATH,
   '--output-path=' + OUTPUT_PATH
 ]
+
+FIELD_1 = 'field1'
+
+MATCH_SCORE_1 = {
+  MatchScoringProps.EXPECTED_SOMETHING: True,
+  MatchScoringProps.ACTUAL_SOMETHING: True,
+  MatchScoringProps.SCORE: 1.0,
+  MatchScoringProps.TRUE_POSITIVE: 1,
+  MatchScoringProps.TRUE_NEGATIVE: 0,
+  MatchScoringProps.FALSE_POSITIVE: 0,
+  MatchScoringProps.FALSE_NEGATIVE: 0,
+  MatchScoringProps.BINARY_EXPECTED: 1,
+  MatchScoringProps.BINARY_ACTUAL: 1,
+  MatchScoringProps.EXPECTED: 'expected',
+  MatchScoringProps.ACTUAL: 'actual'
+}
 
 def setup_module():
   logging.basicConfig(level='DEBUG')
@@ -73,6 +102,99 @@ def dummy_file_content(filename):
 
 def read_all_from_path_side_effect():
   return lambda filename, **kwargs: dummy_file_content(filename)
+
+class TestFlattenEvaluationResults(object):
+  def test_should_convert_empty_evaluation_results(self):
+    evaluation_results = {
+      DataProps.PREDICTION_FILE_URL: PREDICTION_FILE_LIST[0],
+      DataProps.TARGET_FILE_URL: TARGET_FILE_LIST[0],
+      DataProps.EVALUTATION_RESULTS: []
+    }
+    assert flatten_evaluation_results(evaluation_results, field_names=[FIELD_1]) == []
+
+  def test_should_convert_single_evaluation_results(self):
+    evaluation_results = {
+      DataProps.PREDICTION_FILE_URL: PREDICTION_FILE_LIST[0],
+      DataProps.TARGET_FILE_URL: TARGET_FILE_LIST[0],
+      DataProps.EVALUTATION_RESULTS: [{
+        DocumentScoringProps.FIELD_NAME: FIELD_1,
+        DocumentScoringProps.SCORING_METHOD: ScoringMethodNames.EXACT,
+        DocumentScoringProps.SCORING_TYPE: ScoringTypeNames.STRING,
+        DocumentScoringProps.MATCH_SCORE: MATCH_SCORE_1
+      }]
+    }
+    assert flatten_evaluation_results(evaluation_results, field_names=[FIELD_1]) == [{
+      OutputColumns.PREDICTION_FILE: PREDICTION_FILE_LIST[0],
+      OutputColumns.TARGET_FILE: TARGET_FILE_LIST[0],
+      OutputColumns.FIELD_NAME: FIELD_1,
+      OutputColumns.EVALUATION_METHOD: ScoringMethodNames.EXACT,
+      OutputColumns.SCORING_TYPE: ScoringTypeNames.STRING,
+      OutputColumns.TP: MATCH_SCORE_1[MatchScoringProps.TRUE_POSITIVE],
+      OutputColumns.FP: MATCH_SCORE_1[MatchScoringProps.FALSE_POSITIVE],
+      OutputColumns.FN: MATCH_SCORE_1[MatchScoringProps.FALSE_NEGATIVE],
+      OutputColumns.TN: MATCH_SCORE_1[MatchScoringProps.TRUE_NEGATIVE],
+      OutputColumns.EXPECTED: MATCH_SCORE_1[MatchScoringProps.EXPECTED],
+      OutputColumns.ACTUAL: MATCH_SCORE_1[MatchScoringProps.ACTUAL]
+    }]
+
+class TestFlattenSummaryResults(object):
+  def test_should_convert_empty_evaluation_results(self):
+    summary_results = []
+    assert flatten_summary_results(summary_results, field_names=[FIELD_1]) == []
+
+  def test_should_convert_single_evaluation_results(self):
+    scores = {
+      'accuracy': 1.0,
+      'f1': 1.0,
+      'precision': 1.0,
+      'recall': 1.0
+    }
+    field_totals = MATCH_SCORE_1
+    summary_results = [{
+      DataProps.PREDICTION_FILE_URL: PREDICTION_FILE_LIST[0],
+      DataProps.TARGET_FILE_URL: TARGET_FILE_LIST[0],
+      DocumentScoringProps.SCORING_METHOD: ScoringMethodNames.EXACT,
+      DocumentScoringProps.SCORING_TYPE: ScoringTypeNames.STRING,
+      SummaryScoresProps.SUMMARY_SCORES: {
+        'count': 1,
+        'micro': scores,
+        'macro': scores,
+        'by-field': {
+          FIELD_1: {
+            'scores': scores,
+            'total': field_totals
+          }
+        }
+      }
+    }]
+    result = flatten_summary_results(summary_results, field_names=[FIELD_1])
+    LOGGER.debug('result: %s', result)
+    assert len(result) > 1
+    assert result[0] == {
+      SummaryOutputColumns.DOCUMENT_COUNT: 1,
+      SummaryOutputColumns.EVALUATION_METHOD: ScoringMethodNames.EXACT,
+      SummaryOutputColumns.SCORING_TYPE: ScoringTypeNames.STRING,
+      SummaryOutputColumns.FIELD_NAME: FIELD_1,
+      SummaryOutputColumns.TP: field_totals[MatchScoringProps.TRUE_POSITIVE],
+      SummaryOutputColumns.FP: field_totals[MatchScoringProps.FALSE_POSITIVE],
+      SummaryOutputColumns.FN: field_totals[MatchScoringProps.FALSE_NEGATIVE],
+      SummaryOutputColumns.TN: field_totals[MatchScoringProps.TRUE_NEGATIVE],
+      SummaryOutputColumns.ACCURACY: scores['accuracy'],
+      SummaryOutputColumns.PRECISION: scores['precision'],
+      SummaryOutputColumns.RECALL: scores['recall'],
+      SummaryOutputColumns.F1: scores['f1']
+    }
+    for stats_name, result_item in zip(['micro', 'macro'], result[1:]):
+      assert result_item == {
+        SummaryOutputColumns.DOCUMENT_COUNT: 1,
+        SummaryOutputColumns.EVALUATION_METHOD: ScoringMethodNames.EXACT,
+        SummaryOutputColumns.SCORING_TYPE: ScoringTypeNames.STRING,
+        SummaryOutputColumns.STATS_NAME: stats_name,
+        SummaryOutputColumns.ACCURACY: scores['accuracy'],
+        SummaryOutputColumns.PRECISION: scores['precision'],
+        SummaryOutputColumns.RECALL: scores['recall'],
+        SummaryOutputColumns.F1: scores['f1']
+      }
 
 @pytest.mark.slow
 class TestConfigurePipeline(BeamTest):
