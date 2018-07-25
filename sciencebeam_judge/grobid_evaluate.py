@@ -103,10 +103,11 @@ def summarised_document_scores_to_scores_by_scoring_method(summarised_document_s
     summary_scores[DocumentScoringProps.SCORING_TYPE]
   )
   d = {}
-  for scoring_method_and_type, grouped_summary_scores in groupby(
+  grouped = groupby(
     sorted(summarised_document_scores, key=get_scoring_method_and_type),
     get_scoring_method_and_type
-  ):
+  )
+  for scoring_method_and_type, grouped_summary_scores in grouped:
     scoring_method, scoring_type = scoring_method_and_type
     grouped_summary_scores = list(grouped_summary_scores)
     if scoring_type == ScoringTypeNames.STRING:
