@@ -498,7 +498,7 @@ def parse_args(argv=None):
   args = parser.parse_args(argv)
 
   if args.debug:
-    logging.getLogger().setLevel('DEBUG')
+    logging.getLogger('sciencebeam_judge').setLevel('DEBUG')
 
   process_cloud_args(
     args, args.output_path,
