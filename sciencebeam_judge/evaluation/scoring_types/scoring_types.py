@@ -1,9 +1,9 @@
-from .scoring_type_list import (
+from .list import (
   ORDERED_LIST_SCORING_TYPE,
   UNORDERED_LIST_SCORING_TYPE,
   SET_SCORING_TYPE
 )
-from .scoring_type_string import STRING_SCORING_TYPE
+from .string import STRING_SCORING_TYPE
 from .table import ORDERED_TABLE_SCORING_TYPE
 
 

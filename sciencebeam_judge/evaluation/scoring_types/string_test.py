@@ -4,7 +4,7 @@ import logging
 
 from ..math import is_close
 
-from .scoring_type_string import STRING_SCORING_TYPE
+from .string import STRING_SCORING_TYPE
 
 
 LOGGING = logging.getLogger(__name__)

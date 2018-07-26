@@ -6,7 +6,7 @@ from ..match_scoring import MatchScoringProps
 
 from .table import ORDERED_TABLE_SCORING_TYPE
 
-from .scoring_type_list_test import ALMOST_MATCHING_TEXTS
+from .list_test import ALMOST_MATCHING_TEXTS
 
 
 LOGGING = logging.getLogger(__name__)

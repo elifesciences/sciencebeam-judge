@@ -8,7 +8,7 @@ from six import with_metaclass
 
 from ..match_scoring import MatchScoringProps
 
-from .scoring_type_list import (
+from .list import (
   ORDERED_LIST_SCORING_TYPE,
   UNORDERED_LIST_SCORING_TYPE,
   SET_SCORING_TYPE
