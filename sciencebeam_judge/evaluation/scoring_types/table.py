@@ -1,3 +1,4 @@
+import logging
 import json
 
 from sciencebeam_gym.utils.collection import flatten
@@ -12,6 +13,9 @@ from ..match_scoring import get_match_score_obj_for_score
 
 from .scoring_type import ScoringType
 from .scoring_type_list import score_value_as_list_using_scoring_method
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 def tables_to_str(tables):
@@ -34,8 +38,13 @@ def _get_table_match_score_for_scoring_method(expected_rows, actual_rows, scorin
     'dummy', 'dummy', score, include_values=False
   )
   if not expected_rows and not actual_rows:
+    LOGGER.debug('empty tables (expected and actual), 1.0 score')
     return to_match_score(1.0)
   if len(expected_rows) != len(actual_rows):
+    LOGGER.debug(
+      'number of table rows mismatch (expected: %d, actual: %d), 0.0 score',
+      len(expected_rows), len(actual_rows)
+    )
     return to_match_score(0.0)
   for expected_row, actual_row in zip(expected_rows, actual_rows):
     if len(expected_row) != len(actual_row):
@@ -57,8 +66,13 @@ def _get_tables_match_score_for_scoring_method_ordered(
   )
 
   if not expected_tables_rows and not actual_tables_rows:
+    LOGGER.debug('no tables (expected and actual), 1.0 score')
     return to_match_score(1.0)
   if len(expected_tables_rows) != len(actual_tables_rows):
+    LOGGER.debug(
+      'number of tables mismatch (expected: %d, actual: %d), 0.0 score',
+      len(expected_tables_rows), len(actual_tables_rows)
+    )
     return to_match_score(0.0)
   scores = []
   for expected_rows, actual_rows in zip(expected_tables_rows, actual_tables_rows):
@@ -69,10 +83,15 @@ def _get_tables_match_score_for_scoring_method_ordered(
     )['score']
 
     if score < scoring_method.threshold:
+      LOGGER.debug(
+        'table score (%.3f) below threshold (%.3f), 0.0 score',
+        score, scoring_method.threshold
+      )
       return to_match_score(0.0)
 
     scores.append(score)
 
+    LOGGER.debug('table scores: %s', scores)
   return to_match_score(safe_mean(scores))
 
 def _get_rows_and_normalize_tables(tables, convert_to_lower):
@@ -83,6 +102,7 @@ def _get_rows_and_normalize_tables(tables, convert_to_lower):
 
 class OrderedTableScoringType(ScoringType):
   def score(self, expected, actual, include_values=False, measures=None, convert_to_lower=False):
+    LOGGER.debug('OrderedTableScoringType, score: expected=%s, actual=%s', expected, actual)
     expected_tables_rows = _get_rows_and_normalize_tables(
       expected, convert_to_lower=convert_to_lower
     )
