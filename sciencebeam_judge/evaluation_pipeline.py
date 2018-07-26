@@ -42,9 +42,12 @@ from sciencebeam_gym.utils.file_list import (
 )
 
 from sciencebeam_judge.evaluation_utils import (
-  parse_xml,
-  parse_xml_mapping,
   comma_separated_str_to_list
+)
+
+from sciencebeam_judge.parsing.xml import (
+  parse_xml,
+  parse_xml_mapping
 )
 
 from sciencebeam_judge.evaluation_config import (
