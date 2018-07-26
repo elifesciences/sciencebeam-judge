@@ -6,8 +6,6 @@ import logging
 from io import BytesIO
 from functools import partial
 
-from six import iteritems
-
 import apache_beam as beam
 from apache_beam.io.textio import WriteToText
 from apache_beam.options.pipeline_options import PipelineOptions, SetupOptions

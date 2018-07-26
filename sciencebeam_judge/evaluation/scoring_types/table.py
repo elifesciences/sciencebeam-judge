@@ -4,7 +4,7 @@ from sciencebeam_gym.utils.collection import flatten
 
 from ..math import safe_mean
 
-from ..normalization import normalize_whitespace, normalize_string
+from ..normalization import normalize_string
 
 from ..scoring_methods import get_scoring_methods
 
