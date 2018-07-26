@@ -45,7 +45,30 @@ def parse_ignore_namespace(source, filename=None):
   except ET.XMLSyntaxError as e:
     raise_from(RuntimeError('failed to process {}'.format(filename or source)), e)
 
+def parse_xml_table(table_node):
+  return {
+    'head': [
+      [get_full_text(cell) for cell in row.xpath('th')]
+      for row in table_node.xpath('thead/tr')
+    ],
+    'body': [
+      [get_full_text(cell) for cell in row.xpath('td')]
+      for row in table_node.xpath('tbody/tr')
+    ]
+  }
+
+def parse_xml_table_wrap(table_wrap_node):
+  return {
+    'label': get_full_text(table_wrap_node.find('label')),
+    'caption': get_full_text(table_wrap_node.find('caption')),
+    'table': parse_xml_table(table_wrap_node.find('table'))
+  }
+
 def parse_xml_field_node(field_name, node, mapping):
+  if node.tag == 'table':
+    return parse_xml_table(node)
+  if node.tag == 'table-wrap':
+    return parse_xml_table_wrap(node)
   return get_full_text_ignore_children(
     node,
     node.xpath(mapping[field_name + '.ignore']) if field_name + '.ignore' in mapping else None

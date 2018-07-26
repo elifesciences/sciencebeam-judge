@@ -13,6 +13,41 @@ LOGGING = logging.getLogger(__name__)
 
 SOME_TEXT = 'test 123'
 
+TABLE_LABEL_1 = 'Table 1'
+TABLE_CAPTION_1 = 'Table Caption 1'
+
+TABLE_XML_1 = (
+  b'''
+  <table>
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cell 1.1</td>
+        <td>Cell 1.2</td>
+      </tr>
+      <tr>
+        <td>Cell 2.1</td>
+        <td>Cell 2.2</td>
+      </tr>
+    </tbody>
+  </table>
+  '''
+)
+
+TABLE_1 = {
+  'head': [['Column 1', 'Column 2']],
+  'body': [
+    ['Cell 1.1', 'Cell 1.2'],
+    ['Cell 2.1', 'Cell 2.2']
+  ]
+}
+
+
 class TestParseXmlMapping(object):
   def test_should_parse_multiple_sections(self):
     xml_mapping = u'''
@@ -62,4 +97,54 @@ class TestParseXml(object):
     result = parse_xml(BytesIO(xml), xml_mapping)
     assert result == {
       'prop1': ['value1', 'value2']
+    }
+
+  def test_should_parse_table(self):
+    xml = (
+      b'''
+      <root>
+        {table}
+      </root>
+      '''.format(
+        table=TABLE_XML_1
+      )
+    )
+    xml_mapping = {
+      'root': {
+        'table1': 'table'
+      }
+    }
+    result = parse_xml(BytesIO(xml), xml_mapping)
+    assert result == {
+      'table1': [TABLE_1]
+    }
+
+  def test_should_parse_table_wrap(self):
+    xml = (
+      b'''
+      <root>
+        <table-wrap id="t0002" orientation="portrait">
+          <label>{table_label}</label>
+          <caption><title>{table_caption}</title></caption>
+          {table}
+        </table-wrap>
+      </root>
+      '''.format(
+        table_label=TABLE_LABEL_1,
+        table_caption=TABLE_CAPTION_1,
+        table=TABLE_XML_1
+      )
+    )
+    xml_mapping = {
+      'root': {
+        'table1': 'table-wrap'
+      }
+    }
+    result = parse_xml(BytesIO(xml), xml_mapping)
+    assert result == {
+      'table1': [{
+        'label': TABLE_LABEL_1,
+        'caption': TABLE_CAPTION_1,
+        'table': TABLE_1
+      }]
     }
