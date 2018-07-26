@@ -75,7 +75,7 @@ from .evaluation.document_scoring import (
   DocumentScoringProps
 )
 
-from .xpath_functions import register_functions
+from .parsing.xpath.xpath_functions import register_functions
 
 DEFAULT_EXTRACTION_FIELDS = [
   'abstract',
