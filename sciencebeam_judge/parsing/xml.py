@@ -45,6 +45,20 @@ def parse_ignore_namespace(source, filename=None):
   except ET.XMLSyntaxError as e:
     raise_from(RuntimeError('failed to process {}'.format(filename or source)), e)
 
+def parse_xml_field_node(field_name, node, mapping):
+  return get_full_text_ignore_children(
+    node,
+    node.xpath(mapping[field_name + '.ignore']) if field_name + '.ignore' in mapping else None
+  ).strip()
+
+def parse_xml_field(field_name, root, mapping):
+  return [
+    parse_xml_field_node(
+      field_name, node, mapping
+    )
+    for node in root.xpath(mapping[field_name])
+  ]
+
 def parse_xml(source, xml_mapping, fields=None, filename=None):
   root = parse_ignore_namespace(source, filename=filename)
   if not root.tag in xml_mapping:
@@ -56,13 +70,7 @@ def parse_xml(source, xml_mapping, fields=None, filename=None):
     if (fields is None or k in fields) and '.ignore' not in k
   ]
   result = {
-    k: [
-      get_full_text_ignore_children(
-        e,
-        e.xpath(mapping[k + '.ignore']) if k + '.ignore' in mapping else None
-      ).strip()
-      for e in root.xpath(mapping[k])
-    ]
-    for k in field_names
+    field_name: parse_xml_field(field_name, root, mapping)
+    for field_name in field_names
   }
   return result
