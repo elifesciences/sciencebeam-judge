@@ -16,6 +16,7 @@ def get_full_text(e):
   except AttributeError:
     return text_type(e)
 
+
 def get_full_text_ignore_children(e, children_to_ignore):
   if children_to_ignore is None or len(children_to_ignore) == 0:
     return get_full_text(e)
@@ -27,14 +28,17 @@ def get_full_text_ignore_children(e, children_to_ignore):
     for c in e
   ])
 
+
 def parse_xml_mapping(xml_mapping_filename_or_fp):
   return parse_config_as_dict(xml_mapping_filename_or_fp)
+
 
 def strip_namespace(it):
   for _, el in it:
     if '}' in el.tag:
       el.tag = el.tag.split('}', 1)[1]  # strip all namespaces
   return it
+
 
 def parse_ignore_namespace(source, filename=None):
   try:
@@ -45,24 +49,37 @@ def parse_ignore_namespace(source, filename=None):
   except ET.XMLSyntaxError as e:
     raise_from(RuntimeError('failed to process {}'.format(filename or source)), e)
 
+
+def get_stripped_text(node):
+  return get_full_text(node).strip()
+
+
 def parse_xml_table(table_node):
-  return {
+  parsed_table = {
     'head': [
-      [get_full_text(cell) for cell in row.xpath('th')]
+      [get_stripped_text(cell) for cell in row.xpath('th')]
       for row in table_node.xpath('thead/tr')
     ],
     'body': [
-      [get_full_text(cell) for cell in row.xpath('td')]
+      [get_stripped_text(cell) for cell in row.xpath('td')]
       for row in table_node.xpath('tbody/tr')
     ]
   }
+  if not parsed_table['head'] and not parsed_table['body']:
+    parsed_table['body'] = [
+      [get_stripped_text(cell) for cell in row.xpath('td')]
+      for row in table_node.xpath('tr')
+    ]
+  return parsed_table
+
 
 def parse_xml_table_wrap(table_wrap_node):
   return {
-    'label': get_full_text(table_wrap_node.find('label')),
-    'caption': get_full_text(table_wrap_node.find('caption')),
+    'label': get_stripped_text(table_wrap_node.find('label')),
+    'caption': get_stripped_text(table_wrap_node.find('caption')),
     'table': parse_xml_table(table_wrap_node.find('table'))
   }
+
 
 def parse_xml_field_node(field_name, node, mapping):
   if node.tag == 'table':
@@ -74,6 +91,7 @@ def parse_xml_field_node(field_name, node, mapping):
     node.xpath(mapping[field_name + '.ignore']) if field_name + '.ignore' in mapping else None
   ).strip()
 
+
 def parse_xml_field(field_name, root, mapping):
   return [
     parse_xml_field_node(
@@ -81,6 +99,7 @@ def parse_xml_field(field_name, root, mapping):
     )
     for node in root.xpath(mapping[field_name])
   ]
+
 
 def parse_xml(source, xml_mapping, fields=None, filename=None):
   root = parse_ignore_namespace(source, filename=filename)

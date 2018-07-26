@@ -3,7 +3,10 @@ from __future__ import division
 import logging
 from io import BytesIO, StringIO
 
+from lxml import etree
+
 from .xml import (
+  parse_xml_table,
   parse_xml_mapping,
   parse_xml
 )
@@ -16,6 +19,20 @@ SOME_TEXT = 'test 123'
 TABLE_LABEL_1 = 'Table 1'
 TABLE_CAPTION_1 = 'Table Caption 1'
 
+TABLE_BODY_ROWS_XML_1 = (
+  b'''
+  <tr>
+    <td>Cell 1.1</td>
+    <td>Cell 1.2</td>
+  </tr>
+  <tr>
+    <td>Cell 2.1</td>
+    <td>Cell 2.2</td>
+  </tr>
+  '''
+)
+
+
 TABLE_XML_1 = (
   b'''
   <table>
@@ -26,17 +43,10 @@ TABLE_XML_1 = (
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Cell 1.1</td>
-        <td>Cell 1.2</td>
-      </tr>
-      <tr>
-        <td>Cell 2.1</td>
-        <td>Cell 2.2</td>
-      </tr>
+      {table_body_rows}
     </tbody>
   </table>
-  '''
+  '''.format(table_body_rows=TABLE_BODY_ROWS_XML_1)
 )
 
 TABLE_1 = {
@@ -46,6 +56,10 @@ TABLE_1 = {
     ['Cell 2.1', 'Cell 2.2']
   ]
 }
+
+
+def _single_cell_table_xml(value):
+  return '<table><tbody><tr><td> %s </td></tr></tbody></table>' % value
 
 
 class TestParseXmlMapping(object):
@@ -71,6 +85,28 @@ prop2 = parent2/p2
     }
     result = parse_xml_mapping(StringIO(xml_mapping))
     assert result == expected_xml_mapping
+
+
+class TestParseXmlTableMapping(object):
+  def test_should_parse_table(self):
+    result = parse_xml_table(etree.fromstring(TABLE_XML_1))
+    assert result == TABLE_1
+
+  def test_should_parse_table_without_tbody(self):
+    xml = b'<table>{table_body_rows}</table>'.format(
+      table_body_rows=TABLE_BODY_ROWS_XML_1
+    )
+    result = parse_xml_table(etree.fromstring(xml))
+    assert result == {
+      'head': [],
+      'body': TABLE_1['body']
+    }
+
+  def test_should_strip_space_around_cells(self):
+    xml = _single_cell_table_xml(' %s ' % SOME_TEXT)
+    result = parse_xml_table(etree.fromstring(xml))
+    assert result['body'][0][0] == SOME_TEXT
+
 
 class TestParseXml(object):
   def test_should_parse_single_value_properties(self):
