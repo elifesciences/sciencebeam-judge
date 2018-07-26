@@ -2,7 +2,11 @@ from __future__ import division
 
 import logging
 
+from ..match_scoring import MatchScoringProps
+
 from .table import ORDERED_TABLE_SCORING_TYPE
+
+from .scoring_type_list_test import ALMOST_MATCHING_TEXTS
 
 
 LOGGING = logging.getLogger(__name__)
@@ -33,15 +37,20 @@ def _single_cell_table(value):
 
 
 class TestOrderedTableScoringType(object):
+  def score(self, expected, actual):
+    result = ORDERED_TABLE_SCORING_TYPE.score(expected, actual)
+    LOGGING.debug('result: %s', result)
+    return result
+
   def test_should_score_single_table_for_exact_match(self):
-    result = ORDERED_TABLE_SCORING_TYPE.score([TABLE_1], [TABLE_1])
+    result = self.score([TABLE_1], [TABLE_1])
     assert result['exact']['score'] == 1
     assert result['soft']['score'] == 1
     assert result['levenshtein']['score'] == 1
     assert result['ratcliff_obershelp']['score'] == 1
 
   def test_should_score_multiple_tables_for_exact_match(self):
-    result = ORDERED_TABLE_SCORING_TYPE.score(
+    result = self.score(
       [TABLE_1, TABLE_2], [TABLE_1, TABLE_2]
     )
     assert result['exact']['score'] == 1
@@ -50,13 +59,15 @@ class TestOrderedTableScoringType(object):
     assert result['ratcliff_obershelp']['score'] == 1
 
   def test_should_return_zero_score_for_all_cells_mismatch(self):
-    result = ORDERED_TABLE_SCORING_TYPE.score([TABLE_1], [TABLE_2])
+    result = self.score([TABLE_1], [TABLE_2])
     assert result['exact']['score'] == 0
 
-  def test_should_score_close_match(self):
-    result = ORDERED_TABLE_SCORING_TYPE.score(
-      [_single_cell_table('Very similar xyz')],
-      [_single_cell_table('Very similar xy')]
+  def test_should_allow_almost_matching_text(self):
+    result = self.score(
+      [_single_cell_table(ALMOST_MATCHING_TEXTS[0])],
+      [_single_cell_table(ALMOST_MATCHING_TEXTS[1])]
     )
-    assert result['exact']['score'] == 0
-    assert result['levenshtein']['score'] > 0
+    assert result['exact'][MatchScoringProps.SCORE] == 0
+    assert result['exact'][MatchScoringProps.TRUE_POSITIVE] == 0
+    assert result['levenshtein'][MatchScoringProps.SCORE] > 0
+    assert result['levenshtein'][MatchScoringProps.TRUE_POSITIVE] == 1

@@ -61,8 +61,10 @@ def _get_tables_match_score_for_scoring_method_ordered(
 
   expected_str = tables_to_str(expected_tables_rows)
   actual_str = tables_to_str(actual_tables_rows)
+  threshold = scoring_method.threshold
   to_match_score = lambda score: get_match_score_obj_for_score(
-    expected_str, actual_str, score, include_values=include_values
+    expected_str, actual_str, score,
+    threshold=threshold, include_values=include_values
   )
 
   if not expected_tables_rows and not actual_tables_rows:
@@ -82,10 +84,10 @@ def _get_tables_match_score_for_scoring_method_ordered(
       scoring_method
     )['score']
 
-    if score < scoring_method.threshold:
+    if score < threshold:
       LOGGER.debug(
         'table score (%.3f) below threshold (%.3f), 0.0 score',
-        score, scoring_method.threshold
+        score, threshold
       )
       return to_match_score(0.0)
 
