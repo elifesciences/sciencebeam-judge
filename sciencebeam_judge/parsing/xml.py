@@ -82,10 +82,13 @@ def parse_xml_table_wrap(table_wrap_node):
 
 
 def parse_xml_field_node(field_name, node, mapping):
-  if node.tag == 'table':
-    return parse_xml_table(node)
-  if node.tag == 'table-wrap':
-    return parse_xml_table_wrap(node)
+  try:
+    if node.tag == 'table':
+      return parse_xml_table(node)
+    if node.tag == 'table-wrap':
+      return parse_xml_table_wrap(node)
+  except AttributeError:
+    pass
   return get_full_text_ignore_children(
     node,
     node.xpath(mapping[field_name + '.ignore']) if field_name + '.ignore' in mapping else None

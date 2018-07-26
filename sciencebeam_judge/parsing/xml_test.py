@@ -135,6 +135,18 @@ class TestParseXml(object):
       'prop1': ['value1', 'value2']
     }
 
+  def test_should_not_fail_with_string_result(self):
+    xml = b'<root><p1>value1</p1></root>'
+    xml_mapping = {
+      'root': {
+        'prop1': 'p1/text()'
+      }
+    }
+    result = parse_xml(BytesIO(xml), xml_mapping)
+    assert result == {
+      'prop1': ['value1']
+    }
+
   def test_should_parse_table(self):
     xml = (
       b'''
