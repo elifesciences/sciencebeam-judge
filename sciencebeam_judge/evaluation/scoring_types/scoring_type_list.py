@@ -58,7 +58,8 @@ def score_value_as_list_using_scoring_method(
   expected_str = list_to_str(expected_list)
   actual_str = list_to_str(actual_list)
   to_match_score = lambda score: get_match_score_obj_for_score(
-    expected_str, actual_str, score, include_values=include_values
+    expected_str, actual_str, score,
+    threshold=scoring_method.threshold, include_values=include_values
   )
 
   if not expected_list and not actual_list:
@@ -89,7 +90,8 @@ def score_value_as_unordered_list_using_scoring_method(
   actual_str = list_to_str(actual_list)
   remaining_list = list(actual_list)
   to_match_score = lambda score: get_match_score_obj_for_score(
-    expected_str, actual_str, score, include_values=include_values
+    expected_str, actual_str, score,
+    threshold=scoring_method.threshold, include_values=include_values
   )
   scores = []
   if not expected_list and not actual_list:
