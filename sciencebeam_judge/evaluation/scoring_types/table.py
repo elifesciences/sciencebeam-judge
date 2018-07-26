@@ -12,13 +12,15 @@ from ..scoring_methods import get_scoring_methods
 from ..match_scoring import get_match_score_obj_for_score
 
 from .scoring_type import ScoringType
-from .scoring_type_list import score_value_as_list_using_scoring_method
+from .list import score_value_as_list_using_scoring_method
 
 
 LOGGER = logging.getLogger(__name__)
 
 
 def tables_to_str(tables):
+  if not tables:
+    return ''
   return json.dumps(tables)
 
 def _get_all_rows(table):

@@ -49,6 +49,11 @@ class TestOrderedTableScoringType(object):
     assert result['levenshtein']['score'] == 1
     assert result['ratcliff_obershelp']['score'] == 1
 
+  def test_should_return_true_negative_with_score_one_for_no_tables(self):
+    result = self.score([], [])
+    assert result['exact'][MatchScoringProps.TRUE_NEGATIVE] == 1
+    assert result['exact'][MatchScoringProps.SCORE] == 1.0
+
   def test_should_score_multiple_tables_for_exact_match(self):
     result = self.score(
       [TABLE_1, TABLE_2], [TABLE_1, TABLE_2]
