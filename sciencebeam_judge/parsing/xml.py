@@ -1,32 +1,14 @@
 # -*- coding: utf-8 -*-
-from six import raise_from, text_type
+from six import raise_from
 
 from lxml import etree as ET
 
 from ..utils.config import parse_config_as_dict
+from ..utils.xml import get_full_text, get_full_text_ignore_children
 
 
 IGNORE_MARKER = '_ignore_'
 IGNORE_MARKER_WITH_SPACE = ' ' + IGNORE_MARKER + ' '
-
-
-def get_full_text(e):
-  try:
-    return "".join(e.itertext())
-  except AttributeError:
-    return text_type(e)
-
-
-def get_full_text_ignore_children(e, children_to_ignore):
-  if children_to_ignore is None or len(children_to_ignore) == 0:
-    return get_full_text(e)
-  if e.text is not None:
-    return ''.join(e.xpath('text()'))
-  return "".join([
-    get_full_text_ignore_children(c, children_to_ignore)
-    if c not in children_to_ignore else IGNORE_MARKER_WITH_SPACE
-    for c in e
-  ])
 
 
 def parse_xml_mapping(xml_mapping_filename_or_fp):

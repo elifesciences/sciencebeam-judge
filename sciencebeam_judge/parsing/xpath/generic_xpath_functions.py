@@ -2,17 +2,13 @@ import logging
 
 from lxml import etree
 
-from sciencebeam_gym.utils.xml import get_text_content
+from sciencebeam_judge.utils.xml import get_text_content_or_blank
 
 
 LOGGER = logging.getLogger(__name__)
 
 
 CHILD_ELEMENT_PREFIX = '$'
-
-
-def get_text_content_or_blank(node):
-  return get_text_content(node) if node is not None else ''
 
 
 def _parse_expression(expression):
