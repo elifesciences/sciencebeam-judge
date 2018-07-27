@@ -2,7 +2,7 @@ import logging
 
 from lxml import etree
 
-from sciencebeam_judge.utils.xml import get_text_content_or_blank
+from sciencebeam_judge.utils.xml import get_text_content
 
 
 LOGGER = logging.getLogger(__name__)
@@ -14,7 +14,7 @@ CHILD_ELEMENT_PREFIX = '$'
 def _parse_expression(expression):
   if expression.startswith(CHILD_ELEMENT_PREFIX):
     return lambda node: (
-      get_text_content_or_blank(node.find(expression[len(CHILD_ELEMENT_PREFIX):]))
+      get_text_content(node.find(expression[len(CHILD_ELEMENT_PREFIX):]))
     )
   return lambda _: expression
 
