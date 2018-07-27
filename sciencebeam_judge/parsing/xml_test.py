@@ -115,6 +115,14 @@ class TestParseXmlTableMapping(object):
       'body': [['']]
     }
 
+  def test_should_parse_table_with_tei_row_cell(self):
+    xml = b'<table><row><cell>%s</cell></row></table>' % SOME_TEXT
+    result = parse_xml_table(etree.fromstring(xml))
+    assert result == {
+      'head': [],
+      'body': [[SOME_TEXT]]
+    }
+
 
 class TestParseXml(object):
   def test_should_parse_single_value_properties(self):

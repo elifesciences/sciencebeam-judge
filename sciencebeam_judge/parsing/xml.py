@@ -52,6 +52,11 @@ def parse_xml_table(table_node):
       [get_stripped_text(cell) for cell in row.xpath('td')]
       for row in table_node.xpath('tr')
     ]
+    if not parsed_table['body']:
+      parsed_table['body'] = [
+        [get_stripped_text(cell) for cell in row.xpath('cell')]
+        for row in table_node.xpath('row')
+      ]
   return parsed_table
 
 
