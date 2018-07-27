@@ -4,7 +4,7 @@ from six import raise_from
 from lxml import etree as ET
 
 from ..utils.config import parse_config_as_dict
-from ..utils.xml import get_full_text, get_full_text_ignore_children
+from ..utils.xml import get_text_content, get_text_content_and_ignore_children
 
 
 IGNORE_MARKER = '_ignore_'
@@ -33,7 +33,7 @@ def parse_ignore_namespace(source, filename=None):
 
 
 def get_stripped_text(node):
-  return get_full_text(node).strip()
+  return get_text_content(node).strip()
 
 
 def parse_xml_table(table_node):
@@ -71,7 +71,7 @@ def parse_xml_field_node(field_name, node, mapping):
       return parse_xml_table_wrap(node)
   except AttributeError:
     pass
-  return get_full_text_ignore_children(
+  return get_text_content_and_ignore_children(
     node,
     node.xpath(mapping[field_name + '.ignore']) if field_name + '.ignore' in mapping else None
   ).strip()

@@ -29,17 +29,15 @@ def get_text_content_or_blank(node):
   return get_text_content(node) if node is not None else ''
 
 
-def get_full_text(e):
-  return get_text_content(e)
-
-
-def get_full_text_ignore_children(e, children_to_ignore):
+def get_text_content_and_ignore_children(e, children_to_ignore):
+  # Note: this is similar to get_text_content with exclude keyword parameter
+  #   but also provides an ignore marker (should be merged)
   if children_to_ignore is None or len(children_to_ignore) == 0:
-    return get_full_text(e)
+    return get_text_content(e)
   if e.text is not None:
     return ''.join(e.xpath('text()'))
   return "".join([
-    get_full_text_ignore_children(c, children_to_ignore)
+    get_text_content_and_ignore_children(c, children_to_ignore)
     if c not in children_to_ignore else IGNORE_MARKER_WITH_SPACE
     for c in e
   ])
