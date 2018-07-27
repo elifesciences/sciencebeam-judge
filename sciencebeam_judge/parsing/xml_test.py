@@ -107,6 +107,14 @@ class TestParseXmlTableMapping(object):
     result = parse_xml_table(etree.fromstring(xml))
     assert result['body'][0][0] == SOME_TEXT
 
+  def test_should_parse_table_cell_without_text(self):
+    xml = b'<table><tbody><tr><td/></tr></tbody></table>'
+    result = parse_xml_table(etree.fromstring(xml))
+    assert result == {
+      'head': [],
+      'body': [['']]
+    }
+
 
 class TestParseXml(object):
   def test_should_parse_single_value_properties(self):
