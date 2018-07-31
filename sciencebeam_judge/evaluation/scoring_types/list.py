@@ -1,3 +1,4 @@
+import logging
 from abc import abstractmethod
 
 from ..math import safe_mean
@@ -12,6 +13,10 @@ from ..match_scoring import (
 )
 
 from .scoring_type import ScoringType
+
+
+LOGGER = logging.getLogger(__name__)
+
 
 def to_list(x):
   if isinstance(x, str):
@@ -53,7 +58,8 @@ def score_value_as_list_using_scoring_method(
   expected_str = list_to_str(expected_list)
   actual_str = list_to_str(actual_list)
   to_match_score = lambda score: get_match_score_obj_for_score(
-    expected_str, actual_str, score, include_values=include_values
+    expected_str, actual_str, score,
+    threshold=scoring_method.threshold, include_values=include_values
   )
 
   if not expected_list and not actual_list:
@@ -84,23 +90,42 @@ def score_value_as_unordered_list_using_scoring_method(
   actual_str = list_to_str(actual_list)
   remaining_list = list(actual_list)
   to_match_score = lambda score: get_match_score_obj_for_score(
-    expected_str, actual_str, score, include_values=include_values
+    expected_str, actual_str, score,
+    threshold=scoring_method.threshold, include_values=include_values
   )
   scores = []
   if not expected_list and not actual_list:
+    LOGGER.debug('empty lists (expected and actual), 1.0 score')
     return to_match_score(1.0)
   if len(expected_list) != len(actual_list):
+    LOGGER.debug(
+      'number of items mismatch (expected=%d, actual=%d), 0.0 score',
+      len(expected_list), len(actual_list)
+    )
     return to_match_score(0.0)
   for expected_item in expected_list:
     best_value, best_score = find_best_match_using_scoring_method(
       expected_item, remaining_list, scoring_method
     )
     if best_value is not None:
+      LOGGER.debug(
+        'found match (%s), adding to list, score=%.3f, expected_item=%s, matching_item=%s',
+        scoring_method, best_score, expected_item, best_value
+      )
       remaining_list.remove(best_value)
       scores.append(best_score)
     else:
+      LOGGER.debug(
+        'no match found (%s), 0.0 score, expected_item=%s, remaining_list=%s',
+        scoring_method, expected_item, remaining_list
+      )
       return to_match_score(0.0)
-  return to_match_score(safe_mean(scores))
+  mean_score = safe_mean(scores)
+  LOGGER.debug(
+    'returning list score (%s), mean_score=%.3f, scores=%s',
+    scoring_method, mean_score, scores
+  )
+  return to_match_score(mean_score)
 
 
 class ListScoringType(ScoringType):

@@ -35,6 +35,13 @@ class ScoringMethod(object):
     self.threshold = threshold
     self.preprocessing_fn = preprocessing_fn or IDENTITY_FN
 
+  def __str__(self):
+    return self.name
+
+  def __repr__(self):
+    return '%s(threshold=%.3f)' % (self.name, self.threshold)
+
+
 SCORING_METHODS = [
   ScoringMethod(
     ScoringMethodNames.EXACT, exact_score

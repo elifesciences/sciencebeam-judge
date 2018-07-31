@@ -4,12 +4,12 @@ import logging
 
 import pytest
 
-from .scoring_type_list import (
+from .list import (
   ORDERED_LIST_SCORING_TYPE,
   UNORDERED_LIST_SCORING_TYPE,
   SET_SCORING_TYPE
 )
-from .scoring_type_string import STRING_SCORING_TYPE
+from .string import STRING_SCORING_TYPE
 
 from .scoring_types import resolve_scoring_type
 

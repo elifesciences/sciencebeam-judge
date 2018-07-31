@@ -6,7 +6,9 @@ from abc import ABCMeta, abstractmethod
 
 from six import with_metaclass
 
-from .scoring_type_list import (
+from ..match_scoring import MatchScoringProps
+
+from .list import (
   ORDERED_LIST_SCORING_TYPE,
   UNORDERED_LIST_SCORING_TYPE,
   SET_SCORING_TYPE
@@ -16,6 +18,12 @@ from .scoring_type_list import (
 LOGGING = logging.getLogger(__name__)
 
 SOME_TEXT = 'test 123'
+
+ALMOST_MATCHING_TEXTS = [
+  'This almost matches',
+  'This almost matched'
+]
+
 
 class _TestCommonListScoringType(object, with_metaclass(ABCMeta)):
   @abstractmethod
@@ -64,6 +72,14 @@ class _TestCommonListScoringType(object, with_metaclass(ABCMeta)):
     result = self.score(['a', 'B'], ['A', 'b'], convert_to_lower=False)
     LOGGING.debug('result: %s', result)
     assert result['exact']['score'] == 0
+
+  def test_should_allow_almost_matching_text(self):
+    result = self.score([ALMOST_MATCHING_TEXTS[0]], [ALMOST_MATCHING_TEXTS[1]])
+    LOGGING.debug('result: %s', result)
+    assert result['exact'][MatchScoringProps.SCORE] == 0
+    assert result['exact'][MatchScoringProps.TRUE_POSITIVE] == 0
+    assert result['levenshtein'][MatchScoringProps.SCORE] > 0
+    assert result['levenshtein'][MatchScoringProps.TRUE_POSITIVE] == 1
 
 class TestOrderedListScoringType(_TestCommonListScoringType):
   def score(self, *args, **kwargs):

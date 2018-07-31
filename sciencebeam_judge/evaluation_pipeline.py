@@ -6,8 +6,6 @@ import logging
 from io import BytesIO
 from functools import partial
 
-from six import iteritems
-
 import apache_beam as beam
 from apache_beam.io.textio import WriteToText
 from apache_beam.options.pipeline_options import PipelineOptions, SetupOptions
@@ -42,9 +40,12 @@ from sciencebeam_gym.utils.file_list import (
 )
 
 from sciencebeam_judge.evaluation_utils import (
-  parse_xml,
-  parse_xml_mapping,
   comma_separated_str_to_list
+)
+
+from sciencebeam_judge.parsing.xml import (
+  parse_xml,
+  parse_xml_mapping
 )
 
 from sciencebeam_judge.evaluation_config import (
@@ -72,7 +73,7 @@ from .evaluation.document_scoring import (
   DocumentScoringProps
 )
 
-from .xpath_functions import register_functions
+from .parsing.xpath.xpath_functions import register_functions
 
 DEFAULT_EXTRACTION_FIELDS = [
   'abstract',
@@ -81,7 +82,8 @@ DEFAULT_EXTRACTION_FIELDS = [
   'author_aff_strings',
   'section_titles',
   # 'section_paragraphs',
-  'keywords', 'title'
+  'keywords', 'title',
+  'tables', 'table_strings', 'table_labels', 'table_captions', 'table_label_captions'
 ]
 
 DEFAULT_SCORE_MEASURES = [
@@ -495,7 +497,7 @@ def parse_args(argv=None):
   args = parser.parse_args(argv)
 
   if args.debug:
-    logging.getLogger().setLevel('DEBUG')
+    logging.getLogger('sciencebeam_judge').setLevel('DEBUG')
 
   process_cloud_args(
     args, args.output_path,
