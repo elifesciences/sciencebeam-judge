@@ -82,7 +82,8 @@ DEFAULT_EXTRACTION_FIELDS = [
   'author_aff_strings',
   'section_titles',
   # 'section_paragraphs',
-  'keywords', 'title'
+  'keywords', 'title',
+  'tables', 'table_strings', 'table_labels', 'table_captions', 'table_label_captions'
 ]
 
 DEFAULT_SCORE_MEASURES = [
