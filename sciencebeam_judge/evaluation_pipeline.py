@@ -79,7 +79,7 @@ DEFAULT_EXTRACTION_FIELDS = [
   'abstract',
   'author_surnames', 'first_author_surname',
   'author_full_names', 'first_author_full_name',
-  'author_aff_strings',
+  'affiliation_strings', 'affiliation_institution',
   'section_titles',
   # 'section_paragraphs',
   'keywords', 'title',
