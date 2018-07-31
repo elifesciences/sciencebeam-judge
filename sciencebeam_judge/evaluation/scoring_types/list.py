@@ -1,6 +1,8 @@
 import logging
 from abc import abstractmethod
 
+from six import text_type
+
 from ..math import safe_mean
 
 from ..normalization import normalize_string
@@ -13,6 +15,8 @@ from ..match_scoring import (
 )
 
 from .scoring_type import ScoringType
+
+from .items import wrap_items_scoring_methods, is_items_list, normalize_items_list
 
 
 LOGGER = logging.getLogger(__name__)
@@ -28,8 +32,8 @@ def normalize_list(value, convert_to_lower=False):
     normalize_string(x, convert_to_lower=convert_to_lower) for x in value
   ]
 
-def list_to_str(x):
-  return ', '.join(x)
+def list_to_str(l):
+  return ', '.join(text_type(x) for x in l)
 
 def find_best_match_using_scoring_method(value, other_values, scoring_method):
   best_value = None
@@ -135,9 +139,24 @@ class ListScoringType(ScoringType):
     include_values=False, convert_to_lower=False):
     pass
 
-  def score(self, expected, actual, include_values=False, measures=None, convert_to_lower=False):
-    expected_list = normalize_list(to_list(expected), convert_to_lower=convert_to_lower)
-    actual_list = normalize_list(to_list(actual), convert_to_lower=convert_to_lower)
+  def score_items(self, expected_list, actual_list, include_values=False, measures=None, convert_to_lower=False):
+    expected_list = normalize_items_list(expected_list, convert_to_lower=convert_to_lower)
+    actual_list = normalize_items_list(actual_list, convert_to_lower=convert_to_lower)
+    scoring_methods = wrap_items_scoring_methods(get_scoring_methods(measures=measures))
+    scores = {}
+    for scoring_method in scoring_methods:
+      scores[scoring_method.name] = self._score_using_scoring_method(
+        expected_list,
+        actual_list,
+        scoring_method,
+        include_values=include_values,
+        convert_to_lower=convert_to_lower
+      )
+    return scores
+
+  def score_list(self, expected_list, actual_list, include_values=False, measures=None, convert_to_lower=False):
+    expected_list = normalize_list(expected_list, convert_to_lower=convert_to_lower)
+    actual_list = normalize_list(actual_list, convert_to_lower=convert_to_lower)
     scoring_methods = get_scoring_methods(measures=measures)
     scores = {}
     for scoring_method in scoring_methods:
@@ -149,6 +168,15 @@ class ListScoringType(ScoringType):
         convert_to_lower=convert_to_lower
       )
     return scores
+
+  def score(self, expected, actual, **kwargs):
+    expected_list = to_list(expected)
+    actual_list = to_list(actual)
+    if is_items_list(expected_list) or is_items_list(actual_list):
+      return self.score_items(expected_list, actual_list, **kwargs)
+    else:
+      return self.score_list(expected_list, actual_list, **kwargs)
+
 
 class OrderedListScoringType(ListScoringType):
   def _score_using_scoring_method(

@@ -87,7 +87,8 @@ DEFAULT_AFFILIATION_FIELDS = [
 ]
 
 DEFAULT_REFERENCE_FIELDS = [
-  'reference_title', 'reference_year', 'reference_source', 'reference_volume', 'reference_fpage', 'reference_lpage'
+  'references', 'reference_title', 'reference_year',
+  'reference_source', 'reference_volume', 'reference_fpage', 'reference_lpage'
 ]
 
 DEFAULT_TABLE_FIELDS = [
@@ -138,31 +139,40 @@ def ReadFilePairs(x):
     DataProps.PREDICTION_CONTENT: read_all_from_path(x[DataProps.PREDICTION_FILE_URL])
   })
 
+
 def evaluate_file_pairs(
   target_filename, target_content,
   prediction_filename, prediction_content,
   xml_mapping, field_names,
   **kwargs):
 
-  get_logger().info(
-    'processing: target: %s, prediction: %s', target_filename, prediction_filename
-  )
-  target_xml = parse_xml(
-    BytesIO(target_content),
-    xml_mapping,
-    fields=field_names,
-    filename=target_filename
-  )
-  prediction_xml = parse_xml(
-    BytesIO(prediction_content),
-    xml_mapping,
-    fields=field_names,
-    filename=prediction_filename
-  )
-  return list(iter_score_document_fields(
-    target_xml, prediction_xml, field_names=field_names, include_values=True,
-    **kwargs
-  ))
+  try:
+    get_logger().info(
+      'processing: target: %s, prediction: %s', target_filename, prediction_filename
+    )
+    target_xml = parse_xml(
+      BytesIO(target_content),
+      xml_mapping,
+      fields=field_names,
+      filename=target_filename
+    )
+    prediction_xml = parse_xml(
+      BytesIO(prediction_content),
+      xml_mapping,
+      fields=field_names,
+      filename=prediction_filename
+    )
+    return list(iter_score_document_fields(
+      target_xml, prediction_xml, field_names=field_names, include_values=True,
+      **kwargs
+    ))
+  except Exception as e:
+    get_logger().error(
+      'uncaught exception processing file (%s): %s',
+      target_filename, e, exc_info=e
+    )
+    raise e
+
 
 def EvaluateFilePairs(x, **kwargs):
   return extend_dict(x, {
