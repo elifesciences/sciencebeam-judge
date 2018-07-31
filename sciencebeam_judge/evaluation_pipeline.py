@@ -75,16 +75,33 @@ from .evaluation.document_scoring import (
 
 from .parsing.xpath.xpath_functions import register_functions
 
-DEFAULT_EXTRACTION_FIELDS = [
-  'abstract',
+
+DEFAULT_AUTHOR_FIELDS = [
   'author_surnames', 'first_author_surname',
-  'author_full_names', 'first_author_full_name',
-  'affiliation_strings', 'affiliation_institution',
-  'section_titles',
-  # 'section_paragraphs',
-  'keywords', 'title',
+  'author_full_names', 'first_author_full_name'
+]
+
+
+DEFAULT_AFFILIATION_FIELDS = [
+  'affiliation_strings', 'affiliation_institution'
+]
+
+DEFAULT_TABLE_FIELDS = [
   'tables', 'table_strings', 'table_labels', 'table_captions', 'table_label_captions'
 ]
+
+DEFAULT_FRONT_FIELDS = [
+  'title',
+  'abstract',
+  'keywords'
+] + DEFAULT_AUTHOR_FIELDS + DEFAULT_AFFILIATION_FIELDS
+
+DEFAULT_BODY_FIELDS = [
+  'section_titles',
+  # 'section_paragraphs',
+] + DEFAULT_TABLE_FIELDS
+
+DEFAULT_EXTRACTION_FIELDS = DEFAULT_FRONT_FIELDS + DEFAULT_BODY_FIELDS
 
 DEFAULT_SCORE_MEASURES = [
   ScoringMethodNames.EXACT,
@@ -137,7 +154,7 @@ def evaluate_file_pairs(
     filename=prediction_filename
   )
   return list(iter_score_document_fields(
-    target_xml, prediction_xml, include_values=True,
+    target_xml, prediction_xml, field_names=field_names, include_values=True,
     **kwargs
   ))
 
