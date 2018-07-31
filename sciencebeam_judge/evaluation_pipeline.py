@@ -86,6 +86,10 @@ DEFAULT_AFFILIATION_FIELDS = [
   'affiliation_strings', 'affiliation_institution'
 ]
 
+DEFAULT_REFERENCE_FIELDS = [
+  'reference_title', 'reference_year', 'reference_source', 'reference_volume', 'reference_fpage', 'reference_lpage'
+]
+
 DEFAULT_TABLE_FIELDS = [
   'tables', 'table_strings', 'table_labels', 'table_captions', 'table_label_captions'
 ]
@@ -101,7 +105,9 @@ DEFAULT_BODY_FIELDS = [
   # 'section_paragraphs',
 ] + DEFAULT_TABLE_FIELDS
 
-DEFAULT_EXTRACTION_FIELDS = DEFAULT_FRONT_FIELDS + DEFAULT_BODY_FIELDS
+DEFAULT_BACK_FIELDS = DEFAULT_REFERENCE_FIELDS
+
+DEFAULT_EXTRACTION_FIELDS = DEFAULT_FRONT_FIELDS + DEFAULT_BODY_FIELDS + DEFAULT_BACK_FIELDS
 
 DEFAULT_SCORE_MEASURES = [
   ScoringMethodNames.EXACT,
