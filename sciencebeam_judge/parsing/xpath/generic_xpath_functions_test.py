@@ -39,6 +39,43 @@ class TestGenericXpathFunctions(object):
       ) == ['Caption 1']
 
 
+  class TestJoinChildren(object):
+    def test_should_join_two_child_elements_of_single_parent(self):
+      xml = E.article(
+        E.parent(
+          E.child('Text 1'),
+          E.child('Text 2')
+        )
+      )
+      register_functions()
+      assert (
+        list(xml.xpath('generic-join-children(//parent, "child", ", ")'))
+      ) == ['Text 1, Text 2']
+
+    def test_should_strip_space(self):
+      xml = E.article(
+        E.parent(
+          E.child(' Text 1'),
+          E.child('Text 2 ')
+        )
+      )
+      register_functions()
+      assert (
+        list(xml.xpath('generic-join-children(//parent, "child", ", ")'))
+      ) == ['Text 1, Text 2']
+
+    def test_should_return_empty_string_if_no_children_are_matched(self):
+      xml = E.article(
+        E.parent(
+          E.other('Other 1')
+        )
+      )
+      register_functions()
+      assert (
+        list(xml.xpath('generic-join-children(//parent, "child", ", ")'))
+      ) == ['']
+
+
   class TestTextContent(object):
     def test_should_include_text_from_children(self):
       xml = E.article(

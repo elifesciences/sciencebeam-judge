@@ -75,16 +75,33 @@ from .evaluation.document_scoring import (
 
 from .parsing.xpath.xpath_functions import register_functions
 
-DEFAULT_EXTRACTION_FIELDS = [
-  'abstract',
+
+DEFAULT_AUTHOR_FIELDS = [
   'author_surnames', 'first_author_surname',
-  'author_full_names', 'first_author_full_name',
-  'author_aff_strings',
-  'section_titles',
-  # 'section_paragraphs',
-  'keywords', 'title',
+  'author_full_names', 'first_author_full_name'
+]
+
+
+DEFAULT_AFFILIATION_FIELDS = [
+  'affiliation_strings', 'affiliation_institution'
+]
+
+DEFAULT_TABLE_FIELDS = [
   'tables', 'table_strings', 'table_labels', 'table_captions', 'table_label_captions'
 ]
+
+DEFAULT_FRONT_FIELDS = [
+  'title',
+  'abstract',
+  'keywords'
+] + DEFAULT_AUTHOR_FIELDS + DEFAULT_AFFILIATION_FIELDS
+
+DEFAULT_BODY_FIELDS = [
+  'section_titles',
+  # 'section_paragraphs',
+] + DEFAULT_TABLE_FIELDS
+
+DEFAULT_EXTRACTION_FIELDS = DEFAULT_FRONT_FIELDS + DEFAULT_BODY_FIELDS
 
 DEFAULT_SCORE_MEASURES = [
   ScoringMethodNames.EXACT,
@@ -137,7 +154,7 @@ def evaluate_file_pairs(
     filename=prediction_filename
   )
   return list(iter_score_document_fields(
-    target_xml, prediction_xml, include_values=True,
+    target_xml, prediction_xml, field_names=field_names, include_values=True,
     **kwargs
   ))
 
@@ -323,10 +340,13 @@ def configure_pipeline(p, opt):
     else MapOrLog(evaluate_file_pairs_fn)
   )
 
+  p_file_pairs = p | beam.Create(file_pairs)
+
+  if not opt.sequential:
+    p_file_pairs |= "PreventFusion" >> PreventFusion()
+
   evaluation_results = (
-    p |
-    beam.Create(file_pairs) |
-    "PreventFusion" >> PreventFusion() |
+    p_file_pairs |
     "ReadFilePairs" >> TransformAndCount(
       MapOrLog(
         ReadFilePairs,
@@ -482,6 +502,11 @@ def add_main_args(parser):
   skip_errors_group.add_argument(
     '--no-skip-errors', dest='skip_errors', action='store_false',
     help='fail on evaluation error'
+  )
+
+  parser.add_argument(
+    '--sequential', action='store_true', default=False,
+    help='process output sequentially (mainly to produce the same output order)'
   )
 
   parser.add_argument(

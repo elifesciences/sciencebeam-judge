@@ -54,10 +54,13 @@ def score_field_as_type(
   )
 
 def iter_score_document_fields(
-  expected, actual, scoring_type_by_field_map=None,
+  expected, actual, scoring_type_by_field_map=None, field_names=None,
   include_values=False, measures=None, convert_to_lower=False):
 
-  for field_name in expected.keys():
+  if field_names is None:
+    field_names = sorted(expected.keys())
+
+  for field_name in field_names:
     scoring_type_name = get_field_scoring_type_name(scoring_type_by_field_map, field_name)
     scores_by_scoring_method = score_field_as_type(
       expected[field_name],
