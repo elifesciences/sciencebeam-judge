@@ -28,7 +28,16 @@ def fn_generic_concat_children(_, nodes, *expressions):
   ]
 
 
+def fn_generic_text_content(_, nodes):
+  LOGGER.debug('fn_generic_text_content, nodes: %s', nodes)
+  return [
+    get_text_content(node).strip()
+    for node in nodes
+  ]
+
+
 def register_functions(ns=None):
   if ns is None:
     ns = etree.FunctionNamespace(None)
   ns['generic-concat-children'] = fn_generic_concat_children
+  ns['generic-text-content'] = fn_generic_text_content
