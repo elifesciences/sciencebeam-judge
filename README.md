@@ -44,7 +44,8 @@ For example to evaluate the provide `example-data` for _cermine_ and _grobid-tei
   --target-file-list ./example-data/pmc-sample-1943-cc-by-subset/file-list.tsv \
   --target-file-column=xml_url \
   --prediction-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/file-list-cermine.lst \
-  --output-path ./example-data/pmc-sample-1943-cc-by-subset-results/evaluation-results/cermine
+  --output-path ./example-data/pmc-sample-1943-cc-by-subset-results/evaluation-results/cermine \
+  --sequential
 ```
 
 ```bash
@@ -52,8 +53,11 @@ For example to evaluate the provide `example-data` for _cermine_ and _grobid-tei
   --target-file-list ./example-data/pmc-sample-1943-cc-by-subset/file-list.tsv \
   --target-file-column=xml_url \
   --prediction-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/file-list-grobid-tei.lst \
-  --output-path ./example-data/pmc-sample-1943-cc-by-subset-results/evaluation-results/grobid-tei
+  --output-path ./example-data/pmc-sample-1943-cc-by-subset-results/evaluation-results/grobid-tei \
+  --sequential
 ```
+
+(The _--sequential_ flag is added to produce output in the same order)
 
 Or running it in the cloud with a single worker:
 

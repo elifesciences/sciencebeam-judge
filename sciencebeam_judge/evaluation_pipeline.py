@@ -323,10 +323,13 @@ def configure_pipeline(p, opt):
     else MapOrLog(evaluate_file_pairs_fn)
   )
 
+  p_file_pairs = p | beam.Create(file_pairs)
+
+  if not opt.sequential:
+    p_file_pairs |= "PreventFusion" >> PreventFusion()
+
   evaluation_results = (
-    p |
-    beam.Create(file_pairs) |
-    "PreventFusion" >> PreventFusion() |
+    p_file_pairs |
     "ReadFilePairs" >> TransformAndCount(
       MapOrLog(
         ReadFilePairs,
@@ -482,6 +485,11 @@ def add_main_args(parser):
   skip_errors_group.add_argument(
     '--no-skip-errors', dest='skip_errors', action='store_false',
     help='fail on evaluation error'
+  )
+
+  parser.add_argument(
+    '--sequential', action='store_true', default=False,
+    help='process output sequentially (mainly to produce the same output order)'
   )
 
   parser.add_argument(
