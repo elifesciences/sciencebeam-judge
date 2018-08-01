@@ -87,8 +87,8 @@ DEFAULT_AFFILIATION_FIELDS = [
 ]
 
 DEFAULT_REFERENCE_FIELDS = [
-  'first_references', 'first_reference_title',
-  'references', 'reference_title', 'reference_year',
+  'first_reference_fields', 'first_reference_title',
+  'reference_fields', 'reference_title', 'reference_year',
   'reference_source', 'reference_volume', 'reference_fpage', 'reference_lpage'
 ]
 
