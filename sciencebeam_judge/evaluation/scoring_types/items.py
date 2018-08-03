@@ -73,6 +73,8 @@ def _score_items_to(haystack, needles, get_matched_characters_fn):
     '_score_items_to: haystack=%s, needles=%s',
     haystack, needles
   )
+  haystack = [s for s in haystack if s]
+  needles = [s for s in needles if s]
   if not haystack and not needles:
     return 1.0
   if not haystack or not needles:
