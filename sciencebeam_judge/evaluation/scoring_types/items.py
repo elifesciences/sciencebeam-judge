@@ -39,6 +39,8 @@ def normalize_items_list(items_list, convert_to_lower=False):
 
 
 def _get_exact_matched_characters(haystack_str, needles):
+  if not haystack_str:
+    return []
   haystack_matched = [False] * len(haystack_str)
   for needle in needles:
     i = haystack_str.find(needle)
@@ -48,6 +50,8 @@ def _get_exact_matched_characters(haystack_str, needles):
 
 
 def _get_fuzzy_matched_characters(haystack_str, needles, threshold):
+  if not haystack_str:
+    return []
   haystack_matched = [False] * len(haystack_str)
   for needle in needles:
     if not needle:
@@ -69,6 +73,10 @@ def _score_items_to(haystack, needles, get_matched_characters_fn):
     '_score_items_to: haystack=%s, needles=%s',
     haystack, needles
   )
+  if not haystack and not needles:
+    return 1.0
+  if not haystack or not needles:
+    return 0.0
   haystack_str = ' '.join(haystack)
   haystack_ignore = [False] * len(haystack_str)
   i = 0
