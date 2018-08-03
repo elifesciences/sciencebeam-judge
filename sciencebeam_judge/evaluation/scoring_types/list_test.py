@@ -7,6 +7,7 @@ from abc import ABCMeta, abstractmethod
 from six import with_metaclass
 
 from ..match_scoring import MatchScoringProps
+from ..scoring_methods import ScoringMethodNames
 
 from .list import (
   ORDERED_LIST_SCORING_TYPE,
@@ -81,6 +82,7 @@ class _TestCommonListScoringType(object, with_metaclass(ABCMeta)):
     assert result['levenshtein'][MatchScoringProps.SCORE] > 0
     assert result['levenshtein'][MatchScoringProps.TRUE_POSITIVE] == 1
 
+
 class TestOrderedListScoringType(_TestCommonListScoringType):
   def score(self, *args, **kwargs):
     return ORDERED_LIST_SCORING_TYPE.score(*args, **kwargs)
@@ -89,6 +91,44 @@ class TestOrderedListScoringType(_TestCommonListScoringType):
     result = self.score(['a', 'b'], ['b', 'a'])
     LOGGING.debug('result: %s', result)
     assert result['exact']['score'] == 0
+
+  def test_should_match_multiple_items_to_single_text(self):
+    result = self.score([{
+      'items': ['ab']
+    }], [{
+      'items': ['b', 'a']
+    }])
+    LOGGING.debug('result: %s', result)
+    assert result[ScoringMethodNames.EXACT]['score'] == 1
+
+  def test_should_match_multiple_mostly_similar_items_to_single_text(self):
+    result = self.score([{
+      'items': ['%s%s' % (ALMOST_MATCHING_TEXTS[0], 'other')]
+    }], [{
+      'items': [ALMOST_MATCHING_TEXTS[1], 'other']
+    }])
+    LOGGING.debug('result: %s', result)
+    assert result[ScoringMethodNames.EXACT]['score'] == 0
+    assert result[ScoringMethodNames.LEVENSHTEIN]['score'] > 0
+
+  def test_should_convert_items_to_lower_if_enabled(self):
+    result = self.score([{
+      'items': ['a', 'B']
+    }], [{
+      'items': ['A', 'b']
+    }], convert_to_lower=True)
+    LOGGING.debug('result: %s', result)
+    assert result['exact']['score'] == 1
+
+  def test_should_not_convert_items_to_lower_if_not_enabled(self):
+    result = self.score([{
+      'items': ['a', 'B']
+    }], [{
+      'items': ['A', 'b']
+    }], convert_to_lower=False)
+    LOGGING.debug('result: %s', result)
+    assert result['exact']['score'] == 0
+
 
 class TestUnorderedListScoringType(_TestCommonListScoringType):
   def score(self, *args, **kwargs):
@@ -108,6 +148,7 @@ class TestUnorderedListScoringType(_TestCommonListScoringType):
     result = self.score(['a', 'b'], ['a', 'a', 'b'])
     LOGGING.debug('result: %s', result)
     assert result['exact']['score'] == 0
+
 
 class TestSetScoringType(_TestCommonListScoringType):
   def score(self, *args, **kwargs):

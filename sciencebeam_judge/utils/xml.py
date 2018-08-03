@@ -61,6 +61,10 @@ def get_text_content(node, exclude=None):
   return _get_text_content_and_exclude(node, exclude=exclude)
 
 
+def get_text_content_list(nodes, **kwargs):
+  return [get_text_content(node, **kwargs) for node in nodes]
+
+
 def get_text_content_and_ignore_children(e, children_to_ignore):
   # Note: this is similar to get_text_content with exclude keyword parameter
   #   but also provides an ignore marker (should be merged)

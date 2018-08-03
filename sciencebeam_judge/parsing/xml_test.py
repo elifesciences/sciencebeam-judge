@@ -7,6 +7,7 @@ from lxml import etree
 
 from .xml import (
   parse_xml_table,
+  parse_xml_items,
   parse_xml_mapping,
   parse_xml
 )
@@ -15,6 +16,8 @@ from .xml import (
 LOGGING = logging.getLogger(__name__)
 
 SOME_TEXT = 'test 123'
+TEXT_1 = 'Text 1'
+TEXT_2 = 'Text 2'
 
 TABLE_LABEL_1 = 'Table 1'
 TABLE_CAPTION_1 = 'Table Caption 1'
@@ -121,6 +124,17 @@ class TestParseXmlTableMapping(object):
     assert result == {
       'head': [],
       'body': [[SOME_TEXT]]
+    }
+
+
+class TestParseXmlItems(object):
+  def test_should_parse_items(self):
+    xml = b'<items><item>%s</item><item>%s</item></items>' % (
+      TEXT_1, TEXT_2
+    )
+    result = parse_xml_items(etree.fromstring(xml))
+    assert result == {
+      'items': [TEXT_1, TEXT_2]
     }
 
 

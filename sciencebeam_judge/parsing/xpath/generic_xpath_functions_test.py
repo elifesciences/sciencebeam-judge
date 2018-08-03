@@ -2,6 +2,12 @@ from lxml.builder import E
 
 from .generic_xpath_functions import register_functions
 
+from sciencebeam_judge.utils.xml import get_text_content_list
+
+
+TEXT_1 = 'Text 1'
+TEXT_2 = 'Text 2'
+
 
 class TestGenericXpathFunctions(object):
   class TestConcatChildren(object):
@@ -74,6 +80,32 @@ class TestGenericXpathFunctions(object):
       assert (
         list(xml.xpath('generic-join-children(//parent, "child", ", ")'))
       ) == ['']
+
+
+  class TestAsItems(object):
+    def test_should_include_single_child(self):
+      xml = E.root(E.parent(E.child(TEXT_1)))
+      register_functions()
+      assert [
+        get_text_content_list(items.findall('item'))
+        for items in xml.xpath('generic-as-items(//parent, "*")')
+      ] == [[TEXT_1]]
+
+    def test_should_include_multiple_children(self):
+      xml = E.root(E.parent(E.child(TEXT_1), E.child(TEXT_2)))
+      register_functions()
+      assert [
+        get_text_content_list(items.findall('item'))
+        for items in xml.xpath('generic-as-items(//parent, "*")')
+      ] == [[TEXT_1, TEXT_2]]
+
+    def test_should_not_include_parent_text_if_children_are_matched(self):
+      xml = E.root(E.parent(E.child(TEXT_1), E.child(TEXT_2)))
+      register_functions()
+      assert [
+        get_text_content_list(items.findall('item'))
+        for items in xml.xpath('generic-as-items(., ".//*")')
+      ] == [[TEXT_1, TEXT_2]]
 
 
   class TestTextContent(object):

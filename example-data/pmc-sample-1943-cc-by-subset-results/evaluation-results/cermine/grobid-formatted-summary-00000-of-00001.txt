@@ -5,13 +5,14 @@
 
                  label   accuracy  precision     recall         f1
 
-               title      94.34      70.00      70.00      70.00
-            abstract      86.79      28.57      22.22      25.00
-first_author_surname      81.13       0.00       0.00       0.00
-first_author_full_name      88.68      40.00      40.00      40.00
+               title      95.00      70.00      70.00      70.00
+            abstract      88.33      28.57      22.22      25.00
+first_author_surname      83.33       0.00       0.00       0.00
+first_author_full_name      90.00      40.00      40.00      40.00
+first_reference_title     100.00     100.00     100.00     100.00
 
-          all fields      87.74      48.15      33.33      39.39      (micro average)
-               87.74      34.64      33.06      33.75 (macro average)
+          all fields      91.33      58.82      43.48      50.00      (micro average)
+               91.33      47.71      46.44      47.00 (macro average)
         
 
 
@@ -22,10 +23,11 @@ first_author_full_name      88.68      40.00      40.00      40.00
                  label   accuracy  precision     recall         f1
 
                title     100.00     100.00     100.00     100.00
-            abstract      89.36      57.14      44.44      50.00
-first_author_surname      78.72       0.00       0.00       0.00
-first_author_full_name      89.36      50.00      50.00      50.00
+            abstract      90.74      57.14      44.44      50.00
+first_author_surname      81.48       0.00       0.00       0.00
+first_author_full_name      90.74      50.00      50.00      50.00
+first_reference_title     100.00     100.00     100.00     100.00
 
-          all fields      89.36      70.37      48.72      57.58      (micro average)
-               89.36      51.79      48.61      50.00 (macro average)
+          all fields      92.59      76.47      56.52      65.00      (micro average)
+               92.59      61.43      58.89      60.00 (macro average)
         

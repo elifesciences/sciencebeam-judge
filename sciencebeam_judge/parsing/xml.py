@@ -68,12 +68,20 @@ def parse_xml_table_wrap(table_wrap_node):
   }
 
 
+def parse_xml_items(items):
+  return {
+    'items': [get_stripped_text(item) for item in items.findall('item')]
+  }
+
+
 def parse_xml_field_node(field_name, node, mapping):
   try:
     if node.tag == 'table':
       return parse_xml_table(node)
     if node.tag == 'table-wrap':
       return parse_xml_table_wrap(node)
+    if node.tag == 'items':
+      return parse_xml_items(node)
   except AttributeError:
     pass
   return get_text_content_and_ignore_children(
