@@ -1,4 +1,4 @@
-# JATS* XML Conversion Measures
+# JATS* XML Conversion Evaluation
 
 This document aims to explain how the conversion is measured.
 
@@ -201,3 +201,8 @@ Special characters and word boundaries are indirectly measured but it will be va
 ### Formulas
 
 TODO
+
+## References
+
+* [GROBID End-to-end evaluation](https://github.com/kermitt2/grobid/blob/master/doc/End-to-end-evaluation.md)
+* [GROBID Evaluation results](https://github.com/kermitt2/grobid/blob/master/doc/Benchmarking.md)
