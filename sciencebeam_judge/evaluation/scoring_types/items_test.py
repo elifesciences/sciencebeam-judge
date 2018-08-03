@@ -57,3 +57,6 @@ class TestScoreItemsTo(object):
 
   def test_should_return_one_for_empty_haystack_and_needles(self):
     assert _score_items_to([], [], lambda *_: []) == 1.0
+
+  def test_should_return_one_for_haystack_and_needles_containing_empty_string(self):
+    assert _score_items_to([''], [''], lambda *_: []) == 1.0
