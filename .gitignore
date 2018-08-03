@@ -4,6 +4,7 @@
 /.temp
 /*.egg-info
 /build
+beam-temp*
 
 .ipynb_checkpoints
 
