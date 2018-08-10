@@ -11,8 +11,11 @@ from ..scoring_methods import ScoringMethodNames
 
 from .list import (
   ORDERED_LIST_SCORING_TYPE,
+  PARTIAL_ORDERED_LIST_SCORING_TYPE,
   UNORDERED_LIST_SCORING_TYPE,
-  SET_SCORING_TYPE
+  PARTIAL_UNORDERED_LIST_SCORING_TYPE,
+  SET_SCORING_TYPE,
+  PARTIAL_SET_SCORING_TYPE
 )
 
 
@@ -49,16 +52,6 @@ class _TestCommonListScoringType(object, with_metaclass(ABCMeta)):
     LOGGING.debug('result: %s', result)
     assert result['exact']['score'] == 0
 
-  def test_should_not_match_with_missing_value(self):
-    result = self.score(['a', 'b'], ['a'])
-    LOGGING.debug('result: %s', result)
-    assert result['exact']['score'] == 0
-
-  def test_should_not_match_with_extra_value(self):
-    result = self.score(['a'], ['a', 'b'])
-    LOGGING.debug('result: %s', result)
-    assert result['exact']['score'] == 0
-
   def test_should_normalize_space(self):
     result = self.score(['a  b'], ['a b'])
     LOGGING.debug('result: %s', result)
@@ -83,7 +76,35 @@ class _TestCommonListScoringType(object, with_metaclass(ABCMeta)):
     assert result['levenshtein'][MatchScoringProps.TRUE_POSITIVE] == 1
 
 
-class TestOrderedListScoringType(_TestCommonListScoringType):
+class _TestCommonNonPartialListScoringType(_TestCommonListScoringType):
+  def test_should_not_match_with_missing_value(self):
+    result = self.score(['a', 'b'], ['a'])
+    LOGGING.debug('result: %s', result)
+    assert result['exact']['score'] == 0
+
+  def test_should_not_match_with_extra_value(self):
+    result = self.score(['a'], ['a', 'b'])
+    LOGGING.debug('result: %s', result)
+    assert result['exact']['score'] == 0
+
+
+class _TestCommonPartialListScoringType(_TestCommonListScoringType):
+  def test_should_partially_match_with_missing_value(self):
+    result = self.score(['a', 'b'], ['a'], measures=['exact'])
+    LOGGING.debug('result: %s', result)
+    assert result['exact'][MatchScoringProps.TRUE_POSITIVE] == 1
+    assert result['exact'][MatchScoringProps.FALSE_NEGATIVE] == 1
+    assert result['exact'][MatchScoringProps.SCORE] == 0.5
+
+  def test_should_partially_match_with_extra_value(self):
+    result = self.score(['a'], ['a', 'b'], measures=['exact'])
+    LOGGING.debug('result: %s', result)
+    assert result['exact'][MatchScoringProps.TRUE_POSITIVE] == 1
+    assert result['exact'][MatchScoringProps.FALSE_POSITIVE] == 1
+    assert result['exact'][MatchScoringProps.SCORE] == 0.5
+
+
+class TestOrderedListScoringType(_TestCommonNonPartialListScoringType):
   def score(self, *args, **kwargs):
     return ORDERED_LIST_SCORING_TYPE.score(*args, **kwargs)
 
@@ -130,7 +151,12 @@ class TestOrderedListScoringType(_TestCommonListScoringType):
     assert result['exact']['score'] == 0
 
 
-class TestUnorderedListScoringType(_TestCommonListScoringType):
+class TestPartialOrderedListScoringType(_TestCommonPartialListScoringType):
+  def score(self, *args, **kwargs):
+    return PARTIAL_ORDERED_LIST_SCORING_TYPE.score(*args, **kwargs)
+
+
+class TestUnorderedListScoringType(_TestCommonNonPartialListScoringType):
   def score(self, *args, **kwargs):
     return UNORDERED_LIST_SCORING_TYPE.score(*args, **kwargs)
 
@@ -150,7 +176,12 @@ class TestUnorderedListScoringType(_TestCommonListScoringType):
     assert result['exact']['score'] == 0
 
 
-class TestSetScoringType(_TestCommonListScoringType):
+class TestPartialUnorderedListScoringType(_TestCommonPartialListScoringType):
+  def score(self, *args, **kwargs):
+    return PARTIAL_UNORDERED_LIST_SCORING_TYPE.score(*args, **kwargs)
+
+
+class TestSetScoringType(_TestCommonNonPartialListScoringType):
   def score(self, *args, **kwargs):
     return SET_SCORING_TYPE.score(*args, **kwargs)
 
@@ -168,3 +199,8 @@ class TestSetScoringType(_TestCommonListScoringType):
     result = self.score(['a', 'b'], ['a', 'a', 'b'])
     LOGGING.debug('result: %s', result)
     assert result['exact']['score'] == 1
+
+
+class TestPartialSetScoringType(_TestCommonPartialListScoringType):
+  def score(self, *args, **kwargs):
+    return PARTIAL_SET_SCORING_TYPE.score(*args, **kwargs)

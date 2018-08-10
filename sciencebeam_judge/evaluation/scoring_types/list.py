@@ -3,6 +3,8 @@ from abc import abstractmethod
 
 from six import text_type
 
+from sciencebeam_gym.utils.collection import extend_dict
+
 from ..math import safe_mean
 
 from ..normalization import normalize_string
@@ -11,7 +13,8 @@ from ..scoring_methods import get_scoring_methods
 
 from ..match_scoring import (
   get_match_score_obj_for_score_fn,
-  get_match_score_obj_for_score
+  get_match_score_obj_for_score,
+  MatchScoringProps
 )
 
 from .scoring_type import ScoringType
@@ -27,13 +30,28 @@ def to_list(x):
     return {x}
   return list(x)
 
+
 def normalize_list(value, convert_to_lower=False):
   return [
     normalize_string(x, convert_to_lower=convert_to_lower) for x in value
   ]
 
+
 def list_to_str(l):
   return ', '.join(text_type(x) for x in l)
+
+
+def pad_list(l, desired_length, pad_value=None):
+  if len(l) == desired_length:
+    return l
+  assert desired_length > len(l)
+  return l + [pad_value] * (desired_length - len(l))
+
+
+def pad_longest(*lists):
+  max_len = max(len(l) for l in lists)
+  return [pad_list(l, max_len) for l in lists]
+
 
 def find_best_match_using_scoring_method(value, other_values, scoring_method):
   best_value = None
@@ -45,19 +63,37 @@ def find_best_match_using_scoring_method(value, other_values, scoring_method):
       scoring_method.scoring_fn,
       scoring_method.threshold,
       include_values=False
-    )['score']
-    if score == 1.0:
+    )
+    if score['score'] == 1.0:
       return other_value, score
-    if best_score is None or score > best_score:
+    if not best_score or score['score'] > best_score['score']: # pylint: disable=unsubscriptable-object
       best_value = other_value
       best_score = score
 
-  if best_score is not None and best_score >= scoring_method.threshold:
+  if best_score is not None and best_score['score'] >= scoring_method.threshold:
     return best_value, best_score
   return None, None
 
+
+def _sum_field(sequence, key):
+  return sum(x[key] for x in sequence)
+
+
+def _combine_partial_match_scores(scores, template_score):
+  if not scores:
+    return template_score
+  LOGGER.debug('_combine_partial_match_scores: %s', scores)
+  return extend_dict(template_score, {
+    MatchScoringProps.TRUE_POSITIVE: _sum_field(scores, MatchScoringProps.TRUE_POSITIVE),
+    MatchScoringProps.FALSE_POSITIVE: _sum_field(scores, MatchScoringProps.FALSE_POSITIVE),
+    MatchScoringProps.FALSE_NEGATIVE: _sum_field(scores, MatchScoringProps.FALSE_NEGATIVE),
+    MatchScoringProps.TRUE_NEGATIVE: _sum_field(scores, MatchScoringProps.TRUE_NEGATIVE)
+  })
+
+
 def score_value_as_list_using_scoring_method(
-  expected_list, actual_list, scoring_method, include_values=False):
+  expected_list, actual_list, scoring_method,
+  include_values=False, partial=False):
 
   expected_str = list_to_str(expected_list)
   actual_str = list_to_str(actual_list)
@@ -66,6 +102,9 @@ def score_value_as_list_using_scoring_method(
     threshold=scoring_method.threshold, include_values=include_values
   )
 
+  if partial:
+    expected_list, actual_list = pad_longest(expected_list, actual_list)
+
   if not expected_list and not actual_list:
     return to_match_score(1.0)
   if len(expected_list) != len(actual_list):
@@ -73,22 +112,27 @@ def score_value_as_list_using_scoring_method(
   scores = []
   for expected_item, actual_item in zip(expected_list, actual_list):
     score = get_match_score_obj_for_score_fn(
-      expected_item,
-      actual_item,
+      expected_item or '',
+      actual_item or '',
       scoring_method.scoring_fn,
       scoring_method.threshold,
       include_values=False
-    )['score']
+    )
 
-    if score < scoring_method.threshold:
+    if score['score'] < scoring_method.threshold and not partial:
       return to_match_score(0.0)
 
     scores.append(score)
 
-  return to_match_score(safe_mean(scores))
+  result_score = to_match_score(safe_mean([score['score'] for score in scores]))
+  if partial:
+    result_score = _combine_partial_match_scores(scores, result_score)
+  return result_score
+
 
 def score_value_as_unordered_list_using_scoring_method(
-  expected_list, actual_list, scoring_method, include_values=False):
+  expected_list, actual_list, scoring_method,
+  include_values=False, partial=False):
 
   expected_str = list_to_str(expected_list)
   actual_str = list_to_str(actual_list)
@@ -101,7 +145,7 @@ def score_value_as_unordered_list_using_scoring_method(
   if not expected_list and not actual_list:
     LOGGER.debug('empty lists (expected and actual), 1.0 score')
     return to_match_score(1.0)
-  if len(expected_list) != len(actual_list):
+  if len(expected_list) != len(actual_list) and not partial:
     LOGGER.debug(
       'number of items mismatch (expected=%d, actual=%d), 0.0 score',
       len(expected_list), len(actual_list)
@@ -114,7 +158,7 @@ def score_value_as_unordered_list_using_scoring_method(
     if best_value is not None:
       LOGGER.debug(
         'found match (%s), adding to list, score=%.3f, expected_item=%s, matching_item=%s',
-        scoring_method, best_score, expected_item, best_value
+        scoring_method, best_score['score'], expected_item, best_value
       )
       remaining_list.remove(best_value)
       scores.append(best_score)
@@ -123,16 +167,33 @@ def score_value_as_unordered_list_using_scoring_method(
         'no match found (%s), 0.0 score, expected_item=%s, remaining_list=%s',
         scoring_method, expected_item, remaining_list
       )
-      return to_match_score(0.0)
-  mean_score = safe_mean(scores)
+      if partial:
+        scores.append(get_match_score_obj_for_score(
+          expected_item, '', 0.0,
+          threshold=scoring_method.threshold, include_values=False
+        ))
+      else:
+        return to_match_score(0.0)
+  for remaining_item in remaining_list:
+    scores.append(get_match_score_obj_for_score(
+      '', remaining_item, 0.0,
+      threshold=scoring_method.threshold, include_values=False
+    ))
+  mean_score = safe_mean([score['score'] for score in scores])
   LOGGER.debug(
     'returning list score (%s), mean_score=%.3f, scores=%s',
     scoring_method, mean_score, scores
   )
-  return to_match_score(mean_score)
+  result_score = to_match_score(mean_score)
+  if partial:
+    result_score = _combine_partial_match_scores(scores, result_score)
+  return result_score
 
 
 class ListScoringType(ScoringType):
+  def __init__(self, partial=False):
+    self.partial = partial
+
   @abstractmethod
   def _score_using_scoring_method(
     self, expected_list, actual_list, scoring_method,
@@ -187,8 +248,10 @@ class OrderedListScoringType(ListScoringType):
       expected_list,
       actual_list,
       scoring_method,
-      include_values=include_values
+      include_values=include_values,
+      partial=self.partial
     )
+
 
 class UnorderedListScoringType(ListScoringType):
   def _score_using_scoring_method(
@@ -199,8 +262,10 @@ class UnorderedListScoringType(ListScoringType):
       expected_list,
       actual_list,
       scoring_method,
-      include_values=include_values
+      include_values=include_values,
+      partial=self.partial
     )
+
 
 class SetScoringType(ListScoringType):
   def _score_using_scoring_method(
@@ -211,9 +276,16 @@ class SetScoringType(ListScoringType):
       sorted(set(expected_list)),
       sorted(set(actual_list)),
       scoring_method,
-      include_values=include_values
+      include_values=include_values,
+      partial=self.partial
     )
 
+
 ORDERED_LIST_SCORING_TYPE = OrderedListScoringType()
+PARTIAL_ORDERED_LIST_SCORING_TYPE = OrderedListScoringType(partial=True)
+
 UNORDERED_LIST_SCORING_TYPE = UnorderedListScoringType()
+PARTIAL_UNORDERED_LIST_SCORING_TYPE = UnorderedListScoringType(partial=True)
+
 SET_SCORING_TYPE = SetScoringType()
+PARTIAL_SET_SCORING_TYPE = SetScoringType(partial=True)
