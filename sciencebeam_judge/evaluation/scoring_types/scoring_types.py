@@ -7,18 +7,22 @@ from .list import (
   PARTIAL_SET_SCORING_TYPE
 )
 from .string import STRING_SCORING_TYPE
-from .table import ORDERED_TABLE_SCORING_TYPE
+from .table import (
+  ORDERED_TABLE_SCORING_TYPE,
+  PARTIAL_ORDERED_TABLE_SCORING_TYPE
+)
 
 
 class ScoringTypeNames(object):
   STRING = 'string'
   LIST = 'list'
-  PARIAL_LIST = 'plist'
+  PARIAL_LIST = 'partial_list'
   ULIST = 'ulist'
-  PARIAL_ULIST = 'pulist'
+  PARIAL_ULIST = 'partial_ulist'
   SET = 'set'
-  PARIAL_SET = 'pset'
+  PARIAL_SET = 'partial_set'
   TABLE = 'table'
+  PARTIAL_TABLE = 'partial_table'
 
 DEFAULT_SCORING_TYPE_NAME = ScoringTypeNames.STRING
 
@@ -31,7 +35,8 @@ SCORING_TYPE_MAP = {
   ScoringTypeNames.PARIAL_ULIST: PARTIAL_UNORDERED_LIST_SCORING_TYPE,
   ScoringTypeNames.SET: SET_SCORING_TYPE,
   ScoringTypeNames.PARIAL_SET: PARTIAL_SET_SCORING_TYPE,
-  ScoringTypeNames.TABLE: ORDERED_TABLE_SCORING_TYPE
+  ScoringTypeNames.TABLE: ORDERED_TABLE_SCORING_TYPE,
+  ScoringTypeNames.PARTIAL_TABLE: PARTIAL_ORDERED_TABLE_SCORING_TYPE
 }
 
 def resolve_scoring_type(scoring_type_str):
