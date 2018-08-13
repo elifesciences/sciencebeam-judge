@@ -91,15 +91,15 @@ def _combine_partial_match_scores(scores, template_score):
   })
 
 
-def score_value_as_list_using_scoring_method(
-  expected_list, actual_list, scoring_method,
+def score_value_as_list_using_match_scoring_fn(
+  expected_list, actual_list,
+  expected_str, actual_str,
+  match_scoring_fn, threshold,
   include_values=False, partial=False):
 
-  expected_str = list_to_str(expected_list)
-  actual_str = list_to_str(actual_list)
   to_match_score = lambda score: get_match_score_obj_for_score(
     expected_str, actual_str, score,
-    threshold=scoring_method.threshold, include_values=include_values
+    threshold=threshold, include_values=include_values
   )
 
   if partial:
@@ -111,23 +111,43 @@ def score_value_as_list_using_scoring_method(
     return to_match_score(0.0)
   scores = []
   for expected_item, actual_item in zip(expected_list, actual_list):
-    score = get_match_score_obj_for_score_fn(
+    score = match_scoring_fn(
+      expected_item,
+      actual_item
+    )
+
+    if score['score'] < threshold and not partial:
+      return to_match_score(0.0)
+
+    scores.append(score)
+
+  LOGGER.debug('score_value_as_list_using_match_scoring_fn, scores: %s', scores)
+  result_score = to_match_score(safe_mean([score['score'] for score in scores]))
+  if partial:
+    result_score = _combine_partial_match_scores(scores, result_score)
+  return result_score
+
+
+def score_value_as_list_using_scoring_method(
+  expected_list, actual_list, scoring_method,
+  include_values=False, partial=False):
+
+  expected_str = list_to_str(expected_list)
+  actual_str = list_to_str(actual_list)
+  return score_value_as_list_using_match_scoring_fn(
+    expected_list, actual_list,
+    expected_str, actual_str,
+    lambda expected_item, actual_item: get_match_score_obj_for_score_fn(
       expected_item or '',
       actual_item or '',
       scoring_method.scoring_fn,
       scoring_method.threshold,
       include_values=False
-    )
-
-    if score['score'] < scoring_method.threshold and not partial:
-      return to_match_score(0.0)
-
-    scores.append(score)
-
-  result_score = to_match_score(safe_mean([score['score'] for score in scores]))
-  if partial:
-    result_score = _combine_partial_match_scores(scores, result_score)
-  return result_score
+    ),
+    scoring_method.threshold,
+    include_values=include_values,
+    partial=partial
+  )
 
 
 def score_value_as_unordered_list_using_scoring_method(
