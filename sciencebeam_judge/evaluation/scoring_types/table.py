@@ -41,10 +41,12 @@ def _dummy_value_or_blank(rows):
   return 'dummy' if rows else ''
 
 
-def _get_table_match_score_for_scoring_method(expected_rows, actual_rows, scoring_method):
+def _get_table_match_score_for_scoring_method(
+  expected_rows, actual_rows, scoring_method, include_values=False):
+
   to_match_score = lambda score: get_match_score_obj_for_score(
     _dummy_value_or_blank(expected_rows), _dummy_value_or_blank(actual_rows),
-    score, include_values=False
+    score, include_values=include_values
   )
   if not expected_rows and not actual_rows:
     LOGGER.debug('empty tables (expected and actual), 1.0 score')
@@ -60,7 +62,7 @@ def _get_table_match_score_for_scoring_method(expected_rows, actual_rows, scorin
       return to_match_score(0.0)
   return score_value_as_list_using_scoring_method(
     flatten(expected_rows), flatten(actual_rows), scoring_method,
-    include_values=False
+    include_values=include_values
   )
 
 
@@ -78,7 +80,8 @@ def _get_tables_match_score_for_scoring_method_ordered(
     lambda expected_item, actual_item: _get_table_match_score_for_scoring_method(
       expected_item or [],
       actual_item or [],
-      scoring_method=scoring_method
+      scoring_method=scoring_method,
+      include_values=include_values
     ),
     scoring_method.threshold,
     include_values=include_values, partial=partial

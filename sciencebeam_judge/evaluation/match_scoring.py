@@ -10,6 +10,7 @@ class MatchScoringProps(object):
   BINARY_ACTUAL = 'binary_actual'
   EXPECTED = 'expected'
   ACTUAL = 'actual'
+  SUB_SCORES = 'sub_scores'
 
 
 def get_match_score_obj_for_score(expected, actual, score, threshold=1, include_values=False):

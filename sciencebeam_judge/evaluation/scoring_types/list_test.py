@@ -103,6 +103,18 @@ class _TestCommonPartialListScoringType(_TestCommonListScoringType):
     assert result['exact'][MatchScoringProps.FALSE_POSITIVE] == 1
     assert result['exact'][MatchScoringProps.SCORE] == 0.5
 
+  def test_should_include_sub_scores(self):
+    result = self.score(['a', 'b'], ['a'], measures=['exact'])
+    LOGGING.debug('result: %s', result)
+    assert result['exact'][MatchScoringProps.SUB_SCORES][0][MatchScoringProps.SCORE] == 1.0
+    assert result['exact'][MatchScoringProps.SUB_SCORES][1][MatchScoringProps.SCORE] == 0.0
+
+  def test_should_include_expected_values_for_sub_scores(self):
+    result = self.score(['a', 'b'], ['a'], measures=['exact'], include_values=True)
+    LOGGING.debug('result: %s', result)
+    assert result['exact'][MatchScoringProps.SUB_SCORES][0][MatchScoringProps.EXPECTED] == 'a'
+    assert result['exact'][MatchScoringProps.SUB_SCORES][1][MatchScoringProps.EXPECTED] == 'b'
+
 
 class TestOrderedListScoringType(_TestCommonNonPartialListScoringType):
   def score(self, *args, **kwargs):
@@ -154,6 +166,12 @@ class TestOrderedListScoringType(_TestCommonNonPartialListScoringType):
 class TestPartialOrderedListScoringType(_TestCommonPartialListScoringType):
   def score(self, *args, **kwargs):
     return PARTIAL_ORDERED_LIST_SCORING_TYPE.score(*args, **kwargs)
+
+  def test_should_include_actual_values_for_sub_scores(self):
+    result = self.score(['a', 'b'], ['a'], measures=['exact'], include_values=True)
+    LOGGING.debug('result: %s', result)
+    assert result['exact'][MatchScoringProps.SUB_SCORES][0][MatchScoringProps.ACTUAL] == 'a'
+    assert result['exact'][MatchScoringProps.SUB_SCORES][1][MatchScoringProps.ACTUAL] == ''
 
 
 class TestUnorderedListScoringType(_TestCommonNonPartialListScoringType):

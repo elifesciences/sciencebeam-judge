@@ -53,7 +53,7 @@ def pad_longest(*lists):
   return [pad_list(l, max_len) for l in lists]
 
 
-def find_best_match_using_scoring_method(value, other_values, scoring_method):
+def find_best_match_using_scoring_method(value, other_values, scoring_method, include_values=False):
   best_value = None
   best_score = None
   for other_value in other_values:
@@ -62,7 +62,7 @@ def find_best_match_using_scoring_method(value, other_values, scoring_method):
       other_value,
       scoring_method.scoring_fn,
       scoring_method.threshold,
-      include_values=False
+      include_values=include_values
     )
     if score['score'] == 1.0:
       return other_value, score
@@ -87,7 +87,8 @@ def _combine_partial_match_scores(scores, template_score):
     MatchScoringProps.TRUE_POSITIVE: _sum_field(scores, MatchScoringProps.TRUE_POSITIVE),
     MatchScoringProps.FALSE_POSITIVE: _sum_field(scores, MatchScoringProps.FALSE_POSITIVE),
     MatchScoringProps.FALSE_NEGATIVE: _sum_field(scores, MatchScoringProps.FALSE_NEGATIVE),
-    MatchScoringProps.TRUE_NEGATIVE: _sum_field(scores, MatchScoringProps.TRUE_NEGATIVE)
+    MatchScoringProps.TRUE_NEGATIVE: _sum_field(scores, MatchScoringProps.TRUE_NEGATIVE),
+    MatchScoringProps.SUB_SCORES: scores
   })
 
 
@@ -142,7 +143,7 @@ def score_value_as_list_using_scoring_method(
       actual_item or '',
       scoring_method.scoring_fn,
       scoring_method.threshold,
-      include_values=False
+      include_values=include_values
     ),
     scoring_method.threshold,
     include_values=include_values,
@@ -173,7 +174,8 @@ def score_value_as_unordered_list_using_scoring_method(
     return to_match_score(0.0)
   for expected_item in expected_list:
     best_value, best_score = find_best_match_using_scoring_method(
-      expected_item, remaining_list, scoring_method
+      expected_item, remaining_list, scoring_method,
+      include_values=include_values
     )
     if best_value is not None:
       LOGGER.debug(
@@ -190,14 +192,14 @@ def score_value_as_unordered_list_using_scoring_method(
       if partial:
         scores.append(get_match_score_obj_for_score(
           expected_item, '', 0.0,
-          threshold=scoring_method.threshold, include_values=False
+          threshold=scoring_method.threshold, include_values=include_values
         ))
       else:
         return to_match_score(0.0)
   for remaining_item in remaining_list:
     scores.append(get_match_score_obj_for_score(
       '', remaining_item, 0.0,
-      threshold=scoring_method.threshold, include_values=False
+      threshold=scoring_method.threshold, include_values=include_values
     ))
   mean_score = safe_mean([score['score'] for score in scores])
   LOGGER.debug(
