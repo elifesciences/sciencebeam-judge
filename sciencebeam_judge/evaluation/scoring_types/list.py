@@ -80,8 +80,6 @@ def _sum_field(sequence, key):
 
 
 def _combine_partial_match_scores(scores, template_score):
-  if not scores:
-    return template_score
   LOGGER.debug('_combine_partial_match_scores: %s', scores)
   return extend_dict(template_score, {
     MatchScoringProps.TRUE_POSITIVE: _sum_field(scores, MatchScoringProps.TRUE_POSITIVE),
@@ -105,11 +103,16 @@ def score_value_as_list_using_match_scoring_fn(
 
   if partial:
     expected_list, actual_list = pad_longest(expected_list, actual_list)
-
-  if not expected_list and not actual_list:
-    return to_match_score(1.0)
-  if len(expected_list) != len(actual_list):
-    return to_match_score(0.0)
+  else:
+    if not expected_list and not actual_list:
+      LOGGER.debug('empty lists (expected and actual), 1.0 score')
+      return to_match_score(1.0)
+    if len(expected_list) != len(actual_list):
+      LOGGER.debug(
+        'number of items mismatch (expected=%d, actual=%d), 0.0 score',
+        len(expected_list), len(actual_list)
+      )
+      return to_match_score(0.0)
   scores = []
   for expected_item, actual_item in zip(expected_list, actual_list):
     score = match_scoring_fn(
@@ -122,8 +125,11 @@ def score_value_as_list_using_match_scoring_fn(
 
     scores.append(score)
 
-  LOGGER.debug('score_value_as_list_using_match_scoring_fn, scores: %s', scores)
-  result_score = to_match_score(safe_mean([score['score'] for score in scores]))
+  LOGGER.debug(
+    'score_value_as_list_using_match_scoring_fn, partial=%s, scores=%s', partial, scores
+  )
+  mean_score = safe_mean([score['score'] for score in scores]) if scores else 1.0
+  result_score = to_match_score(mean_score)
   if partial:
     result_score = _combine_partial_match_scores(scores, result_score)
   return result_score
@@ -163,15 +169,16 @@ def score_value_as_unordered_list_using_scoring_method(
     threshold=scoring_method.threshold, include_values=include_values
   )
   scores = []
-  if not expected_list and not actual_list:
-    LOGGER.debug('empty lists (expected and actual), 1.0 score')
-    return to_match_score(1.0)
-  if len(expected_list) != len(actual_list) and not partial:
-    LOGGER.debug(
-      'number of items mismatch (expected=%d, actual=%d), 0.0 score',
-      len(expected_list), len(actual_list)
-    )
-    return to_match_score(0.0)
+  if not partial:
+    if not expected_list and not actual_list:
+      LOGGER.debug('empty lists (expected and actual), 1.0 score')
+      return to_match_score(1.0)
+    if len(expected_list) != len(actual_list):
+      LOGGER.debug(
+        'number of items mismatch (expected=%d, actual=%d), 0.0 score',
+        len(expected_list), len(actual_list)
+      )
+      return to_match_score(0.0)
   for expected_item in expected_list:
     best_value, best_score = find_best_match_using_scoring_method(
       expected_item, remaining_list, scoring_method,
@@ -201,7 +208,7 @@ def score_value_as_unordered_list_using_scoring_method(
       '', remaining_item, 0.0,
       threshold=scoring_method.threshold, include_values=include_values
     ))
-  mean_score = safe_mean([score['score'] for score in scores])
+  mean_score = safe_mean([score['score'] for score in scores]) if scores else 1.0
   LOGGER.debug(
     'returning list score (%s), mean_score=%.3f, scores=%s',
     scoring_method, mean_score, scores

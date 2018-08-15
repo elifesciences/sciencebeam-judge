@@ -115,6 +115,19 @@ class _TestCommonPartialListScoringType(_TestCommonListScoringType):
     assert result['exact'][MatchScoringProps.SUB_SCORES][0][MatchScoringProps.EXPECTED] == 'a'
     assert result['exact'][MatchScoringProps.SUB_SCORES][1][MatchScoringProps.EXPECTED] == 'b'
 
+  def test_should_include_sub_scores_for_empty_list(self):
+    result = self.score([], [], measures=['exact'])
+    LOGGING.debug('result: %s', result)
+    assert result['exact'][MatchScoringProps.SUB_SCORES] == []
+
+  def test_should_include_zero_tp_fp_fn_tn_for_empty_list(self):
+    result = self.score([], [], measures=['exact'])
+    LOGGING.debug('result: %s', result)
+    assert result['exact'][MatchScoringProps.TRUE_POSITIVE] == 0
+    assert result['exact'][MatchScoringProps.FALSE_POSITIVE] == 0
+    assert result['exact'][MatchScoringProps.FALSE_NEGATIVE] == 0
+    assert result['exact'][MatchScoringProps.TRUE_NEGATIVE] == 0
+
 
 class TestOrderedListScoringType(_TestCommonNonPartialListScoringType):
   def score(self, *args, **kwargs):
