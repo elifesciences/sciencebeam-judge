@@ -253,14 +253,14 @@ def flatten_evaluation_results(evaluation_results, field_names=None):
   results = evaluation_results[DataProps.EVALUTATION_RESULTS]
   flat_result = []
   for document_score in results:
-    get_logger().info('document_score: %s', document_score)
+    get_logger().debug('document_score: %s', document_score)
     field_name = document_score[DocumentScoringProps.FIELD_NAME]
     if field_name not in field_names:
       continue
     document_match_score = document_score[DocumentScoringProps.MATCH_SCORE]
     match_scores = document_match_score.get(MatchScoringProps.SUB_SCORES, [document_match_score])
     for match_score in match_scores:
-      get_logger().info('match_score: %s', match_score)
+      get_logger().debug('match_score: %s', match_score)
       flat_result.append({
         C.PREDICTION_FILE: os.path.basename(prediction_file),
         C.TARGET_FILE: os.path.basename(target_file),
