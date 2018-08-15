@@ -211,6 +211,25 @@ class TestPartialUnorderedListScoringType(_TestCommonPartialListScoringType):
   def score(self, *args, **kwargs):
     return PARTIAL_UNORDERED_LIST_SCORING_TYPE.score(*args, **kwargs)
 
+  def test_should_count_mismatch_only_once(self):
+    result = self.score(['a', 'b'], ['a', 'c'])
+    LOGGING.debug('result: %s', result)
+    assert len(result['exact'][MatchScoringProps.SUB_SCORES]) == 2
+    assert result['exact'][MatchScoringProps.SCORE] == 0.5
+
+  def test_should_pair_unmatch_with_closest_match(self):
+    result = self.score(
+      ['a', 'b1', 'c1'], ['a', 'c2', 'b2'],
+      measures=[ScoringMethodNames.LEVENSHTEIN], include_values=True
+    )
+    LOGGING.debug('result: %s', result)
+    sub_scores = result[ScoringMethodNames.LEVENSHTEIN][MatchScoringProps.SUB_SCORES]
+    assert len(sub_scores) == 3
+    assert {
+      (score[MatchScoringProps.EXPECTED], score[MatchScoringProps.ACTUAL])
+      for score in sub_scores
+    } == {('a', 'a'), ('b1', 'b2'), ('c1', 'c2')}
+
 
 class TestSetScoringType(_TestCommonNonPartialListScoringType):
   def score(self, *args, **kwargs):

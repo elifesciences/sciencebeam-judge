@@ -53,7 +53,9 @@ def pad_longest(*lists):
   return [pad_list(l, max_len) for l in lists]
 
 
-def find_best_match_using_scoring_method(value, other_values, scoring_method, include_values=False):
+def find_best_match_using_scoring_method(
+  value, other_values, scoring_method, include_values=False, threshold=0.0):
+
   best_value = None
   best_score = None
   for other_value in other_values:
@@ -61,7 +63,7 @@ def find_best_match_using_scoring_method(value, other_values, scoring_method, in
       value,
       other_value,
       scoring_method.scoring_fn,
-      scoring_method.threshold,
+      threshold,
       include_values=include_values
     )
     if score['score'] == 1.0:
@@ -70,7 +72,7 @@ def find_best_match_using_scoring_method(value, other_values, scoring_method, in
       best_value = other_value
       best_score = score
 
-  if best_score is not None and best_score['score'] >= scoring_method.threshold:
+  if best_score is not None and best_score['score'] >= threshold:
     return best_value, best_score
   return None, None
 
@@ -168,7 +170,7 @@ def score_value_as_unordered_list_using_scoring_method(
     expected_str, actual_str, score,
     threshold=scoring_method.threshold, include_values=include_values
   )
-  scores = []
+
   if not partial:
     if not expected_list and not actual_list:
       LOGGER.debug('empty lists (expected and actual), 1.0 score')
@@ -179,10 +181,13 @@ def score_value_as_unordered_list_using_scoring_method(
         len(expected_list), len(actual_list)
       )
       return to_match_score(0.0)
+
+  scores = []
+  unmatched_items = []
   for expected_item in expected_list:
     best_value, best_score = find_best_match_using_scoring_method(
       expected_item, remaining_list, scoring_method,
-      include_values=include_values
+      include_values=include_values, threshold=scoring_method.threshold
     )
     if best_value is not None:
       LOGGER.debug(
@@ -197,17 +202,39 @@ def score_value_as_unordered_list_using_scoring_method(
         scoring_method, expected_item, remaining_list
       )
       if partial:
-        scores.append(get_match_score_obj_for_score(
-          expected_item, '', 0.0,
-          threshold=scoring_method.threshold, include_values=include_values
-        ))
+        unmatched_items.append(expected_item)
       else:
         return to_match_score(0.0)
+
+  for expected_item in unmatched_items[:len(remaining_list)]:
+    best_value, _ = find_best_match_using_scoring_method(
+      expected_item, remaining_list, scoring_method,
+      include_values=include_values
+    )
+    LOGGER.debug(
+      'unmatched item, best match (%s), pair with expected, expected_item=%s, matching_item=%s',
+      scoring_method, expected_item, best_value
+    )
+    if best_value is not None:
+      scores.append(get_match_score_obj_for_score(
+        expected_item, best_value, 0.0,
+        threshold=scoring_method.threshold, include_values=include_values
+      ))
+      unmatched_items.remove(expected_item)
+      remaining_list.remove(best_value)
+
+  for expected_item in unmatched_items:
+    scores.append(get_match_score_obj_for_score(
+      expected_item, '', 0.0,
+      threshold=scoring_method.threshold, include_values=include_values
+    ))
+
   for remaining_item in remaining_list:
     scores.append(get_match_score_obj_for_score(
       '', remaining_item, 0.0,
       threshold=scoring_method.threshold, include_values=include_values
     ))
+
   mean_score = safe_mean([score['score'] for score in scores]) if scores else 1.0
   LOGGER.debug(
     'returning list score (%s), mean_score=%.3f, scores=%s',
