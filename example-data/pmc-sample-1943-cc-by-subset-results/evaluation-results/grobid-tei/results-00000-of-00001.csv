@@ -5,48 +5,28 @@ aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,abstract,exact,string,0,0,1,0,"Bac
 aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,abstract,levenshtein,string,0,0,1,0,"Background Hypophosphatemia occurs in up to 80% of the patients during continuous renal replacement therapy (CRRT). Phosphate supplementation is time-consuming and the phosphate level might be dangerously low before normophosphatemia is re-established. This study evaluated the possibility to prevent hypophosphatemia during CRRT treatment by using a new commercially available phosphate-containing dialysis fluid. Methods Forty-two heterogeneous intensive care unit patients, admitted between January 2007 and July 2008, undergoing hemodiafiltration, were treated with a new Gambro dialysis solution with 1.2 mM phosphate (Phoxilium) or with standard medical treatment (Hemosol B0). The patients were divided into three groups: group 1 (n=14) receiving standard medical treatment and intravenous phosphate supplementation as required, group 2 (n=14) receiving the phosphate solution as dialysate solution and Hemosol B0 as replacement solution and group 3 (n=14) receiving the phosphate-containing solution as both dialysate and replacement solutions. Results Standard medical treatment resulted in hypophosphatemia in 11 of 14 of the patients (group 1) compared with five of 14 in the patients receiving phosphate solution as the dialysate solution and Hemosol B0 as the replacement solution (group 2). Patients treated with the phosphate-containing dialysis solution (group 3) experienced stable serum phosphate levels throughout the study. Potassium, ionized calcium, magnesium, pH, pCO2 and bicarbonate remained unchanged throughout the study. Conclusion The new phosphate-containing replacement and dialysis solution reduces the variability of serum phosphate levels during CRRT and eliminates the incidence of hypophosphatemia.",
 aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,keywords,exact,set,0,0,0,1,,
 aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,keywords,levenshtein,set,0,0,0,1,,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,0,1,0,BROMAN,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,0,1,0,CARLSSON,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,0,1,0,FRIBERG,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,0,1,0,GODALY,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,0,1,0,WIESLANDER,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,1,0,0,,Broman
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,1,0,0,,Carlsson
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,1,0,0,,Friberg
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,1,0,0,,Godaly
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,1,0,0,,Wieslander
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,0,1,0,BROMAN,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,0,1,0,CARLSSON,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,0,1,0,FRIBERG,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,0,1,0,GODALY,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,0,1,0,WIESLANDER,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Broman
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Carlsson
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Friberg
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Godaly
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Wieslander
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,1,0,0,BROMAN,Broman
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,1,0,0,CARLSSON,Carlsson
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,1,0,0,FRIBERG,Friberg
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,1,0,0,GODALY,Godaly
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,exact,partial_set,0,1,0,0,WIESLANDER,Wieslander
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,BROMAN,Broman
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,CARLSSON,Carlsson
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,FRIBERG,Friberg
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,GODALY,Godaly
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,WIESLANDER,Wieslander
 aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,first_author_surname,exact,string,0,1,0,0,BROMAN,Broman
 aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,first_author_surname,levenshtein,string,0,1,0,0,BROMAN,Broman
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,0,1,0,A WIESLANDER,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,0,1,0,G GODALY,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,0,1,0,H FRIBERG,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,0,1,0,M BROMAN,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,0,1,0,O CARLSSON,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,1,0,0,,A Wieslander
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,1,0,0,,G Godaly
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,1,0,0,,H Friberg
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,1,0,0,,M Broman
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,1,0,0,,O Carlsson
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,0,1,0,A WIESLANDER,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,0,1,0,G GODALY,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,0,1,0,H FRIBERG,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,0,1,0,M BROMAN,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,0,1,0,O CARLSSON,
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,A Wieslander
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,G Godaly
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,H Friberg
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,M Broman
-aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,O Carlsson
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,1,0,0,A WIESLANDER,A Wieslander
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,1,0,0,G GODALY,G Godaly
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,1,0,0,H FRIBERG,H Friberg
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,1,0,0,M BROMAN,M Broman
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,exact,partial_set,0,1,0,0,O CARLSSON,O Carlsson
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,A WIESLANDER,A Wieslander
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,G GODALY,G Godaly
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,H FRIBERG,H Friberg
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,M BROMAN,M Broman
+aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,O CARLSSON,O Carlsson
 aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,first_author_full_name,exact,string,0,1,0,0,M BROMAN,M Broman
 aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,first_author_full_name,levenshtein,string,0,1,0,0,M BROMAN,M Broman
 aas0055-0039.grobid-tei.xml,aas0055-0039.nxml,affiliation_strings,exact,partial_set,1,0,0,0,"Department of Anaesthesiology and Intensive Care, Lund University Hospital, Lund, Sweden","Department of Anaesthesiology and Intensive Care, Lund University Hospital, Lund, Sweden"
@@ -647,25 +627,20 @@ d-67-00463.grobid-tei.xml,d-67-00463.nxml,author_surnames,levenshtein,partial_se
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Warne,Warne
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,first_author_surname,exact,string,1,0,0,0,Gorrec,Gorrec
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,first_author_surname,levenshtein,string,1,0,0,0,Gorrec,Gorrec
-d-67-00463.grobid-tei.xml,d-67-00463.nxml,author_full_names,exact,partial_set,0,0,1,0,Colin M. Palmer,
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,author_full_names,exact,partial_set,1,0,0,0,Fabrice Gorrec,Fabrice Gorrec
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,author_full_names,exact,partial_set,1,0,0,0,Guillaume Lebon,Guillaume Lebon
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,author_full_names,exact,partial_set,1,0,0,0,Tony Warne,Tony Warne
-d-67-00463.grobid-tei.xml,d-67-00463.nxml,author_full_names,exact,partial_set,0,1,0,0,,Colin M Palmer
+d-67-00463.grobid-tei.xml,d-67-00463.nxml,author_full_names,exact,partial_set,0,1,0,0,Colin M. Palmer,Colin M Palmer
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Colin M. Palmer,Colin M Palmer
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Fabrice Gorrec,Fabrice Gorrec
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Guillaume Lebon,Guillaume Lebon
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Tony Warne,Tony Warne
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,first_author_full_name,exact,string,1,0,0,0,Fabrice Gorrec,Fabrice Gorrec
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,first_author_full_name,levenshtein,string,1,0,0,0,Fabrice Gorrec,Fabrice Gorrec
-d-67-00463.grobid-tei.xml,d-67-00463.nxml,affiliation_strings,exact,partial_set,0,0,1,0,"MRC Laboratory of Molecular Biology, England",
-d-67-00463.grobid-tei.xml,d-67-00463.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Acta Crystallographica Section D, MRC Laboratory of Molecular Biology, Hills Road, CB2 0QH, Cambridge, England Correspondence"
-d-67-00463.grobid-tei.xml,d-67-00463.nxml,affiliation_strings,levenshtein,partial_set,0,0,1,0,"MRC Laboratory of Molecular Biology, England",
-d-67-00463.grobid-tei.xml,d-67-00463.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,"Acta Crystallographica Section D, MRC Laboratory of Molecular Biology, Hills Road, CB2 0QH, Cambridge, England Correspondence"
-d-67-00463.grobid-tei.xml,d-67-00463.nxml,affiliation_institution,exact,partial_set,0,0,1,0,MRC Laboratory of Molecular Biology,
-d-67-00463.grobid-tei.xml,d-67-00463.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Acta Crystallographica Section D, MRC Laboratory of Molecular Biology"
-d-67-00463.grobid-tei.xml,d-67-00463.nxml,affiliation_institution,levenshtein,partial_set,0,0,1,0,MRC Laboratory of Molecular Biology,
-d-67-00463.grobid-tei.xml,d-67-00463.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,"Acta Crystallographica Section D, MRC Laboratory of Molecular Biology"
+d-67-00463.grobid-tei.xml,d-67-00463.nxml,affiliation_strings,exact,partial_set,0,1,0,0,"MRC Laboratory of Molecular Biology, England","Acta Crystallographica Section D, MRC Laboratory of Molecular Biology, Hills Road, CB2 0QH, Cambridge, England Correspondence"
+d-67-00463.grobid-tei.xml,d-67-00463.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,"MRC Laboratory of Molecular Biology, England","Acta Crystallographica Section D, MRC Laboratory of Molecular Biology, Hills Road, CB2 0QH, Cambridge, England Correspondence"
+d-67-00463.grobid-tei.xml,d-67-00463.nxml,affiliation_institution,exact,partial_set,0,1,0,0,MRC Laboratory of Molecular Biology,"Acta Crystallographica Section D, MRC Laboratory of Molecular Biology"
+d-67-00463.grobid-tei.xml,d-67-00463.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,MRC Laboratory of Molecular Biology,"Acta Crystallographica Section D, MRC Laboratory of Molecular Biology"
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,section_titles,exact,partial_list,1,0,0,0,Introduction,Introduction
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,section_titles,exact,partial_list,0,1,0,0,Methods,Figure 2
 d-67-00463.grobid-tei.xml,d-67-00463.nxml,section_titles,exact,partial_list,0,1,0,0,Pi sampling,Methods
@@ -1066,16 +1041,14 @@ e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,keywords,exact,set,0,0,0,1,,
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,keywords,levenshtein,set,0,0,0,1,,
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,exact,partial_set,1,0,0,0,Afrakssou,Afrakssou
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,exact,partial_set,1,0,0,0,Capet,Capet
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,exact,partial_set,0,0,1,0,El Ammari,
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,exact,partial_set,1,0,0,0,Haoudi,Haoudi
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,exact,partial_set,1,0,0,0,Rolando,Rolando
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,exact,partial_set,0,1,0,0,,Ammari
+e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,exact,partial_set,0,1,0,0,El Ammari,Ammari
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Afrakssou,Afrakssou
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Capet,Capet
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,levenshtein,partial_set,0,0,1,0,El Ammari,
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Haoudi,Haoudi
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Rolando,Rolando
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Ammari
+e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,El Ammari,Ammari
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,first_author_surname,exact,string,1,0,0,0,Afrakssou,Afrakssou
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,first_author_surname,levenshtein,string,1,0,0,0,Afrakssou,Afrakssou
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_full_names,exact,partial_set,1,0,0,0,Amal Haoudi,Amal Haoudi
@@ -1090,24 +1063,18 @@ e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_full_names,levenshtein,partial_
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Zahra Afrakssou,Zahra Afrakssou
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,first_author_full_name,exact,string,1,0,0,0,Zahra Afrakssou,Zahra Afrakssou
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,first_author_full_name,levenshtein,string,1,0,0,0,Zahra Afrakssou,Zahra Afrakssou
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,exact,partial_set,0,0,1,0,France,
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,exact,partial_set,0,0,1,0,Morocco,
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Faculté des Sciences et Techniques, Laboratoire de Chimie Organique Appliquée, Université Sidi Mohamed Ben Abdallah, Route d'Immouzzer, BP 2202 Fès, Morocco"
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Faculté des Sciences, Acta Crystallographica Section E, Laboratoire de Chimie du Solide Appliquée, Université Mohammed V-Agdal, Avenue Ibn Battouta, BP 1014, Rabat, Morocco Correspondence"
+e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,exact,partial_set,0,1,0,0,France,"Faculté des Sciences et Techniques, Laboratoire de Chimie Organique Appliquée, Université Sidi Mohamed Ben Abdallah, Route d'Immouzzer, BP 2202 Fès, Morocco"
+e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,exact,partial_set,0,1,0,0,Morocco,"Faculté des Sciences, Acta Crystallographica Section E, Laboratoire de Chimie du Solide Appliquée, Université Mohammed V-Agdal, Avenue Ibn Battouta, BP 1014, Rabat, Morocco Correspondence"
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"USR 3290 Miniaturisation pour l'Analyse, la Synthèse et la Protéomique, Université Lille-1, 59655 Villeneuve d'Ascq Cedex, France,"
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Unité de Catalyse et de Chimie du Solide (UCCS), UMR 8181, Ecole Nationale Supérieure de Chimie de Lille, France"
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,levenshtein,partial_set,0,0,1,0,France,
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,levenshtein,partial_set,0,0,1,0,Morocco,
+e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,France,"Unité de Catalyse et de Chimie du Solide (UCCS), UMR 8181, Ecole Nationale Supérieure de Chimie de Lille, France"
+e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,Morocco,"USR 3290 Miniaturisation pour l'Analyse, la Synthèse et la Protéomique, Université Lille-1, 59655 Villeneuve d'Ascq Cedex, France,"
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,"Faculté des Sciences et Techniques, Laboratoire de Chimie Organique Appliquée, Université Sidi Mohamed Ben Abdallah, Route d'Immouzzer, BP 2202 Fès, Morocco"
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,"Faculté des Sciences, Acta Crystallographica Section E, Laboratoire de Chimie du Solide Appliquée, Université Mohammed V-Agdal, Avenue Ibn Battouta, BP 1014, Rabat, Morocco Correspondence"
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,"USR 3290 Miniaturisation pour l'Analyse, la Synthèse et la Protéomique, Université Lille-1, 59655 Villeneuve d'Ascq Cedex, France,"
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,"Unité de Catalyse et de Chimie du Solide (UCCS), UMR 8181, Ecole Nationale Supérieure de Chimie de Lille, France"
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_institution,exact,partial_set,0,0,0,1,,
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Faculté des Sciences et Techniques, Laboratoire de Chimie Organique Appliquée, Université Sidi Mohamed Ben Abdallah"
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Faculté des Sciences, Acta Crystallographica Section E, Laboratoire de Chimie du Solide Appliquée, Université Mohammed V-Agdal"
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"USR 3290 Miniaturisation pour l'Analyse, la Synthèse et la Protéomique, Université Lille-1"
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Unité de Catalyse et de Chimie du Solide (UCCS), UMR 8181, Ecole Nationale Supérieure de Chimie de Lille"
-e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_institution,levenshtein,partial_set,0,0,0,1,,
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,"Faculté des Sciences et Techniques, Laboratoire de Chimie Organique Appliquée, Université Sidi Mohamed Ben Abdallah"
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,"Faculté des Sciences, Acta Crystallographica Section E, Laboratoire de Chimie du Solide Appliquée, Université Mohammed V-Agdal"
 e-67-o1363.grobid-tei.xml,e-67-o1363.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,"USR 3290 Miniaturisation pour l'Analyse, la Synthèse et la Protéomique, Université Lille-1"
@@ -1396,28 +1363,20 @@ f-67-00344.grobid-tei.xml,f-67-00344.nxml,author_full_names,levenshtein,partial_
 f-67-00344.grobid-tei.xml,f-67-00344.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Yoshimi Takai,Yoshimi Takai
 f-67-00344.grobid-tei.xml,f-67-00344.nxml,first_author_full_name,exact,string,1,0,0,0,Hirotaka Narita,Hirotaka Narita
 f-67-00344.grobid-tei.xml,f-67-00344.nxml,first_author_full_name,levenshtein,string,1,0,0,0,Hirotaka Narita,Hirotaka Narita
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,exact,partial_set,0,0,1,0,"Kobe University Graduate School of Medicine, Japan",
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,exact,partial_set,0,0,1,0,"Osaka University, Japan",
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,Acta Crystallographica Section F
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Division of Membrane Dynamics, Department of Physiology and Cell Biology, Kobe University Graduate School of Medicine, 650-0017, Kobe, Japan,"
+f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,exact,partial_set,0,1,0,0,"Kobe University Graduate School of Medicine, Japan",Acta Crystallographica Section F
+f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,exact,partial_set,0,1,0,0,"Osaka University, Japan","Division of Membrane Dynamics, Department of Physiology and Cell Biology, Kobe University Graduate School of Medicine, 650-0017, Kobe, Japan,"
 f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Division of Molecular and Cellular Biology, Department of Biochemistry and Molecular Biology, Kobe University Graduate School of Medicine, 650-0017, Kobe, Japan Correspondence"
 f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Institute for Protein Research, Laboratory of Supramolecular Crystallography, Research Center for Structural and Functional Proteomics, Osaka University, 565-0871, Suita, Japan"
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,levenshtein,partial_set,0,0,1,0,"Kobe University Graduate School of Medicine, Japan",
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,levenshtein,partial_set,0,0,1,0,"Osaka University, Japan",
+f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,"Kobe University Graduate School of Medicine, Japan","Division of Membrane Dynamics, Department of Physiology and Cell Biology, Kobe University Graduate School of Medicine, 650-0017, Kobe, Japan,"
+f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,"Osaka University, Japan","Institute for Protein Research, Laboratory of Supramolecular Crystallography, Research Center for Structural and Functional Proteomics, Osaka University, 565-0871, Suita, Japan"
 f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,Acta Crystallographica Section F
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,"Division of Membrane Dynamics, Department of Physiology and Cell Biology, Kobe University Graduate School of Medicine, 650-0017, Kobe, Japan,"
 f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,"Division of Molecular and Cellular Biology, Department of Biochemistry and Molecular Biology, Kobe University Graduate School of Medicine, 650-0017, Kobe, Japan Correspondence"
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,"Institute for Protein Research, Laboratory of Supramolecular Crystallography, Research Center for Structural and Functional Proteomics, Osaka University, 565-0871, Suita, Japan"
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,exact,partial_set,0,0,1,0,Kobe University Graduate School of Medicine,
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,exact,partial_set,0,0,1,0,Osaka University,
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,Acta Crystallographica Section F
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Division of Membrane Dynamics, Department of Physiology and Cell Biology, Kobe University Graduate School of Medicine"
+f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,exact,partial_set,0,1,0,0,Kobe University Graduate School of Medicine,Acta Crystallographica Section F
+f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,exact,partial_set,0,1,0,0,Osaka University,"Division of Membrane Dynamics, Department of Physiology and Cell Biology, Kobe University Graduate School of Medicine"
 f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Division of Molecular and Cellular Biology, Department of Biochemistry and Molecular Biology, Kobe University Graduate School of Medicine"
 f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Institute for Protein Research, Laboratory of Supramolecular Crystallography, Research Center for Structural and Functional Proteomics, Osaka University"
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,levenshtein,partial_set,0,0,1,0,Kobe University Graduate School of Medicine,
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,levenshtein,partial_set,0,0,1,0,Osaka University,
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,Acta Crystallographica Section F
-f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,"Division of Membrane Dynamics, Department of Physiology and Cell Biology, Kobe University Graduate School of Medicine"
+f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,Kobe University Graduate School of Medicine,"Division of Membrane Dynamics, Department of Physiology and Cell Biology, Kobe University Graduate School of Medicine"
+f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,Osaka University,Acta Crystallographica Section F
 f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,"Division of Molecular and Cellular Biology, Department of Biochemistry and Molecular Biology, Kobe University Graduate School of Medicine"
 f-67-00344.grobid-tei.xml,f-67-00344.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,"Institute for Protein Research, Laboratory of Supramolecular Crystallography, Research Center for Structural and Functional Proteomics, Osaka University"
 f-67-00344.grobid-tei.xml,f-67-00344.nxml,section_titles,exact,partial_list,1,0,0,0,Introduction,Introduction
@@ -1650,19 +1609,15 @@ sobs89-975.grobid-tei.xml,sobs89-975.nxml,abstract,exact,string,0,1,0,0,"We eval
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,abstract,levenshtein,string,1,0,0,0,"We evaluated 35 cases of a mechanical approach to abdominal wall lifting, used in office-based gasless laparoscopic sterilization under local anesthesia. Lifting of the abdominal wall, using the camera trocar as an anchoring device and complemented by suprapubic lifting by means of a towel clamp, led to passive intra-abdominal air filling, giving sufficient space to identify, anesthetize, coagulate and cut the Fallopian tubes. Only mild sedation was necessary. All women walked to and from the operating room. All had successful tubal ligation. The overall satisfaction rate was 97%. The mechanical lifting moment was not painful. With the exception of one woman with failed tubal anesthesia, all women had a low mean pain score of 2.6 (VAS 0–10). No complications occurred except one wound infection. The costs were < ¼ of those of traditional laparoscopic sterilization and office hysteroscopic sterilization. This approach is effective for office-based laparoscopic sterilization. Room air, two strings and a needle replace active gas insufflation and narcosis.","We evaluated 35 cases of a mechanical approach to abdominal wall lifting, used in office-based gasless laparoscopic sterilization under local anesthesia. Lifting of the abdominal wall, using the camera trocar as an anchoring device and complemented by suprapubic lifting by means of a towel clamp, led to passive intra-abdominal air filling, giving sufficient space to identify, anesthetize, coagulate and cut the Fallopian tubes. Only mild sedation was necessary. All women walked to and from the operating room. All had successful tubal ligation. The overall satisfaction rate was 97%. The mechanical lifting moment was not painful. With the exception of one woman with failed tubal anesthesia, all women had a low mean pain score of 2.6 (VAS 0-10). No complications occurred except one wound infection. The costs were £ 1 / 4 of those of traditional laparoscopic sterilization and office hysteroscopic sterilization. This approach is effective for office-based laparoscopic sterilization. Room air, two strings and a needle replace active gas insufflation and narcosis."
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,keywords,exact,set,1,0,0,0,"Female sterilization, endoscopic surgery, gasless, laparoscopy, local anesthesia, office, surgical techniques","Female sterilization, endoscopic surgery, gasless, laparoscopy, local anesthesia, office, surgical techniques"
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,keywords,levenshtein,set,1,0,0,0,"Female sterilization, endoscopic surgery, gasless, laparoscopy, local anesthesia, office, surgical techniques","Female sterilization, endoscopic surgery, gasless, laparoscopy, local anesthesia, office, surgical techniques"
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_surnames,exact,partial_set,0,0,1,0,Bergström,
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_surnames,exact,partial_set,0,1,0,0,,Gynecologica
+sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_surnames,exact,partial_set,0,1,0,0,Bergström,Gynecologica
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_surnames,exact,partial_set,0,1,0,0,,Obstetricia
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_surnames,levenshtein,partial_set,0,0,1,0,Bergström,
+sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,Bergström,Obstetricia
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Gynecologica
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Obstetricia
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,first_author_surname,exact,string,0,1,0,0,Bergström,Obstetricia
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,first_author_surname,levenshtein,string,0,1,0,0,Bergström,Obstetricia
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_full_names,exact,partial_set,0,0,1,0,Bo S. Bergström,
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_full_names,exact,partial_set,0,1,0,0,,Acta Obstetricia
+sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_full_names,exact,partial_set,0,1,0,0,Bo S. Bergström,Acta Obstetricia
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_full_names,exact,partial_set,0,1,0,0,,Gynecologica
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_full_names,levenshtein,partial_set,0,0,1,0,Bo S. Bergström,
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,Acta Obstetricia
+sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,Bo S. Bergström,Acta Obstetricia
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,Gynecologica
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,first_author_full_name,exact,string,0,1,0,0,Bo S. Bergström,Acta Obstetricia
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,first_author_full_name,levenshtein,string,0,1,0,0,Bo S. Bergström,Acta Obstetricia
@@ -1678,16 +1633,6 @@ sobs89-975.grobid-tei.xml,sobs89-975.nxml,section_titles,levenshtein,partial_lis
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,section_titles,levenshtein,partial_list,1,0,0,0,Material and methods,Material and methods
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,section_titles,levenshtein,partial_list,1,0,0,0,Results,Results
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,section_titles,levenshtein,partial_list,1,0,0,0,Discussion,Discussion
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,tables,exact,partial_table,0,0,0,1,,
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,tables,levenshtein,partial_table,0,0,0,1,,
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,table_strings,exact,partial_list,0,0,0,1,,
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,table_strings,levenshtein,partial_list,0,0,0,1,,
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,table_labels,exact,partial_list,0,0,0,1,,
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,table_labels,levenshtein,partial_list,0,0,0,1,,
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,table_captions,exact,partial_list,0,0,0,1,,
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,table_captions,levenshtein,partial_list,0,0,0,1,,
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,table_label_captions,exact,partial_list,0,0,0,1,,
-sobs89-975.grobid-tei.xml,sobs89-975.nxml,table_label_captions,levenshtein,partial_list,0,0,0,1,,
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,first_reference_fields,exact,list,0,1,0,0,"[u'1', u'Penfield', u'AJ', u'Twenty-two years of office and outpatient laparoscopy: current techniques and why I chose them', u'J Am Assoc Gynecol Laparosc', u'1995', u'2', u'365', u'68', u'9050587']","[u'Twenty-two years of office and outpatient laparoscopy: current techniques and why I chose them', u'A', u'J', u'Penfield', u'J Am Assoc Gynecol Laparosc', u'2', u'', u'']"
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,first_reference_fields,levenshtein,list,1,0,0,0,"[u'1', u'Penfield', u'AJ', u'Twenty-two years of office and outpatient laparoscopy: current techniques and why I chose them', u'J Am Assoc Gynecol Laparosc', u'1995', u'2', u'365', u'68', u'9050587']","[u'Twenty-two years of office and outpatient laparoscopy: current techniques and why I chose them', u'A', u'J', u'Penfield', u'J Am Assoc Gynecol Laparosc', u'2', u'', u'']"
 sobs89-975.grobid-tei.xml,sobs89-975.nxml,first_reference_title,exact,string,1,0,0,0,Twenty-two years of office and outpatient laparoscopy: current techniques and why I chose them,Twenty-two years of office and outpatient laparoscopy: current techniques and why I chose them
@@ -1857,27 +1802,24 @@ sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,exact,partial_set,1,0,
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,exact,partial_set,1,0,0,0,Gehl,Gehl
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,exact,partial_set,1,0,0,0,Humphreys,Humphreys
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,exact,partial_set,1,0,0,0,Kessell,Kessell
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,exact,partial_set,0,0,1,0,Matthiessen,
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,exact,partial_set,1,0,0,0,Muir,Muir
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,exact,partial_set,1,0,0,0,Sainsbury,Sainsbury
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,exact,partial_set,1,0,0,0,Veeramani,Veeramani
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,exact,partial_set,0,1,0,0,,Christopher
+sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,exact,partial_set,0,1,0,0,Matthiessen,Christopher
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,exact,partial_set,0,1,0,0,,Wichmann Matthiessen
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Bond,Bond
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Chalmers,Chalmers
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Gehl,Gehl
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Humphreys,Humphreys
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Kessell,Kessell
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,levenshtein,partial_set,0,0,1,0,Matthiessen,
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Muir,Muir
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Sainsbury,Sainsbury
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Veeramani,Veeramani
+sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,Matthiessen,Wichmann Matthiessen
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Christopher
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Wichmann Matthiessen
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,first_author_surname,exact,string,0,1,0,0,Matthiessen,Gehl
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,first_author_surname,levenshtein,string,0,1,0,0,Matthiessen,Gehl
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,exact,partial_set,1,0,0,0,Alison Claire Humphreys,Alison Claire Humphreys
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,exact,partial_set,0,0,1,0,David Christopher George Sainsbury,
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,exact,partial_set,1,0,0,0,Gareth Kessell,Gareth Kessell
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,exact,partial_set,1,0,0,0,Jane Elisabeth Bond,Jane Elisabeth Bond
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,exact,partial_set,1,0,0,0,Julie Gehl,Julie Gehl
@@ -1885,10 +1827,9 @@ sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,exact,partial_set,1,
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,exact,partial_set,1,0,0,0,Richard Ling Chalmers,Richard Ling Chalmers
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,exact,partial_set,1,0,0,0,Sivakumar Veeramani,Sivakumar Veeramani
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,exact,partial_set,1,0,0,0,Tobian Muir,Tobian Muir
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,exact,partial_set,0,1,0,0,,David Christopher
+sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,exact,partial_set,0,1,0,0,David Christopher George Sainsbury,David Christopher
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,exact,partial_set,0,1,0,0,,George Sainsbury
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Alison Claire Humphreys,Alison Claire Humphreys
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,levenshtein,partial_set,0,0,1,0,David Christopher George Sainsbury,
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Gareth Kessell,Gareth Kessell
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Jane Elisabeth Bond,Jane Elisabeth Bond
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Julie Gehl,Julie Gehl
@@ -1896,32 +1837,25 @@ sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,levenshtein,partial_
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Richard Ling Chalmers,Richard Ling Chalmers
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Sivakumar Veeramani,Sivakumar Veeramani
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Tobian Muir,Tobian Muir
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,David Christopher
+sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,David Christopher George Sainsbury,David Christopher
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,George Sainsbury
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,first_author_full_name,exact,string,0,1,0,0,Louise Wichmann Matthiessen,Julie Gehl
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,first_author_full_name,levenshtein,string,0,1,0,0,Louise Wichmann Matthiessen,Julie Gehl
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,exact,partial_set,0,0,1,0,"Center for Experimental Drug and Gene Electrotransfer (C*EDGE), Department of Oncology, Copenhagen University Hospital Herlev, Denmark",
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,exact,partial_set,0,0,1,0,"Department of Anaesthesia, James Cook University Hospital, Middlesbrough, UK",
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,exact,partial_set,0,0,1,0,"Department of Oncology, James Cook University Hospital, Middlesbrough, UK",
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,exact,partial_set,1,0,0,0,"Department of Reconstructive Plastic Surgery, James Cook University Hospital, Middlesbrough, UK","Department of Reconstructive Plastic Surgery, James Cook University Hospital, Middlesbrough, UK"
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Department of Anaesthesia, James Cook University Hospital, UK"
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Department of Oncology, Center for Experimental Drug and Gene Electrotransfer (C*EDGE), Copenhagen University Hospital Herlev, Denmark"
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Department of Oncology, Copenhagen University Hospital Herlev, Herlev Ringvej 75, DK-2730, Herlev, Denmark"
+sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,exact,partial_set,0,1,0,0,"Center for Experimental Drug and Gene Electrotransfer (C*EDGE), Department of Oncology, Copenhagen University Hospital Herlev, Denmark","Department of Anaesthesia, James Cook University Hospital, UK"
+sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,exact,partial_set,0,1,0,0,"Department of Anaesthesia, James Cook University Hospital, Middlesbrough, UK","Department of Oncology, Center for Experimental Drug and Gene Electrotransfer (C*EDGE), Copenhagen University Hospital Herlev, Denmark"
+sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,exact,partial_set,0,1,0,0,"Department of Oncology, James Cook University Hospital, Middlesbrough, UK","Department of Oncology, Copenhagen University Hospital Herlev, Herlev Ringvej 75, DK-2730, Herlev, Denmark"
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Department of Oncology, James Cook University Hospital, UK"
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,levenshtein,partial_set,0,0,1,0,"Center for Experimental Drug and Gene Electrotransfer (C*EDGE), Department of Oncology, Copenhagen University Hospital Herlev, Denmark",
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,levenshtein,partial_set,1,0,0,0,"Department of Anaesthesia, James Cook University Hospital, Middlesbrough, UK","Department of Anaesthesia, James Cook University Hospital, UK"
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,levenshtein,partial_set,0,0,1,0,"Department of Oncology, James Cook University Hospital, Middlesbrough, UK",
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,levenshtein,partial_set,1,0,0,0,"Department of Reconstructive Plastic Surgery, James Cook University Hospital, Middlesbrough, UK","Department of Reconstructive Plastic Surgery, James Cook University Hospital, Middlesbrough, UK"
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,"Department of Oncology, Center for Experimental Drug and Gene Electrotransfer (C*EDGE), Copenhagen University Hospital Herlev, Denmark"
+sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,"Center for Experimental Drug and Gene Electrotransfer (C*EDGE), Department of Oncology, Copenhagen University Hospital Herlev, Denmark","Department of Oncology, Center for Experimental Drug and Gene Electrotransfer (C*EDGE), Copenhagen University Hospital Herlev, Denmark"
+sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,"Department of Oncology, James Cook University Hospital, Middlesbrough, UK","Department of Oncology, James Cook University Hospital, UK"
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,"Department of Oncology, Copenhagen University Hospital Herlev, Herlev Ringvej 75, DK-2730, Herlev, Denmark"
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,"Department of Oncology, James Cook University Hospital, UK"
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_institution,exact,partial_set,0,0,0,1,,
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Department of Anaesthesia, James Cook University Hospital"
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Department of Oncology, Center for Experimental Drug and Gene Electrotransfer (C*EDGE), Copenhagen University Hospital Herlev"
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Department of Oncology, Copenhagen University Hospital Herlev"
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Department of Oncology, James Cook University Hospital"
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Department of Reconstructive Plastic Surgery, James Cook University Hospital, Middlesbrough"
-sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_institution,levenshtein,partial_set,0,0,0,1,,
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,"Department of Anaesthesia, James Cook University Hospital"
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,"Department of Oncology, Center for Experimental Drug and Gene Electrotransfer (C*EDGE), Copenhagen University Hospital Herlev"
 sonc50-621.grobid-tei.xml,sonc50-621.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,"Department of Oncology, Copenhagen University Hospital Herlev"
@@ -2558,54 +2492,35 @@ ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,abstract,levenshte
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,keywords,exact,set,0,0,0,1,,
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,keywords,levenshtein,set,0,0,0,1,,
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_surnames,exact,partial_set,1,0,0,0,Schmitz,Schmitz
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_surnames,exact,partial_set,0,0,1,0,de Waal Malefijt,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_surnames,exact,partial_set,0,0,1,0,van Heereveld,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_surnames,exact,partial_set,0,1,0,0,,De Waal Malefijt
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_surnames,exact,partial_set,0,1,0,0,,Van Heereveld
+ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_surnames,exact,partial_set,0,1,0,0,de Waal Malefijt,De Waal Malefijt
+ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_surnames,exact,partial_set,0,1,0,0,van Heereveld,Van Heereveld
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Schmitz,Schmitz
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,de Waal Malefijt,De Waal Malefijt
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,van Heereveld,Van Heereveld
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,first_author_surname,exact,string,1,0,0,0,Schmitz,Schmitz
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,first_author_surname,levenshtein,string,1,0,0,0,Schmitz,Schmitz
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,exact,partial_set,0,0,1,0,Hedwig A E M van Heereveld,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,exact,partial_set,0,0,1,0,Maarten C de Waal Malefijt,
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,exact,partial_set,1,0,0,0,Marloes W J L Schmitz,Marloes W J L Schmitz
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,exact,partial_set,0,1,0,0,,E M Van Heereveld
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,exact,partial_set,0,1,0,0,,Hedwig A
+ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,exact,partial_set,0,1,0,0,Hedwig A E M van Heereveld,E M Van Heereveld
+ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,exact,partial_set,0,1,0,0,Maarten C de Waal Malefijt,Hedwig A
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,exact,partial_set,0,1,0,0,,Maarten C De Waal Malefijt
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,levenshtein,partial_set,0,0,1,0,Hedwig A E M van Heereveld,
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Maarten C de Waal Malefijt,Maarten C De Waal Malefijt
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Marloes W J L Schmitz,Marloes W J L Schmitz
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,E M Van Heereveld
+ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,Hedwig A E M van Heereveld,E M Van Heereveld
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,Hedwig A
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,first_author_full_name,exact,string,1,0,0,0,Marloes W J L Schmitz,Marloes W J L Schmitz
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,first_author_full_name,levenshtein,string,1,0,0,0,Marloes W J L Schmitz,Marloes W J L Schmitz
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_strings,exact,partial_set,0,0,1,0,Department of Orthopaedics,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_strings,exact,partial_set,0,0,1,0,"Department of Rheumatology, Radboud University Nijmegen Medical Centre, the Netherlands",
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,Departments of 1 Orthopaedics
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Rheumatology, Radboud University Nijmegen Medical Centre, the Netherlands"
+ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_strings,exact,partial_set,0,1,0,0,Department of Orthopaedics,Departments of 1 Orthopaedics
+ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_strings,exact,partial_set,0,1,0,0,"Department of Rheumatology, Radboud University Nijmegen Medical Centre, the Netherlands","Rheumatology, Radboud University Nijmegen Medical Centre, the Netherlands"
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_strings,levenshtein,partial_set,1,0,0,0,Department of Orthopaedics,Departments of 1 Orthopaedics
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_strings,levenshtein,partial_set,1,0,0,0,"Department of Rheumatology, Radboud University Nijmegen Medical Centre, the Netherlands","Rheumatology, Radboud University Nijmegen Medical Centre, the Netherlands"
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_institution,exact,partial_set,0,0,1,0,Department of Orthopaedics,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_institution,exact,partial_set,0,0,1,0,"Department of Rheumatology, Radboud University Nijmegen Medical Centre",
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,Departments of 1 Orthopaedics
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Rheumatology, Radboud University Nijmegen Medical Centre"
+ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_institution,exact,partial_set,0,1,0,0,Department of Orthopaedics,Departments of 1 Orthopaedics
+ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_institution,exact,partial_set,0,1,0,0,"Department of Rheumatology, Radboud University Nijmegen Medical Centre","Rheumatology, Radboud University Nijmegen Medical Centre"
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_institution,levenshtein,partial_set,1,0,0,0,Department of Orthopaedics,Departments of 1 Orthopaedics
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,affiliation_institution,levenshtein,partial_set,1,0,0,0,"Department of Rheumatology, Radboud University Nijmegen Medical Centre","Rheumatology, Radboud University Nijmegen Medical Centre"
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,section_titles,exact,partial_list,0,1,0,0,Introduction,Discussion
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,section_titles,exact,partial_list,0,0,1,0,Discussion,
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,section_titles,levenshtein,partial_list,0,1,0,0,Introduction,Discussion
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,section_titles,levenshtein,partial_list,0,0,1,0,Discussion,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,tables,exact,partial_table,0,0,0,1,,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,tables,levenshtein,partial_table,0,0,0,1,,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,table_strings,exact,partial_list,0,0,0,1,,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,table_strings,levenshtein,partial_list,0,0,0,1,,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,table_labels,exact,partial_list,0,0,0,1,,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,table_labels,levenshtein,partial_list,0,0,0,1,,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,table_captions,exact,partial_list,0,0,0,1,,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,table_captions,levenshtein,partial_list,0,0,0,1,,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,table_label_captions,exact,partial_list,0,0,0,1,,
-ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,table_label_captions,levenshtein,partial_list,0,0,0,1,,
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,first_reference_fields,exact,list,0,1,0,0,"[u'Bogdan', u'A', u'Clark', u'J', u'Manubrio-sternal joint in rheumatoid arthritis', u'Br Med J', u'1950', u'16', u'1361', u'2', u'14792027']","[u'Manubriosternal joint subluxation in rheumatoid arthritis', u'T K', u'Khong', u'P', u'J', u'Rooney', u'J Reumatol', u'9', u'', u'']"
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,first_reference_fields,levenshtein,list,0,1,0,0,"[u'Bogdan', u'A', u'Clark', u'J', u'Manubrio-sternal joint in rheumatoid arthritis', u'Br Med J', u'1950', u'16', u'1361', u'2', u'14792027']","[u'Manubriosternal joint subluxation in rheumatoid arthritis', u'T K', u'Khong', u'P', u'J', u'Rooney', u'J Reumatol', u'9', u'', u'']"
 ORT-1745-3674-81-405.grobid-tei.xml,ORT-1745-3674-81-405.nxml,first_reference_title,exact,string,0,1,0,0,Manubrio-sternal joint in rheumatoid arthritis,Manubriosternal joint subluxation in rheumatoid arthritis
@@ -2774,10 +2689,8 @@ soto131-469.grobid-tei.xml,soto131-469.nxml,affiliation_strings,exact,partial_se
 soto131-469.grobid-tei.xml,soto131-469.nxml,affiliation_strings,exact,partial_set,1,0,0,0,"Department of Otorhinolaryngology, Osaka City University Graduate School of Medicine, Osaka, Japan","Department of Otorhinolaryngology, Osaka City University Graduate School of Medicine, Osaka, Japan"
 soto131-469.grobid-tei.xml,soto131-469.nxml,affiliation_strings,levenshtein,partial_set,1,0,0,0,"Department of Otorhinolaryngology and Head & Neck Surgery, Uppsala University Hospital, Uppsala, Sweden","Department of Otorhinolaryngology and Head & Neck Surgery, Uppsala University Hospital, Uppsala, Sweden"
 soto131-469.grobid-tei.xml,soto131-469.nxml,affiliation_strings,levenshtein,partial_set,1,0,0,0,"Department of Otorhinolaryngology, Osaka City University Graduate School of Medicine, Osaka, Japan","Department of Otorhinolaryngology, Osaka City University Graduate School of Medicine, Osaka, Japan"
-soto131-469.grobid-tei.xml,soto131-469.nxml,affiliation_institution,exact,partial_set,0,0,0,1,,
 soto131-469.grobid-tei.xml,soto131-469.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Department of Otorhinolaryngology and Head & Neck Surgery, Uppsala University Hospital"
 soto131-469.grobid-tei.xml,soto131-469.nxml,affiliation_institution,exact,partial_set,0,1,0,0,,"Department of Otorhinolaryngology, Osaka City University Graduate School of Medicine"
-soto131-469.grobid-tei.xml,soto131-469.nxml,affiliation_institution,levenshtein,partial_set,0,0,0,1,,
 soto131-469.grobid-tei.xml,soto131-469.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,"Department of Otorhinolaryngology and Head & Neck Surgery, Uppsala University Hospital"
 soto131-469.grobid-tei.xml,soto131-469.nxml,affiliation_institution,levenshtein,partial_set,0,1,0,0,,"Department of Otorhinolaryngology, Osaka City University Graduate School of Medicine"
 soto131-469.grobid-tei.xml,soto131-469.nxml,section_titles,exact,partial_list,1,0,0,0,Introduction,Introduction
@@ -2948,38 +2861,31 @@ apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,abstract,exact,string,0,1,0,0,"Aim
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,abstract,levenshtein,string,0,1,0,0,"Aim To determine whether the size and shape of the placental surface predict blood pressure in childhood. Methods We studied blood pressure in 471 nine-year-old Indian children whose placental length, breadth and weight were measured in a prospective birth cohort study. Results In the daughters of short mothers (<median height), systolic blood pressure (SBP) rose as placental breadth increased (β = 0.69 mmHg/cm, p = 0.05) and as the ratio of placental surface area to birthweight increased (p = 0.0003). In the daughters of tall mothers, SBP rose as the difference between placental length and breadth increased (β = 1.40 mmHg/cm, p = 0.007), that is as the surface became more oval. Among boys, associations with placental size were only statistically significant after adjusting for current BMI and height. After adjustment, SBP rose as placental breadth, area and weight decreased (for breadth β = −0.68 mmHg/cm, p < 0.05 for all three measurements). Conclusions The size and shape of the placental surface predict childhood blood pressure. Blood pressure may be programmed by variation in the normal processes of placentation: these include implantation, expansion of the chorionic surface in mid-gestation and compensatory expansion of the chorionic surface in late gestation.","Aim: To determine whether the size and shape of the placental surface predict blood pressure in childhood. Methods: We studied blood pressure in 471 nine-year-old Indian children whose placental length, breadth and weight were measured in a prospective birth cohort study. Results: In the daughters of short mothers (<median height), systolic blood pressure (SBP) rose as placental breadth increased (b = 0.69 mmHg ⁄ cm, p = 0.05) and as the ratio of placental surface area to birthweight increased (p = 0.0003). In the daughters of tall mothers, SBP rose as the difference between placental length and breadth increased (b = 1.40 mmHg ⁄ cm, p = 0.007), that is as the surface became more oval. Among boys, associations with placental size were only statistically significant after adjusting for current BMI and height. After adjustment, SBP rose as placental breadth, area and weight decreased (for breadth b =)0.68 mmHg ⁄ cm, p < 0.05 for all three measurements)."
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,keywords,exact,set,1,0,0,0,"Birth size, Blood pressure, Indian children, Maternal height, Placental surface","Birth size, Blood pressure, Indian children, Maternal height, Placental surface"
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,keywords,levenshtein,set,1,0,0,0,"Birth size, Blood pressure, Indian children, Maternal height, Placental surface","Birth size, Blood pressure, Indian children, Maternal height, Placental surface"
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,exact,partial_set,0,0,1,0,Barker,
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,exact,partial_set,1,0,0,0,Fall,Fall
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,exact,partial_set,1,0,0,0,Hill,Hill
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,exact,partial_set,0,0,1,0,Karat,
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,exact,partial_set,1,0,0,0,Krishnaveni,Krishnaveni
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,exact,partial_set,1,0,0,0,Veena,Veena
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,exact,partial_set,1,0,0,0,Winder,Winder
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,exact,partial_set,0,1,0,0,,Correspondence
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,exact,partial_set,0,1,0,0,,Jp Barker
+apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,exact,partial_set,0,1,0,0,Barker,Correspondence
+apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,exact,partial_set,0,1,0,0,Karat,Jp Barker
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,exact,partial_set,0,1,0,0,,Ls Karat
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,levenshtein,partial_set,0,0,1,0,Barker,
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Fall,Fall
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Hill,Hill
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,levenshtein,partial_set,0,0,1,0,Karat,
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Krishnaveni,Krishnaveni
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Veena,Veena
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,levenshtein,partial_set,1,0,0,0,Winder,Winder
+apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,Barker,Jp Barker
+apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,Karat,Ls Karat
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Correspondence
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Jp Barker
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_surnames,levenshtein,partial_set,0,1,0,0,,Ls Karat
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,first_author_surname,exact,string,1,0,0,0,Winder,Winder
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,first_author_surname,levenshtein,string,1,0,0,0,Winder,Winder
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,0,0,1,0,Caroline HD Fall,
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,0,0,1,0,Chitra LS Karat,
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,0,0,1,0,David JP Barker,
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,1,0,0,0,Ghattu V Krishnaveni,Ghattu V Krishnaveni
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,1,0,0,0,Jacqueline C Hill,Jacqueline C Hill
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,1,0,0,0,Nicola R Winder,Nicola R Winder
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,1,0,0,0,Sargoor R Veena,Sargoor R Veena
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,0,1,0,0,,Caroline Hd Fall
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,0,1,0,0,,Chitra Ls Karat
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,0,1,0,0,,David Jp Barker
+apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,0,1,0,0,Caroline HD Fall,Caroline Hd Fall
+apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,0,1,0,0,Chitra LS Karat,Chitra Ls Karat
+apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,0,1,0,0,David JP Barker,David Jp Barker
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,exact,partial_set,0,1,0,0,,Nicola R Winder Correspondence
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Caroline HD Fall,Caroline Hd Fall
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Chitra LS Karat,Chitra Ls Karat
@@ -2991,10 +2897,8 @@ apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,levenshtein,part
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,Nicola R Winder Correspondence
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,first_author_full_name,exact,string,1,0,0,0,Nicola R Winder,Nicola R Winder
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,first_author_full_name,levenshtein,string,1,0,0,0,Nicola R Winder,Nicola R Winder
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,affiliation_strings,exact,partial_set,0,0,1,0,"Epidemiology Research Unit, CSI Holdsworth Memorial Hospital, Mysore 570021, India",
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,affiliation_strings,exact,partial_set,0,0,1,0,"MRC Lifecourse Epidemiology Unit, Southampton General Hospital, University of Southampton, Southampton, UK",
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,".MRC Lifecourse Epidemiology Unit, Southampton General Hospital, University of Southampton, Southampton, UK"
-apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Epidemiology Research Unit, CSI Holdsworth Memorial Hospital, 570021, Mysore, India"
+apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,affiliation_strings,exact,partial_set,0,1,0,0,"Epidemiology Research Unit, CSI Holdsworth Memorial Hospital, Mysore 570021, India",".MRC Lifecourse Epidemiology Unit, Southampton General Hospital, University of Southampton, Southampton, UK"
+apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,affiliation_strings,exact,partial_set,0,1,0,0,"MRC Lifecourse Epidemiology Unit, Southampton General Hospital, University of Southampton, Southampton, UK","Epidemiology Research Unit, CSI Holdsworth Memorial Hospital, 570021, Mysore, India"
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"MRC Lifecourse Epidemiology Unit, Southampton General Hospital, University of Southampton, Southampton. SO16 6YD, UK"
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,affiliation_strings,levenshtein,partial_set,1,0,0,0,"Epidemiology Research Unit, CSI Holdsworth Memorial Hospital, Mysore 570021, India","Epidemiology Research Unit, CSI Holdsworth Memorial Hospital, 570021, Mysore, India"
 apa0100-0653.grobid-tei.xml,apa0100-0653.nxml,affiliation_strings,levenshtein,partial_set,1,0,0,0,"MRC Lifecourse Epidemiology Unit, Southampton General Hospital, University of Southampton, Southampton, UK",".MRC Lifecourse Epidemiology Unit, Southampton General Hospital, University of Southampton, Southampton, UK"
@@ -3489,19 +3393,14 @@ apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,author_full_names,levenshtein,pa
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,author_full_names,levenshtein,partial_set,1,0,0,0,Bodil Schmidt-Nielsen,Bodil Schmidt-Nielsen
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,first_author_full_name,exact,string,1,0,0,0,Bodil Schmidt-Nielsen,Bodil Schmidt-Nielsen
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,first_author_full_name,levenshtein,string,1,0,0,0,Bodil Schmidt-Nielsen,Bodil Schmidt-Nielsen
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_strings,exact,partial_set,0,0,1,0,"Department of Physiology, University of Florida, Gainesville, FL, USA",
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_strings,exact,partial_set,0,0,1,0,"Lexington, MA, USA",
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Department of Physiology, University of Florida, Gainesville, USA"
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_strings,exact,partial_set,0,1,0,0,,"Loring Rd, Lexington, Lexington, USA, USA"
+apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_strings,exact,partial_set,0,1,0,0,"Department of Physiology, University of Florida, Gainesville, FL, USA","Department of Physiology, University of Florida, Gainesville, USA"
+apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_strings,exact,partial_set,0,1,0,0,"Lexington, MA, USA","Loring Rd, Lexington, Lexington, USA, USA"
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_strings,levenshtein,partial_set,1,0,0,0,"Department of Physiology, University of Florida, Gainesville, FL, USA","Department of Physiology, University of Florida, Gainesville, USA"
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_strings,levenshtein,partial_set,0,0,1,0,"Lexington, MA, USA",
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,,"Loring Rd, Lexington, Lexington, USA, USA"
+apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_strings,levenshtein,partial_set,0,1,0,0,"Lexington, MA, USA","Loring Rd, Lexington, Lexington, USA, USA"
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_institution,exact,partial_set,1,0,0,0,"Department of Physiology, University of Florida","Department of Physiology, University of Florida"
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_institution,exact,partial_set,0,0,1,0,Lexington,
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_institution,exact,partial_set,0,0,0,1,,
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_institution,levenshtein,partial_set,1,0,0,0,"Department of Physiology, University of Florida","Department of Physiology, University of Florida"
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_institution,levenshtein,partial_set,0,0,1,0,Lexington,
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,affiliation_institution,levenshtein,partial_set,0,0,0,1,,
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,section_titles,exact,partial_list,0,1,0,0,The peristaltic mechanism,Abstract
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,section_titles,exact,partial_list,0,1,0,0,Hypothesis on how the renal pelvic peristaltic pumping of the papilla might contribute to the concentrating mechanism,The peristaltic mechanism
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,section_titles,exact,partial_list,1,0,0,0,Conclusion,Conclusion
@@ -3510,16 +3409,6 @@ apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,section_titles,levenshtein,parti
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,section_titles,levenshtein,partial_list,0,1,0,0,Hypothesis on how the renal pelvic peristaltic pumping of the papilla might contribute to the concentrating mechanism,The peristaltic mechanism
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,section_titles,levenshtein,partial_list,1,0,0,0,Conclusion,Conclusion
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,section_titles,levenshtein,partial_list,0,1,0,0,,Conflicts of interest
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,tables,exact,partial_table,0,0,0,1,,
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,tables,levenshtein,partial_table,0,0,0,1,,
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,table_strings,exact,partial_list,0,0,0,1,,
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,table_strings,levenshtein,partial_list,0,0,0,1,,
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,table_labels,exact,partial_list,0,0,0,1,,
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,table_labels,levenshtein,partial_list,0,0,0,1,,
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,table_captions,exact,partial_list,0,0,0,1,,
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,table_captions,levenshtein,partial_list,0,0,0,1,,
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,table_label_captions,exact,partial_list,0,0,0,1,,
-apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,table_label_captions,levenshtein,partial_list,0,0,0,1,,
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,first_reference_fields,exact,list,0,1,0,0,"[u'Dantzler', u'WH', u'Unpublished remarks', u'The William H. Dantzler Symposium', u'2006', u'Tucson, AZ', u'April 6\u20137']","[u'Unpublished remarks. The William H. Dantzler Symposium', u'W', u'H', u'Dantzler', u'', u'Tucson, AZ']"
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,first_reference_fields,levenshtein,list,1,0,0,0,"[u'Dantzler', u'WH', u'Unpublished remarks', u'The William H. Dantzler Symposium', u'2006', u'Tucson, AZ', u'April 6\u20137']","[u'Unpublished remarks. The William H. Dantzler Symposium', u'W', u'H', u'Dantzler', u'', u'Tucson, AZ']"
 apha0202-0379.grobid-tei.xml,apha0202-0379.nxml,first_reference_title,exact,string,0,0,1,0,Unpublished remarks,
