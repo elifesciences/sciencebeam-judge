@@ -1,4 +1,7 @@
+from __future__ import division
+
 import numpy as np
+
 
 def mean(data):
   return sum(data) / len(data)

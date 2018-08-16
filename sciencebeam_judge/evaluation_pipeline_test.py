@@ -8,6 +8,10 @@ from sciencebeam_gym.beam_utils.testing import (
   TestPipeline
 )
 
+from sciencebeam_gym.utils.collection import (
+  extend_dict
+)
+
 import sciencebeam_judge.evaluation_pipeline as evaluation_pipeline
 from sciencebeam_judge.evaluation_pipeline import (
   flatten_evaluation_results,
@@ -136,6 +140,28 @@ class TestFlattenEvaluationResults(object):
       OutputColumns.EXPECTED: MATCH_SCORE_1[MatchScoringProps.EXPECTED],
       OutputColumns.ACTUAL: MATCH_SCORE_1[MatchScoringProps.ACTUAL]
     }]
+
+  def test_should_convert_sub_scores_as_individual_rows(self):
+    evaluation_results = {
+      DataProps.PREDICTION_FILE_URL: PREDICTION_FILE_LIST[0],
+      DataProps.TARGET_FILE_URL: TARGET_FILE_LIST[0],
+      DataProps.EVALUTATION_RESULTS: [{
+        DocumentScoringProps.FIELD_NAME: FIELD_1,
+        DocumentScoringProps.SCORING_METHOD: ScoringMethodNames.EXACT,
+        DocumentScoringProps.SCORING_TYPE: ScoringTypeNames.STRING,
+        DocumentScoringProps.MATCH_SCORE: extend_dict(MATCH_SCORE_1, {
+          MatchScoringProps.SUB_SCORES: [
+            MATCH_SCORE_1,
+            MATCH_SCORE_1
+          ]
+        })
+      }]
+    }
+    result = flatten_evaluation_results(evaluation_results, field_names=[FIELD_1])
+    assert len(result) == 2
+    assert result[0][OutputColumns.EXPECTED] == MATCH_SCORE_1[MatchScoringProps.EXPECTED]
+    assert result[1][OutputColumns.EXPECTED] == MATCH_SCORE_1[MatchScoringProps.EXPECTED]
+
 
 class TestFlattenSummaryResults(object):
   def test_should_convert_empty_evaluation_results(self):
