@@ -87,3 +87,33 @@ It is provided as a reference evaluation.
 Use the `evaluate.sh` command, which will generate the GROBID output (in addition to the CSV files).
 
 Note: it will only include scores for the _scoring type_ `string`.
+
+## Notebooks
+
+The [notebooks](./notebooks) can be run via [Jupyter](https://jupyter.org/).
+
+### Using Docker to run Jupyter
+
+Pre-requisites:
+
+- [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/)
+
+```bash
+docker-compose up --build sciencebeam-judge-jupyter
+```
+
+Open [http://localhost:8890/](http://localhost:8890/).
+
+(The port can be configured using the _SCIENCEBEAM_JUPYTER_PORT_ environment variable)
+
+### Using Local Jupyter installation
+
+Pre-requisites:
+
+- [Jupyter](https://jupyter.org/)
+
+Install the additional dependencies:
+
+```bash
+pip install -r requirements.notebook.txt
+```
