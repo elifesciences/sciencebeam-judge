@@ -61,9 +61,34 @@ def _aff_string(aff):
 def fn_tei_aff_string(_, nodes):
   return [_aff_string(node) for node in nodes]
 
+
+def _ref_fpage(ref):
+  for node in ref.xpath('.//biblScope[@unit="page"]/@from'):
+    return node
+  for node in ref.xpath('.//biblScope[@unit="page"]'):
+    return node.text or ''
+  return ''
+
+
+def fn_tei_ref_fpage(_, nodes):
+  return [_ref_fpage(node) for node in nodes]
+
+
+def _ref_lpage(ref):
+  for node in ref.xpath('.//biblScope[@unit="page"]/@to'):
+    return node
+  return _ref_fpage(ref)
+
+
+def fn_tei_ref_lpage(_, nodes):
+  return [_ref_lpage(node) for node in nodes]
+
+
 def register_functions(ns=None):
   if ns is None:
     ns = etree.FunctionNamespace(None)
   ns['tei-full-name'] = fn_tei_full_name
   ns['tei-authors'] = fn_tei_authors
   ns['tei-aff-string'] = fn_tei_aff_string
+  ns['tei-ref-fpage'] = fn_tei_ref_fpage
+  ns['tei-ref-lpage'] = fn_tei_ref_lpage
