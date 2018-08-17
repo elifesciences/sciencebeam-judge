@@ -15,4 +15,4 @@ services:
         ports:
             - "${SCIENCEBEAM_JUPYTER_PORT}:8888"
         volumes:
-            - .:/opt/sciencebeam-judge
+            - .:/home/jovyan/sciencebeam-judge
