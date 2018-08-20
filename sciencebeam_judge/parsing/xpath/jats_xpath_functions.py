@@ -79,9 +79,16 @@ def fn_jats_ref_fpage(_, nodes):
   return [_ref_fpage(node) for node in nodes]
 
 
+def _full_lpage(fpage, short_lpage):
+  if not short_lpage or len(short_lpage) >= len(fpage):
+    return short_lpage
+  return fpage[:-len(short_lpage)] + short_lpage
+
+
 def _ref_lpage(ref):
+  fpage = _ref_fpage(ref)
   for node in ref.xpath('.//lpage'):
-    return node.text or ''
+    return _full_lpage(fpage, node.text or '')
   return _ref_fpage(ref)
 
 

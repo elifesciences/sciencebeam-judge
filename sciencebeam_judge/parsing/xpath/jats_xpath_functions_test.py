@@ -185,4 +185,12 @@ class TestJatsXpathFunctions(object):
         E.fpage("123")
       )))
       register_functions()
-      assert list(xml.xpath('jats-ref-fpage(//ref)')) == ['123']
+      assert list(xml.xpath('jats-ref-lpage(//ref)')) == ['123']
+
+    def test_should_return_infer_full_lpage_if_lpage_is_shorter_than_lpage(self):
+      xml = E.article(E.ref(E('mixed-citation',
+        E.fpage("123"),
+        E.lpage("45")
+      )))
+      register_functions()
+      assert list(xml.xpath('jats-ref-lpage(//ref)')) == ['145']
