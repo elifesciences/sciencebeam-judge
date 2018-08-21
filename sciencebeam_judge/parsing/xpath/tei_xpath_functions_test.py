@@ -124,3 +124,49 @@ class TestTeiXpathFunctions(object):
       )
       register_functions()
       assert list(xml.xpath('tei-aff-string(//affiliation)')) == ['Department 1, Addr Line 1']
+
+
+  class TestRefFpage(object):
+    def test_should_return_from_attribute_if_present(self):
+      xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
+        E.biblScope({"unit": "page", "from": "123"})
+      ))))
+      register_functions()
+      assert list(xml.xpath('tei-ref-fpage(//biblStruct)')) == ['123']
+
+    def test_should_return_element_text_if_from_attribute_is_not_present(self):
+      xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
+        E.biblScope("123", unit="page")
+      ))))
+      register_functions()
+      assert list(xml.xpath('tei-ref-fpage(//biblStruct)')) == ['123']
+
+    def test_should_return_empty_string_if_from_attribute_is_not_present_and_has_no_text(self):
+      xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
+        E.biblScope(unit="page")
+      ))))
+      register_functions()
+      assert list(xml.xpath('tei-ref-fpage(//biblStruct)')) == ['']
+
+    def test_should_return_empty_string_if_there_is_no_page_element(self):
+      xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
+        E.biblScope(unit="other")
+      ))))
+      register_functions()
+      assert list(xml.xpath('tei-ref-fpage(//biblStruct)')) == ['']
+
+
+  class TestRefLpage(object):
+    def test_should_return_to_attribute_if_present(self):
+      xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
+        E.biblScope({"unit": "page", "to": "123"})
+      ))))
+      register_functions()
+      assert list(xml.xpath('tei-ref-lpage(//biblStruct)')) == ['123']
+
+    def test_should_return_fpage_if_there_is_no_to_page(self):
+      xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
+        E.biblScope("123", unit="page")
+      ))))
+      register_functions()
+      assert list(xml.xpath('tei-ref-lpage(//biblStruct)')) == ['123']

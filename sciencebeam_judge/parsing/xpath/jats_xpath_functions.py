@@ -68,9 +68,39 @@ def _aff_string(aff):
 def fn_jats_aff_string(_, nodes):
   return [_aff_string(node) for node in nodes]
 
+
+def _ref_fpage(ref):
+  for node in ref.xpath('.//fpage'):
+    return node.text or ''
+  return ''
+
+
+def fn_jats_ref_fpage(_, nodes):
+  return [_ref_fpage(node) for node in nodes]
+
+
+def _full_lpage(fpage, short_lpage):
+  if not short_lpage or len(short_lpage) >= len(fpage):
+    return short_lpage
+  return fpage[:-len(short_lpage)] + short_lpage
+
+
+def _ref_lpage(ref):
+  fpage = _ref_fpage(ref)
+  for node in ref.xpath('.//lpage'):
+    return _full_lpage(fpage, node.text or '')
+  return _ref_fpage(ref)
+
+
+def fn_jats_ref_lpage(_, nodes):
+  return [_ref_lpage(node) for node in nodes]
+
+
 def register_functions(ns=None):
   if ns is None:
     ns = etree.FunctionNamespace(None)
   ns['jats-full-name'] = fn_jats_full_name
   ns['jats-authors'] = fn_jats_authors
   ns['jats-aff-string'] = fn_jats_aff_string
+  ns['jats-ref-fpage'] = fn_jats_ref_fpage
+  ns['jats-ref-lpage'] = fn_jats_ref_lpage

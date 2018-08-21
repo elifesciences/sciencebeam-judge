@@ -70,6 +70,12 @@ Or running it in the cloud with a single worker:
   --limit=1000 --cloud --num_workers=1
 ```
 
+The examples data results may also be updated using Docker:
+
+```bash
+./update-example-data-results.sh
+```
+
 The ouput path will contain the following files:
 
 - `results-*.csv`: The detailed evaluation of every field
