@@ -2,7 +2,7 @@ from __future__ import division
 
 import logging
 
-from sciencebeam_gym.utils.collection import groupby_to_dict
+from sciencebeam_utils.utils.collection import groupby_to_dict
 
 from .scoring_methods import ScoringMethodNames
 

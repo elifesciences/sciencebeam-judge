@@ -3,12 +3,12 @@ from mock import patch, DEFAULT
 
 import pytest
 
-from sciencebeam_gym.beam_utils.testing import (
+from sciencebeam_utils.beam_utils.testing import (
   BeamTest,
   TestPipeline
 )
 
-from sciencebeam_gym.utils.collection import (
+from sciencebeam_utils.utils.collection import (
   extend_dict
 )
 

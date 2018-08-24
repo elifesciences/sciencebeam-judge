@@ -9,7 +9,9 @@ RUN virtualenv ${VENV}
 ENV PYTHONUSERBASE=${VENV} PATH=${VENV}/bin:$PATH
 
 RUN pip install tensorflow==${tensorflow_version}
-RUN pip install https://github.com/elifesciences/sciencebeam-gym/archive/develop.zip
+
+COPY requirements.prereq.txt ./
+RUN pip install -r requirements.prereq.txt
 
 COPY requirements.txt ./
 RUN pip install -r requirements.txt

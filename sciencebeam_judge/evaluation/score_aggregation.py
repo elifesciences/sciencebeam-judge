@@ -6,7 +6,7 @@ from itertools import groupby
 
 from six import iteritems
 
-from sciencebeam_gym.utils.collection import extend_dict, iter_flatten
+from sciencebeam_utils.utils.collection import extend_dict, iter_flatten
 
 from .math import safe_mean
 

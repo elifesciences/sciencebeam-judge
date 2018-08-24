@@ -2,7 +2,7 @@ import logging
 
 from lxml import etree
 
-from sciencebeam_gym.utils.xml import get_text_content
+from sciencebeam_utils.utils.xml import get_text_content
 
 LOGGER = logging.getLogger(__name__)
 
