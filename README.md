@@ -9,12 +9,18 @@ This project implements a JATS/TEI conversion [evaluation](docs/evaluation.md). 
 
 - Python 2.7 ([currently Apache Beam doesn't support Python 3](https://issues.apache.org/jira/browse/BEAM-1373))
 - [Apache Beam](https://beam.apache.org/get-started/quickstart-py/)
-- [ScienceBeam Gym](https://github.com/elifesciences/sciencebeam-gym) project installed (e.g. by running `pip install -e .` after cloning it)
+
+You can install default versions of pre-requisites (apart from Python) using:
+
+```bash
+pip install -r requirements.prereq.txt
+```
 
 ## Setup
 
 ```bash
 pip install -r requirements.txt
+pip install -r requirements.dev.txt
 ```
 
 ## Configuration
