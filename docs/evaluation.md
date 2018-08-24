@@ -1,6 +1,6 @@
 # JATS* XML Conversion Evaluation
 
-This document aims to explain how the conversion is measured.
+This document aims to explain how the conversion is measured. It is mainly targeted at JATS but can be applied to TEI as well.
 
 ## Normalisation
 
