@@ -1,7 +1,7 @@
 import json
 import logging
 
-from sciencebeam_gym.utils.collection import flatten
+from sciencebeam_utils.utils.collection import flatten
 
 from ..match_scoring import get_match_score_obj_for_score
 from ..normalization import normalize_string

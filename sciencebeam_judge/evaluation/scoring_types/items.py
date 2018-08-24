@@ -3,7 +3,7 @@ from __future__ import division
 import logging
 from functools import partial
 
-from sciencebeam_gym.alignment.align import LocalSequenceMatcher, SimpleScoring
+from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
 from ..normalization import normalize_string
 

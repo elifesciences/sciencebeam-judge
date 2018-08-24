@@ -3,7 +3,7 @@ from abc import abstractmethod
 
 from six import text_type
 
-from sciencebeam_gym.utils.collection import extend_dict
+from sciencebeam_utils.utils.collection import extend_dict
 
 from ..math import safe_mean
 

@@ -10,32 +10,32 @@ import apache_beam as beam
 from apache_beam.io.textio import WriteToText
 from apache_beam.options.pipeline_options import PipelineOptions, SetupOptions
 
-from sciencebeam_gym.utils.collection import (
+from sciencebeam_utils.utils.collection import (
   extend_dict
 )
 
-from sciencebeam_gym.beam_utils.utils import (
+from sciencebeam_utils.beam_utils.utils import (
   TransformAndLog,
   TransformAndCount,
   MapOrLog,
   PreventFusion
 )
 
-from sciencebeam_gym.beam_utils.csv import (
+from sciencebeam_utils.beam_utils.csv import (
   WriteDictCsv
 )
 
-from sciencebeam_gym.beam_utils.io import (
+from sciencebeam_utils.beam_utils.io import (
   read_all_from_path
 )
 
-from sciencebeam_gym.beam_utils.main import (
+from sciencebeam_utils.beam_utils.main import (
   add_cloud_args,
   process_cloud_args,
   process_sciencebeam_gym_dep_args
 )
 
-from sciencebeam_gym.utils.file_list import (
+from sciencebeam_utils.utils.file_list import (
   load_file_list
 )
 
