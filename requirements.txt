@@ -1,7 +1,7 @@
 editdistance==0.3.1
 future==0.16.0
 lxml==4.2.0
-sciencebeam-alignment==0.0.1
+sciencebeam-alignment==0.0.2
 sciencebeam-utils==0.0.1
 six==1.11.0
 tqdm==4.11.2
