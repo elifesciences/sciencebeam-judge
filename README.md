@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/elifesciences/sciencebeam-judge.svg?branch=develop)](https://travis-ci.org/elifesciences/sciencebeam-judge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+This project implements a JATS/TEI conversion [evaluation](docs/evaluation.md). It can be configured to also be handle other similar document types.
+
 ## Pre-requistes
 
 - Python 2.7 ([currently Apache Beam doesn't support Python 3](https://issues.apache.org/jira/browse/BEAM-1373))
