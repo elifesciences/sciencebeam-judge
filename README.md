@@ -29,6 +29,53 @@ The [xml-mapping.conf](xml-mapping.conf) configures how fields should be extract
 
 The [evaluation.conf](evaluation.conf) allows further evaluation details to be configured.
 
+## File Lists
+
+ScienceBeam Judge use file lists to avoid having to pass in file patterns and rules. File lists can be CSVs (`.csv`), TSVs (`.tsv`) or plain text list (`.lst`). Generally lists need to align, so that the target and prediction files correspond.
+
+The following tools may help creating those lists depending on your directory structure.
+
+### With source document and XML files
+
+If you used ScienceBeam for the bulk conversion, then you will likely have already created a file that pairs the source document with the target document.
+
+You can find such a pair using a command similar to the following:
+
+```bash
+python -m sciencebeam_utils.tools.find_file_pairs \
+    --data-path ./example-data/pmc-sample-1943-cc-by-subset \
+    --source-pattern *.pdf.gz \
+    --xml-pattern *.nxml.gz \
+    --out ./example-data/pmc-sample-1943-cc-by-subset/file-list-example.tsv
+```
+
+Note: in this case the above command won't find any pairs because this repository doesn't contain the source document (the PDFs).
+
+### With only XML files
+
+If you are only using ScienceBeam Judge to compare XML files you can create a file lists of the target XML first:
+
+```bash
+find ./example-data/pmc-sample-1943-cc-by-subset \
+    -name '*.nxml' -printf '%P\n' \
+    | sort \
+    > ./example-data/pmc-sample-1943-cc-by-subset/file-list-target.lst
+```
+
+To then create a file list that matches the source you could run:
+
+```bash
+python -m sciencebeam_utils.tools.get_output_files \
+    --source-base-path ./example-data/pmc-sample-1943-cc-by-subset \
+    --source-file-list file-list-target.lst \
+    --output-file-suffix=.cermine.xml \
+    --output-base-path ./example-data/pmc-sample-1943-cc-by-subset-results \
+    --output-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/file-list-cermine2.lst \
+    --use-relative-paths
+```
+
+This however requires that the filenames also match up and only differ by their suffix.
+
 ## Evaluation to CSV
 
 You need to have a file list with the _target xml_ and _prediction xml_ files (both can be in the same file but have different columns or separate files where the lines are aligned to each other). Files can optionally be gzipped with the _.gz_ file extension.
