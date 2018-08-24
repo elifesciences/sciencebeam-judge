@@ -2,6 +2,7 @@ from lxml.builder import E
 
 from .jats_xpath_functions import register_functions
 
+
 class TestJatsXpathFunctions(object):
   class TestAuthors(object):
     def test_should_return_single_author_node(self):
@@ -146,3 +147,50 @@ class TestJatsXpathFunctions(object):
       )
       register_functions()
       assert list(xml.xpath('jats-aff-string(//aff)')) == ['Affiliation 1']
+
+
+  class TestRefFpage(object):
+    def test_should_return_from_attribute_if_present(self):
+      xml = E.article(E.ref(E('mixed-citation',
+        E.fpage("123")
+      )))
+      register_functions()
+      assert list(xml.xpath('jats-ref-fpage(//ref)')) == ['123']
+
+    def test_should_return_empty_string_if_fpage_has_no_text(self):
+      xml = E.article(E.ref(E('mixed-citation',
+        E.fpage()
+      )))
+      register_functions()
+      assert list(xml.xpath('jats-ref-fpage(//ref)')) == ['']
+
+    def test_should_return_empty_string_if_there_is_no_fpage_element(self):
+      xml = E.article(E.ref(E('mixed-citation',
+        E.other()
+      )))
+      register_functions()
+      assert list(xml.xpath('jats-ref-fpage(//ref)')) == ['']
+
+
+  class TestRefLpage(object):
+    def test_should_return_lpage_element_if_present(self):
+      xml = E.article(E.ref(E('mixed-citation',
+        E.lpage("123")
+      )))
+      register_functions()
+      assert list(xml.xpath('jats-ref-lpage(//ref)')) == ['123']
+
+    def test_should_return_fpage_if_there_is_no_lpage(self):
+      xml = E.article(E.ref(E('mixed-citation',
+        E.fpage("123")
+      )))
+      register_functions()
+      assert list(xml.xpath('jats-ref-lpage(//ref)')) == ['123']
+
+    def test_should_return_infer_full_lpage_if_lpage_is_shorter_than_lpage(self):
+      xml = E.article(E.ref(E('mixed-citation',
+        E.fpage("123"),
+        E.lpage("45")
+      )))
+      register_functions()
+      assert list(xml.xpath('jats-ref-lpage(//ref)')) == ['145']

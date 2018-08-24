@@ -57,6 +57,10 @@ from sciencebeam_judge.grobid_evaluate import (
   format_summarised_document_scores_as_grobid_report
 )
 
+from .evaluation.match_scoring import (
+  MatchScoringProps
+)
+
 from .evaluation.scoring_methods import (
   ScoringMethodNames,
   ALL_SCORING_METHOD_NAMES
@@ -249,25 +253,27 @@ def flatten_evaluation_results(evaluation_results, field_names=None):
   results = evaluation_results[DataProps.EVALUTATION_RESULTS]
   flat_result = []
   for document_score in results:
-    get_logger().info('document_score: %s', document_score)
+    get_logger().debug('document_score: %s', document_score)
     field_name = document_score[DocumentScoringProps.FIELD_NAME]
     if field_name not in field_names:
       continue
-    match_score = document_score[DocumentScoringProps.MATCH_SCORE]
-    get_logger().info('match_score: %s', match_score)
-    flat_result.append({
-      C.PREDICTION_FILE: os.path.basename(prediction_file),
-      C.TARGET_FILE: os.path.basename(target_file),
-      C.FIELD_NAME: field_name,
-      C.EVALUATION_METHOD: document_score[DocumentScoringProps.SCORING_METHOD],
-      C.SCORING_TYPE: document_score[DocumentScoringProps.SCORING_TYPE],
-      C.TP: match_score['true_positive'],
-      C.FP: match_score['false_positive'],
-      C.FN: match_score['false_negative'],
-      C.TN: match_score['true_negative'],
-      C.EXPECTED: match_score['expected'],
-      C.ACTUAL: match_score['actual']
-    })
+    document_match_score = document_score[DocumentScoringProps.MATCH_SCORE]
+    match_scores = document_match_score.get(MatchScoringProps.SUB_SCORES, [document_match_score])
+    for match_score in match_scores:
+      get_logger().debug('match_score: %s', match_score)
+      flat_result.append({
+        C.PREDICTION_FILE: os.path.basename(prediction_file),
+        C.TARGET_FILE: os.path.basename(target_file),
+        C.FIELD_NAME: field_name,
+        C.EVALUATION_METHOD: document_score[DocumentScoringProps.SCORING_METHOD],
+        C.SCORING_TYPE: document_score[DocumentScoringProps.SCORING_TYPE],
+        C.TP: match_score['true_positive'],
+        C.FP: match_score['false_positive'],
+        C.FN: match_score['false_negative'],
+        C.TN: match_score['true_negative'],
+        C.EXPECTED: match_score['expected'],
+        C.ACTUAL: match_score['actual']
+      })
   return flat_result
 
 def FlattenEvaluationResults(field_names):

@@ -100,7 +100,7 @@ def groupby_document_score_key(document_scores):
 
 def combine_and_compact_document_scores(document_scores):
   document_scores = list(document_scores)
-  LOGGER.info('document_scores: %s', document_scores)
+  LOGGER.debug('document_scores: %s', document_scores)
   return [
     extend_dict(document_score_key_to_props(document_score_key), {
       DocumentScoringProps.MATCH_SCORE: sum_scores_with_true_negative(
@@ -111,7 +111,7 @@ def combine_and_compact_document_scores(document_scores):
   ]
 
 def combine_and_compact_document_scores_with_count(document_scores_with_count):
-  LOGGER.info('document_scores_with_count: %s', document_scores_with_count)
+  LOGGER.debug('document_scores_with_count: %s', document_scores_with_count)
   return (
     combine_and_compact_document_scores(iter_flatten(
       list_of_scores for list_of_scores, _ in document_scores_with_count
@@ -123,7 +123,7 @@ def combine_and_compact_document_scores_with_count(document_scores_with_count):
 
 def summarise_binary_results(scores, keys, count=None):
   scores = {k: force_list(x) for k, x in iteritems(scores)}
-  LOGGER.info('summarise_binary_results, scores.keys=%s, keys=%s', scores.keys(), keys)
+  LOGGER.debug('summarise_binary_results, scores.keys=%s, keys=%s', scores.keys(), keys)
   keys = [k for k in keys if k in scores]
   score_fields = ['accuracy', 'precision', 'recall', 'f1']
   # if not isinstance(scores, list):
