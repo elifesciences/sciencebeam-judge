@@ -1,4 +1,6 @@
 elifeLibrary {
+    def commit
+
     stage 'Checkout', {
         checkout scm
         commit = elifeGitRevision()
@@ -11,11 +13,11 @@ elifeLibrary {
         }
 
         stage 'Project tests', {
-            try {
-                sh "IMAGE_TAG=${commit} docker-compose run --rm sciencebeam-judge ./project_tests.sh"
-            } finally {
-                sh 'docker-compose down -v'
-            }
+            dockerComposeRun(
+                "sciencebeam-judge",
+                "./project_tests.sh",
+                commit
+            )
         }
     }
 }
