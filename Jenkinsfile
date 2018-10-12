@@ -18,4 +18,10 @@ elifeLibrary {
             }
         }
     }
+
+    elifeMainlineOnly {
+        stage 'Merge to master', {
+            elifeGitMoveToBranch commit, 'master'
+        }
+    }
 }
