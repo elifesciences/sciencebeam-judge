@@ -14,4 +14,7 @@ COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
 COPY sciencebeam_judge ./sciencebeam_judge
-COPY *.conf *.sh *.in *.py /srv/sciencebeam-judge/
+COPY *.conf *.sh *.in *.txt *.py /srv/sciencebeam-judge/
+
+# tests
+COPY .pylintrc .flake8 ${PROJECT_HOME}/
