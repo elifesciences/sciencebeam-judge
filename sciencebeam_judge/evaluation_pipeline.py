@@ -99,6 +99,10 @@ DEFAULT_TABLE_FIELDS = [
     'tables', 'table_strings', 'table_labels', 'table_captions', 'table_label_captions'
 ]
 
+DEFAULT_FIGURE_FIELDS = [
+    'figure_labels', 'figure_captions', 'figure_label_captions'
+]
+
 DEFAULT_FRONT_FIELDS = [
     'title',
     'abstract',
@@ -108,7 +112,7 @@ DEFAULT_FRONT_FIELDS = [
 DEFAULT_BODY_FIELDS = [
     'section_titles',
     # 'section_paragraphs',
-] + DEFAULT_TABLE_FIELDS
+] + DEFAULT_TABLE_FIELDS + DEFAULT_FIGURE_FIELDS
 
 DEFAULT_BACK_FIELDS = DEFAULT_REFERENCE_FIELDS
 
