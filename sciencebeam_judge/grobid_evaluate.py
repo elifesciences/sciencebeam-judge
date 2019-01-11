@@ -108,8 +108,8 @@ def format_summary_by_scoring_method(scores_by_scoring_method, keys):
                     results=format_summarised_results(
                         scores_by_scoring_method[measure],
                         keys
-                    ).rstrip()
-                ))
+                    )
+                ).rstrip())
     return "\n\n".join(score_outputs)
 
 

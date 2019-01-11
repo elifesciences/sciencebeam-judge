@@ -5,6 +5,7 @@ from .evaluation.score_aggregation import SummaryScoresProps
 
 from .grobid_evaluate import (
     summarised_document_scores_to_scores_by_scoring_method,
+    format_summary_by_scoring_method,
     format_summarised_document_scores_as_grobid_report
 )
 
@@ -78,6 +79,16 @@ class TestSummarisedDocumentScoresToScoresByScoringMethod(object):
             summarised_document_scores
         )
         assert actual_scores_by_scoring_method == expected_scores_by_scoring_method
+
+
+class TestFormatSummaryByScoringMethod(object):
+    def test_should_not_end_with_space(self):
+        scores_by_scoring_method = {
+            ScoringMethodNames.EXACT: SUMMARY_SCORES
+        }
+        assert not format_summary_by_scoring_method(
+            scores_by_scoring_method, [FIELD_1]
+        ).endswith(' ')
 
 
 class TestFormatSummarisedDocumentScoresAsGrobidReport(object):
