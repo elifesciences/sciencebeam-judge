@@ -23,5 +23,3 @@ update_notebook() {
 
 update_notebook conversion-results-summary.ipynb
 update_notebook conversion-results-details.ipynb
-
-docker-compose down -v
