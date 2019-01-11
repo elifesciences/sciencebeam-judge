@@ -86,7 +86,9 @@ class TestFormatSummaryByScoringMethod(object):
         scores_by_scoring_method = {
             ScoringMethodNames.EXACT: SUMMARY_SCORES
         }
-        assert not format_summary_by_scoring_method(scores_by_scoring_method, [FIELD_1]).endswith(' ')
+        assert not format_summary_by_scoring_method(
+            scores_by_scoring_method, [FIELD_1]
+        ).endswith(' ')
 
 
 class TestFormatSummarisedDocumentScoresAsGrobidReport(object):
