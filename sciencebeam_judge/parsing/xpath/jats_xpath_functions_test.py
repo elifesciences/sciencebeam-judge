@@ -90,6 +90,38 @@ class TestJatsXpathFunctions(object):
             register_functions()
             assert list(xml.xpath('jats-full-name(//contrib)')) == []
 
+    class TestAuthorAff(object):
+        def test_should_return_single_embedded_aff(self):
+            aff = E.aff(
+                E.institution('Institute 1')
+            )
+            contrib = E.contrib(
+                aff
+            )
+            xml = E.article(
+                E.front(
+                    E('article-meta', E('contrib-group', contrib))
+                )
+            )
+            register_functions()
+            assert list(xml.xpath('jats-author-aff(//contrib)')) == [aff]
+
+        def test_should_return_single_referenced_aff(self):
+            aff = E.aff(
+                E.institution('Institute 1'),
+                id='aff1'
+            )
+            contrib = E.contrib(
+                E.xref({'ref-type': 'aff', 'rid': 'aff1'})
+            )
+            xml = E.article(
+                E.front(
+                    E('article-meta', E('contrib-group', contrib, aff))
+                )
+            )
+            register_functions()
+            assert list(xml.xpath('jats-author-aff(//contrib)')) == [aff]
+
     class TestAffString(object):
         def test_should_return_institution(self):
             xml = E.article(

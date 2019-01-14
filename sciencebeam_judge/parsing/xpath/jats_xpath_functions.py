@@ -61,6 +61,22 @@ def fn_jats_authors(_, nodes):
     ]
 
 
+def _author_aff(author_node):
+    for aff in author_node.xpath('aff'):
+        yield aff
+    for xref in author_node.xpath('xref[@ref-type = "aff"]'):
+        for aff in author_node.getroottree().xpath('//aff[@id="%s"]' % xref.attrib['rid']):
+            yield aff
+
+
+def fn_jats_author_aff(_, author_nodes):
+    return [
+        aff
+        for author in author_nodes
+        for aff in _author_aff(author)
+    ]
+
+
 def _aff_string(aff):
     result = ', '.join(
         _text(
@@ -111,6 +127,7 @@ def register_functions(ns=None):
         ns = etree.FunctionNamespace(None)
     ns['jats-full-name'] = fn_jats_full_name
     ns['jats-authors'] = fn_jats_authors
+    ns['jats-author-aff'] = fn_jats_author_aff
     ns['jats-aff-string'] = fn_jats_aff_string
     ns['jats-ref-fpage'] = fn_jats_ref_fpage
     ns['jats-ref-lpage'] = fn_jats_ref_lpage
