@@ -63,13 +63,16 @@ def fn_jats_authors(_, nodes):
 
 def _author_aff(author_node):
     for aff in author_node.xpath('aff'):
+        LOGGER.debug('_author_aff: returning embedded aff=%s', aff)
         yield aff
     for xref in author_node.xpath('xref[@ref-type = "aff"]'):
         for aff in author_node.getroottree().xpath('//aff[@id="%s"]' % xref.attrib['rid']):
+            LOGGER.debug('_author_aff: returning referenced aff=%s', aff)
             yield aff
 
 
 def fn_jats_author_aff(_, author_nodes):
+    LOGGER.debug('fn_jats_author_aff: author_nodes=%s', author_nodes)
     return [
         aff
         for author in author_nodes
