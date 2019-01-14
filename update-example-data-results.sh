@@ -8,7 +8,7 @@ cwd="$(pwd)"
 
 update_results() {
     tool=$1
-    docker-compose run \
+    docker-compose run --rm \
         --volume="$cwd/example-data:/example-data" \
         sciencebeam-judge \
         ./evaluate.sh \
@@ -21,5 +21,3 @@ update_results() {
 
 update_results cermine
 update_results grobid-tei
-
-docker-compose down -v
