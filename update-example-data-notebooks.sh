@@ -12,11 +12,12 @@ update_notebook() {
         sciencebeam-judge-jupyter \
         jupyter nbconvert --to notebook --execute --inplace ./$notebook_file
     stderr_content=$(
-        docker-compose run --rm --entrypoint 'sh -c' sciencebeam-judge-jupyter \
-        "grep 'stderr' ./$notebook_file" | cat
+        cat "./notebooks/$notebook_file" \
+        | docker run --rm -i stedolan/jq \
+        '.cells[].outputs[]? | select(.name == "stderr") | .text'
     )
     if [ ! -z "$stderr_content" ]; then
-        echo "Error: Notebook contains stderr output"
+        echo "Error: Notebook contains stderr output: >>>$stderr_content<<<"
         exit 3
     fi
 }
