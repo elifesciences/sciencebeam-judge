@@ -36,17 +36,18 @@ def fn_generic_concat_children(_, nodes, *expressions):
 
 
 def fn_generic_join_children(_, nodes, children_xpath, sep):
-    LOGGER.debug(
-        'fn_generic_concat_children, children_xpath=%s, sep=%s, nodes: %s',
-        children_xpath, sep, nodes
-    )
-    return [
+    result = [
         sep.join(
             get_text_content(child)
             for child in node.xpath(children_xpath)
         ).strip()
         for node in nodes
     ]
+    LOGGER.debug(
+        'fn_generic_join_children, children_xpath=%s, sep=%s, nodes=%s, result=%s',
+        children_xpath, sep, nodes, result
+    )
+    return result
 
 
 def _as_items_list(node, children_xpath):
