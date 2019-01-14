@@ -13,11 +13,11 @@ update_notebook() {
         jupyter nbconvert --to notebook --execute --inplace ./$notebook_file
     stderr_content=$(
         cat "./notebooks/$notebook_file" \
-        | docker run --rm -i stedolan/jq \
-        '.cells[].outputs[]? | select(.name == "stderr") | .text'
+        | docker run --rm -i stedolan/jq --raw-output \
+        '.cells[].outputs[]? | select(.name == "stderr") | .text[]'
     )
     if [ ! -z "$stderr_content" ]; then
-        echo "Error: Notebook contains stderr output: >>>$stderr_content<<<"
+        echo -e "Error: Notebook contains stderr output: >>>\n$stderr_content\n<<<"
         exit 3
     fi
 }
