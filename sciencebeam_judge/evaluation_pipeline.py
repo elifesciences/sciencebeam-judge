@@ -86,7 +86,7 @@ DEFAULT_AUTHOR_FIELDS = [
 
 
 DEFAULT_AFFILIATION_FIELDS = [
-    'affiliation_strings', 'affiliation_institution'
+    'affiliation_strings', 'affiliation_fields', 'affiliation_institution'
 ]
 
 DEFAULT_REFERENCE_FIELDS = [
