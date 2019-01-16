@@ -33,10 +33,10 @@ def is_items_list(value_list):
 
 def normalize_items_list(items_list, convert_to_lower=False):
     return [
-        [
+        tuple(
             normalize_string(item, convert_to_lower=convert_to_lower)
             for item in d['items']
-        ]
+        )
         for d in items_list
     ]
 
