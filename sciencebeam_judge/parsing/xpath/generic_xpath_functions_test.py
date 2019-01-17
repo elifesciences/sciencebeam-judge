@@ -111,6 +111,22 @@ class TestGenericXpathFunctions(object):
                 for items in xml.xpath('generic-as-items(., ".//*")')
             ] == [[TEXT_1, TEXT_2]]
 
+        def test_should_split_children(self):
+            xml = E.root(E.parent(E.child(",".join([TEXT_1, TEXT_2]))))
+            register_functions()
+            assert [
+                get_text_content_list(items.findall('item'))
+                for items in xml.xpath('generic-as-items(//parent, "*", ",")')
+            ] == [[TEXT_1, TEXT_2]]
+
+        def test_should_remove_space_around_split_children(self):
+            xml = E.root(E.parent(E.child(" , ".join([TEXT_1, TEXT_2]))))
+            register_functions()
+            assert [
+                get_text_content_list(items.findall('item'))
+                for items in xml.xpath('generic-as-items(//parent, "*", ",")')
+            ] == [[TEXT_1, TEXT_2]]
+
     class TestTextContent(object):
         def test_should_include_text_from_children(self):
             xml = E.article(

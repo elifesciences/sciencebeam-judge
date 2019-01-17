@@ -50,12 +50,23 @@ def fn_generic_join_children(_, nodes, children_xpath, sep):
     return result
 
 
-def _as_items_list(node, children_xpath):
+def _split_item_string(item, sep):
+    return [s.strip() for s in item.split(sep)]
+
+
+def _as_items_list(node, children_xpath, sep=None):
     matched_children = list(node.xpath(children_xpath))
     matched_parents = {child.getparent() for child in matched_children}
-    return [
+    items = [
         get_text_content(child) for child in matched_children
         if child not in matched_parents
+    ]
+    if not sep:
+        return items
+    return [
+        split_item
+        for item in items
+        for split_item in _split_item_string(item, sep)
     ]
 
 
@@ -65,13 +76,13 @@ def _wrap_items(items):
     ])
 
 
-def fn_generic_as_items(_, nodes, children_xpath):
+def fn_generic_as_items(_, nodes, children_xpath, sep=None):
     LOGGER.debug(
         'fn_generic_as_items, children_xpath=%s, nodes: %s',
         children_xpath, nodes
     )
     return [
-        _wrap_items(_as_items_list(node, children_xpath))
+        _wrap_items(_as_items_list(node, children_xpath, sep=sep))
         for node in nodes
     ]
 
