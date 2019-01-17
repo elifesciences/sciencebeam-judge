@@ -86,7 +86,8 @@ DEFAULT_AUTHOR_FIELDS = [
 
 
 DEFAULT_AFFILIATION_FIELDS = [
-    'affiliation_strings', 'affiliation_fields', 'affiliation_institution'
+    'affiliation_strings', 'affiliation_fields', 'affiliation_institution',
+    'affiliation_fields_csv', 'affiliation_institution_fields', 'affiliation_institution_fields_csv'
 ]
 
 DEFAULT_REFERENCE_FIELDS = [
@@ -172,12 +173,14 @@ def evaluate_file_pairs(
             fields=field_names,
             filename=target_filename
         )
+        get_logger().debug('target_xml=%s', target_xml)
         prediction_xml = parse_xml(
             BytesIO(prediction_content),
             xml_mapping,
             fields=field_names,
             filename=prediction_filename
         )
+        get_logger().debug('prediction_xml=%s', prediction_xml)
         return list(iter_score_document_fields(
             target_xml, prediction_xml, field_names=field_names, include_values=True,
             **kwargs
@@ -575,6 +578,7 @@ def parse_args(argv=None):
 
     if args.debug:
         logging.getLogger('sciencebeam_judge').setLevel('DEBUG')
+        logging.getLogger('__main__').setLevel('DEBUG')
 
     process_cloud_args(
         args, args.output_path,
