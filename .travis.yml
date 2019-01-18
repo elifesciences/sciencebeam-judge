@@ -9,3 +9,5 @@ before_install:
 
 script:
   - docker-compose -f docker-compose.yml -f docker-compose.ci.yml run --rm sciencebeam-judge ./project_tests.sh
+  - bash ./update-example-data-results.sh
+  - bash ./update-example-data-notebooks.sh
