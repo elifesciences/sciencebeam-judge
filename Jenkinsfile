@@ -19,6 +19,14 @@ elifeLibrary {
                 commit
             )
         }
+
+        stage 'Test update evaluation results', {
+            sh "bash ./update-example-data-results.sh"
+        }
+
+        stage 'Test update notebooks', {
+            sh "bash ./update-example-data-notebooks.sh"
+        }
     }
 
     elifeMainlineOnly {
