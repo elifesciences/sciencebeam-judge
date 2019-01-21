@@ -8,7 +8,7 @@ def parse_config(filename_or_fp):
     if isinstance(filename_or_fp, string_types):
         config.read(filename_or_fp)
     else:
-        config.readfp(filename_or_fp)
+        config.read_file(filename_or_fp)
     return config
 
 
