@@ -1,4 +1,4 @@
-FROM python:2.7.15-stretch
+FROM python:2.7.16-stretch
 
 ENV PROJECT_HOME=/srv/sciencebeam-judge
 WORKDIR ${PROJECT_HOME}
