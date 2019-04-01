@@ -6,6 +6,13 @@ services:
             context: .
             dockerfile: Dockerfile
         image: elifesciences/sciencebeam-judge:${IMAGE_TAG}
+    sciencebeam-judge-dev:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                install_dev: y
+        image: elifesciences/sciencebeam-judge-dev:${IMAGE_TAG}
     sciencebeam-judge-jupyter:
         build:
             context: .

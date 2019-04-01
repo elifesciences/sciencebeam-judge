@@ -2,6 +2,9 @@
 
 import re
 
+from six import unichr
+
+
 FULL_PUNCTUATIONS = u"([ •*,:;?.!/)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0"
 WHITE_SPACE = u" \t\n\r\u00A0"
 NBSP = unichr(160)
