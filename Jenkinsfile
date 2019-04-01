@@ -14,7 +14,7 @@ elifeLibrary {
 
         stage 'Project tests', {
             dockerComposeRun(
-                "sciencebeam-judge",
+                "sciencebeam-judge-dev",
                 "./project_tests.sh",
                 commit
             )

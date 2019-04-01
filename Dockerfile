@@ -13,6 +13,10 @@ RUN pip install -r requirements.prereq.txt
 COPY requirements.txt ./
 RUN pip install -r requirements.txt
 
+ARG install_dev
+COPY requirements.dev.txt ./
+RUN if [ "${install_dev}" = "y" ]; then pip install -r requirements.dev.txt; fi
+
 COPY sciencebeam_judge ./sciencebeam_judge
 COPY *.conf *.sh *.in *.txt *.py /srv/sciencebeam-judge/
 
