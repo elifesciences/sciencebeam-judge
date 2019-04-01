@@ -28,3 +28,11 @@ test: build-dev
 
 watch: build-dev
 	$(RUN) pytest-watch -- $(PYTEST_ARGS)
+
+
+update-example-data-results:
+	./update-example-data-results.sh
+
+
+update-example-data-notebooks:
+	./update-example-data-results.sh
