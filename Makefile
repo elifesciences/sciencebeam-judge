@@ -1,7 +1,9 @@
-build:
-	docker-compose build
 RUN = docker-compose run --rm sciencebeam-judge-dev
 PYTEST_ARGS =
+
+
+build:
+	docker-compose build
 
 
 dev-venv:
