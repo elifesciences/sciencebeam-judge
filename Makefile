@@ -36,3 +36,11 @@ update-example-data-results:
 
 update-example-data-notebooks:
 	./update-example-data-results.sh
+
+
+jupyter-start:
+	docker-compose up -d sciencebeam-judge-jupyter
+
+
+jupyter-stop:
+	docker-compose down
