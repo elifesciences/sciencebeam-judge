@@ -35,7 +35,7 @@ update-example-data-results:
 
 
 update-example-data-notebooks:
-	./update-example-data-results.sh
+	./update-example-data-notebooks.sh
 
 
 jupyter-start:
