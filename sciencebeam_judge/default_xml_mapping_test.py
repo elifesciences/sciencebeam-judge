@@ -17,18 +17,6 @@ from sciencebeam_judge.parsing.xpath.xpath_functions import register_functions
 LOGGER = logging.getLogger(__name__)
 
 
-def fn_jats_full_name(_, nodes):
-    print('nodes:', nodes)
-    return [
-        ' '.join([
-            n.text
-            for n in [node.find('given-names'), node.find('surname')]
-            if n is not None
-        ])
-        for node in nodes
-    ]
-
-
 @pytest.fixture(name='default_xml_mapping', scope='session')
 def _default_xml_mapping():
     register_functions()
@@ -36,18 +24,6 @@ def _default_xml_mapping():
 
 
 class TestDefaultXmlMapping(object):
-    class TestAuthorNames(object):
-        def test_(self):
-            xml = E.article(
-                E.name(
-                    E('given-names', 'Tom'),
-                    E('surname', 'Thomson')
-                )
-            )
-            functionNS = etree.FunctionNamespace(None)
-            functionNS['jats-full-name'] = fn_jats_full_name
-            assert list(xml.xpath('jats-full-name(//name)')) == ['Tom Thomson']
-
     class TestTeiAbstractText(object):
         def test_should_return_without_paragraph(self, default_xml_mapping):
             xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
