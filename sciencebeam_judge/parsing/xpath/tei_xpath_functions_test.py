@@ -1,6 +1,13 @@
 from lxml.builder import E
 
+import pytest
+
 from .tei_xpath_functions import register_functions
+
+
+@pytest.fixture(autouse=True)
+def _register_functions():
+    register_functions()
 
 
 def _tei_with_authors(*authors):
@@ -182,3 +189,30 @@ class TestTeiXpathFunctions(object):
             ))))
             register_functions()
             assert list(xml.xpath('tei-ref-lpage(//biblStruct)')) == ['123']
+
+    class TestAbstractText(object):
+        def test_should_return_without_paragraph(self):
+            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
+                'abstract1'
+            ))))
+            assert list(xml.xpath('tei-abstract-text(//abstract)')) == ['abstract1']
+
+        def test_should_return_with_div_and_paragraph(self):
+            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(E.div(
+                E.p('abstract1')
+            )))))
+            assert list(xml.xpath('tei-abstract-text(//abstract)')) == ['abstract1']
+
+        def test_should_ignore_first_head(self):
+            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(E.div(
+                E.head('Abstract'),
+                E.p('abstract1')
+            )))))
+            assert list(xml.xpath('tei-abstract-text(//abstract)')) == ['abstract1']
+
+        def test_not_should_ignore_further_head_elements(self):
+            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
+                E.div(E.head('Abstract')),
+                E.div(E.head('Sub:'), E.p('abstract1'))
+            ))))
+            assert list(xml.xpath('tei-abstract-text(//abstract)')) == ['Sub: abstract1']
