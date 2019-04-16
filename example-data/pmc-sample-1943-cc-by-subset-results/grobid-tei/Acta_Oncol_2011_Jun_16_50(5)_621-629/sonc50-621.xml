@@ -6,7 +6,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 	<teiHeader xml:lang="en">
 		<encodingDesc>
 			<appInfo>
-				<application version="0.5.1-SNAPSHOT" ident="GROBID" when="2018-07-06T16:41+0000">
+				<application version="0.5.4" ident="GROBID" when="2019-04-16T14:14+0000">
 					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
 				</application>
 			</appInfo>
@@ -40,9 +40,9 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Richard</forename><forename type="middle">Ling</forename><surname>Chalmers</surname></persName>
 							<affiliation key="aff2">
 								<orgName type="department">Department of Reconstructive Plastic Surgery</orgName>
-								<orgName type="institution">James Cook University Hospital, Middlesbrough</orgName>
+								<orgName type="institution">James Cook University Hospital</orgName>
 								<address>
-									<country key="GB">UK</country>
+									<region>Middlesbrough, UK</region>
 								</address>
 							</affiliation>
 						</author>
@@ -53,9 +53,9 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">George</forename><surname>Sainsbury</surname></persName>
 							<affiliation key="aff2">
 								<orgName type="department">Department of Reconstructive Plastic Surgery</orgName>
-								<orgName type="institution">James Cook University Hospital, Middlesbrough</orgName>
+								<orgName type="institution">James Cook University Hospital</orgName>
 								<address>
-									<country key="GB">UK</country>
+									<region>Middlesbrough, UK</region>
 								</address>
 							</affiliation>
 						</author>
@@ -63,9 +63,9 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Sivakumar</forename><surname>Veeramani</surname></persName>
 							<affiliation key="aff2">
 								<orgName type="department">Department of Reconstructive Plastic Surgery</orgName>
-								<orgName type="institution">James Cook University Hospital, Middlesbrough</orgName>
+								<orgName type="institution">James Cook University Hospital</orgName>
 								<address>
-									<country key="GB">UK</country>
+									<region>Middlesbrough, UK</region>
 								</address>
 							</affiliation>
 						</author>
@@ -75,6 +75,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 								<orgName type="department">Department of Anaesthesia</orgName>
 								<orgName type="institution">James Cook University Hospital</orgName>
 								<address>
+									<region>Middlesbrough</region>
 									<country key="GB">UK</country>
 								</address>
 							</affiliation>
@@ -85,7 +86,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 								<orgName type="department">Department of Oncology</orgName>
 								<orgName type="institution">James Cook University Hospital</orgName>
 								<address>
-									<region>Middlesbrough</region>
+									<settlement>Middlesbrough</settlement>
 									<country key="GB">UK</country>
 								</address>
 							</affiliation>
@@ -94,9 +95,9 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jane</forename><forename type="middle">Elisabeth</forename><surname>Bond</surname></persName>
 							<affiliation key="aff2">
 								<orgName type="department">Department of Reconstructive Plastic Surgery</orgName>
-								<orgName type="institution">James Cook University Hospital, Middlesbrough</orgName>
+								<orgName type="institution">James Cook University Hospital</orgName>
 								<address>
-									<country key="GB">UK</country>
+									<region>Middlesbrough, UK</region>
 								</address>
 							</affiliation>
 						</author>
@@ -104,9 +105,9 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Tobian</forename><surname>Muir</surname></persName>
 							<affiliation key="aff2">
 								<orgName type="department">Department of Reconstructive Plastic Surgery</orgName>
-								<orgName type="institution">James Cook University Hospital, Middlesbrough</orgName>
+								<orgName type="institution">James Cook University Hospital</orgName>
 								<address>
-									<country key="GB">UK</country>
+									<region>Middlesbrough, UK</region>
 								</address>
 							</affiliation>
 						</author>
@@ -148,35 +149,36 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 		</fileDesc>
 		<profileDesc>
 			<abstract>
-				<p>Background. Cutaneous metastases may cause considerable discomfort as a consequence of ulceration, oozing, bleeding and pain. Electrochemotherapy has proven to be highly effective in the treatment of cutaneous metastases. Electrochemo-therapy utilises pulses of electricity to increase the permeability of the cell membrane and thereby augment the effect of chemotherapy. For the drug bleomycin, the effect is enhanced several hundred-fold, enabling once-only treatment. The primary endpoint of this study is to evaluate the effi cacy of electrochemotherapy as a palliative treatment. Methods. This phase II study is a collaboration between two centres, one in Denmark and the other in the UK. Patients with cutaneous metastases of any histology were included. Bleomycin was administered intratumourally or intravenously followed by application of electric pulses to the tumour site. Results. Fifty-two patients were included. Complete and partial response rate was 68% and 18%, respectively, for cutaneous metastases 3 cm and 8% and 23%, respectively, for cutaneous metastases 3 cm. Treatment was well-tolerated by patients, including the elderly, and no serious adverse events were observed. Conclusions. ECT is an effi cient and safe treatment and clinicians should not hesitate to use it even in the elderly. A cutaneous metastasis can be defi ned as &quot; a neoplas-tic lesion arising from another neoplasm with which there is no longer continuity &quot; [1]. Cutaneous metas-tases account for 0.7% to 9% of all metastases [2]. Breast cancer accounts for 51% of the total cases of cutaneous metastases, while malignant melanoma accounts for 18% [3].</p>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Abstract</head><p>Background. Cutaneous metastases may cause considerable discomfort as a consequence of ulceration, oozing, bleeding and pain. Electrochemotherapy has proven to be highly effective in the treatment of cutaneous metastases. Electrochemotherapy utilises pulses of electricity to increase the permeability of the cell membrane and thereby augment the effect of chemotherapy. For the drug bleomycin, the effect is enhanced several hundred-fold, enabling once-only treatment. The primary endpoint of this study is to evaluate the effi cacy of electrochemotherapy as a palliative treatment. Methods. This phase II study is a collaboration between two centres, one in Denmark and the other in the UK. Patients with cutaneous metastases of any histology were included. Bleomycin was administered intratumourally or intravenously followed by application of electric pulses to the tumour site. Results. Fifty-two patients were included. Complete and partial response rate was 68% and 18%, respectively, for cutaneous metastases 3 cm and 8% and 23%, respectively, for cutaneous metastases 3 cm. Treatment was well-tolerated by patients, including the elderly, and no serious adverse events were observed. Conclusions. ECT is an effi cient and safe treatment and clinicians should not hesitate to use it even in the elderly.</p><p>A cutaneous metastasis can be defi ned as " a neoplastic lesion arising from another neoplasm with which there is no longer continuity " [1]. Cutaneous metastases account for 0.7% to 9% of all metastases <ref type="bibr" target="#b2">[2]</ref>. Breast cancer accounts for 51% of the total cases of cutaneous metastases, while malignant melanoma accounts for 18% <ref type="bibr" target="#b3">[3]</ref>.</p></div>
 			</abstract>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
 		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>A cutaneous metastasis can be defi ned as " a neoplastic lesion arising from another neoplasm with which there is no longer continuity " <ref type="bibr">[1]</ref>. Cutaneous metastases account for 0.7% to 9% of all metastases <ref type="bibr" target="#b2">[2]</ref>. Breast cancer accounts for 51% of the total cases of cutaneous metastases, while malignant melanoma accounts for 18% <ref type="bibr" target="#b3">[3]</ref>.</p><p>The management of cutaneous metastases often presents a challenge for the clinician as they may be widespread and may recur after radiotherapy or chemotherapy. In some cases, patients may have stable disease in sites other than the skin, and clinicians may be reluctant to use systemic chemotherapy for the skin metastases alone.</p><p>Electrochemotherapy (ECT) is a rapidly emerging and effective treatment option for cutaneous metastases from malignant tumours <ref type="bibr">[4 -6]</ref>. ECT uses local application of short duration, electric pulses directly to the tumour cells via an electrode, causing destabilisation of the cell membrane and thereby making it transiently permeable (electropermeabilisation - <ref type="figure">Figure 1</ref>) <ref type="bibr">[7]</ref>. Bleomycin, a chemotherapeutic agent used in the treatment of cancer, is under normal conditions unable to freely diffuse through the plasma membrane. However, electropermeabilisation allows this otherwise poorly permeating agent to enter the cell cytosol, thereby greatly increasing its concentration within the tumour cell ( <ref type="figure" target="#fig_0">Figure 2</ref>). In high concentrations, such as those achieved with ECT, bleomycin can cause cell death within a few minutes <ref type="bibr">[8]</ref>. Preclinical studies have demonstrated a 300-to 700-fold increase in bleomycin cytotoxicity using this method of drug delivery <ref type="bibr">[9 -11]</ref>.</p><p>ECT was originally employed for treatment of metastatic head and neck cancer <ref type="bibr" target="#b15">[12]</ref> and has since been used in the treatment of cutaneous metastases from tumours independent of histology <ref type="bibr" target="#b7">[5,</ref><ref type="bibr" target="#b17">13,</ref><ref type="bibr">14]</ref>. ECT can be used where surgery is not an option and is also effi cient in chemotherapy-resistant and radiotherapy-resistant lesions <ref type="bibr" target="#b7">[5,</ref><ref type="bibr" target="#b19">15]</ref>. Treatment may provide palliation particularly where there is pain or bleeding from cutaneous metastases <ref type="bibr">[16]</ref>. It is well tolerated with few side-effects, allows for immediate recovery and can be repeated <ref type="bibr" target="#b5">[4,</ref><ref type="bibr" target="#b7">5]</ref>. In 2006 a European study was published (the ESOPE study) <ref type="bibr" target="#b7">[5]</ref> and with that the standard operating procedures <ref type="bibr" target="#b22">[17]</ref> which describe the ECT procedures in detail.</p><p>The present study aims at continuing the exploration of ECT as a highly effective treatment in order to improve and evaluate its benefi ts. To this end, we created the International Network for Sharing Practice in ElectroChemoTherapy (INSPECT) database, the purpose of which is to gather, share and publish clinical data and experience. This is the fi rst report from this network.</p></div>
 <div xmlns="http://www.tei-c.org/ns/1.0"><head>Patients and methods</head></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Study design</head><p>Patients were recruited consecutively at two institu- tions: Copenhagen University Hospital Herlev, Denmark and James Cook University Hospital, Middlesbrough, UK. The primary endpoint was response rate. Secondary endpoints included safety and response rate according to size.</p><p>Patients at Herlev Hospital with cutaneous metas- tases, for whom no further surgery or conventional treatment was feasible, could be offered treatment with ECT within the framework of a non-randomised phase II study. Approval was granted by the local ethics committee and the Danish Medicines Agency.</p><p>Approval in the UK was granted in 2007 by the clinical effectiveness subcommittee for treatment of metastatic skin and subcutaneous lesions, palliation of bleeding or painful lesions and primary treat- ment of cancers not amenable to surgical excision or conventional treatments.</p><p>Patients fulfi lling the inclusion criteria were sequentially enrolled and all patients signed informed consent before inclusion.</p><p>Patients eligible for inclusion had histologically proven malignant cancer with measurable cutaneous or subcutaneous tumour nodules suitable for appli- cation of electric pulses. Patients had been offered standard treatment options, were 18 years old, <ref type="figure">Figure 1</ref>. The electroporation procedure: A. Electroporation occurs when an applied external fi eld exceeds the capacity of the cell membrane. The formation of permeable areas happens in the frame of less than a second whereas resealing happens over minutes. As the resting transmembrane potential is negative on the inside respective to the outside, the fi rst part of the membrane that will be permeabilised is the pole facing the positive electrode. The positive electrode should be imagined in the left of the picture and the negative electrode on the right. Pulses were delivered to a cell suspended in medium containing propidium iodide and after the pulses propidium iodide is trapped within the cells <ref type="bibr">[9]</ref>. B. The application of pulses to skin tumours must be preceded by local or general anaesthesia, in local anaesthesia the lidocain is injected around the metastasis. C. The cliniporator equipment allows monitoring of voltage and current during the pulse. D. A treatment situation is shown where a patient is receiving local injection of bleomycin followed by application of pulses under local anaesthesia. The application of pulses lasts only a few minutes in total.</p><p>had ECOG performance status 2, had an expected life expectancy of at least three months and, where appropriate, were using adequate contraception. A platelet count 50 mia/l was required, with a pro- thrombin time 40 s and an activated partial throm- boplastin time in the normal range.</p><p>Patients were ineligible if they had previously had allergic reactions to bleomycin or to any of the components required for anaesthesia, if the cumula- tive dose of 250 mg bleomycin/m 2 (400.000 IU bleo- mycin/m 2 ) had previously been exceeded, had chronic renal dysfunction (serum creatinine 150 μ mol/l) or acute lung infection.</p><p>Follow-up was planned for up to six months. Patients who had been started on systemic antineo- plastic treatment after ECT were excluded from the study at that time.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Procedure</head><p>The ECT sessions were performed based on the standard operating procedures for electrochemo- therapy <ref type="bibr" target="#b24">[17]</ref>. Bleomycin was administrated either intratumourally (i.t.) or intravenously (i.v). The decision to treat either i.t. or i.v. was based on the number of cutaneous metastases to be treated and the size of the metastases.</p><p>General anaesthesia, was preferred for multiple metastases, large metastases ( 3 cm), metastases adhering to the periosteum or situated in sensitive regions (e.g. face and scalp), and in accordance with patient preference.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Injection of bleomycin</head><p>Intratumoural treatment (for small or few cutaneous metastases). Bleomycin was injected into the cutane- ous metastases according to size. Pulses were deliv- ered after administration of the drug (all pulses must be administrated within 10 minutes of bleomycin injection).</p><p>Intravenous treatment (for large or many cutaneous metastases). Bleomycin was injected intravenously (15000 IU/m 2 15 U/m 2 which is approximately equal to 8.5 mg/m 2 bleomycin depending on the activity of the drug and the manufacturer). Pulses were delivered 8 -28 minutes following injection when bleomycin is known to be present in high concentration in the tumour <ref type="bibr" target="#b26">[18,</ref><ref type="bibr" target="#b28">19]</ref>.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Anaesthesia</head><p>Local anaesthesia (for small or few cutaneous metastases). Lidocaine with epinephrine was injected around the metastasis <ref type="figure">(Figure 1</ref>). The electrode was placed in and around the metastasis and the pulses administered. Under local anaesthesia, patients do not feel the insertion of the electrode needles but do feel a brief local muscle contraction upon administration of the electrical impulse.</p><p>General anaesthesia (for large or many cutaneous metastases). Anaesthesia for electrochemotherapy (ECT) was tailored to the patient ' s condition, the position of the lesions, the extent of treatment and the special considerations pertaining to general anaes- thesia and the use of bleomycin <ref type="bibr">[20]</ref>.</p><p>Depending on the clinician ' s choice, one of the following electrodes was used: 1) Type I electrodes: two plates with a 6 mm gap between the plates; 2) Type II electrodes: two parallel rows of needles with 4 mm between the rows; 3) Type III electrodes: a hex- agonal array of electrodes with 7.9 mm between the needles.</p><p>Electric pulses (eight pulses of 100 μ s duration) were delivered using a square wave electroporator (IGEA, Carpi, Italy). The applied voltage was 1.3 kV/ cm for plate electrodes and 1.0 kV/cm for needle electrodes, i.e. for the type II needle electrode with a 4 mm gap between the needles the applied voltage was 400 V. For type I and II electrodes, the pulses are applied with 1 Hz or 5 kHz, whereas for type III electrodes, pulses can only be applied with 5 kHz. Electrodes were single use. The duration of the pro- cedure was recorded from the start of the bleomycin injection to the completed delivery of the last pulse. After ECT, the treated metastases were covered with standard dressings where necessary.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Tumour response and safety assessment</head><p>Evaluation of the tumour response was by measure- ment of the extension or regression of the treated metastases. This was documented using digital pho- tography. A maximum of seven cutaneous metasta- ses per patient were registered as target lesions in order not to skew data by inclusion of patients with very large numbers of cutaneous metastases. The response was registered for each target lesion and new cutaneous metastases were not considered in response evaluation but could be treated in a second ECT session. The response rate was evalu- ated similarly to the Response Evaluation Criteria in Solid Tumours (RECIST version 1.0) <ref type="bibr" target="#b31">[21]</ref>: Complete response (CR) was defi ned as disappear- ance of the target lesion; partial response (PR) with at least 30% decrease in the diameter of the target lesion; progressive disease (PD) with at least 20% increase in the diameter of the target lesion and stable disease (SD) with neither suffi cient shrinkage to qualify for PR or suffi cient increase to qualify for PD. In some cases with exophytic ulcerated tumours evaluation was not possible due to crust formation ( <ref type="figure">Figure 3)</ref>.</p><p>Safety was reported in the form of adverse events using Common Toxicity Criteria version 3.0. Patients were asked if they would potentially agree for another session as a measure of how patients felt about the treatment procedure.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical consideration</head><p>Descriptive methods were employed for statistical analysis using SPSS 13.0.</p><p>Patients were followed for six months, but excluded from further evaluation if new antineo- plastic treatment was started within the six months.</p><p>All patients treated with ECT were included for evaluation of effi cacy and safety.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Study design</head><p>Patients were recruited consecutively at two institutions: Copenhagen University Hospital Herlev, Denmark and James Cook University Hospital, Middlesbrough, UK. The primary endpoint was response rate. Secondary endpoints included safety and response rate according to size.</p><p>Patients at Herlev Hospital with cutaneous metastases, for whom no further surgery or conventional treatment was feasible, could be offered treatment with ECT within the framework of a non-randomised phase II study. Approval was granted by the local ethics committee and the Danish Medicines Agency.</p><p>Approval in the UK was granted in 2007 by the clinical effectiveness subcommittee for treatment of metastatic skin and subcutaneous lesions, palliation of bleeding or painful lesions and primary treatment of cancers not amenable to surgical excision or conventional treatments.</p><p>Patients fulfi lling the inclusion criteria were sequentially enrolled and all patients signed informed consent before inclusion.</p><p>Patients eligible for inclusion had histologically proven malignant cancer with measurable cutaneous or subcutaneous tumour nodules suitable for application of electric pulses. Patients had been offered standard treatment options, were 18 years old, <ref type="figure">Figure 1</ref>. The electroporation procedure: A. Electroporation occurs when an applied external fi eld exceeds the capacity of the cell membrane. The formation of permeable areas happens in the frame of less than a second whereas resealing happens over minutes. As the resting transmembrane potential is negative on the inside respective to the outside, the fi rst part of the membrane that will be permeabilised is the pole facing the positive electrode. The positive electrode should be imagined in the left of the picture and the negative electrode on the right. Pulses were delivered to a cell suspended in medium containing propidium iodide and after the pulses propidium iodide is trapped within the cells <ref type="bibr">[9]</ref>. B. The application of pulses to skin tumours must be preceded by local or general anaesthesia, in local anaesthesia the lidocain is injected around the metastasis. C. The cliniporator equipment allows monitoring of voltage and current during the pulse. D. A treatment situation is shown where a patient is receiving local injection of bleomycin followed by application of pulses under local anaesthesia. The application of pulses lasts only a few minutes in total.</p><p>had ECOG performance status 2, had an expected life expectancy of at least three months and, where appropriate, were using adequate contraception. A platelet count 50 mia/l was required, with a prothrombin time 40 s and an activated partial thromboplastin time in the normal range.</p><p>Patients were ineligible if they had previously had allergic reactions to bleomycin or to any of the components required for anaesthesia, if the cumulative dose of 250 mg bleomycin/m 2 (400.000 IU bleomycin/m 2 ) had previously been exceeded, had chronic renal dysfunction (serum creatinine 150 μ mol/l) or acute lung infection.</p><p>Follow-up was planned for up to six months. Patients who had been started on systemic antineoplastic treatment after ECT were excluded from the study at that time.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Procedure</head><p>The ECT sessions were performed based on the standard operating procedures for electrochemotherapy <ref type="bibr" target="#b22">[17]</ref>. Bleomycin was administrated either intratumourally (i.t.) or intravenously (i.v). The decision to treat either i.t. or i.v. was based on the number of cutaneous metastases to be treated and the size of the metastases.</p><p>General anaesthesia, was preferred for multiple metastases, large metastases ( 3 cm), metastases adhering to the periosteum or situated in sensitive regions (e.g. face and scalp), and in accordance with patient preference.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Injection of bleomycin</head><p>Intratumoural treatment (for small or few cutaneous metastases). Bleomycin was injected into the cutaneous metastases according to size. Pulses were delivered after administration of the drug (all pulses must be administrated within 10 minutes of bleomycin injection).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Intravenous treatment (for large or many cutaneous metastases).</head><p>Bleomycin was injected intravenously (15000 IU/m 2 15 U/m 2 which is approximately equal to 8.5 mg/m 2 bleomycin depending on the activity of the drug and the manufacturer). Pulses were delivered 8 -28 minutes following injection when bleomycin is known to be present in high concentration in the tumour <ref type="bibr" target="#b24">[18,</ref><ref type="bibr" target="#b26">19]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Anaesthesia Local anaesthesia (for small or few cutaneous metastases).</head><p>Lidocaine with epinephrine was injected around the metastasis <ref type="figure">(Figure 1</ref>). The electrode was placed in and around the metastasis and the pulses administered. Under local anaesthesia, patients do not feel the insertion of the electrode needles but do feel a brief local muscle contraction upon administration of the electrical impulse.</p><p>General anaesthesia (for large or many cutaneous metastases). Anaesthesia for electrochemotherapy (ECT) was tailored to the patient ' s condition, the position of the lesions, the extent of treatment and the special considerations pertaining to general anaesthesia and the use of bleomycin <ref type="bibr">[20]</ref>.</p><p>Depending on the clinician ' s choice, one of the following electrodes was used: 1) Type I electrodes: two plates with a 6 mm gap between the plates; 2) Type II electrodes: two parallel rows of needles with 4 mm between the rows; 3) Type III electrodes: a hexagonal array of electrodes with 7.9 mm between the needles.</p><p>Electric pulses (eight pulses of 100 μ s duration) were delivered using a square wave electroporator (IGEA, Carpi, Italy). The applied voltage was 1.3 kV/ cm for plate electrodes and 1.0 kV/cm for needle electrodes, i.e. for the type II needle electrode with a 4 mm gap between the needles the applied voltage was 400 V. For type I and II electrodes, the pulses are applied with 1 Hz or 5 kHz, whereas for type III electrodes, pulses can only be applied with 5 kHz. Electrodes were single use. The duration of the procedure was recorded from the start of the bleomycin injection to the completed delivery of the last pulse. After ECT, the treated metastases were covered with standard dressings where necessary.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Tumour response and safety assessment</head><p>Evaluation of the tumour response was by measurement of the extension or regression of the treated metastases. This was documented using digital photography. A maximum of seven cutaneous metastases per patient were registered as target lesions in order not to skew data by inclusion of patients with very large numbers of cutaneous metastases. The response was registered for each target lesion and new cutaneous metastases were not considered in response evaluation but could be treated in a second ECT session. The response rate was evaluated similarly to the Response Evaluation Criteria in Solid Tumours (RECIST version 1.0) <ref type="bibr" target="#b29">[21]</ref>: Complete response (CR) was defi ned as disappearance of the target lesion; partial response (PR) with at least 30% decrease in the diameter of the target lesion; progressive disease (PD) with at least 20% increase in the diameter of the target lesion and stable disease (SD) with neither suffi cient shrinkage to qualify for PR or suffi cient increase to qualify for PD. In some cases with exophytic ulcerated tumours evaluation was not possible due to crust formation ( <ref type="figure" target="#fig_1">Figure 3)</ref>.</p><p>Safety was reported in the form of adverse events using Common Toxicity Criteria version 3.0. Patients were asked if they would potentially agree for another session as a measure of how patients felt about the treatment procedure.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical consideration</head><p>Descriptive methods were employed for statistical analysis using SPSS 13.0.</p><p>Patients were followed for six months, but excluded from further evaluation if new antineoplastic treatment was started within the six months.</p><p>All patients treated with ECT were included for evaluation of effi cacy and safety.</p></div>
 <div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Patient population</head><p>A total of 52 patients with cutaneous metastases were enrolled between June 2007 and April 2010. <ref type="table" target="#tab_0">Table I</ref> presents patient characteristics at baseline. Fifty-one patients underwent electrochemother- apy for 196 cutaneous metastases from primarily malignant melanoma or breast cancer <ref type="figure">(Figure 3)</ref>. In one patient with malignant melanoma in the head region, treatment was not given due to poor lung function.</p><p>Forty-fi ve patients were evaluable for safety and toxicity, and 24 patients with 97 cutaneous metastases had a follow-up of 60 days or more. Eleven patients received a second treatment with ECT.</p><p>The median diameter of the cutaneous metastases was 12 mm ranging from 1 mm to 200 mm. Loca- tions of the cutaneous metastases are presented in <ref type="table" target="#tab_0">Table I</ref>.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Treatment</head><p>Treatment data are listed in <ref type="table" target="#tab_0">Table II.</ref> Patients treated with i.v. or i.t. administration of bleomycin had a median number of three treated cutaneous metastases. The median size of the cuta- neous metastases treated with i.v. bleomycin was 10 mm (range 1 -200 mm) and for i.t. 9 mm (range 1 -50 mm).</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Anaesthesia</head><p>Of the 51 treatments, 28 (55%) were performed under general anaesthesia and 23 (45%) were per- formed under local anaesthesia (see <ref type="table" target="#tab_0">Table III</ref>). There was no statistical difference between number of nodules per patient and choice of anaesthesia.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Management of cutaneous metastases using electrochemotherapy 625</head></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Choice of electrode</head><p>The electrodes used for treatment were as follows: type II electrodes for 119 (61%) of the cutaneous metastases; type III electrodes for 47 (24%); type I electrodes for 21 (11%); both type I and II electrodes for two (1%) and both type II and III electrodes for seven (4%).</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Duration of procedure</head><p>Data on duration were available for 42 procedures. The median duration of a treatment session from start of bleomycin administration to last pulse deliv- ered was 20 min (range 5 min to 1 hour and 9 min) for local anaesthesia and 25 min (range 11 min to 1 hour 27 min) for general anaesthesia (see <ref type="table" target="#tab_0">Table II</ref>). <ref type="figure">Figure 3</ref>. Results. Top: ECT treatment of a 75-year-old woman with metastatic breast cancer. Previously the patient underwent surgery and received endocrine therapy, chemotherapy and radiotherapy. The patient was treated with one single treatment of ECT in local anaesthesia with intratumoural injection of bleomycin. A. before treatment, B. two weeks after treatment, C. four weeks after treatment. A crust formed and after four weeks showed signs of falling of. The patient was very satisfi ed with the treatment and had no side-effects. Middle: ECT treatment of an 82-year-old woman with malignant melanoma. The patient was diagnosed in 2007, since had local spread on the lower limb and metastasis to the lungs. The patient was not suited for temozolamide, immunotherapy or isolated limb perfusion. The patient was treated with ECT in general anaesthesia and intravenous injection of bleomycin. A. before treatment, B. 24 days after treatment and C. three months after treatment. After three months the metastasis is in partial response. Bottom: ECT treatment of a 38-year-old woman with metastatic breast cancer. Previously the patient underwent mastectomy, radiotherapy and chemotherapy. The patient was treated with one single treatment of ECT in general anaesthesia with i.v. injection of bleomycin. A. before treatment, B. 10 weeks after treatment, C. two years and two months after treatment with complete resolution despite ongoing systemic disease.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Safety</head><p>No serious adverse events (SAE) were observed. Reported adverse events were fl u-like symptoms one to two days after treatment (fi ve patients, 10%), pain in the treated area one to two days after treat- ment (fi ve patients, 10%), ulceration of treated area (two patients, 4%), cough (one patient, 2%), aller- gic skin reaction (one patient, 2%) and anxiety (one patient, 2%). There was no CTC grade 3 or 4 tox- icity. Most side-effects were seen when treated under general anaesthesia with systemic adminis- tration of bleomycin.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Treatment response</head><p>Six patients were lost to follow-up before evalua- tion due to systemic disease progression. Forty fi ve patients with 162 treated cutaneous metastases had a median follow-up of 79 days (range 8 -180), and 24 patients with 97 nodules had a follow-up 60 days. Responses are presented in <ref type="table" target="#tab_0">Table II.</ref> For patients with a follow-up 60 days, CR was observed in 58 (60%) metastases, PR was observed in 18 (19%) metastases, SD was observed in 11 (11%) metastases and PD in seven (7%) metastases. Response was not evaluable in three (3%) metastases. Of the 51 patients treated, 46 (90%) would agree to another treatment, four (8%) would not agree to another treatment and one patient is not accounted for.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Patient population</head><p>A total of 52 patients with cutaneous metastases were enrolled between June 2007 and April 2010. <ref type="table" target="#tab_0">Table I</ref> presents patient characteristics at baseline. Fifty-one patients underwent electrochemotherapy for 196 cutaneous metastases from primarily malignant melanoma or breast cancer <ref type="figure" target="#fig_1">(Figure 3)</ref>. In one patient with malignant melanoma in the head region, treatment was not given due to poor lung function.</p><p>Forty-fi ve patients were evaluable for safety and toxicity, and 24 patients with 97 cutaneous metastases had a follow-up of 60 days or more. Eleven patients received a second treatment with ECT.</p><p>The median diameter of the cutaneous metastases was 12 mm ranging from 1 mm to 200 mm. Locations of the cutaneous metastases are presented in <ref type="table" target="#tab_0">Table I</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Treatment</head><p>Treatment data are listed in <ref type="table" target="#tab_0">Table II.</ref> Patients treated with i.v. or i.t. administration of bleomycin had a median number of three treated cutaneous metastases. The median size of the cutaneous metastases treated with i.v. bleomycin was 10 mm (range 1 -200 mm) and for i.t. 9 mm (range 1 -50 mm).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Anaesthesia</head><p>Of the 51 treatments, 28 (55%) were performed under general anaesthesia and 23 (45%) were performed under local anaesthesia (see <ref type="table" target="#tab_0">Table III</ref>). There was no statistical difference between number of nodules per patient and choice of anaesthesia.</p><p>The electrodes used for treatment were as follows: type II electrodes for 119 (61%) of the cutaneous metastases; type III electrodes for 47 (24%); type I electrodes for 21 (11%); both type I and II electrodes for two (1%) and both type II and III electrodes for seven (4%).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Duration of procedure</head><p>Data on duration were available for 42 procedures. The median duration of a treatment session from start of bleomycin administration to last pulse delivered was 20 min (range 5 min to 1 hour and 9 min) for local anaesthesia and 25 min (range 11 min to 1 hour 27 min) for general anaesthesia (see <ref type="table" target="#tab_0">Table II</ref>). A crust formed and after four weeks showed signs of falling of. The patient was very satisfi ed with the treatment and had no side-effects. Middle: ECT treatment of an 82-year-old woman with malignant melanoma. The patient was diagnosed in 2007, since had local spread on the lower limb and metastasis to the lungs. The patient was not suited for temozolamide, immunotherapy or isolated limb perfusion. The patient was treated with ECT in general anaesthesia and intravenous injection of bleomycin. A. before treatment, B. 24 days after treatment and C. three months after treatment. After three months the metastasis is in partial response. Bottom: ECT treatment of a 38-year-old woman with metastatic breast cancer. Previously the patient underwent mastectomy, radiotherapy and chemotherapy. The patient was treated with one single treatment of ECT in general anaesthesia with i.v. injection of bleomycin. A. before treatment, B. 10 weeks after treatment, C. two years and two months after treatment with complete resolution despite ongoing systemic disease.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Safety</head><p>No serious adverse events (SAE) were observed. Reported adverse events were fl u-like symptoms one to two days after treatment (fi ve patients, 10%), pain in the treated area one to two days after treatment (fi ve patients, 10%), ulceration of treated area (two patients, 4%), cough (one patient, 2%), allergic skin reaction (one patient, 2%) and anxiety (one patient, 2%). There was no CTC grade 3 or 4 toxicity. Most side-effects were seen when treated under general anaesthesia with systemic administration of bleomycin.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Treatment response</head><p>Six patients were lost to follow-up before evaluation due to systemic disease progression. Forty fi ve patients with 162 treated cutaneous metastases had a median follow-up of 79 days (range 8 -180), and 24 patients with 97 nodules had a follow-up 60 days. Responses are presented in <ref type="table" target="#tab_0">Table II</ref>. For patients with a follow-up 60 days, CR was observed in 58 (60%) metastases, PR was observed in 18 (19%) metastases, SD was observed in 11 (11%) metastases and PD in seven (7%) metastases. Response was not evaluable in three (3%) metastases.  <ref type="bibr" target="#b5">4</ref> No signifi cant differences among distribution of diagnosis of primary tumour among centres could be observed (p 0).</p><p>Of the 51 patients treated, 46 (90%) would agree to another treatment, four (8%) would not agree to another treatment and one patient is not accounted for.</p></div>
 <div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Cutaneous metastases: A challenge in cancer treatment</head><p>Cutaneous metastases or recurrent malignant disease in the skin, particularly after treatment of malignant melanoma, head and neck carcinoma or breast cancer, is often diffi cult to manage. Patients have often received multimodal treatment with surgery, radiotherapy and chemotherapy and are faced with obviously progressing disease. The uncontrolled cutaneous metastases can, in many ways, adversely affect self-esteem and body image. The cutaneous metastases and the treatment of the cutaneous metas- tases will seldom affect life expectancy, but may be very important for the patient ' s quality of life.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Electrochemotherapy</head><p>Electrochemotherapy is a method where the combina- tion of electric pulses and bleomycin increases the cytotoxicity of bleomycin 300 -700 times <ref type="bibr">[9 -11]</ref>. When electric pulses are delivered to tissue in the presence of bleomycin, the cell membrane becomes permeable and bleomycin enters the cell where it is trapped. The large increase in bleomycin cytotoxicity makes it possible to do " once-only " treatment suitable for the palliative patient. The clinical effectiveness of ECT was fi rst 1 Data available for 42 patients, the time is from start of chemotherapy administration till the last pulse was given. This means it does not include time anaesthesia. One patient with the procedure lasting 1 hour and 9 min was treated in local anaesthesia with i.t. injection of bleomycin had three nodules where treatment of the fi rst nodule was fi nished before the anaesthesia of the next nodule began. One patient with the procedure lasting 1 hour and 27 min was treated in general anaesthesia with i.t. injection of bleomycin had seven nodules where treatment of the fi rst nodule was fi nished before injection of bleomycin in the next nodule. This explains why some procedures lasted longer than one would expect. <ref type="bibr" target="#b3">2</ref> 24 patients with 97 metastases with a follow-up 60 days. 3 Maximum seven metastases per patient registered. demonstrated in head and neck squamous cell tumour nodules in 1991 <ref type="bibr" target="#b33">[22]</ref>. Subsequent clinical investigation has shown that ECT using bleomycin is also a feasible and effective treatment for cutaneous and subcutane- ous metastases of other malignancies <ref type="bibr">[14]</ref>.</p><p>The ESOPE study in 2006 <ref type="bibr" target="#b8">[5]</ref> produced stan- dard operating procedures for ECT treatment (including dosage, pulse parameters, electric pulse generators and electrodes), pain control and indica- tions for treatment. The ESOPE study demonstrated that electrochemotherapy is an easy, highly effective and safe treatment for small ( 3 cm) cutaneous or subcutaneous metastases of various malignancies. The objective response rate after one treatment was 85%. Similar results have been demonstrated by Campana et al. <ref type="bibr" target="#b19">[13]</ref> and additionally by many case-reports and smaller studies <ref type="bibr">[23 -25]</ref>.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Electrochemotherapy in routine use</head><p>In the present study we have tried to manage cutane- ous metastases with ECT as a routine procedure in two cancer centres. The primary endpoint of this study was response rate.</p><p>Fifty one patients from Denmark and the UK were treated for 192 cutaneous metastases with ECT -the majority with either malignant melanoma or breast cancer. This is in agreement with breast cancer being the most common malignancy with cutaneous metastases in women and malignant melanoma being the most common in men <ref type="bibr" target="#b4">[3]</ref>.</p><p>ECT treatment in this study was provided as a pal- liative procedure to patients with performance status 2. A broad spectrum of patients was included, which is refl ected in six patients lost to follow-up before any evaluation and only 24 patients having a follow-up 60 days. Some patients travelled long distances to reach the centre offering ECT which hindered follow-up, and some patients had systemic progression during follow-up and were offered other antineoplastic treatment. These factors may explain the relative high rate of patients lost to follow-up before any evaluation and only 47% of patients having a follow-up period 60 days.</p><p>The classic RECIST criteria <ref type="bibr" target="#b31">[21]</ref> were unsuitable as tumour assessment in evaluation of ECT treatment as RECIST includes measurable lesions in other organs if present, a minimum size of 1 cm and a maximum fi ve lesions per organ. Also the aim of ECT is local and not systemic control. Instead, the defi nitions of CR, PR, PD and SD from RECIST were adapted and seven cutaneous metastases were registered as target lesions. This seems a feasible way to evaluate ECT.</p><p>In this study, objective response rate (OR) for patients with a follow-up period of 60 days was 86% for cutaneous metastases 3 cm and 31% for cutane- ous metastases 3 cm. The metastases were divided into smaller or larger than 3 cm to enable comparison with previous studies. The response rate for the cuta- neous metastases 3 cm is similar to the ESOPE <ref type="bibr" target="#b8">[5]</ref> and other studies <ref type="bibr" target="#b19">[13,</ref><ref type="bibr" target="#b36">23,</ref><ref type="bibr">24]</ref>, whereas for larger metastases, the OR is considerably lower, which is in agreement with previous observations <ref type="bibr" target="#b19">[13]</ref>. In patients with large volume disease, the purpose is not neces- sarily to eradicate the cutaneous metastases, but to obtain palliative relief in terms of decreased odour, exudate and bleeding. Therefore, SD can be the aim of ECT treatment for large volume disease. However, in the management of small cutaneous metastases, control and disappearance of cutaneous metastases can be the aim of treatment. Due to the low incidence of complications, treatment can be repeated several times in order maintain local control or obtain control if not achieved by the fi rst treatment. In this study 11 of the 51 patients were resubmitted for treatment, either due to new metastases or progression of previ- ously treated metastases, with no SAE ' s observed.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>ECT and its place in oncological practice</head><p>For patients with cutaneous metastases, local control during their remaining life period is the goal of treat- ment. Regional and local techniques such as palliative surgery, re-irradiation, hyperthermia, isolated limb per- fusion and isolated limb infusion can be offered to patients with cutaneous metastases in order to provide local symptom control. When offering treatment to patients, the risk of complications and toxicity should always be carefully addressed and the likely benefi t should always be compared with the risks to the patient. Electrochemotherapy offers a minimally invasive local treatment with swift symptomatic relief and few side- effects. ECT can also, as shown in this study with 48% of patients being 70 years, be offered to elderly patients for whom other treatments may not be a possibility.</p><p>In this study, treatment was performed at two different centres -a department of plastic surgery and a department of oncology -with similar results. This demonstrates that the treatment functions well in different types of units. ECT may easily be implemented as limited training is needed.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>In conclusion, our results in concordance with previ- ous studies suggest ECT is an effi cient treatment that may improve quality of life in patients with meta- static disease and clinicians should not hesitate to use it even for elderly patients. ECT is simple to admin- ister, and can therefore be implemented by smaller hospital units with resultant benefi ts for patients.</p><p>In our two centres, we concurrently found ECT to be an excellent treatment choice for the patient suffering from cutaneous metastasis where other treatments have failed.</p><p>We would recommend that more centres offer ECT and that referral for this once-only and simple treatment should be considered.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 2 .</head><label>2</label><figDesc>Figure 2. Electrochemotherapy. In the right panel, bleomycin is injected at the tumour site, at a concentration of 1000 IU/ml (1 U/ml). In the middle panel the electric pulses are subsequently applied, cells are permeabilised and the drug enters. In the left panel the cells reseal after a few minutes and the extracellular drug is washed out while the internalised molecules remain trapped intracellularly.</figDesc></figure>
-<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" validated="false"><head>Table I . Patients ' characteristics at baseline.</head><label>I</label><figDesc></figDesc><table>Patients Total 
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Cutaneous metastases: A challenge in cancer treatment</head><p>Cutaneous metastases or recurrent malignant disease in the skin, particularly after treatment of malignant melanoma, head and neck carcinoma or breast cancer, is often diffi cult to manage. Patients have often received multimodal treatment with surgery, radiotherapy and chemotherapy and are faced with obviously progressing disease. The uncontrolled cutaneous metastases can, in many ways, adversely affect self-esteem and body image. The cutaneous metastases and the treatment of the cutaneous metastases will seldom affect life expectancy, but may be very important for the patient ' s quality of life.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Electrochemotherapy</head><p>Electrochemotherapy is a method where the combination of electric pulses and bleomycin increases the cytotoxicity of bleomycin 300 -700 times <ref type="bibr">[9 -11]</ref>. When electric pulses are delivered to tissue in the presence of bleomycin, the cell membrane becomes permeable and bleomycin enters the cell where it is trapped. The large increase in bleomycin cytotoxicity makes it possible to do " once-only " treatment suitable for the palliative patient. The clinical effectiveness of ECT was fi rst 1 Data available for 42 patients, the time is from start of chemotherapy administration till the last pulse was given. This means it does not include time anaesthesia. One patient with the procedure lasting 1 hour and 9 min was treated in local anaesthesia with i.t. injection of bleomycin had three nodules where treatment of the fi rst nodule was fi nished before the anaesthesia of the next nodule began. One patient with the procedure lasting 1 hour and 27 min was treated in general anaesthesia with i.t. injection of bleomycin had seven nodules where treatment of the fi rst nodule was fi nished before injection of bleomycin in the next nodule. This explains why some procedures lasted longer than one would expect. 2 24 patients with 97 metastases with a follow-up 60 days. <ref type="bibr" target="#b3">3</ref> Maximum seven metastases per patient registered.</p><p>demonstrated in head and neck squamous cell tumour nodules in 1991 <ref type="bibr" target="#b31">[22]</ref>. Subsequent clinical investigation has shown that ECT using bleomycin is also a feasible and effective treatment for cutaneous and subcutaneous metastases of other malignancies <ref type="bibr">[14]</ref>. The ESOPE study in 2006 <ref type="bibr" target="#b7">[5]</ref> produced standard operating procedures for ECT treatment (including dosage, pulse parameters, electric pulse generators and electrodes), pain control and indications for treatment. The ESOPE study demonstrated that electrochemotherapy is an easy, highly effective and safe treatment for small ( 3 cm) cutaneous or subcutaneous metastases of various malignancies. The objective response rate after one treatment was 85%. Similar results have been demonstrated by Campana et al. <ref type="bibr" target="#b17">[13]</ref> and additionally by many case-reports and smaller studies <ref type="bibr">[23 -25]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Electrochemotherapy in routine use</head><p>In the present study we have tried to manage cutaneous metastases with ECT as a routine procedure in two cancer centres. The primary endpoint of this study was response rate.</p><p>Fifty one patients from Denmark and the UK were treated for 192 cutaneous metastases with ECT -the majority with either malignant melanoma or breast cancer. This is in agreement with breast cancer being the most common malignancy with cutaneous metastases in women and malignant melanoma being the most common in men <ref type="bibr" target="#b3">[3]</ref>.</p><p>ECT treatment in this study was provided as a palliative procedure to patients with performance status 2. A broad spectrum of patients was included, which is refl ected in six patients lost to follow-up before any evaluation and only 24 patients having a follow-up 60 days. Some patients travelled long distances to reach the centre offering ECT which hindered follow-up, and some patients had systemic progression during follow-up and were offered other antineoplastic treatment. These factors may explain the relative high rate of patients lost to follow-up before any evaluation and only 47% of patients having a follow-up period 60 days.</p><p>The classic RECIST criteria <ref type="bibr" target="#b29">[21]</ref> were unsuitable as tumour assessment in evaluation of ECT treatment as RECIST includes measurable lesions in other organs if present, a minimum size of 1 cm and a maximum fi ve lesions per organ. Also the aim of ECT is local and not systemic control. Instead, the defi nitions of CR, PR, PD and SD from RECIST were adapted and seven cutaneous metastases were registered as target lesions. This seems a feasible way to evaluate ECT.</p><p>In this study, objective response rate (OR) for patients with a follow-up period of 60 days was 86% for cutaneous metastases 3 cm and 31% for cutaneous metastases 3 cm. The metastases were divided into smaller or larger than 3 cm to enable comparison with previous studies. The response rate for the cutaneous metastases 3 cm is similar to the ESOPE <ref type="bibr" target="#b7">[5]</ref> and other studies <ref type="bibr" target="#b17">[13,</ref><ref type="bibr" target="#b34">23,</ref><ref type="bibr">24]</ref>, whereas for larger metastases, the OR is considerably lower, which is in agreement with previous observations <ref type="bibr" target="#b17">[13]</ref>. In patients with large volume disease, the purpose is not necessarily to eradicate the cutaneous metastases, but to obtain palliative relief in terms of decreased odour, exudate and bleeding. Therefore, SD can be the aim of ECT treatment for large volume disease. However, in the management of small cutaneous metastases, control and disappearance of cutaneous metastases can be the aim of treatment. Due to the low incidence of complications, treatment can be repeated several times in order maintain local control or obtain control if not achieved by the fi rst treatment. In this study 11 of the 51 patients were resubmitted for treatment, either due to new metastases or progression of previously treated metastases, with no SAE ' s observed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ECT and its place in oncological practice</head><p>For patients with cutaneous metastases, local control during their remaining life period is the goal of treatment. Regional and local techniques such as palliative surgery, re-irradiation, hyperthermia, isolated limb perfusion and isolated limb infusion can be offered to patients with cutaneous metastases in order to provide local symptom control. When offering treatment to patients, the risk of complications and toxicity should always be carefully addressed and the likely benefi t should always be compared with the risks to the patient. Electrochemotherapy offers a minimally invasive local treatment with swift symptomatic relief and few sideeffects. ECT can also, as shown in this study with 48% of patients being 70 years, be offered to elderly patients for whom other treatments may not be a possibility.</p><p>In this study, treatment was performed at two different centres -a department of plastic surgery and a department of oncology -with similar results.  <ref type="bibr">3 4</ref> This demonstrates that the treatment functions well in different types of units. ECT may easily be implemented as limited training is needed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusion</head><p>In conclusion, our results in concordance with previous studies suggest ECT is an effi cient treatment that may improve quality of life in patients with metastatic disease and clinicians should not hesitate to use it even for elderly patients. ECT is simple to administer, and can therefore be implemented by smaller hospital units with resultant benefi ts for patients. In our two centres, we concurrently found ECT to be an excellent treatment choice for the patient suffering from cutaneous metastasis where other treatments have failed.</p><p>We would recommend that more centres offer ECT and that referral for this once-only and simple treatment should be considered.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 2 .</head><label>2</label><figDesc>Electrochemotherapy.  In the right panel, bleomycin is injected at the tumour site, at a concentration of 1000 IU/ml (1 U/ml). In the middle panel the electric pulses are subsequently applied, cells are permeabilised and the drug enters. In the left panel the cells reseal after a few minutes and the extracellular drug is washed out while the internalised molecules remain trapped intracellularly.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 3 .</head><label>3</label><figDesc>Results. Top: ECT treatment of a 75-year-old woman with metastatic breast cancer. Previously the patient underwent surgery and received endocrine therapy, chemotherapy and radiotherapy. The patient was treated with one single treatment of ECT in local anaesthesia with intratumoural injection of bleomycin. A. before treatment, B. two weeks after treatment, C. four weeks after treatment.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" validated="false"><head>Table I .</head><label>I</label><figDesc>Patients ' characteristics at baseline.</figDesc><table>Patients Total 
 (N 52) 
 
 Patients 
@@ -333,8 +335,13 @@ Median diameter in mm (range)
 3 cm 
 138 
 3 cm 
-24 </table></figure>
-<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="false"><head>Table II . Treatment data and response.</head><label>II</label><figDesc></figDesc><table>TREATMENT DATA 
+24 
+
+1 Number of patients at or above a given age. 
+2 ECOG Eastern Cooperative Oncology Group. 
+3 Maximum seven metastases per patient registered, for 51 patients. 
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="false"><head>Table II .</head><label>II</label><figDesc>Treatment data and response.</figDesc><table>TREATMENT DATA 
 All Patients (n 51) 
 All Patients (%) 
 Herlev 
@@ -455,7 +462,7 @@ Not evaluable
 8% 
 
 </table></figure>
-<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>Table III . Choice of anaesthesia according to location of metastases and size.</head><label>III</label><figDesc></figDesc><table>Local 
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>Table III .</head><label>III</label><figDesc>Choice of anaesthesia according to location of metastases and size.</figDesc><table>Local 
 anaesthesia 
 
 General 
@@ -503,15 +510,12 @@ Median (range) (mm) 7.5 (1 -60)
 Number of metastases 
 per patient 
 Median (range) 
-3 
-4 </table></figure>
-
-			<note place="foot" n="1"> Number of patients at or above a given age. 2 ECOG Eastern Cooperative Oncology Group. 3 Maximum seven metastases per patient registered, for 51 patients. 4 No signifi cant differences among distribution of diagnosis of primary tumour among centres could be observed (p 0).</note>
+</table></figure>
 		</body>
 		<back>
 
 			<div type="acknowledgement">
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>Julie Gehl is a research fellow of the Royal Swedish Academy, supported by the Acta Oncologica Founda-tion. Igea (Capri, Italy) is running the INSPECT database, but the database is controlled by a steering committee independent of IGEA. Fransesca de Ter-lizzi from IGEA should be thanked for her help with maintaining the database and doing the data extracts. There is no confl ict of interest to be declared.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>Julie Gehl is a research fellow of the Royal Swedish Academy, supported by the Acta Oncologica Foundation. Igea (Capri, Italy) is running the INSPECT database, but the database is controlled by a steering committee independent of IGEA. Fransesca de Terlizzi from IGEA should be thanked for her help with maintaining the database and doing the data extracts. There is no confl ict of interest to be declared.</p></div>
 <div xmlns="http://www.tei-c.org/ns/1.0"><head>Declaration of interest:</head><p>The authors report no confl icts of interest. The authors alone are responsible for the content and writing of the paper.</p></div>
 			</div>
 
@@ -528,25 +532,17 @@ Median (range)
 	</analytic>
 	<monogr>
 		<title level="j">J Am Acad</title>
-		<imprint/>
-	</monogr>
-</biblStruct>
-
-<biblStruct xml:id="b1">
-	<analytic>
-		<title/>
-	</analytic>
-	<monogr>
-		<title level="j">Dermatol</title>
 		<imprint>
 			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">1</biblScope>
 			<biblScope unit="page" from="161" to="82" />
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note>Dermatol</note>
 </biblStruct>
 
-<biblStruct xml:id="b2">
+<biblStruct xml:id="b1">
 	<monogr>
 		<title level="m" type="main">Tumor invasion of the skin</title>
 		<author>
@@ -556,19 +552,16 @@ Median (range)
 			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">C</forename><surname>Kim</surname></persName>
 		</author>
 		<imprint>
-			<pubPlace>Derma</pubPlace>
+			<pubPlace>Derma-</pubPlace>
 		</imprint>
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b3">
+<biblStruct xml:id="b2">
 	<analytic>
 		<title level="a" type="main">Cutaneous metastases</title>
 		<author>
-			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Viii</surname></persName>
-		</author>
-		<author>
-			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">P</forename><surname>Lookingbill</surname></persName>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Dp</surname></persName>
 		</author>
 		<author>
 			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Spangler</surname></persName>
@@ -587,7 +580,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b4">
+<biblStruct xml:id="b3">
 	<analytic>
 		<title level="a" type="main">in patients with metastatic carcinoma: A retrospective study of 4020 patients</title>
 	</analytic>
@@ -601,7 +594,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b5">
+<biblStruct xml:id="b4">
 	<monogr>
 		<title/>
 		<author>
@@ -623,7 +616,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b6">
+<biblStruct xml:id="b5">
 	<analytic>
 		<title level="a" type="main">Treatment of cutaneous and subcutaneous tumors with electrochemotherapy using intralesional bleomycin</title>
 		<author>
@@ -640,7 +633,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b7">
+<biblStruct xml:id="b6">
 	<monogr>
 		<title/>
 		<author>
@@ -665,7 +658,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b8">
+<biblStruct xml:id="b7">
 	<analytic>
 		<title level="a" type="main">An easy, highly effective and safe treatment of cutaneous and subcutaneous metastases: Results of ESOPE (European Standard Operating Procedures of Electrochemotherapy) study</title>
 	</analytic>
@@ -679,7 +672,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b9">
+<biblStruct xml:id="b8">
 	<analytic>
 		<title level="a" type="main">Effective treatment of cutaneous and subcutaneous malignant tumours by electrochemotherapy</title>
 		<author>
@@ -711,19 +704,12 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b10">
-	<monogr>
-		<title level="m" type="main">Electroporation: Theory and methods, perspectives</title>
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Electroporation: Theory and methods, perspectives [7] for drug delivery, gene therapy and research</title>
 		<author>
 			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Gehl</surname></persName>
 		</author>
-		<imprint/>
-	</monogr>
-</biblStruct>
-
-<biblStruct xml:id="b11">
-	<analytic>
-		<title level="a" type="main">for drug delivery, gene therapy and research</title>
 	</analytic>
 	<monogr>
 		<title level="j">Acta Physiol Scand</title>
@@ -735,7 +721,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b12">
+<biblStruct xml:id="b10">
 	<analytic>
 		<title level="a" type="main">Bleomycin, [8] an apoptosis-mimetic drug that induces two types of cell death depending on the number of molecules internalized</title>
 		<author>
@@ -764,7 +750,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b13">
+<biblStruct xml:id="b11">
 	<analytic>
 		<title level="a" type="main">Enhancement of cytotoxicity [9] by electropermeabilization: An improved method for screening drugs</title>
 		<author>
@@ -787,9 +773,9 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b14">
+<biblStruct xml:id="b12">
 	<analytic>
-		<title level="a" type="main">Transient elec[10] tropermeabilization of cells in culture. Increase of the cytotoxicity of anticancer drugs</title>
+		<title level="a" type="main">Transient elec-[10] tropermeabilization of cells in culture. Increase of the cytotoxicity of anticancer drugs</title>
 		<author>
 			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Orlowski</surname></persName>
 		</author>
@@ -800,7 +786,7 @@ Median (range)
 			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Paoletti</surname></persName>
 		</author>
 		<author>
-			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Lm ;</forename><surname>Mir</surname></persName>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><forename type="middle">M</forename><surname>Mir</surname></persName>
 		</author>
 		<author>
 			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">J</forename><surname>Jaroszeski</surname></persName>
@@ -828,7 +814,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b15">
+<biblStruct xml:id="b13">
 	<analytic>
 		<title level="a" type="main">Toxicity of anticancer agents mediated by electroporation in vitro</title>
 		<author>
@@ -845,7 +831,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b16">
+<biblStruct xml:id="b14">
 	<monogr>
 		<title/>
 		<author>
@@ -864,7 +850,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b17">
+<biblStruct xml:id="b15">
 	<analytic>
 		<title level="a" type="main">Electrochemotherapy, a new antitumor treatment. First clinical phase I-II trial</title>
 		<author>
@@ -884,7 +870,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b18">
+<biblStruct xml:id="b16">
 	<monogr>
 		<title/>
 		<author>
@@ -906,14 +892,11 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b19">
+<biblStruct xml:id="b17">
 	<analytic>
 		<title level="a" type="main">Bleomycin-based electrochemotherapy: Clinical outcome from a single institution&apos;s experience with 52 patients</title>
 		<author>
-			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">L</forename></persName>
-		</author>
-		<author>
-			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Chiarion-Sileni</forename></persName>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Chiarion-Sileni</forename><surname>Gl</surname></persName>
 		</author>
 		<author>
 			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename></persName>
@@ -930,7 +913,7 @@ Median (range)
 	<note>Ann Surg Oncol</note>
 </biblStruct>
 
-<biblStruct xml:id="b20">
+<biblStruct xml:id="b18">
 	<monogr>
 		<title/>
 		<author>
@@ -946,7 +929,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b21">
+<biblStruct xml:id="b19">
 	<analytic>
 		<title level="a" type="main">Electrochemotherapy in primary and metastatic skin tumors: Phase II trial using intralesional bleomycin</title>
 		<author>
@@ -966,7 +949,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b22">
+<biblStruct xml:id="b20">
 	<analytic>
 		<title level="a" type="main">Effi cient palliation of haemorrhaging [16] malignant melanoma skin metastases by electrochemotherapy</title>
 		<author>
@@ -986,7 +969,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b23">
+<biblStruct xml:id="b21">
 	<monogr>
 		<title/>
 		<author>
@@ -1011,7 +994,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b24">
+<biblStruct xml:id="b22">
 	<analytic>
 		<title level="a" type="main">Standard operating procedures of the electrochemotherapy: Instructions for the use of bleomycin or cisplatin administered either systemically or locally and electric pulses delivered by the CliniporatorTM by means of invasive or non-invasive electrodes</title>
 		<author>
@@ -1028,7 +1011,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b25">
+<biblStruct xml:id="b23">
 	<monogr>
 		<title/>
 		<author>
@@ -1050,7 +1033,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b26">
+<biblStruct xml:id="b24">
 	<analytic>
 		<title level="a" type="main">Antitumor electrochemotherapy: New advances in the clinical protocol</title>
 		<author>
@@ -1067,7 +1050,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b27">
+<biblStruct xml:id="b25">
 	<monogr>
 		<title/>
 		<author>
@@ -1089,7 +1072,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b28">
+<biblStruct xml:id="b26">
 	<analytic>
 		<title level="a" type="main">Bleomycin clinical pharmacology by radioimmunoassay</title>
 	</analytic>
@@ -1103,9 +1086,9 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b29">
+<biblStruct xml:id="b27">
 	<analytic>
-		<title level="a" type="main">Bleomycin and hyperoxia exposure in the oper[20] ating room</title>
+		<title level="a" type="main">Bleomycin and hyperoxia exposure in the oper-[20] ating room</title>
 		<author>
 			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">D</forename><surname>Mathes</surname></persName>
 		</author>
@@ -1120,7 +1103,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b30">
+<biblStruct xml:id="b28">
 	<monogr>
 		<title/>
 		<author>
@@ -1142,14 +1125,14 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b31">
+<biblStruct xml:id="b29">
 	<analytic>
 		<title level="a" type="main">New guidelines to evaluate the response to treatment in solid tumors. European Organization for Research and Treatment of Cancer, National Cancer Institute of the United States, National Cancer Institute of Canada</title>
 		<author>
-			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">S</forename><surname>Rubinstein</surname></persName>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Rs</surname></persName>
 		</author>
 		<author>
-			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename></persName>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Rubinstein</surname></persName>
 		</author>
 	</analytic>
 	<monogr>
@@ -1162,7 +1145,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b32">
+<biblStruct xml:id="b30">
 	<monogr>
 		<title/>
 		<author>
@@ -1184,21 +1167,24 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b33">
+<biblStruct xml:id="b31">
 	<monogr>
 		<title/>
 		<author>
 			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Belehradek</surname></persName>
 		</author>
 		<author>
-			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><genName>Jr</genName></persName>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jr</forename></persName>
 		</author>
 		<imprint/>
 	</monogr>
 	<note>Electrochemotherapy, a new antitumor treatment: fi rst clinical trial</note>
 </biblStruct>
 
-<biblStruct xml:id="b34">
+<biblStruct xml:id="b32">
 	<analytic>
 		<title/>
 	</analytic>
@@ -1212,7 +1198,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b35">
+<biblStruct xml:id="b33">
 	<monogr>
 		<title/>
 		<author>
@@ -1231,7 +1217,7 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b36">
+<biblStruct xml:id="b34">
 	<analytic>
 		<title level="a" type="main">Electrochemotherapy with intravenous bleomycin in the local treatment of skin melanoma metastases</title>
 		<author>
@@ -1252,7 +1238,7 @@ Median (range)
 	<note>Ann Surg Oncol</note>
 </biblStruct>
 
-<biblStruct xml:id="b37">
+<biblStruct xml:id="b35">
 	<monogr>
 		<title/>
 		<author>
@@ -1274,14 +1260,11 @@ Median (range)
 	</monogr>
 </biblStruct>
 
-<biblStruct xml:id="b38">
+<biblStruct xml:id="b36">
 	<analytic>
 		<title level="a" type="main">Aspects of preclinical development and early clinical experience</title>
 		<author>
-			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>&amp;apos;reily</surname></persName>
-		</author>
-		<author>
-			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename></persName>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>O&amp;apos;reily</surname></persName>
 		</author>
 	</analytic>
 	<monogr>
