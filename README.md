@@ -68,9 +68,9 @@ To then create a file list that matches the source you could run:
 python -m sciencebeam_utils.tools.get_output_files \
     --source-base-path ./example-data/pmc-sample-1943-cc-by-subset \
     --source-file-list file-list-target.lst \
-    --output-file-suffix=.cermine.xml \
-    --output-base-path ./example-data/pmc-sample-1943-cc-by-subset-results \
-    --output-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/file-list-cermine2.lst \
+    --output-file-suffix=.xml \
+    --output-base-path ./example-data/pmc-sample-1943-cc-by-subset-results/cermine \
+    --output-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/cermine/file-list.lst \
     --use-relative-paths
 ```
 
@@ -98,8 +98,8 @@ For example to evaluate the provide `example-data` for _cermine_ and _grobid-tei
 ./evaluate.sh \
   --target-file-list ./example-data/pmc-sample-1943-cc-by-subset/file-list.tsv \
   --target-file-column=xml_url \
-  --prediction-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/file-list-cermine.lst \
-  --output-path ./example-data/pmc-sample-1943-cc-by-subset-results/evaluation-results/cermine \
+  --prediction-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/cermine/file-list.lst \
+  --output-path ./example-data/pmc-sample-1943-cc-by-subset-results/cermine/evaluation-results \
   --sequential
 ```
 
@@ -107,8 +107,8 @@ For example to evaluate the provide `example-data` for _cermine_ and _grobid-tei
 ./evaluate.sh \
   --target-file-list ./example-data/pmc-sample-1943-cc-by-subset/file-list.tsv \
   --target-file-column=xml_url \
-  --prediction-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/file-list-grobid-tei.lst \
-  --output-path ./example-data/pmc-sample-1943-cc-by-subset-results/evaluation-results/grobid-tei \
+  --prediction-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/grobid-tei/file-list.lst \
+  --output-path ./example-data/pmc-sample-1943-cc-by-subset-results/grobid-tei/evaluation-results \
   --sequential
 ```
 
