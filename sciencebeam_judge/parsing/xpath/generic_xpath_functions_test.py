@@ -1,3 +1,5 @@
+import pytest
+
 from lxml.builder import E
 
 from sciencebeam_judge.utils.xml import get_text_content_list
@@ -9,6 +11,11 @@ TEXT_1 = 'Text 1'
 TEXT_2 = 'Text 2'
 
 
+@pytest.fixture(autouse=True)
+def _register_functions():
+    register_functions()
+
+
 class TestGenericXpathFunctions(object):
     class TestConcatChildren(object):
         def test_should_join_two_child_elements_of_single_parent(self):
@@ -17,7 +24,6 @@ class TestGenericXpathFunctions(object):
                     E.label('Label 1'), E.caption('Caption 1')
                 )
             )
-            register_functions()
             assert (
                 list(
                     xml.xpath('generic-concat-children(//table, "$label", " ", "$caption")')
@@ -30,7 +36,6 @@ class TestGenericXpathFunctions(object):
                     E.label(), E.caption('Caption 1')
                 )
             )
-            register_functions()
             assert (
                 list(
                     xml.xpath('generic-concat-children(//table, "$label", " ", "$caption")')
@@ -43,7 +48,6 @@ class TestGenericXpathFunctions(object):
                     E.caption('Caption 1')
                 )
             )
-            register_functions()
             assert (
                 list(
                     xml.xpath('generic-concat-children(//table, "$label", " ", "$caption")')
@@ -58,7 +62,6 @@ class TestGenericXpathFunctions(object):
                     E.child('Text 2')
                 )
             )
-            register_functions()
             assert (
                 list(xml.xpath('generic-join-children(//parent, "child", ", ")'))
             ) == ['Text 1, Text 2']
@@ -70,7 +73,6 @@ class TestGenericXpathFunctions(object):
                     E.child('Text 2 ')
                 )
             )
-            register_functions()
             assert (
                 list(xml.xpath('generic-join-children(//parent, "child", ", ")'))
             ) == ['Text 1, Text 2']
@@ -81,7 +83,6 @@ class TestGenericXpathFunctions(object):
                     E.other('Other 1')
                 )
             )
-            register_functions()
             assert (
                 list(xml.xpath('generic-join-children(//parent, "child", ", ")'))
             ) == ['']
@@ -89,7 +90,6 @@ class TestGenericXpathFunctions(object):
     class TestAsItems(object):
         def test_should_include_single_child(self):
             xml = E.root(E.parent(E.child(TEXT_1)))
-            register_functions()
             assert [
                 get_text_content_list(items.findall('item'))
                 for items in xml.xpath('generic-as-items(//parent, "*")')
@@ -97,7 +97,6 @@ class TestGenericXpathFunctions(object):
 
         def test_should_include_multiple_children(self):
             xml = E.root(E.parent(E.child(TEXT_1), E.child(TEXT_2)))
-            register_functions()
             assert [
                 get_text_content_list(items.findall('item'))
                 for items in xml.xpath('generic-as-items(//parent, "*")')
@@ -105,7 +104,6 @@ class TestGenericXpathFunctions(object):
 
         def test_should_not_include_parent_text_if_children_are_matched(self):
             xml = E.root(E.parent(E.child(TEXT_1), E.child(TEXT_2)))
-            register_functions()
             assert [
                 get_text_content_list(items.findall('item'))
                 for items in xml.xpath('generic-as-items(., ".//*")')
@@ -118,7 +116,6 @@ class TestGenericXpathFunctions(object):
                     'Text 1', E.label('Label 1'), E.caption('Caption 1')
                 )
             )
-            register_functions()
             assert (
                 list(xml.xpath('generic-text-content(//table)'))
             ) == ['Text 1Label 1Caption 1']
@@ -127,7 +124,6 @@ class TestGenericXpathFunctions(object):
             xml = E.article(
                 E.table()
             )
-            register_functions()
             assert (
                 list(xml.xpath('generic-text-content(//table)'))
             ) == ['']
@@ -136,7 +132,6 @@ class TestGenericXpathFunctions(object):
             xml = E.article(
                 E.table(' Text 1 ')
             )
-            register_functions()
             assert (
                 list(xml.xpath('generic-text-content(//table)'))
             ) == ['Text 1']
