@@ -1,12 +1,12 @@
-elifeLibrary {
-    def commit
-
-    stage 'Checkout', {
-        checkout scm
-        commit = elifeGitRevision()
-    }
-
+elifePipeline {
     node('containers-jenkins-plugin') {
+        def commit
+
+        stage 'Checkout', {
+            checkout scm
+            commit = elifeGitRevision()
+        }
+
         stage 'Build images', {
             checkout scm
             dockerComposeBuild(commit)
@@ -27,11 +27,11 @@ elifeLibrary {
         stage 'Test update notebooks', {
             sh "bash ./update-example-data-notebooks.sh"
         }
-    }
 
-    elifeMainlineOnly {
-        stage 'Merge to master', {
-            elifeGitMoveToBranch commit, 'master'
+        elifeMainlineOnly {
+            stage 'Merge to master', {
+                elifeGitMoveToBranch commit, 'master'
+            }
         }
     }
 }
