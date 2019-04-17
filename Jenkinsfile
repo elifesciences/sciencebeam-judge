@@ -34,7 +34,7 @@ elifePipeline {
             }
 
             stage 'Push unstable image', {
-                def image = DockerImage.elifesciences(this, 'sciencebeam_judge', commit)
+                def image = DockerImage.elifesciences(this, 'sciencebeam-judge', commit)
                 def unstable_image = image.addSuffixAndTag('_unstable', commit)
                 unstable_image.tag('latest').push()
                 unstable_image.push()
