@@ -72,6 +72,14 @@ class TestDefaultXmlMapping(object):
                 result = _parse_xml(BytesIO(etree.tostring(xml)), xml_mapping=default_xml_mapping)
                 assert result.get('title') == ['Title 1']
 
+            def test_should_only_match_first_title(self, default_xml_mapping):
+                xml = E.tei(E.text(E.front(
+                    E.docTitle(E.titlePart('Title 1')),
+                    E.docTitle(E.titlePart('Title 2')),
+                )))
+                result = _parse_xml(BytesIO(etree.tostring(xml)), xml_mapping=default_xml_mapping)
+                assert result.get('title') == ['Title 1']
+
         class TestTeiTrainingAbstract(object):
             def test_should_extract_title(self, default_xml_mapping):
                 xml = E.tei(E.text(E.front(
