@@ -13,4 +13,6 @@ ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
 WORKDIR ${PROJECT_HOME}/notebooks
 
+COPY notebooks/*.ipynb ./
+
 USER root
