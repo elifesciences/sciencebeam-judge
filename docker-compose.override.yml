@@ -6,3 +6,7 @@ services:
             PYTHONOPTIMIZE: ""
         volumes:
         - ./sciencebeam_judge:/srv/sciencebeam-judge/sciencebeam_judge
+
+    sciencebeam-judge-jupyter:
+        volumes:
+            - .:/home/jovyan/sciencebeam-judge
