@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.4" ident="GROBID" when="2019-04-16T14:14+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Phosphate-containing dialysis solution prevents hypophosphatemia during continuous renal replacement therapy</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Broman</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Anaesthesiology and Intensive Care</orgName>
+								<orgName type="institution">Lund University Hospital</orgName>
+								<address>
+									<settlement>Lund</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Carlsson</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Gambro Lundia AB</orgName>
+								<address>
+									<settlement>Lund</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Friberg</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Anaesthesiology and Intensive Care</orgName>
+								<orgName type="institution">Lund University Hospital</orgName>
+								<address>
+									<settlement>Lund</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Wieslander</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Gambro Lundia AB</orgName>
+								<address>
+									<settlement>Lund</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Godaly</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department">Gambro Lundia AB</orgName>
+								<address>
+									<settlement>Lund</settlement>
+									<country key="SE">Sweden</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Phosphate-containing dialysis solution prevents hypophosphatemia during continuous renal replacement therapy</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1111/j.1399-6576.2010.02338.x</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<abstract/>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>T HE majority of patients on continuous renal replacement therapy (CRRT) will require phosphate supplementation shortly after CRRT initiation. <ref type="bibr" target="#b0">1</ref> One reason is that critically ill patients present several conditions predisposing hypophosphatemia such as sepsis, alcohol withdrawal, malnutrition, catecholamines, intravenous glucose infusion, hyperventilation, diuretics and rhabdomyolysis. <ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref> Another reason is the CRRT technique that achieves high clearance of small solutes, such as phosphate. <ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref> In addition, low serum phosphate levels may also occur in the setting of extracellular to intracellular shifts that occur with respiratory alkalosis, high blood concentrations of stress hormones (i.e., insulin, glucagon, adrenalin, cortisol) and with refeeding syndrome.</p><p>As phosphate is a constituent of enzymes and intermediate phosphorylated compounds, it plays a key role in cellular metabolism and is essential in several biological processes. Serum phosphate concentration is maintained between 0.81 and 1.45 mmol/l. By convention, hypophosphatemia is often graded as mild ( o0.81 mmol/l), moderate ( o0.61 mmol/l) and severe (o0.32 mmol/l). Severe hypophosphatemia has been linked to increased mortality in surgical intensive care patients <ref type="bibr" target="#b6">7</ref> and was recently shown to serve as an independent mortality predictor in sepsis. <ref type="bibr" target="#b9">10</ref> Symptoms of hypophosphatemia are usually only seen in patients with moderate or severe hypophosphatemia and include ventilatory muscle weakness, cardiac failure, insulin resistance, hemolysis, impaired platelet and white blood cell function, rhabdomyolysis, and, in rare cases, neurologic disorders. <ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref> However, all these alternations have been shown to reverse by simply correcting the phosphate levels. <ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b11">12,</ref><ref type="bibr" target="#b12">13,</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref> Phosphate is supplemented intravenously in symptomatic patients, but phosphate has also been added directly to the dialysate and replacement fluids, <ref type="bibr" target="#b0">1,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b21">22</ref> with a risk of precipitation with calcium.</p><p>The development of many electrolyte disturbances in the intensive care unit (ICU) could be prevented by the use of better adapted dialysis fluids. This study evaluated the possibility to achieve and maintain a normal phosphate balance over time in patients on CRRT by using a new phosphatecontaining dialysis fluid and replacement fluid.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Fluid composition and study design</head><p>We used a new phosphate-containing solution for dialysis that in addition to standard electrolytes also contains 4.0 mmol of potassium and 1.2 mmol of phosphate (Phoxilium, Gambro Lundia AB, Lund, Sweden, <ref type="table" target="#tab_0">Table 1</ref>). As a control, we used our routine dialysis solution that does not contain phosphate (Hemosol B0, Gambro Lundia AB, <ref type="table" target="#tab_0">Table 1</ref>). At our ICU at Lund University Hospital we applied three regimes, half a year each, for all patients requiring CRRT treatment. The treatment mode used was CVVHDF. During the first period (group 1), all the patients received dialysate solution and replacement solution that did not contain phosphate (Hemosol B0), during the next half year (group 2), all patients requiring CRRT treatment received the phosphatecontaining solution as dialysis solution and a phosphate-free replacement solution (Hemosol B0) and finally during the last half year period (group 3), the patients received the phosphate-containing solution both as a dialysis solution and as a replacement solution. Blood sampling was performed according to normal routines at our department, but the physicians in charge continuously modified the CRRT treatment settings and the phosphate supplementation according to the patients' ongoing clinical needs. The physicians treating the patients did not have knowledge of the study setting during the treatments, but they were fully aware of the fluids and their contents.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Patients and CRRT treatments</head><p>After acceptance by the Regional Ethical Review Board (DNR 570/2008), Lund University, Sweden, we evaluated retrospectively the first 14 patients who did not fulfill the exclusion criteria in each group, a total of 42 consecutive patients <ref type="table">(Table 2)</ref>. Patients were excluded if they had chronic kidney disease, if they had received intermittent dialysis before the ICU stay, if the CRRT treatment lasted  <ref type="table">Table 2</ref> Main diagnoses leading to intensive care of the study groups. o10 h or if they were under the age of 18 years. In all patients, the Gambro Prismaflex CRRT machine with the CVVHDF modality and a Hospal M100 filter (Hospal Industrie, Meyziew, France) was used. The blood flow, the dialysis fluid flow, the replacement fluid flow, the anticoagulation used and the fluid removal were set according to the patients' conditions and requirements. Of the replacement fluid, 500 ml/h was postfilter and the rest was prefilter in each treatment according to the general standard at the department. Intravenous phosphate addition was prescribed when serum phosphate was o0.8 mmol/l, also according to the general standard at the department. Nutrition was given only if the patients were hemodynamically stable as parenteral or enteral or both during the study period.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Clinical parameters of the patients</head><p>All patients had regular measurements of serum sodium, potassium, ionized calcium, pH, pCO 2 and bicarbonate either from an arterial line or from a central venous line before the start and regularly every fourth hour all through the CRRT treatment during 1, 2, 3, 4 and maximum 5 days. For phosphate and magnesium analyses, blood samples were taken at 5:00 hours in the morning and at 17:00 hours in the afternoon before the start and during the CRRT treatment days. Blood samples were analyzed at the hospital laboratory (Laboratory for Clinical Chemistry, Lund University Hospital, Lund, Sweden). The results are presented as means AE SD for normal distributed data, median and range for remaining data. In addition, baseline characteristics of study patients and delivered CRRT were registered <ref type="table">(Table 3)</ref>. Hypophosphatemia has been defined as condition where the serum phosphate level is o0.81 mmol/l.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistics</head><p>One-way repeated measures analysis of variance was used. The statistical program used was SigmaStat, version 3.5, for Windows XP. Differences were considered to be significant for Po0.05.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>Main diagnoses leading to intensive care of the study groups, baseline characteristics, timing of initiation of CRRT, ultrafiltration rate, duration of the CRRT and anticoagulation were statistically similar between the three groups <ref type="table">(Tables 2 and 3</ref>).</p><p>The incidence of hypophosphatemia occurred in 11 of 14 patients in group 1, where the patients did not receive the phosphate-containing dialysis solution, but received phosphate intravenously based on the serum phosphate values <ref type="figure" target="#fig_0">(Fig. 1)</ref>. In group 2, where the patients received a phosphate-containing solution as the dialysis solution and a phos- <ref type="table">Table 3</ref> Baseline characteristics of study patients and delivered CRRT. zThe dialysis dose in CRRT is expressed in terms of ml of effluent (dialysate1ultrafiltrate) per kg of body weight (BW) per hour (ml/kg/ h). <ref type="bibr" target="#b22">23</ref> §Statistical differences were as follows: between groups 1 and 2 (P 5 0.046), between groups 1 and 3 (P 0.001), and between groups 2 and 3 (P 5 0.003).</p><p>phate-free solution as the replacement solution, five of 14 patients had at least one episode of hypophosphatemia <ref type="figure" target="#fig_0">(Fig. 1)</ref>. No episodes of hypophosphatemia were detected in group 3. The serum phosphate level was 1.90 mmol/l at baseline and 0.99 mmol/l during CRRT treatment in group 1. In group 2, the corresponding values were 1.54 and 1.20 mmol/l, and in group 3, they were 1.83 and 1.43 mmol/l <ref type="table" target="#tab_5">(Table 5</ref>). However, due to the simultaneous intake of enteral/parenteral solutions, two of 14 of the patients in group 3 had a temporary increase in serum phosphate (o1.9 mmol/l), but there were no cases of hyperphosphatemia that required a withdrawal of the phosphate-containing dialysis solution from the treatment.</p><p>Phosphate intake was from nutrition and from intravenous supplementation. The average phosphate input calculated from the total nutrition was 18 mmol/CRRT treatment/day for all groups. Short-acting insulin was administered as infusion in order to achieve a blood glucose level between 5 and 8 mmol/l. Phosphate was supplemented intravenously if serum phosphate declined to o0.80 mmol/l. In group 1, the average phosphate supplementation was 10 mmol/CRRT treatment/ day. In group 2, the average supplementation was 5 mmol/CRRT treatment and day, and in group 3, there was no intravenous supplementation.</p><p>There was a decline in phosphate levels during CRRT treatment in both groups 1 and 2. In group 1, serum phosphate declined constantly, although the patients received phosphate supplementation intravenously <ref type="figure">(Fig. 2)</ref>. In group 2, the phosphate levels were unstable and reached a low level in the end of the study. In group 3, where the patients received a phosphate-containing solution both as the dialysis solution and the replacement solution, none of the patients had episodes of hypophosphatemia <ref type="figure">(Fig. 2)</ref>. Phosphate remained stable in this patient population during the entire study.</p><p>For group 3, we also evaluated any adverse event in sodium, potassium and magnesium homeostasis. There was a significant increase in sodium (P 0.001) and a slight increase in ionized calcium (P 5 0.029), whereas potassium and magnesium remained stable during the entire study as summarized in <ref type="table" target="#tab_4">Table 4</ref>. A comparison between the study groups revealed that there was a significant difference in phosphate (P 0.001), ionized calcium (P 5 0.004) and bicarbonate (P 5 0.045) between the groups <ref type="table" target="#tab_5">(Table 5</ref>). The pH and pCO 2 measurements were obtained at baseline and rapidly declined toward normal values after starting the CRRT treatment and remained essentially unchanged during the treatment in all groups <ref type="table" target="#tab_4">(Table 4)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>This study demonstrates that the new phosphatecontaining dialysis solution is safe, reduces the variability of serum phosphate levels during   <ref type="figure">Fig. 2</ref>. Serum phosphate levels during the continuous renal replacement therapy treatment. Group 1, receiving Hemosol B0 (diamond), group 2, receiving the phosphate-containing dialysis fluid as the dialysis fluid and Hemosol B0 as the replacement fluid (triangle), and group 3, receiving the phosphate-containing dialysis fluid (square). Groups 2 and 3 were statistically compared with group 1. n 5 14 patients/group, **Po0.01, ***Po0.001.</p><p>CRRT and reduces the incidence of hypophosphatemia.</p><p>Various protocols for intravenous phosphate supplementation have been studied in the last 30 years. Today, there is a trend toward the use of larger and faster boluses of phosphate because of high failure of repletion (20-70%) and the need for additional phosphate administration. <ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref><ref type="bibr" target="#b27">[28]</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref><ref type="bibr" target="#b30">[31]</ref> Authors usually agree that larger amounts of phosphate are needed to correct total body deficit, but their fear of adverse reactions has prompted a restrained attitude. Recent studies on ICU patients confirm that a relatively rapid infusion of potassium phosphate is safe if baseline serum potassium is below 4.5 mmol/l. <ref type="bibr" target="#b0">1</ref> The infusion rate is thus consequently limited by the serum potassium levels, and also by serum calcium levels, as high phosphate serum levels could induce hypocalcemia, as phosphate could precipitate with calcium in blood vessels and tissues. Recently, phosphate has been injected into dialysis solutions during treatment, but there is a risk of precipitation. <ref type="bibr" target="#b0">1,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b21">22</ref> We evaluated whether phosphate-containing solutions for dialysis and replacement simplify phosphate replacement even further.</p><p>The frequency of phosphate disturbances in critically ill patients is high, although the figure varies considerably depending on the study, between 8.8% and 80%. <ref type="bibr" target="#b31">32,</ref><ref type="bibr" target="#b32">33</ref> In our study, the incidence of hypophosphatemia during CRRT was 79% in the control group. The incidence of hypophosphatemia was lower (35%) in patients receiving the phosphate-containing solution as the dialysis solution and Hemosol B0 as the replacement solution. There were no episodes of hypophosphatemia in patients receiving only the phosphate-containing solution, but there was an incidence of mild (&gt;1.9 mmol/l) hyperphosphatemia in 14% of these patients. This is probably due to the simultaneous intake of nutritional support, but the phosphate levels were only marginally elevated without physiological consequences and did not require withdrawal of the phosphate-containing dialysis solution from the patient.</p><p>The amount of phosphate required to correct total body deficit is variable and depends on the cause of hypophosphatemia and the chronicity of the process. <ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b10">11,</ref><ref type="bibr" target="#b23">24</ref> The many physiological rearrangements in ICU patients may explain the need for larger amounts required for repletion. In our study, phosphate addition was necessary for patients in groups 1 and 2. This is representative of our experience, where the majority of patients on CRRT require phosphate supplementation shortly after CRRT initiation despite nutritional support. Malnourished alcoholic patients have a larger deficit due to long-standing negative phosphate balance. Malnutrition induces a re-feeding syndrome that has been reported after only 48 h of fasting in the ICU. <ref type="bibr" target="#b1">2</ref> The distribution volume for phosphate might be increased, <ref type="bibr" target="#b23">24</ref> while insulin, carbohydrate, and catecholamine administration act to decrease the serum phosphate concentration. <ref type="bibr" target="#b1">2,</ref><ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b10">11,</ref><ref type="bibr" target="#b33">34</ref> The incidence of hypophosphatemia in this study was 10% of the 42 patients before the start of CRRT. The incidence of hyperphosphatemia was  Mean values of each day of all the patients. *P 0.001 between the groups during the CRRT treatment. wP 5 0.004 between the groups during the CRRT treatment. zDifferences between the groups were not statistically significant.</p><p>§P 5 0.045 between the groups during the CRRT treatment.</p><p>52%, which is slightly lower than that found in other studies, where 65-80% of patients present hyperphosphatemia before the start of the CRRT. <ref type="bibr" target="#b7">8,</ref><ref type="bibr" target="#b34">35</ref> Phosphate was within normal limits in 38% of patients even before the beginning of CRRT. The new dialysis fluid contains 30 mM bicarbonate compared with 32 mM in Hemosol B0. With prescribed CRRT clearances of ! 20 ml/ kg/h, most acid-base disturbances can be managed with bicarbonate compositions of 25-35 mM. <ref type="bibr" target="#b35">36</ref> The normal serum range for bicarbonate is 22-30 mmol/l, which was achieved in patients in all groups, although the increase in group 1 was most significant. Ionized calcium increased in all groups during treatment time, but the increase was less marked in groups 2 and 3. There is a possibility that the slow increase in bicarbonate and ionized calcium could reflect the differences in the ion content between Hemosol B0 and the phosphate-containing dialysis fluid, although these differences could also be due to the limitations of this study. The fact that this was a retrospective observational study, without other intervention but for the dialysis solutions, means that bias due to the patients' illnesses and due to other treatments could affect ion concentrations. Even the phosphate concentration in parenteral and enteral nutrition cannot be completely excluded, although this would not alter the basic results of the study. The next objective of the study was to evaluate whether the administered phosphate could alter calcium and potassium homeostasis. Phosphate could theoretically precipitate with calcium, which could lead to hypocalcemia in the patients. We found that the phosphate-containing dialysis fluid did not induce hypocalcemia during CRRT. Another important concern was whether this fluid would cause potassium overload, as potassium phosphate is used instead of sodium phosphate. We found that the phosphate-containing dialysis fluid did not induce hyperkalemia either. Potassium phosphate was favored over sodium phosphate because potassium usually has to be added to CRRT solutions. In addition, there were no disturbances of magnesium levels.</p><p>The present study shows that by using the phosphate-containing fluid both as the dialysis fluid and the replacement fluid, we could eliminate the episodes of hypophosphatemia. The new phosphatecontaining dialysis fluid simplified the phosphate control and avoided rapid phosphate fluctuations with intravenous bolus administration.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Events of hypophosphatemia during the continuous renal replacement therapy. Treatment with the phosphate-containing solution for dialysis resulted in no episodes of hypophosphatemia.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" validated="true"><head>Table 1</head><label>1</label><figDesc>Fluid composition.</figDesc><table>Hemosol B0 
+(mmol/l) 
+
+Phosphate containing 
+dialysis solution (mmol/l) 
+
+Bicarbonate 
+32 
+30 
+Lactate 
+3 
+0 
+Calcium 
+1.75 
+1.25 
+Magnesium 
+0.5 
+0.6 
+Potassium 
+0 
+4 
+Sodium 
+140 
+140 
+Phosphate 
+0 
+1.2 
+Chloride 
+109.5 
+115.9 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" validated="false"><head>Table 4</head><label>4</label><figDesc>Serum solute concentrations (mmol/l) during CRRT with the phosphate containing dialysis fluid for patients in group 3.Day on CRRT Before 1 2 3 4 5 Sodium* 134.0 AE 5 135.0 AE 3 135.2 AE 2 135.0 AE 2 135.7 AE 2 135.8 AE 3 Potassiumw 4.06 AE 0.5 4.10 AE 0.4 4.14 AE 0.3 4.23 AE 0.3 4.39 AE 0.4 4.49 AE 0.5 Ionised calciumz 1.11 AE 0.08 1.10 AE 0.05 1.15 AE 0.07 1.17 AE 0.06 1.16 AE 0.05 1.17 AE 0.06 Magnesiumw 1.1 AE 0.4 1.0 AE 0.2 1.1 AE 0.2 0.7 AE 0.2 0.9 AE 0.1 1.0 AE 0.3 *P 0.001 within the group. wDifferences within the group were not statistically significant. zP 5 0.029 within the group.</figDesc><table>Day on CRRT 
+Before 
+1 
+2 
+3 
+4 
+5 
+
+Sodium* 
+134.0 AE 5 
+135.0 AE 3 
+135.2 AE 2 
+135.0 AE 2 
+135.7 AE 2 
+135.8 AE 3 
+Potassiumw 
+4.06 AE 0.5 
+4.10 AE 0.4 
+4.14 AE 0.3 
+4.23 AE 0.3 
+4.39 AE 0.4 
+4.49 AE 0.5 
+Ionised calciumz 
+1.11 AE 0.08 
+1.10 AE 0.05 
+1.15 AE 0.07 
+1.17 AE 0.06 
+1.16 AE 0.05 
+1.17 AE 0.06 
+Magnesiumw 
+1.1 AE 0.4 
+1.0 AE 0.2 
+1.1 AE 0.2 
+0.7 AE 0.2 
+0.9 AE 0.1 
+1.0 AE 0.3 
+
+*P 
+
+0.001 within the group. 
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" validated="true"><head>Table 5</head><label>5</label><figDesc>Serum values (mmol/l, kPa) during CRRT with the phosphate- containing dialysis fluid.</figDesc><table>Group 
+Group 1 
+Group 2 
+Group 3 
+
+Before During Before During Before During 
+
+Phosphate* 1.90 
+0.99 
+1.54 
+1.20 
+1.83 
+1.43 
+Ionized Caw 1.10 
+1.24 
+1.13 
+1.19 
+1.11 
+1.15 
+pHz 
+7.24 
+7.40 
+7.30 
+7.36 
+7.32 
+7.36 
+pCO 2 z 
+5.59 
+5.27 
+5.81 
+5.77 
+6.51 
+5.27 
+Bicarbonate § 18 
+24 
+21 
+23 
+21 
+22 
+
+</table></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>Competing interests: The authors have not disclosed any potential competing interests. The ICU department of Lund University Hospital has paid an ordinary price for the phosphatecontaining dialysis solution used in the study. Gambro has approved a Research Grant, which has been paid to the ICU department of Lund University Hospital. Gambro has not had any insight in how the Research Grant has been used. An independent statistician has monitored the raw data and the statistics.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Phosphate addition to hemodiafiltration solutions during continuous renal replacement therapy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Troyanov</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Geadah</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Ghannoum</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Cardinal</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Leblanc</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Intensive Care Med</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="1662" to="1667" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Refeeding hypophosphatemia in critically ill patients in an intensive care unit. A prospective study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">E</forename><surname>Marik</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">K</forename><surname>Bedigian</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arch Surg</title>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="page" from="1043" to="1050" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Pathophysiology, effects and management on the intensive care unit</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><forename type="middle">C</forename><surname>Bugg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">A</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Hypophosphataemia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Anaesthesia</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page" from="895" to="902" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Glucose: a potential killer</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Skulberg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><surname>Sr</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Anaesthesiol Scand</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page">684</biblScope>
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Endocrine crises. Hypophosphatemia and hyperphosphatemia</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">P</forename><surname>Peppers</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Geheb</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Desai</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Crit Care Clin</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="201" to="215" />
+			<date type="published" when="1991" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Mechanisms of hypophosphataemia in alcoholic patients</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">S</forename><surname>Elisaf</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">C</forename><surname>Siamopoulos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Clin Pract</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page" from="501" to="504" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">High incidence of hypophosphatemia in surgical intensive care patients: efficacy of phosphorus therapy on myocardial function</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">F</forename><surname>Zazzo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Troche</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Ruel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Maintenant</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Intensive Care Med</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="826" to="857" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Phosphatemic control during acute renal failure: intermittent hemodialysis versus continuous hemodiafiltration</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><forename type="middle">K</forename><surname>Tan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Bellomo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>&amp;apos;pis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">A</forename><surname>Ronco</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Artif Organs</title>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="page" from="186" to="91" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">A pilot randomised controlled comparison of continuous venovenous haemofiltration and extended daily dialysis with filtration: effect on small solutes and acid-base balance</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Baldwin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Naka</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Koch</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Fealy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Bellomo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Intensive Care Med</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="830" to="835" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Severe hypophosphatemia in sepsis as a mortality predictor</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Shor</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Halabe</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Rishver</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Tilis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Z</forename><surname>Matas</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Fux</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Boaz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Weinstein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann Clin Lab Sci</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="67" to="72" />
+			<date type="published" when="2006" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Phosphate homeostasis and hypophosphatemia</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">S</forename><surname>Stoff</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am J Med</title>
+		<imprint>
+			<biblScope unit="volume">72</biblScope>
+			<biblScope unit="page" from="489" to="95" />
+			<date type="published" when="1982" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Drug-and nutrition-induced hypophosphatemia: mechanisms and relevance in the critically ill</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">R</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">K</forename><surname>Greenwood</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann Pharmacother</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="626" to="658" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Hemodynamic and metabolic effects of rapid correction of hypophosphatemia in patients with septic shock</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">E</forename><surname>Bollaert</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Levy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Nace</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">F</forename><surname>Laterre</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Larcan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Chest</title>
+		<imprint>
+			<biblScope unit="volume">107</biblScope>
+			<biblScope unit="page" from="1698" to="701" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Hypophosphataemia: a dangerous disorder</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">R</forename><surname>Paterson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nutrition</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="page" from="540" to="541" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Effects of hypophosphatemia on glucose tolerance and insulin secretion</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><forename type="middle">J</forename><surname>Paula</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">E</forename><surname>Plens</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">C</forename><surname>Foss</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Horm Metab Res</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="281" to="285" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Severe hypophosphataemia and insulin resistance in diabetic ketoacidosis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">J</forename><surname>Ravenscroft</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">M</forename><surname>Valentine</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">A</forename><surname>Knappett</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Anaesthesia</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<date type="published" when="0198" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">CT and MRI in severe hypophosphataemia with central nervous system involvement</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">U</forename><surname>Weber</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Huppe</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Niehaus</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Neuroradiology</title>
+		<imprint>
+			<biblScope unit="volume">42</biblScope>
+			<biblScope unit="page" from="112" to="116" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Reversible severe congestive cardiomyopathy in three cases of hypophosphatemia</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">R</forename><surname>Darsee</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">O</forename><surname>Nutter</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann Intern Med</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="page" from="867" to="70" />
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Effect of hypophosphatemia on diaphragmatic contractility in patients with acute respiratory failure</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Aubier</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Murciano</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Lecocguic</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Viires</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Jacquens</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Squara</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Pariente</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">N Engl J Med</title>
+		<imprint>
+			<biblScope unit="volume">313</biblScope>
+			<biblScope unit="page" from="420" to="424" />
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">The Euro-balance trial: the effect of a new biocompatible peritoneal dialysis fluid (balance) on the peritoneal membrane</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">D</forename><surname>Williams</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Topley</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">J</forename><surname>Craig</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">K</forename><surname>Mackenzie</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Pischetsrieder</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Lage</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Passlick-Deetjen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Kidney Int</title>
+		<imprint>
+			<biblScope unit="volume">66</biblScope>
+			<biblScope unit="page" from="408" to="426" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Management of hypophosphatemia induced by high-flux hemodiafiltration for the treatment of vancomycin toxicity: intravenous phosphorus therapy versus use of a phosphorus-enriched dialysate</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">A</forename><surname>Gatchalian</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Popli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">A</forename><surname>Ejaz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">J</forename><surname>Leehey</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">M</forename><surname>Kjellstrand</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><forename type="middle">S</forename><surname>Ing</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am J Kidney Dis</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="1262" to="1268" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Hypophosphatemia and phosphate supplementation during continuous renal replacement therapy in children</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">J</forename><surname>Santiago</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Lopez-Herce</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Urbano</forename><forename type="middle">J</forename><surname>Bellon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">M</forename><surname>Del Castillo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Carrillo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Kidney Int</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="page" from="312" to="318" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Sepsis-related acute kidney injury: a protective effect of drotrecogin alpha (activated) treatment?</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Janssen Van Doorn</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Spapen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Geers</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Diltoer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Shabana</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Anaesthesiol Scand</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="1259" to="64" />
+			<date type="published" when="2008" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Treatment of severe hypophosphatemia</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">D</forename><surname>Lentz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">M</forename><surname>Brown</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">M</forename><surname>Kjellstrand</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann Intern Med</title>
+		<imprint>
+			<biblScope unit="volume">89</biblScope>
+			<biblScope unit="page" from="941" to="945" />
+			<date type="published" when="1978" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Efficacy of intravenous phosphorus therapy in the severely hypophosphatemic patient</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">B</forename><surname>Vannatta</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Whang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Papper</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arch Intern Med</title>
+		<imprint>
+			<biblScope unit="volume">141</biblScope>
+			<biblScope unit="page" from="885" to="892" />
+			<date type="published" when="1981" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">High-dose intravenous phosphorus therapy for severe complicated hypophosphatemia</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">B</forename><surname>Vannatta</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">L</forename><surname>Andress</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Whang</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Papper</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">South Med J</title>
+		<imprint>
+			<biblScope unit="volume">76</biblScope>
+			<biblScope unit="page" from="1424" to="1430" />
+			<date type="published" when="1983" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Treatment of severe hypophosphatemia</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Kingston</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Al-Siba&amp;apos;i</forename><surname>Mb</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Crit Care Med</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="16" to="24" />
+			<date type="published" when="1985" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Observations of hypophosphatemia and its management in nutrition support</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">S</forename><surname>Sacks</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Walker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">N</forename><surname>Dickerson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">A</forename><surname>Kudsk</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">O</forename><surname>Brown</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nutr Clin Pract</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="105" to="113" />
+			<date type="published" when="1994" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Treatment of hypophosphatemia in patients receiving specialized nutrition support using a graduated dosing scheme: results from a prospective clinical trial</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">L</forename><surname>Clark</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">S</forename><surname>Sacks</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">N</forename><surname>Dickerson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">A</forename><surname>Kudsk</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">O</forename><surname>Brown</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Crit Care Med</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="1504" to="1515" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Intravenous phosphate repletion regimen for critically ill patients with moderate hypophosphatemia</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">H</forename><surname>Rosen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">I</forename><surname>Boullata</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><forename type="middle">A</forename><surname>O&amp;apos;rangers</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><forename type="middle">B</forename><surname>Enow</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Shin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Crit Care Med</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="1204" to="1214" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Efficacy and safety of intravenous phosphate replacement in critically ill patients</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">M</forename><surname>Perreault</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><forename type="middle">J</forename><surname>Ostrop</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">G</forename><surname>Tierney</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann Pharmacother</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="page" from="683" to="691" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Intravenous phosphate in the intensive care unit: more aggressive repletion regimens for moderate and severe hypophosphatemia</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Charron</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">F</forename><surname>Bernard</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Skrobik</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Simoneau</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">N</forename><surname>Gagnon</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Leblanc</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Intensive Care Med</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="1273" to="1281" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Prevalence of hypophosphatemia in sepsis and infection: the role of cytokines</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><surname>Barak</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Schwartz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Kalickman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><surname>Nisman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Gurman</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Y</forename><surname>Shoenfeld</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am J Med</title>
+		<imprint>
+			<biblScope unit="volume">104</biblScope>
+			<biblScope unit="page" from="40" to="47" />
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<monogr>
+		<title level="m" type="main">Serum inorganic phosphate</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Walker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Dallas</forename><surname>Hall</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename><surname>Hurst</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename></persName>
+		</author>
+		<editor>Stoneham M</editor>
+		<imprint>
+			<date type="published" when="1990" />
+			<publisher>Butterworth Publishers</publisher>
+			<biblScope unit="page" from="895" to="904" />
+			<pubPlace>London</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Continuous veno-venous hemodiafiltration or hemofiltration: impact on calcium, phosphate and magnesium concentrations</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">H</forename><surname>Morimatsu</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Uchino</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><surname>Bellomo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Ronco</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Artif Organs</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="512" to="521" />
+			<date type="published" when="2002" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Address: Dr Marcus Broman Department of Anaesthesiology and Intensive Care Lund University Hospital S-221 85</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">A</forename><surname>Kraus</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Semin Dial</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="137" to="177" />
+			<date type="published" when="2009" />
+		</imprint>
+	</monogr>
+	<note>Selection of dialysate and replacement fluids and management of electrolyte and acid-base disturbances. Lund Sweden e-mail: marcus.broman@skane.se</note>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

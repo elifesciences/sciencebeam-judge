@@ -2,6 +2,9 @@ import logging
 
 from lxml import etree
 
+from sciencebeam_utils.utils.xml import get_text_content
+
+
 LOGGER = logging.getLogger(__name__)
 
 
@@ -94,6 +97,26 @@ def fn_tei_ref_lpage(_, nodes):
     return [_ref_lpage(node) for node in nodes]
 
 
+def _iter_abstract_text_elements(abstract):
+    head_list = abstract.xpath('.//head')
+    children_to_exclude = head_list[:1]
+    divs = abstract.xpath('.//div')
+    if not divs:
+        yield get_text_content(abstract)
+    for node in divs:
+        for child in node.xpath('.//*'):
+            if child not in children_to_exclude:
+                yield get_text_content(child)
+
+
+def _abstract_text(abstract):
+    return ' '.join(_iter_abstract_text_elements(abstract))
+
+
+def fn_tei_abstract_text(_, nodes):
+    return [_abstract_text(node) for node in nodes]
+
+
 def register_functions(ns=None):
     if ns is None:
         ns = etree.FunctionNamespace(None)
@@ -102,3 +125,4 @@ def register_functions(ns=None):
     ns['tei-aff-string'] = fn_tei_aff_string
     ns['tei-ref-fpage'] = fn_tei_ref_fpage
     ns['tei-ref-lpage'] = fn_tei_ref_lpage
+    ns['tei-abstract-text'] = fn_tei_abstract_text

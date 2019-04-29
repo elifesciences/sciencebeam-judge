@@ -14,8 +14,8 @@ update_results() {
         ./evaluate.sh \
         --target-file-list /example-data/pmc-sample-1943-cc-by-subset/file-list.tsv \
         --target-file-column=xml_url \
-        --prediction-file-list /example-data/pmc-sample-1943-cc-by-subset-results/file-list-$tool.lst \
-        --output-path /example-data/pmc-sample-1943-cc-by-subset-results/evaluation-results/$tool \
+        --prediction-file-list /example-data/pmc-sample-1943-cc-by-subset-results/$tool/file-list.lst \
+        --output-path /example-data/pmc-sample-1943-cc-by-subset-results/$tool/evaluation-results \
         --sequential
 }
 

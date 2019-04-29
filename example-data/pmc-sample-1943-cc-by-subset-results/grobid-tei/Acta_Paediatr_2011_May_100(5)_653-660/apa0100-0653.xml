@@ -1,0 +1,1274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.4" ident="GROBID" when="2019-04-16T14:14+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Placental programming of blood pressure in Indian children</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><roleName>nw@mrc.soton.ac</roleName><forename type="first">Nicola</forename><forename type="middle">R</forename><surname>Winder</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">.MRC Lifecourse Epidemiology Unit</orgName>
+								<orgName type="institution" key="instit1">Southampton General Hospital</orgName>
+								<orgName type="institution" key="instit2">University of Southampton</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Ghattu</forename><forename type="middle">V</forename><surname>Krishnaveni</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="laboratory">Epidemiology Research Unit</orgName>
+								<orgName type="institution">CSI Holdsworth Memorial Hospital</orgName>
+								<address>
+									<postCode>570021</postCode>
+									<settlement>Mysore</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="laboratory">MRC Lifecourse Epidemiology Unit, Southampton General Hospital</orgName>
+								<orgName type="institution">University of Southampton</orgName>
+								<address>
+									<addrLine>Southampton. SO16 6YD</addrLine>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jacqueline</forename><forename type="middle">C</forename><surname>Hill</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">.MRC Lifecourse Epidemiology Unit</orgName>
+								<orgName type="institution" key="instit1">Southampton General Hospital</orgName>
+								<orgName type="institution" key="instit2">University of Southampton</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Chitra</forename><surname>Ls Karat</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="laboratory">Epidemiology Research Unit</orgName>
+								<orgName type="institution">CSI Holdsworth Memorial Hospital</orgName>
+								<address>
+									<postCode>570021</postCode>
+									<settlement>Mysore</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="laboratory">MRC Lifecourse Epidemiology Unit, Southampton General Hospital</orgName>
+								<orgName type="institution">University of Southampton</orgName>
+								<address>
+									<addrLine>Southampton. SO16 6YD</addrLine>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Caroline</forename><forename type="middle">Hd</forename><surname>Fall</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">.MRC Lifecourse Epidemiology Unit</orgName>
+								<orgName type="institution" key="instit1">Southampton General Hospital</orgName>
+								<orgName type="institution" key="instit2">University of Southampton</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Sargoor</forename><forename type="middle">R</forename><surname>Veena</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="laboratory">Epidemiology Research Unit</orgName>
+								<orgName type="institution">CSI Holdsworth Memorial Hospital</orgName>
+								<address>
+									<postCode>570021</postCode>
+									<settlement>Mysore</settlement>
+									<country key="IN">India</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="laboratory">MRC Lifecourse Epidemiology Unit, Southampton General Hospital</orgName>
+								<orgName type="institution">University of Southampton</orgName>
+								<address>
+									<addrLine>Southampton. SO16 6YD</addrLine>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">David</forename><surname>Jp Barker</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="laboratory">.MRC Lifecourse Epidemiology Unit</orgName>
+								<orgName type="institution" key="instit1">Southampton General Hospital</orgName>
+								<orgName type="institution" key="instit2">University of Southampton</orgName>
+								<address>
+									<settlement>Southampton</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Nicola</forename><forename type="middle">R Winder</forename><surname>Correspondence</surname></persName>
+						</author>
+						<title level="a" type="main">Placental programming of blood pressure in Indian children</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.1111/j.1651-2227.2010.02102.x</idno>
+					<note type="submission">Received 26 August 2010; revised 20 October 2010; accepted 23 November 2010.</note>
+					<note>R E G U L A R A R T I C L E</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Birth size</term>
+					<term>Blood pressure</term>
+					<term>Indian children</term>
+					<term>Maternal height</term>
+					<term>Placental surface</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>ABSTRACT Aim: To determine whether the size and shape of the placental surface predict blood pressure in childhood.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods:</head><p>We studied blood pressure in 471 nine-year-old Indian children whose placental length, breadth and weight were measured in a prospective birth cohort study.</p><p>Results: In the daughters of short mothers (&lt;median height), systolic blood pressure (SBP) rose as placental breadth increased (b = 0.69 mmHg ⁄ cm, p = 0.05) and as the ratio of placental surface area to birthweight increased (p = 0.0003). In the daughters of tall mothers, SBP rose as the difference between placental length and breadth increased (b = 1.40 mmHg ⁄ cm, p = 0.007), that is as the surface became more oval. Among boys, associations with placental size were only statistically significant after adjusting for current BMI and height. After adjustment, SBP rose as placental breadth, area and weight decreased (for breadth b = )0.68 mmHg ⁄ cm, p &lt; 0.05 for all three measurements).</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>INTRODUCTION</head><p>People whose birthweights were towards the lower end of the normal range have higher blood pressures and are at increased risk of developing hypertension in later life <ref type="bibr" target="#b0">(1)</ref><ref type="bibr" target="#b1">(2)</ref><ref type="bibr" target="#b2">(3)</ref>. This is thought to reflect foetal programming, the process by which malnutrition and other adverse influences during development alter gene expression and programme the body's structures and function for life <ref type="bibr" target="#b3">(4,</ref><ref type="bibr" target="#b4">5)</ref>. These adverse influences may also slow foetal growth, leading to low birthweight <ref type="bibr" target="#b5">(6)</ref>. A baby's birthweight reflects its success in obtaining nutrients from its mother. The source of these nutrients is not only the mother's current diet but her metabolism, which is a product of her lifetime's nutrition <ref type="bibr" target="#b6">(7)</ref>. Height is one indicator of a woman's nutrition in early life <ref type="bibr" target="#b7">(8)</ref>, and women who are short have lower rates of protein synthesis during pregnancy than do women who are tall <ref type="bibr" target="#b8">(9)</ref>.</p><p>A baby's birthweight also depends on the placenta's ability to transport nutrients to it from its mother <ref type="bibr" target="#b5">(6)</ref>. Small babies generally have small placentas <ref type="bibr" target="#b9">(10)</ref>, which suggests that placental size is an indicator of placental function. In some circumstances, however, an undernourished baby can expand its placental surface to extract more nutrients from the mother <ref type="bibr" target="#b10">(11)</ref>. This leads to high placental weight in relation to birthweight. Both low placental weight and high placental weight in relation to birthweight have been shown to predict later hypertension <ref type="bibr" target="#b11">(12)</ref><ref type="bibr" target="#b12">(13)</ref><ref type="bibr" target="#b13">(14)</ref>. Placental weight has inconsistent associations with blood pressure levels in children. There are reported associations between increased levels of blood pressure and low placental weight and a high ratio of placental weight to birthweight <ref type="bibr" target="#b14">(15,</ref><ref type="bibr" target="#b15">16)</ref>. Other studies have found no associations <ref type="bibr" target="#b16">(17)</ref>. While the size of the placenta is linked to foetal nutrition, which nutrients are delivered to the foetus is conditional on their availability in the maternal circulation. This will be related to the mother's body size. The effects of placental size on later hypertension are conditioned by the mother's body size <ref type="bibr" target="#b10">(11)</ref> because her body is the source of nutrients.</p><p>The weight of the placenta does not distinguish its thickness from its surface area. To increase the surface for nutrient and oxygen exchange, the placenta can expand its invasion across the surface of the uterine lining or invade the maternal spiral arteries more deeply. The long-term consequences of these may be different.</p><p>The surface of the placenta is generally described as oval or round. To measure the ovality, two so-called diameters of the surface were routinely recorded in some hospitals <ref type="bibr" target="#b10">(11)</ref>. The maximal diameter described the length of the surface, while the lesser one bisecting it at right angles described the breadth. Studies in Finland and Holland have shown that hypertension in the offspring in later life is related to the size of the placental surface <ref type="bibr" target="#b10">(11)</ref>. This relation depends more on the breadth of the surface than on its length.</p><p>We measured the length and breadth of the placental surface in a study of newborn babies in Mysore, South India <ref type="bibr" target="#b17">(18)</ref>. The children's blood pressures were measured at the age of 9 years. We hypothesized that blood pressure levels would be related to the size of the placental surface and would relate more to the breadth than the length. We also hypothesized that the associations would depend on the mother's height. The relation between placental size and later hypertension differs in the two sexes <ref type="bibr" target="#b18">(19)</ref>. We therefore examined boys and girls separately.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>METHODS</head><p>In 1997, the Mysore Parthenon study recruited pregnant women attending the antenatal clinic at the Holdsworth Memorial Hospital (HMH) in Mysore, South India <ref type="bibr" target="#b17">(18,</ref><ref type="bibr" target="#b19">20)</ref>. The hospital ethical committee approved the study, and informed written consent was obtained from the parents and children. All women who had a singleton pregnancy and who were not diabetic before pregnancy were eligible. Out of 1233 eligible women, 830 (67%) took part in the study. At 30 ± 2 weeks of gestation, their body size was measured, including their height, using standardized methods. One hundred and fifty-six women delivered elsewhere and were not followed up any further: the remaining 674 women delivered live-born babies at HMH. Seven babies were stillborn and four had major congenital abnormalities. Neonatal anthropometric measurements were made on the remaining 663 within 72 h of birth by one of the four trained measurers, again using standardized methods. Weight was measured using digital weighing scales (Seca, Germany); crown-heel length was measured using a Harpenden neonatal stadiometer (CMS instruments, London, UK); head circumference was measured with blank anthropometric tape, marked and measured against a fixed ruler.</p><p>Placental dimensions were measured in 653 of the babies. The placentae were initially checked for completeness, and the cord clamp was released to allow the blood to drain. The amnion was stripped off, and the chorion was trimmed close to the placental edge. The cord was cut flush with the placenta, and any obvious clots were removed. The placenta was weighed using an electronic weighing machine. It was then placed on a flat surface, with the cotyledons facing upwards. The longest diameter (length) was identified by eye and measured using a graduated transparent plastic ruler placed on the surface. The diameter perpendicular to the length was defined as the breadth and was measured in the same way.</p><p>Postnatal follow-up The children were followed up annually from birth until 5 years of age, and every six months thereafter. Eight children were excluded because of major medical conditions, while a further 25 children died. Ninety-one children did not attend the nine and a half year follow-up (nine untraceable, 26 moved away and 56 declined to participate) so that 539 children were examined <ref type="figure" target="#fig_1">(Figure 1</ref>). Further anthropometry was carried out including weight (Salter, Tonbridge, Kent, UK), height (Microtoise; CMS instruments) and mid-upper arm circumference. Systolic and diastolic blood pressures were measured in the left arm using an automated blood pressure monitor (Dinamap8100, Criticon, FL, USA). Appropriate-sized cuffs were selected for use based on the mid-upper arm circumference. Two recordings were made after five minutes seated at rest, and the average taken. The observers were unaware of the neonatal measurements of the children. The techniques used by different observers were standardized by regular intra-and inter-observer variation studies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Analysis sample</head><p>Blood pressure was recorded for all 539 children who attended the 9.5-year follow-up. Because placental size is increased in gestational diabetes, we excluded from the analysis 35 children whose mothers developed diabetes during gestation and 25 children for whom maternal glucose tolerance test data were missing. We included seven children born to mothers who developed hypertension and 29 babies born preterm. Placental measurements were missing for eight children, and hence our study sample comprises the remaining 471 children with complete measurements of the placenta.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical methods</head><p>The data included the weight of the placenta and the length and breadth of its surface. Placental area was calculated assuming an elliptical surface, using the maximal diameter (length) · lesser diameter (breadth) · p ⁄ 4 (11). We calculated the difference between the length and breadth of the surface and the ratio of placental area to birthweight. We examined associations between placental variables and blood pressure using linear regression, unadjusted and then adjusted for the child's body mass index (BMI) and height at 9.5 years; where p values from adjusted models are used, this is stated. We used linear regression to examine interactions between the effects on blood pressure of placental size and maternal height. Among girls, there were interactions between the effects of placental size and maternal height (see Results); and, as in the analyses of the Helsinki Birth Cohort <ref type="bibr" target="#b10">(11,</ref><ref type="bibr" target="#b18">19)</ref>, we examined separate models for girls born to mothers above and below the median height (154.5 cm). There were no similar interactions between placental size and maternal height in boys. <ref type="table" target="#tab_1">Table 1</ref> shows the mean measurements of the 471 mothers, placentas, babies and children. None of the mothers smoked tobacco. At birth, boys were larger than girls, but their placental size was similar. Twelve boys and eight girls had systolic hypertension, using standard criteria <ref type="bibr" target="#b20">(21)</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>RESULTS</head><p>There were no significant differences in birthweight or any of the placental measurements between the 471 children included in the study sample and the 118 children who were eligible but who were not included, either because of incomplete placental measurements or because   Among boys, neither systolic nor diastolic pressure was related to birthweight, head circumference, birth length or the length of gestation. <ref type="table" target="#tab_2">Table 2</ref> shows the trends in blood pressure with placental size. Systolic pressure tended to rise as placental breadth, weight and area decreased. These trends became statistically significant after adjusting for the child's current BMI and height (for breadth b = )0.68 mmHg ⁄ cm). The trends with breadth and weight also became statistically significant after adjusting for birth weight (p = 0.04 for breadth and p = 0.03 for weight). Systolic pressure tended to rise as the ratio of placental area to birth weight decreased; however, this trend was not statistically significant. Diastolic pressure was unrelated to placental size.</p><p>Among girls, systolic and diastolic pressure fell as birthweight increased (systolic pressure fell by 4.2 mmHg per kg increase in birthweight, 95% CI 1.4-6.9, p = 0.003; diastolic pressure fell by 2.6 mmHg per kg increase, 95% CI 0.3-4.9, p = 0.03, after adjusting for current BMI). Systolic pressure in girls also fell as birth length increased (p = 0.04, adjusted for current BMI). It was not related to head circumference or to the length of gestation. <ref type="table" target="#tab_2">Table 2</ref> shows the trends in blood pressure with placental size. Systolic blood pressure rose as the ratio of area to birthweight increased. Diastolic blood pressure fell as placental weight increased. In <ref type="table" target="#tab_3">Table 3</ref>, the trends in blood pressure with placental size among girls are divided according to the mother's median height. Among girls whose mothers' height was below the median, systolic pressure rose as placental breadth increased (b = 0.69 mmHg ⁄ cm) and as the ratio of placental area to birthweight increased. In a simultaneous regression, both larger placental area and lower birthweight were associated with higher systolic pressure (p = 0.001 and 0.002, respectively). Diastolic pressure also rose as the ratio of placental area to birthweight increased; however, this was a weaker trend than that for systolic pressure.</p><p>Among girls whose mothers' height was above the median, there were no trends in systolic blood pressure with either placental length, breadth or area <ref type="table" target="#tab_3">(Table 3)</ref>, but systolic pressure rose as the difference between the diameters increased (b = 1.40 mmHg ⁄ cm, p = 0.007), that is as the placental surface became more oval. In contrast to systolic pressure, diastolic pressure rose as placental breadth, length and area decreased, but was unrelated to the difference between diameters. The differing trends in systolic pressure with placental size in the two maternal height groups were statistically significant (p for interaction = 0.03 for breadth, 0.02 for area ⁄ birthweight, and 0.03 for the difference between length and breadth).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>DISCUSSION</head><p>We found that the blood pressures of 9-year-old children in south India were related to the size and shape of the placental surface at birth. We suggest that these associations reflect the role of placental function in programming blood pressure <ref type="bibr" target="#b21">(22)</ref>. Consistent with findings in the Helsinki birth Cohort, we found different associations in boys and girls <ref type="bibr" target="#b18">(19)</ref>. Boys grow faster than girls from an early stage of gestation, even from before implantation, and this makes them more vulnerable if their nutrition is compromised <ref type="bibr" target="#b7">(8,</ref><ref type="bibr" target="#b22">23</ref>).</p><p>More newborn boys than girls have retarded growth and placental abnormalities, and most of them die during the perinatal period <ref type="bibr" target="#b23">(24)</ref>. The associations between blood pressure and placental size were modified by adjustment for the child's current body size. This reflects the known association between raised blood pressure and rapid postnatal growth (3). We found that three different placental phenotypes predicted raised blood pressure depending on the child's sex and the mother's height. Common to each phenotype was that blood pressure was related to the shape or size of the placental surface and to the breadth rather than to the length. Many studies have shown that raised blood pressure in children and adults is related to lower birthweight within the normal range <ref type="bibr" target="#b0">(1)</ref><ref type="bibr" target="#b1">(2)</ref><ref type="bibr" target="#b2">(3)</ref><ref type="bibr" target="#b14">(15)</ref><ref type="bibr" target="#b15">(16)</ref><ref type="bibr" target="#b16">(17)</ref>. This suggests that blood pressure levels are linked to foetal malnutrition <ref type="bibr" target="#b5">(6)</ref>. We now examine each of the three placental phenotypes and discuss their possible relation to foetal malnutrition.</p><p>Boys, small placental surface In boys, higher systolic blood pressure was associated with smaller placental area. This association depended on reduction in placental breadth rather than length. This is consistent with findings among men in Holland, in whom hypertension was related to a short placental breadth but not to length <ref type="bibr" target="#b24">(25)</ref>. One suggestion is that tissue along the breadth is more closely related to nutrient delivery to the foetus than tissue along the length of the surface, and shorter breadth results in lesser delivery <ref type="bibr" target="#b25">(26)</ref>. The length and breadth of the placental surface are established by growth of the chorionic surface in mid-gestation. We suggest that reduced growth in placental breadth is associated with foetal malnutrition and raised blood pressure in boys. Among boys, the effects of placental size on blood pressure were not conditioned by the mothers' height. In the Helsinki Birth Cohort <ref type="bibr" target="#b18">(19)</ref>, the effects of placental surface area on hypertension were not related to the mother's height in men, but were stronger among women with short mothers. This led to the suggestion that, compared to boys, the nutrition of girls in utero depends more on the mothers' lifetime nutrition and metabolism, reflected in her height than on the mothers' diet in pregnancy <ref type="bibr" target="#b18">(19)</ref>. Girls, large placental surface In girls whose mother's height was below the median, raised systolic pressure was associated with a large placental area in relation to birthweight. This association is therefore opposite to that seen in the Helsinki cohort, in which hypertension was associated with smaller placental area, especially in women with shorter mothers <ref type="bibr" target="#b18">(19)</ref>. Again, the association in our study depended more on the breadth of the placental surface than on its length. A study of men and women born in a maternity hospital in Preston, UK, showed that high placental weight in relation to birthweight was associated with later hypertension in the offspring <ref type="bibr" target="#b12">(13)</ref>. Measurements of the placental surface were not available. This observation has been replicated, and high placental weight in relation to birthweight has also been shown to predict coronary heart disease <ref type="bibr" target="#b13">(14,</ref><ref type="bibr" target="#b26">27)</ref>. In response to maternal undernutrition in mid-gestation, foetal lambs are able to extend the area of the placenta by expanding the individual cotyledons <ref type="bibr" target="#b27">(28)</ref>. This increases the area available for nutrient and oxygen exchange and, if normal nutrition is restored in late gestation, there is a larger lamb than there would otherwise have been. This is profitable for the farmer, and manipulation of placental size by changing the pasture of pregnant ewes is standard practice in sheep farming. There is evidence that a similar process occurs in humans and involves broadening of the placental surface rather than elongation <ref type="bibr" target="#b10">(11,</ref><ref type="bibr" target="#b18">19)</ref>. Compensatory placental expansion may be beneficial in some circumstances, but if the compensation is inadequate, and the foetus continues to be undernourished, the need to share its nutrients with an enlarged placenta may become an added metabolic burden that has long-term costs, which includes raised blood pressure.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Girls, oval placental surface</head><p>In girls whose mothers' height was above the median higher, systolic pressure was predicted by a larger difference between the breadth and length of the placental surface that is by a more oval-shaped surface. In contrast, diastolic pressure was not predicted by the shape of the surface but by its size, pressures rising with decreasing placental area. In pregnancies complicated by pre-eclampsia, a disorder that is initiated by impaired implantation, the placental surface is oval <ref type="bibr" target="#b25">(26)</ref>. We therefore suggest that the association between systolic pressure and an oval placenta reflects disruption of the processes of implantation, which includes spiral artery invasion and recruitment, with consequent foetal malnutrition. The association between small placental area and diastolic pressure may reflect reduced expansion of the chorionic surface in mid-gestation. We can offer no explanation as to why impaired implantation would affect systolic pressure while reduced expansion of the chorionic surface would affect diastolic pressure.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Strengths and limitations of the study</head><p>In the Parthenon study, placental and newborn size and childhood blood pressure were measured by trained research staff according to standard protocols. None of the mothers smoked, and only seven had pregnancyinduced hypertension. The study has achieved high follow-up rates in the children; 80% of the original live-born babies of nondiabetic mothers and 84% of surviving children were studied at 9 years. The study is based on births in one hospital in Mysore, and the participants may therefore be unrepresentative of the whole Mysore population. At the time of the study, the Holdsworth Memorial Hospital was one of three large maternity units in Mysore. It is situated in a relatively poor area of the city, and most of the patients come from 'lower middle-class and middle-class' families. However, it is not a specialist referral hospital, and most women choose to deliver there because of its proximity to home. We do not think loss to follow-up would have introduced significant bias. Although the mothers of the children included in our study sample were significantly shorter than those lost to follow-up, differences in birthweight and placental measurements between these groups were small.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CONCLUSION</head><p>We suggest that variations in three normal processes of placentation lead to foetal undernutrition and consequent raised blood pressure. The processes are those that accompany implantation and expansion of the chorionic surface in mid-gestation and compensatory expansion of the chorionic surface in late gestation. In girls, the effects of these disruptions on blood pressure are conditioned by the mother's early nutrition as indicated by her height.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head></head><label></label><figDesc>of loss to follow-up (birthweight: 2850 g vs. 2781 g, p = 0.2; placental length: 19.5 cm vs. 19.3 cm p = 0.4; placental breadth: 17.0 cm vs. 16.7 cm p = 0.1; placental area: 1233 eligible women attending antenatal clinic at HMH (singleton pregnancy, &lt;32 weeks gestation, not diabetic)</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 1</head><label>1</label><figDesc>Flow diagram of study participants. Winder et al. Placenta and childhood blood pressure ª2011 The Author(s)/Acta Paediatrica ª2011 Foundation Acta Paediatrica 2011 100, pp. 653-660 655 261.6 cm vs. 255.1 cm p = 0.2; placental weight: 0.408 kg vs. 0.411 kg p = 0.8). However, there was a significant dif- ference in maternal height between these two groups: 154.3 cm vs. 156.4 cm, p = 0.0002).</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" validated="false"><head>Table 1</head><label>1</label><figDesc>Characteristics of the mothers, placentas, babies and children in the Mysore Parthenon cohort</figDesc><table>n 
+Mean ⁄ [%] 
+(SD) 
+
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2" validated="false"><head>Table 2</head><label>2</label><figDesc>Blood pressure at 9.5 years among boys and girls according to placental size</figDesc><table>Placenta 
+
+Boys 
+</table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="true"><head>Table 3</head><label>3</label><figDesc>Blood pressure at 9.5 years among girls according to mother's height and placental size</figDesc><table>Placenta 
+
+Short mothers 
+Tall mothers 
+
+Systolic blood pressure (mmHg) 
+
+Diastolic 
+blood pressure (mmHg) 
+Systolic blood pressure (mmHg) 
+
+Diastolic 
+blood pressure (mmHg) 
+
+n 
+Mean 
+(SD) 
+n 
+Mean 
+(SD) 
+n 
+Mean 
+(SD) 
+n 
+Mean 
+(SD) 
+
+Breadth (cm) 
+£16 
+49 
+98.8 
+(7.9) 
+49 
+58.7 
+(6.5) 
+34 
+103.2 
+(8.7) 
+34 
+60.0 
+(5.9) 
+17 
+25 
+98.1 
+(8.4) 
+25 
+56.7 
+(7.0) 
+25 
+98.7 
+(7.9) 
+25 
+55.4 
+(7.5) 
+18 
+22 
+100.6 
+(8.6) 
+22 
+59.2 
+(7.8) 
+27 
+96.8 
+(9.0) 
+27 
+57.4 
+(5.6) 
+&gt;18 
+32 
+101.7 
+(9.2) 
+32 
+57.8 
+(6.2) 
+29 
+101.1 
+(7.8) 
+29 
+57.3 
+(6.4) 
+p for trend (unadjusted) 
+128 
+0.049 
+128 
+0.91 
+115 
+0.25 
+115 
+0.03 
+p for trend* 
+128 
+0.11 
+128 
+0.83 
+115 
+0.09 
+115 
+0.02 
+Length (cm) 
+£18 
+39 
+99.0 
+(7.6) 
+39 
+58.5 
+(5.9) 
+25 
+99.3 
+(9.1) 
+25 
+58.5 
+(5.7) 
+19.5 
+36 
+99.0 
+(9.4) 
+36 
+58.6 
+(8.8) 
+32 
+100.8 
+(7.6) 
+32 
+58.9 
+(7.1) 
+21 
+27 
+100.4 
+(8.3) 
+27 
+56.0 
+(5.2) 
+37 
+99.2 
+(9.7) 
+37 
+57.5 
+(6.3) 
+&gt;21 
+26 
+100.9 
+(8.7) 
+26 
+59.3 
+(5.8) 
+21 
+102.00 
+(7.8) 
+21 
+55.4 
+(6.5) 
+p for trend (unadjusted) 
+128 
+0.17 
+128 
+0.90 
+115 
+0.24 
+115 
+0.07 
+p for trend* 
+128 
+0.37 
+128 
+0.58 
+115 
+0.83 
+115 
+0.02 
+Weight (g) 
+£350 
+34 
+100.9 
+(9.0) 
+34 
+59.1 
+(8.4) 
+24 
+97.3 
+(6.2) 
+24 
+57.9 
+(5.8) 
+400 
+51 
+99.5 
+(8.2) 
+51 
+59.1 
+(6.1) 
+29 
+99.9 
+(9.2) 
+29 
+57.6 
+(7.0) 
+450 
+17 
+97.0 
+(6.8) 
+17 
+54.8 
+(4.9) 
+27 
+102.1 
+(10.2) 
+27 
+59.8 
+(5.2) 
+&gt;450 
+26 
+100.3 
+(9.4) 
+26 
+57.3 
+(6.0) 
+35 
+100.9 
+(8.2) 
+35 
+56.1 
+(7.1) 
+p for trend (unadjusted) 
+128 
+0.54 
+128 
+0.05 
+115 
+0.34 
+115 
+0.24 
+p for trend* 
+128 
+0.23 
+128 
+0.10 
+115 
+0.92 
+115 
+0.09 
+Area (cm 2 ) 
+£225 
+36 
+98.6 
+(7.5) 
+36 
+58.3 
+(6.0) 
+23 
+101.6 
+(9.3) 
+23 
+59.7 
+(5.6) 
+260 
+35 
+98.7 
+(9.3) 
+35 
+58.7 
+(8.1) 
+29 
+100.1 
+(7.8) 
+29 
+59.2 
+(7.3) 
+300 
+33 
+99.9 
+(8.0) 
+33 
+56.8 
+(7.1) 
+34 
+98.8 
+(9.4) 
+34 
+56.2 
+(5.5) 
+&gt;300 
+24 
+102.4 
+(9.1) 
+24 
+59.0 
+(5.2) 
+29 
+100.8 
+(8.2) 
+29 
+56.5 
+(6.9) 
+p for trend (unadjusted) 
+128 
+0.07 
+128 
+0.99 
+115 
+0.97 
+115 
+0.03 
+p for trend* 
+128 
+0.18 
+128 
+0.70 
+115 
+0.40 
+115 
+0.01 
+Area ⁄ birth weight (cm 2 ⁄ g) 
+£ 80 
+23 
+97.2 
+(6.8) 
+23 
+57.1 
+(4.7) 
+26 
+100.9 
+(9.6) 
+26 
+59.6 
+(6.2) 
+90 
+26 
+99.3 
+(7.0) 
+26 
+58.4 
+(6.5) 
+24 
+101.0 
+(7.0) 
+24 
+58.1 
+(6.7) 
+100 
+39 
+98.9 
+(9.4) 
+39 
+57.9 
+(8.1) 
+26 
+97.1 
+(9.1) 
+26 
+56.7 
+(7.0) 
+&gt;100 
+40 
+102.0 
+(9.0) 
+40 
+58.8 
+(6.7) 
+39 
+101.2 
+(8.4) 
+39 
+56.9 
+(6.1) 
+p for trend (unadjusted) 
+128 
+0.0003 
+128 
+0.06 
+115 
+0.83 
+115 
+0.07 
+p for trend* 
+128 
+0.0002 
+128 
+0.0499 
+115 
+0.68 
+115 
+0.08 
+
+The means are unadjusted. 
+p values were obtained by linear regression using all variables as continuous. 
+*p values adjusted for the child's current body mass index and height. </table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot">ª2011 The Author(s)/Acta Paediatrica ª2011 Foundation Acta Paediatrica 2011 100, pp. 653-660</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>ACKNOWLEDGEMENTS</head><p>This study was funded by the Medical Research Council, UK, the Parthenon Trust, Switzerland and the Wellcome Trust, UK. We thank the mothers and children who participated, and the HMH obstetric staff in Mysore and Annamma, Lalitha, Lalitha Kala, Baby Balappa, Savitha, Gopal Singh, Swarna, Surekha, Jayakumar, Geetha, Saroja, Chachyamma, Kiran and Stephen who made a significant contribution to the study. We are grateful to Dr BDR Paul, former director and Dr SC Karat, current medical director of HMH and also to late Dr Lovesome David, head of the department of obstetrics, for their support. We also acknowledge the support of Sneha-India.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Initiation of hypertension in utero and its amplification throughout life</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">M</forename><surname>Law</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">M</forename><surname>De</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Osmond</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">M</forename><surname>Fayers</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">J</forename><surname>Barker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename><surname>Cruddas</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Br Med J</title>
+		<imprint>
+			<biblScope unit="volume">306</biblScope>
+			<biblScope unit="page" from="24" to="31" />
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Developmental determinants of blood pressure in adults</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Adair</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Dahly</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annu Rev Nutr</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="407" to="441" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Childhood growth and hypertension in later life</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">G</forename><surname>Eriksson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><forename type="middle">J</forename><surname>Forsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Kajantie</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Osmond</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Djp</forename><surname>Barker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hypertension</title>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="page" from="1415" to="1436" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Fetal origins of coronary heart disease</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Djp</forename><surname>Barker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Br Med J</title>
+		<imprint>
+			<biblScope unit="volume">311</biblScope>
+			<biblScope unit="page" from="171" to="175" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<monogr>
+		<title level="m" type="main">Mothers, babies and disease in later life</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Djp</forename><surname>Barker</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1998" />
+			<pubPlace>Edinburgh</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Churchill Livingstone</orgName>
+		</respStmt>
+	</monogr>
+	<note>2nd edn</note>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">The nutritional basis of the fetal origins of adult disease</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">E</forename><surname>Harding</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Epidemiol</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="15" to="23" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">All that glitters. Br Nutr Foundation Annual Lecture</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">A</forename><surname>Jackson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nutr Bull</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="11" to="24" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title level="m" type="main">Fetus into man</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">M</forename><surname>Tanner</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1989" />
+			<pubPlace>Ware</pubPlace>
+		</imprint>
+	</monogr>
+	<note>2nd edn. Castlemead</note>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Relationship of maternal protein turnover and lean body mass during pregnancy and birth length</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">L</forename><surname>Duggleby</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">A</forename><surname>Jackson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Clin Sci</title>
+		<imprint>
+			<biblScope unit="volume">101</biblScope>
+			<biblScope unit="page" from="65" to="72" />
+			<date type="published" when="2001" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Mechanisms of transfer across the human placenta</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">P</forename><surname>Sibley</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Rdh</forename><surname>Boyd</surname></persName>
+		</author>
+		<editor>Polin RA and Fox WW</editor>
+		<imprint>
+			<date type="published" when="1992" />
+			<biblScope unit="page" from="62" to="74" />
+			<pubPlace>Saunders, Philadelphia</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">The surface area of the placenta and hypertension in the offspring in later life</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Djp</forename><surname>Barker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">L</forename><surname>Thornburg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Osmond</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Kajantie</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">G</forename><surname>Eriksson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Dev Biol</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="525" to="555" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">Fetal and placental size and risk of hypertension in adult life</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Djp</forename><surname>Barker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">R</forename><surname>Bull</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Osmond</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">J</forename><surname>Simmonds</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Br Med J</title>
+		<imprint>
+			<biblScope unit="volume">301</biblScope>
+			<biblScope unit="page" from="259" to="62" />
+			<date type="published" when="1990" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Diet in pregnancy and the offspring&apos;s blood pressure 40 years later</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">M</forename><surname>Campbell</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">H</forename><surname>Hall</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">J</forename><surname>Barker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Cross</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">W</forename><surname>Shiell</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><forename type="middle">M</forename><surname>Godfrey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Br J Obstet Gynaecol</title>
+		<imprint>
+			<biblScope unit="volume">103</biblScope>
+			<biblScope unit="page" from="273" to="80" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Fetal and childhood growth and hypertension in adult life</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Eriksson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Forsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Tuomilehto</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Osmond</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Barker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Hypertension</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="790" to="794" />
+			<date type="published" when="2000" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Placental weight, birth measurements, and blood pressure at age 8 years</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">V</forename><forename type="middle">M</forename><surname>Moore</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">G</forename><surname>Miller</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><forename type="middle">J</forename><surname>Boulton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">A</forename><surname>Cockington</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><forename type="middle">H</forename><surname>Craug</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename><surname>Magarey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Arch Dis Child</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="page" from="538" to="579" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Size at birth and blood pressure; cross sectional study in 8-11 year old children</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Sjc</forename><surname>Taylor</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><forename type="middle">H</forename><surname>Whincup</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><forename type="middle">G</forename><surname>Cook</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Papacosta</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Walker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Br Med J</title>
+		<imprint>
+			<biblScope unit="volume">314</biblScope>
+			<biblScope unit="page" from="475" to="80" />
+			<date type="published" when="1997" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Birth weight and blood pressure: cross sectional and longitudinal relations in childhood</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Whincup</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">D</forename><surname>Cook</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">O</forename><surname>Papacosta</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>Walker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Br Med J</title>
+		<imprint>
+			<biblScope unit="volume">311</biblScope>
+			<biblScope unit="page" from="773" to="779" />
+			<date type="published" when="1995" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Glucose tolerance in pregnancy in South India: relationships to neonatal anthropometry</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">C</forename><surname>Hill</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">V</forename><surname>Krishnaveni</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">I</forename><surname>Annamma</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">D</forename><surname>Leary</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Chd</forename><surname>Fall</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acta Obstet Gynecol Scand</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="page" from="159" to="65" />
+			<date type="published" when="2005" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Boys live dangerously in the womb</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">G</forename><surname>Eriksson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Kajantie</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Osmond</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Thornburg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Djp</forename><surname>Barker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am J Hum Biol</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="330" to="335" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Intrauterine exposure to maternal diabetes is associated with higher adiposity and insulin resistance and clustering of cardiovascular risk markers in Indian children</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">V</forename><surname>Krishnaveni</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">R</forename><surname>Veena</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">C</forename><surname>Hill</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><surname>Kehoe</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">C</forename><surname>Karat</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Chd</forename><surname>Fall</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Care</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="page" from="402" to="406" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">National High Blood Pressure Educational Program Working Group on High Blood Pressure and Adolescents. The fourth report on the diagnosis, evaluation and treatment of high blood pressure in children and adolescents</title>
+	</analytic>
+	<monogr>
+		<title level="j">Pediatrics</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page" from="555" to="76" />
+			<date type="published" when="2004" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Role of the placenta in fetal programming: underlying mechanisms and potential interventional approaches</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><surname>Jansson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><forename type="middle">L</forename><surname>Powell</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Clin Sci</title>
+		<imprint>
+			<biblScope unit="volume">113</biblScope>
+			<biblScope unit="page" from="1" to="13" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Ultrasound evidence of sexual differences in fetal size in first trimester</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">F</forename><surname>Pedersen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Br Med J</title>
+		<imprint>
+			<biblScope unit="volume">281</biblScope>
+			<biblScope unit="page">1253</biblScope>
+			<date type="published" when="1980" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Does fetal sex affect pregnancy outcome?</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Di</forename><surname>Renzo</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">C</forename><surname>Rosati</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><surname>Sarti</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">R</forename><forename type="middle">D</forename><surname>Cruciani</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Cutuli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">M</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Gend Med</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="page" from="19" to="30" />
+			<date type="published" when="2007" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">The maternal and placental origins of chronic disease</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Djp</forename><surname>Barker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Kajantie</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">G</forename><surname>Eriksson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">H</forename><surname>Alwasel</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Chd</forename><surname>Fall</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">T</forename><forename type="middle">J</forename><surname>Roseboom</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The placenta and human developmental programming</title>
+		<editor>Burton GJ, Barker DJP, Moffett A, Thornburg</editor>
+		<meeting><address><addrLine>Cambridge</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="2010" />
+			<biblScope unit="page" from="5" to="16" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">In preeclampsia, the placenta grows slowly along its minor axis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Kajantie</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Thornburg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">G</forename><surname>Eriksson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Osmond</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Djp</forename><surname>Barker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int J Dev Biol</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="page" from="469" to="73" />
+			<date type="published" when="2010" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Mothers pelvic size, fetal growth and death from stroke in men</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">N</forename><surname>Martyn</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Djp</forename><surname>Barker</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><surname>Osmond</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lancet</title>
+		<imprint>
+			<biblScope unit="volume">348</biblScope>
+			<biblScope unit="page" from="1264" to="1272" />
+			<date type="published" when="1996" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Maternal undernutrition during mid-pregnancy in sheep; variable effects on placental growth</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><forename type="middle">J</forename><surname>Mccrabb</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">R</forename><surname>Egan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">B</forename><forename type="middle">J</forename><surname>Hosking</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J Agric Sci</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="page" from="127" to="159" />
+			<date type="published" when="1992" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

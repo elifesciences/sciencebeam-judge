@@ -1,6 +1,13 @@
 from lxml.builder import E
 
+import pytest
+
 from .tei_xpath_functions import register_functions
+
+
+@pytest.fixture(autouse=True)
+def _register_functions():
+    register_functions()
 
 
 def _tei_with_authors(*authors):
@@ -19,7 +26,6 @@ class TestTeiXpathFunctions(object):
                 )
             )
             xml = _tei_with_authors(author)
-            register_functions()
             assert list(xml.xpath('tei-authors(.)')) == [author]
 
     class TestFullName(object):
@@ -31,7 +37,6 @@ class TestTeiXpathFunctions(object):
                 )
             )
             xml = _tei_with_authors(author)
-            register_functions()
             assert list(
                 xml.xpath('tei-full-name(//persName)')
             ) == ['Tom Thomson']
@@ -45,7 +50,6 @@ class TestTeiXpathFunctions(object):
                 )
             )
             xml = _tei_with_authors(author)
-            register_functions()
             assert list(
                 xml.xpath('tei-full-name(//persName)')
             ) == ['Tom T Thomson']
@@ -58,7 +62,6 @@ class TestTeiXpathFunctions(object):
                 )
             )
             xml = _tei_with_authors(author)
-            register_functions()
             assert list(
                 xml.xpath('tei-full-name(//author)')
             ) == ['Tom Thomson']
@@ -70,7 +73,6 @@ class TestTeiXpathFunctions(object):
                 )
             )
             xml = _tei_with_authors(author)
-            register_functions()
             assert list(xml.xpath('tei-full-name(//author)')) == ['Tom']
 
         def test_should_not_add_space_if_surname_is_empty(self):
@@ -81,7 +83,6 @@ class TestTeiXpathFunctions(object):
                 )
             )
             xml = _tei_with_authors(author)
-            register_functions()
             assert list(xml.xpath('tei-full-name(//author)')) == ['Tom']
 
     class TestAffString(object):
@@ -91,7 +92,6 @@ class TestTeiXpathFunctions(object):
                     E.orgName('Department 1', type="department")
                 )
             )
-            register_functions()
             assert list(
                 xml.xpath('tei-aff-string(//affiliation)')
             ) == ['Department 1']
@@ -103,7 +103,6 @@ class TestTeiXpathFunctions(object):
                     E.orgName('Institution 1', type="institution")
                 )
             )
-            register_functions()
             assert list(
                 xml.xpath('tei-aff-string(//affiliation)')
             ) == ['Department 1, Institution 1']
@@ -119,7 +118,6 @@ class TestTeiXpathFunctions(object):
                     )
                 )
             )
-            register_functions()
             assert (
                 list(xml.xpath('tei-aff-string(//affiliation)')) ==
                 ['Department 1, Post Code 1, Settlement 1, Country 1']
@@ -134,7 +132,6 @@ class TestTeiXpathFunctions(object):
                     )
                 )
             )
-            register_functions()
             assert list(
                 xml.xpath('tei-aff-string(//affiliation)')
             ) == ['Department 1, Addr Line 1']
@@ -144,28 +141,24 @@ class TestTeiXpathFunctions(object):
             xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
                 E.biblScope({"unit": "page", "from": "123"})
             ))))
-            register_functions()
             assert list(xml.xpath('tei-ref-fpage(//biblStruct)')) == ['123']
 
         def test_should_return_element_text_if_from_attribute_is_not_present(self):
             xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
                 E.biblScope("123", unit="page")
             ))))
-            register_functions()
             assert list(xml.xpath('tei-ref-fpage(//biblStruct)')) == ['123']
 
         def test_should_return_empty_string_if_from_attribute_is_not_present_and_has_no_text(self):
             xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
                 E.biblScope(unit="page")
             ))))
-            register_functions()
             assert list(xml.xpath('tei-ref-fpage(//biblStruct)')) == ['']
 
         def test_should_return_empty_string_if_there_is_no_page_element(self):
             xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
                 E.biblScope(unit="other")
             ))))
-            register_functions()
             assert list(xml.xpath('tei-ref-fpage(//biblStruct)')) == ['']
 
     class TestRefLpage(object):
@@ -173,12 +166,37 @@ class TestTeiXpathFunctions(object):
             xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
                 E.biblScope({"unit": "page", "to": "123"})
             ))))
-            register_functions()
             assert list(xml.xpath('tei-ref-lpage(//biblStruct)')) == ['123']
 
         def test_should_return_fpage_if_there_is_no_to_page(self):
             xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
                 E.biblScope("123", unit="page")
             ))))
-            register_functions()
             assert list(xml.xpath('tei-ref-lpage(//biblStruct)')) == ['123']
+
+    class TestAbstractText(object):
+        def test_should_return_without_paragraph(self):
+            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
+                'abstract1'
+            ))))
+            assert list(xml.xpath('tei-abstract-text(//abstract)')) == ['abstract1']
+
+        def test_should_return_with_div_and_paragraph(self):
+            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(E.div(
+                E.p('abstract1')
+            )))))
+            assert list(xml.xpath('tei-abstract-text(//abstract)')) == ['abstract1']
+
+        def test_should_ignore_first_head(self):
+            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(E.div(
+                E.head('Abstract'),
+                E.p('abstract1')
+            )))))
+            assert list(xml.xpath('tei-abstract-text(//abstract)')) == ['abstract1']
+
+        def test_not_should_ignore_further_head_elements(self):
+            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
+                E.div(E.head('Abstract')),
+                E.div(E.head('Sub:'), E.p('abstract1'))
+            ))))
+            assert list(xml.xpath('tei-abstract-text(//abstract)')) == ['Sub: abstract1']
