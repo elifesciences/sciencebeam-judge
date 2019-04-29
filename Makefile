@@ -42,6 +42,10 @@ jupyter-build:
 	docker-compose build sciencebeam-judge-jupyter
 
 
+jupyter-shell: jupyter-build
+	docker-compose run --rm sciencebeam-judge-jupyter bash
+
+
 jupyter-start: jupyter-build
 	docker-compose up -d sciencebeam-judge-jupyter
 
