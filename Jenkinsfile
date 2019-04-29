@@ -28,6 +28,10 @@ elifePipeline {
             sh "bash ./update-example-data-notebooks.sh"
         }
 
+        stage 'Revert temporary git changes', {
+            sh "git checkout ."
+        }
+
         elifeMainlineOnly {
             stage 'Merge to master', {
                 elifeGitMoveToBranch commit, 'master'
