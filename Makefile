@@ -21,10 +21,13 @@ PYTEST_ARGS =
 TOOL =
 EVALUATION_RESULTS_OUTPUT_PATH = /example-data/pmc-sample-1943-cc-by-subset-results/$(TOOL)/evaluation-results
 NOTEBOOK_OUTPUT_FILE =
+NO_BUILD =
 
 
 build:
-	$(DOCKER_COMPOSE) build
+	if [ "$(NO_BUILD)" != "y" ]; then \
+		$(DOCKER_COMPOSE) build; \
+	fi
 
 
 dev-venv:
@@ -40,7 +43,9 @@ dev-venv:
 
 
 build-dev:
-	$(DOCKER_COMPOSE) build sciencebeam-judge-dev
+	if [ "$(NO_BUILD)" != "y" ]; then \
+		$(DOCKER_COMPOSE) build sciencebeam-judge-dev; \
+	fi
 
 
 test-py2: build-dev
@@ -115,7 +120,9 @@ update-example-data-notebooks-temp:
 
 
 jupyter-build:
-	$(DOCKER_COMPOSE) build sciencebeam-judge-jupyter
+	if [ "$(NO_BUILD)" != "y" ]; then \
+		$(DOCKER_COMPOSE) build sciencebeam-judge-jupyter; \
+	fi
 
 
 jupyter-shell: jupyter-build
