@@ -23,7 +23,7 @@ def MapOrLog(fn):
         try:
             yield fn(x)
         except Exception as e:  # pylint: disable=broad-except
-            get_logger().warn('caucht exception (ignoring item): %s, input: %.100s...', e, x)
+            get_logger().warning('caucht exception (ignoring item): %s, input: %.100s...', e, x)
     return beam.FlatMap(wrapper)
 
 
