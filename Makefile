@@ -8,9 +8,10 @@ DEV_RUN_PY3 = $(DOCKER_COMPOSE) run --rm sciencebeam-judge-dev-py3
 
 MOUNT = --volume="$$PWD/example-data:/example-data"
 
-RUN_PY2 = $(DOCKER_COMPOSE) run $(MOUNT) --rm sciencebeam-judge
-RUN_PY3 = $(DOCKER_COMPOSE) run $(MOUNT) --rm sciencebeam-judge-py3
-RUN = $(RUN_PY2)
+JUDGE_SERVICE_PY2 = sciencebeam-judge
+JUDGE_SERVICE_PY3 = sciencebeam-judge-py3
+JUDGE_SERVICE =$(JUDGE_SERVICE_PY2)
+RUN = $(DOCKER_COMPOSE) run $(MOUNT) --rm $(JUDGE_SERVICE)
 
 JUPYTER_MOUNT = --volume="$$PWD/example-data:/home/jovyan/sciencebeam-judge/example-data"
 JUPYTER_RUN = $(DOCKER_COMPOSE) run $(JUPYTER_MOUNT) --rm sciencebeam-judge-jupyter
@@ -87,10 +88,12 @@ update-example-data-results-grobid-tei-temp:
 	$(MAKE) EVALUATION_RESULTS_OUTPUT_PATH=/tmp update-example-data-results-grobid-tei
 
 
-update-example-data-results: update-example-data-results-cermine update-example-data-results-grobid-tei 
+update-example-data-results: \
+	update-example-data-results-cermine update-example-data-results-grobid-tei 
 
 
-update-example-data-results-temp: update-example-data-results-cermine-temp update-example-data-results-grobid-tei-temp
+update-example-data-results-temp: \
+	update-example-data-results-cermine-temp update-example-data-results-grobid-tei-temp
 
 
 update-example-data-notebooks-summary:
@@ -144,11 +147,13 @@ ci-test-py3:
 
 
 ci-test-run-evaluation-py2:
-	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" RUN="$(RUN_PY2)" update-example-data-results-temp
+	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
+		JUDGE_SERVICE="$(JUDGE_SERVICE_PY2)" update-example-data-results-temp
 
 
 ci-test-run-evaluation-py3:
-	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" RUN="$(RUN_PY3)" update-example-data-results-temp
+	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
+		JUDGE_SERVICE="$(JUDGE_SERVICE_PY3)" update-example-data-results-temp
 
 
 ci-test-evaluate-and-update-notebooks:
