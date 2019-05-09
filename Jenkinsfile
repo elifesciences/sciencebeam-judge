@@ -12,9 +12,17 @@ elifePipeline {
             dockerComposeBuild(commit)
         }
 
-        stage 'Project tests', {
+        stage 'Project tests (PY2)', {
             dockerComposeRun(
                 "sciencebeam-judge-dev",
+                "./project_tests.sh",
+                commit
+            )
+        }
+
+        stage 'Project tests (PY3)', {
+            dockerComposeRun(
+                "sciencebeam-judge-dev-py3",
                 "./project_tests.sh",
                 commit
             )
