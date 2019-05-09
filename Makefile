@@ -23,7 +23,7 @@ NOTEBOOK_OUTPUT_FILE =
 
 
 build:
-	docker-compose build
+	$(DOCKER_COMPOSE) build
 
 
 dev-venv:
@@ -39,7 +39,7 @@ dev-venv:
 
 
 build-dev:
-	docker-compose build sciencebeam-judge-dev
+	$(DOCKER_COMPOSE) build sciencebeam-judge-dev
 
 
 test-py2: build-dev
@@ -112,23 +112,23 @@ update-example-data-notebooks-temp:
 
 
 jupyter-build:
-	docker-compose build sciencebeam-judge-jupyter
+	$(DOCKER_COMPOSE) build sciencebeam-judge-jupyter
 
 
 jupyter-shell: jupyter-build
-	docker-compose run --rm sciencebeam-judge-jupyter bash
+	$(DOCKER_COMPOSE) run --rm sciencebeam-judge-jupyter bash
 
 
 jupyter-start: jupyter-build
-	docker-compose up -d sciencebeam-judge-jupyter
+	$(DOCKER_COMPOSE) up -d sciencebeam-judge-jupyter
 
 
 jupyter-logs:
-	docker-compose logs -f sciencebeam-judge-jupyter
+	$(DOCKER_COMPOSE) logs -f sciencebeam-judge-jupyter
 
 
 jupyter-stop:
-	docker-compose down
+	$(DOCKER_COMPOSE) down
 
 
 ci-build-all:
