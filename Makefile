@@ -1,3 +1,7 @@
+DOCKER_COMPOSE_DEV = docker-compose
+DOCKER_COMPOSE_CI = docker-compose -f docker-compose.yml -f docker-compose.ci.yml
+DOCKER_COMPOSE = $(DOCKER_COMPOSE_DEV)
+
 RUN = docker-compose run --rm sciencebeam-judge-dev
 PYTEST_ARGS =
 
@@ -56,3 +60,11 @@ jupyter-logs:
 
 jupyter-stop:
 	docker-compose down
+
+
+ci-build-all:
+	$(DOCKER_COMPOSE_CI) build  --parallel
+
+
+ci-clean:
+	$(DOCKER_COMPOSE_CI) down -v

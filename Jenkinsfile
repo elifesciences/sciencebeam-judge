@@ -9,7 +9,11 @@ elifePipeline {
 
         stage 'Build images', {
             checkout scm
-            dockerComposeBuild(commit)
+            try {
+                sh 'IMAGE_TAG=${commit} make ci-build-all'
+            } finally {
+                sh 'make ci-clean'
+            }
         }
 
         stage 'Project tests (PY2)', {
