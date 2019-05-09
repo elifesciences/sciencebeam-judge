@@ -12,20 +12,23 @@ elifePipeline {
             dockerComposeBuild(commit)
         }
 
-        stage 'Project tests (PY2)', {
-            dockerComposeRun(
-                "sciencebeam-judge-dev",
-                "./project_tests.sh",
-                commit
-            )
-        }
-
-        stage 'Project tests (PY3)', {
-            dockerComposeRun(
-                "sciencebeam-judge-dev-py3",
-                "./project_tests.sh",
-                commit
-            )
+        stage 'Project tests', {
+            try {
+                parallel([
+                    'Project tests (PY2)': {
+                        withCommitStatus({
+                            sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-test-py2"
+                        }, 'project-tests/py2', commit)
+                    },
+                    'Project tests (PY3)': {
+                        withCommitStatus({
+                            sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-test-py3"
+                        }, 'project-tests/py3', commit)
+                    }
+                ])
+            } finally {
+                sh 'make ci-clean'
+            }
         }
 
         stage 'Test update evaluation results', {
