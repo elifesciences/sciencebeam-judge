@@ -136,11 +136,11 @@ ci-build-all:
 
 
 ci-test-py2:
-	make DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" test-py2
+	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" test-py2
 
 
 ci-test-py3:
-	make DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" test-py3
+	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" test-py3
 
 
 ci-test-run-evaluation-py2:
