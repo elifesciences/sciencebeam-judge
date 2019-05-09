@@ -148,7 +148,7 @@ ci-build-all:
 
 ci-test-py2:
 	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
-		RUN_NAME="ci-test-py3" \
+		RUN_NAME="ci-test-py2" \
 		test-py2
 
 
