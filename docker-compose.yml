@@ -18,6 +18,14 @@ services:
                 install_dev: y
         image: elifesciences/sciencebeam-judge-dev:${IMAGE_TAG}
         networks: []
+    sciencebeam-judge-py3:
+        build:
+            context: .
+            dockerfile: Dockerfile
+            args:
+                base_image: python:3.6.8-stretch
+        image: elifesciences/sciencebeam-judge-py3:${IMAGE_TAG}
+        networks: []
     sciencebeam-judge-dev-py3:
         build:
             context: .

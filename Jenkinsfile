@@ -24,6 +24,16 @@ elifePipeline {
                         withCommitStatus({
                             sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-test-py3"
                         }, 'project-tests/py3', commit)
+                    },
+                    'Test run evaluation (PY2)': {
+                        withCommitStatus({
+                            sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-run-evaluation-py2"
+                        }, 'run-evaluation/py2', commit)
+                    },
+                    'Test run evaluation (PY3)': {
+                        withCommitStatus({
+                            sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-run-evaluation-py3"
+                        }, 'run-evaluation/py3', commit)
                     }
                 ])
             } finally {
