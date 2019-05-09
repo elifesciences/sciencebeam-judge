@@ -3,18 +3,19 @@ DOCKER_COMPOSE_CI = docker-compose -f docker-compose.yml -f docker-compose.ci.ym
 DOCKER_COMPOSE = $(DOCKER_COMPOSE_DEV)
 
 
-DEV_RUN_PY2 = $(DOCKER_COMPOSE) run --rm sciencebeam-judge-dev
-DEV_RUN_PY3 = $(DOCKER_COMPOSE) run --rm sciencebeam-judge-dev-py3
+DEV_RUN_PY2 = $(DOCKER_COMPOSE) run --name "$(RUN_NAME)" --rm sciencebeam-judge-dev
+DEV_RUN_PY3 = $(DOCKER_COMPOSE) run --name "$(RUN_NAME)" --rm sciencebeam-judge-dev-py3
 
 MOUNT = --volume="$$PWD/example-data:/example-data"
 
+RUN_NAME =
 JUDGE_SERVICE_PY2 = sciencebeam-judge
 JUDGE_SERVICE_PY3 = sciencebeam-judge-py3
 JUDGE_SERVICE =$(JUDGE_SERVICE_PY2)
-RUN = $(DOCKER_COMPOSE) run $(MOUNT) --rm $(JUDGE_SERVICE)
+RUN = $(DOCKER_COMPOSE) run $(MOUNT) --name "$(RUN_NAME)" --rm $(JUDGE_SERVICE)
 
 JUPYTER_MOUNT = --volume="$$PWD/example-data:/home/jovyan/sciencebeam-judge/example-data"
-JUPYTER_RUN = $(DOCKER_COMPOSE) run $(JUPYTER_MOUNT) --rm sciencebeam-judge-jupyter
+JUPYTER_RUN = $(DOCKER_COMPOSE) run $(JUPYTER_MOUNT) --name "$(RUN_NAME)" --rm sciencebeam-judge-jupyter
 
 
 PYTEST_ARGS =
@@ -146,25 +147,32 @@ ci-build-all:
 
 
 ci-test-py2:
-	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" test-py2
+	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
+		RUN_NAME="ci-test-py3" \
+		test-py2
 
 
 ci-test-py3:
-	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" test-py3
+	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
+		RUN_NAME="ci-test-py3" \
+		test-py3
 
 
 ci-test-run-evaluation-py2:
 	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
+		RUN_NAME="ci-test-run-evaluation-py2" \
 		JUDGE_SERVICE="$(JUDGE_SERVICE_PY2)" update-example-data-results-temp
 
 
 ci-test-run-evaluation-py3:
 	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
+		RUN_NAME="ci-test-run-evaluation-py3" \
 		JUDGE_SERVICE="$(JUDGE_SERVICE_PY3)" update-example-data-results-temp
 
 
 ci-test-evaluate-and-update-notebooks:
 	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
+		RUN_NAME="ci-test-evaluate-and-update-notebooks" \
 		JUDGE_SERVICE="$(JUDGE_SERVICE_PY2)" \
 		update-example-data-results update-example-data-notebooks-temp
 
