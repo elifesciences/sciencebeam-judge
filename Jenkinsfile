@@ -28,25 +28,23 @@ elifePipeline {
                     'Test run evaluation (PY2)': {
                         withCommitStatus({
                             sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-test-run-evaluation-py2"
-                        }, 'run-evaluation/py2', commit)
+                        }, 'project-tests/evaluate-py2', commit)
                     },
                     'Test run evaluation (PY3)': {
                         withCommitStatus({
                             sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-test-run-evaluation-py3"
-                        }, 'run-evaluation/py3', commit)
+                        }, 'project-tests/evaluate-py3', commit)
+                    },
+                    'Test evaluate and update notebooks': {
+                        // this will current cause evaluation results to be updated in the working dir
+                        withCommitStatus({
+                            sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-test-evaluate-and-update-notebooks"
+                        }, 'project-tests/evaluate-and-update-notebooks', commit)
                     }
                 ])
             } finally {
                 sh 'make ci-clean'
             }
-        }
-
-        stage 'Test update evaluation results', {
-            sh "bash ./update-example-data-results.sh"
-        }
-
-        stage 'Test update notebooks', {
-            sh "bash ./update-example-data-notebooks.sh"
         }
 
         stage 'Revert temporary git changes', {

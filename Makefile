@@ -12,9 +12,15 @@ RUN_PY2 = $(DOCKER_COMPOSE) run $(MOUNT) --rm sciencebeam-judge
 RUN_PY3 = $(DOCKER_COMPOSE) run $(MOUNT) --rm sciencebeam-judge-py3
 RUN = $(RUN_PY2)
 
+JUPYTER_MOUNT = --volume="$$PWD/example-data:/home/jovyan/sciencebeam-judge/example-data"
+JUPYTER_RUN = $(DOCKER_COMPOSE) run $(JUPYTER_MOUNT) --rm sciencebeam-judge-jupyter
+
+
 PYTEST_ARGS =
 TOOL =
 EVALUATION_RESULTS_OUTPUT_PATH = /example-data/pmc-sample-1943-cc-by-subset-results/$(TOOL)/evaluation-results
+NOTEBOOK_OUTPUT_FILE =
+
 
 build:
 	docker-compose build
@@ -87,8 +93,22 @@ update-example-data-results: update-example-data-results-cermine update-example-
 update-example-data-results-temp: update-example-data-results-cermine-temp update-example-data-results-grobid-tei-temp
 
 
-update-example-data-notebooks:
-	./update-example-data-notebooks.sh
+update-example-data-notebooks-summary:
+	$(JUPYTER_RUN) update-notebook-and-check-no-errors.sh \
+		conversion-results-summary.ipynb "$(NOTEBOOK_OUTPUT_FILE)"
+
+
+update-example-data-notebooks-details:
+	$(JUPYTER_RUN) update-notebook-and-check-no-errors.sh \
+		conversion-results-details.ipynb "$(NOTEBOOK_OUTPUT_FILE)"
+
+
+update-example-data-notebooks: \
+	update-example-data-notebooks-summary update-example-data-notebooks-details
+
+
+update-example-data-notebooks-temp:
+	$(MAKE) NOTEBOOK_OUTPUT_FILE="/tmp/dummy.ipynb" update-example-data-notebooks
 
 
 jupyter-build:
@@ -129,6 +149,11 @@ ci-test-run-evaluation-py2:
 
 ci-test-run-evaluation-py3:
 	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" RUN="$(RUN_PY3)" update-example-data-results-temp
+
+
+ci-test-evaluate-and-update-notebooks:
+	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" RUN="$(RUN_PY3)" \
+		update-example-data-results update-example-data-notebooks-temp
 
 
 ci-clean:
