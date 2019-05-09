@@ -2,7 +2,7 @@
 
 import re
 
-from six import unichr
+from six import unichr  # pylint: disable=redefined-builtin
 
 
 FULL_PUNCTUATIONS = u"([ •*,:;?.!/)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0"
