@@ -157,7 +157,8 @@ ci-test-run-evaluation-py3:
 
 
 ci-test-evaluate-and-update-notebooks:
-	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" RUN="$(RUN_PY3)" \
+	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
+		JUDGE_SERVICE="$(JUDGE_SERVICE_PY2)" \
 		update-example-data-results update-example-data-notebooks-temp
 
 
