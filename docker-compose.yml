@@ -43,3 +43,5 @@ services:
         command: start-notebook.sh --NotebookApp.token=''
         ports:
             - "${SCIENCEBEAM_JUPYTER_PORT}:8888"
+
+networks: {}
