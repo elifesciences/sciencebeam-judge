@@ -143,7 +143,7 @@ jupyter-stop:
 
 
 ci-build-all:
-	$(DOCKER_COMPOSE_CI) build  --parallel
+	$(DOCKER_COMPOSE_CI) build --parallel
 
 
 ci-test-py2:
