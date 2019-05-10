@@ -23,7 +23,7 @@ TABLE_LABEL_1 = 'Table 1'
 TABLE_CAPTION_1 = 'Table Caption 1'
 
 TABLE_BODY_ROWS_XML_1 = (
-    b'''
+    '''
   <tr>
     <td>Cell 1.1</td>
     <td>Cell 1.2</td>
@@ -37,7 +37,7 @@ TABLE_BODY_ROWS_XML_1 = (
 
 
 TABLE_XML_1 = (
-    b'''
+    '''
   <table>
     <thead>
       <tr>
@@ -96,7 +96,7 @@ class TestParseXmlTableMapping(object):
         assert result == TABLE_1
 
     def test_should_parse_table_without_tbody(self):
-        xml = b'<table>{table_body_rows}</table>'.format(
+        xml = '<table>{table_body_rows}</table>'.format(
             table_body_rows=TABLE_BODY_ROWS_XML_1
         )
         result = parse_xml_table(etree.fromstring(xml))
@@ -119,7 +119,7 @@ class TestParseXmlTableMapping(object):
         }
 
     def test_should_parse_table_with_tei_row_cell(self):
-        xml = b'<table><row><cell>%s</cell></row></table>' % SOME_TEXT
+        xml = '<table><row><cell>%s</cell></row></table>' % SOME_TEXT
         result = parse_xml_table(etree.fromstring(xml))
         assert result == {
             'head': [],
@@ -129,7 +129,7 @@ class TestParseXmlTableMapping(object):
 
 class TestParseXmlItems(object):
     def test_should_parse_items(self):
-        xml = b'<items><item>%s</item><item>%s</item></items>' % (
+        xml = '<items><item>%s</item><item>%s</item></items>' % (
             TEXT_1, TEXT_2
         )
         result = parse_xml_items(etree.fromstring(xml))
@@ -179,7 +179,7 @@ class TestParseXml(object):
 
     def test_should_parse_table(self):
         xml = (
-            b'''
+            '''
             <root>
                 {table}
             </root>
@@ -192,14 +192,14 @@ class TestParseXml(object):
                 'table1': 'table'
             }
         }
-        result = parse_xml(BytesIO(xml), xml_mapping)
+        result = parse_xml(BytesIO(xml.encode()), xml_mapping)
         assert result == {
             'table1': [TABLE_1]
         }
 
     def test_should_parse_table_wrap(self):
         xml = (
-            b'''
+            '''
             <root>
                 <table-wrap id="t0002" orientation="portrait">
                 <label>{table_label}</label>
@@ -218,7 +218,7 @@ class TestParseXml(object):
                 'table1': 'table-wrap'
             }
         }
-        result = parse_xml(BytesIO(xml), xml_mapping)
+        result = parse_xml(BytesIO(xml.encode()), xml_mapping)
         assert result == {
             'table1': [{
                 'label': TABLE_LABEL_1,

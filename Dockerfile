@@ -1,10 +1,12 @@
-FROM python:2.7.16-stretch
+ARG base_image
+FROM ${base_image}
 
 ENV PROJECT_HOME=/srv/sciencebeam-judge
 WORKDIR ${PROJECT_HOME}
 
 ENV VENV=${PROJECT_HOME}/venv
-RUN virtualenv ${VENV}
+RUN pip install --no-cache-dir --only-binary --upgrade virtualenv \
+    && virtualenv ${VENV}
 ENV PYTHONUSERBASE=${VENV} PATH=${VENV}/bin:$PATH
 
 COPY requirements.prereq.txt ./

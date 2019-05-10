@@ -107,7 +107,7 @@ def load_file_list_side_effect(file_list_map):
 
 
 def dummy_file_content(filename):
-    return b'dummy file content: %s' % filename
+    return b'dummy file content: %s' % filename.encode('utf-8')
 
 
 def read_all_from_path_side_effect():

@@ -2,6 +2,14 @@ FROM jupyter/minimal-notebook:9e8682c9ea54
 
 USER root
 
+ARG install_jq=y
+RUN if [ "${install_jq}" = "y" ]; then \
+      apt-get update \
+      && apt-get install --assume-yes --no-install-recommends \
+        jq \
+      && rm -rf /var/lib/apt/lists/*; \
+    fi
+
 # install gcloud to make it easier to access cloud storage
 # gcloud sdk cli only works with Python 2 (in 2019)
 ARG install_gcloud=y
@@ -32,6 +40,9 @@ RUN pip install --upgrade pip && \
 
 COPY docker/docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+
+COPY scripts/jupyter /opt/scripts
+ENV PATH /opt/scripts:$PATH
 
 WORKDIR ${PROJECT_HOME}/notebooks
 
