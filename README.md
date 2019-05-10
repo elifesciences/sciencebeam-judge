@@ -128,7 +128,7 @@ Or running it in the cloud with a single worker:
 The examples data results may also be updated using Docker:
 
 ```bash
-./update-example-data-results.sh
+make update-example-data-results
 ```
 
 The ouput path will contain the following files:
