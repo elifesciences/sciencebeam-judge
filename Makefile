@@ -3,13 +3,12 @@ DOCKER_COMPOSE_CI = docker-compose -f docker-compose.yml -f docker-compose.ci.ym
 DOCKER_COMPOSE = $(DOCKER_COMPOSE_DEV)
 
 
-DEV_RUN_PY3 = $(DOCKER_COMPOSE) run --name "$(RUN_NAME)" --rm sciencebeam-judge-dev-py3
+DEV_RUN = $(DOCKER_COMPOSE) run --name "$(RUN_NAME)" --rm sciencebeam-judge-dev
 
 MOUNT = --volume="$$PWD/example-data:/example-data"
 
 RUN_NAME =
-JUDGE_SERVICE_PY3 = sciencebeam-judge-py3
-JUDGE_SERVICE =$(JUDGE_SERVICE_PY3)
+JUDGE_SERVICE = sciencebeam-judge
 RUN = $(DOCKER_COMPOSE) run $(MOUNT) --name "$(RUN_NAME)" --rm $(JUDGE_SERVICE)
 
 JUPYTER_MOUNT = --volume="$$PWD/example-data:/home/jovyan/sciencebeam-judge/example-data"
@@ -47,17 +46,13 @@ build-dev:
 	fi
 
 
-test-py3: build-dev
-	$(DEV_RUN_PY3) ./project_tests.sh
+test: build-dev
+	$(DEV_RUN) ./project_tests.sh
 
 
-watch-py3: build-dev
-	$(DEV_RUN_PY3) pytest-watch -- $(PYTEST_ARGS)
+watch: build-dev
+	$(DEV_RUN) pytest-watch -- $(PYTEST_ARGS)
 
-
-test: test-py3
-
-watch: watch-py3
 
 .update-example-data-results:
 	$(RUN) ./evaluate.sh \
@@ -136,22 +131,22 @@ ci-build-all:
 	$(DOCKER_COMPOSE_CI) build --parallel
 
 
-ci-test-py3:
+ci-test:
 	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
-		RUN_NAME="ci-test-py3" \
-		test-py3
+		RUN_NAME="ci-test" \
+		test
 
 
-ci-test-run-evaluation-py3:
+ci-test-run-evaluation:
 	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
-		RUN_NAME="ci-test-run-evaluation-py3" \
-		JUDGE_SERVICE="$(JUDGE_SERVICE_PY3)" update-example-data-results-temp
+		RUN_NAME="ci-test-run-evaluation" \
+		JUDGE_SERVICE="$(JUDGE_SERVICE)" update-example-data-results-temp
 
 
 ci-test-evaluate-and-update-notebooks:
 	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
 		RUN_NAME="ci-test-evaluate-and-update-notebooks" \
-		JUDGE_SERVICE="$(JUDGE_SERVICE_PY3)" \
+		JUDGE_SERVICE="$(JUDGE_SERVICE)" \
 		update-example-data-results update-example-data-notebooks-temp
 
 
