@@ -49,14 +49,6 @@ build-dev:
 	fi
 
 
-test-py2: build-dev
-	$(DEV_RUN_PY2) ./project_tests.sh
-
-
-watch-py2: build-dev
-	$(DEV_RUN_PY2) pytest-watch -- $(PYTEST_ARGS)
-
-
 test-py3: build-dev
 	$(DEV_RUN_PY3) ./project_tests.sh
 
@@ -146,22 +138,10 @@ ci-build-all:
 	$(DOCKER_COMPOSE_CI) build --parallel
 
 
-ci-test-py2:
-	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
-		RUN_NAME="ci-test-py2" \
-		test-py2
-
-
 ci-test-py3:
 	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
 		RUN_NAME="ci-test-py3" \
 		test-py3
-
-
-ci-test-run-evaluation-py2:
-	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
-		RUN_NAME="ci-test-run-evaluation-py2" \
-		JUDGE_SERVICE="$(JUDGE_SERVICE_PY2)" update-example-data-results-temp
 
 
 ci-test-run-evaluation-py3:
