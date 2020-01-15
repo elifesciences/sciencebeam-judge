@@ -17,4 +17,4 @@ before_install:
   - make ci-build-all
 
 script:
-  - make ci-test-py2 ci-test-evaluate-and-update-notebooks
+  - make ci-test-py3 ci-test-evaluate-and-update-notebooks
