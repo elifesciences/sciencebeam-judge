@@ -65,9 +65,9 @@ watch-py3: build-dev
 	$(DEV_RUN_PY3) pytest-watch -- $(PYTEST_ARGS)
 
 
-test: test-py2
+test: test-py3
 
-watch: watch-py2
+watch: watch-py3
 
 .update-example-data-results:
 	$(RUN) ./evaluate.sh \
