@@ -1,6 +1,6 @@
 configparser==4.0.2
 editdistance==0.5.3
-future==0.17.1
+future==0.18.2
 lxml==4.4.1
 sciencebeam-alignment==0.0.4
 sciencebeam-utils==0.1.0
