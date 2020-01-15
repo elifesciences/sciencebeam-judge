@@ -3,15 +3,13 @@ DOCKER_COMPOSE_CI = docker-compose -f docker-compose.yml -f docker-compose.ci.ym
 DOCKER_COMPOSE = $(DOCKER_COMPOSE_DEV)
 
 
-DEV_RUN_PY2 = $(DOCKER_COMPOSE) run --name "$(RUN_NAME)" --rm sciencebeam-judge-dev
 DEV_RUN_PY3 = $(DOCKER_COMPOSE) run --name "$(RUN_NAME)" --rm sciencebeam-judge-dev-py3
 
 MOUNT = --volume="$$PWD/example-data:/example-data"
 
 RUN_NAME =
-JUDGE_SERVICE_PY2 = sciencebeam-judge
 JUDGE_SERVICE_PY3 = sciencebeam-judge-py3
-JUDGE_SERVICE =$(JUDGE_SERVICE_PY2)
+JUDGE_SERVICE =$(JUDGE_SERVICE_PY3)
 RUN = $(DOCKER_COMPOSE) run $(MOUNT) --name "$(RUN_NAME)" --rm $(JUDGE_SERVICE)
 
 JUPYTER_MOUNT = --volume="$$PWD/example-data:/home/jovyan/sciencebeam-judge/example-data"
@@ -153,7 +151,7 @@ ci-test-run-evaluation-py3:
 ci-test-evaluate-and-update-notebooks:
 	$(MAKE) DOCKER_COMPOSE="$(DOCKER_COMPOSE_CI)" \
 		RUN_NAME="ci-test-evaluate-and-update-notebooks" \
-		JUDGE_SERVICE="$(JUDGE_SERVICE_PY2)" \
+		JUDGE_SERVICE="$(JUDGE_SERVICE_PY3)" \
 		update-example-data-results update-example-data-notebooks-temp
 
 
