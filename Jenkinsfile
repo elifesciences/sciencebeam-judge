@@ -15,25 +15,15 @@ elifePipeline {
         stage 'Project tests', {
             try {
                 parallel([
-                    'Project tests (PY2)': {
-                        withCommitStatus({
-                            sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-test-py2"
-                        }, 'project-tests/py2', commit)
-                    },
                     'Project tests (PY3)': {
                         withCommitStatus({
-                            sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-test-py3"
+                            sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-test"
                         }, 'project-tests/py3', commit)
-                    },
-                    'Test run evaluation (PY2)': {
-                        withCommitStatus({
-                            sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-test-run-evaluation-py2"
-                        }, 'project-tests/evaluate-py2', commit)
                     },
                     'Test run evaluation (PY3)': {
                         withCommitStatus({
-                            sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-test-run-evaluation-py3"
-                        }, 'project-tests/evaluate-py3', commit)
+                            sh "make IMAGE_TAG=${commit} NO_BUILD=y ci-test-run-evaluation"
+                        }, 'project-tests/evaluate', commit)
                     },
                     'Test evaluate and update notebooks': {
                         // this will current cause evaluation results to be updated in the working dir
