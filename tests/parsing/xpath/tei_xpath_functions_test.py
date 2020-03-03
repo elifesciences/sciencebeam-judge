@@ -2,7 +2,7 @@ from lxml.builder import E
 
 import pytest
 
-from .tei_xpath_functions import register_functions
+from sciencebeam_judge.parsing.xpath.tei_xpath_functions import register_functions
 
 
 @pytest.fixture(autouse=True)

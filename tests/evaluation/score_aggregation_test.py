@@ -2,9 +2,9 @@ import logging
 
 import numpy as np
 
-from .document_scoring import DocumentScoringProps
+from sciencebeam_judge.evaluation.document_scoring import DocumentScoringProps
 
-from .score_aggregation import (
+from sciencebeam_judge.evaluation.score_aggregation import (
     compact_scores,
     combine_scores,
     combine_and_compact_document_scores_with_count,

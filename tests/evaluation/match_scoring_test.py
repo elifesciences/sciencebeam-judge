@@ -1,4 +1,4 @@
-from .match_scoring import (
+from sciencebeam_judge.evaluation.match_scoring import (
     get_match_score_obj_for_score,
     MatchScoringProps
 )

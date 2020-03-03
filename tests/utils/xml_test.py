@@ -1,7 +1,7 @@
 from lxml import etree
 from lxml.builder import E
 
-from .xml import (
+from sciencebeam_judge.utils.xml import (
     get_text_content
 )
 

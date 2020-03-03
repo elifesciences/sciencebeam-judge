@@ -5,7 +5,7 @@ from io import BytesIO, StringIO
 
 from lxml import etree
 
-from .xml import (
+from sciencebeam_judge.parsing.xml import (
     parse_xml_table,
     parse_xml_items,
     parse_xml_mapping,

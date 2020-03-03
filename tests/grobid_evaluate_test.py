@@ -1,9 +1,9 @@
-from .evaluation.scoring_methods import ScoringMethodNames
-from .evaluation.scoring_types.scoring_types import ScoringTypeNames
-from .evaluation.document_scoring import DocumentScoringProps
-from .evaluation.score_aggregation import SummaryScoresProps
+from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
+from sciencebeam_judge.evaluation.scoring_types.scoring_types import ScoringTypeNames
+from sciencebeam_judge.evaluation.document_scoring import DocumentScoringProps
+from sciencebeam_judge.evaluation.score_aggregation import SummaryScoresProps
 
-from .grobid_evaluate import (
+from sciencebeam_judge.grobid_evaluate import (
     summarised_document_scores_to_scores_by_scoring_method,
     format_summary_by_scoring_method,
     format_summarised_document_scores_as_grobid_report

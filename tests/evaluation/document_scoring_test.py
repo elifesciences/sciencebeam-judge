@@ -4,9 +4,9 @@ import logging
 
 from sciencebeam_utils.utils.collection import groupby_to_dict
 
-from .scoring_methods import ScoringMethodNames
+from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
 
-from .document_scoring import (
+from sciencebeam_judge.evaluation.document_scoring import (
     iter_score_document_fields,
     DocumentScoringProps
 )

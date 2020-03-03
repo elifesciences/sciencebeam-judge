@@ -4,14 +4,14 @@ import logging
 
 import pytest
 
-from .list import (
+from sciencebeam_judge.evaluation.scoring_types.list import (
     ORDERED_LIST_SCORING_TYPE,
     UNORDERED_LIST_SCORING_TYPE,
     SET_SCORING_TYPE
 )
-from .string import STRING_SCORING_TYPE
+from sciencebeam_judge.evaluation.scoring_types.string import STRING_SCORING_TYPE
 
-from .scoring_types import resolve_scoring_type
+from sciencebeam_judge.evaluation.scoring_types.scoring_types import resolve_scoring_type
 
 
 LOGGING = logging.getLogger(__name__)

@@ -6,10 +6,10 @@ from abc import ABCMeta, abstractmethod
 
 from six import with_metaclass
 
-from ..match_scoring import MatchScoringProps
-from ..scoring_methods import ScoringMethodNames
+from sciencebeam_judge.evaluation.match_scoring import MatchScoringProps
+from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
 
-from .list import (
+from sciencebeam_judge.evaluation.scoring_types.list import (
     ORDERED_LIST_SCORING_TYPE,
     PARTIAL_ORDERED_LIST_SCORING_TYPE,
     UNORDERED_LIST_SCORING_TYPE,

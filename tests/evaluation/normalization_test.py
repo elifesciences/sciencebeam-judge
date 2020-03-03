@@ -1,4 +1,4 @@
-from .normalization import (
+from sciencebeam_judge.evaluation.normalization import (
     normalize_whitespace,
     strip_punctuation_and_whitespace,
     FULL_PUNCTUATIONS

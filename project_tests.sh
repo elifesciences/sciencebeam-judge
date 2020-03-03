@@ -1,12 +1,12 @@
 #!/bin/bash
 set -e
 
-pytest sciencebeam_judge
+python -m pytest
 
 echo "running pylint"
-pylint sciencebeam_judge setup.py
+pylint sciencebeam_judge tests setup.py
 
 echo "running flake8"
-flake8 sciencebeam_judge setup.py
+flake8 sciencebeam_judge tests setup.py
 
 echo "done"

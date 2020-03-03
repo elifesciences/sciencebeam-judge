@@ -6,9 +6,9 @@ from abc import ABCMeta, abstractmethod
 
 from six import with_metaclass
 
-from ..match_scoring import MatchScoringProps
+from sciencebeam_judge.evaluation.match_scoring import MatchScoringProps
 
-from .table import (
+from sciencebeam_judge.evaluation.scoring_types.table import (
     ORDERED_TABLE_SCORING_TYPE,
     PARTIAL_ORDERED_TABLE_SCORING_TYPE
 )
