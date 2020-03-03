@@ -25,6 +25,9 @@ NOTEBOOK_OUTPUT_FILE =
 NO_BUILD =
 
 
+.PHONY: build
+
+
 venv-clean:
 	@if [ -d "$(VENV)" ]; then \
 		rm -rf "$(VENV)"; \
