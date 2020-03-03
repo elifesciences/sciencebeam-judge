@@ -5,8 +5,7 @@ ENV PROJECT_HOME=/srv/sciencebeam-judge
 WORKDIR ${PROJECT_HOME}
 
 ENV VENV=${PROJECT_HOME}/venv
-RUN pip install --no-cache-dir --only-binary --upgrade virtualenv \
-    && virtualenv ${VENV}
+RUN python3 -m venv ${VENV}
 ENV PYTHONUSERBASE=${VENV} PATH=${VENV}/bin:$PATH
 
 COPY requirements.build.txt ./
