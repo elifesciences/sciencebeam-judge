@@ -25,6 +25,9 @@ NOTEBOOK_OUTPUT_FILE =
 NO_BUILD =
 
 
+.PHONY: build
+
+
 venv-clean:
 	@if [ -d "$(VENV)" ]; then \
 		rm -rf "$(VENV)"; \
@@ -36,6 +39,7 @@ venv-create:
 
 
 dev-install:
+	$(PIP) install -r requirements.build.txt
 	$(PIP) install -r requirements.txt
 	$(PIP) install -r requirements.prereq.txt
 	$(PIP) install -r requirements.dev.txt

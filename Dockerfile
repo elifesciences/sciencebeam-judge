@@ -9,6 +9,9 @@ RUN pip install --no-cache-dir --only-binary --upgrade virtualenv \
     && virtualenv ${VENV}
 ENV PYTHONUSERBASE=${VENV} PATH=${VENV}/bin:$PATH
 
+COPY requirements.build.txt ./
+RUN pip install -r requirements.build.txt
+
 COPY requirements.prereq.txt ./
 RUN pip install -r requirements.prereq.txt
 
