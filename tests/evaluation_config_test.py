@@ -1,6 +1,6 @@
 from io import StringIO
 
-from .evaluation_config import (
+from sciencebeam_judge.evaluation_config import (
     parse_evaluation_config,
     get_scoring_type_by_field_map_from_config
 )

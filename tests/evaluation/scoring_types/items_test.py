@@ -1,4 +1,4 @@
-from .items import (
+from sciencebeam_judge.evaluation.scoring_types.items import (
     _get_exact_matched_characters,
     _get_fuzzy_matched_characters,
     _score_items_to

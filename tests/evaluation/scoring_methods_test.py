@@ -2,13 +2,13 @@ from __future__ import division
 
 import logging
 
-from .scoring_methods import (
+from sciencebeam_judge.evaluation.scoring_methods import (
     exact_score,
     levenshtein_score,
     ratcliff_obershelp_score
 )
 
-from .math import is_close
+from sciencebeam_judge.evaluation.math import is_close
 
 
 LOGGING = logging.getLogger(__name__)

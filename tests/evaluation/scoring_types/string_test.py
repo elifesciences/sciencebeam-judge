@@ -2,9 +2,9 @@ from __future__ import division
 
 import logging
 
-from ..math import is_close
+from sciencebeam_judge.evaluation.math import is_close
 
-from .string import STRING_SCORING_TYPE
+from sciencebeam_judge.evaluation.scoring_types.string import STRING_SCORING_TYPE
 
 
 LOGGING = logging.getLogger(__name__)

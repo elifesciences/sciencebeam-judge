@@ -23,12 +23,12 @@ from sciencebeam_judge.evaluation_pipeline import (
     SummaryOutputColumns
 )
 
-from .evaluation.match_scoring import MatchScoringProps
-from .evaluation.scoring_methods import ScoringMethodNames
-from .evaluation.scoring_types.scoring_types import ScoringTypeNames
-from .evaluation.document_scoring import DocumentScoringProps
-from .evaluation.score_aggregation import SummaryScoresProps
-from .evaluation_config import get_scoring_type_by_field_map_from_config
+from sciencebeam_judge.evaluation.match_scoring import MatchScoringProps
+from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
+from sciencebeam_judge.evaluation.scoring_types.scoring_types import ScoringTypeNames
+from sciencebeam_judge.evaluation.document_scoring import DocumentScoringProps
+from sciencebeam_judge.evaluation.score_aggregation import SummaryScoresProps
+from sciencebeam_judge.evaluation_config import get_scoring_type_by_field_map_from_config
 
 
 LOGGER = logging.getLogger(__name__)

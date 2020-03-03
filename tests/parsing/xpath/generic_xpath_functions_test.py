@@ -4,7 +4,7 @@ from lxml.builder import E
 
 from sciencebeam_judge.utils.xml import get_text_content_list
 
-from .generic_xpath_functions import register_functions
+from sciencebeam_judge.parsing.xpath.generic_xpath_functions import register_functions
 
 
 TEXT_1 = 'Text 1'
