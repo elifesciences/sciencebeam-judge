@@ -74,16 +74,16 @@ def fn_tei_deduplicate_by_attrib(
     return result
 
 
-def fn_tei_sort_by_attrib(
+def _sort_by_attrib(
         _, nodes: List[etree.Element], attrib_name: str) -> List[etree.Element]:
     LOGGER.debug(
-        'fn_tei_sort_by_attrib, nodes[@%s]=%s',
+        '_sort_by_attrib, nodes[@%s]=%s',
         attrib_name,
         [node.attrib.get(attrib_name) for node in nodes]
     )
     result = natsorted(nodes, key=lambda node: node.attrib.get(attrib_name, ''))
     LOGGER.debug(
-        'fn_tei_sort_by_attrib, result[@%s]=%s',
+        '_sort_by_attrib, result[@%s]=%s',
         attrib_name,
         [node.attrib.get(attrib_name) for node in result]
     )
@@ -91,7 +91,7 @@ def fn_tei_sort_by_attrib(
 
 
 def _sort_author_affiliations(nodes: List[etree.Element]):
-    return fn_tei_sort_by_attrib(None, nodes, attrib_name='key')
+    return _sort_by_attrib(None, nodes, attrib_name='key')
 
 
 def fn_tei_author_affiliations(_, nodes):
