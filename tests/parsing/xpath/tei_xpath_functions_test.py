@@ -85,6 +85,25 @@ class TestTeiXpathFunctions(object):
             xml = _tei_with_authors(author)
             assert list(xml.xpath('tei-full-name(//author)')) == ['Tom']
 
+    class TestAuthorAffiliations(object):
+        def test_should_return_single_affiliation_without_key(self):
+            affiliation = E.affiliation(
+                E.orgName('Department 1', type="department")
+            )
+            xml = _tei_with_authors(E.author(affiliation))
+            assert list(xml.xpath('tei-author-affiliations(.)')) == [affiliation]
+
+        def test_should_return_single_affiliation_with_key(self):
+            affiliation = E.affiliation(key='aff1')
+            xml = _tei_with_authors(E.author(affiliation))
+            assert list(xml.xpath('tei-author-affiliations(.)')) == [affiliation]
+
+        def test_should_return_deduplicate_affiliations_with_key(self):
+            affiliation1 = E.affiliation(key='aff1')
+            affiliation1_copy = E.affiliation(key='aff1')
+            xml = _tei_with_authors(E.author(affiliation1), E.author(affiliation1_copy))
+            assert list(xml.xpath('tei-author-affiliations(.)')) == [affiliation1]
+
     class TestAffString(object):
         def test_should_return_org_name(self):
             xml = E.TEI(

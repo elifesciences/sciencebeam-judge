@@ -1,4 +1,5 @@
 import logging
+from typing import List
 
 from lxml import etree
 
@@ -57,6 +58,30 @@ def fn_tei_authors(_, nodes):
             'teiHeader/fileDesc/sourceDesc/biblStruct/analytic/author'
         )
     ]
+
+
+def fn_tei_deduplicate_by_attrib(
+        _, nodes: List[etree.Element], attrib_name: str) -> List[etree.Element]:
+    seen_keys = set()
+    result = []
+    for node in nodes:
+        key = node.attrib.get(attrib_name)
+        if key and key in seen_keys:
+            continue
+        result.append(node)
+        seen_keys.add(key)
+    return result
+
+
+def fn_tei_author_affiliations(_, nodes):
+    return fn_tei_deduplicate_by_attrib(
+        _, [
+            affiliation
+            for author in fn_tei_authors(_, nodes)
+            for affiliation in author.findall('affiliation')
+        ],
+        attrib_name='key'
+    )
 
 
 def _aff_string(aff):
@@ -123,6 +148,7 @@ def register_functions(ns=None):
     ns['tei-full-name'] = fn_tei_full_name
     ns['tei-authors'] = fn_tei_authors
     ns['tei-aff-string'] = fn_tei_aff_string
+    ns['tei-author-affiliations'] = fn_tei_author_affiliations
     ns['tei-ref-fpage'] = fn_tei_ref_fpage
     ns['tei-ref-lpage'] = fn_tei_ref_lpage
     ns['tei-abstract-text'] = fn_tei_abstract_text
