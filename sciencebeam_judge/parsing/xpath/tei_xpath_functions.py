@@ -108,6 +108,9 @@ def fn_tei_author_affiliations(_, nodes):
 
 
 def _aff_string(aff):
+    raw_affiliation_nodes = aff.xpath('./note[@type="raw_affiliation"]')
+    if raw_affiliation_nodes:
+        return ', '.join(_text(raw_affiliation_nodes))
     return ', '.join(
         _text(
             aff.findall('orgName') +
