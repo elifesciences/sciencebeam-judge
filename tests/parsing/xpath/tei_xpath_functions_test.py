@@ -1,8 +1,12 @@
+import logging
 from lxml.builder import E
 
 import pytest
 
 from sciencebeam_judge.parsing.xpath.tei_xpath_functions import register_functions
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 @pytest.fixture(autouse=True)
@@ -154,6 +158,36 @@ class TestTeiXpathFunctions(object):
             assert list(
                 xml.xpath('tei-aff-string(//affiliation)')
             ) == ['Department 1, Addr Line 1']
+
+        def test_should_sort_affiliations(self):
+            xml = E.TEI(
+                E.affiliation(
+                    E.orgName('Department 2', type="department"),
+                    key='aff2'
+                ),
+                E.affiliation(
+                    E.orgName('Department 1', type="department"),
+                    key='aff1'
+                )
+            )
+            assert list(
+                xml.xpath('tei-aff-string(//affiliation)')
+            ) == ['Department 1', 'Department 2']
+
+        def test_should_sort_affiliations_natural_order(self):
+            xml = E.TEI(
+                E.affiliation(
+                    E.orgName('Department 2', type="department"),
+                    key='aff10'
+                ),
+                E.affiliation(
+                    E.orgName('Department 1', type="department"),
+                    key='aff9'
+                )
+            )
+            assert list(
+                xml.xpath('tei-aff-string(//affiliation)')
+            ) == ['Department 1', 'Department 2']
 
     class TestRefFpage(object):
         def test_should_return_from_attribute_if_present(self):
