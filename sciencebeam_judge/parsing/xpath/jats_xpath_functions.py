@@ -1,4 +1,5 @@
 import logging
+import re
 
 from lxml import etree
 
@@ -61,7 +62,39 @@ def fn_jats_authors(_, nodes):
     ]
 
 
+def is_blank(text: str) -> bool:
+    return not text or not text.strip()
+
+
+def contains_raw_text(element: etree.Element) -> bool:
+    if not is_blank(element.text):
+        return True
+    for child in element:
+        if not is_blank(child.tail):
+            return True
+    return False
+
+
+def is_ends_with_word(text: str) -> bool:
+    return re.match(r'.*\w$', text)
+
+
+def is_starts_with_word(text: str) -> bool:
+    return re.match(r'^\w.*', text)
+
+
+def get_raw_text_content(element: etree.Element) -> str:
+    text_list = []
+    for text in element.itertext():
+        if text_list and is_ends_with_word(text_list[-1]) and is_starts_with_word(text):
+            text_list.append(' ')
+        text_list.append(text)
+    return ''.join(text_list)
+
+
 def _aff_string(aff):
+    if contains_raw_text(aff):
+        return get_raw_text_content(aff)
     result = ', '.join(
         _text(
             aff.findall('institution') +
