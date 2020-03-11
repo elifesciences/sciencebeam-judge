@@ -1,8 +1,12 @@
+import logging
 from lxml.builder import E
 
 import pytest
 
 from sciencebeam_judge.parsing.xpath.tei_xpath_functions import register_functions
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 @pytest.fixture(autouse=True)
@@ -85,6 +89,25 @@ class TestTeiXpathFunctions(object):
             xml = _tei_with_authors(author)
             assert list(xml.xpath('tei-full-name(//author)')) == ['Tom']
 
+    class TestAuthorAffiliations(object):
+        def test_should_return_single_affiliation_without_key(self):
+            affiliation = E.affiliation(
+                E.orgName('Department 1', type="department")
+            )
+            xml = _tei_with_authors(E.author(affiliation))
+            assert list(xml.xpath('tei-author-affiliations(.)')) == [affiliation]
+
+        def test_should_return_single_affiliation_with_key(self):
+            affiliation = E.affiliation(key='aff1')
+            xml = _tei_with_authors(E.author(affiliation))
+            assert list(xml.xpath('tei-author-affiliations(.)')) == [affiliation]
+
+        def test_should_return_deduplicate_affiliations_with_key(self):
+            affiliation1 = E.affiliation(key='aff1')
+            affiliation1_copy = E.affiliation(key='aff1')
+            xml = _tei_with_authors(E.author(affiliation1), E.author(affiliation1_copy))
+            assert list(xml.xpath('tei-author-affiliations(.)')) == [affiliation1]
+
     class TestAffString(object):
         def test_should_return_org_name(self):
             xml = E.TEI(
@@ -123,6 +146,23 @@ class TestTeiXpathFunctions(object):
                 ['Department 1, Post Code 1, Settlement 1, Country 1']
             )
 
+        def test_should_use_raw_affiliation_note_if_available(self):
+            xml = E.TEI(
+                E.affiliation(
+                    E.note('raw affiliation 1', type='raw_affiliation'),
+                    E.orgName('Department 1', type="department"),
+                    E.address(
+                        E.postCode('Post Code 1'),
+                        E.settlement('Settlement 1'),
+                        E.country('Country 1')
+                    )
+                )
+            )
+            assert (
+                list(xml.xpath('tei-aff-string(//affiliation)')) ==
+                ['raw affiliation 1']
+            )
+
         def test_should_join_institution_with_addr_line(self):
             xml = E.TEI(
                 E.affiliation(
@@ -135,6 +175,36 @@ class TestTeiXpathFunctions(object):
             assert list(
                 xml.xpath('tei-aff-string(//affiliation)')
             ) == ['Department 1, Addr Line 1']
+
+        def test_should_sort_affiliations(self):
+            xml = E.TEI(
+                E.affiliation(
+                    E.orgName('Department 2', type="department"),
+                    key='aff2'
+                ),
+                E.affiliation(
+                    E.orgName('Department 1', type="department"),
+                    key='aff1'
+                )
+            )
+            assert list(
+                xml.xpath('tei-aff-string(//affiliation)')
+            ) == ['Department 1', 'Department 2']
+
+        def test_should_sort_affiliations_natural_order(self):
+            xml = E.TEI(
+                E.affiliation(
+                    E.orgName('Department 2', type="department"),
+                    key='aff10'
+                ),
+                E.affiliation(
+                    E.orgName('Department 1', type="department"),
+                    key='aff9'
+                )
+            )
+            assert list(
+                xml.xpath('tei-aff-string(//affiliation)')
+            ) == ['Department 1', 'Department 2']
 
     class TestRefFpage(object):
         def test_should_return_from_attribute_if_present(self):

@@ -1,6 +1,8 @@
 import logging
+from typing import List
 
 from lxml import etree
+from natsort import natsorted
 
 from sciencebeam_utils.utils.xml import get_text_content
 
@@ -59,7 +61,56 @@ def fn_tei_authors(_, nodes):
     ]
 
 
+def fn_tei_deduplicate_by_attrib(
+        _, nodes: List[etree.Element], attrib_name: str) -> List[etree.Element]:
+    seen_keys = set()
+    result = []
+    for node in nodes:
+        key = node.attrib.get(attrib_name)
+        if key and key in seen_keys:
+            continue
+        result.append(node)
+        seen_keys.add(key)
+    return result
+
+
+def _sort_by_attrib(
+        _, nodes: List[etree.Element], attrib_name: str) -> List[etree.Element]:
+    LOGGER.debug(
+        '_sort_by_attrib, nodes[@%s]=%s',
+        attrib_name,
+        [node.attrib.get(attrib_name) for node in nodes]
+    )
+    result = natsorted(nodes, key=lambda node: node.attrib.get(attrib_name, ''))
+    LOGGER.debug(
+        '_sort_by_attrib, result[@%s]=%s',
+        attrib_name,
+        [node.attrib.get(attrib_name) for node in result]
+    )
+    return result
+
+
+def _sort_author_affiliations(nodes: List[etree.Element]):
+    return _sort_by_attrib(None, nodes, attrib_name='key')
+
+
+def fn_tei_author_affiliations(_, nodes):
+    # xpath works with "node sets", the order is usually the document order
+    # sorting here won't have any effect
+    return fn_tei_deduplicate_by_attrib(
+        _, [
+            affiliation
+            for author in fn_tei_authors(_, nodes)
+            for affiliation in author.findall('affiliation')
+        ],
+        attrib_name='key'
+    )
+
+
 def _aff_string(aff):
+    raw_affiliation_nodes = aff.xpath('./note[@type="raw_affiliation"]')
+    if raw_affiliation_nodes:
+        return ', '.join(_text(raw_affiliation_nodes))
     return ', '.join(
         _text(
             aff.findall('orgName') +
@@ -72,7 +123,7 @@ def _aff_string(aff):
 
 
 def fn_tei_aff_string(_, nodes):
-    return [_aff_string(node) for node in nodes]
+    return [_aff_string(node) for node in _sort_author_affiliations(nodes)]
 
 
 def _ref_fpage(ref):
@@ -123,6 +174,7 @@ def register_functions(ns=None):
     ns['tei-full-name'] = fn_tei_full_name
     ns['tei-authors'] = fn_tei_authors
     ns['tei-aff-string'] = fn_tei_aff_string
+    ns['tei-author-affiliations'] = fn_tei_author_affiliations
     ns['tei-ref-fpage'] = fn_tei_ref_fpage
     ns['tei-ref-lpage'] = fn_tei_ref_lpage
     ns['tei-abstract-text'] = fn_tei_abstract_text

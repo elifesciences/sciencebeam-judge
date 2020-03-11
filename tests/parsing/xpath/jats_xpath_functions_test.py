@@ -153,7 +153,18 @@ class TestJatsXpathFunctions(object):
                 xml.xpath('jats-aff-string(//aff)')
             ) == ['Affiliation 1']
 
-        def test_should_return_aff_text_excluding_label(self):
+        def test_should_return_aff_text_excluding_label_if_only_containing_other_tags(self):
+            xml = E.article(
+                E.aff(
+                    E.label('1'),
+                    E.other('Affiliation 1')
+                )
+            )
+            assert list(
+                xml.xpath('jats-aff-string(//aff)')
+            ) == ['Affiliation 1']
+
+        def test_should_return_raw_aff_text_if_aff_contains_non_empty_text(self):
             xml = E.article(
                 E.aff(
                     E.label('1'),
@@ -162,7 +173,7 @@ class TestJatsXpathFunctions(object):
             )
             assert list(
                 xml.xpath('jats-aff-string(//aff)')
-            ) == ['Affiliation 1']
+            ) == ['1 Affiliation 1']
 
     class TestRefFpage(object):
         def test_should_return_from_attribute_if_present(self):
