@@ -146,7 +146,7 @@ class TestTeiXpathFunctions(object):
                 ['Department 1, Post Code 1, Settlement 1, Country 1']
             )
 
-        def test_should_use_raw_affiliation_note_if_available(self):
+        def test_should_use_raw_affiliation_note_without_label_if_available(self):
             xml = E.TEI(
                 E.affiliation(
                     E.note('raw affiliation 1', type='raw_affiliation'),
@@ -161,6 +161,27 @@ class TestTeiXpathFunctions(object):
             assert (
                 list(xml.xpath('tei-aff-string(//affiliation)')) ==
                 ['raw affiliation 1']
+            )
+
+        def test_should_use_raw_affiliation_note_with_label_if_available(self):
+            xml = E.TEI(
+                E.affiliation(
+                    E.note(
+                        E.label('a'),
+                        ' raw affiliation 1',
+                        type='raw_affiliation'
+                    ),
+                    E.orgName('Department 1', type="department"),
+                    E.address(
+                        E.postCode('Post Code 1'),
+                        E.settlement('Settlement 1'),
+                        E.country('Country 1')
+                    )
+                )
+            )
+            assert (
+                list(xml.xpath('tei-aff-string(//affiliation)')) ==
+                ['a raw affiliation 1']
             )
 
         def test_should_join_institution_with_addr_line(self):

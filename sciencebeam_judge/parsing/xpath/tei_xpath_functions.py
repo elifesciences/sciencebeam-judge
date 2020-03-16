@@ -24,8 +24,10 @@ def _filter_not_none(iterable):
     return [x for x in iterable if x is not None]
 
 
-def _text(nodes):
-    return _filter_truthy(x.text for x in nodes)
+def _text(nodes: List[etree.Element]) -> List[str]:
+    return _filter_truthy(
+        get_text_content(x) for x in nodes
+    )
 
 
 def _pers_name_full_name(pers_name_node):
