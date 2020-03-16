@@ -7,20 +7,12 @@ This project implements a JATS/TEI conversion [evaluation](docs/evaluation.md). 
 
 ## Pre-requistes
 
-- Python 2.7 ([currently Apache Beam doesn't support Python 3](https://issues.apache.org/jira/browse/BEAM-1373))
-- [Apache Beam](https://beam.apache.org/get-started/quickstart-py/)
-
-You can install default versions of pre-requisites (apart from Python) using:
-
-```bash
-pip install -r requirements.prereq.txt
-```
+- Python 3
 
 ## Setup
 
 ```bash
-pip install -r requirements.txt
-pip install -r requirements.dev.txt
+make dev-venv
 ```
 
 ## Configuration
