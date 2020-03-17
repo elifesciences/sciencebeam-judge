@@ -4,7 +4,7 @@ import re
 from lxml import etree
 from lxml.builder import E
 
-from sciencebeam_judge.utils.xml import get_text_content
+from sciencebeam_judge.utils.xml import get_text_content, get_normalized_text_content
 
 
 LOGGER = logging.getLogger(__name__)
@@ -82,27 +82,6 @@ def fn_generic_text_content(_, nodes):
         get_text_content(node).strip()
         for node in nodes
     ]
-
-
-def is_ends_with_word(text: str) -> bool:
-    return re.match(r'.*\w$', text)
-
-
-def is_starts_with_word(text: str) -> bool:
-    return re.match(r'^\w.*', text)
-
-
-def normalized_whitespace(text: str) -> str:
-    return ' '.join(text.split())
-
-
-def get_normalized_text_content(element: etree.Element) -> str:
-    text_list = []
-    for text in element.itertext():
-        if text_list and is_ends_with_word(text_list[-1]) and is_starts_with_word(text):
-            text_list.append(' ')
-        text_list.append(text)
-    return normalized_whitespace(''.join(text_list).strip())
 
 
 def fn_generic_normalized_text_content(_, nodes):

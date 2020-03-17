@@ -1,4 +1,7 @@
 import logging
+import re
+
+from lxml import etree
 
 from six import text_type, string_types
 
@@ -80,3 +83,24 @@ def get_text_content_and_ignore_children(e, children_to_ignore):
         if c not in children_to_ignore else IGNORE_MARKER_WITH_SPACE
         for c in e
     ])
+
+
+def is_ends_with_word(text: str) -> bool:
+    return re.match(r'.*\w$', text)
+
+
+def is_starts_with_word(text: str) -> bool:
+    return re.match(r'^\w.*', text)
+
+
+def normalized_whitespace(text: str) -> str:
+    return ' '.join(text.split())
+
+
+def get_normalized_text_content(element: etree.Element) -> str:
+    text_list = []
+    for text in element.itertext():
+        if text_list and is_ends_with_word(text_list[-1]) and is_starts_with_word(text):
+            text_list.append(' ')
+        text_list.append(text)
+    return normalized_whitespace(''.join(text_list).strip())
