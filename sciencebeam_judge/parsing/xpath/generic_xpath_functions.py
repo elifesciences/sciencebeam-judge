@@ -1,5 +1,4 @@
 import logging
-import re
 
 from lxml import etree
 from lxml.builder import E
