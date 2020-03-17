@@ -86,11 +86,12 @@ DEFAULT_AUTHOR_FIELDS = [
 
 
 DEFAULT_AFFILIATION_FIELDS = [
-    'affiliation_strings', 'affiliation_institution'
+    'affiliation_text', 'affiliation_strings', 'affiliation_institution'
 ]
 
 DEFAULT_REFERENCE_FIELDS = [
-    'first_reference_fields', 'first_reference_title',
+    'first_reference_text', 'first_reference_fields', 'first_reference_title',
+    'reference_text',
     'reference_fields', 'reference_title', 'reference_year',
     'reference_source', 'reference_volume', 'reference_fpage', 'reference_lpage'
 ]

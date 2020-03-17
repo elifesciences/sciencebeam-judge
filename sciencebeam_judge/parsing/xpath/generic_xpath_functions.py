@@ -3,7 +3,7 @@ import logging
 from lxml import etree
 from lxml.builder import E
 
-from sciencebeam_judge.utils.xml import get_text_content
+from sciencebeam_judge.utils.xml import get_text_content, get_normalized_text_content
 
 
 LOGGER = logging.getLogger(__name__)
@@ -83,6 +83,14 @@ def fn_generic_text_content(_, nodes):
     ]
 
 
+def fn_generic_normalized_text_content(_, nodes):
+    LOGGER.debug('fn_generic_normalized_text_content, nodes: %s', nodes)
+    return [
+        get_normalized_text_content(node)
+        for node in nodes
+    ]
+
+
 def register_functions(ns=None):
     if ns is None:
         ns = etree.FunctionNamespace(None)
@@ -90,3 +98,4 @@ def register_functions(ns=None):
     ns['generic-join-children'] = fn_generic_join_children
     ns['generic-as-items'] = fn_generic_as_items
     ns['generic-text-content'] = fn_generic_text_content
+    ns['generic-normalized-text-content'] = fn_generic_normalized_text_content

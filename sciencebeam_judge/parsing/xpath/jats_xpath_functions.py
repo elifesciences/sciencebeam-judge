@@ -1,9 +1,9 @@
 import logging
-import re
 
 from lxml import etree
 
-from sciencebeam_utils.utils.xml import get_text_content
+from sciencebeam_judge.utils.xml import get_text_content, get_normalized_text_content
+
 
 LOGGER = logging.getLogger(__name__)
 
@@ -75,26 +75,9 @@ def contains_raw_text(element: etree.Element) -> bool:
     return False
 
 
-def is_ends_with_word(text: str) -> bool:
-    return re.match(r'.*\w$', text)
-
-
-def is_starts_with_word(text: str) -> bool:
-    return re.match(r'^\w.*', text)
-
-
-def get_raw_text_content(element: etree.Element) -> str:
-    text_list = []
-    for text in element.itertext():
-        if text_list and is_ends_with_word(text_list[-1]) and is_starts_with_word(text):
-            text_list.append(' ')
-        text_list.append(text)
-    return ''.join(text_list)
-
-
 def _aff_string(aff):
     if contains_raw_text(aff):
-        return get_raw_text_content(aff)
+        return get_normalized_text_content(aff)
     result = ', '.join(
         _text(
             aff.findall('institution') +
