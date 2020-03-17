@@ -1,4 +1,5 @@
 import logging
+import re
 
 from lxml import etree
 from lxml.builder import E
@@ -83,6 +84,35 @@ def fn_generic_text_content(_, nodes):
     ]
 
 
+def is_ends_with_word(text: str) -> bool:
+    return re.match(r'.*\w$', text)
+
+
+def is_starts_with_word(text: str) -> bool:
+    return re.match(r'^\w.*', text)
+
+
+def normalized_whitespace(text: str) -> str:
+    return ' '.join(text.split())
+
+
+def get_normalized_text_content(element: etree.Element) -> str:
+    text_list = []
+    for text in element.itertext():
+        if text_list and is_ends_with_word(text_list[-1]) and is_starts_with_word(text):
+            text_list.append(' ')
+        text_list.append(text)
+    return normalized_whitespace(''.join(text_list).strip())
+
+
+def fn_generic_normalized_text_content(_, nodes):
+    LOGGER.debug('fn_generic_normalized_text_content, nodes: %s', nodes)
+    return [
+        get_normalized_text_content(node)
+        for node in nodes
+    ]
+
+
 def register_functions(ns=None):
     if ns is None:
         ns = etree.FunctionNamespace(None)
@@ -90,3 +120,4 @@ def register_functions(ns=None):
     ns['generic-join-children'] = fn_generic_join_children
     ns['generic-as-items'] = fn_generic_as_items
     ns['generic-text-content'] = fn_generic_text_content
+    ns['generic-normalized-text-content'] = fn_generic_normalized_text_content

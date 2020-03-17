@@ -135,3 +135,66 @@ class TestGenericXpathFunctions(object):
             assert (
                 list(xml.xpath('generic-text-content(//table)'))
             ) == ['Text 1']
+
+    class TestNormalizedTextContent(object):
+        def test_should_include_text_from_children(self):
+            xml = E.article(
+                E.table(
+                    'Text 1 ', E.label('Label 1'), E.caption(' Caption 1')
+                )
+            )
+            assert (
+                list(xml.xpath('generic-normalized-text-content(//table)'))
+            ) == ['Text 1 Label 1 Caption 1']
+
+        def test_should_add_space_after_element_followed_by_text(self):
+            xml = E.article(
+                E.table(
+                    E.label('Label 1'), E.caption('Caption 1')
+                )
+            )
+            assert (
+                list(xml.xpath('generic-normalized-text-content(//table)'))
+            ) == ['Label 1 Caption 1']
+
+        def test_should_not_add_space_after_element_followed_by_dot(self):
+            xml = E.article(
+                E.table(
+                    E.label('Label 1'), E.caption('. Caption 1')
+                )
+            )
+            assert (
+                list(xml.xpath('generic-normalized-text-content(//table)'))
+            ) == ['Label 1. Caption 1']
+
+        def test_should_return_empty_string_if_element_contains_no_text(self):
+            xml = E.article(
+                E.table()
+            )
+            assert (
+                list(xml.xpath('generic-normalized-text-content(//table)'))
+            ) == ['']
+
+        def test_should_strip_text(self):
+            xml = E.article(
+                E.table(' Text 1 ')
+            )
+            assert (
+                list(xml.xpath('generic-normalized-text-content(//table)'))
+            ) == ['Text 1']
+
+        def test_should_replace_multiple_space_with_one(self):
+            xml = E.article(
+                E.table('Text        1')
+            )
+            assert (
+                list(xml.xpath('generic-normalized-text-content(//table)'))
+            ) == ['Text 1']
+
+        def test_should_replace_line_feed_with_space(self):
+            xml = E.article(
+                E.table('Text\n1')
+            )
+            assert (
+                list(xml.xpath('generic-normalized-text-content(//table)'))
+            ) == ['Text 1']
