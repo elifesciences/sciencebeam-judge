@@ -167,6 +167,16 @@ class TestGenericXpathFunctions(object):
                 list(xml.xpath('generic-normalized-text-content(//table)'))
             ) == ['Label 1. Caption 1']
 
+        def test_should_remove_space_after_element_if_followed_by_dot(self):
+            xml = E.article(
+                E.table(
+                    E.label('Label 1'), ' ', E.caption(', Caption 1')
+                )
+            )
+            assert (
+                list(xml.xpath('generic-normalized-text-content(//table)'))
+            ) == ['Label 1, Caption 1']
+
         def test_should_return_empty_string_if_element_contains_no_text(self):
             xml = E.article(
                 E.table()

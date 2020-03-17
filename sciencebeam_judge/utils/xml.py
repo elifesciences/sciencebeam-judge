@@ -93,6 +93,10 @@ def is_starts_with_word(text: str) -> bool:
     return re.match(r'^\w.*', text)
 
 
+def remove_whitespace_before_punct(text: str) -> str:
+    return re.sub(r' (?=[.,:])', '', text)
+
+
 def normalized_whitespace(text: str) -> str:
     return ' '.join(text.split())
 
@@ -103,4 +107,4 @@ def get_normalized_text_content(element: etree.Element) -> str:
         if text_list and is_ends_with_word(text_list[-1]) and is_starts_with_word(text):
             text_list.append(' ')
         text_list.append(text)
-    return normalized_whitespace(''.join(text_list).strip())
+    return remove_whitespace_before_punct(normalized_whitespace(''.join(text_list).strip()))
