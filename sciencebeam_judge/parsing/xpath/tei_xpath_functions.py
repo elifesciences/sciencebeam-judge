@@ -124,8 +124,17 @@ def _aff_string(aff):
     )
 
 
+def _aff_text(aff: etree.Element):
+    raw_affiliation_nodes = aff.xpath('./note[@type="raw_affiliation"]')
+    return ', '.join(_text(raw_affiliation_nodes))
+
+
 def fn_tei_aff_string(_, nodes):
     return [_aff_string(node) for node in _sort_author_affiliations(nodes)]
+
+
+def fn_tei_aff_text(_, nodes: List[etree.Element]):
+    return [_aff_text(node) for node in _sort_author_affiliations(nodes)]
 
 
 def _ref_fpage(ref):
@@ -176,6 +185,7 @@ def register_functions(ns=None):
     ns['tei-full-name'] = fn_tei_full_name
     ns['tei-authors'] = fn_tei_authors
     ns['tei-aff-string'] = fn_tei_aff_string
+    ns['tei-aff-text'] = fn_tei_aff_text
     ns['tei-author-affiliations'] = fn_tei_author_affiliations
     ns['tei-ref-fpage'] = fn_tei_ref_fpage
     ns['tei-ref-lpage'] = fn_tei_ref_lpage

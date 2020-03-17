@@ -227,6 +227,76 @@ class TestTeiXpathFunctions(object):
                 xml.xpath('tei-aff-string(//affiliation)')
             ) == ['Department 1', 'Department 2']
 
+    class TestAffText(object):
+        def test_should_return_emtpy_string_if_no_raw_affiliation_note_available(self):
+            xml = E.TEI(
+                E.affiliation(
+                    E.orgName('Department 1', type="department")
+                )
+            )
+            assert (
+                list(xml.xpath('tei-aff-text(//affiliation)')) ==
+                ['']
+            )
+
+        def test_should_use_raw_affiliation_note_without_label_if_available(self):
+            xml = E.TEI(
+                E.affiliation(
+                    E.note('raw affiliation 1', type='raw_affiliation'),
+                    E.orgName('Department 1', type="department")
+                )
+            )
+            assert (
+                list(xml.xpath('tei-aff-text(//affiliation)')) ==
+                ['raw affiliation 1']
+            )
+
+        def test_should_use_raw_affiliation_note_with_label_if_available(self):
+            xml = E.TEI(
+                E.affiliation(
+                    E.note(
+                        E.label('a'),
+                        ' raw affiliation 1',
+                        type='raw_affiliation'
+                    ),
+                    E.orgName('Department 1', type="department")
+                )
+            )
+            assert (
+                list(xml.xpath('tei-aff-text(//affiliation)')) ==
+                ['a raw affiliation 1']
+            )
+
+        def test_should_sort_affiliations(self):
+            xml = E.TEI(
+                E.affiliation(
+                    E.note('raw affiliation 2', type='raw_affiliation'),
+                    key='aff2'
+                ),
+                E.affiliation(
+                    E.note('raw affiliation 1', type='raw_affiliation'),
+                    key='aff1'
+                )
+            )
+            assert list(
+                xml.xpath('tei-aff-string(//affiliation)')
+            ) == ['raw affiliation 1', 'raw affiliation 2']
+
+        def test_should_sort_affiliations_natural_order(self):
+            xml = E.TEI(
+                E.affiliation(
+                    E.note('raw affiliation 2', type='raw_affiliation'),
+                    key='aff10'
+                ),
+                E.affiliation(
+                    E.note('raw affiliation 1', type='raw_affiliation'),
+                    key='aff9'
+                )
+            )
+            assert list(
+                xml.xpath('tei-aff-string(//affiliation)')
+            ) == ['raw affiliation 1', 'raw affiliation 2']
+
     class TestRefFpage(object):
         def test_should_return_from_attribute_if_present(self):
             xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
