@@ -1,4 +1,4 @@
-from typing import Dict, List, Union
+from typing import Dict, List
 from future.utils import raise_with_traceback
 
 from .scoring_types.scoring_type import ScoringType
@@ -41,13 +41,10 @@ def get_field_scoring_type_names(
         field_name: str) -> List[str]:
     if scoring_types_by_field_map is None:
         scoring_types_by_field_map = {}
-    scoring_type_or_list = scoring_types_by_field_map.get(
+    return scoring_types_by_field_map.get(
         field_name,
-        scoring_types_by_field_map.get('default', DEFAULT_SCORING_TYPE_NAME)
+        scoring_types_by_field_map.get('default', [DEFAULT_SCORING_TYPE_NAME])
     )
-    if not isinstance(scoring_type_or_list, list):
-        scoring_type_or_list = [scoring_type_or_list]
-    return scoring_type_or_list
 
 
 def score_field_as_type(
