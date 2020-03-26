@@ -36,23 +36,18 @@ def document_score_key_to_props(document_score_key):
     }
 
 
-def get_field_scoring_type_name(
+def get_field_scoring_type_names(
         scoring_type_by_field_map: Dict[str, Union[str, List[str]]],
-        field_name: str) -> str:
+        field_name: str) -> List[str]:
     if scoring_type_by_field_map is None:
         scoring_type_by_field_map = {}
-    return scoring_type_by_field_map.get(
+    scoring_type_or_list = scoring_type_by_field_map.get(
         field_name,
         scoring_type_by_field_map.get('default', DEFAULT_SCORING_TYPE_NAME)
     )
-
-
-def get_field_scoring_type(
-        scoring_type_by_field_map: Dict[str, Union[str, List[str]]],
-        field_name: str) -> ScoringType:
-    return resolve_scoring_type(get_field_scoring_type_name(
-        scoring_type_by_field_map, field_name
-    ))
+    if not isinstance(scoring_type_or_list, list):
+        scoring_type_or_list = [scoring_type_or_list]
+    return scoring_type_or_list
 
 
 def score_field_as_type(
@@ -84,21 +79,22 @@ def iter_score_document_fields(
         field_names = sorted(expected.keys())
 
     for field_name in field_names:
-        scoring_type_name = get_field_scoring_type_name(
+        scoring_type_names = get_field_scoring_type_names(
             scoring_type_by_field_map, field_name
         )
-        scores_by_scoring_method = score_field_as_type(
-            expected[field_name],
-            actual[field_name],
-            include_values=include_values,
-            measures=measures,
-            convert_to_lower=convert_to_lower,
-            scoring_type=resolve_scoring_type(scoring_type_name)
-        )
-        for scoring_method, match_score in scores_by_scoring_method.items():
-            yield {
-                DocumentScoringProps.FIELD_NAME: field_name,
-                DocumentScoringProps.SCORING_TYPE: scoring_type_name,
-                DocumentScoringProps.SCORING_METHOD: scoring_method,
-                DocumentScoringProps.MATCH_SCORE: match_score
-            }
+        for scoring_type_name in scoring_type_names:
+            scores_by_scoring_method = score_field_as_type(
+                expected[field_name],
+                actual[field_name],
+                include_values=include_values,
+                measures=measures,
+                convert_to_lower=convert_to_lower,
+                scoring_type=resolve_scoring_type(scoring_type_name)
+            )
+            for scoring_method, match_score in scores_by_scoring_method.items():
+                yield {
+                    DocumentScoringProps.FIELD_NAME: field_name,
+                    DocumentScoringProps.SCORING_TYPE: scoring_type_name,
+                    DocumentScoringProps.SCORING_METHOD: scoring_method,
+                    DocumentScoringProps.MATCH_SCORE: match_score
+                }
