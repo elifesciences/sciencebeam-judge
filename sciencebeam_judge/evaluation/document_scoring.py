@@ -37,7 +37,7 @@ def document_score_key_to_props(document_score_key):
 
 
 def get_field_scoring_type_names(
-        scoring_type_by_field_map: Dict[str, Union[str, List[str]]],
+        scoring_type_by_field_map: Dict[str, List[str]],
         field_name: str) -> List[str]:
     if scoring_type_by_field_map is None:
         scoring_type_by_field_map = {}
@@ -69,7 +69,7 @@ def score_field_as_type(
 def iter_score_document_fields(
         expected,
         actual,
-        scoring_type_by_field_map: Dict[str, Union[str, List[str]]] = None,
+        scoring_type_by_field_map: Dict[str, List[str]] = None,
         field_names: List[str] = None,
         include_values: bool = False,
         measures: List[str] = None,
