@@ -57,7 +57,7 @@ class TestIterScoreDocumentFields(object):
         document = {
             'field': [SOME_TEXT]
         }
-        result = list(iter_score_document_fields(document, document, scoring_type_by_field_map={
+        result = list(iter_score_document_fields(document, document, scoring_types_by_field_map={
             'field': 'list'
         }, measures=[ScoringMethodNames.EXACT]))
         assert result[0]['field_name'] == 'field'
@@ -68,7 +68,7 @@ class TestIterScoreDocumentFields(object):
         document = {
             'field': [SOME_TEXT]
         }
-        result = list(iter_score_document_fields(document, document, scoring_type_by_field_map={
+        result = list(iter_score_document_fields(document, document, scoring_types_by_field_map={
             'field': ['list', 'set']
         }, measures=[ScoringMethodNames.EXACT]))
         assert [r['field_name'] for r in result] == ['field', 'field']

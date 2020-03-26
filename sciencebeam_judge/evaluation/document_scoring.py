@@ -37,13 +37,13 @@ def document_score_key_to_props(document_score_key):
 
 
 def get_field_scoring_type_names(
-        scoring_type_by_field_map: Dict[str, List[str]],
+        scoring_types_by_field_map: Dict[str, List[str]],
         field_name: str) -> List[str]:
-    if scoring_type_by_field_map is None:
-        scoring_type_by_field_map = {}
-    scoring_type_or_list = scoring_type_by_field_map.get(
+    if scoring_types_by_field_map is None:
+        scoring_types_by_field_map = {}
+    scoring_type_or_list = scoring_types_by_field_map.get(
         field_name,
-        scoring_type_by_field_map.get('default', DEFAULT_SCORING_TYPE_NAME)
+        scoring_types_by_field_map.get('default', DEFAULT_SCORING_TYPE_NAME)
     )
     if not isinstance(scoring_type_or_list, list):
         scoring_type_or_list = [scoring_type_or_list]
@@ -69,7 +69,7 @@ def score_field_as_type(
 def iter_score_document_fields(
         expected,
         actual,
-        scoring_type_by_field_map: Dict[str, List[str]] = None,
+        scoring_types_by_field_map: Dict[str, List[str]] = None,
         field_names: List[str] = None,
         include_values: bool = False,
         measures: List[str] = None,
@@ -80,7 +80,7 @@ def iter_score_document_fields(
 
     for field_name in field_names:
         scoring_type_names = get_field_scoring_type_names(
-            scoring_type_by_field_map, field_name
+            scoring_types_by_field_map, field_name
         )
         for scoring_type_name in scoring_type_names:
             scores_by_scoring_method = score_field_as_type(

@@ -283,7 +283,7 @@ class TestConfigurePipeline(BeamTest):
                     PREDICTION_FILE_LIST[0]
                 ),
                 xml_mapping=mocks['parse_xml_mapping'].return_value,
-                scoring_type_by_field_map=get_scoring_type_by_field_map_from_config(
+                scoring_types_by_field_map=get_scoring_type_by_field_map_from_config(
                     mocks['parse_evaluation_config'].return_value
                 ),
                 field_names=opt.fields,
