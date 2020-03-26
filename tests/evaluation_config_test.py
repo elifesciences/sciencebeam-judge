@@ -30,6 +30,17 @@ class TestGetScoringTypeByFieldMapFromConfig(object):
                 'title': 'string'
             }
         }) == {
-            'default': 'set',
-            'title': 'string'
+            'default': ['set'],
+            'title': ['string']
+        }
+
+    def test_should_parse_comma_separated_scoring_types(self):
+        assert get_scoring_type_by_field_map_from_config({
+            'scoring_type': {
+                'default': 'set',
+                'title': 'list, set'
+            }
+        }) == {
+            'default': ['set'],
+            'title': ['list', 'set']
         }

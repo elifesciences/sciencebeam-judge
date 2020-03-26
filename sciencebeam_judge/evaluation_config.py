@@ -1,5 +1,7 @@
 from typing import Dict, List, Union
 
+from sciencebeam_utils.utils.string import parse_list
+
 from .utils.config import parse_config_as_dict
 
 
@@ -9,4 +11,8 @@ def parse_evaluation_config(filename_or_fp) -> Dict[str, Dict[str, str]]:
 
 def get_scoring_type_by_field_map_from_config(
         config_map: Dict[str, Dict[str, str]]) -> Dict[str, Union[str, List[str]]]:
-    return config_map.get('scoring_type', {})
+    scoring_type_config = config_map.get('scoring_type', {})
+    return {
+        key: parse_list(value)
+        for key, value in scoring_type_config.items()
+    }
