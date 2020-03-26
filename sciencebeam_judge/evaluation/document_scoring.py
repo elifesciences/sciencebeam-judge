@@ -1,5 +1,7 @@
+from typing import Dict, List, Union
 from future.utils import raise_with_traceback
 
+from .scoring_types.scoring_type import ScoringType
 from .scoring_types.scoring_types import (
     resolve_scoring_type,
     DEFAULT_SCORING_TYPE_NAME
@@ -34,7 +36,9 @@ def document_score_key_to_props(document_score_key):
     }
 
 
-def get_field_scoring_type_name(scoring_type_by_field_map, field_name):
+def get_field_scoring_type_name(
+        scoring_type_by_field_map: Dict[str, Union[str, List[str]]],
+        field_name: str) -> str:
     if scoring_type_by_field_map is None:
         scoring_type_by_field_map = {}
     return scoring_type_by_field_map.get(
@@ -43,15 +47,21 @@ def get_field_scoring_type_name(scoring_type_by_field_map, field_name):
     )
 
 
-def get_field_scoring_type(scoring_type_by_field_map, field_name):
+def get_field_scoring_type(
+        scoring_type_by_field_map: Dict[str, Union[str, List[str]]],
+        field_name: str) -> ScoringType:
     return resolve_scoring_type(get_field_scoring_type_name(
         scoring_type_by_field_map, field_name
     ))
 
 
 def score_field_as_type(
-        expected, actual, scoring_type,
-        include_values=False, measures=None, convert_to_lower=False):
+        expected,
+        actual,
+        scoring_type: ScoringType,
+        include_values: bool = False,
+        measures: List[str] = None,
+        convert_to_lower: bool = False):
 
     return scoring_type.score(
         expected, actual,
@@ -62,8 +72,13 @@ def score_field_as_type(
 
 
 def iter_score_document_fields(
-        expected, actual, scoring_type_by_field_map=None, field_names=None,
-        include_values=False, measures=None, convert_to_lower=False):
+        expected,
+        actual,
+        scoring_type_by_field_map: Dict[str, Union[str, List[str]]] = None,
+        field_names: List[str] = None,
+        include_values: bool = False,
+        measures: List[str] = None,
+        convert_to_lower: bool = False):
 
     if field_names is None:
         field_names = sorted(expected.keys())

@@ -1,4 +1,5 @@
 from __future__ import division
+from typing import Callable, List
 
 from difflib import SequenceMatcher
 
@@ -16,17 +17,17 @@ class ScoringMethodNames(object):
     RATCLIFF_OBERSHELP = 'ratcliff_obershelp'
 
 
-def exact_score(expected, actual):
+def exact_score(expected: str, actual: str) -> float:
     return 1 if expected == actual else 0
 
 
-def levenshtein_score(expected, actual):
+def levenshtein_score(expected: str, actual: str) -> float:
     if not expected and not actual:
         return 1
     return 1 - (editdistance.eval(expected, actual) / max(len(expected), len(actual)))
 
 
-def ratcliff_obershelp_score(expected, actual):
+def ratcliff_obershelp_score(expected: str, actual: str) -> float:
     return SequenceMatcher(None, expected, actual).ratio()
 
 
@@ -35,7 +36,12 @@ def IDENTITY_FN(x):
 
 
 class ScoringMethod(object):
-    def __init__(self, name, scoring_fn, threshold=1, preprocessing_fn=None):
+    def __init__(
+            self,
+            name: str,
+            scoring_fn: Callable[[str, str], float],
+            threshold: float = 1,
+            preprocessing_fn: Callable[[str], str] = None):
         self.name = name
         self.scoring_fn = scoring_fn
         self.threshold = threshold
@@ -72,7 +78,7 @@ SCORING_METHODS_MAP = {
 }
 
 
-def get_scoring_methods(measures=None):
+def get_scoring_methods(measures: List[str] = None) -> List[ScoringMethod]:
     if not measures:
         measures = ALL_SCORING_METHOD_NAMES
     return [SCORING_METHODS_MAP[k] for k in measures]
