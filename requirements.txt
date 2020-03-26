@@ -1,4 +1,4 @@
-configparser==4.0.2
+configparser==5.0.0
 editdistance==0.5.3
 future==0.18.2
 lxml==4.5.0
