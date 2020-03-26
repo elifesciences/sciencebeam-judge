@@ -28,7 +28,7 @@ from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
 from sciencebeam_judge.evaluation.scoring_types.scoring_types import ScoringTypeNames
 from sciencebeam_judge.evaluation.document_scoring import DocumentScoringProps
 from sciencebeam_judge.evaluation.score_aggregation import SummaryScoresProps
-from sciencebeam_judge.evaluation_config import get_scoring_type_by_field_map_from_config
+from sciencebeam_judge.evaluation_config import get_scoring_types_by_field_map_from_config
 
 
 LOGGER = logging.getLogger(__name__)
@@ -283,7 +283,7 @@ class TestConfigurePipeline(BeamTest):
                     PREDICTION_FILE_LIST[0]
                 ),
                 xml_mapping=mocks['parse_xml_mapping'].return_value,
-                scoring_types_by_field_map=get_scoring_type_by_field_map_from_config(
+                scoring_types_by_field_map=get_scoring_types_by_field_map_from_config(
                     mocks['parse_evaluation_config'].return_value
                 ),
                 field_names=opt.fields,

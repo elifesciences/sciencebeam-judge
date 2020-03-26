@@ -49,7 +49,7 @@ from sciencebeam_judge.parsing.xml import (
 
 from sciencebeam_judge.evaluation_config import (
     parse_evaluation_config,
-    get_scoring_type_by_field_map_from_config
+    get_scoring_types_by_field_map_from_config
 )
 
 from sciencebeam_judge.grobid_evaluate import (
@@ -347,7 +347,7 @@ def flatten_summary_results(summarised_scores, field_names=None):  # pylint: dis
 
 def configure_pipeline(p, opt):  # pylint: disable=too-many-locals
     xml_mapping = parse_xml_mapping(opt.xml_mapping)
-    scoring_types_by_field_map = get_scoring_type_by_field_map_from_config(
+    scoring_types_by_field_map = get_scoring_types_by_field_map_from_config(
         parse_evaluation_config(opt.evaluation_config)
     )
     field_names = opt.fields
