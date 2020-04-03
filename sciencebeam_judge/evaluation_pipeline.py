@@ -81,6 +81,7 @@ from .parsing.xpath.xpath_functions import register_functions
 
 DEFAULT_AUTHOR_FIELDS = [
     'author_surnames', 'first_author_surname',
+    'author_given_names', 'first_author_given_name',
     'author_full_names', 'first_author_full_name'
 ]
 
