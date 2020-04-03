@@ -36,6 +36,25 @@ class TestJatsXpathFunctions(object):
             )
             assert list(xml.xpath('jats-full-name(//name)')) == ['Tom Thomson']
 
+        def test_should_return_full_name_of_single_string_name(self):
+            xml = E.article(
+                E(
+                    'string-name',
+                    E('given-names', 'Tom'),
+                    E('surname', 'Thomson')
+                )
+            )
+            assert list(xml.xpath('jats-full-name(//string-name)')) == ['Tom Thomson']
+
+        def test_should_return_string_name_text_if_it_does_not_contain_elements(self):
+            xml = E.article(
+                E(
+                    'string-name',
+                    'Tom Thomson'
+                )
+            )
+            assert list(xml.xpath('jats-full-name(//string-name)')) == ['Tom Thomson']
+
         def test_should_return_full_name_of_single_contrib(self):
             xml = E.article(
                 E.contrib(
@@ -174,6 +193,29 @@ class TestJatsXpathFunctions(object):
             assert list(
                 xml.xpath('jats-aff-string(//aff)')
             ) == ['1 Affiliation 1']
+
+    class TestRefAuthors(object):
+        def test_should_return_string_name_element(self):
+            string_name = E(
+                'string-name',
+                E('given-names', 'Tom'),
+                E('surname', 'Thomson')
+            )
+            xml = E.article(E.ref(
+                E('mixed-citation', string_name)
+            ))
+            assert list(xml.xpath('jats-ref-authors(//ref)')) == [string_name]
+
+        def test_should_return_name_element(self):
+            name = E(
+                'name',
+                E('given-names', 'Tom'),
+                E('surname', 'Thomson')
+            )
+            xml = E.article(E.ref(
+                E('element-citation', E('person-group', name))
+            ))
+            assert list(xml.xpath('jats-ref-authors(//ref)')) == [name]
 
     class TestRefFpage(object):
         def test_should_return_from_attribute_if_present(self):
