@@ -30,6 +30,10 @@ def _text(nodes: List[etree.Element]) -> List[str]:
     )
 
 
+def _pers_name_given_name(pers_name_node):
+    return ' '.join(_text(_filter_not_none(pers_name_node.findall('forename'))))
+
+
 def _pers_name_full_name(pers_name_node):
     return ' '.join(_text(_filter_not_none(
         list(pers_name_node.findall('forename')) +
@@ -37,11 +41,27 @@ def _pers_name_full_name(pers_name_node):
     )))
 
 
+def _author_given_name(author_node):
+    name_node = _pers_name_node(author_node)
+    if name_node is not None:
+        return _pers_name_given_name(name_node)
+    return None
+
+
 def _author_full_name(author_node):
     name_node = _pers_name_node(author_node)
     if name_node is not None:
         return _pers_name_full_name(name_node)
     return None
+
+
+def fn_tei_given_name(_, nodes):
+    result = _filter_not_none([
+        _author_given_name(node)
+        for node in nodes
+    ])
+    LOGGER.debug('fn_tei_given_name, nodes: %s, result: %s', nodes, result)
+    return result
 
 
 def fn_tei_full_name(_, nodes):
@@ -182,6 +202,7 @@ def fn_tei_abstract_text(_, nodes):
 def register_functions(ns=None):
     if ns is None:
         ns = etree.FunctionNamespace(None)
+    ns['tei-given-name'] = fn_tei_given_name
     ns['tei-full-name'] = fn_tei_full_name
     ns['tei-authors'] = fn_tei_authors
     ns['tei-aff-string'] = fn_tei_aff_string

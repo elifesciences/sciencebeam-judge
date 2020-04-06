@@ -252,6 +252,11 @@ class TestSetScoringType(_TestCommonNonPartialListScoringType):
         LOGGING.debug('result: %s', result)
         assert result['exact']['score'] == 1
 
+    def test_should_match_list_items_in_different_order(self):
+        result = self.score([['a'], ['b']], [['b'], ['a']])
+        LOGGING.debug('result: %s', result)
+        assert result['exact']['score'] == 1
+
     def test_should_match_with_duplicate_expected_values(self):
         result = self.score(['a', 'a', 'b'], ['a', 'b'])
         LOGGING.debug('result: %s', result)

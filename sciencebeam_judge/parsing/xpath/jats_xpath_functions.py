@@ -14,6 +14,12 @@ def _name_node(node):
     return node
 
 
+def _string_name_node(node):
+    if node.tag != 'string-name':
+        return node.find('string-name')
+    return node
+
+
 def _filter_truthy(iterable):
     return [x for x in iterable if x]
 
@@ -36,8 +42,11 @@ def _contrib_full_name(contrib_node):
     name_node = _name_node(contrib_node)
     if name_node is not None:
         return _name_full_name(name_node)
-    string_name_node = contrib_node.find('string-name')
+    string_name_node = _string_name_node(contrib_node)
     if string_name_node is not None:
+        full_name = _name_full_name(string_name_node).strip()
+        if full_name:
+            return full_name
         return string_name_node.text
     return None
 
@@ -59,6 +68,15 @@ def fn_jats_authors(_, nodes):
             'front/article-meta/contrib-group[not(@contrib-type) or @contrib-type="author"]'
             '/contrib[not(@contrib-type) or @contrib-type="author" or @contrib-type="person"]'
         )
+    ]
+
+
+def fn_jats_ref_authors(_, nodes):
+    return [
+        author
+        for node in nodes
+        for xpath in ('.//name', './/string-name')
+        for author in node.xpath(xpath)
     ]
 
 
@@ -127,6 +145,7 @@ def register_functions(ns=None):
         ns = etree.FunctionNamespace(None)
     ns['jats-full-name'] = fn_jats_full_name
     ns['jats-authors'] = fn_jats_authors
+    ns['jats-ref-authors'] = fn_jats_ref_authors
     ns['jats-aff-string'] = fn_jats_aff_string
     ns['jats-ref-fpage'] = fn_jats_ref_fpage
     ns['jats-ref-lpage'] = fn_jats_ref_lpage

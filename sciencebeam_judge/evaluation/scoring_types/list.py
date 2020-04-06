@@ -1,5 +1,6 @@
 import logging
 from abc import abstractmethod
+from typing import List, Union
 
 from six import text_type
 
@@ -31,9 +32,18 @@ def to_list(x):
     return list(x)
 
 
+def normalize_string_or_list(
+        value: Union[str, List[str]],
+        **kwargs) -> Union[str, List[str]]:
+    if isinstance(value, list):
+        return normalize_list(value, **kwargs)
+    return normalize_string(value, **kwargs)
+
+
 def normalize_list(value, convert_to_lower=False):
     return [
-        normalize_string(x, convert_to_lower=convert_to_lower) for x in value
+        normalize_string_or_list(x, convert_to_lower=convert_to_lower)
+        for x in value
     ]
 
 
@@ -341,14 +351,24 @@ class UnorderedListScoringType(ListScoringType):
         )
 
 
+def _to_hashable_item(item):
+    if isinstance(item, list):
+        return tuple(item)
+    return item
+
+
+def _to_hashable_items(items: list):
+    return [_to_hashable_item(item) for item in items]
+
+
 class SetScoringType(ListScoringType):
     def _score_using_scoring_method(
             self, expected_list, actual_list, scoring_method,
             include_values=False, convert_to_lower=False):
 
         return score_value_as_unordered_list_using_scoring_method(
-            sorted(set(expected_list)),
-            sorted(set(actual_list)),
+            sorted(set(_to_hashable_items(expected_list))),
+            sorted(set(_to_hashable_items(actual_list))),
             scoring_method,
             include_values=include_values,
             partial=self.partial

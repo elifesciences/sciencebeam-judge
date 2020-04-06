@@ -32,6 +32,32 @@ class TestTeiXpathFunctions(object):
             xml = _tei_with_authors(author)
             assert list(xml.xpath('tei-authors(.)')) == [author]
 
+    class TestGivenName(object):
+        def test_should_return_given_name_of_single_pers_name(self):
+            author = E.author(
+                E.persName(
+                    E.forename('Tom'),
+                    E.surname('Thomson')
+                )
+            )
+            xml = _tei_with_authors(author)
+            assert list(
+                xml.xpath('tei-given-name(//persName)')
+            ) == ['Tom']
+
+        def test_should_return_given_name_of_multiple_forenames(self):
+            author = E.author(
+                E.persName(
+                    E.forename('Tom', type='first'),
+                    E.forename('T', type='middle'),
+                    E.surname('Thomson')
+                )
+            )
+            xml = _tei_with_authors(author)
+            assert list(
+                xml.xpath('tei-given-name(//persName)')
+            ) == ['Tom T']
+
     class TestFullName(object):
         def test_should_return_full_name_of_single_pers_name(self):
             author = E.author(
