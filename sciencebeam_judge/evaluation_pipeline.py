@@ -99,7 +99,7 @@ DEFAULT_REFERENCE_FIELDS = [
     'first_reference_lpage',
     'reference_text',
     'reference_fields',
-    # 'reference_author_surnames', 'reference_author_given_names', 'reference_author_full_names',
+    'reference_author_surnames', 'reference_author_given_names', 'reference_author_full_names',
     'reference_title', 'reference_year',
     'reference_source', 'reference_volume', 'reference_fpage', 'reference_lpage'
 ]
