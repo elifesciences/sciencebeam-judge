@@ -92,9 +92,14 @@ DEFAULT_AFFILIATION_FIELDS = [
 
 DEFAULT_REFERENCE_FIELDS = [
     'first_reference_text', 'first_reference_fields', 'first_reference_title',
+    'first_reference_author_surnames', 'first_reference_author_given_names',
+    'first_reference_author_full_names',
+    'first_reference_title', 'first_reference_year',
+    'first_reference_source', 'first_reference_volume', 'first_reference_fpage',
+    'first_reference_lpage',
     'reference_text',
     'reference_fields',
-    'reference_author_surnames', 'reference_author_given_names', 'reference_author_full_names',
+    # 'reference_author_surnames', 'reference_author_given_names', 'reference_author_full_names',
     'reference_title', 'reference_year',
     'reference_source', 'reference_volume', 'reference_fpage', 'reference_lpage'
 ]
