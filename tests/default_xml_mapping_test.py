@@ -110,49 +110,45 @@ class TestDefaultXmlMapping(object):
                 ]
 
         class TestJatsReferenceTitle(object):
-            def test_should_parse_mixed_style_article_title_as_reference_title_and_article_title(
+            def test_should_parse_mixed_style_journal_article_title_and_source(
                     self, default_xml_mapping):
                 xml = E.article(E.back(E(
                     'ref-list',
                     E.ref(E('mixed-citation', E(
                         'article-title',
                         'Article 1'
-                    )))
+                    ), E.source('Journal 1')))
                 )))
                 result = _parse_xml(
                     BytesIO(etree.tostring(xml)),
                     xml_mapping=default_xml_mapping,
                     fields=[
                         'reference_title',
-                        'reference_article_title',
-                        'reference_chapter_title'
+                        'reference_source'
                     ]
                 )
                 assert result.get('reference_title') == ['Article 1']
-                assert result.get('reference_article_title') == ['Article 1']
-                assert result.get('reference_chapter_title') == ['']
+                assert result.get('reference_source') == ['Journal 1']
 
-            def test_should_parse_mixed_style_chapter_title_as_reference_title_and_chapter(
+            def test_should_parse_mixed_style_book_chapter_title_and_source(
                     self, default_xml_mapping):
                 xml = E.article(E.back(E(
                     'ref-list',
                     E.ref(E('mixed-citation', E(
                         'chapter-title',
                         'Chapter 1'
-                    )))
+                    ), E.source('Book 1')))
                 )))
                 result = _parse_xml(
                     BytesIO(etree.tostring(xml)),
                     xml_mapping=default_xml_mapping,
                     fields=[
                         'reference_title',
-                        'reference_article_title',
-                        'reference_chapter_title'
+                        'reference_source'
                     ]
                 )
                 assert result.get('reference_title') == ['Chapter 1']
-                assert result.get('reference_article_title') == ['']
-                assert result.get('reference_chapter_title') == ['Chapter 1']
+                assert result.get('reference_source') == ['Book 1']
 
     class TestTei(object):
         class TestTeiReferenceAuthorNames(object):
