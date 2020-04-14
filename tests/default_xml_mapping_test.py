@@ -32,7 +32,7 @@ def _parse_xml(*args, **kwargs):
 class TestDefaultXmlMapping(object):
     class TestJats(object):
         class TestJatsReferenceAuthorNames(object):
-            def test_should_parse_biorxiv_style_jats(self, default_xml_mapping):
+            def test_should_parse_mixed_style_jats(self, default_xml_mapping):
                 xml = E.article(E.back(E(
                     'ref-list',
                     E.ref(E('mixed-citation', E(
@@ -72,7 +72,7 @@ class TestDefaultXmlMapping(object):
                     {'items': ['GivenName2.1 Surname2.1']}
                 ]
 
-            def test_should_parse_pmc_style_jats(self, default_xml_mapping):
+            def test_should_parse_element_style_jats(self, default_xml_mapping):
                 xml = E.article(E.back(E(
                     'ref-list',
                     E.ref(E('element-citation', E('person-group', E.name(
@@ -108,6 +108,43 @@ class TestDefaultXmlMapping(object):
                     {'items': ['GivenName1.1 Surname1.1', 'GivenName1.2 Surname1.2']},
                     {'items': ['GivenName2.1 Surname2.1']}
                 ]
+
+        class TestJatsReferenceTitle(object):
+            def test_should_parse_mixed_style_article_title_as_reference_title(
+                    self, default_xml_mapping):
+                xml = E.article(E.back(E(
+                    'ref-list',
+                    E.ref(E('mixed-citation', E(
+                        'article-title',
+                        'Article 1'
+                    )))
+                )))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'reference_title'
+                    ]
+                )
+                assert result.get('reference_title') == ['Article 1']
+
+            def test_should_parse_mixed_style_chapter_title_as_reference_title(
+                    self, default_xml_mapping):
+                xml = E.article(E.back(E(
+                    'ref-list',
+                    E.ref(E('mixed-citation', E(
+                        'chapter-title',
+                        'Chapter 1'
+                    )))
+                )))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'reference_title'
+                    ]
+                )
+                assert result.get('reference_title') == ['Chapter 1']
 
     class TestTei(object):
         class TestTeiReferenceAuthorNames(object):
