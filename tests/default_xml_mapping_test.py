@@ -110,7 +110,7 @@ class TestDefaultXmlMapping(object):
                 ]
 
         class TestJatsReferenceTitle(object):
-            def test_should_parse_mixed_style_article_title_as_reference_title(
+            def test_should_parse_mixed_style_article_title_as_reference_title_and_article_title(
                     self, default_xml_mapping):
                 xml = E.article(E.back(E(
                     'ref-list',
@@ -123,12 +123,16 @@ class TestDefaultXmlMapping(object):
                     BytesIO(etree.tostring(xml)),
                     xml_mapping=default_xml_mapping,
                     fields=[
-                        'reference_title'
+                        'reference_title',
+                        'reference_article_title',
+                        'reference_chapter_title'
                     ]
                 )
                 assert result.get('reference_title') == ['Article 1']
+                assert result.get('reference_article_title') == ['Article 1']
+                assert result.get('reference_chapter_title') == ['']
 
-            def test_should_parse_mixed_style_chapter_title_as_reference_title(
+            def test_should_parse_mixed_style_chapter_title_as_reference_title_and_chapter(
                     self, default_xml_mapping):
                 xml = E.article(E.back(E(
                     'ref-list',
@@ -141,10 +145,14 @@ class TestDefaultXmlMapping(object):
                     BytesIO(etree.tostring(xml)),
                     xml_mapping=default_xml_mapping,
                     fields=[
-                        'reference_title'
+                        'reference_title',
+                        'reference_article_title',
+                        'reference_chapter_title'
                     ]
                 )
                 assert result.get('reference_title') == ['Chapter 1']
+                assert result.get('reference_article_title') == ['']
+                assert result.get('reference_chapter_title') == ['Chapter 1']
 
     class TestTei(object):
         class TestTeiReferenceAuthorNames(object):
