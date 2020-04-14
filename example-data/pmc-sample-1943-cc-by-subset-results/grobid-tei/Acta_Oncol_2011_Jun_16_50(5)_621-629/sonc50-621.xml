@@ -143,7 +143,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 
 		<encodingDesc>
 			<appInfo>
-				<application version="0.5.6" ident="GROBID" when="2020-04-14T16:36+0000">
+				<application version="0.5.6" ident="GROBID" when="2020-04-14T17:21+0000">
 					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
 				</application>
 			</appInfo>
@@ -540,6 +540,7 @@ Median (range)
 		</imprint>
 	</monogr>
 	<note>Dermatol</note>
+	<note type="raw_reference">Schwartz RA. Cutaneous metastatic disease. J Am Acad [1] Dermatol 1995;33:161 -82.</note>
 </biblStruct>
 
 <biblStruct xml:id="b1">
@@ -555,6 +556,7 @@ Median (range)
 			<pubPlace>Derma-</pubPlace>
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Rolz-Cruz G, Kim CC. Tumor invasion of the skin. Derma-</note>
 </biblStruct>
 
 <biblStruct xml:id="b2">
@@ -578,6 +580,7 @@ Median (range)
 			<date type="published" when="2008" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">tol Clin 2008;26:89 -102, viii. Lookingbill DP, Spangler N, Helm KF. Cutaneous metastases</note>
 </biblStruct>
 
 <biblStruct xml:id="b3">
@@ -592,6 +595,7 @@ Median (range)
 			<date type="published" when="1993" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">in patients with metastatic carcinoma: A retrospective study of 4020 patients. J Am Acad Dermatol 1993;29:228 -36.</note>
 </biblStruct>
 
 <biblStruct xml:id="b4">
@@ -614,6 +618,7 @@ Median (range)
 		</author>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">Heller R, Jaroszeski MJ, Reintgen DS, Puleo CA, DeConti RC,</note>
 </biblStruct>
 
 <biblStruct xml:id="b5">
@@ -631,6 +636,7 @@ Median (range)
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Gilbert RA, et al. Treatment of cutaneous and subcutaneous tumors with electrochemotherapy using intralesional bleo- mycin. Cancer 1998;83:148 -57.</note>
 </biblStruct>
 
 <biblStruct xml:id="b6">
@@ -656,6 +662,7 @@ Median (range)
 		</author>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">Marty M, Sersa G, Garbay JR, Gehl J, Collins CG, Snoj M,</note>
 </biblStruct>
 
 <biblStruct xml:id="b7">
@@ -670,6 +677,7 @@ Median (range)
 			<date type="published" when="2006" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">et al. Electrochemotherapy, An easy, highly effective and safe treatment of cutaneous and subcutaneous metastases: Results of ESOPE (European Standard Operating Procedures of Elec- trochemotherapy) study. EJC Supplements 2006;4:3 -13.</note>
 </biblStruct>
 
 <biblStruct xml:id="b8">
@@ -702,6 +710,7 @@ Median (range)
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Mir LM, Glass LF, Sersa G, Teissie J, Domenge C, Miklavcic D, [6] et al. Effective treatment of cutaneous and subcutaneous malignant tumours by electrochemotherapy. Br J Cancer 1998;77:2336 -42.</note>
 </biblStruct>
 
 <biblStruct xml:id="b9">
@@ -719,6 +728,7 @@ Median (range)
 			<date type="published" when="2003" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Gehl J. Electroporation: Theory and methods, perspectives [7] for drug delivery, gene therapy and research. Acta Physiol Scand 2003;177:437 -47.</note>
 </biblStruct>
 
 <biblStruct xml:id="b10">
@@ -748,6 +758,7 @@ Median (range)
 			<date type="published" when="1993" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Tounekti O, Pron G, Belehradek J, Jr., Mir LM. Bleomycin, [8] an apoptosis-mimetic drug that induces two types of cell death depending on the number of molecules internalized. Cancer Res 1993;53:5462 -9.</note>
 </biblStruct>
 
 <biblStruct xml:id="b11">
@@ -771,6 +782,7 @@ Median (range)
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Gehl J, Skovsgaard T, Mir LM. Enhancement of cytotoxicity [9] by electropermeabilization: An improved method for screen- ing drugs. Anticancer Drugs 1998;9:319 -25.</note>
 </biblStruct>
 
 <biblStruct xml:id="b12">
@@ -812,6 +824,7 @@ Median (range)
 			<date type="published" when="1988" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Orlowski S, Belehradek Jr J, Paoletti C, Mir LM. Transient elec- [10] tropermeabilization of cells in culture. Increase of the cytotoxic- ity of anticancer drugs. Biochem Pharmacol 1988;37:4727 -33. Jaroszeski MJ, Dang V, Pottinger C, Hickey J, Gilbert R,</note>
 </biblStruct>
 
 <biblStruct xml:id="b13">
@@ -829,6 +842,7 @@ Median (range)
 			<date type="published" when="2000" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Heller R. Toxicity of anticancer agents mediated by electro- poration in vitro. Anticancer Drugs 2000;11:201 -8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b14">
@@ -848,6 +862,7 @@ Median (range)
 		</author>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">Belehradek M, Domenge C, Luboinski B, Orlowski S,</note>
 </biblStruct>
 
 <biblStruct xml:id="b15">
@@ -868,6 +883,7 @@ Median (range)
 			<date type="published" when="1993" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Belehradek J, Jr., Mir LM. Electrochemotherapy, a new antitumor treatment. First clinical phase I-II trial. Cancer 1993;72:3694 -700.</note>
 </biblStruct>
 
 <biblStruct xml:id="b16">
@@ -890,6 +906,7 @@ Median (range)
 		</author>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">Campana LG, Mocellin S, Basso M, Puccetti O, De Salvo</note>
 </biblStruct>
 
 <biblStruct xml:id="b17">
@@ -911,6 +928,7 @@ Median (range)
 		</imprint>
 	</monogr>
 	<note>Ann Surg Oncol</note>
+	<note type="raw_reference">GL, Chiarion-Sileni V, et al. Bleomycin-based electrochemo- therapy: Clinical outcome from a single institution&apos;s experi- ence with 52 patients. Ann Surg Oncol 2009;16:191 -9. Gothelf A, Mir LM, Gehl J. Electrochemotherapy: Results of [14] cancer treatment using enhanced delivery of bleomycin by electroporation. Cancer Treat Rev 2003;29:371 -87.</note>
 </biblStruct>
 
 <biblStruct xml:id="b18">
@@ -927,6 +945,7 @@ Median (range)
 		</author>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">Rodriguez-Cuevas S, Barroso-Bravo S, Manza-Estrada J,</note>
 </biblStruct>
 
 <biblStruct xml:id="b19">
@@ -947,6 +966,7 @@ Median (range)
 			<date type="published" when="2001" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Cristobal-Martinez L, Gonzalez-Rodriguez E. Electrochemo- therapy in primary and metastatic skin tumors: Phase II trial using intralesional bleomycin. Arch Med Res 2001;32:273 -6.</note>
 </biblStruct>
 
 <biblStruct xml:id="b20">
@@ -967,6 +987,7 @@ Median (range)
 			<date type="published" when="2000" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Gehl J, Geertsen PF. Effi cient palliation of haemorrhaging [16] malignant melanoma skin metastases by electrochemother- apy. Melanoma Res 2000;10:585 -9.</note>
 </biblStruct>
 
 <biblStruct xml:id="b21">
@@ -992,6 +1013,7 @@ Median (range)
 		</author>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">Mir LM, Gehl J, Sersa G, Collins CG, Garbay JR, Billard</note>
 </biblStruct>
 
 <biblStruct xml:id="b22">
@@ -1009,6 +1031,7 @@ Median (range)
 			<date type="published" when="2006" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">V, et al. Standard operating procedures of the electroche- motherapy: Instructions for the use of bleomycin or cispla- tin administered either systemically or locally and electric pulses delivered by the CliniporatorTM by means of inva- sive or non-invasive electrodes. EJC Supplements 2006;4:14 -25.</note>
 </biblStruct>
 
 <biblStruct xml:id="b23">
@@ -1031,6 +1054,7 @@ Median (range)
 		</author>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">Domenge C, Orlowski S, Luboinski B, De BT, Schwaab G,</note>
 </biblStruct>
 
 <biblStruct xml:id="b24">
@@ -1048,6 +1072,7 @@ Median (range)
 			<date type="published" when="1996" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Belehradek J, Jr., et al. Antitumor electrochemotherapy: New advances in the clinical protocol. Cancer 1996;77:956 -63.</note>
 </biblStruct>
 
 <biblStruct xml:id="b25">
@@ -1070,6 +1095,7 @@ Median (range)
 		</author>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">Hall SW, Strong JE, Broughton A, Frazier ML, Benjamin RS.</note>
 </biblStruct>
 
 <biblStruct xml:id="b26">
@@ -1084,6 +1110,7 @@ Median (range)
 			<date type="published" when="1982" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Bleomycin clinical pharmacology by radioimmunoassay. Cancer Chemother Pharmacol 1982;9:22 -5.</note>
 </biblStruct>
 
 <biblStruct xml:id="b27">
@@ -1101,6 +1128,7 @@ Median (range)
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Mathes DD. Bleomycin and hyperoxia exposure in the oper- [20] ating room. Anesth Analg 1995;81:624 -9.</note>
 </biblStruct>
 
 <biblStruct xml:id="b28">
@@ -1123,6 +1151,7 @@ Median (range)
 		</author>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">Therasse P, Arbuck SG, Eisenhauer EA, Wanders J, Kaplan</note>
 </biblStruct>
 
 <biblStruct xml:id="b29">
@@ -1143,6 +1172,7 @@ Median (range)
 			<date type="published" when="2000" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">RS, Rubinstein L, et al. New guidelines to evaluate the response to treatment in solid tumors. European Organization for Research and Treatment of Cancer, National Cancer Institute of the United States, National Cancer Institute of Canada. J Natl Cancer Inst 2000;92:205 -16.</note>
 </biblStruct>
 
 <biblStruct xml:id="b30">
@@ -1165,6 +1195,7 @@ Median (range)
 		</author>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">Mir LM, Belehradek M, Domenge C, Orlowski S, Poddevin</note>
 </biblStruct>
 
 <biblStruct xml:id="b31">
@@ -1182,6 +1213,7 @@ Median (range)
 		<imprint/>
 	</monogr>
 	<note>Electrochemotherapy, a new antitumor treatment: fi rst clinical trial</note>
+	<note type="raw_reference">B, Belehradek J, Jr., et al. [Electrochemotherapy, a new anti- tumor treatment: fi rst clinical trial].</note>
 </biblStruct>
 
 <biblStruct xml:id="b32">
@@ -1196,6 +1228,7 @@ Median (range)
 			<date type="published" when="1991" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">C R Acad Sci III 1991; 313:613 -8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b33">
@@ -1215,6 +1248,7 @@ Median (range)
 		</author>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">Quaglino P, Mortera C, Osella-Abate S, Barberis M,</note>
 </biblStruct>
 
 <biblStruct xml:id="b34">
@@ -1236,6 +1270,7 @@ Median (range)
 		</imprint>
 	</monogr>
 	<note>Ann Surg Oncol</note>
+	<note type="raw_reference">Illengo M, Rissone M, et al. Electrochemotherapy with intravenous bleomycin in the local treatment of skin melanoma metastases. Ann Surg Oncol 2008;15:2215 -22. Tijink BM, De BR, Van Dongen GA, Leemans CR. How [24] we do it: Chemo-electroporation in the head and neck for otherwise untreatable patients. Clin Otolaryngol 2006; 31:447 -51.</note>
 </biblStruct>
 
 <biblStruct xml:id="b35">
@@ -1258,6 +1293,7 @@ Median (range)
 		</author>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">Larkin JO, Collins CG, Aarons S, Tangney M, Whelan M,</note>
 </biblStruct>
 
 <biblStruct xml:id="b36">
@@ -1275,6 +1311,7 @@ Median (range)
 			<date type="published" when="2007" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">O&apos;Reily S, et al. Electrochemotherapy: Aspects of preclinical development and early clinical experience. Ann Surg 2007; 245:469 -79.</note>
 </biblStruct>
 
 				</listBibl>

@@ -55,7 +55,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 
 		<encodingDesc>
 			<appInfo>
-				<application version="0.5.6" ident="GROBID" when="2020-04-14T16:36+0000">
+				<application version="0.5.6" ident="GROBID" when="2020-04-14T17:21+0000">
 					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
 				</application>
 			</appInfo>
@@ -107,6 +107,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<pubPlace>Tucson, AZ</pubPlace>
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Dantzler, W.H. 2006. Unpublished remarks. The William H. Dantzler Symposium. Tucson, AZ, April 6-7.</note>
 </biblStruct>
 
 <biblStruct xml:id="b1">
@@ -133,6 +134,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="2003" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Knepper, M.A., Saidel, G.M., Hascall, V.C. &amp; Dwyer, T. 2003. Concentration of solutes in the renal inner medulla: interstitial hyaluronan as a mechano-osmotic transducer. Am J Physiol Renal Physiol 284, F433-F446.</note>
 </biblStruct>
 
 <biblStruct xml:id="b2">
@@ -165,6 +167,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="2002" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Nielsen, S., Frøkiaer, J., Marples, D., Kwon, T.-H., Agre, P. &amp; Knepper, M.A. 2002. Aquaporins in the kidney: from mol- ecules to medicine. Physiol Rev 82, 205-244.</note>
 </biblStruct>
 
 <biblStruct xml:id="b3">
@@ -191,6 +194,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="2006" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Pruitt, M.E.C., Knepper, M.A., Graves, B. &amp; Schmidt-Nielsen, B. 2006. Effect of peristaltic contractions of the renal pelvic wall on solute concentrations of the renal inner medulla in the hamster. Am J Physiol Renal Physiol 290, F892- F896.</note>
 </biblStruct>
 
 <biblStruct xml:id="b4">
@@ -208,6 +212,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1987" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Schmidt-Nielsen, B. 1987. The renal pelvis. Kidney Int 31, 621-628.</note>
 </biblStruct>
 
 <biblStruct xml:id="b5">
@@ -225,6 +230,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Schmidt-Nielsen, B. 1995. August Krogh Lecture. The renal concentrating mechanism in insects and mammals: a new hypothesis involving hydrostatic pressures. Am J Physiol Regul Integr Comp Physiol 268, R1087-R1100.</note>
 </biblStruct>
 
 <biblStruct xml:id="b6">
@@ -246,6 +252,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 		</imprint>
 	</monogr>
 	<note>Kidney Int</note>
+	<note type="raw_reference">Schmidt-Nielsen, B. &amp; Graves, B. 1982.Changes in fluid compartments in hamster renal papilla due to peristalsis in the pelvic wall. Kidney Int 22, 613-625. International Society of Nephrology.</note>
 </biblStruct>
 
 <biblStruct xml:id="b7">
@@ -263,6 +270,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1944" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Sperber, I. 1944. Studies on the mammalian kidney. Zoolog- iska Bidrag Frå n Uppsala 22, 249-431.</note>
 </biblStruct>
 
 <biblStruct xml:id="b8">
@@ -283,6 +291,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1964" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Truniger, B. &amp; Schmidt-Nielsen, B. 1964. Intrarenal distri- bution of urea and related compounds: effects of nitrogen intake. Am J Physiol 207, 971-978.</note>
 </biblStruct>
 
 <biblStruct xml:id="b9">
@@ -300,6 +309,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 		</respStmt>
 	</monogr>
 	<note type="report_type">PhD Thesis</note>
+	<note type="raw_reference">Zell, S. R. 1973. Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis. PhD Thesis, Case Western Reserve University, Cleveland, OH, USA.</note>
 </biblStruct>
 
 				</listBibl>

@@ -88,7 +88,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 
 		<encodingDesc>
 			<appInfo>
-				<application version="0.5.6" ident="GROBID" when="2020-04-14T16:36+0000">
+				<application version="0.5.6" ident="GROBID" when="2020-04-14T17:21+0000">
 					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
 				</application>
 			</appInfo>
@@ -1556,6 +1556,7 @@ I </table></figure>
 			<date type="published" when="2006" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Berejnov, V., Husseini, N. S., Alsaied, O. A. &amp; Thorne, R. E. (2006). J. Appl. Cryst. 39, 244-251.</note>
 </biblStruct>
 
 <biblStruct xml:id="b1">
@@ -1573,6 +1574,7 @@ I </table></figure>
 			<date type="published" when="2007" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Bergfors, T. (2007). Methods Mol. Biol. 363, 131-151.</note>
 </biblStruct>
 
 <biblStruct xml:id="b2">
@@ -1593,6 +1595,7 @@ I </table></figure>
 			<date type="published" when="2001" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Brzozowski, A. M. &amp; Walton, J. (2001). J. Appl. Cryst. 34, 97-101.</note>
 </biblStruct>
 
 <biblStruct xml:id="b3">
@@ -1613,6 +1616,7 @@ I </table></figure>
 			<date type="published" when="1979" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Carter, C. W. &amp; Carter, C. W. (1979). J. Biol. Chem. 254, 12219-12223.</note>
 </biblStruct>
 
 <biblStruct xml:id="b4">
@@ -1645,6 +1649,7 @@ I </table></figure>
 			<date type="published" when="2010" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Clarke, O. B., Caputo, A. T., Hill, A. P., Vandenberg, J. I., Smith, B. J. &amp; Gulbis, J. M. (2010). Cell, 141, 1018-1029.</note>
 </biblStruct>
 
 <biblStruct xml:id="b5">
@@ -1665,6 +1670,7 @@ I </table></figure>
 			<date type="published" when="1987" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Cox, M. J. &amp; Weber, P. C. (1987). J. Appl. Cryst. 20, 366-373.</note>
 </biblStruct>
 
 <biblStruct xml:id="b6">
@@ -1689,6 +1695,7 @@ I </table></figure>
 			<biblScope unit="page" from="7829" to="7833" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Doudna, J. A., Grosshans, C., Gooding, A. &amp; Kundrot, C. E. (1993). Proc. Natl Acad. Sci. USA, 90, 7829-7833.</note>
 </biblStruct>
 
 <biblStruct xml:id="b7">
@@ -1712,6 +1719,7 @@ I </table></figure>
 			<date type="published" when="2002" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Forsythe, E. L., Maxwell, D. L. &amp; Pusey, M. (2002). Acta Cryst. D58, 1601-1605.</note>
 </biblStruct>
 
 <biblStruct xml:id="b8">
@@ -1738,6 +1746,7 @@ I </table></figure>
 			<date type="published" when="2011" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Hedderich, T., Marcia, M., Kö pke, J. &amp; Michel, H. (2011). Cryst. Growth Des. 11, 488-491.</note>
 </biblStruct>
 
 <biblStruct xml:id="b9">
@@ -1758,6 +1767,7 @@ I </table></figure>
 			<date type="published" when="1991" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Jancarik, J. &amp; Kim, S.-H. (1991). J. Appl. Cryst. 24, 409-411.</note>
 </biblStruct>
 
 <biblStruct xml:id="b10">
@@ -1778,6 +1788,7 @@ I </table></figure>
 			<date type="published" when="2004" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Kantardjieff, K. A. &amp; Rupp, B. (2004). Bioinformatics, 20, 2162-2168.</note>
 </biblStruct>
 
 <biblStruct xml:id="b11">
@@ -1831,6 +1842,7 @@ I </table></figure>
 			<date type="published" when="2003" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Kimber, M. S., Vallee, F., Houston, S., Necakov, A., Skarina, T., Evdokimova, E., Beasley, S., Christendat, D., Savchenko, A., Arrowsmith, C. H., Vedadi, M., Gerstein, M. &amp; Edwards, A. M. (2003). Proteins, 51, 562-568.</note>
 </biblStruct>
 
 <biblStruct xml:id="b12">
@@ -1878,6 +1890,7 @@ I </table></figure>
 			<date type="published" when="2009" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Koszelak-Rosenblum, M., Krol, A., Mozumdar, N., Wunsch, K., Ferin, A., Cook, E., Veatch, C. K., Nagel, R., Luft, J. R., Detitta, G. T. &amp; Malkowski, M. G. (2009). Protein Sci. 18, 1828-1839.</note>
 </biblStruct>
 
 <biblStruct xml:id="b13">
@@ -1895,6 +1908,7 @@ I </table></figure>
 			<biblScope unit="page" from="14532" to="14535" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Landau, E. M. &amp; Rosenbusch, J. P. (1996). Proc. Natl Acad. Sci. USA, 93, 14532-14535.</note>
 </biblStruct>
 
 <biblStruct xml:id="b14">
@@ -1933,6 +1947,7 @@ I </table></figure>
 			<date type="published" when="2003" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Lemieux, M. J., Song, J., Kim, M. J., Huang, Y., Villa, A., Auer, M., Li, X.-D. &amp; Wang, D.-N. (2003). Protein Sci. 12, 2748-2756.</note>
 </biblStruct>
 
 <biblStruct xml:id="b15">
@@ -1950,6 +1965,7 @@ I </table></figure>
 			<date type="published" when="1976" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">McPherson, A. (1976). J. Biol. Chem. 251, 6300-6303.</note>
 </biblStruct>
 
 <biblStruct xml:id="b16">
@@ -1967,6 +1983,7 @@ I </table></figure>
 			<date type="published" when="1990" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">McPherson, A. (1990). Eur. J. Biochem. 189, 1-23.</note>
 </biblStruct>
 
 <biblStruct xml:id="b17">
@@ -1984,6 +2001,7 @@ I </table></figure>
 			<date type="published" when="2011" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Morris, C. et al. (2011). Acta Cryst. D67, 249-260.</note>
 </biblStruct>
 
 <biblStruct xml:id="b18">
@@ -2001,6 +2019,7 @@ I </table></figure>
 			<date type="published" when="2003" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Rupp, B. (2003). J. Struct. Biol. 142, 162-169.</note>
 </biblStruct>
 
 <biblStruct xml:id="b19">
@@ -2015,6 +2034,7 @@ I </table></figure>
 			<date type="published" when="1958" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Smith, D. E. (1958). History of Mathematics. New York: Dover Publications.</note>
 </biblStruct>
 
 <biblStruct xml:id="b20">
@@ -2038,6 +2058,7 @@ I </table></figure>
 			<date type="published" when="2005" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Stock, D., Perisic, O. &amp; Lö we, J. (2005). Prog. Biophys. Mol. Biol. 88, 311-327.</note>
 </biblStruct>
 
 <biblStruct xml:id="b21">
@@ -2079,6 +2100,7 @@ I </table></figure>
 			<date type="published" when="2008" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Warne, T., Serrano-Vega, M. J., Baker, J. G., Moukhametzianov, R., Edwards, P. C., Henderson, R., Leslie, A. G., Tate, C. G. &amp; Schertler, G. F. (2008). Nature (London), 454, 486-491.</note>
 </biblStruct>
 
 <biblStruct xml:id="b22">
@@ -2105,6 +2127,7 @@ I </table></figure>
 			<date type="published" when="2009" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Warne, T., Serrano-Vega, M. J., Tate, C. G. &amp; Schertler, G. F. (2009). Protein Expr. Purif. 65, 204-213.</note>
 </biblStruct>
 
 				</listBibl>

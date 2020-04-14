@@ -39,7 +39,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 
 		<encodingDesc>
 			<appInfo>
-				<application version="0.5.6" ident="GROBID" when="2020-04-14T16:36+0000">
+				<application version="0.5.6" ident="GROBID" when="2020-04-14T17:21+0000">
 					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
 				</application>
 			</appInfo>
@@ -88,6 +88,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Penfield AJ. Twenty-two years of office and outpatient lapa- roscopy: current techniques and why I chose them. J Am Assoc Gynecol Laparosc. 1995;2:365-68.</note>
 </biblStruct>
 
 <biblStruct xml:id="b1">
@@ -105,6 +106,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="2000" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Almeida OD Jr. Current state of office laparoscopic surgery. J Am Assoc Gynecol Laparosc. 2000;7:545-46.</note>
 </biblStruct>
 
 <biblStruct xml:id="b2">
@@ -134,6 +136,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1993" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Bordahl PE, Raeder JC, Nordentoft J, Kirste U, Refsdal A. Laparoscopic sterilization under local anesthesia or general anesthesia? A randomized study. Obstet Gynecol. 1993;81: 137-41.</note>
 </biblStruct>
 
 <biblStruct xml:id="b3">
@@ -157,6 +160,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1997" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Johnson PL, Sibert KS. Laparoscopy. Gasless vs. CO2 pneumoperitoneum. J Reprod Med. 1997;42:255-59.</note>
 </biblStruct>
 
 <biblStruct xml:id="b4">
@@ -186,6 +190,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Guido RS, Brooks K, McKenzie R, Gruss J, Krohn MA. A randomized, prospective comparison of pain after gasless laparoscopy and traditional laparoscopy. J Am Assoc Gynecol Laparosc. 1998;5:149-53.</note>
 </biblStruct>
 
 <biblStruct xml:id="b5">
@@ -200,6 +205,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<biblScope unit="page" from="645" to="654" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">WHO Task Force on Female Sterilization. Minilaparotomy or laparoscopy for sterilization: a multicenter, multina- tional randomized study. Am J Obstet Gynecol. 1982;143: 645-9.</note>
 </biblStruct>
 
 <biblStruct xml:id="b6">
@@ -220,6 +226,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="2006" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Gomel V, McComb PF. Microsurgery for tubal infertility. J Reprod Med. 2006;51:177-84.</note>
 </biblStruct>
 
 <biblStruct xml:id="b7">
@@ -240,6 +247,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1996" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Palter SF, Olive DL. Office microlaparoscopy under local anesthesia for chronic pelvic pain. J Am Assoc Gynecol Lapar- osc. 1996;3:359-64.</note>
 </biblStruct>
 
 <biblStruct xml:id="b8">
@@ -262,6 +270,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="2008" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Edwell John RS, SpOG. A comparative study of hysteroscopic sterilization versus laparoscopic tubal sterilization. World Laparosc Hosp. 2008-2009. Available online at: http:// www.laparoscopyhospital.com/A_Comparative_Study_of_ Hysteroscopic_Sterilization_versus_Laparoscopic_Tubal_ Sterilization.html</note>
 </biblStruct>
 
 <biblStruct xml:id="b9">
@@ -288,6 +297,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="2004" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Yaghoobi Notash A, Bahrpeyma SH, Modaghegh MH. Effectiveness of abdominal wall elevator in reducing intra- abdominal pressure and CO2 volume during laparoscopic cholecystectomy. Acta Med Iranica. 2004;42:131-3.</note>
 </biblStruct>
 
 <biblStruct xml:id="b10">
@@ -302,6 +312,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="2002" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">The European Association for Endoscopic Surgery clinical practice guideline on the pneumoperitoneum for laparo- scopic surgery. Surg Endosc. 2002;7:1121-1143.</note>
 </biblStruct>
 
 				</listBibl>

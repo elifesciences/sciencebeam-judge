@@ -81,7 +81,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 
 		<encodingDesc>
 			<appInfo>
-				<application version="0.5.6" ident="GROBID" when="2020-04-14T16:36+0000">
+				<application version="0.5.6" ident="GROBID" when="2020-04-14T17:21+0000">
 					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
 				</application>
 			</appInfo>
@@ -252,6 +252,7 @@ Bicarbonate § 18
 			<date type="published" when="2004" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Troyanov S, Geadah D, Ghannoum M, Cardinal J, Leblanc M. Phosphate addition to hemodiafiltration solutions dur- ing continuous renal replacement therapy. Intensive Care Med 2004; 30: 1662-5.</note>
 </biblStruct>
 
 <biblStruct xml:id="b1">
@@ -272,6 +273,7 @@ Bicarbonate § 18
 			<date type="published" when="1996" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Marik PE, Bedigian MK. Refeeding hypophosphatemia in critically ill patients in an intensive care unit. A prospective study. Arch Surg 1996; 131: 1043-7.</note>
 </biblStruct>
 
 <biblStruct xml:id="b2">
@@ -295,6 +297,7 @@ Bicarbonate § 18
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Bugg NC, Jones JA. Hypophosphataemia. Pathophysiology, effects and management on the intensive care unit. Anaes- thesia 1998; 53: 895-902.</note>
 </biblStruct>
 
 <biblStruct xml:id="b3">
@@ -315,6 +318,7 @@ Bicarbonate § 18
 			<date type="published" when="2009" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Skulberg A Sr. Glucose: a potential killer. Acta Anaesthesiol Scand 2009; 53: 684.</note>
 </biblStruct>
 
 <biblStruct xml:id="b4">
@@ -338,6 +342,7 @@ Bicarbonate § 18
 			<date type="published" when="1991" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Peppers MP, Geheb M, Desai T. Endocrine crises. Hypo- phosphatemia and hyperphosphatemia. Crit Care Clin 1991; 7: 201-14.</note>
 </biblStruct>
 
 <biblStruct xml:id="b5">
@@ -358,6 +363,7 @@ Bicarbonate § 18
 			<date type="published" when="1997" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Elisaf MS, Siamopoulos KC. Mechanisms of hypophospha- taemia in alcoholic patients. Int J Clin Pract 1997; 51: 501-3.</note>
 </biblStruct>
 
 <biblStruct xml:id="b6">
@@ -384,6 +390,7 @@ Bicarbonate § 18
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Zazzo JF, Troche G, Ruel P, Maintenant J. High incidence of hypophosphatemia in surgical intensive care patients: effi- cacy of phosphorus therapy on myocardial function. In- tensive Care Med 1995; 21: 826-31.</note>
 </biblStruct>
 
 <biblStruct xml:id="b7">
@@ -413,6 +420,7 @@ Bicarbonate § 18
 			<date type="published" when="2001" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Tan HK, Bellomo R, M&apos;Pis DA, Ronco C. Phosphatemic control during acute renal failure: intermittent hemodialy- sis versus continuous hemodiafiltration. Int J Artif Organs 2001; 24: 186-91.</note>
 </biblStruct>
 
 <biblStruct xml:id="b8">
@@ -442,6 +450,7 @@ Bicarbonate § 18
 			<date type="published" when="2007" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Baldwin I, Naka T, Koch B, Fealy N, Bellomo R. A pilot randomised controlled comparison of continuous veno- venous haemofiltration and extended daily dialysis with filtration: effect on small solutes and acid-base balance. Intensive Care Med 2007; 33: 830-5.</note>
 </biblStruct>
 
 <biblStruct xml:id="b9">
@@ -480,6 +489,7 @@ Bicarbonate § 18
 			<date type="published" when="2006" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Shor R, Halabe A, Rishver S, Tilis Y, Matas Z, Fux A, Boaz M, Weinstein J. Severe hypophosphatemia in sepsis as a mortality predictor. Ann Clin Lab Sci 2006; 36: 67-72.</note>
 </biblStruct>
 
 <biblStruct xml:id="b10">
@@ -497,6 +507,7 @@ Bicarbonate § 18
 			<date type="published" when="1982" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Stoff JS. Phosphate homeostasis and hypophosphatemia. Am J Med 1982; 72: 489-95.</note>
 </biblStruct>
 
 <biblStruct xml:id="b11">
@@ -517,6 +528,7 @@ Bicarbonate § 18
 			<date type="published" when="1994" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Brown GR, Greenwood JK. Drug-and nutrition-induced hypophosphatemia: mechanisms and relevance in the cri- tically ill. Ann Pharmacother 1994; 28: 626-32.</note>
 </biblStruct>
 
 <biblStruct xml:id="b12">
@@ -546,6 +558,7 @@ Bicarbonate § 18
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Bollaert PE, Levy B, Nace L, Laterre PF, Larcan A. Hemodynamic and metabolic effects of rapid correction of hypophosphatemia in patients with septic shock. Chest 1995; 107: 1698-701.</note>
 </biblStruct>
 
 <biblStruct xml:id="b13">
@@ -563,6 +576,7 @@ Bicarbonate § 18
 			<date type="published" when="1996" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Paterson CR. Hypophosphataemia: a dangerous disorder. Nutrition 1996; 12: 540-1.</note>
 </biblStruct>
 
 <biblStruct xml:id="b14">
@@ -586,6 +600,7 @@ Bicarbonate § 18
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Paula FJ, Plens AE, Foss MC. Effects of hypophosphatemia on glucose tolerance and insulin secretion. Horm Metab Res 1998; 30: 281-4.</note>
 </biblStruct>
 
 <biblStruct xml:id="b15">
@@ -608,6 +623,7 @@ Bicarbonate § 18
 			<date type="published" when="0198" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Ravenscroft AJ, Valentine JM, Knappett PA. Severe hypo- phosphataemia and insulin resistance in diabetic ketoaci- dosis. Anaesthesia 1999; 54: 198.</note>
 </biblStruct>
 
 <biblStruct xml:id="b16">
@@ -631,6 +647,7 @@ Bicarbonate § 18
 			<date type="published" when="2000" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Weber U, Huppe T, Niehaus L. CT and MRI in severe hypophosphataemia with central nervous system involve- ment. Neuroradiology 2000; 42: 112-4.</note>
 </biblStruct>
 
 <biblStruct xml:id="b17">
@@ -651,6 +668,7 @@ Bicarbonate § 18
 			<date type="published" when="1978" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Darsee JR, Nutter DO. Reversible severe congestive cardi- omyopathy in three cases of hypophosphatemia. Ann Intern Med 1978; 89: 867-70.</note>
 </biblStruct>
 
 <biblStruct xml:id="b18">
@@ -686,6 +704,7 @@ Bicarbonate § 18
 			<date type="published" when="1985" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Aubier M, Murciano D, Lecocguic Y, Viires N, Jacquens Y, Squara P, Pariente R. Effect of hypophosphatemia on diaphragmatic contractility in patients with acute respira- tory failure. N Engl J Med 1985; 313: 420-4.</note>
 </biblStruct>
 
 <biblStruct xml:id="b19">
@@ -721,6 +740,7 @@ Bicarbonate § 18
 			<date type="published" when="2004" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Williams JD, Topley N, Craig KJ, Mackenzie RK, Pischets- rieder M, Lage C, Passlick-Deetjen J. The Euro-balance trial: the effect of a new biocompatible peritoneal dialysis fluid (balance) on the peritoneal membrane. Kidney Int 2004; 66: 408-18.</note>
 </biblStruct>
 
 <biblStruct xml:id="b20">
@@ -753,6 +773,7 @@ Bicarbonate § 18
 			<date type="published" when="2000" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Gatchalian RA, Popli A, Ejaz AA, Leehey DJ, Kjellstrand CM, Ing TS. Management of hypophosphatemia induced by high-flux hemodiafiltration for the treatment of vanco- mycin toxicity: intravenous phosphorus therapy versus use of a phosphorus-enriched dialysate. Am J Kidney Dis 2000; 36: 1262-6.</note>
 </biblStruct>
 
 <biblStruct xml:id="b21">
@@ -785,6 +806,7 @@ Bicarbonate § 18
 			<date type="published" when="2009" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Santiago MJ, Lopez-Herce J, Urbano J, Bellon JM, del Castillo J, Carrillo A. Hypophosphatemia and phosphate supplementation during continuous renal replacement therapy in children. Kidney Int 2009; 75: 312-6.</note>
 </biblStruct>
 
 <biblStruct xml:id="b22">
@@ -814,6 +836,7 @@ Bicarbonate § 18
 			<date type="published" when="2008" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Janssen van Doorn K, Spapen H, Geers C, Diltoer M, Shabana W. Sepsis-related acute kidney injury: a protective effect of drotrecogin alpha (activated) treatment? Acta Anaesthesiol Scand 2008; 52: 1259-64.</note>
 </biblStruct>
 
 <biblStruct xml:id="b23">
@@ -837,6 +860,7 @@ Bicarbonate § 18
 			<date type="published" when="1978" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Lentz RD, Brown DM, Kjellstrand CM. Treatment of severe hypophosphatemia. Ann Intern Med 1978; 89: 941-4.</note>
 </biblStruct>
 
 <biblStruct xml:id="b24">
@@ -860,6 +884,7 @@ Bicarbonate § 18
 			<date type="published" when="1981" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Vannatta JB, Whang R, Papper S. Efficacy of intravenous phosphorus therapy in the severely hypophosphatemic patient. Arch Intern Med 1981; 141: 885-7.</note>
 </biblStruct>
 
 <biblStruct xml:id="b25">
@@ -886,6 +911,7 @@ Bicarbonate § 18
 			<date type="published" when="1983" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Vannatta JB, Andress DL, Whang R, Papper S. High-dose intravenous phosphorus therapy for severe complicated hypophosphatemia. South Med J 1983; 76: 1424-6.</note>
 </biblStruct>
 
 <biblStruct xml:id="b26">
@@ -906,6 +932,7 @@ Bicarbonate § 18
 			<date type="published" when="1985" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Kingston M, Al-Siba&apos;i MB. Treatment of severe hypopho- sphatemia. Crit Care Med 1985; 13: 16-8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b27">
@@ -935,6 +962,7 @@ Bicarbonate § 18
 			<date type="published" when="1994" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Sacks GS, Walker J, Dickerson RN, Kudsk KA, Brown RO. Observations of hypophosphatemia and its management in nutrition support. Nutr Clin Pract 1994; 9: 105-8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b28">
@@ -964,6 +992,7 @@ Bicarbonate § 18
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Clark CL, Sacks GS, Dickerson RN, Kudsk KA, Brown RO. Treatment of hypophosphatemia in patients receiving spe- cialized nutrition support using a graduated dosing scheme: results from a prospective clinical trial. Crit Care Med 1995; 23: 1504-11.</note>
 </biblStruct>
 
 <biblStruct xml:id="b29">
@@ -993,6 +1022,7 @@ Bicarbonate § 18
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Rosen GH, Boullata JI, O&apos;Rangers EA, Enow NB, Shin B. Intravenous phosphate repletion regimen for critically ill patients with moderate hypophosphatemia. Crit Care Med 1995; 23: 1204-10.</note>
 </biblStruct>
 
 <biblStruct xml:id="b30">
@@ -1016,6 +1046,7 @@ Bicarbonate § 18
 			<date type="published" when="1997" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Perreault MM, Ostrop NJ, Tierney MG. Efficacy and safety of intravenous phosphate replacement in critically ill pa- tients. Ann Pharmacother 1997; 31: 683-8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b31">
@@ -1048,6 +1079,7 @@ Bicarbonate § 18
 			<date type="published" when="2003" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Charron T, Bernard F, Skrobik Y, Simoneau N, Gagnon N, Leblanc M. Intravenous phosphate in the intensive care unit: more aggressive repletion regimens for moderate and severe hypophosphatemia. Intensive Care Med 2003; 29: 1273-8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b32">
@@ -1080,6 +1112,7 @@ Bicarbonate § 18
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Barak V, Schwartz A, Kalickman I, Nisman B, Gurman G, Shoenfeld Y. Prevalence of hypophosphatemia in sepsis and infection: the role of cytokines. Am J Med 1998; 104: 40-7.</note>
 </biblStruct>
 
 <biblStruct xml:id="b33">
@@ -1108,6 +1141,7 @@ Bicarbonate § 18
 			<biblScope unit="page" from="895" to="904" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Walker K, Dallas Hall W, Hurst W. Serum inorganic phosphate. In: Stoneham M, ed. Clinical methods. London: Butterworth Publishers, 1990: 895-9.</note>
 </biblStruct>
 
 <biblStruct xml:id="b34">
@@ -1134,6 +1168,7 @@ Bicarbonate § 18
 			<date type="published" when="2002" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Morimatsu H, Uchino S, Bellomo R, Ronco C. Continuous veno-venous hemodiafiltration or hemofiltration: impact on calcium, phosphate and magnesium concentrations. Int J Artif Organs 2002; 25: 512-9.</note>
 </biblStruct>
 
 <biblStruct xml:id="b35">
@@ -1152,6 +1187,7 @@ Bicarbonate § 18
 		</imprint>
 	</monogr>
 	<note>Selection of dialysate and replacement fluids and management of electrolyte and acid-base disturbances. Lund Sweden e-mail: marcus.broman@skane.se</note>
+	<note type="raw_reference">Kraus MA. Selection of dialysate and replacement fluids and management of electrolyte and acid-base disturbances. Semin Dial 2009; 22: 137-40. Address: Dr Marcus Broman Department of Anaesthesiology and Intensive Care Lund University Hospital S-221 85 Lund Sweden e-mail: marcus.broman@skane.se</note>
 </biblStruct>
 
 				</listBibl>

@@ -60,7 +60,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 
 		<encodingDesc>
 			<appInfo>
-				<application version="0.5.6" ident="GROBID" when="2020-04-14T16:36+0000">
+				<application version="0.5.6" ident="GROBID" when="2020-04-14T17:21+0000">
 					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
 				</application>
 			</appInfo>
@@ -95,6 +95,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1982" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Khong T K, Rooney P J. Manubriosternal joint subluxation in rheumatoid arthritis. J Reumatol 1982; 9: 712-5.</note>
 </biblStruct>
 
 <biblStruct xml:id="b1">
@@ -112,6 +113,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1970" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Kormano M. A micrographic an histological study of the manubrio-sternal joint in rheumatoid arthritis. Acta Rheumatol Scand 1970; 16: 47-59.</note>
 </biblStruct>
 
 <biblStruct xml:id="b2">
@@ -135,6 +137,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1970" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Laitinen H, Saksanen S, Suoranta H. Involvement of the manubrio-sternal articulation in rheumatoid arthritis. Acta Rheumatol Scand 1970; 16: 40-6.</note>
 </biblStruct>
 
 <biblStruct xml:id="b3">
@@ -158,6 +161,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1979" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Rapoport R J, Carrera G F, Kozin F. Manubrio-sternal joint subluxation in rheumatiod arthritis. J Reumatol 1979; 6:1 74-7.</note>
 </biblStruct>
 
 <biblStruct xml:id="b4">
@@ -175,6 +179,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1981" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Wiseman M J. Dislocation of the manubriosternal joint in rheumatoid arthri- tis. Ann Rheum Dis 1981; 40: 307-8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b5">
@@ -182,6 +187,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 		<title level="m" type="main">We have not found any reports on the treatment of symptomatic MSJ luxation</title>
 		<imprint/>
 	</monogr>
+	<note type="raw_reference">We have not found any reports on the treatment of symp- tomatic MSJ luxation.</note>
 </biblStruct>
 
 <biblStruct xml:id="b6">
@@ -202,6 +208,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1950" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Bogdan A, Clark J. Manubrio-sternal joint in rheumatoid arthritis. Br Med J 1950; 16: 1361-2.</note>
 </biblStruct>
 
 <biblStruct xml:id="b7">
@@ -222,6 +229,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1980" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Holt M E, Rooney P J. Manubriosternal joint subluxation in rheumatoid arthritis. J Rheumatol 1980; 7: 260-2.</note>
 </biblStruct>
 
 <biblStruct xml:id="b8">
@@ -245,6 +253,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1986" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Kelly M C, Hopkinson N D, Zaphiropoulos G C. Manubriosternal joint dis- location in rheumatoid arthritis: the role of thoracic kyphosis. Ann Rheum Dis 1986; 45: 345-8.</note>
 </biblStruct>
 
 				</listBibl>

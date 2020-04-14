@@ -81,7 +81,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 
 		<encodingDesc>
 			<appInfo>
-				<application version="0.5.6" ident="GROBID" when="2020-04-14T16:36+0000">
+				<application version="0.5.6" ident="GROBID" when="2020-04-14T17:21+0000">
 					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
 				</application>
 			</appInfo>
@@ -881,6 +881,7 @@ sup-8
 			<date type="published" when="2007" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Chen, S. H., Lin, K. Y., Chang, C. C., Fang, C. L. &amp; Lin, C. P. (2007). Food Chem. Toxicol. 45, 2296-2303.</note>
 </biblStruct>
 
 <biblStruct xml:id="b1">
@@ -901,6 +902,7 @@ sup-8
 			<date type="published" when="1975" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Cremer, D. &amp; Pople, J. A. (1975). J. Am. Chem. Soc. 97, 1354-1358.</note>
 </biblStruct>
 
 <biblStruct xml:id="b2">
@@ -918,6 +920,7 @@ sup-8
 			<date type="published" when="1997" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Farrugia, L. J. (1997). J. Appl. Cryst. 30, 565.</note>
 </biblStruct>
 
 <biblStruct xml:id="b3">
@@ -959,6 +962,7 @@ sup-8
 			<date type="published" when="2003" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Haug, H. S., Chiou, J. F., Fong, Y., Hou, C. C., Lu, Y. C., Wang, J. Y., Shih, J. W., Pan, Y. R. &amp; Lin, J. J. (2003). J. Med. Chem. 46, 3300-3307.</note>
 </biblStruct>
 
 <biblStruct xml:id="b4">
@@ -1003,6 +1007,7 @@ sup-8
 			<date type="published" when="2004" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Iizuka, A., Iijima, O. T., Kondo, K., Itakura, H., Yoshie, F., Miyamoto, H., Kubo, M., Higuchi, M., Takeda, H. &amp; Matsumiy, T. (2004). J. Ethnophar- macol. 91, 89-94.</note>
 </biblStruct>
 
 <biblStruct xml:id="b5">
@@ -1041,6 +1046,7 @@ sup-8
 			<date type="published" when="2002" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Koyamaa, J., Morita, I., Tagahara, K., Nobukuni, Y., Mukainaka, T., Kuchide, M., Tokuda, H. &amp; Nishino, H. (2002). Cancer Lett. 182, 135-139.</note>
 </biblStruct>
 
 <biblStruct xml:id="b6">
@@ -1058,6 +1064,7 @@ sup-8
 			<date type="published" when="2008" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Sheldrick, G. M. (2008). Acta Cryst. A64, 112-122.</note>
 </biblStruct>
 
 <biblStruct xml:id="b7">
@@ -1084,6 +1091,7 @@ sup-8
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Simi, S., Morelli, S., Gervasi, P. G. &amp; Rainaldi, G. (1995). Mutat. Res. 347, 151- 156.</note>
 </biblStruct>
 
 <biblStruct xml:id="b8">
@@ -1110,6 +1118,7 @@ sup-8
 			<date type="published" when="2005" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Su, Y. T., Chang, H. L., Shyue, S. K. &amp; Hsu, S. L. (2005). Biochem. Pharmacol. 70, 229-241.</note>
 </biblStruct>
 
 <biblStruct xml:id="b9">
@@ -1136,6 +1145,7 @@ sup-8
 			<date type="published" when="2005" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Wu, Y. W., Gao, W. Y., Xiao, X. H. &amp; Liu, Y. (2005). Thermochim. Acta, 429, 167-170.</note>
 </biblStruct>
 
 <biblStruct xml:id="b10">
@@ -1159,6 +1169,7 @@ sup-8
 			<date type="published" when="2000" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Yen, G. C., Duh, P. D. &amp; Chuang, D. Y. (2000). Food Chem. 70, 437-441.</note>
 </biblStruct>
 
 				</listBibl>

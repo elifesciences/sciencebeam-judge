@@ -142,7 +142,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 
 		<encodingDesc>
 			<appInfo>
-				<application version="0.5.6" ident="GROBID" when="2020-04-14T16:36+0000">
+				<application version="0.5.6" ident="GROBID" when="2020-04-14T17:21+0000">
 					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
 				</application>
 			</appInfo>
@@ -676,6 +676,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="1993" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Law CM, de SM, Osmond C, Fayers PM, Barker DJ, Cruddas AM, et al. Initiation of hypertension in utero and its amplifica- tion throughout life. Br Med J 1993; 306: 24-7.</note>
 </biblStruct>
 
 <biblStruct xml:id="b1">
@@ -696,6 +697,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2005" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Adair L, Dahly D. Developmental determinants of blood pres- sure in adults. Annu Rev Nutr 2005; 25: 407-34.</note>
 </biblStruct>
 
 <biblStruct xml:id="b2">
@@ -725,6 +727,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2007" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Eriksson JG, Forsen TJ, Kajantie E, Osmond C, Barker DJP. Childhood growth and hypertension in later life. Hypertension 2007; 49: 1415-21.</note>
 </biblStruct>
 
 <biblStruct xml:id="b3">
@@ -742,6 +745,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Barker DJP. Fetal origins of coronary heart disease. Br Med J 1995; 311: 171-4.</note>
 </biblStruct>
 
 <biblStruct xml:id="b4">
@@ -759,6 +763,7 @@ p values were obtained by linear regression using all variables as continuous.
 		</respStmt>
 	</monogr>
 	<note>2nd edn</note>
+	<note type="raw_reference">Barker DJP. Mothers, babies and disease in later life, 2nd edn. Churchill Livingstone, Edinburgh, 1998.</note>
 </biblStruct>
 
 <biblStruct xml:id="b5">
@@ -776,6 +781,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2001" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Harding JE. The nutritional basis of the fetal origins of adult dis- ease. Int J Epidemiol 2001; 30: 15-23.</note>
 </biblStruct>
 
 <biblStruct xml:id="b6">
@@ -793,6 +799,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2000" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Jackson AA. All that glitters. Br Nutr Foundation Annual Lec- ture. Nutr Bull 2000; 25: 11-24.</note>
 </biblStruct>
 
 <biblStruct xml:id="b7">
@@ -807,6 +814,7 @@ p values were obtained by linear regression using all variables as continuous.
 		</imprint>
 	</monogr>
 	<note>2nd edn. Castlemead</note>
+	<note type="raw_reference">Tanner JM. Fetus into man, 2nd edn. Castlemead, Ware, 1989.</note>
 </biblStruct>
 
 <biblStruct xml:id="b8">
@@ -827,6 +835,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2001" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Duggleby SL, Jackson AA. Relationship of maternal protein turnover and lean body mass during pregnancy and birth length. Clin Sci 2001; 101: 65-72.</note>
 </biblStruct>
 
 <biblStruct xml:id="b9">
@@ -847,6 +856,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<biblScope unit="page" from="62" to="74" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Sibley CP and Boyd RDH. Mechanisms of transfer across the human placenta. In: Polin RA and Fox WW editors. Fetal and neonatal physiology. Saunders, Philadelphia, 1992: 62-74.</note>
 </biblStruct>
 
 <biblStruct xml:id="b10">
@@ -876,6 +886,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2010" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Barker DJP, Thornburg KL, Osmond C, Kajantie E, Eriksson JG. The surface area of the placenta and hypertension in the offspring in later life. Int J Dev Biol 2010; 54: 525-30.</note>
 </biblStruct>
 
 <biblStruct xml:id="b11">
@@ -902,6 +913,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="1990" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Barker DJP, Bull AR, Osmond C, Simmonds SJ. Fetal and pla- cental size and risk of hypertension in adult life. Br Med J 1990; 301: 259-62.</note>
 </biblStruct>
 
 <biblStruct xml:id="b12">
@@ -934,6 +946,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="1996" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Campbell DM, Hall MH, Barker DJ, Cross J, Shiell AW, God- frey KM. Diet in pregnancy and the offspring&apos;s blood pressure 40 years later. Br J Obstet Gynaecol 1996; 103: 273-80.</note>
 </biblStruct>
 
 <biblStruct xml:id="b13">
@@ -963,6 +976,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2000" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Eriksson J, Forsen T, Tuomilehto J, Osmond C, Barker D. Fetal and childhood growth and hypertension in adult life. Hyperten- sion 2000; 36: 790-4.</note>
 </biblStruct>
 
 <biblStruct xml:id="b14">
@@ -995,6 +1009,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="1996" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Moore VM, Miller AG, Boulton TJ, Cockington RA, Craug IH, Magarey AM, et al. Placental weight, birth measurements, and blood pressure at age 8 years. Arch Dis Child 1996; 74: 538-41.</note>
 </biblStruct>
 
 <biblStruct xml:id="b15">
@@ -1024,6 +1039,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="1997" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Taylor SJC, Whincup PH, Cook DG, Papacosta O, Walker M. Size at birth and blood pressure; cross sectional study in 8- 11 year old children. Br Med J 1997; 314: 475-80.</note>
 </biblStruct>
 
 <biblStruct xml:id="b16">
@@ -1050,6 +1066,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Whincup P, Cook D, Papacosta O, Walker M. Birth weight and blood pressure: cross sectional and longitudinal relations in childhood. Br Med J 1995; 311: 773-6.</note>
 </biblStruct>
 
 <biblStruct xml:id="b17">
@@ -1079,6 +1096,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2005" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Hill JC, Krishnaveni GV, Annamma I, Leary SD, Fall CHD. Glucose tolerance in pregnancy in South India: relationships to neonatal anthropometry. Acta Obstet Gynecol Scand 2005; 84: 159-65.</note>
 </biblStruct>
 
 <biblStruct xml:id="b18">
@@ -1108,6 +1126,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2010" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Eriksson JG, Kajantie E, Osmond C, Thornburg K, Barker DJP. Boys live dangerously in the womb. Am J Hum Biol 2010; 22: 330-5.</note>
 </biblStruct>
 
 <biblStruct xml:id="b19">
@@ -1140,6 +1159,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2010" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Krishnaveni GV, Veena SR, Hill JC, Kehoe S, Karat SC, Fall CHD. Intrauterine exposure to maternal diabetes is associated with higher adiposity and insulin resistance and clustering of cardiovascular risk markers in Indian children. Diabetes Care 2010; 33: 402-4.</note>
 </biblStruct>
 
 <biblStruct xml:id="b20">
@@ -1154,6 +1174,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2004" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">National High Blood Pressure Educational Program Working Group on High Blood Pressure and Adolescents. The fourth report on the diagnosis, evaluation and treatment of high blood pressure in children and adolescents. Pediatrics 2004; 114: 555-76.</note>
 </biblStruct>
 
 <biblStruct xml:id="b21">
@@ -1174,6 +1195,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2007" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Jansson T, Powell TL. Role of the placenta in fetal program- ming: underlying mechanisms and potential interventional approaches. Clin Sci 2007; 113: 1-13.</note>
 </biblStruct>
 
 <biblStruct xml:id="b22">
@@ -1191,6 +1213,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="1980" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Pedersen JF. Ultrasound evidence of sexual differences in fetal size in first trimester. Br Med J 1980; 281: 1253.</note>
 </biblStruct>
 
 <biblStruct xml:id="b23">
@@ -1223,6 +1246,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2007" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Di Renzo GC, Rosati A, Sarti RD, Cruciani L, Cutuli AM. Does fetal sex affect pregnancy outcome? Gend Med 2007; 4: 19-30.</note>
 </biblStruct>
 
 <biblStruct xml:id="b24">
@@ -1257,6 +1281,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<biblScope unit="page" from="5" to="16" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Barker DJP, Kajantie E, Eriksson JG, Alwasel SH, Fall CHD, Roseboom TJ, et al. The maternal and placental origins of chronic disease. In: Burton GJ, Barker DJP, Moffett A, Thornburg K editors. The placenta and human developmental programming. Cambridge University Press, Cambridge, 2010: 5-16.</note>
 </biblStruct>
 
 <biblStruct xml:id="b25">
@@ -1286,6 +1311,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="2010" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Kajantie E, Thornburg K, Eriksson JG, Osmond C, Barker DJP. In preeclampsia, the placenta grows slowly along its minor axis. Int J Dev Biol 2010; 54: 469-73.</note>
 </biblStruct>
 
 <biblStruct xml:id="b26">
@@ -1309,6 +1335,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="1996" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Martyn CN, Barker DJP, Osmond C. Mothers pelvic size, fetal growth and death from stroke in men. Lancet 1996; 348: 1264-8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b27">
@@ -1332,6 +1359,7 @@ p values were obtained by linear regression using all variables as continuous.
 			<date type="published" when="1992" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">McCrabb GJ, Egan AR, Hosking BJ. Maternal undernutrition during mid-pregnancy in sheep; variable effects on placental growth. J Agric Sci 1992; 118: 127-32.</note>
 </biblStruct>
 
 				</listBibl>

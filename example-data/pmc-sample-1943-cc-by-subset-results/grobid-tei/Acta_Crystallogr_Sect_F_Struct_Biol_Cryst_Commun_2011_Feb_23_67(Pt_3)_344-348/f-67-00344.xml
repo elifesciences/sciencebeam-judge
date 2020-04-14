@@ -118,7 +118,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 
 		<encodingDesc>
 			<appInfo>
-				<application version="0.5.6" ident="GROBID" when="2020-04-14T16:36+0000">
+				<application version="0.5.6" ident="GROBID" when="2020-04-14T17:21+0000">
 					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
 				</application>
 			</appInfo>
@@ -248,6 +248,7 @@ i I i </table></figure>
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Cocchi, F., Menotti, L., Mirandola, P., Lopez, M. &amp; Campadelli-Fiume, G. (1998). J. Virol. 72, 9992-10002.</note>
 </biblStruct>
 
 <biblStruct xml:id="b1">
@@ -263,6 +264,7 @@ i I i </table></figure>
 		</imprint>
 	</monogr>
 	<note>Acta Cryst.</note>
+	<note type="raw_reference">Collaborative Computational Project, Number 4 (1994). Acta Cryst. D50, 760-763.</note>
 </biblStruct>
 
 <biblStruct xml:id="b2">
@@ -292,6 +294,7 @@ i I i </table></figure>
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Geraghty, R. J., Krummenacher, C., Cohen, G. H., Eisenberg, R. J. &amp; Spear, P. G. (1998). Science, 280, 1618-1620.</note>
 </biblStruct>
 
 <biblStruct xml:id="b3">
@@ -312,6 +315,7 @@ i I i </table></figure>
 			<date type="published" when="2010" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Harris, T. J. &amp; Tepass, U. (2010). Nature Rev. Mol. Cell Biol. 11, 502-514.</note>
 </biblStruct>
 
 <biblStruct xml:id="b4">
@@ -344,6 +348,7 @@ i I i </table></figure>
 			<date type="published" when="2000" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Lopez, M., Cocchi, F., Menotti, L., Avitabile, E., Dubreuil, P. &amp; Campadelli- Fiume, G. (2000). J. Virol. 74, 1267-1274.</note>
 </biblStruct>
 
 <biblStruct xml:id="b5">
@@ -370,6 +375,7 @@ i I i </table></figure>
 			<date type="published" when="2010" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Ogita, H., Rikitake, Y., Miyoshi, J. &amp; Takai, Y. (2010). Proc. Jpn Acad. Ser. B Phys. Biol. Sci. 86, 621-629.</note>
 </biblStruct>
 
 <biblStruct xml:id="b6">
@@ -390,6 +396,7 @@ i I i </table></figure>
 			<date type="published" when="2006" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Ogita, H. &amp; Takai, Y. (2006). IUBMB Life, 58, 334-343.</note>
 </biblStruct>
 
 <biblStruct xml:id="b7">
@@ -410,6 +417,7 @@ i I i </table></figure>
 			<date type="published" when="1997" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Otwinowski, Z. &amp; Minor, W. (1997). Methods Enzymol. 276, 307-326.</note>
 </biblStruct>
 
 <biblStruct xml:id="b8">
@@ -454,6 +462,7 @@ i I i </table></figure>
 			<date type="published" when="2001" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Sakisaka, T., Taniguchi, T., Nakanishi, H., Takahashi, K., Miyahara, M., Ikeda, W., Yokoyama, S., Peng, Y.-F., Yamanishi, K. &amp; Takai, Y. (2001). J. Virol. 75, 4734-4743.</note>
 </biblStruct>
 
 <biblStruct xml:id="b9">
@@ -480,6 +489,7 @@ i I i </table></figure>
 			<date type="published" when="2008" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Takai, Y., Ikeda, W., Ogita, H. &amp; Rikitake, Y. (2008). Annu. Rev. Cell Dev. Biol. 24, 309-342.</note>
 </biblStruct>
 
 <biblStruct xml:id="b10">
@@ -509,6 +519,7 @@ i I i </table></figure>
 			<date type="published" when="2003" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Takai, Y., Irie, K., Shimizu, K., Sakisaka, T. &amp; Ikeda, W. (2003). Cancer Sci. 94, 655-667.</note>
 </biblStruct>
 
 <biblStruct xml:id="b11">
@@ -535,6 +546,7 @@ i I i </table></figure>
 			<date type="published" when="2008" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Takai, Y., Miyoshi, J., Ikeda, W. &amp; Ogita, H. (2008). Nature Rev. Mol. Cell Biol. 9, 603-615.</note>
 </biblStruct>
 
 <biblStruct xml:id="b12">
@@ -576,6 +588,7 @@ i I i </table></figure>
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Warner, M. S., Geraghty, R. J., Martinez, W. M., Montgomery, R. I., Whitbeck, J. C., Xu, R., Eisenberg, R. J., Cohen, G. H. &amp; Spear, P. G. (1998). Virology, 246, 179-189.</note>
 </biblStruct>
 
 <biblStruct xml:id="b13">
@@ -611,6 +624,7 @@ i I i </table></figure>
 			<biblScope unit="page" from="18284" to="18289" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Zhang, P., Mueller, S., Morais, M. C., Bator, C. M., Bowman, V. D., Hafenstein, S., Wimmer, E. &amp; Rossmann, M. G. (2008). Proc. Natl Acad. Sci. USA, 105, 18284-18289.</note>
 </biblStruct>
 
 				</listBibl>

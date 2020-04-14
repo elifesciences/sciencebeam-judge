@@ -100,7 +100,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 
 		<encodingDesc>
 			<appInfo>
-				<application version="0.5.6" ident="GROBID" when="2020-04-14T16:36+0000">
+				<application version="0.5.6" ident="GROBID" when="2020-04-14T17:21+0000">
 					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
 				</application>
 			</appInfo>
@@ -158,6 +158,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1927" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Guild SR. The circulation of the endolymph. Am J Anat 1927;39:57-81.</note>
 </biblStruct>
 
 <biblStruct xml:id="b1">
@@ -178,6 +179,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1965" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Kimura RS, Schuknecht HF. Membranous hydrops in the inner ear of the guinea pig after obliteration of the endolym- phatic sac. Pract Otorhinolaryngol 1965;27:343-54.</note>
 </biblStruct>
 
 <biblStruct xml:id="b2">
@@ -201,6 +203,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1982" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Kitamura K, Schuknecht H, Kimura R. Cochlear hydrops is associated with collapsed saccule and ductus reuniens. Ann Otol 1982;91:5-13.</note>
 </biblStruct>
 
 <biblStruct xml:id="b3">
@@ -221,6 +224,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1974" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Stahle J, Wilbrand H. The vestibular aqueduct in patients with Meniere&apos;s disease. A tomographic and clinical investi- gation. Acta Otolaryngol 1974;78:36-48.</note>
 </biblStruct>
 
 <biblStruct xml:id="b4">
@@ -250,6 +254,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1991" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Yamamoto E, Mizukami C, Isono M, Ohmura M, Hirono Y. Observation of the external aperture of the vestibular aque- duct using three-dimensional surface reconstruction imag- ing. Laryngoscope 1991;101:480-3.</note>
 </biblStruct>
 
 <biblStruct xml:id="b5">
@@ -282,6 +287,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="2009" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Yamane H, Takayama M, Sunami K, Sakamoto H, Mchizuki K, Inoue Y. Three-dimensional images of the reuniting duct using cone beam CT. Acta Otolaryngol 2009;129:493-6.</note>
 </biblStruct>
 
 <biblStruct xml:id="b6">
@@ -311,6 +317,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="2009" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Yamane H, Takayama M, Sunami K, Sakamoto H, Anniko M. Assessment of the reuniting duct by three- dimensional CT rendering. Acta Otolaryngol 2009;129: 1166-8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b7">
@@ -343,6 +350,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="2010" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Yamane H, Takayama M, Sunami K, Sakamoto H, Imoto T, Anniko M. Blockage of reuniting duct in Meniere&apos;s disease. Acta Otolaryngol 2010;130:233-9.</note>
 </biblStruct>
 
 <biblStruct xml:id="b8">
@@ -363,6 +371,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1965" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Kimura RS, Schuknecht HF. Membranous hydrops in the inner ear of the guinea pig after obliteration of the endolym- phatic sac. Pract Otorhinolaryngol 1965;27:343-54.</note>
 </biblStruct>
 
 <biblStruct xml:id="b9">
@@ -383,6 +392,7 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 			<date type="published" when="1991" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Schuknecht HF, Rüther A. Blockage of longitudinal flow in the endolymphatic hydrops. Eur Arch Otorhinolaryngol 1991;248:209-17.</note>
 </biblStruct>
 
 				</listBibl>
