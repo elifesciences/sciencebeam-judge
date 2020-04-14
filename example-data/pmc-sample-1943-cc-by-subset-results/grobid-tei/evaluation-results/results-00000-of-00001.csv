@@ -211,6 +211,8 @@ aas0055-0039.xml,aas0055-0039.nxml,first_reference_year,exact,string,1,0,0,0,200
 aas0055-0039.xml,aas0055-0039.nxml,first_reference_year,levenshtein,string,1,0,0,0,2004,2004
 aas0055-0039.xml,aas0055-0039.nxml,first_reference_source,exact,string,1,0,0,0,Intensive Care Med,Intensive Care Med
 aas0055-0039.xml,aas0055-0039.nxml,first_reference_source,levenshtein,string,1,0,0,0,Intensive Care Med,Intensive Care Med
+aas0055-0039.xml,aas0055-0039.nxml,first_reference_publication_type,exact,string,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,first_reference_publication_type,levenshtein,string,1,0,0,0,journal,journal
 aas0055-0039.xml,aas0055-0039.nxml,first_reference_volume,exact,string,1,0,0,0,30,30
 aas0055-0039.xml,aas0055-0039.nxml,first_reference_volume,levenshtein,string,1,0,0,0,30,30
 aas0055-0039.xml,aas0055-0039.nxml,first_reference_fpage,exact,string,1,0,0,0,1662,1662
@@ -1660,7 +1662,7 @@ aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_list,1,0,0,0,C
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_list,1,0,0,0,Ann Pharmacother,Ann Pharmacother
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_list,1,0,0,0,Intensive Care Med,Intensive Care Med
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_list,1,0,0,0,Am J Med,Am J Med
-aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_list,0,0,1,0,Clinical methods,
+aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_list,0,1,0,0,Clinical methods,Serum inorganic phosphate
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_list,1,0,0,0,Int J Artif Organs,Int J Artif Organs
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_list,1,0,0,0,Semin Dial,Semin Dial
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Intensive Care Med,Intensive Care Med
@@ -1696,7 +1698,7 @@ aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_list,1,0
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Ann Pharmacother,Ann Pharmacother
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Intensive Care Med,Intensive Care Med
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Am J Med,Am J Med
-aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_list,0,0,1,0,Clinical methods,
+aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_list,0,1,0,0,Clinical methods,Serum inorganic phosphate
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Int J Artif Organs,Int J Artif Organs
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Semin Dial,Semin Dial
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_set,1,0,0,0,Acta Anaesthesiol Scand,Acta Anaesthesiol Scand
@@ -1722,7 +1724,7 @@ aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_set,1,0,0,0,Nu
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_set,1,0,0,0,Nutrition,Nutrition
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_set,1,0,0,0,Semin Dial,Semin Dial
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_set,1,0,0,0,South Med J,South Med J
-aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_set,0,0,1,0,Clinical methods,
+aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_set,0,1,0,0,Clinical methods,Serum inorganic phosphate
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Acta Anaesthesiol Scand,Acta Anaesthesiol Scand
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Am J Kidney Dis,Am J Kidney Dis
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Am J Med,Am J Med
@@ -1746,7 +1748,7 @@ aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_set,1,0,
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Nutrition,Nutrition
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Semin Dial,Semin Dial
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_set,1,0,0,0,South Med J,South Med J
-aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_set,0,0,1,0,Clinical methods,
+aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_set,0,1,0,0,Clinical methods,Serum inorganic phosphate
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_ulist,1,0,0,0,Intensive Care Med,Intensive Care Med
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_ulist,1,0,0,0,Arch Surg,Arch Surg
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_ulist,1,0,0,0,Anaesthesia,Anaesthesia
@@ -1782,7 +1784,7 @@ aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_ulist,1,0,0,0,
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_ulist,1,0,0,0,Am J Med,Am J Med
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_ulist,1,0,0,0,Int J Artif Organs,Int J Artif Organs
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_ulist,1,0,0,0,Semin Dial,Semin Dial
-aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_ulist,0,0,1,0,Clinical methods,
+aas0055-0039.xml,aas0055-0039.nxml,reference_source,exact,partial_ulist,0,1,0,0,Clinical methods,Serum inorganic phosphate
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Intensive Care Med,Intensive Care Med
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Arch Surg,Arch Surg
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Anaesthesia,Anaesthesia
@@ -1818,7 +1820,155 @@ aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_ulist,1,
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Am J Med,Am J Med
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Int J Artif Organs,Int J Artif Organs
 aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Semin Dial,Semin Dial
-aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_ulist,0,0,1,0,Clinical methods,
+aas0055-0039.xml,aas0055-0039.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,Clinical methods,Serum inorganic phosphate
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,book,book
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,book,book
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_set,1,0,0,0,book,book
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_set,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_set,1,0,0,0,book,book
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_set,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,book,book
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,book,book
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+aas0055-0039.xml,aas0055-0039.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
 aas0055-0039.xml,aas0055-0039.nxml,reference_volume,exact,partial_list,1,0,0,0,30,30
 aas0055-0039.xml,aas0055-0039.nxml,reference_volume,exact,partial_list,1,0,0,0,131,131
 aas0055-0039.xml,aas0055-0039.nxml,reference_volume,exact,partial_list,1,0,0,0,53,53
@@ -2747,6 +2897,8 @@ d-67-00463.xml,d-67-00463.nxml,first_reference_year,exact,string,0,1,0,0,,2006
 d-67-00463.xml,d-67-00463.nxml,first_reference_year,levenshtein,string,0,1,0,0,,2006
 d-67-00463.xml,d-67-00463.nxml,first_reference_source,exact,string,0,1,0,0,,J. Appl. Cryst
 d-67-00463.xml,d-67-00463.nxml,first_reference_source,levenshtein,string,0,1,0,0,,J. Appl. Cryst
+d-67-00463.xml,d-67-00463.nxml,first_reference_publication_type,exact,string,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,first_reference_publication_type,levenshtein,string,0,1,0,0,other,journal
 d-67-00463.xml,d-67-00463.nxml,first_reference_volume,exact,string,0,1,0,0,,39
 d-67-00463.xml,d-67-00463.nxml,first_reference_volume,levenshtein,string,0,1,0,0,,39
 d-67-00463.xml,d-67-00463.nxml,first_reference_fpage,exact,string,0,1,0,0,,244
@@ -3621,20 +3773,20 @@ d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,J. A
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,J. Biol. Chem
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Cell
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,J. Appl. Cryst
-d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,0,0,1,,
+d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Proc. Natl Acad. Sci. USA
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Acta Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Cryst. Growth Des
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,J. Appl. Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Bioinformatics
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Proteins
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Protein Sci
-d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,0,0,1,,
+d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Proc. Natl Acad. Sci
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Protein Sci
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,J. Biol. Chem
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Eur. J. Biochem
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Acta Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,J. Struct. Biol
-d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,0,0,1,,
+d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,History of Mathematics
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Prog. Biophys. Mol. Biol
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Nature
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_list,0,1,0,0,,Protein Expr. Purif
@@ -3644,99 +3796,199 @@ d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,J. Biol. Chem
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Cell
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,J. Appl. Cryst
-d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,0,0,1,,
+d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Proc. Natl Acad. Sci. USA
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Acta Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Cryst. Growth Des
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,J. Appl. Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Bioinformatics
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Proteins
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Protein Sci
-d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,0,0,1,,
+d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Proc. Natl Acad. Sci
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Protein Sci
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,J. Biol. Chem
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Eur. J. Biochem
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Acta Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,J. Struct. Biol
-d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,0,0,1,,
+d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,History of Mathematics
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Prog. Biophys. Mol. Biol
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Nature
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Protein Expr. Purif
-d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,0,0,1,,
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Acta Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Bioinformatics
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Cell
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Cryst. Growth Des
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Eur. J. Biochem
+d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,History of Mathematics
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,J. Appl. Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,J. Biol. Chem
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,J. Struct. Biol
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Methods Mol. Biol
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Nature
+d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Proc. Natl Acad. Sci
+d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Proc. Natl Acad. Sci. USA
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Prog. Biophys. Mol. Biol
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Protein Expr. Purif
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Protein Sci
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_set,0,1,0,0,,Proteins
-d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,0,0,1,,
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Acta Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Bioinformatics
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Cell
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Cryst. Growth Des
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Eur. J. Biochem
+d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,History of Mathematics
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,J. Appl. Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,J. Biol. Chem
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,J. Struct. Biol
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Methods Mol. Biol
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Nature
+d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Proc. Natl Acad. Sci
+d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Proc. Natl Acad. Sci. USA
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Prog. Biophys. Mol. Biol
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Protein Expr. Purif
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Protein Sci
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Proteins
-d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,0,0,1,,
-d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,0,0,1,,
-d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,0,0,1,,
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,J. Appl. Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Methods Mol. Biol
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,J. Appl. Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,J. Biol. Chem
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Cell
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,J. Appl. Cryst
+d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Proc. Natl Acad. Sci. USA
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Acta Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Cryst. Growth Des
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,J. Appl. Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Bioinformatics
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Proteins
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Protein Sci
+d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Proc. Natl Acad. Sci
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Protein Sci
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,J. Biol. Chem
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Eur. J. Biochem
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Acta Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,J. Struct. Biol
+d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,History of Mathematics
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Prog. Biophys. Mol. Biol
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Nature
 d-67-00463.xml,d-67-00463.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Protein Expr. Purif
-d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
-d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
-d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,J. Appl. Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Methods Mol. Biol
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,J. Appl. Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,J. Biol. Chem
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Cell
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,J. Appl. Cryst
+d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Proc. Natl Acad. Sci. USA
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Acta Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Cryst. Growth Des
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,J. Appl. Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Bioinformatics
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Proteins
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Protein Sci
+d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Proc. Natl Acad. Sci
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Protein Sci
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,J. Biol. Chem
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Eur. J. Biochem
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Acta Cryst
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,J. Struct. Biol
+d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,History of Mathematics
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Prog. Biophys. Mol. Biol
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Nature
 d-67-00463.xml,d-67-00463.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Protein Expr. Purif
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_set,0,1,0,0,other,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_set,0,1,0,0,,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_set,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_set,0,1,0,0,,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,book
+d-67-00463.xml,d-67-00463.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,book
 d-67-00463.xml,d-67-00463.nxml,reference_volume,exact,partial_list,0,1,0,0,,39
 d-67-00463.xml,d-67-00463.nxml,reference_volume,exact,partial_list,0,1,0,0,,363
 d-67-00463.xml,d-67-00463.nxml,reference_volume,exact,partial_list,0,1,0,0,,34
@@ -4335,6 +4587,8 @@ e-67-o1363.xml,e-67-o1363.nxml,first_reference_year,exact,string,0,1,0,0,,2007
 e-67-o1363.xml,e-67-o1363.nxml,first_reference_year,levenshtein,string,0,1,0,0,,2007
 e-67-o1363.xml,e-67-o1363.nxml,first_reference_source,exact,string,0,1,0,0,,Food Chem. Toxicol
 e-67-o1363.xml,e-67-o1363.nxml,first_reference_source,levenshtein,string,0,1,0,0,,Food Chem. Toxicol
+e-67-o1363.xml,e-67-o1363.nxml,first_reference_publication_type,exact,string,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,first_reference_publication_type,levenshtein,string,0,1,0,0,other,journal
 e-67-o1363.xml,e-67-o1363.nxml,first_reference_volume,exact,string,0,1,0,0,,45
 e-67-o1363.xml,e-67-o1363.nxml,first_reference_volume,levenshtein,string,0,1,0,0,,45
 e-67-o1363.xml,e-67-o1363.nxml,first_reference_fpage,exact,string,0,1,0,0,,2296
@@ -4961,6 +5215,68 @@ e-67-o1363.xml,e-67-o1363.nxml,reference_source,levenshtein,partial_ulist,0,0,0,
 e-67-o1363.xml,e-67-o1363.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
 e-67-o1363.xml,e-67-o1363.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
 e-67-o1363.xml,e-67-o1363.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_list,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_list,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_set,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_set,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,exact,partial_ulist,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,1,0,other,
+e-67-o1363.xml,e-67-o1363.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,1,0,other,
 e-67-o1363.xml,e-67-o1363.nxml,reference_volume,exact,partial_list,0,1,0,0,,45
 e-67-o1363.xml,e-67-o1363.nxml,reference_volume,exact,partial_list,0,1,0,0,,97
 e-67-o1363.xml,e-67-o1363.nxml,reference_volume,exact,partial_list,0,1,0,0,,30
@@ -5381,6 +5697,8 @@ f-67-00344.xml,f-67-00344.nxml,first_reference_year,exact,string,0,1,0,0,,1998
 f-67-00344.xml,f-67-00344.nxml,first_reference_year,levenshtein,string,0,1,0,0,,1998
 f-67-00344.xml,f-67-00344.nxml,first_reference_source,exact,string,0,1,0,0,,J. Virol
 f-67-00344.xml,f-67-00344.nxml,first_reference_source,levenshtein,string,0,1,0,0,,J. Virol
+f-67-00344.xml,f-67-00344.nxml,first_reference_publication_type,exact,string,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,first_reference_publication_type,levenshtein,string,0,1,0,0,other,journal
 f-67-00344.xml,f-67-00344.nxml,first_reference_volume,exact,string,0,1,0,0,,72
 f-67-00344.xml,f-67-00344.nxml,first_reference_volume,levenshtein,string,0,1,0,0,,72
 f-67-00344.xml,f-67-00344.nxml,first_reference_fpage,exact,string,0,1,0,0,,9992
@@ -5924,7 +6242,7 @@ f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_list,0,1,0,0,,Annu
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_list,0,1,0,0,,Cancer Sci
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_list,0,1,0,0,,Nature Rev. Mol. Cell Biol
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_list,0,1,0,0,,Virology
-f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_list,0,0,0,1,,
+f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_list,0,1,0,0,,"Proc. Natl Acad. Sci. USA, 105"
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,J. Virol
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,"Collaborative Computational Project, Number"
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Science
@@ -5938,8 +6256,7 @@ f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_list,0,1,0,0
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Cancer Sci
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Nature Rev. Mol. Cell Biol
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Virology
-f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_list,0,0,0,1,,
-f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_set,0,0,0,1,,
+f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,"Proc. Natl Acad. Sci. USA, 105"
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_set,0,1,0,0,,Annu. Rev. Cell Dev. Biol
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_set,0,1,0,0,,Cancer Sci
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_set,0,1,0,0,,"Collaborative Computational Project, Number"
@@ -5948,9 +6265,9 @@ f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_set,0,1,0,0,,J. Vi
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_set,0,1,0,0,,Methods Enzymol
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_set,0,1,0,0,,Nature Rev. Mol. Cell Biol
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_set,0,1,0,0,,Proc. Jpn Acad. Ser. B Phys. Biol. Sci
+f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_set,0,1,0,0,,"Proc. Natl Acad. Sci. USA, 105"
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_set,0,1,0,0,,Science
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_set,0,1,0,0,,Virology
-f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_set,0,0,0,1,,
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Annu. Rev. Cell Dev. Biol
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Cancer Sci
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,"Collaborative Computational Project, Number"
@@ -5959,9 +6276,9 @@ f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_set,0,1,0,0,
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Methods Enzymol
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Nature Rev. Mol. Cell Biol
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Proc. Jpn Acad. Ser. B Phys. Biol. Sci
+f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,"Proc. Natl Acad. Sci. USA, 105"
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Science
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Virology
-f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_ulist,0,0,0,1,,
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_ulist,0,1,0,0,,J. Virol
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_ulist,0,1,0,0,,"Collaborative Computational Project, Number"
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Science
@@ -5975,7 +6292,7 @@ f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Ann
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Cancer Sci
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Nature Rev. Mol. Cell Biol
 f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_ulist,0,1,0,0,,Virology
-f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
+f-67-00344.xml,f-67-00344.nxml,reference_source,exact,partial_ulist,0,1,0,0,,"Proc. Natl Acad. Sci. USA, 105"
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,J. Virol
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,"Collaborative Computational Project, Number"
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Science
@@ -5989,6 +6306,67 @@ f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_ulist,0,1,0,
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Cancer Sci
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Nature Rev. Mol. Cell Biol
 f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,Virology
+f-67-00344.xml,f-67-00344.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,"Proc. Natl Acad. Sci. USA, 105"
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_list,0,1,0,0,other,book
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,other,book
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_set,0,1,0,0,other,book
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_set,0,1,0,0,,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_set,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_set,0,1,0,0,,book
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,other,book
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,journal
+f-67-00344.xml,f-67-00344.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,other,book
 f-67-00344.xml,f-67-00344.nxml,reference_volume,exact,partial_list,0,1,0,0,,72
 f-67-00344.xml,f-67-00344.nxml,reference_volume,exact,partial_list,0,1,0,0,,4
 f-67-00344.xml,f-67-00344.nxml,reference_volume,exact,partial_list,0,1,0,0,,280
@@ -6341,6 +6719,8 @@ sobs89-975.xml,sobs89-975.nxml,first_reference_year,exact,string,1,0,0,0,1995,19
 sobs89-975.xml,sobs89-975.nxml,first_reference_year,levenshtein,string,1,0,0,0,1995,1995
 sobs89-975.xml,sobs89-975.nxml,first_reference_source,exact,string,1,0,0,0,J Am Assoc Gynecol Laparosc,J Am Assoc Gynecol Laparosc
 sobs89-975.xml,sobs89-975.nxml,first_reference_source,levenshtein,string,1,0,0,0,J Am Assoc Gynecol Laparosc,J Am Assoc Gynecol Laparosc
+sobs89-975.xml,sobs89-975.nxml,first_reference_publication_type,exact,string,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,first_reference_publication_type,levenshtein,string,1,0,0,0,journal,journal
 sobs89-975.xml,sobs89-975.nxml,first_reference_volume,exact,string,1,0,0,0,2,2
 sobs89-975.xml,sobs89-975.nxml,first_reference_volume,levenshtein,string,1,0,0,0,2,2
 sobs89-975.xml,sobs89-975.nxml,first_reference_fpage,exact,string,1,0,0,0,365,365
@@ -6786,7 +7166,7 @@ sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_list,1,0,0,0,J Am 
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_list,1,0,0,0,Obstet Gynecol,Obstet Gynecol
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_list,1,0,0,0,J Reprod Med,J Reprod Med
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_list,1,0,0,0,J Am Assoc Gynecol Laparosc,J Am Assoc Gynecol Laparosc
-sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_list,0,0,1,0,Am J Obstet Gynecol,
+sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_list,0,1,0,0,Am J Obstet Gynecol,WHO Task Force on Female Sterilization
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_list,1,0,0,0,J Reprod Med,J Reprod Med
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_list,1,0,0,0,J Am Assoc Gynecol Laparosc,J Am Assoc Gynecol Laparosc
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_list,1,0,0,0,World Laparosc Hosp,World Laparosc Hosp
@@ -6797,7 +7177,7 @@ sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_list,1,0,0,0
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Obstet Gynecol,Obstet Gynecol
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_list,1,0,0,0,J Reprod Med,J Reprod Med
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_list,1,0,0,0,J Am Assoc Gynecol Laparosc,J Am Assoc Gynecol Laparosc
-sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_list,0,0,1,0,Am J Obstet Gynecol,
+sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_list,0,1,0,0,Am J Obstet Gynecol,WHO Task Force on Female Sterilization
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_list,1,0,0,0,J Reprod Med,J Reprod Med
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_list,1,0,0,0,J Am Assoc Gynecol Laparosc,J Am Assoc Gynecol Laparosc
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_list,1,0,0,0,World Laparosc Hosp,World Laparosc Hosp
@@ -6809,14 +7189,14 @@ sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_set,1,0,0,0,J Repr
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_set,1,0,0,0,Obstet Gynecol,Obstet Gynecol
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_set,1,0,0,0,Surg Endosc,Surg Endosc
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_set,1,0,0,0,World Laparosc Hosp,World Laparosc Hosp
-sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_set,0,0,1,0,Am J Obstet Gynecol,
+sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_set,0,1,0,0,Am J Obstet Gynecol,WHO Task Force on Female Sterilization
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Acta Med Iranica,Acta Med Iranica
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_set,1,0,0,0,J Am Assoc Gynecol Laparosc,J Am Assoc Gynecol Laparosc
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_set,1,0,0,0,J Reprod Med,J Reprod Med
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Obstet Gynecol,Obstet Gynecol
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Surg Endosc,Surg Endosc
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_set,1,0,0,0,World Laparosc Hosp,World Laparosc Hosp
-sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_set,0,0,1,0,Am J Obstet Gynecol,
+sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_set,0,1,0,0,Am J Obstet Gynecol,WHO Task Force on Female Sterilization
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_ulist,1,0,0,0,J Am Assoc Gynecol Laparosc,J Am Assoc Gynecol Laparosc
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_ulist,1,0,0,0,J Am Assoc Gynecol Laparosc,J Am Assoc Gynecol Laparosc
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_ulist,1,0,0,0,Obstet Gynecol,Obstet Gynecol
@@ -6827,7 +7207,7 @@ sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_ulist,1,0,0,0,J Am
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_ulist,1,0,0,0,World Laparosc Hosp,World Laparosc Hosp
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_ulist,1,0,0,0,Acta Med Iranica,Acta Med Iranica
 sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_ulist,1,0,0,0,Surg Endosc,Surg Endosc
-sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_ulist,0,0,1,0,Am J Obstet Gynecol,
+sobs89-975.xml,sobs89-975.nxml,reference_source,exact,partial_ulist,0,1,0,0,Am J Obstet Gynecol,WHO Task Force on Female Sterilization
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,J Am Assoc Gynecol Laparosc,J Am Assoc Gynecol Laparosc
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,J Am Assoc Gynecol Laparosc,J Am Assoc Gynecol Laparosc
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Obstet Gynecol,Obstet Gynecol
@@ -6838,7 +7218,55 @@ sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_ulist,1,0,0,
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,World Laparosc Hosp,World Laparosc Hosp
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Acta Med Iranica,Acta Med Iranica
 sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Surg Endosc,Surg Endosc
-sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_ulist,0,0,1,0,Am J Obstet Gynecol,
+sobs89-975.xml,sobs89-975.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,Am J Obstet Gynecol,WHO Task Force on Female Sterilization
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_list,0,1,0,0,journal,book
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,journal,book
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_set,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_set,0,1,0,0,,book
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_set,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_set,0,1,0,0,,book
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,journal,book
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sobs89-975.xml,sobs89-975.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,journal,book
 sobs89-975.xml,sobs89-975.nxml,reference_volume,exact,partial_list,1,0,0,0,2,2
 sobs89-975.xml,sobs89-975.nxml,reference_volume,exact,partial_list,1,0,0,0,7,7
 sobs89-975.xml,sobs89-975.nxml,reference_volume,exact,partial_list,1,0,0,0,81,81
@@ -7351,6 +7779,8 @@ sonc50-621.xml,sonc50-621.nxml,first_reference_year,exact,string,1,0,0,0,1995,19
 sonc50-621.xml,sonc50-621.nxml,first_reference_year,levenshtein,string,1,0,0,0,1995,1995
 sonc50-621.xml,sonc50-621.nxml,first_reference_source,exact,string,0,1,0,0,J Am Acad Dermatol,J Am Acad
 sonc50-621.xml,sonc50-621.nxml,first_reference_source,levenshtein,string,0,1,0,0,J Am Acad Dermatol,J Am Acad
+sonc50-621.xml,sonc50-621.nxml,first_reference_publication_type,exact,string,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,first_reference_publication_type,levenshtein,string,1,0,0,0,journal,journal
 sonc50-621.xml,sonc50-621.nxml,first_reference_volume,exact,string,1,0,0,0,33,33
 sonc50-621.xml,sonc50-621.nxml,first_reference_volume,levenshtein,string,1,0,0,0,33,33
 sonc50-621.xml,sonc50-621.nxml,first_reference_fpage,exact,string,1,0,0,0,161,161
@@ -8670,7 +9100,7 @@ sonc50-621.xml,sonc50-621.nxml,reference_year,levenshtein,partial_ulist,0,0,0,1,
 sonc50-621.xml,sonc50-621.nxml,reference_year,levenshtein,partial_ulist,0,0,0,1,,
 sonc50-621.xml,sonc50-621.nxml,reference_year,levenshtein,partial_ulist,0,0,0,1,,
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_list,0,1,0,0,J Am Acad Dermatol,J Am Acad
-sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_list,0,0,1,0,Dermatol Clin,
+sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_list,0,1,0,0,Dermatol Clin,Tumor invasion of the skin
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_list,0,1,0,0,J Am Acad Dermatol,tol Clin
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_list,0,1,0,0,Cancer,J Am Acad Dermatol
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_list,0,0,1,0,EJC Supplements,
@@ -8707,7 +9137,7 @@ sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_list,0,1,0,0,,Clin
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_list,0,0,0,1,,
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_list,0,1,0,0,,Ann Surg
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_list,0,1,0,0,J Am Acad Dermatol,J Am Acad
-sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_list,0,0,1,0,Dermatol Clin,
+sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_list,0,1,0,0,Dermatol Clin,Tumor invasion of the skin
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_list,0,1,0,0,J Am Acad Dermatol,tol Clin
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_list,0,1,0,0,Cancer,J Am Acad Dermatol
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_list,0,0,1,0,EJC Supplements,
@@ -8762,6 +9192,7 @@ sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_set,1,0,0,0,J Natl
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_set,1,0,0,0,Melanoma Res,Melanoma Res
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_set,0,0,1,0,Ann Surg Oncol,
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_set,0,1,0,0,Dermatol Clin,J Am Acad
+sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_set,0,1,0,0,,Tumor invasion of the skin
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_set,0,1,0,0,,tol Clin
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Acta Physiol Scand,Acta Physiol Scand
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Anesth Analg,Anesth Analg
@@ -8783,6 +9214,7 @@ sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_set,1,0,0,0,
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_set,0,1,0,0,Ann Surg Oncol,J Am Acad
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_set,0,1,0,0,Dermatol Clin,tol Clin
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_set,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,Tumor invasion of the skin
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_ulist,1,0,0,0,J Am Acad Dermatol,J Am Acad Dermatol
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_ulist,1,0,0,0,Cancer,Cancer
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_ulist,1,0,0,0,EJC Supplements,EJC Supplements
@@ -8805,7 +9237,7 @@ sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_ulist,1,0,0,0,C R 
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_ulist,1,0,0,0,Clin Otolaryngol,Clin Otolaryngol
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_ulist,1,0,0,0,Ann Surg,Ann Surg
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_ulist,0,1,0,0,Dermatol Clin,J Am Acad
-sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_ulist,0,0,1,0,J Am Acad Dermatol,
+sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_ulist,0,1,0,0,J Am Acad Dermatol,Tumor invasion of the skin
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_ulist,0,1,0,0,Ann Surg Oncol,tol Clin
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_ulist,0,0,1,0,Ann Surg Oncol,
 sonc50-621.xml,sonc50-621.nxml,reference_source,exact,partial_ulist,0,0,0,1,,
@@ -8843,8 +9275,8 @@ sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,1,0,0,
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Ann Surg,Ann Surg
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,Dermatol Clin,tol Clin
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,J Am Acad Dermatol,J Am Acad
+sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,Ann Surg Oncol,Tumor invasion of the skin
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,0,0,1,0,Ann Surg Oncol,
-sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,0,0,1,0,Ann Surg Oncol,
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
@@ -8857,6 +9289,160 @@ sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,0,0,0,
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
 sonc50-621.xml,sonc50-621.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,1,0,0,journal,book
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,1,0,0,,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,1,0,0,,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,1,0,0,,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,1,0,0,,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,1,0,0,,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_list,0,1,0,0,,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,journal,book
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_set,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_set,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_set,0,1,0,0,,book
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_set,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_set,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_set,0,1,0,0,,book
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,journal,book
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,exact,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,journal,book
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,1,0,journal,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,0,1,,
+sonc50-621.xml,sonc50-621.nxml,reference_publication_type,levenshtein,partial_ulist,0,0,0,1,,
 sonc50-621.xml,sonc50-621.nxml,reference_volume,exact,partial_list,1,0,0,0,33,33
 sonc50-621.xml,sonc50-621.nxml,reference_volume,exact,partial_list,0,0,1,0,26,
 sonc50-621.xml,sonc50-621.nxml,reference_volume,exact,partial_list,0,1,0,0,29,26
@@ -9521,6 +10107,8 @@ ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,first_reference_year,exact,st
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,first_reference_year,levenshtein,string,0,1,0,0,1950,1982
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,first_reference_source,exact,string,0,1,0,0,Br Med J,J Reumatol
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,first_reference_source,levenshtein,string,0,1,0,0,Br Med J,J Reumatol
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,first_reference_publication_type,exact,string,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,first_reference_publication_type,levenshtein,string,1,0,0,0,journal,journal
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,first_reference_volume,exact,string,0,1,0,0,16,9
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,first_reference_volume,levenshtein,string,0,1,0,0,16,9
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,first_reference_fpage,exact,string,0,1,0,0,1361,712
@@ -9880,7 +10468,7 @@ ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partia
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_list,0,1,0,0,Ann Rheum Dis,Acta Rheumatol Scand
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_list,1,0,0,0,J Reumatol,J Reumatol
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_list,0,1,0,0,Acta Rheumatol Scand,Ann Rheum Dis
-ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_list,0,0,1,0,Acta Rheumatol Scand,
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_list,0,1,0,0,Acta Rheumatol Scand,We have not found any reports on the treatment of symptomatic MSJ luxation
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_list,0,1,0,0,J Reumatol,Br Med J
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_list,0,1,0,0,Ann Rheum Dis,J Rheumatol
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_list,0,1,0,0,,Ann Rheum Dis
@@ -9889,7 +10477,7 @@ ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_list,0,1,0,0,Ann Rheum Dis,Acta Rheumatol Scand
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_list,1,0,0,0,J Reumatol,J Reumatol
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_list,0,1,0,0,Acta Rheumatol Scand,Ann Rheum Dis
-ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_list,0,0,1,0,Acta Rheumatol Scand,
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_list,0,1,0,0,Acta Rheumatol Scand,We have not found any reports on the treatment of symptomatic MSJ luxation
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_list,0,1,0,0,J Reumatol,Br Med J
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_list,0,1,0,0,Ann Rheum Dis,J Rheumatol
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_list,0,1,0,0,,Ann Rheum Dis
@@ -9898,13 +10486,13 @@ ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partia
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_set,1,0,0,0,Br Med J,Br Med J
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_set,1,0,0,0,J Reumatol,J Reumatol
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_set,1,0,0,0,J Rheumatol,J Rheumatol
-ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_set,0,0,0,1,,
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_set,0,1,0,0,,We have not found any reports on the treatment of symptomatic MSJ luxation
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Acta Rheumatol Scand,Acta Rheumatol Scand
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Ann Rheum Dis,Ann Rheum Dis
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Br Med J,Br Med J
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_set,1,0,0,0,J Reumatol,J Reumatol
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_set,1,0,0,0,J Rheumatol,J Rheumatol
-ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_set,0,0,0,1,,
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,We have not found any reports on the treatment of symptomatic MSJ luxation
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_ulist,1,0,0,0,Br Med J,Br Med J
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_ulist,1,0,0,0,J Rheumatol,J Rheumatol
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_ulist,1,0,0,0,Ann Rheum Dis,Ann Rheum Dis
@@ -9913,7 +10501,7 @@ ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partia
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_ulist,1,0,0,0,Acta Rheumatol Scand,Acta Rheumatol Scand
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_ulist,1,0,0,0,J Reumatol,J Reumatol
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_ulist,1,0,0,0,Ann Rheum Dis,Ann Rheum Dis
-ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_ulist,0,0,0,1,,
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,exact,partial_ulist,0,1,0,0,,We have not found any reports on the treatment of symptomatic MSJ luxation
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Br Med J,Br Med J
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,J Rheumatol,J Rheumatol
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Ann Rheum Dis,Ann Rheum Dis
@@ -9922,7 +10510,47 @@ ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Acta Rheumatol Scand,Acta Rheumatol Scand
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,J Reumatol,J Reumatol
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Ann Rheum Dis,Ann Rheum Dis
-ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_ulist,0,0,0,1,,
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,,We have not found any reports on the treatment of symptomatic MSJ luxation
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_list,0,1,0,0,journal,book
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_list,0,1,0,0,,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,journal,book
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_list,0,1,0,0,,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_set,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_set,0,1,0,0,,book
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_set,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_set,0,1,0,0,,book
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,exact,partial_ulist,0,1,0,0,,book
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_publication_type,levenshtein,partial_ulist,0,1,0,0,,book
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_volume,exact,partial_list,0,1,0,0,16,9
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_volume,exact,partial_list,0,1,0,0,7,16
 ORT-1745-3674-81-405.xml,ORT-1745-3674-81-405.nxml,reference_volume,exact,partial_list,0,1,0,0,45,16
@@ -10223,6 +10851,8 @@ soto131-469.xml,soto131-469.nxml,first_reference_year,exact,string,1,0,0,0,1927,
 soto131-469.xml,soto131-469.nxml,first_reference_year,levenshtein,string,1,0,0,0,1927,1927
 soto131-469.xml,soto131-469.nxml,first_reference_source,exact,string,1,0,0,0,Am J Anat,Am J Anat
 soto131-469.xml,soto131-469.nxml,first_reference_source,levenshtein,string,1,0,0,0,Am J Anat,Am J Anat
+soto131-469.xml,soto131-469.nxml,first_reference_publication_type,exact,string,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,first_reference_publication_type,levenshtein,string,1,0,0,0,journal,journal
 soto131-469.xml,soto131-469.nxml,first_reference_volume,exact,string,1,0,0,0,39,39
 soto131-469.xml,soto131-469.nxml,first_reference_volume,levenshtein,string,1,0,0,0,39,39
 soto131-469.xml,soto131-469.nxml,first_reference_fpage,exact,string,1,0,0,0,57,57
@@ -10667,6 +11297,48 @@ soto131-469.xml,soto131-469.nxml,reference_source,levenshtein,partial_ulist,1,0,
 soto131-469.xml,soto131-469.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Acta Otolaryngol,Acta Otolaryngol
 soto131-469.xml,soto131-469.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Pract Otorhinolaryngol,Pract Otorhinolaryngol
 soto131-469.xml,soto131-469.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Eur Arch Otorhinolaryngol,Eur Arch Otorhinolaryngol
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_set,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_set,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+soto131-469.xml,soto131-469.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
 soto131-469.xml,soto131-469.nxml,reference_volume,exact,partial_list,1,0,0,0,39,39
 soto131-469.xml,soto131-469.nxml,reference_volume,exact,partial_list,1,0,0,0,27,27
 soto131-469.xml,soto131-469.nxml,reference_volume,exact,partial_list,1,0,0,0,91,91
@@ -11071,6 +11743,8 @@ apa0100-0653.xml,apa0100-0653.nxml,first_reference_year,exact,string,1,0,0,0,199
 apa0100-0653.xml,apa0100-0653.nxml,first_reference_year,levenshtein,string,1,0,0,0,1993,1993
 apa0100-0653.xml,apa0100-0653.nxml,first_reference_source,exact,string,1,0,0,0,Br Med J,Br Med J
 apa0100-0653.xml,apa0100-0653.nxml,first_reference_source,levenshtein,string,1,0,0,0,Br Med J,Br Med J
+apa0100-0653.xml,apa0100-0653.nxml,first_reference_publication_type,exact,string,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,first_reference_publication_type,levenshtein,string,1,0,0,0,journal,journal
 apa0100-0653.xml,apa0100-0653.nxml,first_reference_volume,exact,string,1,0,0,0,306,306
 apa0100-0653.xml,apa0100-0653.nxml,first_reference_volume,levenshtein,string,1,0,0,0,306,306
 apa0100-0653.xml,apa0100-0653.nxml,first_reference_fpage,exact,string,1,0,0,0,24,24
@@ -12167,12 +12841,12 @@ apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,B
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Annu Rev Nutr,Annu Rev Nutr
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Hypertension,Hypertension
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Br Med J,Br Med J
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,0,0,1,0,"Mothers, babies and disease in later life",
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,"Mothers, babies and disease in later life","Mothers, babies and disease in later life"
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Int J Epidemiol,Int J Epidemiol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Nutr Bull,Nutr Bull
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,0,0,1,0,Fetus into man,
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Fetus into man,Fetus into man
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Clin Sci,Clin Sci
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,0,0,1,0,Fetal and neonatal physiology,
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,0,1,0,0,Fetal and neonatal physiology,Mechanisms of transfer across the human placenta
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Int J Dev Biol,Int J Dev Biol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Br Med J,Br Med J
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Br J Obstet Gynaecol,Br J Obstet Gynaecol
@@ -12187,7 +12861,7 @@ apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,P
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Clin Sci,Clin Sci
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Br Med J,Br Med J
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Gend Med,Gend Med
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,0,0,1,0,The placenta and human developmental programming,
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,The placenta and human developmental programming,The placenta and human developmental programming
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Int J Dev Biol,Int J Dev Biol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,Lancet,Lancet
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_list,1,0,0,0,J Agric Sci,J Agric Sci
@@ -12195,12 +12869,12 @@ apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Annu Rev Nutr,Annu Rev Nutr
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Hypertension,Hypertension
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Br Med J,Br Med J
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,0,0,1,0,"Mothers, babies and disease in later life",
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,"Mothers, babies and disease in later life","Mothers, babies and disease in later life"
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Int J Epidemiol,Int J Epidemiol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Nutr Bull,Nutr Bull
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,0,0,1,0,Fetus into man,
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Fetus into man,Fetus into man
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Clin Sci,Clin Sci
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,0,0,1,0,Fetal and neonatal physiology,
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,0,1,0,0,Fetal and neonatal physiology,Mechanisms of transfer across the human placenta
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Int J Dev Biol,Int J Dev Biol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Br Med J,Br Med J
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Br J Obstet Gynaecol,Br J Obstet Gynaecol
@@ -12215,7 +12889,7 @@ apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Clin Sci,Clin Sci
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Br Med J,Br Med J
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Gend Med,Gend Med
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,0,0,1,0,The placenta and human developmental programming,
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,The placenta and human developmental programming,The placenta and human developmental programming
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Int J Dev Biol,Int J Dev Biol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Lancet,Lancet
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_list,1,0,0,0,J Agric Sci,J Agric Sci
@@ -12227,18 +12901,18 @@ apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,Br
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,Br Med J,Br Med J
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,Clin Sci,Clin Sci
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,Diabetes Care,Diabetes Care
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,Fetus into man,Fetus into man
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,Gend Med,Gend Med
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,Hypertension,Hypertension
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,Int J Dev Biol,Int J Dev Biol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,Int J Epidemiol,Int J Epidemiol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,J Agric Sci,J Agric Sci
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,Lancet,Lancet
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,"Mothers, babies and disease in later life","Mothers, babies and disease in later life"
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,Nutr Bull,Nutr Bull
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,Pediatrics,Pediatrics
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,0,0,1,0,Fetal and neonatal physiology,
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,0,0,1,0,Fetus into man,
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,0,0,1,0,"Mothers, babies and disease in later life",
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,0,0,1,0,The placenta and human developmental programming,
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,1,0,0,0,The placenta and human developmental programming,The placenta and human developmental programming
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_set,0,1,0,0,Fetal and neonatal physiology,Mechanisms of transfer across the human placenta
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Acta Obstet Gynecol Scand,Acta Obstet Gynecol Scand
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Am J Hum Biol,Am J Hum Biol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Annu Rev Nutr,Annu Rev Nutr
@@ -12247,24 +12921,26 @@ apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Br Med J,Br Med J
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Clin Sci,Clin Sci
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Diabetes Care,Diabetes Care
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Fetus into man,Fetus into man
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Gend Med,Gend Med
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Hypertension,Hypertension
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Int J Dev Biol,Int J Dev Biol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Int J Epidemiol,Int J Epidemiol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,J Agric Sci,J Agric Sci
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Lancet,Lancet
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,"Mothers, babies and disease in later life","Mothers, babies and disease in later life"
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Nutr Bull,Nutr Bull
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Pediatrics,Pediatrics
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,0,0,1,0,Fetal and neonatal physiology,
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,0,0,1,0,Fetus into man,
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,0,0,1,0,"Mothers, babies and disease in later life",
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,0,0,1,0,The placenta and human developmental programming,
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,1,0,0,0,The placenta and human developmental programming,The placenta and human developmental programming
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_set,0,1,0,0,Fetal and neonatal physiology,Mechanisms of transfer across the human placenta
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Br Med J,Br Med J
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Annu Rev Nutr,Annu Rev Nutr
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Hypertension,Hypertension
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Br Med J,Br Med J
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,"Mothers, babies and disease in later life","Mothers, babies and disease in later life"
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Int J Epidemiol,Int J Epidemiol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Nutr Bull,Nutr Bull
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Fetus into man,Fetus into man
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Clin Sci,Clin Sci
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Int J Dev Biol,Int J Dev Biol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Br Med J,Br Med J
@@ -12280,19 +12956,19 @@ apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Clin Sci,Clin Sci
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Br Med J,Br Med J
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Gend Med,Gend Med
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,The placenta and human developmental programming,The placenta and human developmental programming
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Int J Dev Biol,Int J Dev Biol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,Lancet,Lancet
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,1,0,0,0,J Agric Sci,J Agric Sci
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,0,0,1,0,"Mothers, babies and disease in later life",
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,0,0,1,0,Fetus into man,
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,0,0,1,0,Fetal and neonatal physiology,
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,0,0,1,0,The placenta and human developmental programming,
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,exact,partial_ulist,0,1,0,0,Fetal and neonatal physiology,Mechanisms of transfer across the human placenta
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Br Med J,Br Med J
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Annu Rev Nutr,Annu Rev Nutr
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Hypertension,Hypertension
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Br Med J,Br Med J
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,"Mothers, babies and disease in later life","Mothers, babies and disease in later life"
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Int J Epidemiol,Int J Epidemiol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Nutr Bull,Nutr Bull
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Fetus into man,Fetus into man
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Clin Sci,Clin Sci
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Int J Dev Biol,Int J Dev Biol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Br Med J,Br Med J
@@ -12308,13 +12984,127 @@ apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Clin Sci,Clin Sci
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Br Med J,Br Med J
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Gend Med,Gend Med
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,The placenta and human developmental programming,The placenta and human developmental programming
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Int J Dev Biol,Int J Dev Biol
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Lancet,Lancet
 apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,J Agric Sci,J Agric Sci
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,0,0,1,0,"Mothers, babies and disease in later life",
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,0,0,1,0,Fetus into man,
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,0,0,1,0,Fetal and neonatal physiology,
-apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,0,0,1,0,The placenta and human developmental programming,
+apa0100-0653.xml,apa0100-0653.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,Fetal and neonatal physiology,Mechanisms of transfer across the human placenta
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_set,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_set,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_set,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_set,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,book,book
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apa0100-0653.xml,apa0100-0653.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
 apa0100-0653.xml,apa0100-0653.nxml,reference_volume,exact,partial_list,1,0,0,0,306,306
 apa0100-0653.xml,apa0100-0653.nxml,reference_volume,exact,partial_list,1,0,0,0,25,25
 apa0100-0653.xml,apa0100-0653.nxml,reference_volume,exact,partial_list,1,0,0,0,49,49
@@ -12987,12 +13777,14 @@ apha0202-0379.xml,apha0202-0379.nxml,first_reference_author_given_names,exact,li
 apha0202-0379.xml,apha0202-0379.nxml,first_reference_author_given_names,levenshtein,list,0,1,0,0,['WH'],['W H']
 apha0202-0379.xml,apha0202-0379.nxml,first_reference_author_full_names,exact,list,0,1,0,0,['WH Dantzler'],['W H Dantzler']
 apha0202-0379.xml,apha0202-0379.nxml,first_reference_author_full_names,levenshtein,list,1,0,0,0,['WH Dantzler'],['W H Dantzler']
-apha0202-0379.xml,apha0202-0379.nxml,first_reference_title,exact,string,0,0,1,0,Unpublished remarks,
-apha0202-0379.xml,apha0202-0379.nxml,first_reference_title,levenshtein,string,0,0,1,0,Unpublished remarks,
+apha0202-0379.xml,apha0202-0379.nxml,first_reference_title,exact,string,0,1,0,0,Unpublished remarks,Unpublished remarks. The William H. Dantzler Symposium
+apha0202-0379.xml,apha0202-0379.nxml,first_reference_title,levenshtein,string,0,1,0,0,Unpublished remarks,Unpublished remarks. The William H. Dantzler Symposium
 apha0202-0379.xml,apha0202-0379.nxml,first_reference_year,exact,string,0,1,0,0,2006,2006-04-06
 apha0202-0379.xml,apha0202-0379.nxml,first_reference_year,levenshtein,string,0,1,0,0,2006,2006-04-06
 apha0202-0379.xml,apha0202-0379.nxml,first_reference_source,exact,string,0,0,1,0,The William H. Dantzler Symposium,
 apha0202-0379.xml,apha0202-0379.nxml,first_reference_source,levenshtein,string,0,0,1,0,The William H. Dantzler Symposium,
+apha0202-0379.xml,apha0202-0379.nxml,first_reference_publication_type,exact,string,1,0,0,0,book,book
+apha0202-0379.xml,apha0202-0379.nxml,first_reference_publication_type,levenshtein,string,1,0,0,0,book,book
 apha0202-0379.xml,apha0202-0379.nxml,first_reference_volume,exact,string,0,0,0,1,,
 apha0202-0379.xml,apha0202-0379.nxml,first_reference_volume,levenshtein,string,0,0,0,1,,
 apha0202-0379.xml,apha0202-0379.nxml,first_reference_fpage,exact,string,0,0,0,1,,
@@ -13391,7 +14183,7 @@ apha0202-0379.xml,apha0202-0379.nxml,reference_year,levenshtein,partial_ulist,1,
 apha0202-0379.xml,apha0202-0379.nxml,reference_year,levenshtein,partial_ulist,1,0,0,0,1964,1964
 apha0202-0379.xml,apha0202-0379.nxml,reference_year,levenshtein,partial_ulist,1,0,0,0,1973,1973
 apha0202-0379.xml,apha0202-0379.nxml,reference_year,levenshtein,partial_ulist,0,1,0,0,2006,2006-04-06
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_list,0,0,1,0,The William H. Dantzler Symposium,
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_list,0,1,0,0,The William H. Dantzler Symposium,Unpublished remarks. The William H. Dantzler Symposium
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_list,1,0,0,0,Am J Physiol Renal Physiol,Am J Physiol Renal Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_list,1,0,0,0,Physiol Rev,Physiol Rev
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_list,1,0,0,0,Am J Physiol Renal Physiol,Am J Physiol Renal Physiol
@@ -13400,8 +14192,8 @@ apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_list,1,0,0,0
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_list,0,1,0,0,Kidney Int,International Society of Nephrology
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_list,0,1,0,0,Zoologiska Bidrag Från Uppsala,Zoologiska Bidrag Frå n Uppsala
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_list,1,0,0,0,Am J Physiol,Am J Physiol
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_list,0,0,1,0,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis,
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_list,0,0,1,0,The William H. Dantzler Symposium,
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_list,1,0,0,0,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_list,0,1,0,0,The William H. Dantzler Symposium,Unpublished remarks. The William H. Dantzler Symposium
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Am J Physiol Renal Physiol,Am J Physiol Renal Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Physiol Rev,Physiol Rev
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Am J Physiol Renal Physiol,Am J Physiol Renal Physiol
@@ -13410,33 +14202,35 @@ apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_list,1
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_list,0,1,0,0,Kidney Int,International Society of Nephrology
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Zoologiska Bidrag Från Uppsala,Zoologiska Bidrag Frå n Uppsala
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Am J Physiol,Am J Physiol
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_list,0,0,1,0,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis,
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_list,1,0,0,0,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_set,1,0,0,0,Am J Physiol,Am J Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_set,1,0,0,0,Am J Physiol Regul Integr Comp Physiol,Am J Physiol Regul Integr Comp Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_set,1,0,0,0,Am J Physiol Renal Physiol,Am J Physiol Renal Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_set,1,0,0,0,Kidney Int,Kidney Int
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_set,1,0,0,0,Physiol Rev,Physiol Rev
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_set,0,0,1,0,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis,
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_set,1,0,0,0,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_set,0,1,0,0,The William H. Dantzler Symposium,International Society of Nephrology
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_set,0,1,0,0,Zoologiska Bidrag Från Uppsala,Zoologiska Bidrag Frå n Uppsala
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_set,0,1,0,0,Zoologiska Bidrag Från Uppsala,Unpublished remarks. The William H. Dantzler Symposium
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_set,0,1,0,0,,Zoologiska Bidrag Frå n Uppsala
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Am J Physiol,Am J Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Am J Physiol Regul Integr Comp Physiol,Am J Physiol Regul Integr Comp Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Am J Physiol Renal Physiol,Am J Physiol Renal Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Kidney Int,Kidney Int
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Physiol Rev,Physiol Rev
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_set,1,0,0,0,Zoologiska Bidrag Från Uppsala,Zoologiska Bidrag Frå n Uppsala
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_set,0,1,0,0,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis,International Society of Nephrology
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_set,0,0,1,0,The William H. Dantzler Symposium,
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_set,0,1,0,0,The William H. Dantzler Symposium,Unpublished remarks. The William H. Dantzler Symposium
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_set,0,1,0,0,,International Society of Nephrology
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_ulist,1,0,0,0,Am J Physiol Renal Physiol,Am J Physiol Renal Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_ulist,1,0,0,0,Physiol Rev,Physiol Rev
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_ulist,1,0,0,0,Am J Physiol Renal Physiol,Am J Physiol Renal Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_ulist,1,0,0,0,Kidney Int,Kidney Int
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_ulist,1,0,0,0,Am J Physiol Regul Integr Comp Physiol,Am J Physiol Regul Integr Comp Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_ulist,1,0,0,0,Am J Physiol,Am J Physiol
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_ulist,0,0,1,0,The William H. Dantzler Symposium,
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_ulist,1,0,0,0,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_ulist,0,1,0,0,The William H. Dantzler Symposium,Unpublished remarks. The William H. Dantzler Symposium
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_ulist,0,1,0,0,Kidney Int,International Society of Nephrology
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_ulist,0,1,0,0,Zoologiska Bidrag Från Uppsala,Zoologiska Bidrag Frå n Uppsala
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,exact,partial_ulist,0,0,1,0,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis,
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Am J Physiol Renal Physiol,Am J Physiol Renal Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Physiol Rev,Physiol Rev
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Am J Physiol Renal Physiol,Am J Physiol Renal Physiol
@@ -13444,9 +14238,53 @@ apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Am J Physiol Regul Integr Comp Physiol,Am J Physiol Regul Integr Comp Physiol
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Zoologiska Bidrag Från Uppsala,Zoologiska Bidrag Frå n Uppsala
 apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Am J Physiol,Am J Physiol
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,The William H. Dantzler Symposium,International Society of Nephrology
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,0,0,1,0,Kidney Int,
-apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,0,0,1,0,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis,
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,1,0,0,0,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis,Relationship of the Measured Osmolality in the Mammalian Renal Papilla to the Formation of a Concentrated Urine During Antidiuresis
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,The William H. Dantzler Symposium,Unpublished remarks. The William H. Dantzler Symposium
+apha0202-0379.xml,apha0202-0379.nxml,reference_source,levenshtein,partial_ulist,0,1,0,0,Kidney Int,International Society of Nephrology
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_list,1,0,0,0,book,book
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_list,1,0,0,0,book,book
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,book,book
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_list,1,0,0,0,book,book
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_set,1,0,0,0,book,book
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_set,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_set,1,0,0,0,book,book
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_set,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,book,book
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,exact,partial_ulist,1,0,0,0,book,book
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,book,book
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,journal,journal
+apha0202-0379.xml,apha0202-0379.nxml,reference_publication_type,levenshtein,partial_ulist,1,0,0,0,book,book
 apha0202-0379.xml,apha0202-0379.nxml,reference_volume,exact,partial_list,0,0,0,1,,
 apha0202-0379.xml,apha0202-0379.nxml,reference_volume,exact,partial_list,1,0,0,0,284,284
 apha0202-0379.xml,apha0202-0379.nxml,reference_volume,exact,partial_list,1,0,0,0,82,82
