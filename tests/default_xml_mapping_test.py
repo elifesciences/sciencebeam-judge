@@ -32,7 +32,7 @@ def _parse_xml(*args, **kwargs):
 class TestDefaultXmlMapping(object):
     class TestJats(object):
         class TestJatsReferenceAuthorNames(object):
-            def test_should_parse_biorxiv_style_jats(self, default_xml_mapping):
+            def test_should_parse_mixed_style_jats(self, default_xml_mapping):
                 xml = E.article(E.back(E(
                     'ref-list',
                     E.ref(E('mixed-citation', E(
@@ -72,7 +72,7 @@ class TestDefaultXmlMapping(object):
                     {'items': ['GivenName2.1 Surname2.1']}
                 ]
 
-            def test_should_parse_pmc_style_jats(self, default_xml_mapping):
+            def test_should_parse_element_style_jats(self, default_xml_mapping):
                 xml = E.article(E.back(E(
                     'ref-list',
                     E.ref(E('element-citation', E('person-group', E.name(
@@ -108,6 +108,55 @@ class TestDefaultXmlMapping(object):
                     {'items': ['GivenName1.1 Surname1.1', 'GivenName1.2 Surname1.2']},
                     {'items': ['GivenName2.1 Surname2.1']}
                 ]
+
+        class TestJatsReferenceTitle(object):
+            def test_should_parse_mixed_style_journal_article_title_and_source(
+                    self, default_xml_mapping):
+                xml = E.article(E.back(E(
+                    'ref-list',
+                    E.ref(E.label('1'), E(
+                        'mixed-citation',
+                        E('article-title', 'Article 1'),
+                        E.source('Journal 1'),
+                        {'publication-type': 'journal'}
+                    ))
+                )))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'reference_title',
+                        'reference_source',
+                        'reference_publication_type'
+                    ]
+                )
+                assert result.get('reference_title') == ['Article 1']
+                assert result.get('reference_source') == ['Journal 1']
+                assert result.get('reference_publication_type') == ['journal']
+
+            def test_should_parse_mixed_style_book_chapter_title_and_source(
+                    self, default_xml_mapping):
+                xml = E.article(E.back(E(
+                    'ref-list',
+                    E.ref(E.label('1'), E(
+                        'mixed-citation',
+                        E('chapter-title', 'Chapter 1'),
+                        E.source('Book 1'),
+                        {'publication-type': 'book'}
+                    ))
+                )))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'reference_title',
+                        'reference_source',
+                        'reference_publication_type'
+                    ]
+                )
+                assert result.get('reference_title') == ['Chapter 1']
+                assert result.get('reference_source') == ['Book 1']
+                assert result.get('reference_publication_type') == ['book']
 
     class TestTei(object):
         class TestTeiReferenceAuthorNames(object):
@@ -146,6 +195,51 @@ class TestDefaultXmlMapping(object):
                     {'items': ['GivenName1.1 Surname1.1', 'GivenName1.2 Surname1.2']},
                     {'items': ['GivenName2.1 Surname2.1']}
                 ]
+
+        class TestTeiReferenceTitle(object):
+            def test_should_parse_tei_journal_article_and_source(
+                    self, default_xml_mapping):
+                xml = E.TEI(E.text(E.back(E.div(E.listBibl(
+                    E.biblStruct(E.analytic(
+                        E.title('Article 1', level='a', type='main'),
+                    ), E.monogr(
+                        E.title('Journal 1', level='j')
+                    ))
+                )))))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'reference_title',
+                        'reference_source',
+                        'reference_publication_type'
+                    ]
+                )
+                assert result.get('reference_title') == ['Article 1']
+                assert result.get('reference_source') == ['Journal 1']
+                assert result.get('reference_publication_type') == ['journal']
+
+            def test_should_parse_tei_book_chapter_and_source(
+                    self, default_xml_mapping):
+                xml = E.TEI(E.text(E.back(E.div(E.listBibl(
+                    E.biblStruct(E.analytic(
+                        E.title('Chapter 1', level='a', type='main')
+                    ), E.monogr(
+                        E.title('Book 1', level='m')
+                    ))
+                )))))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'reference_title',
+                        'reference_source',
+                        'reference_publication_type'
+                    ]
+                )
+                assert result.get('reference_title') == ['Chapter 1']
+                assert result.get('reference_source') == ['Book 1']
+                assert result.get('reference_publication_type') == ['book']
 
         class TestTeiAbstractText(object):
             def test_should_return_without_paragraph(self, default_xml_mapping):

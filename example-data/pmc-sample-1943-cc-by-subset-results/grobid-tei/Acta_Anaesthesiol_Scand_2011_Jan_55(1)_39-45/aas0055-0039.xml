@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" 
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/xsd/Grobid.xsd"
  xmlns:xlink="http://www.w3.org/1999/xlink">
 	<teiHeader xml:lang="en">
-		<encodingDesc>
-			<appInfo>
-				<application version="0.5.4" ident="GROBID" when="2019-04-16T14:14+0000">
-					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
-				</application>
-			</appInfo>
-		</encodingDesc>
 		<fileDesc>
 			<titleStmt>
 				<title level="a" type="main">Phosphate-containing dialysis solution prevents hypophosphatemia during continuous renal replacement therapy</title>
@@ -85,20 +78,28 @@ xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/
 				</biblStruct>
 			</sourceDesc>
 		</fileDesc>
-		<profileDesc>
+
+		<encodingDesc>
+			<appInfo>
+				<application version="0.5.6" ident="GROBID" when="2020-04-14T17:21+0000">
+					<ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+				</application>
+			</appInfo>
+		</encodingDesc>		<profileDesc>
 			<abstract/>
 		</profileDesc>
 	</teiHeader>
 	<text xml:lang="en">
 		<body>
-<div xmlns="http://www.tei-c.org/ns/1.0"><p>T HE majority of patients on continuous renal replacement therapy (CRRT) will require phosphate supplementation shortly after CRRT initiation. <ref type="bibr" target="#b0">1</ref> One reason is that critically ill patients present several conditions predisposing hypophosphatemia such as sepsis, alcohol withdrawal, malnutrition, catecholamines, intravenous glucose infusion, hyperventilation, diuretics and rhabdomyolysis. <ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref> Another reason is the CRRT technique that achieves high clearance of small solutes, such as phosphate. <ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref> In addition, low serum phosphate levels may also occur in the setting of extracellular to intracellular shifts that occur with respiratory alkalosis, high blood concentrations of stress hormones (i.e., insulin, glucagon, adrenalin, cortisol) and with refeeding syndrome.</p><p>As phosphate is a constituent of enzymes and intermediate phosphorylated compounds, it plays a key role in cellular metabolism and is essential in several biological processes. Serum phosphate concentration is maintained between 0.81 and 1.45 mmol/l. By convention, hypophosphatemia is often graded as mild ( o0.81 mmol/l), moderate ( o0.61 mmol/l) and severe (o0.32 mmol/l). Severe hypophosphatemia has been linked to increased mortality in surgical intensive care patients <ref type="bibr" target="#b6">7</ref> and was recently shown to serve as an independent mortality predictor in sepsis. <ref type="bibr" target="#b9">10</ref> Symptoms of hypophosphatemia are usually only seen in patients with moderate or severe hypophosphatemia and include ventilatory muscle weakness, cardiac failure, insulin resistance, hemolysis, impaired platelet and white blood cell function, rhabdomyolysis, and, in rare cases, neurologic disorders. <ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref> However, all these alternations have been shown to reverse by simply correcting the phosphate levels. <ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b11">12,</ref><ref type="bibr" target="#b12">13,</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref> Phosphate is supplemented intravenously in symptomatic patients, but phosphate has also been added directly to the dialysate and replacement fluids, <ref type="bibr" target="#b0">1,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b21">22</ref> with a risk of precipitation with calcium.</p><p>The development of many electrolyte disturbances in the intensive care unit (ICU) could be prevented by the use of better adapted dialysis fluids. This study evaluated the possibility to achieve and maintain a normal phosphate balance over time in patients on CRRT by using a new phosphatecontaining dialysis fluid and replacement fluid.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>T HE majority of patients on continuous renal replacement therapy (CRRT) will require phosphate supplementation shortly after CRRT initiation. <ref type="bibr" target="#b0">1</ref> One reason is that critically ill patients present several conditions predisposing hypophosphatemia such as sepsis, alcohol withdrawal, malnutrition, catecholamines, intravenous glucose infusion, hyperventilation, diuretics and rhabdomyolysis. <ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref> Another reason is the CRRT technique that achieves high clearance of small solutes, such as phosphate. <ref type="bibr" target="#b4">[5]</ref><ref type="bibr" target="#b5">[6]</ref><ref type="bibr" target="#b6">[7]</ref><ref type="bibr" target="#b7">[8]</ref><ref type="bibr" target="#b8">[9]</ref> In addition, low serum phosphate levels may also occur in the setting of extracellular to intracellular shifts that occur with respiratory alkalosis, high blood concentrations of stress hor-mones (i.e., insulin, glucagon, adrenalin, cortisol) and with refeeding syndrome.</p><p>As phosphate is a constituent of enzymes and intermediate phosphorylated compounds, it plays a key role in cellular metabolism and is essential in several biological processes. Serum phosphate concentration is maintained between 0.81 and 1.45 mmol/l. By convention, hypophosphatemia is often graded as mild ( o0.81 mmol/l), moderate ( o0.61 mmol/l) and severe (o0.32 mmol/l). Severe hypophosphatemia has been linked to increased mortality in surgical intensive care patients <ref type="bibr" target="#b6">7</ref> and was recently shown to serve as an independent mortality predictor in sepsis. <ref type="bibr" target="#b9">10</ref> Symptoms of hypophosphatemia are usually only seen in patients with moderate or severe hypophosphatemia and include ventilatory muscle weakness, cardiac failure, insulin resistance, hemolysis, impaired platelet and white blood cell function, rhabdomyolysis, and, in rare cases, neurologic disorders. <ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref><ref type="bibr" target="#b13">[14]</ref><ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref> However, all these alternations have been shown to reverse by simply correcting the phosphate levels. <ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b6">7,</ref><ref type="bibr" target="#b11">12,</ref><ref type="bibr" target="#b12">13,</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref> Phosphate is supplemented intravenously in symptomatic patients, but phosphate has also been added directly to the dialysate and replacement fluids, 1,21,22 with a risk of precipitation with calcium.</p><p>The development of many electrolyte disturbances in the intensive care unit (ICU) could be prevented by the use of better adapted dialysis fluids. This study evaluated the possibility to achieve and maintain a normal phosphate balance over time in patients on CRRT by using a new phosphatecontaining dialysis fluid and replacement fluid.</p></div>
 <div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods</head></div>
 <div xmlns="http://www.tei-c.org/ns/1.0"><head>Fluid composition and study design</head><p>We used a new phosphate-containing solution for dialysis that in addition to standard electrolytes also contains 4.0 mmol of potassium and 1.2 mmol of phosphate (Phoxilium, Gambro Lundia AB, Lund, Sweden, <ref type="table" target="#tab_0">Table 1</ref>). As a control, we used our routine dialysis solution that does not contain phosphate (Hemosol B0, Gambro Lundia AB, <ref type="table" target="#tab_0">Table 1</ref>). At our ICU at Lund University Hospital we applied three regimes, half a year each, for all patients requiring CRRT treatment. The treatment mode used was CVVHDF. During the first period (group 1), all the patients received dialysate solution and replacement solution that did not contain phosphate (Hemosol B0), during the next half year (group 2), all patients requiring CRRT treatment received the phosphatecontaining solution as dialysis solution and a phosphate-free replacement solution (Hemosol B0) and finally during the last half year period (group 3), the patients received the phosphate-containing solution both as a dialysis solution and as a replacement solution. Blood sampling was performed according to normal routines at our department, but the physicians in charge continuously modified the CRRT treatment settings and the phosphate supplementation according to the patients' ongoing clinical needs. The physicians treating the patients did not have knowledge of the study setting during the treatments, but they were fully aware of the fluids and their contents.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Patients and CRRT treatments</head><p>After acceptance by the Regional Ethical Review Board (DNR 570/2008), Lund University, Sweden, we evaluated retrospectively the first 14 patients who did not fulfill the exclusion criteria in each group, a total of 42 consecutive patients <ref type="table">(Table 2)</ref>. Patients were excluded if they had chronic kidney disease, if they had received intermittent dialysis before the ICU stay, if the CRRT treatment lasted  <ref type="table">Table 2</ref> Main diagnoses leading to intensive care of the study groups. o10 h or if they were under the age of 18 years. In all patients, the Gambro Prismaflex CRRT machine with the CVVHDF modality and a Hospal M100 filter (Hospal Industrie, Meyziew, France) was used. The blood flow, the dialysis fluid flow, the replacement fluid flow, the anticoagulation used and the fluid removal were set according to the patients' conditions and requirements. Of the replacement fluid, 500 ml/h was postfilter and the rest was prefilter in each treatment according to the general standard at the department. Intravenous phosphate addition was prescribed when serum phosphate was o0.8 mmol/l, also according to the general standard at the department. Nutrition was given only if the patients were hemodynamically stable as parenteral or enteral or both during the study period.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Clinical parameters of the patients</head><p>All patients had regular measurements of serum sodium, potassium, ionized calcium, pH, pCO 2 and bicarbonate either from an arterial line or from a central venous line before the start and regularly every fourth hour all through the CRRT treatment during 1, 2, 3, 4 and maximum 5 days. For phosphate and magnesium analyses, blood samples were taken at 5:00 hours in the morning and at 17:00 hours in the afternoon before the start and during the CRRT treatment days. Blood samples were analyzed at the hospital laboratory (Laboratory for Clinical Chemistry, Lund University Hospital, Lund, Sweden). The results are presented as means AE SD for normal distributed data, median and range for remaining data. In addition, baseline characteristics of study patients and delivered CRRT were registered <ref type="table">(Table 3)</ref>. Hypophosphatemia has been defined as condition where the serum phosphate level is o0.81 mmol/l.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistics</head><p>One-way repeated measures analysis of variance was used. The statistical program used was SigmaStat, version 3.5, for Windows XP. Differences were considered to be significant for Po0.05.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>Main diagnoses leading to intensive care of the study groups, baseline characteristics, timing of initiation of CRRT, ultrafiltration rate, duration of the CRRT and anticoagulation were statistically similar between the three groups <ref type="table">(Tables 2 and 3</ref>).</p><p>The incidence of hypophosphatemia occurred in 11 of 14 patients in group 1, where the patients did not receive the phosphate-containing dialysis solution, but received phosphate intravenously based on the serum phosphate values <ref type="figure" target="#fig_0">(Fig. 1)</ref>. In group 2, where the patients received a phosphate-containing solution as the dialysis solution and a phos- <ref type="table">Table 3</ref> Baseline characteristics of study patients and delivered CRRT. zThe dialysis dose in CRRT is expressed in terms of ml of effluent (dialysate1ultrafiltrate) per kg of body weight (BW) per hour (ml/kg/ h). <ref type="bibr" target="#b22">23</ref> §Statistical differences were as follows: between groups 1 and 2 (P 5 0.046), between groups 1 and 3 (P 0.001), and between groups 2 and 3 (P 5 0.003).</p><p>phate-free solution as the replacement solution, five of 14 patients had at least one episode of hypophosphatemia <ref type="figure" target="#fig_0">(Fig. 1)</ref>. No episodes of hypophosphatemia were detected in group 3. The serum phosphate level was 1.90 mmol/l at baseline and 0.99 mmol/l during CRRT treatment in group 1. In group 2, the corresponding values were 1.54 and 1.20 mmol/l, and in group 3, they were 1.83 and 1.43 mmol/l <ref type="table" target="#tab_5">(Table 5</ref>). However, due to the simultaneous intake of enteral/parenteral solutions, two of 14 of the patients in group 3 had a temporary increase in serum phosphate (o1.9 mmol/l), but there were no cases of hyperphosphatemia that required a withdrawal of the phosphate-containing dialysis solution from the treatment.</p><p>Phosphate intake was from nutrition and from intravenous supplementation. The average phosphate input calculated from the total nutrition was 18 mmol/CRRT treatment/day for all groups. Short-acting insulin was administered as infusion in order to achieve a blood glucose level between 5 and 8 mmol/l. Phosphate was supplemented intravenously if serum phosphate declined to o0.80 mmol/l. In group 1, the average phosphate supplementation was 10 mmol/CRRT treatment/ day. In group 2, the average supplementation was 5 mmol/CRRT treatment and day, and in group 3, there was no intravenous supplementation.</p><p>There was a decline in phosphate levels during CRRT treatment in both groups 1 and 2. In group 1, serum phosphate declined constantly, although the patients received phosphate supplementation intravenously <ref type="figure">(Fig. 2)</ref>. In group 2, the phosphate levels were unstable and reached a low level in the end of the study. In group 3, where the patients received a phosphate-containing solution both as the dialysis solution and the replacement solution, none of the patients had episodes of hypophosphatemia <ref type="figure">(Fig. 2)</ref>. Phosphate remained stable in this patient population during the entire study.</p><p>For group 3, we also evaluated any adverse event in sodium, potassium and magnesium homeostasis. There was a significant increase in sodium (P 0.001) and a slight increase in ionized calcium (P 5 0.029), whereas potassium and magnesium remained stable during the entire study as summarized in <ref type="table" target="#tab_4">Table 4</ref>. A comparison between the study groups revealed that there was a significant difference in phosphate (P 0.001), ionized calcium (P 5 0.004) and bicarbonate (P 5 0.045) between the groups <ref type="table" target="#tab_5">(Table 5</ref>). The pH and pCO 2 measurements were obtained at baseline and rapidly declined toward normal values after starting the CRRT treatment and remained essentially unchanged during the treatment in all groups <ref type="table" target="#tab_4">(Table 4)</ref>.</p></div>
-<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>This study demonstrates that the new phosphatecontaining dialysis solution is safe, reduces the variability of serum phosphate levels during   <ref type="figure">Fig. 2</ref>. Serum phosphate levels during the continuous renal replacement therapy treatment. Group 1, receiving Hemosol B0 (diamond), group 2, receiving the phosphate-containing dialysis fluid as the dialysis fluid and Hemosol B0 as the replacement fluid (triangle), and group 3, receiving the phosphate-containing dialysis fluid (square). Groups 2 and 3 were statistically compared with group 1. n 5 14 patients/group, **Po0.01, ***Po0.001.</p><p>CRRT and reduces the incidence of hypophosphatemia.</p><p>Various protocols for intravenous phosphate supplementation have been studied in the last 30 years. Today, there is a trend toward the use of larger and faster boluses of phosphate because of high failure of repletion (20-70%) and the need for additional phosphate administration. <ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref><ref type="bibr" target="#b27">[28]</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref><ref type="bibr" target="#b30">[31]</ref> Authors usually agree that larger amounts of phosphate are needed to correct total body deficit, but their fear of adverse reactions has prompted a restrained attitude. Recent studies on ICU patients confirm that a relatively rapid infusion of potassium phosphate is safe if baseline serum potassium is below 4.5 mmol/l. <ref type="bibr" target="#b0">1</ref> The infusion rate is thus consequently limited by the serum potassium levels, and also by serum calcium levels, as high phosphate serum levels could induce hypocalcemia, as phosphate could precipitate with calcium in blood vessels and tissues. Recently, phosphate has been injected into dialysis solutions during treatment, but there is a risk of precipitation. <ref type="bibr" target="#b0">1,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b21">22</ref> We evaluated whether phosphate-containing solutions for dialysis and replacement simplify phosphate replacement even further.</p><p>The frequency of phosphate disturbances in critically ill patients is high, although the figure varies considerably depending on the study, between 8.8% and 80%. <ref type="bibr" target="#b31">32,</ref><ref type="bibr" target="#b32">33</ref> In our study, the incidence of hypophosphatemia during CRRT was 79% in the control group. The incidence of hypophosphatemia was lower (35%) in patients receiving the phosphate-containing solution as the dialysis solution and Hemosol B0 as the replacement solution. There were no episodes of hypophosphatemia in patients receiving only the phosphate-containing solution, but there was an incidence of mild (&gt;1.9 mmol/l) hyperphosphatemia in 14% of these patients. This is probably due to the simultaneous intake of nutritional support, but the phosphate levels were only marginally elevated without physiological consequences and did not require withdrawal of the phosphate-containing dialysis solution from the patient.</p><p>The amount of phosphate required to correct total body deficit is variable and depends on the cause of hypophosphatemia and the chronicity of the process. <ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b10">11,</ref><ref type="bibr" target="#b23">24</ref> The many physiological rearrangements in ICU patients may explain the need for larger amounts required for repletion. In our study, phosphate addition was necessary for patients in groups 1 and 2. This is representative of our experience, where the majority of patients on CRRT require phosphate supplementation shortly after CRRT initiation despite nutritional support. Malnourished alcoholic patients have a larger deficit due to long-standing negative phosphate balance. Malnutrition induces a re-feeding syndrome that has been reported after only 48 h of fasting in the ICU. <ref type="bibr" target="#b1">2</ref> The distribution volume for phosphate might be increased, <ref type="bibr" target="#b23">24</ref> while insulin, carbohydrate, and catecholamine administration act to decrease the serum phosphate concentration. <ref type="bibr" target="#b1">2,</ref><ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b10">11,</ref><ref type="bibr" target="#b33">34</ref> The incidence of hypophosphatemia in this study was 10% of the 42 patients before the start of CRRT. The incidence of hyperphosphatemia was  Mean values of each day of all the patients. *P 0.001 between the groups during the CRRT treatment. wP 5 0.004 between the groups during the CRRT treatment. zDifferences between the groups were not statistically significant.</p><p>§P 5 0.045 between the groups during the CRRT treatment.</p><p>52%, which is slightly lower than that found in other studies, where 65-80% of patients present hyperphosphatemia before the start of the CRRT. <ref type="bibr" target="#b7">8,</ref><ref type="bibr" target="#b34">35</ref> Phosphate was within normal limits in 38% of patients even before the beginning of CRRT. The new dialysis fluid contains 30 mM bicarbonate compared with 32 mM in Hemosol B0. With prescribed CRRT clearances of ! 20 ml/ kg/h, most acid-base disturbances can be managed with bicarbonate compositions of 25-35 mM. <ref type="bibr" target="#b35">36</ref> The normal serum range for bicarbonate is 22-30 mmol/l, which was achieved in patients in all groups, although the increase in group 1 was most significant. Ionized calcium increased in all groups during treatment time, but the increase was less marked in groups 2 and 3. There is a possibility that the slow increase in bicarbonate and ionized calcium could reflect the differences in the ion content between Hemosol B0 and the phosphate-containing dialysis fluid, although these differences could also be due to the limitations of this study. The fact that this was a retrospective observational study, without other intervention but for the dialysis solutions, means that bias due to the patients' illnesses and due to other treatments could affect ion concentrations. Even the phosphate concentration in parenteral and enteral nutrition cannot be completely excluded, although this would not alter the basic results of the study. The next objective of the study was to evaluate whether the administered phosphate could alter calcium and potassium homeostasis. Phosphate could theoretically precipitate with calcium, which could lead to hypocalcemia in the patients. We found that the phosphate-containing dialysis fluid did not induce hypocalcemia during CRRT. Another important concern was whether this fluid would cause potassium overload, as potassium phosphate is used instead of sodium phosphate. We found that the phosphate-containing dialysis fluid did not induce hyperkalemia either. Potassium phosphate was favored over sodium phosphate because potassium usually has to be added to CRRT solutions. In addition, there were no disturbances of magnesium levels.</p><p>The present study shows that by using the phosphate-containing fluid both as the dialysis fluid and the replacement fluid, we could eliminate the episodes of hypophosphatemia. The new phosphatecontaining dialysis fluid simplified the phosphate control and avoided rapid phosphate fluctuations with intravenous bolus administration.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Events of hypophosphatemia during the continuous renal replacement therapy. Treatment with the phosphate-containing solution for dialysis resulted in no episodes of hypophosphatemia.</figDesc></figure>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Patients and CRRT treatments</head><p>After acceptance by the Regional Ethical Review Board (DNR 570/2008), Lund University, Sweden, we evaluated retrospectively the first 14 patients who did not fulfill the exclusion criteria in each group, a total of 42 consecutive patients ( <ref type="table">Table 2)</ref>. Patients were excluded if they had chronic kidney disease, if they had received intermittent dialysis before the ICU stay, if the CRRT treatment lasted  <ref type="table">Table 2</ref> Main diagnoses leading to intensive care of the study groups. o10 h or if they were under the age of 18 years. In all patients, the Gambro Prismaflex CRRT machine with the CVVHDF modality and a Hospal M100 filter (Hospal Industrie, Meyziew, France) was used. The blood flow, the dialysis fluid flow, the replacement fluid flow, the anticoagulation used and the fluid removal were set according to the patients' conditions and requirements. Of the replacement fluid, 500 ml/h was postfilter and the rest was prefilter in each treatment according to the general standard at the department. Intravenous phosphate addition was prescribed when serum phosphate was o0.8 mmol/l, also according to the general standard at the department. Nutrition was given only if the patients were hemodynamically stable as parenteral or enteral or both during the study period.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Clinical parameters of the patients</head><p>All patients had regular measurements of serum sodium, potassium, ionized calcium, pH, pCO 2 and bicarbonate either from an arterial line or from a central venous line before the start and regularly every fourth hour all through the CRRT treatment during 1, 2, 3, 4 and maximum 5 days. For phosphate and magnesium analyses, blood samples were taken at 5:00 hours in the morning and at 17:00 hours in the afternoon before the start and during the CRRT treatment days. Blood samples were analyzed at the hospital laboratory (Labora-tory for Clinical Chemistry, Lund University Hospital, Lund, Sweden). The results are presented as means AE SD for normal distributed data, median and range for remaining data. In addition, baseline characteristics of study patients and delivered CRRT were registered <ref type="table">(Table 3)</ref>. Hypophosphatemia has been defined as condition where the serum phosphate level is o0.81 mmol/l.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistics</head><p>One-way repeated measures analysis of variance was used. The statistical program used was Sigma-Stat, version 3.5, for Windows XP. Differences were considered to be significant for Po0.05.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>Main diagnoses leading to intensive care of the study groups, baseline characteristics, timing of initiation of CRRT, ultrafiltration rate, duration of the CRRT and anticoagulation were statistically similar between the three groups <ref type="table">(Tables 2 and 3</ref>).</p><p>The incidence of hypophosphatemia occurred in 11 of 14 patients in group 1, where the patients did not receive the phosphate-containing dialysis solution, but received phosphate intravenously based on the serum phosphate values <ref type="figure" target="#fig_0">(Fig. 1)</ref>. In group 2, where the patients received a phosphate-containing solution as the dialysis solution and a phos- <ref type="table">Table 3</ref> Baseline characteristics of study patients and delivered CRRT.  <ref type="bibr" target="#b22">23</ref> §Statistical differences were as follows: between groups 1 and 2 (P 5 0.046), between groups 1 and 3 (P 0.001), and between groups 2 and 3 (P 5 0.003).</p><p>phate-free solution as the replacement solution, five of 14 patients had at least one episode of hypophosphatemia <ref type="figure" target="#fig_0">(Fig. 1)</ref>. No episodes of hypophosphatemia were detected in group 3. The serum phosphate level was 1.90 mmol/l at baseline and 0.99 mmol/l during CRRT treatment in group 1. In group 2, the corresponding values were 1.54 and 1.20 mmol/l, and in group 3, they were 1.83 and 1.43 mmol/l <ref type="table" target="#tab_4">(Table 5</ref>). However, due to the simultaneous intake of enteral/parenteral solutions, two of 14 of the patients in group 3 had a temporary increase in serum phosphate (o1.9 mmol/l), but there were no cases of hyperphosphatemia that required a withdrawal of the phosphate-containing dialysis solution from the treatment.</p><p>Phosphate intake was from nutrition and from intravenous supplementation. The average phosphate input calculated from the total nutrition was 18 mmol/CRRT treatment/day for all groups. Short-acting insulin was administered as infusion in order to achieve a blood glucose level between 5 and 8 mmol/l. Phosphate was supplemented intravenously if serum phosphate declined to o0.80 mmol/l. In group 1, the average phosphate supplementation was 10 mmol/CRRT treatment/ day. In group 2, the average supplementation was 5 mmol/CRRT treatment and day, and in group 3, there was no intravenous supplementation.</p><p>There was a decline in phosphate levels during CRRT treatment in both groups 1 and 2. In group 1, serum phosphate declined constantly, although the patients received phosphate supplementation in-travenously <ref type="figure" target="#fig_1">(Fig. 2)</ref>. In group 2, the phosphate levels were unstable and reached a low level in the end of the study. In group 3, where the patients received a phosphate-containing solution both as the dialysis solution and the replacement solution, none of the patients had episodes of hypophosphatemia <ref type="figure" target="#fig_1">(Fig. 2)</ref>. Phosphate remained stable in this patient population during the entire study.</p><p>For group 3, we also evaluated any adverse event in sodium, potassium and magnesium homeostasis. There was a significant increase in sodium (P 0.001) and a slight increase in ionized calcium (P 5 0.029), whereas potassium and magnesium remained stable during the entire study as summarized in <ref type="table" target="#tab_3">Table 4</ref>. A comparison between the study groups revealed that there was a significant difference in phosphate (P 0.001), ionized calcium (P 5 0.004) and bicarbonate (P 5 0.045) between the groups ( <ref type="table" target="#tab_4">Table 5</ref>). The pH and pCO 2 measurements were obtained at baseline and rapidly declined toward normal values after starting the CRRT treatment and remained essentially unchanged during the treatment in all groups <ref type="table" target="#tab_3">(Table 4</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>This study demonstrates that the new phosphatecontaining dialysis solution is safe, reduces the variability of serum phosphate levels during  CRRT and reduces the incidence of hypophosphatemia.</p><p>Various protocols for intravenous phosphate supplementation have been studied in the last 30 years. Today, there is a trend toward the use of larger and faster boluses of phosphate because of high failure of repletion (20-70%) and the need for additional phosphate administration. <ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b24">[25]</ref><ref type="bibr" target="#b25">[26]</ref><ref type="bibr" target="#b26">[27]</ref><ref type="bibr" target="#b27">[28]</ref><ref type="bibr" target="#b28">[29]</ref><ref type="bibr" target="#b29">[30]</ref><ref type="bibr" target="#b30">[31]</ref> Authors usually agree that larger amounts of phosphate are needed to correct total body deficit, but their fear of adverse reactions has prompted a restrained attitude. Recent studies on ICU patients confirm that a relatively rapid infusion of potassium phosphate is safe if baseline serum potassium is below 4.5 mmol/l. <ref type="bibr" target="#b0">1</ref> The infusion rate is thus consequently limited by the serum potassium levels, and also by serum calcium levels, as high phosphate serum levels could induce hypocalcemia, as phosphate could precipitate with calcium in blood vessels and tissues. Recently, phosphate has been injected into dialysis solutions during treatment, but there is a risk of precipitation. <ref type="bibr" target="#b0">1,</ref><ref type="bibr" target="#b20">21,</ref><ref type="bibr" target="#b21">22</ref> We evaluated whether phosphate-containing solutions for dialysis and replacement simplify phosphate replacement even further.</p><p>The frequency of phosphate disturbances in critically ill patients is high, although the figure varies considerably depending on the study, between 8.8% and 80%. <ref type="bibr" target="#b31">32,</ref><ref type="bibr" target="#b32">33</ref> In our study, the incidence of hypophosphatemia during CRRT was 79% in the control group. The incidence of hypophosphatemia was lower (35%) in patients receiving the phosphate-containing solution as the dialysis solution and Hemosol B0 as the replacement solution. There were no episodes of hypophosphatemia in patients receiving only the phosphate-containing solution, but there was an incidence of mild (&gt;1.9 mmol/l) hyperphosphatemia in 14% of these patients. This is probably due to the simultaneous intake of nutritional support, but the phosphate levels were only marginally elevated without physiological consequences and did not require withdrawal of the phosphate-containing dialysis solution from the patient.</p><p>The amount of phosphate required to correct total body deficit is variable and depends on the cause of hypophosphatemia and the chronicity of the process. <ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b10">11,</ref><ref type="bibr" target="#b23">24</ref> The many physiological rearrangements in ICU patients may explain the need for larger amounts required for repletion. In our study, phosphate addition was necessary for patients in groups 1 and 2. This is representative of our experience, where the majority of patients on CRRT require phosphate supplementation shortly after CRRT initiation despite nutritional support. Malnourished alcoholic patients have a larger deficit due to long-standing negative phosphate balance. Malnutrition induces a re-feeding syndrome that has been reported after only 48 h of fasting in the ICU. <ref type="bibr" target="#b1">2</ref> The distribution volume for phosphate might be increased, <ref type="bibr" target="#b23">24</ref> while insulin, carbohydrate, and catecholamine administration act to decrease the serum phosphate concentration. <ref type="bibr" target="#b1">2,</ref><ref type="bibr" target="#b2">3,</ref><ref type="bibr" target="#b10">11,</ref><ref type="bibr" target="#b33">34</ref> The incidence of hypophosphatemia in this study was 10% of the 42 patients before the start of CRRT. The incidence of hyperphosphatemia was 0.001 within the group. wDifferences within the group were not statistically significant. zP 5 0.029 within the group. 52%, which is slightly lower than that found in other studies, where 65-80% of patients present hyperphosphatemia before the start of the CRRT. <ref type="bibr" target="#b7">8</ref>  <ref type="bibr" target="#b35">36</ref> The normal serum range for bicarbonate is 22-30 mmol/l, which was achieved in patients in all groups, although the increase in group 1 was most significant. Ionized calcium increased in all groups during treatment time, but the increase was less marked in groups 2 and 3. There is a possibility that the slow increase in bicarbonate and ionized calcium could reflect the differences in the ion content between Hemosol B0 and the phosphate-containing dialysis fluid, although these differences could also be due to the limitations of this study. The fact that this was a retrospective observational study, without other intervention but for the dialysis solutions, means that bias due to the patients' illnesses and due to other treatments could affect ion concentrations. Even the phosphate concentration in parenteral and enteral nutrition cannot be completely excluded, although this would not alter the basic results of the study. The next objective of the study was to evaluate whether the administered phosphate could alter calcium and potassium homeostasis. Phosphate could theoretically precipitate with calcium, which could lead to hypocalcemia in the patients. We found that the phosphate-containing dialysis fluid did not induce hypocalcemia during CRRT. Another important concern was whether this fluid would cause potassium overload, as potassium phosphate is used instead of sodium phosphate. We found that the phosphate-containing dialysis fluid did not induce hyperkalemia either. Potassium phosphate was favored over sodium phosphate because potassium usually has to be added to CRRT solutions. In addition, there were no disturbances of magnesium levels.</p><p>The present study shows that by using the phosphate-containing fluid both as the dialysis fluid and the replacement fluid, we could eliminate the episodes of hypophosphatemia. The new phosphatecontaining dialysis fluid simplified the phosphate control and avoided rapid phosphate fluctuations with intravenous bolus administration.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Events of hypophosphatemia during the continuous renal replacement therapy. Treatment with the phosphate-containing solution for dialysis resulted in no episodes of hypophosphatemia.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig. 2 .</head><label>2</label><figDesc>Serum phosphate levels during the continuous renal replacement therapy treatment. Group 1, receiving Hemosol B0 (diamond), group 2, receiving the phosphate-containing dialysis fluid as the dialysis fluid and Hemosol B0 as the replacement fluid (triangle), and group 3, receiving the phosphate-containing dialysis fluid (square). Groups 2 and 3 were statistically compared with group 1. n 5 14 patients/group, **Po0.01, ***Po0.001.</figDesc></figure>
 <figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" validated="true"><head>Table 1</head><label>1</label><figDesc>Fluid composition.</figDesc><table>Hemosol B0 
 (mmol/l) 
 
@@ -131,7 +132,7 @@ Chloride
 115.9 
 
 </table></figure>
-<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" validated="false"><head>Table 4</head><label>4</label><figDesc>Serum solute concentrations (mmol/l) during CRRT with the phosphate containing dialysis fluid for patients in group 3.Day on CRRT Before 1 2 3 4 5 Sodium* 134.0 AE 5 135.0 AE 3 135.2 AE 2 135.0 AE 2 135.7 AE 2 135.8 AE 3 Potassiumw 4.06 AE 0.5 4.10 AE 0.4 4.14 AE 0.3 4.23 AE 0.3 4.39 AE 0.4 4.49 AE 0.5 Ionised calciumz 1.11 AE 0.08 1.10 AE 0.05 1.15 AE 0.07 1.17 AE 0.06 1.16 AE 0.05 1.17 AE 0.06 Magnesiumw 1.1 AE 0.4 1.0 AE 0.2 1.1 AE 0.2 0.7 AE 0.2 0.9 AE 0.1 1.0 AE 0.3 *P 0.001 within the group. wDifferences within the group were not statistically significant. zP 5 0.029 within the group.</figDesc><table>Day on CRRT 
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3" validated="true"><head>Table 4</head><label>4</label><figDesc>Serum solute concentrations (mmol/l) during CRRT with the phosphate containing dialysis fluid for patients in group 3.</figDesc><table>Day on CRRT 
 Before 
 1 
 2 
@@ -170,9 +171,8 @@ Magnesiumw
 
 *P 
 
-0.001 within the group. 
 </table></figure>
-<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" validated="true"><head>Table 5</head><label>5</label><figDesc>Serum values (mmol/l, kPa) during CRRT with the phosphate- containing dialysis fluid.</figDesc><table>Group 
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4" validated="false"><head>Table 5</head><label>5</label><figDesc>Serum values (mmol/l, kPa) during CRRT with the phosphatecontaining dialysis fluid.Mean values of each day of all the patients. *P 0.001 between the groups during the CRRT treatment. wP 5 0.004 between the groups during the CRRT treatment. zDifferences between the groups were not statistically significant.§P 5 0.045 between the groups during the CRRT treatment.</figDesc><table>Group 
 Group 1 
 Group 2 
 Group 3 
@@ -213,6 +213,7 @@ Bicarbonate § 18
 22 
 
 </table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5" validated="false"><head></head><label></label><figDesc>,<ref type="bibr" target="#b34">35</ref> Phosphate was within normal limits in 38% of patients even before the beginning of CRRT. The new dialysis fluid contains 30 mM bicarbonate compared with 32 mM in Hemosol B0. With prescribed CRRT clearances of ! 20 ml/ kg/h, most acid-base disturbances can be managed with bicarbonate compositions of 25-35 mM.</figDesc><table></table></figure>
 		</body>
 		<back>
 
@@ -251,6 +252,7 @@ Bicarbonate § 18
 			<date type="published" when="2004" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Troyanov S, Geadah D, Ghannoum M, Cardinal J, Leblanc M. Phosphate addition to hemodiafiltration solutions dur- ing continuous renal replacement therapy. Intensive Care Med 2004; 30: 1662-5.</note>
 </biblStruct>
 
 <biblStruct xml:id="b1">
@@ -271,6 +273,7 @@ Bicarbonate § 18
 			<date type="published" when="1996" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Marik PE, Bedigian MK. Refeeding hypophosphatemia in critically ill patients in an intensive care unit. A prospective study. Arch Surg 1996; 131: 1043-7.</note>
 </biblStruct>
 
 <biblStruct xml:id="b2">
@@ -294,6 +297,7 @@ Bicarbonate § 18
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Bugg NC, Jones JA. Hypophosphataemia. Pathophysiology, effects and management on the intensive care unit. Anaes- thesia 1998; 53: 895-902.</note>
 </biblStruct>
 
 <biblStruct xml:id="b3">
@@ -314,6 +318,7 @@ Bicarbonate § 18
 			<date type="published" when="2009" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Skulberg A Sr. Glucose: a potential killer. Acta Anaesthesiol Scand 2009; 53: 684.</note>
 </biblStruct>
 
 <biblStruct xml:id="b4">
@@ -337,6 +342,7 @@ Bicarbonate § 18
 			<date type="published" when="1991" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Peppers MP, Geheb M, Desai T. Endocrine crises. Hypo- phosphatemia and hyperphosphatemia. Crit Care Clin 1991; 7: 201-14.</note>
 </biblStruct>
 
 <biblStruct xml:id="b5">
@@ -357,6 +363,7 @@ Bicarbonate § 18
 			<date type="published" when="1997" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Elisaf MS, Siamopoulos KC. Mechanisms of hypophospha- taemia in alcoholic patients. Int J Clin Pract 1997; 51: 501-3.</note>
 </biblStruct>
 
 <biblStruct xml:id="b6">
@@ -383,6 +390,7 @@ Bicarbonate § 18
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Zazzo JF, Troche G, Ruel P, Maintenant J. High incidence of hypophosphatemia in surgical intensive care patients: effi- cacy of phosphorus therapy on myocardial function. In- tensive Care Med 1995; 21: 826-31.</note>
 </biblStruct>
 
 <biblStruct xml:id="b7">
@@ -412,6 +420,7 @@ Bicarbonate § 18
 			<date type="published" when="2001" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Tan HK, Bellomo R, M&apos;Pis DA, Ronco C. Phosphatemic control during acute renal failure: intermittent hemodialy- sis versus continuous hemodiafiltration. Int J Artif Organs 2001; 24: 186-91.</note>
 </biblStruct>
 
 <biblStruct xml:id="b8">
@@ -441,6 +450,7 @@ Bicarbonate § 18
 			<date type="published" when="2007" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Baldwin I, Naka T, Koch B, Fealy N, Bellomo R. A pilot randomised controlled comparison of continuous veno- venous haemofiltration and extended daily dialysis with filtration: effect on small solutes and acid-base balance. Intensive Care Med 2007; 33: 830-5.</note>
 </biblStruct>
 
 <biblStruct xml:id="b9">
@@ -479,6 +489,7 @@ Bicarbonate § 18
 			<date type="published" when="2006" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Shor R, Halabe A, Rishver S, Tilis Y, Matas Z, Fux A, Boaz M, Weinstein J. Severe hypophosphatemia in sepsis as a mortality predictor. Ann Clin Lab Sci 2006; 36: 67-72.</note>
 </biblStruct>
 
 <biblStruct xml:id="b10">
@@ -496,6 +507,7 @@ Bicarbonate § 18
 			<date type="published" when="1982" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Stoff JS. Phosphate homeostasis and hypophosphatemia. Am J Med 1982; 72: 489-95.</note>
 </biblStruct>
 
 <biblStruct xml:id="b11">
@@ -516,6 +528,7 @@ Bicarbonate § 18
 			<date type="published" when="1994" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Brown GR, Greenwood JK. Drug-and nutrition-induced hypophosphatemia: mechanisms and relevance in the cri- tically ill. Ann Pharmacother 1994; 28: 626-32.</note>
 </biblStruct>
 
 <biblStruct xml:id="b12">
@@ -545,6 +558,7 @@ Bicarbonate § 18
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Bollaert PE, Levy B, Nace L, Laterre PF, Larcan A. Hemodynamic and metabolic effects of rapid correction of hypophosphatemia in patients with septic shock. Chest 1995; 107: 1698-701.</note>
 </biblStruct>
 
 <biblStruct xml:id="b13">
@@ -562,6 +576,7 @@ Bicarbonate § 18
 			<date type="published" when="1996" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Paterson CR. Hypophosphataemia: a dangerous disorder. Nutrition 1996; 12: 540-1.</note>
 </biblStruct>
 
 <biblStruct xml:id="b14">
@@ -585,6 +600,7 @@ Bicarbonate § 18
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Paula FJ, Plens AE, Foss MC. Effects of hypophosphatemia on glucose tolerance and insulin secretion. Horm Metab Res 1998; 30: 281-4.</note>
 </biblStruct>
 
 <biblStruct xml:id="b15">
@@ -607,6 +623,7 @@ Bicarbonate § 18
 			<date type="published" when="0198" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Ravenscroft AJ, Valentine JM, Knappett PA. Severe hypo- phosphataemia and insulin resistance in diabetic ketoaci- dosis. Anaesthesia 1999; 54: 198.</note>
 </biblStruct>
 
 <biblStruct xml:id="b16">
@@ -630,6 +647,7 @@ Bicarbonate § 18
 			<date type="published" when="2000" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Weber U, Huppe T, Niehaus L. CT and MRI in severe hypophosphataemia with central nervous system involve- ment. Neuroradiology 2000; 42: 112-4.</note>
 </biblStruct>
 
 <biblStruct xml:id="b17">
@@ -650,6 +668,7 @@ Bicarbonate § 18
 			<date type="published" when="1978" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Darsee JR, Nutter DO. Reversible severe congestive cardi- omyopathy in three cases of hypophosphatemia. Ann Intern Med 1978; 89: 867-70.</note>
 </biblStruct>
 
 <biblStruct xml:id="b18">
@@ -685,6 +704,7 @@ Bicarbonate § 18
 			<date type="published" when="1985" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Aubier M, Murciano D, Lecocguic Y, Viires N, Jacquens Y, Squara P, Pariente R. Effect of hypophosphatemia on diaphragmatic contractility in patients with acute respira- tory failure. N Engl J Med 1985; 313: 420-4.</note>
 </biblStruct>
 
 <biblStruct xml:id="b19">
@@ -720,6 +740,7 @@ Bicarbonate § 18
 			<date type="published" when="2004" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Williams JD, Topley N, Craig KJ, Mackenzie RK, Pischets- rieder M, Lage C, Passlick-Deetjen J. The Euro-balance trial: the effect of a new biocompatible peritoneal dialysis fluid (balance) on the peritoneal membrane. Kidney Int 2004; 66: 408-18.</note>
 </biblStruct>
 
 <biblStruct xml:id="b20">
@@ -752,6 +773,7 @@ Bicarbonate § 18
 			<date type="published" when="2000" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Gatchalian RA, Popli A, Ejaz AA, Leehey DJ, Kjellstrand CM, Ing TS. Management of hypophosphatemia induced by high-flux hemodiafiltration for the treatment of vanco- mycin toxicity: intravenous phosphorus therapy versus use of a phosphorus-enriched dialysate. Am J Kidney Dis 2000; 36: 1262-6.</note>
 </biblStruct>
 
 <biblStruct xml:id="b21">
@@ -784,6 +806,7 @@ Bicarbonate § 18
 			<date type="published" when="2009" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Santiago MJ, Lopez-Herce J, Urbano J, Bellon JM, del Castillo J, Carrillo A. Hypophosphatemia and phosphate supplementation during continuous renal replacement therapy in children. Kidney Int 2009; 75: 312-6.</note>
 </biblStruct>
 
 <biblStruct xml:id="b22">
@@ -813,6 +836,7 @@ Bicarbonate § 18
 			<date type="published" when="2008" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Janssen van Doorn K, Spapen H, Geers C, Diltoer M, Shabana W. Sepsis-related acute kidney injury: a protective effect of drotrecogin alpha (activated) treatment? Acta Anaesthesiol Scand 2008; 52: 1259-64.</note>
 </biblStruct>
 
 <biblStruct xml:id="b23">
@@ -836,6 +860,7 @@ Bicarbonate § 18
 			<date type="published" when="1978" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Lentz RD, Brown DM, Kjellstrand CM. Treatment of severe hypophosphatemia. Ann Intern Med 1978; 89: 941-4.</note>
 </biblStruct>
 
 <biblStruct xml:id="b24">
@@ -859,6 +884,7 @@ Bicarbonate § 18
 			<date type="published" when="1981" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Vannatta JB, Whang R, Papper S. Efficacy of intravenous phosphorus therapy in the severely hypophosphatemic patient. Arch Intern Med 1981; 141: 885-7.</note>
 </biblStruct>
 
 <biblStruct xml:id="b25">
@@ -885,6 +911,7 @@ Bicarbonate § 18
 			<date type="published" when="1983" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Vannatta JB, Andress DL, Whang R, Papper S. High-dose intravenous phosphorus therapy for severe complicated hypophosphatemia. South Med J 1983; 76: 1424-6.</note>
 </biblStruct>
 
 <biblStruct xml:id="b26">
@@ -905,6 +932,7 @@ Bicarbonate § 18
 			<date type="published" when="1985" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Kingston M, Al-Siba&apos;i MB. Treatment of severe hypopho- sphatemia. Crit Care Med 1985; 13: 16-8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b27">
@@ -934,6 +962,7 @@ Bicarbonate § 18
 			<date type="published" when="1994" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Sacks GS, Walker J, Dickerson RN, Kudsk KA, Brown RO. Observations of hypophosphatemia and its management in nutrition support. Nutr Clin Pract 1994; 9: 105-8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b28">
@@ -963,6 +992,7 @@ Bicarbonate § 18
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Clark CL, Sacks GS, Dickerson RN, Kudsk KA, Brown RO. Treatment of hypophosphatemia in patients receiving spe- cialized nutrition support using a graduated dosing scheme: results from a prospective clinical trial. Crit Care Med 1995; 23: 1504-11.</note>
 </biblStruct>
 
 <biblStruct xml:id="b29">
@@ -992,6 +1022,7 @@ Bicarbonate § 18
 			<date type="published" when="1995" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Rosen GH, Boullata JI, O&apos;Rangers EA, Enow NB, Shin B. Intravenous phosphate repletion regimen for critically ill patients with moderate hypophosphatemia. Crit Care Med 1995; 23: 1204-10.</note>
 </biblStruct>
 
 <biblStruct xml:id="b30">
@@ -1015,6 +1046,7 @@ Bicarbonate § 18
 			<date type="published" when="1997" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Perreault MM, Ostrop NJ, Tierney MG. Efficacy and safety of intravenous phosphate replacement in critically ill pa- tients. Ann Pharmacother 1997; 31: 683-8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b31">
@@ -1047,6 +1079,7 @@ Bicarbonate § 18
 			<date type="published" when="2003" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Charron T, Bernard F, Skrobik Y, Simoneau N, Gagnon N, Leblanc M. Intravenous phosphate in the intensive care unit: more aggressive repletion regimens for moderate and severe hypophosphatemia. Intensive Care Med 2003; 29: 1273-8.</note>
 </biblStruct>
 
 <biblStruct xml:id="b32">
@@ -1079,11 +1112,12 @@ Bicarbonate § 18
 			<date type="published" when="1998" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Barak V, Schwartz A, Kalickman I, Nisman B, Gurman G, Shoenfeld Y. Prevalence of hypophosphatemia in sepsis and infection: the role of cytokines. Am J Med 1998; 104: 40-7.</note>
 </biblStruct>
 
 <biblStruct xml:id="b33">
-	<monogr>
-		<title level="m" type="main">Serum inorganic phosphate</title>
+	<analytic>
+		<title level="a" type="main">Serum inorganic phosphate</title>
 		<author>
 			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">K</forename><surname>Walker</surname></persName>
 		</author>
@@ -1096,14 +1130,18 @@ Bicarbonate § 18
 		<author>
 			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">W</forename></persName>
 		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Clinical methods</title>
 		<editor>Stoneham M</editor>
+		<meeting><address><addrLine>London</addrLine></address></meeting>
 		<imprint>
-			<date type="published" when="1990" />
 			<publisher>Butterworth Publishers</publisher>
+			<date type="published" when="1990" />
 			<biblScope unit="page" from="895" to="904" />
-			<pubPlace>London</pubPlace>
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Walker K, Dallas Hall W, Hurst W. Serum inorganic phosphate. In: Stoneham M, ed. Clinical methods. London: Butterworth Publishers, 1990: 895-9.</note>
 </biblStruct>
 
 <biblStruct xml:id="b34">
@@ -1130,6 +1168,7 @@ Bicarbonate § 18
 			<date type="published" when="2002" />
 		</imprint>
 	</monogr>
+	<note type="raw_reference">Morimatsu H, Uchino S, Bellomo R, Ronco C. Continuous veno-venous hemodiafiltration or hemofiltration: impact on calcium, phosphate and magnesium concentrations. Int J Artif Organs 2002; 25: 512-9.</note>
 </biblStruct>
 
 <biblStruct xml:id="b35">
@@ -1148,6 +1187,7 @@ Bicarbonate § 18
 		</imprint>
 	</monogr>
 	<note>Selection of dialysate and replacement fluids and management of electrolyte and acid-base disturbances. Lund Sweden e-mail: marcus.broman@skane.se</note>
+	<note type="raw_reference">Kraus MA. Selection of dialysate and replacement fluids and management of electrolyte and acid-base disturbances. Semin Dial 2009; 22: 137-40. Address: Dr Marcus Broman Department of Anaesthesiology and Intensive Care Lund University Hospital S-221 85 Lund Sweden e-mail: marcus.broman@skane.se</note>
 </biblStruct>
 
 				</listBibl>

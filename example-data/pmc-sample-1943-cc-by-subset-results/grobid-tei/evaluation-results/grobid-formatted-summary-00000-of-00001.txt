@@ -5,20 +5,21 @@
 
                  label   accuracy  precision     recall         f1
 
-               title      97.24      66.67      60.00      63.16
-            abstract      95.17      25.00      22.22      23.53
-first_author_surname      97.93      70.00      70.00      70.00
-first_author_full_name      97.93      70.00      70.00      70.00
-first_reference_text      93.10       0.00       0.00       0.00
-first_reference_title      98.62      83.33      71.43      76.92
-first_reference_year      96.55      50.00      50.00      50.00
-first_reference_source      95.86      44.44      40.00      42.11
-first_reference_volume      97.24      55.56      55.56      55.56
-first_reference_fpage      97.24      55.56      55.56      55.56
-first_reference_lpage      94.48      11.11      11.11      11.11
+               title      97.69      60.00      60.00      60.00
+            abstract      95.38      12.50      11.11      11.76
+first_author_surname      97.69      60.00      60.00      60.00
+first_author_full_name      97.69      60.00      60.00      60.00
+first_reference_text      94.22       0.00       0.00       0.00
+first_reference_title      98.84      71.43      71.43      71.43
+first_reference_year      97.11      50.00      50.00      50.00
+first_reference_source      96.53      44.44      40.00      42.11
+first_reference_publication_type      98.27      70.00      70.00      70.00
+first_reference_volume      97.69      55.56      55.56      55.56
+first_reference_fpage      97.69      55.56      55.56      55.56
+first_reference_lpage      95.38      11.11      11.11      11.11
 
-          all fields      96.49      52.81      45.63      48.96      (micro average)
-               96.49      48.33      45.99      47.09 (macro average)
+          all fields      97.01      45.95      45.13      45.54      (micro average)
+               97.01      45.88      45.40      45.63 (macro average)
 
 
   ==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
@@ -27,17 +28,18 @@ first_reference_lpage      94.48      11.11      11.11      11.11
 
                  label   accuracy  precision     recall         f1
 
-               title      97.90      77.78      70.00      73.68
-            abstract      95.80      37.50      33.33      35.29
-first_author_surname      97.90      70.00      70.00      70.00
-first_author_full_name      97.90      70.00      70.00      70.00
-first_reference_text      93.01       0.00       0.00       0.00
-first_reference_title      98.60      83.33      71.43      76.92
-first_reference_year      96.50      50.00      50.00      50.00
-first_reference_source      95.80      44.44      40.00      42.11
-first_reference_volume      97.20      55.56      55.56      55.56
-first_reference_fpage      97.20      55.56      55.56      55.56
-first_reference_lpage      94.41      11.11      11.11      11.11
+               title      98.14      70.00      70.00      70.00
+            abstract      97.52      62.50      55.56      58.82
+first_author_surname      97.52      60.00      60.00      60.00
+first_author_full_name      97.52      60.00      60.00      60.00
+first_reference_text      98.14      70.00      70.00      70.00
+first_reference_title      98.76      71.43      71.43      71.43
+first_reference_year      96.89      50.00      50.00      50.00
+first_reference_source      96.27      44.44      40.00      42.11
+first_reference_publication_type      98.14      70.00      70.00      70.00
+first_reference_volume      97.52      55.56      55.56      55.56
+first_reference_fpage      97.52      55.56      55.56      55.56
+first_reference_lpage      95.03      11.11      11.11      11.11
 
-          all fields      96.57      55.06      47.57      51.04      (micro average)
-               96.57      50.48      47.91      49.11 (macro average)
+          all fields      97.41      56.76      55.75      56.25      (micro average)
+               97.41      56.72      55.77      56.21 (macro average)
