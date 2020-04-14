@@ -192,6 +192,47 @@ class TestDefaultXmlMapping(object):
                     {'items': ['GivenName2.1 Surname2.1']}
                 ]
 
+        class TestTeiReferenceTitle(object):
+            def test_should_parse_tei_journal_article_and_source(
+                    self, default_xml_mapping):
+                xml = E.TEI(E.text(E.back(E.div(E.listBibl(
+                    E.biblStruct(E.analytic(
+                        E.title('Article 1', level='a', type='main'),
+                    ), E.monogr(
+                        E.title('Journal 1', level='j')
+                    ))
+                )))))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'reference_title',
+                        'reference_source'
+                    ]
+                )
+                assert result.get('reference_title') == ['Article 1']
+                assert result.get('reference_source') == ['Journal 1']
+
+            def test_should_parse_tei_book_chapter_and_source(
+                    self, default_xml_mapping):
+                xml = E.TEI(E.text(E.back(E.div(E.listBibl(
+                    E.biblStruct(E.analytic(
+                        E.title('Chapter 1', level='a', type='main')
+                    ), E.monogr(
+                        E.title('Book 1', level='m')
+                    ))
+                )))))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'reference_title',
+                        'reference_source'
+                    ]
+                )
+                assert result.get('reference_title') == ['Chapter 1']
+                assert result.get('reference_source') == ['Book 1']
+
         class TestTeiAbstractText(object):
             def test_should_return_without_paragraph(self, default_xml_mapping):
                 xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
