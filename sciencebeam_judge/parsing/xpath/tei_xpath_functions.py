@@ -179,6 +179,19 @@ def fn_tei_ref_lpage(_, nodes):
     return [_ref_lpage(node) for node in nodes]
 
 
+def _ref_publication_type(ref):
+    for _ in ref.xpath('.//title[@level="j"]'):
+        return 'journal'
+    for _ in ref.xpath('.//title[@level="m"]'):
+        # we are assuming "book" for now
+        return 'book'
+    return _ref_fpage(ref)
+
+
+def fn_tei_ref_publication_type(_, nodes):
+    return [_ref_publication_type(node) for node in nodes]
+
+
 def _iter_abstract_text_elements(abstract):
     head_list = abstract.xpath('.//head')
     children_to_exclude = head_list[:1]
@@ -210,4 +223,5 @@ def register_functions(ns=None):
     ns['tei-author-affiliations'] = fn_tei_author_affiliations
     ns['tei-ref-fpage'] = fn_tei_ref_fpage
     ns['tei-ref-lpage'] = fn_tei_ref_lpage
+    ns['tei-ref-publication-type'] = fn_tei_ref_publication_type
     ns['tei-abstract-text'] = fn_tei_abstract_text

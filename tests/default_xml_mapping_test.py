@@ -114,41 +114,49 @@ class TestDefaultXmlMapping(object):
                     self, default_xml_mapping):
                 xml = E.article(E.back(E(
                     'ref-list',
-                    E.ref(E('mixed-citation', E(
-                        'article-title',
-                        'Article 1'
-                    ), E.source('Journal 1')))
+                    E.ref(E.label('1'), E(
+                        'mixed-citation',
+                        E('article-title', 'Article 1'),
+                        E.source('Journal 1'),
+                        {'publication-type': 'journal'}
+                    ))
                 )))
                 result = _parse_xml(
                     BytesIO(etree.tostring(xml)),
                     xml_mapping=default_xml_mapping,
                     fields=[
                         'reference_title',
-                        'reference_source'
+                        'reference_source',
+                        'reference_publication_type'
                     ]
                 )
                 assert result.get('reference_title') == ['Article 1']
                 assert result.get('reference_source') == ['Journal 1']
+                assert result.get('reference_publication_type') == ['journal']
 
             def test_should_parse_mixed_style_book_chapter_title_and_source(
                     self, default_xml_mapping):
                 xml = E.article(E.back(E(
                     'ref-list',
-                    E.ref(E('mixed-citation', E(
-                        'chapter-title',
-                        'Chapter 1'
-                    ), E.source('Book 1')))
+                    E.ref(E.label('1'), E(
+                        'mixed-citation',
+                        E('chapter-title', 'Chapter 1'),
+                        E.source('Book 1'),
+                        {'publication-type': 'book'}
+                    ))
                 )))
                 result = _parse_xml(
                     BytesIO(etree.tostring(xml)),
                     xml_mapping=default_xml_mapping,
                     fields=[
                         'reference_title',
-                        'reference_source'
+                        'reference_source',
+                        'reference_publication_type'
                     ]
                 )
                 assert result.get('reference_title') == ['Chapter 1']
                 assert result.get('reference_source') == ['Book 1']
+                assert result.get('reference_publication_type') == ['book']
 
     class TestTei(object):
         class TestTeiReferenceAuthorNames(object):
@@ -203,11 +211,13 @@ class TestDefaultXmlMapping(object):
                     xml_mapping=default_xml_mapping,
                     fields=[
                         'reference_title',
-                        'reference_source'
+                        'reference_source',
+                        'reference_publication_type'
                     ]
                 )
                 assert result.get('reference_title') == ['Article 1']
                 assert result.get('reference_source') == ['Journal 1']
+                assert result.get('reference_publication_type') == ['journal']
 
             def test_should_parse_tei_book_chapter_and_source(
                     self, default_xml_mapping):
@@ -223,11 +233,13 @@ class TestDefaultXmlMapping(object):
                     xml_mapping=default_xml_mapping,
                     fields=[
                         'reference_title',
-                        'reference_source'
+                        'reference_source',
+                        'reference_publication_type'
                     ]
                 )
                 assert result.get('reference_title') == ['Chapter 1']
                 assert result.get('reference_source') == ['Book 1']
+                assert result.get('reference_publication_type') == ['book']
 
         class TestTeiAbstractText(object):
             def test_should_return_without_paragraph(self, default_xml_mapping):
