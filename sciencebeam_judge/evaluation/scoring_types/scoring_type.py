@@ -1,9 +1,7 @@
-from abc import ABCMeta, abstractmethod
-
-from six import with_metaclass
+from abc import ABC, abstractmethod
 
 
-class ScoringType(object, with_metaclass(ABCMeta)):
+class ScoringType(ABC):
     @abstractmethod
     def score(self, expected, actual, include_values=False, measures=None, convert_to_lower=False):
         pass

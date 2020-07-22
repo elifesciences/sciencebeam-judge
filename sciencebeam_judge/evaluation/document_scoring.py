@@ -8,7 +8,7 @@ from .scoring_types.scoring_types import (
 )
 
 
-class DocumentScoringProps(object):
+class DocumentScoringProps:
     FIELD_NAME = 'field_name'
     SCORING_TYPE = 'scoring_type'
     SCORING_METHOD = 'scoring_method'

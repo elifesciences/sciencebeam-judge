@@ -17,7 +17,7 @@ from sciencebeam_judge.evaluation.scoring_types.scoring_types import resolve_sco
 LOGGING = logging.getLogger(__name__)
 
 
-class TestResolveScoringType(object):
+class TestResolveScoringType:
     def test_should_return_string_scoring_type_by_default(self):
         assert resolve_scoring_type(None) == STRING_SCORING_TYPE
 

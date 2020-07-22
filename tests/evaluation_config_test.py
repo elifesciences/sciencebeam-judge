@@ -6,7 +6,7 @@ from sciencebeam_judge.evaluation_config import (
 )
 
 
-class TestParseEvaluationConfig(object):
+class TestParseEvaluationConfig:
     def test_should_parse_config(self):
         config_content = u'\n'.join([
             '[scoring_type]',
@@ -22,7 +22,7 @@ class TestParseEvaluationConfig(object):
         }
 
 
-class TestGetScoringTypeByFieldMapFromConfig(object):
+class TestGetScoringTypeByFieldMapFromConfig:
     def test_should_return_scoring_type_map(self):
         assert get_scoring_types_by_field_map_from_config({
             'scoring_type': {

@@ -7,7 +7,7 @@ import apache_beam as beam
 # This class is a workaround and shouldn't be necessary in the future
 
 
-class WriteToText(beam.io.WriteToText, object):
+class WriteToText(beam.io.WriteToText):
     def __init__(self, *args, **kwargs):
         super(WriteToText, self).__init__(*args, **kwargs)
         self._original_open_writer = self._sink.open_writer

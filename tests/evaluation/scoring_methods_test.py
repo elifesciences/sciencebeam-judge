@@ -16,7 +16,7 @@ LOGGING = logging.getLogger(__name__)
 SOME_TEXT = 'test 123'
 
 
-class TestExactScore(object):
+class TestExactScore:
     def test_should_return_one_for_exact_match(self):
         assert exact_score(SOME_TEXT, SOME_TEXT) == 1
 
@@ -24,7 +24,7 @@ class TestExactScore(object):
         assert exact_score(SOME_TEXT, SOME_TEXT[:-1] + 'X') == 0
 
 
-class TestLevenshteinScore(object):
+class TestLevenshteinScore:
     def test_should_return_one_for_exact_match(self):
         assert levenshtein_score(SOME_TEXT, SOME_TEXT) == 1
 
@@ -35,7 +35,7 @@ class TestLevenshteinScore(object):
         assert levenshtein_score('abc', 'xyz') == 0
 
 
-class TestRatcliffObershelpScore(object):
+class TestRatcliffObershelpScore:
     def test_should_return_one_for_exact_match(self):
         assert ratcliff_obershelp_score(SOME_TEXT, SOME_TEXT) == 1
 

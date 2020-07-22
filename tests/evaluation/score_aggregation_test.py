@@ -27,7 +27,7 @@ TP_MATCH_SCORE = {
 }
 
 
-class TestCompactScores(object):
+class TestCompactScores:
     def test_should_total_scores_by_key(self):
         scores = {
             'key1': [{
@@ -60,7 +60,7 @@ class TestCompactScores(object):
         }
 
 
-class TestCombineScores(object):
+class TestCombineScores:
     def test_should_combine_scores_by_key(self):
         list_of_scores = [{
             'key1': {
@@ -101,7 +101,7 @@ class TestCombineScores(object):
         assert result == combined_scores
 
 
-class TestCombineAndCompactDocumentScoresWithCount(object):
+class TestCombineAndCompactDocumentScoresWithCount:
     def test_should_combine_single_score(self):
         document_scores_with_count = [([{
             DocumentScoringProps.FIELD_NAME: 'field1',
@@ -129,7 +129,7 @@ class TestCombineAndCompactDocumentScoresWithCount(object):
         assert actual_combined_scores_with_count == expected_combined_scores_with_count
 
 
-class TestSummariseBinaryResults(object):
+class TestSummariseBinaryResults:
     def test_should_return_zero_results_for_no_values(self):
         scores = {
             'key1': []
@@ -256,7 +256,7 @@ class TestSummariseBinaryResults(object):
         )
 
 
-class TestSummariseCombinedDocumentScoresWithCount(object):
+class TestSummariseCombinedDocumentScoresWithCount:
     def test_should_summarise_single_document_score(self):
         combined_scores_with_count = ([{
             DocumentScoringProps.FIELD_NAME: 'field1',

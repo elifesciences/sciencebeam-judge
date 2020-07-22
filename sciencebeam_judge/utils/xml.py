@@ -50,13 +50,11 @@ def _iter_text_content_and_exclude(node, exclude_fn, exclude_placeholder=''):
 
 
 def _get_text_content_and_exclude(node, exclude, exclude_placeholder=''):
-    return ''.join([
-        c for c in _iter_text_content_and_exclude(
-            node,
-            exclude_fn=_to_exclude_fn(exclude),
-            exclude_placeholder=exclude_placeholder
-        )
-    ])
+    return ''.join(_iter_text_content_and_exclude(
+        node,
+        exclude_fn=_to_exclude_fn(exclude),
+        exclude_placeholder=exclude_placeholder
+    ))
 
 
 def get_text_content(node, exclude=None):

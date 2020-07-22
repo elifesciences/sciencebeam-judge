@@ -20,11 +20,11 @@ from .document_scoring import (
 LOGGER = logging.getLogger(__name__)
 
 
-class CombinedScoresProps(object):
+class CombinedScoresProps:
     MATCH_SCORES = 'match_scores'
 
 
-class SummaryScoresProps(object):
+class SummaryScoresProps:
     SUMMARY_SCORES = 'summary_scores'
 
 

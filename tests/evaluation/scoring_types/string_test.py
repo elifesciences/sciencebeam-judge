@@ -12,7 +12,7 @@ LOGGING = logging.getLogger(__name__)
 SOME_TEXT = 'test 123'
 
 
-class TestStringScoringType(object):
+class TestStringScoringType:
     def test_should_score_list_for_exact_match(self):
         result = STRING_SCORING_TYPE.score([SOME_TEXT], [SOME_TEXT])
         assert result['exact']['score'] == 1

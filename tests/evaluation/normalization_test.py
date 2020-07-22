@@ -5,7 +5,7 @@ from sciencebeam_judge.evaluation.normalization import (
 )
 
 
-class TestNormalizeWhitespace(object):
+class TestNormalizeWhitespace:
     def test_replace_line_feed_with_space(self):
         assert normalize_whitespace('a\nb') == 'a b'
 
@@ -19,7 +19,7 @@ class TestNormalizeWhitespace(object):
         assert normalize_whitespace(u'a\u00A0b') == u'a b'
 
 
-class TestStripPunctuationAndWhitespace(object):
+class TestStripPunctuationAndWhitespace:
     def test_replace_punctuation_chars(self):
         assert strip_punctuation_and_whitespace(
             u'a' + FULL_PUNCTUATIONS + 'b'

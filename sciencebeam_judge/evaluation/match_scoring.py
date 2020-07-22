@@ -1,4 +1,4 @@
-class MatchScoringProps(object):
+class MatchScoringProps:
     EXPECTED_SOMETHING = 'expected_something'
     ACTUAL_SOMETHING = 'actual_something'
     SCORE = 'score'

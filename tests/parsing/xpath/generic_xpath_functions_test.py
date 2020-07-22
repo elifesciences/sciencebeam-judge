@@ -16,8 +16,8 @@ def _register_functions():
     register_functions()
 
 
-class TestGenericXpathFunctions(object):
-    class TestConcatChildren(object):
+class TestGenericXpathFunctions:
+    class TestConcatChildren:
         def test_should_join_two_child_elements_of_single_parent(self):
             xml = E.article(
                 E.table(
@@ -54,7 +54,7 @@ class TestGenericXpathFunctions(object):
                 )
             ) == ['Caption 1']
 
-    class TestJoinChildren(object):
+    class TestJoinChildren:
         def test_should_join_two_child_elements_of_single_parent(self):
             xml = E.article(
                 E.parent(
@@ -87,7 +87,7 @@ class TestGenericXpathFunctions(object):
                 list(xml.xpath('generic-join-children(//parent, "child", ", ")'))
             ) == ['']
 
-    class TestAsItems(object):
+    class TestAsItems:
         def test_should_include_single_child(self):
             xml = E.root(E.parent(E.child(TEXT_1)))
             assert [
@@ -109,7 +109,7 @@ class TestGenericXpathFunctions(object):
                 for items in xml.xpath('generic-as-items(., ".//*")')
             ] == [[TEXT_1, TEXT_2]]
 
-    class TestTextContent(object):
+    class TestTextContent:
         def test_should_include_text_from_children(self):
             xml = E.article(
                 E.table(
@@ -136,7 +136,7 @@ class TestGenericXpathFunctions(object):
                 list(xml.xpath('generic-text-content(//table)'))
             ) == ['Text 1']
 
-    class TestNormalizedTextContent(object):
+    class TestNormalizedTextContent:
         def test_should_include_text_from_children(self):
             xml = E.article(
                 E.table(

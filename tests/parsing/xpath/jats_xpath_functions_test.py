@@ -10,8 +10,8 @@ def _register_functions():
     register_functions()
 
 
-class TestJatsXpathFunctions(object):
-    class TestAuthors(object):
+class TestJatsXpathFunctions:
+    class TestAuthors:
         def test_should_return_single_author_node(self):
             contrib = E.contrib(
                 E.name(
@@ -26,7 +26,7 @@ class TestJatsXpathFunctions(object):
             )
             assert list(xml.xpath('jats-authors(.)')) == [contrib]
 
-    class TestFullName(object):
+    class TestFullName:
         def test_should_return_full_name_of_single_name(self):
             xml = E.article(
                 E.name(
@@ -109,7 +109,7 @@ class TestJatsXpathFunctions(object):
             )
             assert list(xml.xpath('jats-full-name(//contrib)')) == []
 
-    class TestAffString(object):
+    class TestAffString:
         def test_should_return_institution(self):
             xml = E.article(
                 E.aff(
@@ -194,7 +194,7 @@ class TestJatsXpathFunctions(object):
                 xml.xpath('jats-aff-string(//aff)')
             ) == ['1 Affiliation 1']
 
-    class TestRefAuthors(object):
+    class TestRefAuthors:
         def test_should_return_string_name_element(self):
             string_name = E(
                 'string-name',
@@ -217,7 +217,7 @@ class TestJatsXpathFunctions(object):
             ))
             assert list(xml.xpath('jats-ref-authors(//ref)')) == [name]
 
-    class TestRefFpage(object):
+    class TestRefFpage:
         def test_should_return_from_attribute_if_present(self):
             xml = E.article(E.ref(
                 E('mixed-citation', E.fpage("123"))
@@ -236,7 +236,7 @@ class TestJatsXpathFunctions(object):
             ))
             assert list(xml.xpath('jats-ref-fpage(//ref)')) == ['']
 
-    class TestRefLpage(object):
+    class TestRefLpage:
         def test_should_return_lpage_element_if_present(self):
             xml = E.article(E.ref(
                 E('mixed-citation', E.lpage("123"))

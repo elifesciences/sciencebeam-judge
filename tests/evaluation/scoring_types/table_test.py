@@ -2,9 +2,7 @@ from __future__ import division
 
 import logging
 
-from abc import ABCMeta, abstractmethod
-
-from six import with_metaclass
+from abc import ABC, abstractmethod
 
 from sciencebeam_judge.evaluation.match_scoring import MatchScoringProps
 
@@ -43,7 +41,7 @@ def _single_cell_table(value):
     }
 
 
-class _TestCommonTableScoringType(object, with_metaclass(ABCMeta)):
+class _TestCommonTableScoringType(ABC):
     @abstractmethod
     def score(self, *args, **kwargs):
         pass

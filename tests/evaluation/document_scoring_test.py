@@ -20,7 +20,7 @@ FIELD_1 = 'field1'
 FIELD_2 = 'field2'
 
 
-class TestIterScoreDocumentFields(object):
+class TestIterScoreDocumentFields:
     def test_should_score_results_for_exact_match_and_partial_match(self):
         result = list(iter_score_document_fields({
             FIELD_1: [SOME_TEXT],
