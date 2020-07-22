@@ -1,6 +1,6 @@
 import logging
 from abc import abstractmethod
-from typing import List, Union
+from typing import List, Union, T
 
 from six import text_type
 
@@ -47,20 +47,20 @@ def normalize_list(value, convert_to_lower=False):
     ]
 
 
-def list_to_str(l):
-    return ', '.join(text_type(x) for x in l)
+def list_to_str(iterable):
+    return ', '.join(text_type(x) for x in iterable)
 
 
-def pad_list(l, desired_length, pad_value=None):
-    if len(l) == desired_length:
-        return l
-    assert desired_length > len(l)
-    return l + [pad_value] * (desired_length - len(l))
+def pad_list(list_: List[T], desired_length: int, pad_value: T = None) -> List[T]:
+    if len(list_) == desired_length:
+        return list_
+    assert desired_length > len(list_)
+    return list_ + [pad_value] * (desired_length - len(list_))
 
 
-def pad_longest(*lists):
-    max_len = max(len(l) for l in lists)
-    return [pad_list(l, max_len) for l in lists]
+def pad_longest(*lists: List[List[T]]) -> List[List[T]]:
+    max_len = max(len(list_) for list_ in lists)
+    return [pad_list(list_, max_len) for list_ in lists]
 
 
 def find_best_match_using_scoring_method(
