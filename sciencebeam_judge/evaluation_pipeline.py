@@ -5,6 +5,7 @@ import os
 import logging
 from io import BytesIO
 from functools import partial
+from typing import Dict, List
 
 import apache_beam as beam
 from apache_beam.io.textio import WriteToText
@@ -49,6 +50,7 @@ from sciencebeam_judge.parsing.xml import (
 
 from sciencebeam_judge.evaluation_config import (
     parse_evaluation_config,
+    parse_scoring_type_overrides,
     get_scoring_types_by_field_map_from_config
 )
 
@@ -354,11 +356,18 @@ def flatten_summary_results(summarised_scores, field_names=None):  # pylint: dis
     return flat_result
 
 
+def get_scoring_types_by_field_map(opt: argparse.Namespace) -> Dict[str, List[str]]:
+    return {
+        **get_scoring_types_by_field_map_from_config(
+            parse_evaluation_config(opt.evaluation_config)
+        ),
+        **opt.scoring_type_overrides
+    }
+
+
 def configure_pipeline(p, opt):  # pylint: disable=too-many-locals
     xml_mapping = parse_xml_mapping(opt.xml_mapping)
-    scoring_types_by_field_map = get_scoring_types_by_field_map_from_config(
-        parse_evaluation_config(opt.evaluation_config)
-    )
+    scoring_types_by_field_map = get_scoring_types_by_field_map(opt)
     field_names = opt.fields
 
     target_file_list = load_file_list(
@@ -526,6 +535,15 @@ def add_main_args(parser):
         '--evaluation-config', type=str,
         default='evaluation.conf',
         help='filename to the evaluation configuration'
+    )
+
+    config_group.add_argument(
+        '--scoring-type-overrides', type=parse_scoring_type_overrides,
+        default={},
+        help=' '.join([
+            'overrides for the scoring types (evaluation configuration).',
+            'format: field1=scoring-type1,scoring-type2|field2=scoring-type1'
+        ])
     )
 
     parser.add_argument(

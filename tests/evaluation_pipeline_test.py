@@ -1,4 +1,5 @@
 import logging
+from pathlib import Path
 from mock import patch, DEFAULT
 
 import pytest
@@ -12,11 +13,14 @@ from sciencebeam_utils.utils.collection import (
     extend_dict
 )
 
+from sciencebeam_judge.evaluation_config import parse_scoring_type_overrides
+
 import sciencebeam_judge.evaluation_pipeline as evaluation_pipeline
 from sciencebeam_judge.evaluation_pipeline import (
     flatten_evaluation_results,
     flatten_summary_results,
     configure_pipeline,
+    get_scoring_types_by_field_map,
     parse_args,
     DataProps,
     OutputColumns,
@@ -236,6 +240,37 @@ class TestFlattenSummaryResults:
                 SummaryOutputColumns.RECALL: scores['recall'],
                 SummaryOutputColumns.F1: scores['f1']
             }
+
+
+class TestGetScoringTypesByFieldMap:
+    def test_should_return_configured_scoring_types(self, temp_dir: Path):
+        opt = get_default_args()
+        opt.evaluation_config = str(temp_dir / 'evaluation.conf')
+        Path(opt.evaluation_config).write_text('\n'.join([
+            '[scoring_type]',
+            'field1=old1',
+            'field2=old2'
+        ]))
+        assert get_scoring_types_by_field_map(opt) == {
+            'field1': ['old1'],
+            'field2': ['old2']
+        }
+
+    def test_should_apply_scoring_type_overrides(self, temp_dir: Path):
+        opt = get_default_args()
+        opt.evaluation_config = str(temp_dir / 'evaluation.conf')
+        opt.scoring_type_overrides = parse_scoring_type_overrides(
+            'field1=new1.1,new1.2'
+        )
+        Path(opt.evaluation_config).write_text('\n'.join([
+            '[scoring_type]',
+            'field1=old1',
+            'field2=old2'
+        ]))
+        assert get_scoring_types_by_field_map(opt) == {
+            'field1': ['new1.1', 'new1.2'],
+            'field2': ['old2']
+        }
 
 
 @pytest.mark.slow
