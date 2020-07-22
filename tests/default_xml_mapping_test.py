@@ -29,9 +29,9 @@ def _parse_xml(*args, **kwargs):
     return result
 
 
-class TestDefaultXmlMapping(object):
-    class TestJats(object):
-        class TestJatsReferenceAuthorNames(object):
+class TestDefaultXmlMapping:
+    class TestJats:
+        class TestJatsReferenceAuthorNames:
             def test_should_parse_mixed_style_jats(self, default_xml_mapping):
                 xml = E.article(E.back(E(
                     'ref-list',
@@ -109,7 +109,7 @@ class TestDefaultXmlMapping(object):
                     {'items': ['GivenName2.1 Surname2.1']}
                 ]
 
-        class TestJatsReferenceTitle(object):
+        class TestJatsReferenceTitle:
             def test_should_parse_mixed_style_journal_article_title_and_source(
                     self, default_xml_mapping):
                 xml = E.article(E.back(E(
@@ -158,8 +158,8 @@ class TestDefaultXmlMapping(object):
                 assert result.get('reference_source') == ['Book 1']
                 assert result.get('reference_publication_type') == ['book']
 
-    class TestTei(object):
-        class TestTeiReferenceAuthorNames(object):
+    class TestTei:
+        class TestTeiReferenceAuthorNames:
             def test_should_parse_tei_ref_authors(self, default_xml_mapping):
                 xml = E.TEI(E.text(E.back(E.div(E.listBibl(
                     E.biblStruct(E.analytic(E.author(E.persName(
@@ -196,7 +196,7 @@ class TestDefaultXmlMapping(object):
                     {'items': ['GivenName2.1 Surname2.1']}
                 ]
 
-        class TestTeiReferenceTitle(object):
+        class TestTeiReferenceTitle:
             def test_should_parse_tei_journal_article_and_source(
                     self, default_xml_mapping):
                 xml = E.TEI(E.text(E.back(E.div(E.listBibl(
@@ -241,7 +241,7 @@ class TestDefaultXmlMapping(object):
                 assert result.get('reference_source') == ['Book 1']
                 assert result.get('reference_publication_type') == ['book']
 
-        class TestTeiAbstractText(object):
+        class TestTeiAbstractText:
             def test_should_return_without_paragraph(self, default_xml_mapping):
                 xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
                     'abstract1'
@@ -272,8 +272,8 @@ class TestDefaultXmlMapping(object):
                 result = _parse_xml(BytesIO(etree.tostring(xml)), xml_mapping=default_xml_mapping)
                 assert result.get('abstract') == ['Sub: abstract1']
 
-    class TestTeiTraining(object):
-        class TestTeiTrainingTitle(object):
+    class TestTeiTraining:
+        class TestTeiTrainingTitle:
             def test_should_extract_title(self, default_xml_mapping):
                 xml = E.tei(E.text(E.front(
                     E.docTitle(E.titlePart('Title 1')),
@@ -290,7 +290,7 @@ class TestDefaultXmlMapping(object):
                 result = _parse_xml(BytesIO(etree.tostring(xml)), xml_mapping=default_xml_mapping)
                 assert result.get('title') == ['Title 1']
 
-        class TestTeiTrainingAbstract(object):
+        class TestTeiTrainingAbstract:
             def test_should_extract_title(self, default_xml_mapping):
                 xml = E.tei(E.text(E.front(
                     E.div('Abstract 1', type='abstract'),

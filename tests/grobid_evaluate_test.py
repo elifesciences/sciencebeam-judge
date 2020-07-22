@@ -50,7 +50,7 @@ def _normalize_report(s):
     return s.replace('  ', ' ').strip()
 
 
-class TestSummarisedDocumentScoresToScoresByScoringMethod(object):
+class TestSummarisedDocumentScoresToScoresByScoringMethod:
     def test_should_convert_single_summary_score(self):
         summarised_document_scores = [{
             DocumentScoringProps.FIELD_NAME: FIELD_1,
@@ -81,7 +81,7 @@ class TestSummarisedDocumentScoresToScoresByScoringMethod(object):
         assert actual_scores_by_scoring_method == expected_scores_by_scoring_method
 
 
-class TestFormatSummaryByScoringMethod(object):
+class TestFormatSummaryByScoringMethod:
     def test_should_not_end_with_space(self):
         scores_by_scoring_method = {
             ScoringMethodNames.EXACT: SUMMARY_SCORES
@@ -91,7 +91,7 @@ class TestFormatSummaryByScoringMethod(object):
         ).endswith(' ')
 
 
-class TestFormatSummarisedDocumentScoresAsGrobidReport(object):
+class TestFormatSummarisedDocumentScoresAsGrobidReport:
     def test_should_generate_report_for_single_field(self):
         summarised_document_scores = [{
             DocumentScoringProps.FIELD_NAME: FIELD_1,

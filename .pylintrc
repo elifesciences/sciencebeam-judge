@@ -7,7 +7,7 @@ disable=
     too-many-arguments,
     duplicate-code
 
-[TYPECHECK]
+[MASTER]
 ignored-classes=
     lxml.builder.ElementMaker,
     lxml.builder.E

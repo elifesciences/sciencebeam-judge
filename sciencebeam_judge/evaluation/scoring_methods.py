@@ -10,7 +10,7 @@ from .normalization import (
 )
 
 
-class ScoringMethodNames(object):
+class ScoringMethodNames:
     EXACT = 'exact'
     SOFT = 'soft'
     LEVENSHTEIN = 'levenshtein'
@@ -35,7 +35,7 @@ def IDENTITY_FN(x):
     return x
 
 
-class ScoringMethod(object):
+class ScoringMethod:
     def __init__(
             self,
             name: str,

@@ -142,12 +142,12 @@ def get_logger():
     return logging.getLogger(__name__)
 
 
-class MetricCounters(object):
+class MetricCounters:
     FILE_PAIRS = 'file_pairs'
     READ_ERROR = 'read_error'
 
 
-class DataProps(object):
+class DataProps:
     TARGET_FILE_URL = 'target_file'
     PREDICTION_FILE_URL = 'prediction_file'
     TARGET_CONTENT = 'target_content'
@@ -210,7 +210,7 @@ def EvaluateFilePairs(x, **kwargs):
     })
 
 
-class OutputColumns(object):
+class OutputColumns:
     PREDICTION_FILE = 'prediction_file'
     TARGET_FILE = 'target_file'
     FIELD_NAME = 'field_name'
@@ -239,7 +239,7 @@ DEFAULT_OUTPUT_COLUMNS = [
 ]
 
 
-class SummaryOutputColumns(object):
+class SummaryOutputColumns:
     DOCUMENT_COUNT = 'document_count'
     EVALUATION_METHOD = 'evaluation_method'
     SCORING_TYPE = 'scoring_type'

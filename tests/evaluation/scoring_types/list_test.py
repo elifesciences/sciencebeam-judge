@@ -2,9 +2,7 @@ from __future__ import division
 
 import logging
 
-from abc import ABCMeta, abstractmethod
-
-from six import with_metaclass
+from abc import ABC, abstractmethod
 
 from sciencebeam_judge.evaluation.match_scoring import MatchScoringProps
 from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
@@ -29,7 +27,7 @@ ALMOST_MATCHING_TEXTS = [
 ]
 
 
-class _TestCommonListScoringType(object, with_metaclass(ABCMeta)):
+class _TestCommonListScoringType(ABC):
     @abstractmethod
     def score(self, *args, **kwargs):
         pass

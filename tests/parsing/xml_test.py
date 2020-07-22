@@ -65,7 +65,7 @@ def _single_cell_table_xml(value):
     return '<table><tbody><tr><td> %s </td></tr></tbody></table>' % value
 
 
-class TestParseXmlMapping(object):
+class TestParseXmlMapping:
     def test_should_parse_multiple_sections(self):
         xml_mapping = u'''
 [root1]
@@ -90,7 +90,7 @@ prop2 = parent2/p2
         assert result == expected_xml_mapping
 
 
-class TestParseXmlTableMapping(object):
+class TestParseXmlTableMapping:
     def test_should_parse_table(self):
         result = parse_xml_table(etree.fromstring(TABLE_XML_1))
         assert result == TABLE_1
@@ -127,7 +127,7 @@ class TestParseXmlTableMapping(object):
         }
 
 
-class TestParseXmlItems(object):
+class TestParseXmlItems:
     def test_should_parse_items(self):
         xml = '<items><item>%s</item><item>%s</item></items>' % (
             TEXT_1, TEXT_2
@@ -138,7 +138,7 @@ class TestParseXmlItems(object):
         }
 
 
-class TestParseXml(object):
+class TestParseXml:
     def test_should_parse_single_value_properties(self):
         xml = b'<root><parent><p1>value1</p1><p2>value2</p2></parent></root>'
         xml_mapping = {

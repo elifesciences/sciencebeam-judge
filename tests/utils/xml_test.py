@@ -6,7 +6,7 @@ from sciencebeam_judge.utils.xml import (
 )
 
 
-class TestGetTextContent(object):
+class TestGetTextContent:
     def test_should_return_text_of_node(self):
         assert get_text_content(E.dummy('text')) == 'text'
 

@@ -13,7 +13,7 @@ from .table import (
 )
 
 
-class ScoringTypeNames(object):
+class ScoringTypeNames:
     STRING = 'string'
     LIST = 'list'
     PARIAL_LIST = 'partial_list'

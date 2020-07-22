@@ -8,7 +8,7 @@ TEXT_1 = 'abc'
 TEXT_2 = '123'
 
 
-class TestGetMatchScoreObjForScore(object):
+class TestGetMatchScoreObjForScore:
     def test_should_count_as_tp_for_match(self):
         match_score = get_match_score_obj_for_score(TEXT_1, TEXT_1, 1.0)
         assert match_score[MatchScoringProps.TRUE_POSITIVE] == 1

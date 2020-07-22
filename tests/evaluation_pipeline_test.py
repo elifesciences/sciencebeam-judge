@@ -114,7 +114,7 @@ def read_all_from_path_side_effect():
     return lambda filename, **kwargs: dummy_file_content(filename)
 
 
-class TestFlattenEvaluationResults(object):
+class TestFlattenEvaluationResults:
     def test_should_convert_empty_evaluation_results(self):
         evaluation_results = {
             DataProps.PREDICTION_FILE_URL: PREDICTION_FILE_LIST[0],
@@ -174,7 +174,7 @@ class TestFlattenEvaluationResults(object):
         assert result[1][OutputColumns.EXPECTED] == MATCH_SCORE_1[MatchScoringProps.EXPECTED]
 
 
-class TestFlattenSummaryResults(object):
+class TestFlattenSummaryResults:
     def test_should_convert_empty_evaluation_results(self):
         summary_results = []
         assert flatten_summary_results(

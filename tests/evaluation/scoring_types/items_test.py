@@ -9,7 +9,7 @@ UNICODE_CHAR = u'\u2013'
 UNICODE_STR = u'Unicode %s' % UNICODE_CHAR
 
 
-class TestGetExactMatchedCharacters(object):
+class TestGetExactMatchedCharacters:
     def test_should_match_all_characters(self):
         assert _get_exact_matched_characters('abc', ['ab', 'c']) == [True] * 3
 
@@ -25,7 +25,7 @@ class TestGetExactMatchedCharacters(object):
         assert _get_exact_matched_characters('', ['abc']) == []
 
 
-class TestGetFuzzyMatchedCharacters(object):
+class TestGetFuzzyMatchedCharacters:
     def test_should_match_all_characters(self):
         assert _get_fuzzy_matched_characters(
             'abc', ['ab', 'c'], threshold=1
@@ -60,7 +60,7 @@ class TestGetFuzzyMatchedCharacters(object):
         assert _get_fuzzy_matched_characters('', ['abc'], threshold=0.9) == []
 
 
-class TestScoreItemsTo(object):
+class TestScoreItemsTo:
     def test_should_return_zero_for_empty_haystack_not_empty_needles(self):
         assert _score_items_to([], ['abc'], lambda *_: []) == 0.0
 

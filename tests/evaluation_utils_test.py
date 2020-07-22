@@ -3,7 +3,7 @@ from sciencebeam_judge.evaluation_utils import (
 )
 
 
-class TestCommaSeparatedStrToList(object):
+class TestCommaSeparatedStrToList:
     def test_should_parse_empty_str_as_empty_list(self):
         assert comma_separated_str_to_list('') == []
 

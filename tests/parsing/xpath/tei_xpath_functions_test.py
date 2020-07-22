@@ -20,8 +20,8 @@ def _tei_with_authors(*authors):
     ))))))
 
 
-class TestTeiXpathFunctions(object):
-    class TestAuthors(object):
+class TestTeiXpathFunctions:
+    class TestAuthors:
         def test_should_return_single_author_node(self):
             author = E.author(
                 E.persName(
@@ -32,7 +32,7 @@ class TestTeiXpathFunctions(object):
             xml = _tei_with_authors(author)
             assert list(xml.xpath('tei-authors(.)')) == [author]
 
-    class TestGivenName(object):
+    class TestGivenName:
         def test_should_return_given_name_of_single_pers_name(self):
             author = E.author(
                 E.persName(
@@ -58,7 +58,7 @@ class TestTeiXpathFunctions(object):
                 xml.xpath('tei-given-name(//persName)')
             ) == ['Tom T']
 
-    class TestFullName(object):
+    class TestFullName:
         def test_should_return_full_name_of_single_pers_name(self):
             author = E.author(
                 E.persName(
@@ -115,7 +115,7 @@ class TestTeiXpathFunctions(object):
             xml = _tei_with_authors(author)
             assert list(xml.xpath('tei-full-name(//author)')) == ['Tom']
 
-    class TestAuthorAffiliations(object):
+    class TestAuthorAffiliations:
         def test_should_return_single_affiliation_without_key(self):
             affiliation = E.affiliation(
                 E.orgName('Department 1', type="department")
@@ -134,7 +134,7 @@ class TestTeiXpathFunctions(object):
             xml = _tei_with_authors(E.author(affiliation1), E.author(affiliation1_copy))
             assert list(xml.xpath('tei-author-affiliations(.)')) == [affiliation1]
 
-    class TestAffString(object):
+    class TestAffString:
         def test_should_return_org_name(self):
             xml = E.TEI(
                 E.affiliation(
@@ -253,7 +253,7 @@ class TestTeiXpathFunctions(object):
                 xml.xpath('tei-aff-string(//affiliation)')
             ) == ['Department 1', 'Department 2']
 
-    class TestAffText(object):
+    class TestAffText:
         def test_should_return_emtpy_string_if_no_raw_affiliation_note_available(self):
             xml = E.TEI(
                 E.affiliation(
@@ -323,7 +323,7 @@ class TestTeiXpathFunctions(object):
                 xml.xpath('tei-aff-string(//affiliation)')
             ) == ['raw affiliation 1', 'raw affiliation 2']
 
-    class TestRefFpage(object):
+    class TestRefFpage:
         def test_should_return_from_attribute_if_present(self):
             xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
                 E.biblScope({"unit": "page", "from": "123"})
@@ -348,7 +348,7 @@ class TestTeiXpathFunctions(object):
             ))))
             assert list(xml.xpath('tei-ref-fpage(//biblStruct)')) == ['']
 
-    class TestRefLpage(object):
+    class TestRefLpage:
         def test_should_return_to_attribute_if_present(self):
             xml = E.TEI(E.biblStruct(E.monogr(E.imprint(
                 E.biblScope({"unit": "page", "to": "123"})
@@ -361,7 +361,7 @@ class TestTeiXpathFunctions(object):
             ))))
             assert list(xml.xpath('tei-ref-lpage(//biblStruct)')) == ['123']
 
-    class TestAbstractText(object):
+    class TestAbstractText:
         def test_should_return_without_paragraph(self):
             xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
                 'abstract1'
