@@ -82,18 +82,18 @@ def format_summary_by_scoring_method(scores_by_scoring_method, keys):
     ]))
     print('available_keys:', available_keys, ', keys:', keys)
     keys = [k for k in keys if k in available_keys]
-    if not scores_by_scoring_method:
-        return ''
-    if 'exact' not in scores_by_scoring_method:
-        raise ValueError(
-            'invalid scores_by_scoring_method, expected "exact", but had: %s' %
-            scores_by_scoring_method.keys()
-        )
-    score_outputs = []
     score_measures = [
         ScoringMethodNames.EXACT, ScoringMethodNames.SOFT,
         ScoringMethodNames.LEVENSHTEIN, ScoringMethodNames.RATCLIFF_OBERSHELP
     ]
+    if not scores_by_scoring_method:
+        return ''
+    if not (set(score_measures) & set(scores_by_scoring_method.keys())):
+        raise ValueError(
+            'invalid scores_by_scoring_method, expected at least one of %s, but had: %s' %
+            (score_measures, scores_by_scoring_method.keys())
+        )
+    score_outputs = []
     for measure in score_measures:
         if measure in scores_by_scoring_method:
             score_outputs.append(
