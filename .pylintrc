@@ -5,7 +5,8 @@ disable=
     no-self-use,
     invalid-name,
     too-many-arguments,
-    duplicate-code
+    duplicate-code,
+    superfluous-parens
 
 [MASTER]
 ignored-classes=

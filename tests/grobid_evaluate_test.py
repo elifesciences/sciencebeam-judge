@@ -1,3 +1,5 @@
+import pytest
+
 from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
 from sciencebeam_judge.evaluation.scoring_types.scoring_types import ScoringTypeNames
 from sciencebeam_judge.evaluation.document_scoring import DocumentScoringProps
@@ -89,6 +91,23 @@ class TestFormatSummaryByScoringMethod:
         assert not format_summary_by_scoring_method(
             scores_by_scoring_method, [FIELD_1]
         ).endswith(' ')
+
+    def test_should_raise_error_if_invalid_scoring_method(self):
+        scores_by_scoring_method = {
+            'invalid': SUMMARY_SCORES
+        }
+        with pytest.raises(ValueError):
+            format_summary_by_scoring_method(
+                scores_by_scoring_method, [FIELD_1]
+            )
+
+    def test_not_should_raise_error_if_valid_scoring_method_is_present(self):
+        scores_by_scoring_method = {
+            ScoringMethodNames.LEVENSHTEIN: SUMMARY_SCORES
+        }
+        format_summary_by_scoring_method(
+            scores_by_scoring_method, [FIELD_1]
+        )
 
 
 class TestFormatSummarisedDocumentScoresAsGrobidReport:
