@@ -31,6 +31,50 @@ def _parse_xml(*args, **kwargs):
 
 class TestDefaultXmlMapping:
     class TestJats:
+        class TestJatsReferenceText:
+            def test_should_get_reference_text(self, default_xml_mapping):
+                xml = E.article(E.back(E(
+                    'ref-list',
+                    E.ref('reference 1'),
+                    E.ref('reference 2')
+                )))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'first_reference_text',
+                        'reference_text'
+                    ]
+                )
+                assert result.get('first_reference_text') == [
+                    'reference 1'
+                ]
+                assert result.get('reference_text') == [
+                    'reference 1',
+                    'reference 2'
+                ]
+
+            def test_should_get_reference_text_for_multiple_ref_lists(self, default_xml_mapping):
+                xml = E.article(E.back(
+                    E('ref-list', E.ref('reference 1')),
+                    E('ref-list', E.ref('reference 2'))
+                ))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'first_reference_text',
+                        'reference_text'
+                    ]
+                )
+                assert result.get('first_reference_text') == [
+                    'reference 1'
+                ]
+                assert result.get('reference_text') == [
+                    'reference 1',
+                    'reference 2'
+                ]
+
         class TestJatsReferenceAuthorNames:
             def test_should_parse_mixed_style_jats(self, default_xml_mapping):
                 xml = E.article(E.back(E(
@@ -210,11 +254,13 @@ class TestDefaultXmlMapping:
                     BytesIO(etree.tostring(xml)),
                     xml_mapping=default_xml_mapping,
                     fields=[
+                        'first_reference_title',
                         'reference_title',
                         'reference_source',
                         'reference_publication_type'
                     ]
                 )
+                assert result.get('first_reference_title') == ['Article 1']
                 assert result.get('reference_title') == ['Article 1']
                 assert result.get('reference_source') == ['Journal 1']
                 assert result.get('reference_publication_type') == ['journal']
