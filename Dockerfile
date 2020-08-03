@@ -26,4 +26,4 @@ COPY *.conf *.sh *.in *.txt *.py /srv/sciencebeam-judge/
 
 # tests
 COPY tests ./tests
-COPY .pylintrc .flake8 ${PROJECT_HOME}/
+COPY .pylintrc .flake8 pytest.ini ${PROJECT_HOME}/
