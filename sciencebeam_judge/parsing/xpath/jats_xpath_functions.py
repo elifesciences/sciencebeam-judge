@@ -34,10 +34,28 @@ def _text(nodes):
     return _filter_truthy(x.text for x in nodes)
 
 
+def _name_given_name(name_node):
+    return normalize_person_name(' '.join(_text(_filter_not_none(
+        [name_node.find('given-names')]
+    ))))
+
+
 def _name_full_name(name_node):
     return normalize_person_name(' '.join(_text(_filter_not_none(
         [name_node.find('given-names'), name_node.find('surname')]
     ))))
+
+
+def _contrib_given_name(contrib_node):
+    name_node = _name_node(contrib_node)
+    if name_node is not None:
+        return _name_given_name(name_node)
+    string_name_node = _string_name_node(contrib_node)
+    if string_name_node is not None:
+        full_name = _name_given_name(string_name_node).strip()
+        if full_name:
+            return full_name
+    return None
 
 
 def _contrib_full_name(contrib_node):
@@ -51,6 +69,15 @@ def _contrib_full_name(contrib_node):
             return full_name
         return string_name_node.text
     return None
+
+
+def fn_jats_given_name(_, nodes):
+    result = _filter_not_none([
+        _contrib_given_name(node)
+        for node in nodes
+    ])
+    LOGGER.debug('fn_jats_given_name, nodes: %s, result: %s', nodes, result)
+    return result
 
 
 def fn_jats_full_name(_, nodes):
@@ -145,6 +172,7 @@ def fn_jats_ref_lpage(_, nodes):
 def register_functions(ns=None):
     if ns is None:
         ns = etree.FunctionNamespace(None)
+    ns['jats-given-name'] = fn_jats_given_name
     ns['jats-full-name'] = fn_jats_full_name
     ns['jats-authors'] = fn_jats_authors
     ns['jats-ref-authors'] = fn_jats_ref_authors
