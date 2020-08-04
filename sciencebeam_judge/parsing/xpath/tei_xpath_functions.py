@@ -6,6 +6,8 @@ from natsort import natsorted
 
 from sciencebeam_utils.utils.xml import get_text_content
 
+from sciencebeam_judge.utils.misc import normalize_person_name
+
 
 LOGGER = logging.getLogger(__name__)
 
@@ -31,14 +33,16 @@ def _text(nodes: List[etree.Element]) -> List[str]:
 
 
 def _pers_name_given_name(pers_name_node):
-    return ' '.join(_text(_filter_not_none(pers_name_node.findall('forename'))))
+    return normalize_person_name(
+        ' '.join(_text(_filter_not_none(pers_name_node.findall('forename'))))
+    )
 
 
 def _pers_name_full_name(pers_name_node):
-    return ' '.join(_text(_filter_not_none(
+    return normalize_person_name(' '.join(_text(_filter_not_none(
         list(pers_name_node.findall('forename')) +
         [pers_name_node.find('surname')]
-    )))
+    ))))
 
 
 def _author_given_name(author_node):

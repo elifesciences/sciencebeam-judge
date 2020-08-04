@@ -4,6 +4,8 @@ from lxml import etree
 
 from sciencebeam_judge.utils.xml import get_text_content, get_normalized_text_content
 
+from sciencebeam_judge.utils.misc import normalize_person_name
+
 
 LOGGER = logging.getLogger(__name__)
 
@@ -33,9 +35,9 @@ def _text(nodes):
 
 
 def _name_full_name(name_node):
-    return ' '.join(_text(_filter_not_none(
+    return normalize_person_name(' '.join(_text(_filter_not_none(
         [name_node.find('given-names'), name_node.find('surname')]
-    )))
+    ))))
 
 
 def _contrib_full_name(contrib_node):

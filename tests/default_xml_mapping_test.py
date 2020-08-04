@@ -153,6 +153,34 @@ class TestDefaultXmlMapping:
                     {'items': ['GivenName2.1 Surname2.1']}
                 ]
 
+            def test_should_normalize_author_name(self, default_xml_mapping):
+                xml = E.article(E.back(E(
+                    'ref-list',
+                    E.ref(E('mixed-citation', E(
+                        'string-name',
+                        E.surname('Smith'),
+                        E('given-names', 'A. M.')
+                    )))
+                )))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'reference_author_surnames',
+                        'reference_author_given_names',
+                        'reference_author_full_names'
+                    ]
+                )
+                assert result.get('reference_author_surnames') == [
+                    {'items': ['Smith']}
+                ]
+                assert result.get('reference_author_full_names') == [
+                    {'items': ['AM Smith']}
+                ]
+                # assert result.get('reference_author_given_names') == [
+                #     {'items': ['AM']}
+                # ]
+
         class TestJatsReferenceTitle:
             def test_should_parse_mixed_style_journal_article_title_and_source(
                     self, default_xml_mapping):
@@ -238,6 +266,33 @@ class TestDefaultXmlMapping:
                 assert result.get('reference_author_full_names') == [
                     {'items': ['GivenName1.1 Surname1.1', 'GivenName1.2 Surname1.2']},
                     {'items': ['GivenName2.1 Surname2.1']}
+                ]
+
+            def test_should_normalize_tei_ref_author_name(self, default_xml_mapping):
+                xml = E.TEI(E.text(E.back(E.div(E.listBibl(
+                    E.biblStruct(E.analytic(E.author(E.persName(
+                        E.forename('A', type='first'),
+                        E.forename('M', type='middle'),
+                        E.surname('Smith')
+                    ))))
+                )))))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'reference_author_surnames',
+                        'reference_author_given_names',
+                        'reference_author_full_names'
+                    ]
+                )
+                assert result.get('reference_author_surnames') == [
+                    {'items': ['Smith']}
+                ]
+                assert result.get('reference_author_full_names') == [
+                    {'items': ['AM Smith']}
+                ]
+                assert result.get('reference_author_given_names') == [
+                    {'items': ['AM']},
                 ]
 
         class TestTeiReferenceTitle:
