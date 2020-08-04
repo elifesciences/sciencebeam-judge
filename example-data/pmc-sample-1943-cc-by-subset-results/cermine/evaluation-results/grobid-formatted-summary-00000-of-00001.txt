@@ -5,21 +5,24 @@
 
                  label   accuracy  precision     recall         f1
 
-               title      97.96      70.00      70.00      70.00
-            abstract      95.24      28.57      22.22      25.00
-first_author_surname      93.20       0.00       0.00       0.00
-first_author_full_name      95.92      40.00      40.00      40.00
-first_reference_text      93.20       0.00       0.00       0.00
+               title      98.04      70.00      70.00      70.00
+            abstract      95.42      28.57      22.22      25.00
+first_author_surname      93.46       0.00       0.00       0.00
+first_author_full_name      95.42      30.00      30.00      30.00
+first_reference_text      93.46       0.00       0.00       0.00
 first_reference_title     100.00     100.00     100.00     100.00
-first_reference_year      97.96      70.00      70.00      70.00
-first_reference_source      97.28      60.00      60.00      60.00
-first_reference_publication_type      93.20       0.00       0.00       0.00
-first_reference_volume      98.64      75.00      75.00      75.00
-first_reference_fpage      98.64      75.00      75.00      75.00
-first_reference_lpage      98.64      75.00      75.00      75.00
+first_reference_year      98.04      70.00      70.00      70.00
+first_reference_source      97.39      60.00      60.00      60.00
+first_reference_publication_type      93.46       0.00       0.00       0.00
+first_reference_volume      98.69      75.00      75.00      75.00
+first_reference_fpage      98.69      75.00      75.00      75.00
+first_reference_lpage      98.69      75.00      75.00      75.00
+ first_reference_doi     100.00       0.00       0.00       0.00
+first_reference_pmid      96.73       0.00       0.00       0.00
+first_reference_pmcid     100.00       0.00       0.00       0.00
 
-          all fields      96.66      57.95      46.36      51.52      (micro average)
-               96.66      49.46      48.94      49.17 (macro average)
+          all fields      97.17      56.82      43.48      49.26      (micro average)
+               97.17      38.90      38.48      38.67 (macro average)
 
 
   ==== Levenshtein Matching ===== (Minimum Levenshtein distance at 0.8)
@@ -29,17 +32,20 @@ first_reference_lpage      98.64      75.00      75.00      75.00
                  label   accuracy  precision     recall         f1
 
                title     100.00     100.00     100.00     100.00
-            abstract      96.18      57.14      44.44      50.00
-first_author_surname      92.37       0.00       0.00       0.00
-first_author_full_name      96.18      50.00      50.00      50.00
+            abstract      96.32      57.14      44.44      50.00
+first_author_surname      92.65       0.00       0.00       0.00
+first_author_full_name      96.32      50.00      50.00      50.00
 first_reference_text     100.00     100.00     100.00     100.00
 first_reference_title     100.00     100.00     100.00     100.00
-first_reference_year      97.71      70.00      70.00      70.00
-first_reference_source      96.95      60.00      60.00      60.00
-first_reference_publication_type      92.37       0.00       0.00       0.00
-first_reference_volume      98.47      75.00      75.00      75.00
-first_reference_fpage      98.47      75.00      75.00      75.00
-first_reference_lpage      98.47      75.00      75.00      75.00
+first_reference_year      97.79      70.00      70.00      70.00
+first_reference_source      97.06      60.00      60.00      60.00
+first_reference_publication_type      92.65       0.00       0.00       0.00
+first_reference_volume      98.53      75.00      75.00      75.00
+first_reference_fpage      98.53      75.00      75.00      75.00
+first_reference_lpage      98.53      75.00      75.00      75.00
+ first_reference_doi     100.00       0.00       0.00       0.00
+first_reference_pmid      96.32       0.00       0.00       0.00
+first_reference_pmcid     100.00       0.00       0.00       0.00
 
-          all fields      97.26      76.14      60.91      67.68      (micro average)
-               97.26      63.51      62.45      62.92 (macro average)
+          all fields      97.65      76.14      58.26      66.01      (micro average)
+               97.65      50.81      49.96      50.33 (macro average)

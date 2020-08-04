@@ -99,12 +99,14 @@ DEFAULT_REFERENCE_FIELDS = [
     'first_reference_title', 'first_reference_year',
     'first_reference_source', 'first_reference_publication_type',
     'first_reference_volume', 'first_reference_fpage', 'first_reference_lpage',
+    'first_reference_doi', 'first_reference_pmid', 'first_reference_pmcid',
     'reference_text',
     'reference_fields',
     'reference_author_surnames', 'reference_author_given_names', 'reference_author_full_names',
     'reference_title', 'reference_year',
     'reference_source', 'reference_publication_type',
-    'reference_volume', 'reference_fpage', 'reference_lpage'
+    'reference_volume', 'reference_fpage', 'reference_lpage',
+    'reference_doi', 'reference_pmid', 'reference_pmcid'
 ]
 
 DEFAULT_TABLE_FIELDS = [

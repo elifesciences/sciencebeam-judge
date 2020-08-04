@@ -230,6 +230,37 @@ class TestDefaultXmlMapping:
                 assert result.get('reference_source') == ['Book 1']
                 assert result.get('reference_publication_type') == ['book']
 
+        class TestJatsReferenceExternalIdentifiers:
+            def test_should_parse_mixed_style_external_identifiers(
+                    self, default_xml_mapping):
+                xml = E.article(E.back(E(
+                    'ref-list',
+                    E.ref(E.label('1'), E(
+                        'mixed-citation',
+                        E('pub-id', 'doi1', {'pub-id-type': 'doi'}),
+                        E('pub-id', 'pmid1', {'pub-id-type': 'pmid'}),
+                        E('pub-id', 'pmcid1', {'pub-id-type': 'pmcid'})
+                    ))
+                )))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'first_reference_doi',
+                        'reference_doi',
+                        'first_reference_pmid',
+                        'reference_pmid',
+                        'first_reference_pmcid',
+                        'reference_pmcid'
+                    ]
+                )
+                assert result.get('first_reference_doi') == ['doi1']
+                assert result.get('reference_doi') == ['doi1']
+                assert result.get('first_reference_pmid') == ['pmid1']
+                assert result.get('reference_pmid') == ['pmid1']
+                assert result.get('first_reference_pmcid') == ['pmcid1']
+                assert result.get('reference_pmcid') == ['pmcid1']
+
     class TestTei:
         class TestTeiReferenceAuthorNames:
             def test_should_parse_tei_ref_authors(self, default_xml_mapping):
@@ -341,6 +372,38 @@ class TestDefaultXmlMapping:
                 assert result.get('reference_title') == ['Chapter 1']
                 assert result.get('reference_source') == ['Book 1']
                 assert result.get('reference_publication_type') == ['book']
+
+        class TestJatsReferenceExternalIdentifiers:
+            def test_should_parse_mixed_style_external_identifiers(
+                    self, default_xml_mapping):
+                xml = E.TEI(E.text(E.back(E.div(E.listBibl(
+                    E.biblStruct(E.analytic(
+                        E.title('Chapter 1', level='a', type='main'),
+                        E.idno('doi1', type='DOI'),
+                        E.idno('pmid1', type='PMID'),
+                        E.idno('pmcid1', type='PMCID')
+                    ), E.monogr(
+                        E.title('Book 1', level='m')
+                    ))
+                )))))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'first_reference_doi',
+                        'reference_doi',
+                        'first_reference_pmid',
+                        'reference_pmid',
+                        'first_reference_pmcid',
+                        'reference_pmcid'
+                    ]
+                )
+                assert result.get('first_reference_doi') == ['doi1']
+                assert result.get('reference_doi') == ['doi1']
+                assert result.get('first_reference_pmid') == ['pmid1']
+                assert result.get('reference_pmid') == ['pmid1']
+                assert result.get('first_reference_pmcid') == ['pmcid1']
+                assert result.get('reference_pmcid') == ['pmcid1']
 
         class TestTeiAbstractText:
             def test_should_return_without_paragraph(self, default_xml_mapping):
