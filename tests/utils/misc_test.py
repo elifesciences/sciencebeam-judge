@@ -19,3 +19,6 @@ class TestNormalizePersonName:
 
     def test_should_remove_dot_after_multiple_initials(self):
         assert normalize_person_name('A. M. X. Smith') == 'AMX Smith'
+
+    def test_should_remove_dot_after_initials_only(self):
+        assert normalize_person_name('A. M.') == 'AM'

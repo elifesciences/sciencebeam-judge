@@ -177,9 +177,9 @@ class TestDefaultXmlMapping:
                 assert result.get('reference_author_full_names') == [
                     {'items': ['AM Smith']}
                 ]
-                # assert result.get('reference_author_given_names') == [
-                #     {'items': ['AM']}
-                # ]
+                assert result.get('reference_author_given_names') == [
+                    {'items': ['AM']}
+                ]
 
         class TestJatsReferenceTitle:
             def test_should_parse_mixed_style_journal_article_title_and_source(

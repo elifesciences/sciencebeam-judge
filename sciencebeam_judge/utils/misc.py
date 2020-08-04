@@ -8,7 +8,7 @@ def remove_dot_after_initials(person_name: str) -> str:
         r'([\p{Lu}])\.\s?',
         r'\1 ',
         person_name
-    )
+    ).strip()
 
 
 def remove_space_between_initials(person_name: str) -> str:
