@@ -1,17 +1,19 @@
-import re
+import regex
 
+
+# Note: `\p{Lu}` is refering to the upper case character class
 
 def remove_dot_after_initials(person_name: str) -> str:
-    return re.sub(
-        r'([A-Z])\.\s?',
+    return regex.sub(
+        r'([\p{Lu}])\.\s?',
         r'\1 ',
         person_name
     )
 
 
 def remove_space_between_initials(person_name: str) -> str:
-    return re.sub(
-        r'(?<=[A-Z])(\s)(?=[A-Z]\b)',
+    return regex.sub(
+        r'(?<=[\p{Lu}])(\s)(?=[\p{Lu}]\b)',
         r'',
         person_name
     )
