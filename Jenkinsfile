@@ -1,10 +1,16 @@
 elifePipeline {
     node('containers-jenkins-plugin') {
         def commit
+        def version
 
         stage 'Checkout', {
             checkout scm
             commit = elifeGitRevision()
+            if (env.TAG_NAME) {
+                version = env.TAG_NAME - 'v'
+            } else {
+                version = 'develop'
+            }
         }
 
         stage 'Build images', {
@@ -58,6 +64,20 @@ elifePipeline {
                 def unstable_image = image.addSuffixAndTag('_unstable', commit)
                 unstable_image.tag('latest').push()
                 unstable_image.push()
+            }
+        }
+
+        elifeTagOnly { repoTag ->
+            stage 'Push stable sciencebeam-judge image', {
+                def image = DockerImage.elifesciences(this, 'sciencebeam-judge', commit)
+                image.tag('latest').push()
+                image.tag(version).push()
+            }
+
+            stage 'Push stable sciencebeam-judge-jupyter image', {
+                def image = DockerImage.elifesciences(this, 'sciencebeam-judge-jupyter', commit)
+                image.tag('latest').push()
+                image.tag(version).push()
             }
         }
     }
