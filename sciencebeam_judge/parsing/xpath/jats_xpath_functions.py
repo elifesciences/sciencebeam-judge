@@ -1,4 +1,6 @@
 import logging
+import re
+from typing import List, Optional
 
 from lxml import etree
 
@@ -8,6 +10,12 @@ from sciencebeam_judge.utils.misc import normalize_person_name
 
 
 LOGGER = logging.getLogger(__name__)
+
+
+XLINK_NS = 'http://www.w3.org/1999/xlink'
+XLINK_HREF = '{%s}href' % XLINK_NS
+
+DOI_URL_PATTERN = r'(?:doi.org/)(10\..*)'
 
 
 def _name_node(node):
@@ -142,6 +150,31 @@ def fn_jats_aff_string(_, nodes):
     return [_aff_string(node) for node in nodes]
 
 
+def get_doi_from_url(url: str) -> Optional[str]:
+    if not url:
+        return None
+    m = re.search(DOI_URL_PATTERN, url)
+    if not m:
+        return None
+    return m.group(1)
+
+
+def _ref_doi(ref: etree.Element):
+    for node in ref.xpath('.//pub-id[@pub-id-type="doi"]'):
+        return node.text or ''
+    for node in ref.xpath('.//ext-link[@ext-link-type="uri"]'):
+        href = node.attrib.get(XLINK_HREF)
+        LOGGER.debug('href: %r', href)
+        doi = get_doi_from_url(href)
+        if doi:
+            return doi
+    return ''
+
+
+def fn_jats_ref_doi(_, nodes: List[etree.Element]) -> List[etree.Element]:
+    return [_ref_doi(node) for node in nodes]
+
+
 def _ref_fpage(ref):
     for node in ref.xpath('.//fpage'):
         return node.text or ''
@@ -177,5 +210,6 @@ def register_functions(ns=None):
     ns['jats-authors'] = fn_jats_authors
     ns['jats-ref-authors'] = fn_jats_ref_authors
     ns['jats-aff-string'] = fn_jats_aff_string
+    ns['jats-ref-doi'] = fn_jats_ref_doi
     ns['jats-ref-fpage'] = fn_jats_ref_fpage
     ns['jats-ref-lpage'] = fn_jats_ref_lpage
