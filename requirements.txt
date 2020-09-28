@@ -5,6 +5,6 @@ lxml==4.5.2
 natsort==7.0.1
 regex==2020.9.27
 sciencebeam-alignment==0.0.5
-sciencebeam-utils==0.1.0
+sciencebeam-utils==0.1.1
 six==1.15.0
 tqdm==4.50.0
