@@ -7,4 +7,4 @@ regex==2020.7.14
 sciencebeam-alignment==0.0.5
 sciencebeam-utils==0.1.0
 six==1.15.0
-tqdm==4.49.0
+tqdm==4.50.0
