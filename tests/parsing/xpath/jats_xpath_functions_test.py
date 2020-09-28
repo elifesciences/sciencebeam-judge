@@ -2,7 +2,15 @@ import pytest
 
 from lxml.builder import E
 
-from sciencebeam_judge.parsing.xpath.jats_xpath_functions import register_functions
+from sciencebeam_judge.parsing.xpath.jats_xpath_functions import (
+    XLINK_HREF,
+    register_functions
+)
+
+
+DOI_1 = '10.12345/abc/1'
+DOI_2 = '10.12345/abc/2'
+HTTPS_DOI_URL_PREFIX = 'https://doi.org/'
 
 
 @pytest.fixture(autouse=True)
@@ -216,6 +224,50 @@ class TestJatsXpathFunctions:
                 E('element-citation', E('person-group', name))
             ))
             assert list(xml.xpath('jats-ref-authors(//ref)')) == [name]
+
+    class TestRefDoi:
+        def test_should_return_empty_string_if_not_found(self):
+            xml = E.article(E.ref(
+                E('mixed-citation', E('pub-id', {'pub-id-type': 'other'}, 'other'))
+            ))
+            assert list(xml.xpath('jats-ref-doi(//ref)')) == ['']
+
+        def test_should_return_doi_if_present(self):
+            xml = E.article(E.ref(
+                E('mixed-citation', E('pub-id', {'pub-id-type': 'doi'}, DOI_1))
+            ))
+            assert list(xml.xpath('jats-ref-doi(//ref)')) == [DOI_1]
+
+        def test_should_return_doi_from_url_if_present(self):
+            xml = E.article(E.ref(E(
+                'mixed-citation',
+                E('ext-link', 'Some link text', {
+                    'ext-link-type': 'uri',
+                    XLINK_HREF: HTTPS_DOI_URL_PREFIX + DOI_1
+                })
+            )))
+            assert list(xml.xpath('jats-ref-doi(//ref)')) == [DOI_1]
+
+        def test_should_return_empty_string_if_non_doi_url(self):
+            xml = E.article(E.ref(E(
+                'mixed-citation',
+                E('ext-link', 'Some link text', {
+                    'ext-link-type': 'uri',
+                    XLINK_HREF: 'http://test.org/10.12345'
+                })
+            )))
+            assert list(xml.xpath('jats-ref-doi(//ref)')) == ['']
+
+        def test_should_prefer_explicit_doi(self):
+            xml = E.article(E.ref(E(
+                'mixed-citation',
+                E('pub-id', {'pub-id-type': 'doi'}, DOI_1),
+                E('ext-link', 'Some link text', {
+                    'ext-link-type': 'uri',
+                    XLINK_HREF: HTTPS_DOI_URL_PREFIX + DOI_2
+                })
+            )))
+            assert list(xml.xpath('jats-ref-doi(//ref)')) == [DOI_1]
 
     class TestRefFpage:
         def test_should_return_from_attribute_if_present(self):

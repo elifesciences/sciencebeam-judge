@@ -12,9 +12,16 @@ from sciencebeam_judge.parsing.xml import (
 )
 
 from sciencebeam_judge.parsing.xpath.xpath_functions import register_functions
+from sciencebeam_judge.parsing.xpath.jats_xpath_functions import (
+    XLINK_HREF
+)
 
 
 LOGGER = logging.getLogger(__name__)
+
+
+DOI_1 = '10.12345/abc/1'
+HTTPS_DOI_URL_PREFIX = 'https://doi.org/'
 
 
 @pytest.fixture(name='default_xml_mapping', scope='session')
@@ -260,6 +267,29 @@ class TestDefaultXmlMapping:
                 assert result.get('reference_pmid') == ['pmid1']
                 assert result.get('first_reference_pmcid') == ['pmcid1']
                 assert result.get('reference_pmcid') == ['pmcid1']
+
+            def test_should_parse_doi_from_doi_url(
+                    self, default_xml_mapping):
+                xml = E.article(E.back(E(
+                    'ref-list',
+                    E.ref(E.label('1'), E(
+                        'mixed-citation',
+                        E('ext-link', 'Some link text', {
+                            'ext-link-type': 'uri',
+                            XLINK_HREF: HTTPS_DOI_URL_PREFIX + DOI_1
+                        })
+                    ))
+                )))
+                result = _parse_xml(
+                    BytesIO(etree.tostring(xml)),
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'first_reference_doi',
+                        'reference_doi'
+                    ]
+                )
+                assert result.get('first_reference_doi') == [DOI_1]
+                assert result.get('reference_doi') == [DOI_1]
 
     class TestTei:
         class TestTeiReferenceAuthorNames:
