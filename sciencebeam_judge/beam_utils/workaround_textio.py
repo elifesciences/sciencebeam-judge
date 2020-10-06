@@ -9,7 +9,7 @@ import apache_beam as beam
 
 class WriteToText(beam.io.WriteToText):
     def __init__(self, *args, **kwargs):
-        super(WriteToText, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self._original_open_writer = self._sink.open_writer
         self._sink.open_writer = self._open_writer
         self._file_opened = False
