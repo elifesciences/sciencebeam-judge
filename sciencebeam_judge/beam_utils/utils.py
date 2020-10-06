@@ -39,7 +39,7 @@ def _default_log_value_fn(x):
 
 class TransformAndLog(beam.PTransform):
     def __init__(self, transform, log_fn=None, log_prefix='', log_value_fn=None, log_level='info'):
-        super(TransformAndLog, self).__init__()
+        super().__init__()
         self.transform = transform
         if log_fn is None:
             if log_value_fn is None:

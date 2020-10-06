@@ -44,5 +44,5 @@ SCORING_TYPE_MAP = {
 def resolve_scoring_type(scoring_type_str):
     try:
         return SCORING_TYPE_MAP[scoring_type_str or DEFAULT_SCORING_TYPE_NAME]
-    except KeyError:
-        raise ValueError('unrecognised scoring type: %s' % scoring_type_str)
+    except KeyError as exc:
+        raise ValueError('unrecognised scoring type: %s' % scoring_type_str) from exc
