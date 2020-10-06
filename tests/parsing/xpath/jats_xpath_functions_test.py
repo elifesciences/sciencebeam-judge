@@ -8,6 +8,10 @@ from sciencebeam_judge.parsing.xpath.jats_xpath_functions import (
 )
 
 
+# false positive not-callable for lxml.builder.E
+# pylint: disable=not-callable
+
+
 DOI_1 = '10.12345/abc/1'
 DOI_2 = '10.12345/abc/2'
 HTTPS_DOI_URL_PREFIX = 'https://doi.org/'

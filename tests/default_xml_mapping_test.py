@@ -17,6 +17,10 @@ from sciencebeam_judge.parsing.xpath.jats_xpath_functions import (
 )
 
 
+# false positive not-callable for lxml.builder.E
+# pylint: disable=not-callable
+
+
 LOGGER = logging.getLogger(__name__)
 
 
