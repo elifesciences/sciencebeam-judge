@@ -27,6 +27,8 @@ LOGGER = logging.getLogger(__name__)
 DOI_1 = '10.12345/abc/1'
 HTTPS_DOI_URL_PREFIX = 'https://doi.org/'
 
+TEXT_1 = 'Some text 1'
+
 
 @pytest.fixture(name='default_xml_mapping', scope='session')
 def _default_xml_mapping():
@@ -38,6 +40,11 @@ def _parse_xml(*args, **kwargs):
     result = parse_xml(*args, **kwargs)
     LOGGER.debug('result: %s', result)
     return result
+
+
+def _parse_xml_node(root: etree.Element, *args, **kwargs):
+    LOGGER.debug('xml: %s', etree.tostring(root, encoding='unicode'))
+    return _parse_xml(BytesIO(etree.tostring(root)), *args, **kwargs)
 
 
 class TestDefaultXmlMapping:
@@ -295,6 +302,19 @@ class TestDefaultXmlMapping:
                 assert result.get('first_reference_doi') == [DOI_1]
                 assert result.get('reference_doi') == [DOI_1]
 
+        class TestJatsAcknowledgement:
+            def test_should_parse_acknowledgement(
+                    self, default_xml_mapping):
+                xml = E.article(E.back(E.ack(
+                    TEXT_1
+                )))
+                result = _parse_xml_node(
+                    xml,
+                    xml_mapping=default_xml_mapping,
+                    fields=['acknowledgement']
+                )
+                assert result.get('acknowledgement') == [TEXT_1]
+
     class TestTei:
         class TestTeiReferenceAuthorNames:
             def test_should_parse_tei_ref_authors(self, default_xml_mapping):
@@ -469,6 +489,20 @@ class TestDefaultXmlMapping:
                 ))))
                 result = _parse_xml(BytesIO(etree.tostring(xml)), xml_mapping=default_xml_mapping)
                 assert result.get('abstract') == ['Sub: abstract1']
+
+        class TestTeiAcknowledgement:
+            def test_should_parse_acknowledgement(
+                    self, default_xml_mapping):
+                xml = E.TEI(E.text(E.back(E.div(
+                    {'type': 'acknowledgement'},
+                    TEXT_1
+                ))))
+                result = _parse_xml_node(
+                    xml,
+                    xml_mapping=default_xml_mapping,
+                    fields=['acknowledgement']
+                )
+                assert result.get('acknowledgement') == [TEXT_1]
 
     class TestTeiTraining:
         class TestTeiTrainingTitle:

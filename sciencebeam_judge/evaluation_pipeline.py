@@ -81,6 +81,10 @@ from .evaluation.document_scoring import (
 from .parsing.xpath.xpath_functions import register_functions
 
 
+class FieldNames:
+    ACKNOWLEDGEMENT = 'acknowledgement'
+
+
 DEFAULT_AUTHOR_FIELDS = [
     'author_surnames', 'first_author_surname',
     'author_given_names', 'first_author_given_name',
@@ -128,7 +132,10 @@ DEFAULT_BODY_FIELDS = [
     # 'section_paragraphs',
 ] + DEFAULT_TABLE_FIELDS + DEFAULT_FIGURE_FIELDS
 
-DEFAULT_BACK_FIELDS = DEFAULT_REFERENCE_FIELDS
+DEFAULT_BACK_FIELDS = (
+    [FieldNames.ACKNOWLEDGEMENT]
+    + DEFAULT_REFERENCE_FIELDS
+)
 
 DEFAULT_EXTRACTION_FIELDS = (
     DEFAULT_FRONT_FIELDS +
