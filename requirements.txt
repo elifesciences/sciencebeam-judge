@@ -3,7 +3,7 @@ editdistance==0.5.3
 future==0.18.2
 lxml==4.5.2
 natsort==7.0.1
-regex==2020.9.27
+regex==2020.10.11
 sciencebeam-alignment==0.0.5
 sciencebeam-utils==0.1.1
 six==1.15.0
