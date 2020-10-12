@@ -82,6 +82,12 @@ from .parsing.xpath.xpath_functions import register_functions
 
 
 class FieldNames:
+    AFFILIATION_TEXT = 'affiliation_text'
+    AFFILIATION_STRINGS = 'affiliation_strings'
+    AFFILIATION_LABEL = 'affiliation_label'
+    AFFILIATION_INSTITUTION = 'affiliation_institution'
+    AFFILIATION_COUNTRY = 'affiliation_country'
+
     ACKNOWLEDGEMENT = 'acknowledgement'
 
 
@@ -93,7 +99,11 @@ DEFAULT_AUTHOR_FIELDS = [
 
 
 DEFAULT_AFFILIATION_FIELDS = [
-    'affiliation_text', 'affiliation_strings', 'affiliation_institution'
+    FieldNames.AFFILIATION_TEXT,
+    FieldNames.AFFILIATION_STRINGS,
+    FieldNames.AFFILIATION_LABEL,
+    FieldNames.AFFILIATION_INSTITUTION,
+    FieldNames.AFFILIATION_COUNTRY
 ]
 
 DEFAULT_REFERENCE_FIELDS = [

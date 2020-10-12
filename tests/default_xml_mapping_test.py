@@ -49,6 +49,30 @@ def _parse_xml_node(root: etree.Element, *args, **kwargs):
 
 class TestDefaultXmlMapping:
     class TestJats:
+        class TestJatsAuthorAffiliation:
+            def test_should_parse_single_affiliation(
+                    self, default_xml_mapping):
+                xml = E.article(E.front(E('article-meta', E('contrib-group', E.aff(
+                    E.label('a'),
+                    E.institution('Institution 1'),
+                    ', City 1, ',
+                    E.country('Country 1')
+                )))))
+                result = _parse_xml_node(
+                    xml,
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'affiliation_text',
+                        'affiliation_label',
+                        'affiliation_institution',
+                        'affiliation_country'
+                    ]
+                )
+                assert result.get('affiliation_text') == ['a Institution 1, City 1, Country 1']
+                assert result.get('affiliation_label') == ['a']
+                assert result.get('affiliation_institution') == ['Institution 1']
+                assert result.get('affiliation_country') == ['Country 1']
+
         class TestJatsReferenceText:
             def test_should_get_reference_text(self, default_xml_mapping):
                 xml = E.article(E.back(E(
@@ -316,6 +340,38 @@ class TestDefaultXmlMapping:
                 assert result.get('acknowledgement') == [TEXT_1]
 
     class TestTei:
+        class TestTeiAuthorAffiliation:
+            def test_should_parse_single_affiliation(
+                    self, default_xml_mapping):
+                xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
+                    E.author(E.affiliation(
+                        E.note(
+                            {'type': 'raw_affiliation'},
+                            E.label('a'),
+                            ' Institution 1, City 1, Country 1'
+                        ),
+                        E.orgName({'type': 'institution'}, 'Institution 1'),
+                        E.address(
+                            E.settlement('City 1'),
+                            E.country('Country 1')
+                        )
+                    ))
+                ))))))
+                result = _parse_xml_node(
+                    xml,
+                    xml_mapping=default_xml_mapping,
+                    fields=[
+                        'affiliation_text',
+                        'affiliation_label',
+                        'affiliation_institution',
+                        'affiliation_country'
+                    ]
+                )
+                assert result.get('affiliation_text') == ['a Institution 1, City 1, Country 1']
+                assert result.get('affiliation_label') == ['a']
+                assert result.get('affiliation_institution') == ['Institution 1']
+                assert result.get('affiliation_country') == ['Country 1']
+
         class TestTeiReferenceAuthorNames:
             def test_should_parse_tei_ref_authors(self, default_xml_mapping):
                 xml = E.TEI(E.text(E.back(E.div(E.listBibl(
