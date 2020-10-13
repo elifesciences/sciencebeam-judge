@@ -116,6 +116,9 @@ class BodyFieldNames:
 class BackFieldNames:
     ACKNOWLEDGEMENT = 'acknowledgement'
 
+    BACK_SECTION_TITLES = 'back_section_titles'
+    BACK_SECTION_PARAGRAPHS = 'back_section_paragraphs'
+
 
 class FieldNames(AuthorFieldNames, AffiliationFieldNames, BodyFieldNames, BackFieldNames):
     pass

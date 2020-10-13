@@ -264,6 +264,34 @@ class TestTei:
             result = parse_xml_node(xml, xml_mapping=default_xml_mapping)
             assert result.get('abstract') == ['Sub: abstract1']
 
+    class TestTeiBodyAndBackSections:
+        def test_should_parse_back_sections(
+                self, default_xml_mapping):
+            xml = E.TEI(E.text(
+                E.body(E.div(
+                    E.head('Section Title 1'),
+                    E.p('Section Paragraph 1')
+                )),
+                E.back(E.div(
+                    E.head('Section Title 2'),
+                    E.p('Section Paragraph 2')
+                ))
+            ))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'section_titles',
+                    'section_paragraphs',
+                    'back_section_titles',
+                    'back_section_paragraphs'
+                ]
+            )
+            assert result.get('section_titles') == ['Section Title 1']
+            assert result.get('section_paragraphs') == ['Section Paragraph 1']
+            assert result.get('back_section_titles') == ['Section Title 2']
+            assert result.get('back_section_paragraphs') == ['Section Paragraph 2']
+
     class TestTeiAcknowledgement:
         def test_should_parse_acknowledgement(
                 self, default_xml_mapping):
