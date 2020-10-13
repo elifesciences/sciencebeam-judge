@@ -18,6 +18,37 @@ TEXT_1 = 'Some text 1'
 
 
 class TestTei:
+    class TestJatsCorrespondingAuthor:
+        def test_should_find_corresponding_author_via_corresp_role(
+                self, default_xml_mapping):
+            xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
+                E.author(
+                    {'role': 'corresp'},
+                    E.persName(E.forename('First1'), E.surname('Sur1'))
+                ),
+                E.author(
+                    E.persName(E.forename('First2'), E.surname('Sur2'))
+                )
+            ))))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'author_surnames',
+                    'author_given_names',
+                    'author_full_names',
+                    'corresp_author_surnames',
+                    'corresp_author_given_names',
+                    'corresp_author_full_names'
+                ]
+            )
+            assert result.get('author_surnames') == ['Sur1', 'Sur2']
+            assert result.get('author_given_names') == ['First1', 'First2']
+            assert result.get('author_full_names') == ['First1 Sur1', 'First2 Sur2']
+            assert result.get('corresp_author_surnames') == ['Sur1']
+            assert result.get('corresp_author_given_names') == ['First1']
+            assert result.get('corresp_author_full_names') == ['First1 Sur1']
+
     class TestTeiAuthorAffiliation:
         def test_should_parse_single_affiliation(
                 self, default_xml_mapping):
