@@ -369,7 +369,7 @@ class TestJats:
             assert result.get('reference_doi') == [DOI_1]
 
     class TestJatsBodyAndBackSections:
-        def test_should_parse_back_sections(
+        def test_should_parse_body_and_back_sections(
                 self, default_xml_mapping):
             xml = E.article(
                 E.body(E.sec(
@@ -399,6 +399,60 @@ class TestJats:
             assert result.get('back_section_titles') == ['Acknowledgement Title', 'Section Title 2']
             assert result.get('back_section_paragraphs') == [
                 'Acknowledgement Paragraph', 'Section Paragraph 2'
+            ]
+
+        def test_should_join_multiple_body_paragraph_blocks_of_same_section(
+                self, default_xml_mapping):
+            xml = E.article(
+                E.body(E.sec(
+                    E.title('Section Title 1'),
+                    E.p('Section Paragraph 1a'),
+                    E.p('Section Paragraph 1b')
+                ), E.sec(
+                    E.title('Section Title 2'),
+                    E.p('Section Paragraph 2a'),
+                    E.p('Section Paragraph 2b')
+                ))
+            )
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'section_titles',
+                    'section_paragraphs'
+                ]
+            )
+            assert result.get('section_titles') == ['Section Title 1', 'Section Title 2']
+            assert result.get('section_paragraphs') == [
+                'Section Paragraph 1a\nSection Paragraph 1b',
+                'Section Paragraph 2a\nSection Paragraph 2b'
+            ]
+
+        def test_should_join_multiple_back_paragraph_blocks_of_same_section(
+                self, default_xml_mapping):
+            xml = E.article(
+                E.back(E.sec(
+                    E.title('Section Title 1'),
+                    E.p('Section Paragraph 1a'),
+                    E.p('Section Paragraph 1b')
+                ), E.sec(
+                    E.title('Section Title 2'),
+                    E.p('Section Paragraph 2a'),
+                    E.p('Section Paragraph 2b')
+                ))
+            )
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'back_section_titles',
+                    'back_section_paragraphs'
+                ]
+            )
+            assert result.get('back_section_titles') == ['Section Title 1', 'Section Title 2']
+            assert result.get('back_section_paragraphs') == [
+                'Section Paragraph 1a\nSection Paragraph 1b',
+                'Section Paragraph 2a\nSection Paragraph 2b'
             ]
 
     class TestJatsAcknowledgement:
