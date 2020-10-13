@@ -23,6 +23,38 @@ TEXT_1 = 'Some text 1'
 
 
 class TestJats:
+    class TestJatsContributingAuthor:
+        def test_should_find_corresponding_author_via_corresp_attribute(
+                self, default_xml_mapping):
+            xml = E.article(E.front(E('article-meta', E('contrib-group', *[
+                E.contrib(
+                    {'contrib-type': 'author', 'corresp': 'yes'},
+                    E.name(E.surname('Sur1'), E('given-names', 'First1'))
+                ),
+                E.contrib(
+                    {'contrib-type': 'author'},
+                    E.name(E.surname('Sur2'), E('given-names', 'First2'))
+                )
+            ]))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'author_surnames',
+                    'author_given_names',
+                    'author_full_names',
+                    'contrib_author_surnames',
+                    'contrib_author_given_names',
+                    'contrib_author_full_names'
+                ]
+            )
+            assert result.get('author_surnames') == ['Sur1', 'Sur2']
+            assert result.get('author_given_names') == ['First1', 'First2']
+            assert result.get('author_full_names') == ['First1 Sur1', 'First2 Sur2']
+            assert result.get('contrib_author_surnames') == ['Sur1']
+            assert result.get('contrib_author_given_names') == ['First1']
+            assert result.get('contrib_author_full_names') == ['First1 Sur1']
+
     class TestJatsAuthorAffiliation:
         def test_should_parse_single_affiliation(
                 self, default_xml_mapping):
