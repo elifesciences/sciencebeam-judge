@@ -76,6 +76,12 @@ build:
 	fi
 
 
+build-judge:
+	@if [ "$(NO_BUILD)" != "y" ]; then \
+		$(DOCKER_COMPOSE) build sciencebeam-judge; \
+	fi
+
+
 build-dev:
 	if [ "$(NO_BUILD)" != "y" ]; then \
 		$(DOCKER_COMPOSE) build sciencebeam-judge-dev; \
