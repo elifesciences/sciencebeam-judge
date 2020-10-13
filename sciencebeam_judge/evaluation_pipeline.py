@@ -106,11 +106,17 @@ class AffiliationFieldNames:
     AFFILIATION_COUNTRY = 'affiliation_country'
 
 
+class BodyFieldNames:
+    SECTION_TITLES = 'section_titles'
+
+    BODY_REFERENCE_CITATION_TEXT = 'body_reference_citation_text'
+
+
 class BackFieldNames:
     ACKNOWLEDGEMENT = 'acknowledgement'
 
 
-class FieldNames(AuthorFieldNames, AffiliationFieldNames, BackFieldNames):
+class FieldNames(AuthorFieldNames, AffiliationFieldNames, BodyFieldNames, BackFieldNames):
     pass
 
 
@@ -152,10 +158,10 @@ DEFAULT_FRONT_FIELDS = [
     'keywords'
 ] + DEFAULT_AUTHOR_FIELDS + DEFAULT_AFFILIATION_FIELDS
 
-DEFAULT_BODY_FIELDS = [
-    'section_titles',
-    # 'section_paragraphs',
-] + DEFAULT_TABLE_FIELDS + DEFAULT_FIGURE_FIELDS
+DEFAULT_BODY_FIELDS = (
+    get_class_field_name_values(BodyFieldNames)
+    + DEFAULT_TABLE_FIELDS + DEFAULT_FIGURE_FIELDS
+)
 
 DEFAULT_BACK_FIELDS = (
     get_class_field_name_values(BackFieldNames)
