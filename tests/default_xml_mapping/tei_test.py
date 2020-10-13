@@ -294,6 +294,22 @@ class TestTei:
             )
             assert result.get('body_reference_citation_text') == ['1']
 
+        def test_should_strip_brackets(self, default_xml_mapping):
+            xml = E.TEI(E.text(E.body(E.div(E.p(
+                'References:',
+                E.ref({'type': 'bibr', 'target': '#ref1'}, '[1]'),
+                E.ref({'type': 'bibr', 'target': '#ref2'}, '(2)'),
+                E.ref({'type': 'bibr', 'target': '#ref3'}, r'{3}')
+            )))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'body_reference_citation_text'
+                ]
+            )
+            assert result.get('body_reference_citation_text') == ['1', '2', '3']
+
     class TestTeiStyles:
         def test_should_find_styles_in_abstract(
                 self, default_xml_mapping):
