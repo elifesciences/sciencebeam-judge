@@ -91,6 +91,26 @@ def fn_generic_normalized_text_content(_, nodes):
     ]
 
 
+def _strip_brackets(text: str) -> str:
+    if not text:
+        return text
+    if (
+        (text.startswith('[') and text.endswith(']'))
+        or (text.startswith('(') and text.endswith(')'))
+        or (text.startswith('{') and text.endswith('}'))
+    ):
+        return text[1:-1].strip()
+    return text
+
+
+def fn_generic_strip_brackets(_, nodes):
+    LOGGER.debug('fn_generic_strip_brackets, nodes: %s', nodes)
+    return [
+        _strip_brackets(get_text_content(node))
+        for node in nodes
+    ]
+
+
 def register_functions(ns=None):
     if ns is None:
         ns = etree.FunctionNamespace(None)
@@ -99,3 +119,4 @@ def register_functions(ns=None):
     ns['generic-as-items'] = fn_generic_as_items
     ns['generic-text-content'] = fn_generic_text_content
     ns['generic-normalized-text-content'] = fn_generic_normalized_text_content
+    ns['generic-strip-brackets'] = fn_generic_strip_brackets

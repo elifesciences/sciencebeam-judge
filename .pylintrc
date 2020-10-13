@@ -5,6 +5,7 @@ disable=
     no-self-use,
     invalid-name,
     too-many-arguments,
+    too-many-boolean-expressions,
     duplicate-code,
     superfluous-parens
 

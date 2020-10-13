@@ -40,7 +40,7 @@ from sciencebeam_utils.utils.file_list import (
 )
 
 from sciencebeam_judge.evaluation_utils import (
-    comma_separated_str_to_list
+    plus_minus_comma_separated_str_to_list
 )
 
 from sciencebeam_judge.parsing.xml import (
@@ -80,61 +80,8 @@ from .evaluation.document_scoring import (
 
 from .parsing.xpath.xpath_functions import register_functions
 
+from .default_field_names import DEFAULT_EXTRACTION_FIELDS
 
-DEFAULT_AUTHOR_FIELDS = [
-    'author_surnames', 'first_author_surname',
-    'author_given_names', 'first_author_given_name',
-    'author_full_names', 'first_author_full_name'
-]
-
-
-DEFAULT_AFFILIATION_FIELDS = [
-    'affiliation_text', 'affiliation_strings', 'affiliation_institution'
-]
-
-DEFAULT_REFERENCE_FIELDS = [
-    'first_reference_text', 'first_reference_fields',
-    'first_reference_author_surnames', 'first_reference_author_given_names',
-    'first_reference_author_full_names',
-    'first_reference_title', 'first_reference_year',
-    'first_reference_source', 'first_reference_publication_type',
-    'first_reference_volume', 'first_reference_fpage', 'first_reference_lpage',
-    'first_reference_doi', 'first_reference_pmid', 'first_reference_pmcid',
-    'reference_text',
-    'reference_fields',
-    'reference_author_surnames', 'reference_author_given_names', 'reference_author_full_names',
-    'reference_title', 'reference_year',
-    'reference_source', 'reference_publication_type',
-    'reference_volume', 'reference_fpage', 'reference_lpage',
-    'reference_doi', 'reference_pmid', 'reference_pmcid'
-]
-
-DEFAULT_TABLE_FIELDS = [
-    'tables', 'table_strings', 'table_labels', 'table_captions', 'table_label_captions'
-]
-
-DEFAULT_FIGURE_FIELDS = [
-    'figure_labels', 'figure_captions', 'figure_label_captions'
-]
-
-DEFAULT_FRONT_FIELDS = [
-    'title',
-    'abstract',
-    'keywords'
-] + DEFAULT_AUTHOR_FIELDS + DEFAULT_AFFILIATION_FIELDS
-
-DEFAULT_BODY_FIELDS = [
-    'section_titles',
-    # 'section_paragraphs',
-] + DEFAULT_TABLE_FIELDS + DEFAULT_FIGURE_FIELDS
-
-DEFAULT_BACK_FIELDS = DEFAULT_REFERENCE_FIELDS
-
-DEFAULT_EXTRACTION_FIELDS = (
-    DEFAULT_FRONT_FIELDS +
-    DEFAULT_BODY_FIELDS +
-    DEFAULT_BACK_FIELDS
-)
 
 DEFAULT_SCORE_MEASURES = [
     ScoringMethodNames.EXACT,
@@ -550,14 +497,14 @@ def add_main_args(parser):
 
     parser.add_argument(
         '--fields',
-        type=comma_separated_str_to_list,
+        type=plus_minus_comma_separated_str_to_list,
         default=DEFAULT_EXTRACTION_FIELDS,
         help='comma separated list of fields to process'
     )
 
     parser.add_argument(
         '--measures',
-        type=comma_separated_str_to_list,
+        type=plus_minus_comma_separated_str_to_list,
         default=DEFAULT_SCORE_MEASURES,
         help='comma separated list of measures to process (valid values: %s)' % (
             ', '.join(ALL_SCORING_METHOD_NAMES)
