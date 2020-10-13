@@ -273,6 +273,16 @@ class TestGetScoringTypesByFieldMap:
         }
 
 
+class TestParseArgs:
+    def test_should_be_able_to_pass_fields(self):
+        opt = parse_args(MIN_ARGV + [
+            '--fields=+section_paragraphs,-reference_fields'
+        ])
+        assert 'section_paragraphs' in opt.fields
+        assert 'reference_fields' not in opt.fields
+        assert 'abstract' in opt.fields
+
+
 @pytest.mark.slow
 class TestConfigurePipeline(BeamTest):
     def test_should_pass_pdf_file_list_and_limit_to_read_dict_csv_and_read_pdf_file(self):

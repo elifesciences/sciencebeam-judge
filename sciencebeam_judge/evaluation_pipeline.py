@@ -40,7 +40,7 @@ from sciencebeam_utils.utils.file_list import (
 )
 
 from sciencebeam_judge.evaluation_utils import (
-    plus_minus_comma_separated_str_to_list
+    get_plus_minus_comma_separated_str_to_list_fn
 )
 
 from sciencebeam_judge.parsing.xml import (
@@ -497,14 +497,18 @@ def add_main_args(parser):
 
     parser.add_argument(
         '--fields',
-        type=plus_minus_comma_separated_str_to_list,
+        type=get_plus_minus_comma_separated_str_to_list_fn(
+            DEFAULT_EXTRACTION_FIELDS
+        ),
         default=DEFAULT_EXTRACTION_FIELDS,
         help='comma separated list of fields to process'
     )
 
     parser.add_argument(
         '--measures',
-        type=plus_minus_comma_separated_str_to_list,
+        type=get_plus_minus_comma_separated_str_to_list_fn(
+            DEFAULT_SCORE_MEASURES
+        ),
         default=DEFAULT_SCORE_MEASURES,
         help='comma separated list of measures to process (valid values: %s)' % (
             ', '.join(ALL_SCORING_METHOD_NAMES)
