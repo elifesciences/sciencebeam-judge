@@ -110,6 +110,7 @@ class BodyFieldNames:
     SECTION_TITLES = 'section_titles'
 
     BODY_REFERENCE_CITATION_TEXT = 'body_reference_citation_text'
+    BODY_ASSET_CITATION_TEXT = 'body_asset_citation_text'
 
 
 class BackFieldNames:

@@ -310,6 +310,22 @@ class TestTei:
             )
             assert result.get('body_reference_citation_text') == ['1', '2', '3']
 
+    class TestTeiBodyAssetCitation:
+        def test_should_find_body_asset_citation(self, default_xml_mapping):
+            xml = E.TEI(E.text(E.body(E.div(E.p(
+                'Assets:',
+                E.ref({'type': 'figure', 'target': '#fig_1'}, '[Figure 1]'),
+                E.ref({'type': 'table'}, '[Table 1]')
+            )))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'body_asset_citation_text'
+                ]
+            )
+            assert result.get('body_asset_citation_text') == ['Figure 1', 'Table 1']
+
     class TestTeiStyles:
         def test_should_find_styles_in_abstract(
                 self, default_xml_mapping):

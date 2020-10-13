@@ -397,6 +397,22 @@ class TestJats:
             )
             assert result.get('body_reference_citation_text') == ['1']
 
+    class TestJatsBodyAssetCitation:
+        def test_should_find_body_asset_citation(self, default_xml_mapping):
+            xml = E.article(E.body(E.sec(E.p(
+                'Assets:',
+                E.xref({'ref-type': 'fig', 'rid': 'ref1'}, 'Figure 1'),
+                E.xref({'ref-type': 'table', 'rid': 'ref1'}, 'Table 1'),
+            ))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'body_asset_citation_text'
+                ]
+            )
+            assert result.get('body_asset_citation_text') == ['Figure 1', 'Table 1']
+
     class TestJatsStyles:
         def test_should_find_styles_in_abstract(
                 self, default_xml_mapping):
