@@ -19,6 +19,7 @@ JUPYTER_RUN = $(DOCKER_COMPOSE) run $(JUPYTER_MOUNT) --name "$(RUN_NAME)" --rm s
 
 
 PYTEST_ARGS =
+EVALUATE_ARGS =
 TOOL =
 EVALUATION_RESULTS_OUTPUT_PATH = /example-data/pmc-sample-1943-cc-by-subset-results/$(TOOL)/evaluation-results
 NOTEBOOK_OUTPUT_FILE =
@@ -102,7 +103,8 @@ watch: build-dev
 		--target-file-column=xml_url \
 		--prediction-file-list /example-data/pmc-sample-1943-cc-by-subset-results/$(TOOL)/file-list.lst \
 		--output-path $(EVALUATION_RESULTS_OUTPUT_PATH) \
-		--sequential
+		--sequential \
+		$(EVALUATE_ARGS)
 
 
 update-example-data-results-cermine:
