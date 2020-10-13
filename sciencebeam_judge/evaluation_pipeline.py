@@ -81,30 +81,45 @@ from .evaluation.document_scoring import (
 from .parsing.xpath.xpath_functions import register_functions
 
 
-class FieldNames:
+class AuthorFieldNames:
+    FIRST_AUTHOR_SURNAME = 'first_author_surname'
+    CORRESP_AUTHOR_SURNAMES = 'corresp_author_surnames'
+    AUTHOR_SURNAMES = 'author_surnames'
+
+    FIRST_AUTHOR_GIVEN_NAME = 'first_author_given_name'
+    CORRESP_AUTHOR_GIVEN_NAMES = 'corresp_author_given_names'
+    AUTHOR_GIVEN_NAMES = 'author_given_names'
+
+    FIRST_AUTHOR_FULL_NAME = 'first_author_full_name'
+    CORRESP_AUTHOR_FULL_NAMES = 'corresp_author_full_names'
+    AUTHOR_FULL_NAMES = 'author_full_names'
+
+    CORRESP_AUTHOR_EMAILS = 'corresp_author_emails'
+    AUTHOR_EMAILS = 'author_emails'
+
+
+class AffiliationFieldNames:
     AFFILIATION_TEXT = 'affiliation_text'
     AFFILIATION_STRINGS = 'affiliation_strings'
     AFFILIATION_LABEL = 'affiliation_label'
     AFFILIATION_INSTITUTION = 'affiliation_institution'
     AFFILIATION_COUNTRY = 'affiliation_country'
 
+
+class BackFieldNames:
     ACKNOWLEDGEMENT = 'acknowledgement'
 
 
-DEFAULT_AUTHOR_FIELDS = [
-    'author_surnames', 'first_author_surname',
-    'author_given_names', 'first_author_given_name',
-    'author_full_names', 'first_author_full_name'
-]
+class FieldNames(AuthorFieldNames, AffiliationFieldNames, BackFieldNames):
+    pass
 
 
-DEFAULT_AFFILIATION_FIELDS = [
-    FieldNames.AFFILIATION_TEXT,
-    FieldNames.AFFILIATION_STRINGS,
-    FieldNames.AFFILIATION_LABEL,
-    FieldNames.AFFILIATION_INSTITUTION,
-    FieldNames.AFFILIATION_COUNTRY
-]
+def get_class_field_name_values(c: type):
+    return [value for key, value in vars(c).items() if key.isupper()]
+
+
+DEFAULT_AUTHOR_FIELDS = get_class_field_name_values(AuthorFieldNames)
+DEFAULT_AFFILIATION_FIELDS = get_class_field_name_values(AffiliationFieldNames)
 
 DEFAULT_REFERENCE_FIELDS = [
     'first_reference_text', 'first_reference_fields',
@@ -143,7 +158,7 @@ DEFAULT_BODY_FIELDS = [
 ] + DEFAULT_TABLE_FIELDS + DEFAULT_FIGURE_FIELDS
 
 DEFAULT_BACK_FIELDS = (
-    [FieldNames.ACKNOWLEDGEMENT]
+    get_class_field_name_values(BackFieldNames)
     + DEFAULT_REFERENCE_FIELDS
 )
 
