@@ -21,6 +21,9 @@ HTTPS_DOI_URL_PREFIX = 'https://doi.org/'
 
 TEXT_1 = 'Some text 1'
 
+EMAIL_1 = 'name1@test'
+EMAIL_2 = 'name2@test'
+
 
 class TestJats:
     class TestJatsCorrespondingAuthor:
@@ -29,11 +32,13 @@ class TestJats:
             xml = E.article(E.front(E('article-meta', E('contrib-group', *[
                 E.contrib(
                     {'contrib-type': 'author', 'corresp': 'yes'},
-                    E.name(E.surname('Sur1'), E('given-names', 'First1'))
+                    E.name(E.surname('Sur1'), E('given-names', 'First1')),
+                    E.email(EMAIL_1)
                 ),
                 E.contrib(
                     {'contrib-type': 'author'},
-                    E.name(E.surname('Sur2'), E('given-names', 'First2'))
+                    E.name(E.surname('Sur2'), E('given-names', 'First2')),
+                    E.email(EMAIL_2)
                 )
             ]))))
             result = parse_xml_node(
@@ -43,17 +48,21 @@ class TestJats:
                     'author_surnames',
                     'author_given_names',
                     'author_full_names',
+                    'author_emails',
                     'corresp_author_surnames',
                     'corresp_author_given_names',
-                    'corresp_author_full_names'
+                    'corresp_author_full_names',
+                    'corresp_author_emails'
                 ]
             )
             assert result.get('author_surnames') == ['Sur1', 'Sur2']
             assert result.get('author_given_names') == ['First1', 'First2']
             assert result.get('author_full_names') == ['First1 Sur1', 'First2 Sur2']
+            assert result.get('author_emails') == [EMAIL_1, EMAIL_2]
             assert result.get('corresp_author_surnames') == ['Sur1']
             assert result.get('corresp_author_given_names') == ['First1']
             assert result.get('corresp_author_full_names') == ['First1 Sur1']
+            assert result.get('corresp_author_emails') == [EMAIL_1]
 
     class TestJatsAuthorAffiliation:
         def test_should_parse_single_affiliation(

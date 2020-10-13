@@ -16,6 +16,9 @@ HTTPS_DOI_URL_PREFIX = 'https://doi.org/'
 
 TEXT_1 = 'Some text 1'
 
+EMAIL_1 = 'name1@test'
+EMAIL_2 = 'name2@test'
+
 
 class TestTei:
     class TestJatsCorrespondingAuthor:
@@ -24,10 +27,12 @@ class TestTei:
             xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
                 E.author(
                     {'role': 'corresp'},
-                    E.persName(E.forename('First1'), E.surname('Sur1'))
+                    E.persName(E.forename('First1'), E.surname('Sur1')),
+                    E.email(EMAIL_1)
                 ),
                 E.author(
-                    E.persName(E.forename('First2'), E.surname('Sur2'))
+                    E.persName(E.forename('First2'), E.surname('Sur2')),
+                    E.email(EMAIL_2)
                 )
             ))))))
             result = parse_xml_node(
@@ -37,17 +42,21 @@ class TestTei:
                     'author_surnames',
                     'author_given_names',
                     'author_full_names',
+                    'author_emails',
                     'corresp_author_surnames',
                     'corresp_author_given_names',
-                    'corresp_author_full_names'
+                    'corresp_author_full_names',
+                    'corresp_author_emails'
                 ]
             )
             assert result.get('author_surnames') == ['Sur1', 'Sur2']
             assert result.get('author_given_names') == ['First1', 'First2']
             assert result.get('author_full_names') == ['First1 Sur1', 'First2 Sur2']
+            assert result.get('author_emails') == [EMAIL_1, EMAIL_2]
             assert result.get('corresp_author_surnames') == ['Sur1']
             assert result.get('corresp_author_given_names') == ['First1']
             assert result.get('corresp_author_full_names') == ['First1 Sur1']
+            assert result.get('corresp_author_emails') == [EMAIL_1]
 
     class TestTeiAuthorAffiliation:
         def test_should_parse_single_affiliation(
