@@ -64,6 +64,33 @@ class TestJats:
             assert result.get('corresp_author_full_names') == ['First1 Sur1']
             assert result.get('corresp_author_emails') == [EMAIL_1]
 
+        def test_should_find_email_from_author_notes(
+                self, default_xml_mapping):
+            xml = E.article(E.front(E('article-meta', E('contrib-group', *[
+                E.contrib(
+                    {'contrib-type': 'author', 'corresp': 'yes'},
+                    E.xref({'ref-type': 'corresp', 'rid': 'cor1'}, '*')
+                ),
+                E.contrib(
+                    {'contrib-type': 'author'},
+                    E.xref({'ref-type': 'other', 'rid': 'other1'}, '*')
+                ),
+                E('author-notes', *[
+                    E.corresp({'id': 'cor1'}, 'Corresponding author: ', E.email(EMAIL_1)),
+                    E.fn({'id': 'other1'}, 'Other author: ', E.email(EMAIL_2))
+                ])
+            ]))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'author_emails',
+                    'corresp_author_emails'
+                ]
+            )
+            assert result.get('author_emails') == [EMAIL_1, EMAIL_2]
+            assert result.get('corresp_author_emails') == [EMAIL_1]
+
     class TestJatsAuthorAffiliation:
         def test_should_parse_single_affiliation(
                 self, default_xml_mapping):

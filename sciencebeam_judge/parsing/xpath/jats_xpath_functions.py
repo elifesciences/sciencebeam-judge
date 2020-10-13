@@ -79,6 +79,22 @@ def _contrib_full_name(contrib_node):
     return None
 
 
+def _contrib_email(contrib_node: etree.Element) -> str:
+    for email_node in contrib_node.xpath('email'):
+        email = get_text_content(email_node)
+        if email:
+            return email
+    for xref_node in contrib_node.xpath('xref'):
+        rid = xref_node.get('rid')
+        if not rid:
+            continue
+        for email_node in contrib_node.xpath('../author-notes/*[@id="%s"]/email' % rid):
+            email = get_text_content(email_node)
+            if email:
+                return email
+    return None
+
+
 def fn_jats_given_name(_, nodes):
     result = _filter_not_none([
         _contrib_given_name(node)
@@ -94,6 +110,12 @@ def fn_jats_full_name(_, nodes):
         for node in nodes
     ])
     LOGGER.debug('fn_jats_full_name, nodes: %s, result: %s', nodes, result)
+    return result
+
+
+def fn_jats_author_email(_, nodes):
+    result = _filter_not_none([_contrib_email(node) for node in nodes])
+    LOGGER.debug('fn_jats_email, nodes: %s, result: %s', nodes, result)
     return result
 
 
@@ -207,6 +229,7 @@ def register_functions(ns=None):
         ns = etree.FunctionNamespace(None)
     ns['jats-given-name'] = fn_jats_given_name
     ns['jats-full-name'] = fn_jats_full_name
+    ns['jats-author-email'] = fn_jats_author_email
     ns['jats-authors'] = fn_jats_authors
     ns['jats-ref-authors'] = fn_jats_ref_authors
     ns['jats-aff-string'] = fn_jats_aff_string
