@@ -306,7 +306,12 @@ class TestTei:
                 E.body(E.div(
                     E.head('Section Title 1'),
                     E.p('Section Paragraph 1a'),
-                    E.p('Section Paragraph 1b')
+                    E.p('Section Paragraph 1b'),
+                    E.div(
+                        E.head('Section Title 1.1'),
+                        E.p('Section Paragraph 1.1a'),
+                        E.p('Section Paragraph 1.1b')
+                    )
                 ), E.div(
                     E.head('Section Title 2'),
                     E.p('Section Paragraph 2a'),
@@ -321,9 +326,14 @@ class TestTei:
                     'section_paragraphs'
                 ]
             )
-            assert result.get('section_titles') == ['Section Title 1', 'Section Title 2']
+            assert result.get('section_titles') == [
+                'Section Title 1',
+                'Section Title 1.1',
+                'Section Title 2'
+            ]
             assert result.get('section_paragraphs') == [
                 'Section Paragraph 1a\nSection Paragraph 1b',
+                'Section Paragraph 1.1a\nSection Paragraph 1.1b',
                 'Section Paragraph 2a\nSection Paragraph 2b'
             ]
 
@@ -333,7 +343,12 @@ class TestTei:
                 E.back(E.div(
                     E.head('Section Title 1'),
                     E.p('Section Paragraph 1a'),
-                    E.p('Section Paragraph 1b')
+                    E.p('Section Paragraph 1b'),
+                    E.div(
+                        E.head('Section Title 1.1'),
+                        E.p('Section Paragraph 1.1a'),
+                        E.p('Section Paragraph 1.1b')
+                    )
                 ), E.div(
                     E.head('Section Title 2'),
                     E.p('Section Paragraph 2a'),
@@ -348,9 +363,12 @@ class TestTei:
                     'back_section_paragraphs'
                 ]
             )
-            assert result.get('back_section_titles') == ['Section Title 1', 'Section Title 2']
+            assert result.get('back_section_titles') == [
+                'Section Title 1', 'Section Title 1.1', 'Section Title 2'
+            ]
             assert result.get('back_section_paragraphs') == [
                 'Section Paragraph 1a\nSection Paragraph 1b',
+                'Section Paragraph 1.1a\nSection Paragraph 1.1b',
                 'Section Paragraph 2a\nSection Paragraph 2b'
             ]
 
