@@ -1,4 +1,5 @@
-from typing import List
+from functools import partial
+from typing import Callable, List
 
 
 class PlusMinus:
@@ -35,3 +36,8 @@ def plus_minus_comma_separated_str_to_list(s: str, default_value: List[str]) -> 
         if mode == PlusMinus.MINUS:
             result.remove(value)
     return result
+
+
+def get_plus_minus_comma_separated_str_to_list_fn(
+        default_value: List[str]) -> Callable[[str], List[str]]:
+    return partial(plus_minus_comma_separated_str_to_list, default_value=default_value)
