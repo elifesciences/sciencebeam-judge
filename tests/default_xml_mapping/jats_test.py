@@ -381,6 +381,22 @@ class TestJats:
             )
             assert result.get('acknowledgement') == [TEXT_1]
 
+    class TestJatsAbstractReferenceCitation:
+        def test_should_find_body_reference_citation(self, default_xml_mapping):
+            xml = E.article(E.front(E('article-meta', E.abstract(
+                'Reference to: [',
+                E.xref({'ref-type': 'bibr', 'rid': 'ref1'}, '1'),
+                ']'
+            ))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'abstract_reference_citation_text'
+                ]
+            )
+            assert result.get('abstract_reference_citation_text') == ['1']
+
     class TestJatsBodyReferenceCitation:
         def test_should_find_body_reference_citation(self, default_xml_mapping):
             xml = E.article(E.body(E.sec(E.p(
@@ -396,6 +412,22 @@ class TestJats:
                 ]
             )
             assert result.get('body_reference_citation_text') == ['1']
+
+    class TestJatsAbstractAssetCitation:
+        def test_should_find_body_asset_citation(self, default_xml_mapping):
+            xml = E.article(E.front(E('article-meta', E.abstract(
+                'Assets:',
+                E.xref({'ref-type': 'fig', 'rid': 'ref1'}, 'Figure 1'),
+                E.xref({'ref-type': 'table', 'rid': 'ref1'}, 'Table 1'),
+            ))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'abstract_asset_citation_text'
+                ]
+            )
+            assert result.get('abstract_asset_citation_text') == ['Figure 1', 'Table 1']
 
     class TestJatsBodyAssetCitation:
         def test_should_find_body_asset_citation(self, default_xml_mapping):

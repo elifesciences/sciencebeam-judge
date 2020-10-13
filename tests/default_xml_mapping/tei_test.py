@@ -278,6 +278,21 @@ class TestTei:
             )
             assert result.get('acknowledgement') == [TEXT_1]
 
+    class TestTeiAbstractReferenceCitation:
+        def test_should_find_body_reference_citation(self, default_xml_mapping):
+            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
+                'References: ',
+                E.ref({'type': 'bibr', 'target': '#ref1'}, '[1]'),
+            ))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'abstract_reference_citation_text'
+                ]
+            )
+            assert result.get('abstract_reference_citation_text') == ['1']
+
     class TestTeiBodyReferenceCitation:
         def test_should_find_body_reference_citation(self, default_xml_mapping):
             xml = E.TEI(E.text(E.body(E.div(E.p(
@@ -309,6 +324,22 @@ class TestTei:
                 ]
             )
             assert result.get('body_reference_citation_text') == ['1', '2', '3']
+
+    class TestTeiAbstractAssetCitation:
+        def test_should_find_body_asset_citation(self, default_xml_mapping):
+            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
+                'Assets:',
+                E.ref({'type': 'figure', 'target': '#fig_1'}, '[Figure 1]'),
+                E.ref({'type': 'table'}, '[Table 1]')
+            ))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'abstract_asset_citation_text'
+                ]
+            )
+            assert result.get('abstract_asset_citation_text') == ['Figure 1', 'Table 1']
 
     class TestTeiBodyAssetCitation:
         def test_should_find_body_asset_citation(self, default_xml_mapping):
