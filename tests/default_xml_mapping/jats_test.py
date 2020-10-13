@@ -380,3 +380,28 @@ class TestJats:
                 fields=['acknowledgement']
             )
             assert result.get('acknowledgement') == [TEXT_1]
+
+    class TestJatsStyles:
+        def test_should_find_styles_in_abstract(
+                self, default_xml_mapping):
+            xml = E.article(E.front(E('article-meta', E.abstract(
+                E.italic('italic1'),
+                E.bold('bold1'),
+                E.sub('subscript1'),
+                E.sup('superscript1'),
+                E.italic(E.bold(E.sub(E.sup('mixed1'))))
+            ))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'abstract_style_italic',
+                    'abstract_style_bold',
+                    'abstract_style_subscript',
+                    'abstract_style_superscript',
+                ]
+            )
+            assert result.get('abstract_style_italic') == ['italic1', 'mixed1']
+            assert result.get('abstract_style_bold') == ['bold1', 'mixed1']
+            assert result.get('abstract_style_subscript') == ['subscript1', 'mixed1']
+            assert result.get('abstract_style_superscript') == ['superscript1', 'mixed1']
