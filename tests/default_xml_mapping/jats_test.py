@@ -376,7 +376,10 @@ class TestJats:
                     E.title('Section Title 1'),
                     E.p('Section Paragraph 1')
                 )),
-                E.back(E.sec(
+                E.back(E.ack(
+                    E.title('Acknowledgement Title'),
+                    E.p('Acknowledgement Paragraph')
+                ), E.sec(
                     E.title('Section Title 2'),
                     E.p('Section Paragraph 2')
                 ))
@@ -393,8 +396,10 @@ class TestJats:
             )
             assert result.get('section_titles') == ['Section Title 1']
             assert result.get('section_paragraphs') == ['Section Paragraph 1']
-            assert result.get('back_section_titles') == ['Section Title 2']
-            assert result.get('back_section_paragraphs') == ['Section Paragraph 2']
+            assert result.get('back_section_titles') == ['Acknowledgement Title', 'Section Title 2']
+            assert result.get('back_section_paragraphs') == [
+                'Acknowledgement Paragraph', 'Section Paragraph 2'
+            ]
 
     class TestJatsAcknowledgement:
         def test_should_parse_acknowledgement(
