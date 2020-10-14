@@ -3337,8 +3337,8 @@ d-67-00463.xml,d-67-00463.nxml,corresp_author_emails,exact,string,0,1,0,0,,fgorr
 d-67-00463.xml,d-67-00463.nxml,corresp_author_emails,levenshtein,string,0,1,0,0,,fgorrec@mrc-lmb.cam.ac.uk
 d-67-00463.xml,d-67-00463.nxml,corresp_author_emails,exact,partial_set,0,1,0,0,,fgorrec@mrc-lmb.cam.ac.uk
 d-67-00463.xml,d-67-00463.nxml,corresp_author_emails,levenshtein,partial_set,0,1,0,0,,fgorrec@mrc-lmb.cam.ac.uk
-d-67-00463.xml,d-67-00463.nxml,author_emails,exact,partial_set,0,1,0,0,,fgorrec@mrc-lmb.cam.ac.uk
-d-67-00463.xml,d-67-00463.nxml,author_emails,levenshtein,partial_set,0,1,0,0,,fgorrec@mrc-lmb.cam.ac.uk
+d-67-00463.xml,d-67-00463.nxml,author_emails,exact,partial_set,1,0,0,0,fgorrec@mrc-lmb.cam.ac.uk,fgorrec@mrc-lmb.cam.ac.uk
+d-67-00463.xml,d-67-00463.nxml,author_emails,levenshtein,partial_set,1,0,0,0,fgorrec@mrc-lmb.cam.ac.uk,fgorrec@mrc-lmb.cam.ac.uk
 d-67-00463.xml,d-67-00463.nxml,affiliation_text,exact,partial_list,0,0,1,0,"a MRC Laboratory of Molecular Biology, Hills Road, Cambridge CB2 0QH, England",
 d-67-00463.xml,d-67-00463.nxml,affiliation_text,levenshtein,partial_list,0,0,1,0,"a MRC Laboratory of Molecular Biology, Hills Road, Cambridge CB2 0QH, England",
 d-67-00463.xml,d-67-00463.nxml,affiliation_text,exact,partial_set,0,0,1,0,"a MRC Laboratory of Molecular Biology, Hills Road, Cambridge CB2 0QH, England",
@@ -5535,6 +5535,8 @@ e-67-o1363.xml,e-67-o1363.nxml,author_full_names,levenshtein,partial_set,0,1,0,0
 e-67-o1363.xml,e-67-o1363.nxml,author_full_names,levenshtein,partial_set,0,1,0,0,,SW Ng
 e-67-o1363.xml,e-67-o1363.nxml,corresp_author_emails,exact,string,0,0,0,1,,
 e-67-o1363.xml,e-67-o1363.nxml,corresp_author_emails,levenshtein,string,0,0,0,1,,
+e-67-o1363.xml,e-67-o1363.nxml,author_emails,exact,partial_set,0,0,1,0,afrakssou@yahoo.fr,
+e-67-o1363.xml,e-67-o1363.nxml,author_emails,levenshtein,partial_set,0,0,1,0,afrakssou@yahoo.fr,
 e-67-o1363.xml,e-67-o1363.nxml,affiliation_text,exact,partial_list,0,0,1,0,"a Laboratoire de Chimie Organique Appliquée, Université Sidi Mohamed Ben Abdallah, Faculté des Sciences et Techniques, Route d’Immouzzer, BP 2202 Fès, Morocco",
 e-67-o1363.xml,e-67-o1363.nxml,affiliation_text,exact,partial_list,0,0,1,0,"b Unité de Catalyse et de Chimie du Solide (UCCS), UMR 8181, Ecole Nationale Supérieure de Chimie de Lille, France",
 e-67-o1363.xml,e-67-o1363.nxml,affiliation_text,exact,partial_list,0,0,1,0,"c USR 3290 Miniaturisation pour l’Analyse, la Synthèse et la Protéomique, 59655 Villeneuve d’Ascq Cedex, Université Lille-1, France",
@@ -7017,8 +7019,8 @@ f-67-00344.xml,f-67-00344.nxml,corresp_author_emails,exact,string,0,1,0,0,,mamor
 f-67-00344.xml,f-67-00344.nxml,corresp_author_emails,levenshtein,string,0,1,0,0,,mamoru.suzuki@protein.osaka-u.ac.jp
 f-67-00344.xml,f-67-00344.nxml,corresp_author_emails,exact,partial_set,0,1,0,0,,mamoru.suzuki@protein.osaka-u.ac.jp
 f-67-00344.xml,f-67-00344.nxml,corresp_author_emails,levenshtein,partial_set,0,1,0,0,,mamoru.suzuki@protein.osaka-u.ac.jp
-f-67-00344.xml,f-67-00344.nxml,author_emails,exact,partial_set,0,1,0,0,,mamoru.suzuki@protein.osaka-u.ac.jp
-f-67-00344.xml,f-67-00344.nxml,author_emails,levenshtein,partial_set,0,1,0,0,,mamoru.suzuki@protein.osaka-u.ac.jp
+f-67-00344.xml,f-67-00344.nxml,author_emails,exact,partial_set,1,0,0,0,mamoru.suzuki@protein.osaka-u.ac.jp,mamoru.suzuki@protein.osaka-u.ac.jp
+f-67-00344.xml,f-67-00344.nxml,author_emails,levenshtein,partial_set,1,0,0,0,mamoru.suzuki@protein.osaka-u.ac.jp,mamoru.suzuki@protein.osaka-u.ac.jp
 f-67-00344.xml,f-67-00344.nxml,affiliation_text,exact,partial_list,0,0,1,0,"a Laboratory of Supramolecular Crystallography, Research Center for Structural and Functional Proteomics, Institute for Protein Research, Osaka University, Suita 565-0871, Japan",
 f-67-00344.xml,f-67-00344.nxml,affiliation_text,exact,partial_list,0,0,1,0,"b Division of Membrane Dynamics, Department of Physiology and Cell Biology, Kobe University Graduate School of Medicine, Kobe 650-0017, Japan",
 f-67-00344.xml,f-67-00344.nxml,affiliation_text,exact,partial_list,0,0,1,0,"c Division of Molecular and Cellular Biology, Department of Biochemistry and Molecular Biology, Kobe University Graduate School of Medicine, Kobe 650-0017, Japan",
