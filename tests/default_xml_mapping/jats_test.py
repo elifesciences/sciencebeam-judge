@@ -66,7 +66,7 @@ class TestJats:
 
         def test_should_find_email_from_author_notes(
                 self, default_xml_mapping):
-            xml = E.article(E.front(E('article-meta',
+            xml = E.article(E.front(E('article-meta', *[
                 E('contrib-group', *[
                     E.contrib(
                         {'contrib-type': 'author', 'corresp': 'yes'},
@@ -81,7 +81,7 @@ class TestJats:
                     E.corresp({'id': 'cor1'}, 'Corresponding author: ', E.email(EMAIL_1)),
                     E.fn({'id': 'other1'}, 'Other author: ', E.email(EMAIL_2))
                 ])
-            )))
+            ])))
             result = parse_xml_node(
                 xml,
                 xml_mapping=default_xml_mapping,
