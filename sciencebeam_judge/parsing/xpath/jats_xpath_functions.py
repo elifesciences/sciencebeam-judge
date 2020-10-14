@@ -88,7 +88,7 @@ def _contrib_email(contrib_node: etree.Element) -> str:
         rid = xref_node.get('rid')
         if not rid:
             continue
-        for email_node in contrib_node.xpath('../author-notes/*[@id="%s"]/email' % rid):
+        for email_node in contrib_node.xpath('//author-notes/*[@id="%s"]/email' % rid):
             email = get_text_content(email_node)
             if email:
                 return email
