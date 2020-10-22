@@ -1,10 +1,10 @@
 import logging
-from typing import List
+from typing import Iterable, List
 
 from lxml import etree
 from natsort import natsorted
 
-from sciencebeam_utils.utils.xml import get_text_content
+from sciencebeam_utils.utils.xml import get_text_content, get_text_content_list
 
 from sciencebeam_judge.utils.misc import normalize_person_name
 
@@ -148,17 +148,57 @@ def _aff_string(aff):
     )
 
 
+def fn_tei_aff_string(_, nodes):
+    return [_aff_string(node) for node in _sort_author_affiliations(nodes)]
+
+
 def _aff_text(aff: etree.Element):
     raw_affiliation_nodes = aff.xpath('./note[@type="raw_affiliation"]')
     return ', '.join(_text(raw_affiliation_nodes))
 
 
-def fn_tei_aff_string(_, nodes):
-    return [_aff_string(node) for node in _sort_author_affiliations(nodes)]
-
-
 def fn_tei_aff_text(_, nodes: List[etree.Element]):
     return [_aff_text(node) for node in _sort_author_affiliations(nodes)]
+
+
+def _get_raw_affiliation_label(raw_affiliation_node: etree.Element) -> str:
+    return ''.join(get_text_content_list(raw_affiliation_node.xpath('./label')))
+
+
+def _get_raw_affiliation_text_without_label(raw_affiliation_node: etree.Element) -> str:
+    label_nodes = raw_affiliation_node.xpath('./label')
+    if not label_nodes:
+        return get_text_content(raw_affiliation_node)
+    return get_text_content(raw_affiliation_node, exclude=label_nodes).strip()
+
+
+def _iter_aff_by_label_text_list(aff_list: List[etree.Element]) -> Iterable[str]:
+    raw_affiliation_nodes = [
+        raw_affiliation_node
+        for aff in aff_list
+        for raw_affiliation_node in aff.xpath('./note[@type="raw_affiliation"]')
+    ]
+    previous_label = None
+    pending_text = None
+    for raw_affiliation_node in raw_affiliation_nodes:
+        current_label = _get_raw_affiliation_label(raw_affiliation_node)
+        if not current_label:
+            yield get_text_content(raw_affiliation_node)
+            continue
+        if pending_text and current_label != previous_label:
+            yield pending_text
+            pending_text = None
+        if not pending_text:
+            previous_label = current_label
+            pending_text = get_text_content(raw_affiliation_node)
+            continue
+        pending_text += ' ' + _get_raw_affiliation_text_without_label(raw_affiliation_node)
+    if pending_text:
+        yield pending_text
+
+
+def fn_tei_aff_by_label_text(_, nodes: List[etree.Element]):
+    return list(_iter_aff_by_label_text_list(_sort_author_affiliations(nodes)))
 
 
 def _ref_fpage(ref):
@@ -224,6 +264,7 @@ def register_functions(ns=None):
     ns['tei-authors'] = fn_tei_authors
     ns['tei-aff-string'] = fn_tei_aff_string
     ns['tei-aff-text'] = fn_tei_aff_text
+    ns['tei-aff-by-label-text'] = fn_tei_aff_by_label_text
     ns['tei-author-affiliations'] = fn_tei_author_affiliations
     ns['tei-ref-fpage'] = fn_tei_ref_fpage
     ns['tei-ref-lpage'] = fn_tei_ref_lpage
