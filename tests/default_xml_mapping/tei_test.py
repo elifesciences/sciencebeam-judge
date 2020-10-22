@@ -90,6 +90,32 @@ class TestTei:
             assert result.get('affiliation_institution') == ['Institution 1']
             assert result.get('affiliation_country') == ['Country 1']
 
+        def test_should_join_affiliation_text_with_same_label(
+                self, default_xml_mapping):
+            xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
+                E.author(
+                    E.affiliation(
+                        E.note({'type': 'raw_affiliation'}, E.label('a'), ' Part 1')
+                    ),
+                    E.affiliation(
+                        E.note({'type': 'raw_affiliation'}, E.label('a'), ' Part 2')
+                    ),
+                    E.affiliation(
+                        E.note({'type': 'raw_affiliation'}, E.label('b'), ' Other')
+                    )
+                )
+            ))))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'affiliation_text',
+                    'affiliation_by_label_text'
+                ]
+            )
+            assert result.get('affiliation_text') == ['a Part 1', 'a Part 2', 'b Other']
+            assert result.get('affiliation_by_label_text') == ['a Part 1 Part 2', 'b Other']
+
     class TestTeiReferenceAuthorNames:
         def test_should_parse_tei_ref_authors(self, default_xml_mapping):
             xml = E.TEI(E.text(E.back(E.div(E.listBibl(
