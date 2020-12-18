@@ -598,11 +598,17 @@ class TestTei:
             result = parse_xml_node(
                 xml,
                 xml_mapping=default_xml_mapping,
-                fields=['table_labels', 'table_captions', 'table_label_captions']
+                fields=[
+                    'table_labels', 'table_captions', 'table_label_captions',
+                    'body_table_labels', 'body_table_captions', 'body_table_label_captions'
+                ]
             )
             assert result.get('table_labels') == [LABEL_1]
             assert result.get('table_captions') == [TEXT_1]
             assert result.get('table_label_captions') == [f'{LABEL_1} {TEXT_1}']
+            assert result.get('body_table_labels') == [LABEL_1]
+            assert result.get('body_table_captions') == [TEXT_1]
+            assert result.get('body_table_label_captions') == [f'{LABEL_1} {TEXT_1}']
 
         def test_should_parse_table_label_and_description_in_nested_section(
                 self, default_xml_mapping):
@@ -614,8 +620,36 @@ class TestTei:
             result = parse_xml_node(
                 xml,
                 xml_mapping=default_xml_mapping,
-                fields=['table_labels', 'table_captions', 'table_label_captions']
+                fields=[
+                    'table_labels', 'table_captions', 'table_label_captions',
+                    'body_table_labels', 'body_table_captions', 'body_table_label_captions'
+                ]
             )
             assert result.get('table_labels') == [LABEL_1]
             assert result.get('table_captions') == [TEXT_1]
             assert result.get('table_label_captions') == [f'{LABEL_1} {TEXT_1}']
+            assert result.get('body_table_labels') == [LABEL_1]
+            assert result.get('body_table_captions') == [TEXT_1]
+            assert result.get('body_table_label_captions') == [f'{LABEL_1} {TEXT_1}']
+
+        def test_should_parse_table_label_and_description_in_back_section(
+                self, default_xml_mapping):
+            xml = E.TEI(E.text(E.back(E.figure(
+                {'type': 'table'},
+                E.head(LABEL_1),
+                E.figDesc(TEXT_1)
+            ))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'table_labels', 'table_captions', 'table_label_captions',
+                    'body_table_labels', 'body_table_captions', 'body_table_label_captions'
+                ]
+            )
+            assert result.get('table_labels') == [LABEL_1]
+            assert result.get('table_captions') == [TEXT_1]
+            assert result.get('table_label_captions') == [f'{LABEL_1} {TEXT_1}']
+            assert result.get('body_table_labels') == []
+            assert result.get('body_table_captions') == []
+            assert result.get('body_table_label_captions') == []
