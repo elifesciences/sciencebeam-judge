@@ -533,11 +533,17 @@ class TestTei:
             result = parse_xml_node(
                 xml,
                 xml_mapping=default_xml_mapping,
-                fields=['figure_labels', 'figure_captions', 'figure_label_captions']
+                fields=[
+                    'figure_labels', 'figure_captions', 'figure_label_captions',
+                    'body_figure_labels', 'body_figure_captions', 'body_figure_label_captions'
+                ]
             )
             assert result.get('figure_labels') == [LABEL_1]
             assert result.get('figure_captions') == [TEXT_1]
             assert result.get('figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
+            assert result.get('body_figure_labels') == [LABEL_1]
+            assert result.get('body_figure_captions') == [TEXT_1]
+            assert result.get('body_figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
 
         def test_should_parse_figure_label_and_description_in_nested_section(
                 self, default_xml_mapping):
@@ -548,11 +554,38 @@ class TestTei:
             result = parse_xml_node(
                 xml,
                 xml_mapping=default_xml_mapping,
-                fields=['figure_labels', 'figure_captions', 'figure_label_captions']
+                fields=[
+                    'figure_labels', 'figure_captions', 'figure_label_captions',
+                    'body_figure_labels', 'body_figure_captions', 'body_figure_label_captions'
+                ]
             )
             assert result.get('figure_labels') == [LABEL_1]
             assert result.get('figure_captions') == [TEXT_1]
             assert result.get('figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
+            assert result.get('body_figure_labels') == [LABEL_1]
+            assert result.get('body_figure_captions') == [TEXT_1]
+            assert result.get('body_figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
+
+        def test_should_parse_figure_label_and_description_in_back_section(
+                self, default_xml_mapping):
+            xml = E.TEI(E.text(E.back(E.figure(
+                E.head(LABEL_1),
+                E.figDesc(TEXT_1)
+            ))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'figure_labels', 'figure_captions', 'figure_label_captions',
+                    'body_figure_labels', 'body_figure_captions', 'body_figure_label_captions'
+                ]
+            )
+            assert result.get('figure_labels') == [LABEL_1]
+            assert result.get('figure_captions') == [TEXT_1]
+            assert result.get('figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
+            assert result.get('body_figure_labels') == []
+            assert result.get('body_figure_captions') == []
+            assert result.get('body_figure_label_captions') == []
 
     class TestTeiTable:
         def test_should_parse_table_label_and_description_in_body_section(
