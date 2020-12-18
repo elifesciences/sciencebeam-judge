@@ -14,6 +14,7 @@ LOGGER = logging.getLogger(__name__)
 DOI_1 = '10.12345/abc/1'
 HTTPS_DOI_URL_PREFIX = 'https://doi.org/'
 
+LABEL_1 = 'Label 1'
 TEXT_1 = 'Some text 1'
 
 EMAIL_1 = 'name1@test'
@@ -521,3 +522,67 @@ class TestTei:
             assert result.get('abstract_style_bold') == ['bold1', 'mixed1']
             assert result.get('abstract_style_subscript') == ['subscript1', 'mixed1']
             assert result.get('abstract_style_superscript') == ['superscript1', 'mixed1']
+
+    class TestTeiFigure:
+        def test_should_parse_figure_label_and_description_in_body_section(
+                self, default_xml_mapping):
+            xml = E.TEI(E.text(E.body(E.figure(
+                E.head(LABEL_1),
+                E.figDesc(TEXT_1)
+            ))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=['figure_labels', 'figure_captions', 'figure_label_captions']
+            )
+            assert result.get('figure_labels') == [LABEL_1]
+            assert result.get('figure_captions') == [TEXT_1]
+            assert result.get('figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
+
+        def test_should_parse_figure_label_and_description_in_nested_section(
+                self, default_xml_mapping):
+            xml = E.TEI(E.text(E.body(E.div(E.div(E.figure(
+                E.head(LABEL_1),
+                E.figDesc(TEXT_1)
+            ))))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=['figure_labels', 'figure_captions', 'figure_label_captions']
+            )
+            assert result.get('figure_labels') == [LABEL_1]
+            assert result.get('figure_captions') == [TEXT_1]
+            assert result.get('figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
+
+    class TestTeiTable:
+        def test_should_parse_table_label_and_description_in_body_section(
+                self, default_xml_mapping):
+            xml = E.TEI(E.text(E.body(E.figure(
+                {'type': 'table'},
+                E.head(LABEL_1),
+                E.figDesc(TEXT_1)
+            ))))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=['table_labels', 'table_captions', 'table_label_captions']
+            )
+            assert result.get('table_labels') == [LABEL_1]
+            assert result.get('table_captions') == [TEXT_1]
+            assert result.get('table_label_captions') == [f'{LABEL_1} {TEXT_1}']
+
+        # def test_should_parse_table_label_and_description_in_nested_section(
+        #         self, default_xml_mapping):
+        #     xml = E.TEI(E.text(E.body(E.div(E.div(E.figure(
+        #         {'type': 'table'},
+        #         E.head(LABEL_1),
+        #         E.figDesc(TEXT_1)
+        #     ))))))
+        #     result = parse_xml_node(
+        #         xml,
+        #         xml_mapping=default_xml_mapping,
+        #         fields=['table_labels', 'table_captions', 'table_label_captions']
+        #     )
+        #     assert result.get('table_labels') == [LABEL_1]
+        #     assert result.get('table_captions') == [TEXT_1]
+        #     assert result.get('table_label_captions') == [f'{LABEL_1} {TEXT_1}']
