@@ -45,6 +45,11 @@ class BackFieldNames:
     BACK_SECTION_PARAGRAPHS = 'back_section_paragraphs'
 
 
+class BodyBackSectionFieldNames:
+    ALL_SECTION_TITLES = 'all_section_titles'
+    ALL_SECTION_PARAGRAPHS = 'all_section_paragraphs'
+
+
 class TableFieldNames:
     TABLES = 'tables'
     TABLE_STRINGS = 'table_strings'
@@ -119,12 +124,18 @@ DEFAULT_BACK_FIELDS = (
     + DEFAULT_REFERENCE_FIELDS
 )
 
-DEFAULT_EXCLUDED_FIELDS = {BodyFieldNames.SECTION_PARAGRAPHS}
+DEFAULT_BODY_BACK_SECTION_FIELDS = get_class_field_name_values(BodyBackSectionFieldNames)
+
+DEFAULT_EXCLUDED_FIELDS = {
+    BodyFieldNames.SECTION_PARAGRAPHS,
+    BodyBackSectionFieldNames.ALL_SECTION_PARAGRAPHS
+}
 
 DEFAULT_EXTRACTION_FIELDS_WITHOUT_EXCLUSIONS = (
     DEFAULT_FRONT_FIELDS +
     DEFAULT_BODY_FIELDS +
-    DEFAULT_BACK_FIELDS
+    DEFAULT_BACK_FIELDS +
+    DEFAULT_BODY_BACK_SECTION_FIELDS
 )
 
 DEFAULT_EXTRACTION_FIELDS = [
