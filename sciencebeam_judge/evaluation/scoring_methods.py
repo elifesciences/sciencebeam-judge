@@ -8,7 +8,9 @@ import editdistance
 
 from ..utils.distance_matching import (
     T_Distance_Function,
-    DistanceMeasure
+    DistanceMeasure,
+    get_length_based_upper_bound_score,
+    get_character_count_based_upper_bound_score
 )
 
 from .normalization import (
@@ -21,6 +23,12 @@ class ScoringMethodNames:
     SOFT = 'soft'
     LEVENSHTEIN = 'levenshtein'
     RATCLIFF_OBERSHELP = 'ratcliff_obershelp'
+
+
+EDIT_DISTANCE_APPROXIMATE_FN_LIST = [
+    get_length_based_upper_bound_score,
+    get_character_count_based_upper_bound_score
+]
 
 
 def exact_score(expected: str, actual: str) -> float:
@@ -63,10 +71,12 @@ class ScoringMethod:
             self,
             name: str,
             scoring_fn: T_Distance_Function,
+            approximate_scoring_fn_list: List[T_Distance_Function] = None,
             threshold: float = 1,
             preprocessing_fn: Callable[[str], str] = None):
         self.name = name
         self.scoring_fn = scoring_fn
+        self.approximate_scoring_fn_list = approximate_scoring_fn_list or []
         self.threshold = threshold
         self.preprocessing_fn = preprocessing_fn or IDENTITY_FN
 
@@ -82,7 +92,11 @@ class ScoringMethod:
     @property
     def distance_measure(self) -> DistanceMeasure:
         return DistanceMeasure(
-            self.wrap_with_preprocessing(self.scoring_fn)
+            self.wrap_with_preprocessing(self.scoring_fn),
+            approximate_distance_fn_list=[
+                self.wrap_with_preprocessing(fn)
+                for fn in self.approximate_scoring_fn_list
+            ]
         )
 
     def __str__(self):
@@ -100,10 +114,14 @@ SCORING_METHODS = [
         ScoringMethodNames.SOFT, exact_score, preprocessing_fn=strip_punctuation_and_whitespace
     ),
     ScoringMethod(
-        ScoringMethodNames.LEVENSHTEIN, levenshtein_score, threshold=0.8
+        ScoringMethodNames.LEVENSHTEIN, levenshtein_score,
+        approximate_scoring_fn_list=EDIT_DISTANCE_APPROXIMATE_FN_LIST,
+        threshold=0.8
     ),
     ScoringMethod(
-        ScoringMethodNames.RATCLIFF_OBERSHELP, ratcliff_obershelp_score, threshold=0.95
+        ScoringMethodNames.RATCLIFF_OBERSHELP, ratcliff_obershelp_score,
+        approximate_scoring_fn_list=EDIT_DISTANCE_APPROXIMATE_FN_LIST,
+        threshold=0.95
     )
 ]
 
