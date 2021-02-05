@@ -70,6 +70,8 @@ def get_character_count_based_upper_bound_score(value_1: str, value_2: str) -> f
     max_length = max(len(value_1), len(value_2))
     if not max_length:
         return 1.0
+    if value_1 == value_2:
+        return 1.0
     # viewing a and b as multisets, set matches to the cardinality
     # of their intersection; this counts the number of matches
     # without regard to order, so is clearly an upper bound
