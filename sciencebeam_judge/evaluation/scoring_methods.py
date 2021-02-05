@@ -1,9 +1,15 @@
 from __future__ import division
+from functools import wraps
 from typing import Callable, List
 
 from difflib import SequenceMatcher
 
 import editdistance
+
+from ..utils.distance_matching import (
+    T_Distance_Function,
+    DistanceMeasure
+)
 
 from .normalization import (
     strip_punctuation_and_whitespace
@@ -35,17 +41,49 @@ def IDENTITY_FN(x):
     return x
 
 
+def wrap_scoring_function_with_preprocessing(
+    scoring_fn: T_Distance_Function,
+    preprocessing_fn: Callable[[str], str]
+) -> T_Distance_Function:
+    if preprocessing_fn is None or (preprocessing_fn == IDENTITY_FN):  # noqa pylint: disable=comparison-with-callable
+        return scoring_fn
+
+    @wraps(scoring_fn)
+    def wrapped(value_1: str, value_2: str) -> float:
+        if value_1:
+            value_1 = preprocessing_fn(value_1)
+        if value_2:
+            value_2 = preprocessing_fn(value_2)
+        return scoring_fn(value_1, value_2)
+    return wrapped
+
+
 class ScoringMethod:
     def __init__(
             self,
             name: str,
-            scoring_fn: Callable[[str, str], float],
+            scoring_fn: T_Distance_Function,
             threshold: float = 1,
             preprocessing_fn: Callable[[str], str] = None):
         self.name = name
         self.scoring_fn = scoring_fn
         self.threshold = threshold
         self.preprocessing_fn = preprocessing_fn or IDENTITY_FN
+
+    def wrap_with_preprocessing(
+        self,
+        scoring_fn: T_Distance_Function
+    ) -> T_Distance_Function:
+        return wrap_scoring_function_with_preprocessing(
+            scoring_fn,
+            self.preprocessing_fn
+        )
+
+    @property
+    def distance_measure(self) -> DistanceMeasure:
+        return DistanceMeasure(
+            self.wrap_with_preprocessing(self.scoring_fn)
+        )
 
     def __str__(self):
         return self.name
