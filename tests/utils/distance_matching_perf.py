@@ -1,10 +1,13 @@
 import logging
+import os
 import random
 from collections import OrderedDict
 from itertools import islice
+from pathlib import Path
 from timeit import timeit
 from typing import List, Tuple
 
+import requests
 import lorem
 
 from sciencebeam_judge.evaluation.scoring_methods import levenshtein_score
@@ -45,6 +48,11 @@ NAMED_DISTANCE_MEASURES = OrderedDict([
 ])
 
 
+MIT_WORD_LIST_10000_URL = (
+    'https://www.mit.edu/~ecprice/wordlist.10000'
+)
+
+
 class DistanceMatchesPerfTester:
     def __init__(
         self,
@@ -74,6 +82,17 @@ class DistanceMatchesPerfTester:
         result = timeit('self.run_once()', globals={'self': self}, number=number)
         LOGGER.info('result: total=%s, mean=%s', result, result / number)
         return result
+
+
+def get_file(url: str) -> str:
+    local_path = os.path.join('.temp', os.path.basename(url))
+    if os.path.exists(local_path):
+        return local_path
+    response = requests.get(url)
+    response.raise_for_status()
+    data = response.content
+    Path(local_path).write_bytes(data)
+    return local_path
 
 
 def modify_text(
@@ -141,6 +160,12 @@ def get_generated_expected_actual_list(
 
 def main():
     iteration_count = 3
+    word_list = (
+        Path(get_file(MIT_WORD_LIST_10000_URL))
+        .read_text()
+        .splitlines()
+    )
+    lorem.set_pool(word_list)
     expected_list, actual_list = get_generated_expected_actual_list()
     for name, distance_measure in NAMED_DISTANCE_MEASURES.items():
         DistanceMatchesPerfTester(
