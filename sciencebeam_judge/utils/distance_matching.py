@@ -94,6 +94,7 @@ def get_character_count_based_upper_bound_score(value_1: str, value_2: str) -> f
     # without regard to order, so is clearly an upper bound
     value_counts_1 = get_character_counts(value_1)
     value_counts_2 = get_character_counts(value_2)
+    # counting the intersection of the counters (min of each count)
     matches = sum(
         min(count_1, value_counts_2[c])
         for c, count_1 in value_counts_1.items()
