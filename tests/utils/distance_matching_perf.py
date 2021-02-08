@@ -3,7 +3,7 @@ import random
 from collections import OrderedDict
 from itertools import islice
 from timeit import timeit
-from typing import List
+from typing import List, Tuple
 
 import lorem
 
@@ -96,16 +96,16 @@ def modify_text(
     return ''.join(result)
 
 
-def main():
-    paragraph_count = 20
-    count_arg = 1
-    sentence_word_range = (5, 20)
-    sentence_range = (5, 20)
-    iteration_count = 10
-    insertion_prob = 0.2
-    deletion_prob = 0.2
-    relative_max_start = 0.1
-    relative_max_end = 0.1
+def get_generated_expected_actual_list(
+    paragraph_count: int = 20,
+    count_arg: int = 1,
+    sentence_word_range: Tuple[int, int] = (5, 20),
+    sentence_range: Tuple[int, int] = (5, 20),
+    insertion_prob: float = 0.2,
+    deletion_prob: float = 0.2,
+    relative_max_start: float = 0.1,
+    relative_max_end: float = 0.1
+):
     paragraphs = list(islice(lorem.paragraph(
         count_arg,
         word_range=sentence_word_range,
@@ -127,6 +127,12 @@ def main():
         for text in actual_list
     ]
     LOGGER.info('actual_list[0]: %s', actual_list[0])
+    return expected_list, actual_list
+
+
+def main():
+    iteration_count = 3
+    expected_list, actual_list = get_generated_expected_actual_list()
     for name, distance_measure in NAMED_DISTANCE_MEASURES.items():
         DistanceMatchesPerfTester(
             name=name,
