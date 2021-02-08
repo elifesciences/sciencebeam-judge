@@ -183,7 +183,7 @@ def main():
     for name, distance_measure in NAMED_DISTANCE_MEASURES.items():
         profile_filename = os.path.join(
             '.temp',
-            f'distance_matching_perf_{name}.profile'
+            f'distance_matching_{name}.profile'
         )
         calltree_filename = os.path.splitext(profile_filename)[0] + '.calltree'
         LOGGER.info('profile_filename: %s (%s)', profile_filename, calltree_filename)

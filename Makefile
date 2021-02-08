@@ -73,8 +73,8 @@ dev-watch:
 dev-test: dev-lint dev-pytest
 
 
-dev-distance-matching-perf-profile:
-	$(PYTHON) -m tests.utils.distance_matching_perf
+dev-distance-matching-profile:
+	$(PYTHON) -m tests.utils.distance_matching_profile
 
 
 build:
