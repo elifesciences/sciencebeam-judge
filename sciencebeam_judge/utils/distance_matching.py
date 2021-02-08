@@ -120,7 +120,9 @@ def find_best_match(
             for other_value in remaining_other_values
         ], reverse=True)
         remaining_other_values = [
-            other_value for _, other_value in remaining_other_values_with_score
+            other_value
+            for score, other_value in remaining_other_values_with_score
+            if score >= threshold
         ]
         if len(remaining_other_values_with_score) <= 1:
             break
