@@ -14,6 +14,9 @@ import pyprof2calltree
 import requests
 import lorem
 
+from sciencebeam_judge.parsing.xml import parse_xml, parse_xml_mapping
+from sciencebeam_judge.parsing.xpath.xpath_functions import register_functions
+
 from sciencebeam_judge.evaluation.scoring_methods import levenshtein_score
 
 from sciencebeam_judge.utils.distance_matching import (
@@ -54,6 +57,16 @@ NAMED_DISTANCE_MEASURES = OrderedDict([
 
 MIT_WORD_LIST_10000_URL = (
     'https://www.mit.edu/~ecprice/wordlist.10000'
+)
+
+EXAMPLE_DATA_EXPECTED_XML = (
+    'example-data/pmc-sample-1943-cc-by-subset'
+    '/Acta_Anaesthesiol_Scand_2011_Jan_55(1)_39-45/aas0055-0039.nxml'
+)
+
+EXAMPLE_DATA_ACTUAL_XML = (
+    'example-data/pmc-sample-1943-cc-by-subset-results'
+    '/grobid-tei/Acta_Anaesthesiol_Scand_2011_Jan_55(1)_39-45/aas0055-0039.xml'
 )
 
 
@@ -171,15 +184,11 @@ def get_generated_expected_actual_list(
     return expected_list, actual_list
 
 
-def main():
-    iteration_count = 3
-    word_list = (
-        Path(get_file(MIT_WORD_LIST_10000_URL))
-        .read_text()
-        .splitlines()
-    )
-    lorem.set_pool(word_list)
-    expected_list, actual_list = get_generated_expected_actual_list()
+def run_profiler(
+    expected_list: List[str],
+    actual_list: List[str],
+    iteration_count: int = 3
+):
     for name, distance_measure in NAMED_DISTANCE_MEASURES.items():
         profile_filename = os.path.join(
             '.temp',
@@ -196,6 +205,49 @@ def main():
         profile.dump_stats(profile_filename)
         pyprof2calltree.convert(profile_filename, calltree_filename)
         pstats.Stats(profile).sort_stats('tottime').print_stats(10)
+
+
+def generate_text_and_profile():
+    word_list = (
+        Path(get_file(MIT_WORD_LIST_10000_URL))
+        .read_text()
+        .splitlines()
+    )
+    lorem.set_pool(word_list)
+    expected_list, actual_list = get_generated_expected_actual_list()
+    run_profiler(expected_list=expected_list, actual_list=actual_list)
+
+
+def load_example_data_and_profile():
+    xml_mapping = get_default_xml_mapping()
+    expected_data = parse_xml(
+        EXAMPLE_DATA_EXPECTED_XML,
+        xml_mapping=xml_mapping,
+        fields=['all_section_paragraphs']
+    )
+    expected_list = expected_data['all_section_paragraphs']
+    LOGGER.info('expected_list[0]: %s', expected_list[0])
+    LOGGER.info('len(expected_list): %s', len(expected_list))
+
+    actual_data = parse_xml(
+        EXAMPLE_DATA_ACTUAL_XML,
+        xml_mapping=xml_mapping,
+        fields=['all_section_paragraphs']
+    )
+    actual_list = actual_data['all_section_paragraphs']
+    LOGGER.info('actual_list[0]: %s', actual_list[0])
+    LOGGER.info('len(actual_list): %s', len(actual_list))
+    run_profiler(expected_list=expected_list, actual_list=actual_list)
+
+
+def get_default_xml_mapping():
+    register_functions()
+    return parse_xml_mapping('./xml-mapping.conf')
+
+
+def main():
+    # generate_text_and_profile()
+    load_example_data_and_profile()
 
 
 if __name__ == '__main__':
