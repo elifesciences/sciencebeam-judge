@@ -1,11 +1,15 @@
 import logging
 import os
 import random
+import pstats
+import cProfile
 from collections import OrderedDict
 from itertools import islice
 from pathlib import Path
 from timeit import timeit
 from typing import List, Tuple
+
+import pyprof2calltree
 
 import requests
 import lorem
@@ -82,6 +86,15 @@ class DistanceMatchesPerfTester:
         result = timeit('self.run_once()', globals={'self': self}, number=number)
         LOGGER.info('result: total=%s, mean=%s', result, result / number)
         return result
+
+    def run_and_profile(self, *args, **kwargs) -> cProfile.Profile:
+        profile = cProfile.Profile()
+        profile.runctx(
+            'self.run(*args, **kwargs)',
+            globals={},
+            locals={'self': self, 'args': args, 'kwargs': kwargs}
+        )
+        return profile
 
 
 def get_file(url: str) -> str:
@@ -168,12 +181,21 @@ def main():
     lorem.set_pool(word_list)
     expected_list, actual_list = get_generated_expected_actual_list()
     for name, distance_measure in NAMED_DISTANCE_MEASURES.items():
-        DistanceMatchesPerfTester(
+        profile_filename = os.path.join(
+            '.temp',
+            f'distance_matching_perf_{name}.profile'
+        )
+        calltree_filename = os.path.splitext(profile_filename)[0] + '.calltree'
+        LOGGER.info('profile_filename: %s (%s)', profile_filename, calltree_filename)
+        profile = DistanceMatchesPerfTester(
             name=name,
             distance_measure=distance_measure,
             expected_list=expected_list,
             actual_list=actual_list
-        ).run(iteration_count)
+        ).run_and_profile(iteration_count)
+        profile.dump_stats(profile_filename)
+        pyprof2calltree.convert(profile_filename, calltree_filename)
+        pstats.Stats(profile).sort_stats('tottime').print_stats(10)
 
 
 if __name__ == '__main__':

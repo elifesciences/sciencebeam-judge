@@ -73,18 +73,8 @@ dev-watch:
 dev-test: dev-lint dev-pytest
 
 
-dev-distance-matching-perf-test:
-	$(PYTHON) -m tests.utils.distance_matching_perf
-
-
 dev-distance-matching-perf-profile:
-	$(PYTHON) -m cProfile \
-		--sort=time \
-		--outfile=.temp/distance_matching_perf_$(DATETIME_FOR_FILENAME).profile \
-		-m tests.utils.distance_matching_perf
-	$(PYTHON) -m pyprof2calltree \
-		-i .temp/distance_matching_perf_$(DATETIME_FOR_FILENAME).profile \
-		-o .temp/distance_matching_perf_$(DATETIME_FOR_FILENAME).calltree
+	$(PYTHON) -m tests.utils.distance_matching_perf
 
 
 build:
