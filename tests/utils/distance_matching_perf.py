@@ -98,6 +98,8 @@ def modify_text(
 
 def get_generated_expected_actual_list(
     paragraph_count: int = 20,
+    actual_extra_paragraph_count: int = 3,
+    actual_missing_paragraph_count: int = 3,
     count_arg: int = 1,
     sentence_word_range: Tuple[int, int] = (5, 20),
     sentence_range: Tuple[int, int] = (5, 20),
@@ -114,7 +116,14 @@ def get_generated_expected_actual_list(
     LOGGER.info('paragraphs[0]: %s', paragraphs[0])
     LOGGER.info('paragraphs count: %d', len(paragraphs))
     expected_list = paragraphs
-    actual_list = paragraphs.copy()
+    actual_list = (
+        paragraphs.copy()[actual_missing_paragraph_count:]
+        + list(islice(lorem.paragraph(
+            count_arg,
+            word_range=sentence_word_range,
+            sentence_range=sentence_range
+        ), actual_extra_paragraph_count))
+    )
     random.shuffle(actual_list)
     actual_list = [
         modify_text(
