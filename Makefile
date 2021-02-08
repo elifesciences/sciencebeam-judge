@@ -71,6 +71,10 @@ dev-watch:
 dev-test: dev-lint dev-pytest
 
 
+dev-distance-matching-perf-test:
+	$(PYTHON) -m tests.utils.distance_matching_perf
+
+
 build:
 	if [ "$(NO_BUILD)" != "y" ]; then \
 		$(DOCKER_COMPOSE) build; \
