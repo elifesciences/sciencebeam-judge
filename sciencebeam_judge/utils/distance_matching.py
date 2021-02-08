@@ -47,6 +47,10 @@ class DistanceMismatch(DistanceMatchResult):
     pass
 
 
+class StrWithCache(str):
+    pass
+
+
 def get_score_for_match_count(match_count: int, length: int):
     if length:
         return 2.0 * match_count / length
@@ -65,6 +69,19 @@ def get_length_based_upper_bound_score(value_1: str, value_2: str) -> float:
     return min(length_1, length_2) / max_length
 
 
+def get_character_counts(value: str, cache_attr: str = '__chrcount') -> Counter:
+    if not value:
+        return Counter()
+    value_counts = getattr(value, cache_attr, None)
+    if not value_counts:
+        value_counts = Counter(value)
+        try:
+            setattr(value, cache_attr, value_counts)
+        except AttributeError:
+            pass
+    return value_counts
+
+
 def get_character_count_based_upper_bound_score(value_1: str, value_2: str) -> float:
     # See difflib:SequenceMatcher.quick_ratio
     max_length = max(len(value_1), len(value_2))
@@ -75,8 +92,8 @@ def get_character_count_based_upper_bound_score(value_1: str, value_2: str) -> f
     # viewing a and b as multisets, set matches to the cardinality
     # of their intersection; this counts the number of matches
     # without regard to order, so is clearly an upper bound
-    value_counts_1 = Counter(value_1)
-    value_counts_2 = Counter(value_2)
+    value_counts_1 = get_character_counts(value_1)
+    value_counts_2 = get_character_counts(value_2)
     matches = sum(
         min(count_1, value_counts_2[c])
         for c, count_1 in value_counts_1.items()
@@ -135,6 +152,8 @@ def iter_distance_matches(
     threshold: float = DEFAULT_THRESHOLD,
     mismatch_threshold: float = 0.0
 ) -> Iterable[DistanceMatchResult]:
+    set_1 = [StrWithCache(s) for s in set_1]
+    set_2 = [StrWithCache(s) for s in set_2]
     unmatched_set_1 = []
     remaining_set_2 = list(set_2)
     for value_1 in set_1:
