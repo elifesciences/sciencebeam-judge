@@ -13,6 +13,10 @@ T_Distance_Function = Callable[[str, str], float]
 DEFAULT_THRESHOLD = 0.5
 
 
+class StrWithCache(str):
+    pass
+
+
 class DistanceMeasure(T_Distance_Function):
     def __init__(
         self,
@@ -33,6 +37,23 @@ class DistanceMeasure(T_Distance_Function):
         return self._approximate_distance_fn_list
 
 
+class CachedDistanceMeasure(DistanceMeasure):
+    def __init__(self, distance_measure: DistanceMeasure):
+        super().__init__(
+            distance_measure._distance_fn,
+            distance_measure._approximate_distance_fn_list
+        )
+        self._cache = {}
+
+    def __call__(self, value_1: str, value_2: str) -> float:
+        key = (value_1, value_2,)
+        score = self._cache.get(key)
+        if score is None:
+            score = self._distance_fn(value_1, value_2)
+            self._cache[key] = score
+        return score
+
+
 class DistanceMatchResult(NamedTuple):
     value_1: str
     value_2: str
@@ -44,10 +65,6 @@ class DistanceMatch(DistanceMatchResult):
 
 
 class DistanceMismatch(DistanceMatchResult):
-    pass
-
-
-class StrWithCache(str):
     pass
 
 
@@ -155,6 +172,7 @@ def iter_distance_matches(
     threshold: float = DEFAULT_THRESHOLD,
     mismatch_threshold: float = 0.0
 ) -> Iterable[DistanceMatchResult]:
+    distance_measure = CachedDistanceMeasure(distance_measure)
     set_1 = [StrWithCache(s) for s in set_1]
     set_2 = [StrWithCache(s) for s in set_2]
     unmatched_set_1 = []
