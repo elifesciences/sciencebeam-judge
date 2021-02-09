@@ -187,7 +187,7 @@ def get_generated_expected_actual_list(
 def run_profiler(
     expected_list: List[str],
     actual_list: List[str],
-    iteration_count: int = 3
+    iteration_count: int = 1
 ):
     for name, distance_measure in NAMED_DISTANCE_MEASURES.items():
         profile_filename = os.path.join(
