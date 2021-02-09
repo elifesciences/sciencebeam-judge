@@ -1,3 +1,4 @@
+import argparse
 import logging
 import os
 import random
@@ -218,10 +219,13 @@ def generate_text_and_profile():
     run_profiler(expected_list=expected_list, actual_list=actual_list)
 
 
-def load_example_data_and_profile():
+def load_example_data_and_profile(
+    expected_xml_path: str,
+    actual_xml_path: str
+):
     xml_mapping = get_default_xml_mapping()
     expected_data = parse_xml(
-        EXAMPLE_DATA_EXPECTED_XML,
+        expected_xml_path,
         xml_mapping=xml_mapping,
         fields=['all_section_paragraphs']
     )
@@ -230,7 +234,7 @@ def load_example_data_and_profile():
     LOGGER.info('len(expected_list): %s', len(expected_list))
 
     actual_data = parse_xml(
-        EXAMPLE_DATA_ACTUAL_XML,
+        actual_xml_path,
         xml_mapping=xml_mapping,
         fields=['all_section_paragraphs']
     )
@@ -245,9 +249,22 @@ def get_default_xml_mapping():
     return parse_xml_mapping('./xml-mapping.conf')
 
 
-def main():
+def main(argv: List[str] = None):
+    parser = argparse.ArgumentParser('Distance Matching Profile')
+    parser.add_argument(
+        '--expected-xml',
+        default=EXAMPLE_DATA_EXPECTED_XML
+    )
+    parser.add_argument(
+        '--actual-xml',
+        default=EXAMPLE_DATA_ACTUAL_XML
+    )
+    args = parser.parse_args(argv)
     # generate_text_and_profile()
-    load_example_data_and_profile()
+    load_example_data_and_profile(
+        args.expected_xml,
+        args.actual_xml
+    )
 
 
 if __name__ == '__main__':
