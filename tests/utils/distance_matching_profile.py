@@ -204,7 +204,7 @@ def run_profiler(
         ).run_and_profile(iteration_count)
         profile.dump_stats(profile_filename)
         pyprof2calltree.convert(profile_filename, calltree_filename)
-        pstats.Stats(profile).sort_stats('tottime').print_stats(10)
+        pstats.Stats(profile).sort_stats('tottime').print_stats(5)
 
 
 def generate_text_and_profile():
