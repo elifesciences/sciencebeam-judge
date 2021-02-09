@@ -6,11 +6,13 @@ from six import text_type
 
 from sciencebeam_utils.utils.collection import extend_dict
 
+from ...utils.distance_matching import get_distance_matches, CachedDistanceMeasure
+
 from ..math import safe_mean
 
 from ..normalization import normalize_string
 
-from ..scoring_methods import get_scoring_methods
+from ..scoring_methods import ScoringMethod, get_scoring_methods
 
 from ..match_scoring import (
     get_match_score_obj_for_score_fn,
@@ -47,6 +49,24 @@ def normalize_list(value, convert_to_lower=False):
     ]
 
 
+def to_string(value: Union[str, List[str]]) -> str:
+    if not value:
+        return ''
+    if isinstance(value, (list, tuple)):
+        return '\n'.join(value)
+    return value
+
+
+def normalize_str_list(
+    value: List[Union[str, List[str]]],
+    convert_to_lower=False
+) -> List[str]:
+    return [
+        normalize_string(to_string(x), convert_to_lower=convert_to_lower)
+        for x in value
+    ]
+
+
 def list_to_str(iterable):
     return ', '.join(text_type(x) for x in iterable)
 
@@ -61,31 +81,6 @@ def pad_list(list_: List[T], desired_length: int, pad_value: T = None) -> List[T
 def pad_longest(*lists: List[List[T]]) -> List[List[T]]:
     max_len = max(len(list_) for list_ in lists)
     return [pad_list(list_, max_len) for list_ in lists]
-
-
-def find_best_match_using_scoring_method(
-        value, other_values, scoring_method, include_values=False, threshold=0.0):
-
-    best_value = None
-    best_score = None
-    for other_value in other_values:
-        score = get_match_score_obj_for_score_fn(
-            value,
-            other_value,
-            scoring_method.scoring_fn,
-            threshold,
-            include_values=include_values
-        )
-        if score['score'] == 1.0:
-            return other_value, score
-        # pylint: disable=unsubscriptable-object
-        if not best_score or score['score'] > best_score['score']:
-            best_value = other_value
-            best_score = score
-
-    if best_score is not None and best_score['score'] >= threshold:
-        return best_value, best_score
-    return None, None
 
 
 def _sum_field(sequence, key):
@@ -175,15 +170,16 @@ def score_value_as_list_using_scoring_method(
 
 
 def score_value_as_unordered_list_using_scoring_method(
-        expected_list, actual_list, scoring_method,
+        expected_list, actual_list, scoring_method: ScoringMethod,
         include_values=False, partial=False):
     # pylint: disable=too-many-branches, too-many-locals
 
-    expected_str = list_to_str(expected_list)
-    actual_str = list_to_str(actual_list)
-    remaining_list = list(actual_list)
+    expected_str_list = normalize_str_list(expected_list)
+    actual_str_list = normalize_str_list(actual_list)
 
     def to_match_score(score):
+        expected_str = list_to_str(expected_list)
+        actual_str = list_to_str(actual_list)
         return get_match_score_obj_for_score(
             expected_str, actual_str, score,
             threshold=scoring_method.threshold, include_values=include_values
@@ -200,57 +196,21 @@ def score_value_as_unordered_list_using_scoring_method(
             )
             return to_match_score(0.0)
 
+    distance_measure = CachedDistanceMeasure(
+        scoring_method.distance_measure
+    )
+    match_results = get_distance_matches(
+        expected_str_list,
+        actual_str_list,
+        distance_measure=distance_measure,
+        threshold=scoring_method.threshold
+    )
     scores = []
-    unmatched_items = []
-    for expected_item in expected_list:
-        best_value, best_score = find_best_match_using_scoring_method(
-            expected_item, remaining_list, scoring_method,
-            include_values=include_values, threshold=scoring_method.threshold
-        )
-        if best_value is not None:
-            LOGGER.debug(
-                'found match (%s), adding to list, score=%.3f, expected_item=%s, matching_item=%s',
-                scoring_method, best_score['score'], expected_item, best_value
-            )
-            remaining_list.remove(best_value)
-            scores.append(best_score)
-        else:
-            LOGGER.debug(
-                'no match found (%s), 0.0 score, expected_item=%s, remaining_list=%s',
-                scoring_method, expected_item, remaining_list
-            )
-            if partial:
-                unmatched_items.append(expected_item)
-            else:
-                return to_match_score(0.0)
-
-    for expected_item in unmatched_items[:len(remaining_list)]:
-        best_value, _ = find_best_match_using_scoring_method(
-            expected_item, remaining_list, scoring_method,
-            include_values=include_values
-        )
-        LOGGER.debug(
-            'unmatched item, best match (%s), pair with expected,'
-            ' expected_item=%s, matching_item=%s',
-            scoring_method, expected_item, best_value
-        )
-        if best_value is not None:
-            scores.append(get_match_score_obj_for_score(
-                expected_item, best_value, 0.0,
-                threshold=scoring_method.threshold, include_values=include_values
-            ))
-            unmatched_items.remove(expected_item)
-            remaining_list.remove(best_value)
-
-    for expected_item in unmatched_items:
+    for match_result in match_results:
         scores.append(get_match_score_obj_for_score(
-            expected_item, '', 0.0,
-            threshold=scoring_method.threshold, include_values=include_values
-        ))
-
-    for remaining_item in remaining_list:
-        scores.append(get_match_score_obj_for_score(
-            '', remaining_item, 0.0,
+            match_result.value_1 or '',
+            match_result.value_2 or '',
+            match_result.score,
             threshold=scoring_method.threshold, include_values=include_values
         ))
 
