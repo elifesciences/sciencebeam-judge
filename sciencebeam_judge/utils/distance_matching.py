@@ -24,6 +24,9 @@ class StrWithCache:
     def __str__(self):
         return self.value
 
+    def __repr__(self):
+        return repr(self.value)
+
     def __hash__(self) -> int:
         return hash(self.value)
 
