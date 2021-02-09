@@ -1,7 +1,7 @@
 import logging
 
 from collections import Counter
-from typing import Callable, Iterable, List, NamedTuple, Set
+from typing import Callable, Iterable, List, NamedTuple, Set, Union, T
 
 
 LOGGER = logging.getLogger(__name__)
@@ -13,8 +13,25 @@ T_Distance_Function = Callable[[str, str], float]
 DEFAULT_THRESHOLD = 0.5
 
 
-class StrWithCache(str):
-    pass
+class StrWithCache:
+    def __init__(self, value: str, index: int):
+        self.value = value
+        self.index = index
+
+    def __len__(self):
+        return len(self.value)
+
+    def __str__(self):
+        return self.value
+
+    def __hash__(self) -> int:
+        return hash(self.value)
+
+    def __eq__(self, other) -> bool:
+        return other == self.value
+
+
+T_Str = Union[str, StrWithCache]
 
 
 class DistanceMeasure(T_Distance_Function):
@@ -45,12 +62,18 @@ class CachedDistanceMeasure(DistanceMeasure):
         )
         self._cache = {}
 
-    def __call__(self, value_1: str, value_2: str) -> float:
-        key = (value_1, value_2,)
+    def __call__(self, value_1: T_Str, value_2: T_Str) -> float:
+        key = (
+            getattr(value_1, 'index', value_1),
+            getattr(value_2, 'index', value_2),
+        )
         score = self._cache.get(key)
         if score is None:
-            score = self._distance_fn(value_1, value_2)
+            score = self._distance_fn(str(value_1), str(value_2))
             self._cache[key] = score
+            LOGGER.debug('saving score to cache: %r (%r, %d)', score, key, len(self._cache))
+        else:
+            LOGGER.debug('used cached score: %r (%r)', score, key)
         return score
 
 
@@ -86,12 +109,12 @@ def get_length_based_upper_bound_score(value_1: str, value_2: str) -> float:
     return min(length_1, length_2) / max_length
 
 
-def get_character_counts(value: str, cache_attr: str = '__chrcount') -> Counter:
+def get_character_counts(value: T_Str, cache_attr: str = '__chrcount') -> Counter:
     if not value:
         return Counter()
     value_counts = getattr(value, cache_attr, None)
     if not value_counts:
-        value_counts = Counter(value)
+        value_counts = Counter(str(value))
         try:
             setattr(value, cache_attr, value_counts)
         except AttributeError:
@@ -99,7 +122,7 @@ def get_character_counts(value: str, cache_attr: str = '__chrcount') -> Counter:
     return value_counts
 
 
-def get_character_count_based_upper_bound_score(value_1: str, value_2: str) -> float:
+def get_character_count_based_upper_bound_score(value_1: T_Str, value_2: T_Str) -> float:
     # See difflib:SequenceMatcher.quick_ratio
     max_length = max(len(value_1), len(value_2))
     if not max_length:
@@ -119,9 +142,13 @@ def get_character_count_based_upper_bound_score(value_1: str, value_2: str) -> f
     return matches / max_length
 
 
+def get_first(list_: Union[List[T]]) -> T:
+    return list_[0]
+
+
 def find_best_match(
-    value: str,
-    other_values: List[str],
+    value: T_Str,
+    other_values: List[T_Str],
     distance_measure: DistanceMeasure,
     threshold: float = DEFAULT_THRESHOLD,
     approximate_threshold: float = None
@@ -133,18 +160,26 @@ def find_best_match(
     best_score = -1.0
     remaining_other_values = other_values
     for approximate_distance_fn in distance_measure.approximations:
-        remaining_other_values_with_score = sorted([
-            (approximate_distance_fn(value, other_value), other_value)
-            for other_value in remaining_other_values
-        ], reverse=True)
+        # sort by approximate score descending,
+        # so that we are trying the items with a higher approximate score first
+        remaining_other_values_with_score = sorted(
+            [
+                (approximate_distance_fn(value, other_value), other_value)
+                for other_value in remaining_other_values
+            ],
+            key=get_first,
+            reverse=True
+        )
+        # remove all items not meeting the threshold
         remaining_other_values = [
             other_value
             for score, other_value in remaining_other_values_with_score
             if score >= threshold
         ]
-        if len(remaining_other_values_with_score) <= 1:
+        if not remaining_other_values_with_score:
             break
     for other_value in remaining_other_values:
+        # calculate true score (expensive)
         score = distance_measure(value, other_value)
         LOGGER.debug(
             'find_best_match, value=%r, other_value=%r, score=%s',
@@ -173,10 +208,12 @@ def iter_distance_matches(
     mismatch_threshold: float = 0.0
 ) -> Iterable[DistanceMatchResult]:
     distance_measure = CachedDistanceMeasure(distance_measure)
-    set_1 = [StrWithCache(s) for s in set_1]
-    set_2 = [StrWithCache(s) for s in set_2]
+    set_1 = [StrWithCache(s, i) for i, s in enumerate(set_1)]
+    set_2 = [StrWithCache(s, i) for i, s in enumerate(set_2)]
     unmatched_set_1 = []
     remaining_set_2 = list(set_2)
+
+    # find best matches that meet the threshold
     for value_1 in set_1:
         best_match = find_best_match(
             value_1,
@@ -190,6 +227,7 @@ def iter_distance_matches(
         else:
             unmatched_set_1.append(value_1)
 
+    # try to somewhat match up pairs, now below main threshold
     for value_1 in unmatched_set_1[:len(remaining_set_2)]:
         best_match = find_best_match(
             value_1,
@@ -209,6 +247,7 @@ def iter_distance_matches(
             unmatched_set_1.remove(value_1)
             remaining_set_2.remove(best_match.value_2)
 
+    # add remaining and unmatched items separately
     for value_1 in unmatched_set_1:
         yield DistanceMismatch(value_1=value_1, value_2=None, score=0.0)
     for value_2 in remaining_set_2:
