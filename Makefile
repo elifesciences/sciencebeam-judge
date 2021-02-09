@@ -25,8 +25,6 @@ EVALUATION_RESULTS_OUTPUT_PATH = /example-data/pmc-sample-1943-cc-by-subset-resu
 NOTEBOOK_OUTPUT_FILE =
 NO_BUILD =
 
-DATETIME_FOR_FILENAME = $(shell date +"%Y-%m-%dT%H-%M-%S")
-
 EXAMPLE_DATA_EXPECTED_BASE_PATH = ./example-data/pmc-sample-1943-cc-by-subset
 EXAMPLE_DATA_ACTUAL_BASE_PATH = ./example-data/pmc-sample-1943-cc-by-subset-results/grobid-tei
 
