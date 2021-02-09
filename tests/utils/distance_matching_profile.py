@@ -188,7 +188,7 @@ def get_generated_expected_actual_list(
 def run_profiler(
     expected_list: List[str],
     actual_list: List[str],
-    iteration_count: int = 1
+    iteration_count: int
 ):
     for name, distance_measure in NAMED_DISTANCE_MEASURES.items():
         profile_filename = os.path.join(
@@ -208,7 +208,7 @@ def run_profiler(
         pstats.Stats(profile).sort_stats('tottime').print_stats(5)
 
 
-def generate_text_and_profile():
+def generate_text_and_profile(**kwargs):
     word_list = (
         Path(get_file(MIT_WORD_LIST_10000_URL))
         .read_text()
@@ -216,12 +216,13 @@ def generate_text_and_profile():
     )
     lorem.set_pool(word_list)
     expected_list, actual_list = get_generated_expected_actual_list()
-    run_profiler(expected_list=expected_list, actual_list=actual_list)
+    run_profiler(expected_list=expected_list, actual_list=actual_list, **kwargs)
 
 
 def load_example_data_and_profile(
     expected_xml_path: str,
-    actual_xml_path: str
+    actual_xml_path: str,
+    **kwargs
 ):
     xml_mapping = get_default_xml_mapping()
     expected_data = parse_xml(
@@ -241,7 +242,7 @@ def load_example_data_and_profile(
     actual_list = actual_data['all_section_paragraphs']
     LOGGER.info('actual_list[0]: %s', actual_list[0])
     LOGGER.info('len(actual_list): %s', len(actual_list))
-    run_profiler(expected_list=expected_list, actual_list=actual_list)
+    run_profiler(expected_list=expected_list, actual_list=actual_list, **kwargs)
 
 
 def get_default_xml_mapping():
@@ -259,11 +260,18 @@ def main(argv: List[str] = None):
         '--actual-xml',
         default=EXAMPLE_DATA_ACTUAL_XML
     )
+    parser.add_argument(
+        '--iterations',
+        type=int,
+        default=1
+    )
     args = parser.parse_args(argv)
-    # generate_text_and_profile()
+    LOGGER.info('args: %s', args)
+    # generate_text_and_profile(iteration_count=args.iterations)
     load_example_data_and_profile(
         args.expected_xml,
-        args.actual_xml
+        args.actual_xml,
+        iteration_count=args.iterations
     )
 
 
