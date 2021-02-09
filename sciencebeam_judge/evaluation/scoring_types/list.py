@@ -6,7 +6,7 @@ from six import text_type
 
 from sciencebeam_utils.utils.collection import extend_dict
 
-from ...utils.distance_matching import get_distance_matches
+from ...utils.distance_matching import get_distance_matches, CachedDistanceMeasure
 
 from ..math import safe_mean
 
@@ -196,7 +196,9 @@ def score_value_as_unordered_list_using_scoring_method(
             )
             return to_match_score(0.0)
 
-    distance_measure = scoring_method.distance_measure
+    distance_measure = CachedDistanceMeasure(
+        scoring_method.distance_measure
+    )
     match_results = get_distance_matches(
         expected_str_list,
         actual_str_list,
