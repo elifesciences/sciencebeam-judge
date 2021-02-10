@@ -128,7 +128,9 @@ DEFAULT_BODY_BACK_SECTION_FIELDS = get_class_field_name_values(BodyBackSectionFi
 
 DEFAULT_EXCLUDED_FIELDS = {
     BodyFieldNames.SECTION_PARAGRAPHS,
-    BodyBackSectionFieldNames.ALL_SECTION_PARAGRAPHS
+    BodyBackSectionFieldNames.ALL_SECTION_PARAGRAPHS,
+    ReferenceFieldNames.FIRST_REFERENCE_FIELDS,
+    ReferenceFieldNames.REFERENCE_FIELDS
 }
 
 DEFAULT_EXTRACTION_FIELDS_WITHOUT_EXCLUSIONS = (
