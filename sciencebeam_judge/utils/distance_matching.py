@@ -1,22 +1,24 @@
 import logging
 
 from collections import Counter
-from typing import Callable, Iterable, List, NamedTuple, Set, Union, T
+from typing import (
+    Callable, Iterable, List, NamedTuple, Optional, Set, Tuple, Union, T
+)
 
 
 LOGGER = logging.getLogger(__name__)
 
 
-T_Distance_Function = Callable[[str, str], float]
-
-
 DEFAULT_THRESHOLD = 0.5
 
+T_Value = Union[str, Tuple[str]]
 
-class StrWithCache:
-    def __init__(self, value: str, index: int):
+
+class WrappedValue:
+    def __init__(self, value: Union[str, Tuple[str]], index: int = -1):
         self.value = value
         self.index = index
+        self.char_counts = None
 
     def __len__(self):
         return len(self.value)
@@ -34,7 +36,22 @@ class StrWithCache:
         return other == self.value
 
 
-T_Str = Union[str, StrWithCache]
+def get_unwrapped_value(wrapped_value: Optional[WrappedValue]) -> Union[str, Tuple[str]]:
+    if wrapped_value is None:
+        return None
+    return wrapped_value.value
+
+
+def get_wrapped_value(value: Union[str, Tuple[str]], index: int) -> WrappedValue:
+    return WrappedValue(value, index=index)
+
+
+T_Optionally_Wrapped_Value = Union[T_Value, WrappedValue]
+
+T_Distance_Function = Callable[
+    [T_Optionally_Wrapped_Value, T_Optionally_Wrapped_Value],
+    float
+]
 
 
 class DistanceMeasure(T_Distance_Function):
@@ -65,14 +82,21 @@ class CachedDistanceMeasure(DistanceMeasure):
         )
         self._cache = {}
 
-    def __call__(self, value_1: T_Str, value_2: T_Str) -> float:
+    def __call__(
+        self,
+        value_1: T_Optionally_Wrapped_Value,
+        value_2: T_Optionally_Wrapped_Value
+    ) -> float:
         key = (
             getattr(value_1, 'index', value_1),
             getattr(value_2, 'index', value_2),
         )
         score = self._cache.get(key)
         if score is None:
-            score = self._distance_fn(str(value_1), str(value_2))
+            score = self._distance_fn(
+                get_unwrapped_value(value_1),
+                get_unwrapped_value(value_2)
+            )
             self._cache[key] = score
             LOGGER.debug('saving score to cache: %r (%r, %d)', score, key, len(self._cache))
         else:
@@ -81,8 +105,8 @@ class CachedDistanceMeasure(DistanceMeasure):
 
 
 class DistanceMatchResult(NamedTuple):
-    value_1: str
-    value_2: str
+    value_1: T_Optionally_Wrapped_Value
+    value_2: T_Optionally_Wrapped_Value
     score: float
 
 
@@ -100,7 +124,10 @@ def get_score_for_match_count(match_count: int, length: int):
     return 1.0
 
 
-def get_length_based_upper_bound_score(value_1: str, value_2: str) -> float:
+def get_length_based_upper_bound_score(
+    value_1: T_Optionally_Wrapped_Value,
+    value_2: T_Optionally_Wrapped_Value
+) -> float:
     # See difflib:SequenceMatcher.real_quick_ratio
     length_1 = len(value_1)
     length_2 = len(value_2)
@@ -112,20 +139,20 @@ def get_length_based_upper_bound_score(value_1: str, value_2: str) -> float:
     return min(length_1, length_2) / max_length
 
 
-def get_character_counts(value: T_Str, cache_attr: str = '__chrcount') -> Counter:
+def get_character_counts(value: T_Optionally_Wrapped_Value) -> Counter:
     if not value:
         return Counter()
-    value_counts = getattr(value, cache_attr, None)
-    if not value_counts:
-        value_counts = Counter(str(value))
-        try:
-            setattr(value, cache_attr, value_counts)
-        except AttributeError:
-            pass
-    return value_counts
+    if isinstance(value, WrappedValue):
+        if value.char_counts is None:
+            value.char_counts = Counter(value.value)
+        return value.char_counts
+    return Counter(value)
 
 
-def get_character_count_based_upper_bound_score(value_1: T_Str, value_2: T_Str) -> float:
+def get_character_count_based_upper_bound_score(
+    value_1: T_Optionally_Wrapped_Value,
+    value_2: T_Optionally_Wrapped_Value
+) -> float:
     # See difflib:SequenceMatcher.quick_ratio
     max_length = max(len(value_1), len(value_2))
     if not max_length:
@@ -150,8 +177,8 @@ def get_first(list_: Union[List[T]]) -> T:
 
 
 def find_best_match(
-    value: T_Str,
-    other_values: List[T_Str],
+    value: T_Optionally_Wrapped_Value,
+    other_values: List[T_Optionally_Wrapped_Value],
     distance_measure: DistanceMeasure,
     threshold: float = DEFAULT_THRESHOLD,
     approximate_threshold: float = None
@@ -203,16 +230,13 @@ def find_best_match(
     return None
 
 
-def iter_distance_matches(
-    set_1: Set[str],
-    set_2: Set[str],
+def iter_wrapped_distance_matches(
+    set_1: Set[WrappedValue],
+    set_2: Set[WrappedValue],
     distance_measure: DistanceMeasure,
     threshold: float = DEFAULT_THRESHOLD,
     mismatch_threshold: float = 0.0
 ) -> Iterable[DistanceMatchResult]:
-    distance_measure = CachedDistanceMeasure(distance_measure)
-    set_1 = [StrWithCache(s, i) for i, s in enumerate(set_1)]
-    set_2 = [StrWithCache(s, i) for i, s in enumerate(set_2)]
     unmatched_set_1 = []
     remaining_set_2 = list(set_2)
 
@@ -255,6 +279,31 @@ def iter_distance_matches(
         yield DistanceMismatch(value_1=value_1, value_2=None, score=0.0)
     for value_2 in remaining_set_2:
         yield DistanceMismatch(value_1=None, value_2=value_2, score=0.0)
+
+
+def iter_distance_matches(
+    set_1: Set[Union[str, Tuple[str]]],
+    set_2: Set[Union[str, Tuple[str]]],
+    distance_measure: DistanceMeasure,
+    *args,
+    **kwargs
+) -> Iterable[DistanceMatchResult]:
+    distance_measure = CachedDistanceMeasure(distance_measure)
+    wrapped_set_1 = [WrappedValue(s, i) for i, s in enumerate(set_1)]
+    wrapped_set_2 = [WrappedValue(s, i) for i, s in enumerate(set_2)]
+    return (
+        DistanceMismatch(
+            value_1=get_unwrapped_value(distance_match.value_1),
+            value_2=get_unwrapped_value(distance_match.value_2),
+            score=distance_match.score
+        )
+        for distance_match in iter_wrapped_distance_matches(
+            wrapped_set_1, wrapped_set_2,
+            *args,
+            distance_measure=distance_measure,
+            **kwargs
+        )
+    )
 
 
 def get_distance_matches(*args, **kwargs) -> List[DistanceMatchResult]:
