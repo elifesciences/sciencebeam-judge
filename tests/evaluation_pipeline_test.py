@@ -276,10 +276,10 @@ class TestGetScoringTypesByFieldMap:
 class TestParseArgs:
     def test_should_be_able_to_pass_fields(self):
         opt = parse_args(MIN_ARGV + [
-            '--fields=+section_paragraphs,-reference_fields'
+            '--fields=+section_paragraphs,-reference_text'
         ])
         assert 'section_paragraphs' in opt.fields
-        assert 'reference_fields' not in opt.fields
+        assert 'reference_text' not in opt.fields
         assert 'abstract' in opt.fields
 
 
