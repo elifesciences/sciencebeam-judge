@@ -1,6 +1,6 @@
 from __future__ import division
 from functools import wraps
-from typing import Callable, List
+from typing import Callable, List, Tuple, Union, T
 
 from difflib import SequenceMatcher
 
@@ -8,6 +8,7 @@ import editdistance
 
 from ..utils.distance_matching import (
     T_Distance_Function,
+    T_Value,
     DistanceMeasure,
     get_length_based_upper_bound_score,
     get_character_count_based_upper_bound_score
@@ -31,21 +32,21 @@ EDIT_DISTANCE_APPROXIMATE_FN_LIST = [
 ]
 
 
-def exact_score(expected: str, actual: str) -> float:
+def exact_score(expected: T_Value, actual: T_Value) -> float:
     return 1 if expected == actual else 0
 
 
-def levenshtein_score(expected: str, actual: str) -> float:
+def levenshtein_score(expected: T_Value, actual: T_Value) -> float:
     if not expected and not actual:
         return 1
     return 1 - (editdistance.eval(expected, actual) / max(len(expected), len(actual)))
 
 
-def ratcliff_obershelp_score(expected: str, actual: str) -> float:
+def ratcliff_obershelp_score(expected: T_Value, actual: T_Value) -> float:
     return SequenceMatcher(None, expected, actual).ratio()
 
 
-def IDENTITY_FN(x):
+def IDENTITY_FN(x: T) -> T:
     return x
 
 
@@ -57,10 +58,10 @@ def wrap_scoring_function_with_preprocessing(
         return scoring_fn
 
     @wraps(scoring_fn)
-    def wrapped(value_1: str, value_2: str) -> float:
-        if value_1:
+    def wrapped(value_1: Union[str, Tuple[str]], value_2: Union[str, Tuple[str]]) -> float:
+        if value_1 and isinstance(value_1, str):
             value_1 = preprocessing_fn(value_1)
-        if value_2:
+        if value_2 and isinstance(value_1, str):
             value_2 = preprocessing_fn(value_2)
         return scoring_fn(value_1, value_2)
     return wrapped
