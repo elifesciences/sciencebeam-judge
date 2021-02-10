@@ -76,6 +76,15 @@ dev-watch:
 dev-test: dev-lint dev-pytest
 
 
+dev-update-example-data-results:
+	$(PYTHON) -m sciencebeam_judge.evaluation_pipeline \
+		--target-file-list $(EXAMPLE_DATA_EXPECTED_BASE_PATH)/file-list.tsv \
+		--target-file-column=xml_url \
+		--prediction-file-list $(EXAMPLE_DATA_ACTUAL_BASE_PATH)/file-list.lst \
+		--output-path .temp/evaluation-results \
+		--sequential
+
+
 dev-distance-matching-profile:
 	$(PYTHON) -m tests.utils.distance_matching_profile
 

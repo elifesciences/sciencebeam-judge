@@ -1,12 +1,12 @@
 import logging
 from abc import abstractmethod
-from typing import List, Union, T
+from typing import List, Tuple, Union, T
 
 from six import text_type
 
 from sciencebeam_utils.utils.collection import extend_dict
 
-from ...utils.distance_matching import get_distance_matches, CachedDistanceMeasure
+from ...utils.distance_matching import get_distance_matches
 
 from ..math import safe_mean
 
@@ -45,24 +45,6 @@ def normalize_string_or_list(
 def normalize_list(value, convert_to_lower=False):
     return [
         normalize_string_or_list(x, convert_to_lower=convert_to_lower)
-        for x in value
-    ]
-
-
-def to_string(value: Union[str, List[str]]) -> str:
-    if not value:
-        return ''
-    if isinstance(value, (list, tuple)):
-        return '\n'.join(value)
-    return value
-
-
-def normalize_str_list(
-    value: List[Union[str, List[str]]],
-    convert_to_lower=False
-) -> List[str]:
-    return [
-        normalize_string(to_string(x), convert_to_lower=convert_to_lower)
         for x in value
     ]
 
@@ -170,13 +152,12 @@ def score_value_as_list_using_scoring_method(
 
 
 def score_value_as_unordered_list_using_scoring_method(
-        expected_list, actual_list, scoring_method: ScoringMethod,
-        include_values=False, partial=False):
-    # pylint: disable=too-many-branches, too-many-locals
-
-    expected_str_list = normalize_str_list(expected_list)
-    actual_str_list = normalize_str_list(actual_list)
-
+    expected_list: List[Union[str, Tuple[str]]],
+    actual_list: List[Union[str, Tuple[str]]],
+    scoring_method: ScoringMethod,
+    include_values: bool = False,
+    partial: bool = False
+):
     def to_match_score(score):
         expected_str = list_to_str(expected_list)
         actual_str = list_to_str(actual_list)
@@ -196,12 +177,10 @@ def score_value_as_unordered_list_using_scoring_method(
             )
             return to_match_score(0.0)
 
-    distance_measure = CachedDistanceMeasure(
-        scoring_method.distance_measure
-    )
+    distance_measure = scoring_method.distance_measure
     match_results = get_distance_matches(
-        expected_str_list,
-        actual_str_list,
+        expected_list,
+        actual_list,
         distance_measure=distance_measure,
         threshold=scoring_method.threshold
     )

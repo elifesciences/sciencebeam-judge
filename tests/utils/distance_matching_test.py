@@ -113,15 +113,28 @@ class TestGetDistanceMatches:
             )
         ]
 
-    def test_should_return_multiple_similar_matches(self, distance_measure: DistanceMeasure):
+    def test_should_return_single_similar_tuple_matche(self, distance_measure: DistanceMeasure):
+        tuple_1 = tuple('0123456789')
+        tuple_2 = tuple('012345678X')
         assert get_distance_matches(
-            ['0123456789', 'b', 'c'],
-            ['c', 'b', '012345678X'],
+            [tuple_1],
+            [tuple_2],
             distance_measure
         ) == [
-            DistanceMatch(value_1='0123456789', value_2='012345678X', score=0.9),
-            DistanceMatch(value_1='b', value_2='b', score=1.0),
-            DistanceMatch(value_1='c', value_2='c', score=1.0)
+            DistanceMatch(value_1=tuple_1, value_2=tuple_2, score=0.9)
+        ]
+
+    def test_should_return_multiple_exact_tuple_matches(
+        self, distance_measure: DistanceMeasure
+    ):
+        assert get_distance_matches(
+            [('any', 'a'), ('any', 'b'), ('any', 'c')],
+            [('any', 'c'), ('any', 'b'), ('any', 'a')],
+            distance_measure
+        ) == [
+            DistanceMatch(value_1=('any', 'a'), value_2=('any', 'a'), score=1.0),
+            DistanceMatch(value_1=('any', 'b'), value_2=('any', 'b'), score=1.0),
+            DistanceMatch(value_1=('any', 'c'), value_2=('any', 'c'), score=1.0)
         ]
 
     def test_should_return_missing_items(self, distance_measure: DistanceMeasure):
