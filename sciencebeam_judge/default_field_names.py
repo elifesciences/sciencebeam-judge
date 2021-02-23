@@ -31,8 +31,8 @@ class AffiliationFieldNames:
 
 
 class BodyFieldNames:
-    SECTION_TITLES = 'section_titles'
-    SECTION_PARAGRAPHS = 'section_paragraphs'
+    BODY_SECTION_TITLES = 'body_section_titles'
+    BODY_SECTION_PARAGRAPHS = 'body_section_paragraphs'
 
     BODY_REFERENCE_CITATION_TEXT = 'body_reference_citation_text'
     BODY_ASSET_CITATION_TEXT = 'body_asset_citation_text'
@@ -127,7 +127,7 @@ DEFAULT_BACK_FIELDS = (
 DEFAULT_BODY_BACK_SECTION_FIELDS = get_class_field_name_values(BodyBackSectionFieldNames)
 
 DEFAULT_EXCLUDED_FIELDS = {
-    BodyFieldNames.SECTION_PARAGRAPHS,
+    BodyFieldNames.BODY_SECTION_PARAGRAPHS,
     BodyBackSectionFieldNames.ALL_SECTION_PARAGRAPHS,
     ReferenceFieldNames.FIRST_REFERENCE_FIELDS,
     ReferenceFieldNames.REFERENCE_FIELDS

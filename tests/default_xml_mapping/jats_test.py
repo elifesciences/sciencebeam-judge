@@ -391,16 +391,16 @@ class TestJats:
                 xml,
                 xml_mapping=default_xml_mapping,
                 fields=[
-                    'section_titles',
-                    'section_paragraphs',
+                    'body_section_titles',
+                    'body_section_paragraphs',
                     'back_section_titles',
                     'back_section_paragraphs',
                     'all_section_titles',
                     'all_section_paragraphs'
                 ]
             )
-            assert result.get('section_titles') == ['Section Title 1']
-            assert result.get('section_paragraphs') == ['Section Paragraph 1']
+            assert result.get('body_section_titles') == ['Section Title 1']
+            assert result.get('body_section_paragraphs') == ['Section Paragraph 1']
             assert result.get('back_section_titles') == ['Acknowledgement Title', 'Section Title 2']
             assert result.get('back_section_paragraphs') == [
                 'Acknowledgement Paragraph', 'Section Paragraph 2'
@@ -436,14 +436,14 @@ class TestJats:
                 xml,
                 xml_mapping=default_xml_mapping,
                 fields=[
-                    'section_titles',
-                    'section_paragraphs'
+                    'body_section_titles',
+                    'body_section_paragraphs'
                 ]
             )
-            assert result.get('section_titles') == [
+            assert result.get('body_section_titles') == [
                 'Section Title 1', 'Section Title 1.1', 'Section Title 2'
             ]
-            assert result.get('section_paragraphs') == [
+            assert result.get('body_section_paragraphs') == [
                 'Section Paragraph 1a\nSection Paragraph 1b',
                 'Section Paragraph 1.1a\nSection Paragraph 1.1b',
                 'Section Paragraph 2a\nSection Paragraph 2b'
@@ -506,12 +506,12 @@ class TestJats:
                 xml,
                 xml_mapping=default_xml_mapping,
                 fields=[
-                    'section_titles',
+                    'body_section_titles',
                     'back_section_titles',
                     'all_section_titles'
                 ]
             )
-            assert result.get('section_titles') == ['S1. Section Title 1']
+            assert result.get('body_section_titles') == ['S1. Section Title 1']
             assert result.get('back_section_titles') == [
                 'A. Acknowledgement Title', 'S2. Section Title 2'
             ]
