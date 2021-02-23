@@ -484,6 +484,39 @@ class TestJats:
                 'Section Paragraph 2a\nSection Paragraph 2b'
             ]
 
+        def test_should_join_label_with_section_title(
+                self, default_xml_mapping):
+            xml = E.article(
+                E.body(E.sec(
+                    E.label('S1.'),
+                    E.title('Section Title 1'),
+                    E.p('Section Paragraph 1')
+                )),
+                E.back(E.sec(
+                    E.label('S2.'),
+                    E.title('Section Title 2'),
+                    E.p('Section Paragraph 2')
+                ))
+            )
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'section_titles',
+                    'section_paragraphs',
+                    'back_section_titles',
+                    'back_section_paragraphs',
+                    'all_section_titles',
+                    'all_section_paragraphs'
+                ]
+            )
+            assert result.get('section_titles') == ['S1. Section Title 1']
+            assert result.get('back_section_titles') == ['S2. Section Title 2']
+            assert result.get('all_section_titles') == [
+                'S1. Section Title 1',
+                'S2. Section Title 2'
+            ]
+
     class TestJatsAcknowledgement:
         def test_should_parse_acknowledgement(
                 self, default_xml_mapping):
