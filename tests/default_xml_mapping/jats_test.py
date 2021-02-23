@@ -492,7 +492,11 @@ class TestJats:
                     E.title('Section Title 1'),
                     E.p('Section Paragraph 1')
                 )),
-                E.back(E.sec(
+                E.back(E.ack(
+                    E.label('A.'),
+                    E.title('Acknowledgement Title'),
+                    E.p('Acknowledgement Paragraph')
+                ), E.sec(
                     E.label('S2.'),
                     E.title('Section Title 2'),
                     E.p('Section Paragraph 2')
@@ -503,17 +507,17 @@ class TestJats:
                 xml_mapping=default_xml_mapping,
                 fields=[
                     'section_titles',
-                    'section_paragraphs',
                     'back_section_titles',
-                    'back_section_paragraphs',
-                    'all_section_titles',
-                    'all_section_paragraphs'
+                    'all_section_titles'
                 ]
             )
             assert result.get('section_titles') == ['S1. Section Title 1']
-            assert result.get('back_section_titles') == ['S2. Section Title 2']
+            assert result.get('back_section_titles') == [
+                'A. Acknowledgement Title', 'S2. Section Title 2'
+            ]
             assert result.get('all_section_titles') == [
                 'S1. Section Title 1',
+                'A. Acknowledgement Title',
                 'S2. Section Title 2'
             ]
 
