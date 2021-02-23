@@ -31,7 +31,9 @@ class AffiliationFieldNames:
 
 
 class BodyFieldNames:
+    BODY_SECTION_LABELS = 'body_section_labels'
     BODY_SECTION_TITLES = 'body_section_titles'
+    BODY_SECTION_LABEL_TITLES = 'body_section_label_titles'
     BODY_SECTION_PARAGRAPHS = 'body_section_paragraphs'
 
     BODY_REFERENCE_CITATION_TEXT = 'body_reference_citation_text'
@@ -41,12 +43,16 @@ class BodyFieldNames:
 class BackFieldNames:
     ACKNOWLEDGEMENT = 'acknowledgement'
 
+    BACK_SECTION_LABELS = 'back_section_labels'
     BACK_SECTION_TITLES = 'back_section_titles'
+    BACK_SECTION_LABEL_TITLES = 'back_section_label_titles'
     BACK_SECTION_PARAGRAPHS = 'back_section_paragraphs'
 
 
 class BodyBackSectionFieldNames:
+    ALL_SECTION_LABELS = 'all_section_labels'
     ALL_SECTION_TITLES = 'all_section_titles'
+    ALL_SECTION_LABEL_TITLES = 'all_section_label_titles'
     ALL_SECTION_PARAGRAPHS = 'all_section_paragraphs'
 
 

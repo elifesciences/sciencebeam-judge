@@ -421,17 +421,37 @@ class TestTei:
                 xml,
                 xml_mapping=default_xml_mapping,
                 fields=[
+                    'body_section_labels',
                     'body_section_titles',
+                    'body_section_label_titles',
+                    'back_section_labels',
                     'back_section_titles',
-                    'all_section_titles'
+                    'back_section_label_titles',
+                    'all_section_labels',
+                    'all_section_titles',
+                    'all_section_label_titles'
                 ]
             )
-            assert result.get('body_section_titles') == ['S1. Section Title 1']
+            assert result.get('body_section_labels') == ['S1.']
+            assert result.get('body_section_titles') == ['Section Title 1']
+            assert result.get('body_section_label_titles') == ['S1. Section Title 1']
+            assert result.get('back_section_labels') == ['A.', 'S2.']
             assert result.get('back_section_titles') == [
+                'Acknowledgement Title', 'Section Title 2'
+            ]
+            assert result.get('back_section_label_titles') == [
                 'A. Acknowledgement Title', 'S2. Section Title 2'
             ]
+            assert result.get('all_section_labels') == ['S1.', 'A.', 'S2.']
             assert result.get('all_section_titles') == [
-                'S1. Section Title 1', 'A. Acknowledgement Title', 'S2. Section Title 2'
+                'Section Title 1',
+                'Acknowledgement Title',
+                'Section Title 2'
+            ]
+            assert result.get('all_section_label_titles') == [
+                'S1. Section Title 1',
+                'A. Acknowledgement Title',
+                'S2. Section Title 2'
             ]
 
     class TestTeiAcknowledgement:
