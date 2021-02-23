@@ -399,6 +399,41 @@ class TestTei:
                 'Section Paragraph 2a\nSection Paragraph 2b'
             ]
 
+        def test_should_join_label_with_section_title(
+                self, default_xml_mapping):
+            xml = E.TEI(E.text(
+                E.body(E.div(
+                    E.head('Section Title 1', {'n': 'S1.'}),
+                    E.p('Section Paragraph 1')
+                )),
+                E.back(E.div(
+                    {'type': 'acknowledgement'},
+                    E.div(
+                        E.head('Acknowledgement Title', {'n': 'A.'}),
+                        E.p('Acknowledgement Paragraph')
+                    )
+                ), E.div(
+                    E.head('Section Title 2', {'n': 'S2.'}),
+                    E.p('Section Paragraph 2')
+                ))
+            ))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'section_titles',
+                    'back_section_titles',
+                    'all_section_titles'
+                ]
+            )
+            assert result.get('section_titles') == ['S1. Section Title 1']
+            assert result.get('back_section_titles') == [
+                'A. Acknowledgement Title', 'S2. Section Title 2'
+            ]
+            assert result.get('all_section_titles') == [
+                'S1. Section Title 1', 'A. Acknowledgement Title', 'S2. Section Title 2'
+            ]
+
     class TestTeiAcknowledgement:
         def test_should_parse_acknowledgement(
                 self, default_xml_mapping):
