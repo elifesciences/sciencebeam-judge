@@ -1,7 +1,7 @@
 configparser==5.0.2
 editdistance==0.5.3
 future==0.18.2
-lxml==4.6.2
+lxml==4.6.3
 natsort==7.1.1
 regex==2021.3.17
 sciencebeam-alignment==0.0.5
