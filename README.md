@@ -72,7 +72,7 @@ This however requires that the filenames also match up and only differ by their 
 You need to have a file list with the _target xml_ and _prediction xml_ files (both can be in the same file but have different columns or separate files where the lines are aligned to each other). Files can optionally be gzipped with the _.gz_ file extension.
 
 ```bash
-./evaluate.sh \
+python -m sciencebeam_judge.evaluation_pipeline \
   --target-file-list=<path to target file list> \
   [--target-file-column=<column name>] \
   --prediction-file-list=<path to prediction file list> \
@@ -86,7 +86,7 @@ You need to have a file list with the _target xml_ and _prediction xml_ files (b
 For example to evaluate the provide `example-data` for _cermine_ and _grobid-tei_:
 
 ```bash
-./evaluate.sh \
+python -m sciencebeam_judge.evaluation_pipeline \
   --target-file-list ./example-data/pmc-sample-1943-cc-by-subset/file-list.tsv \
   --target-file-column=xml_url \
   --prediction-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/cermine/file-list.lst \
@@ -95,7 +95,7 @@ For example to evaluate the provide `example-data` for _cermine_ and _grobid-tei
 ```
 
 ```bash
-./evaluate.sh \
+python -m sciencebeam_judge.evaluation_pipeline \
   --target-file-list ./example-data/pmc-sample-1943-cc-by-subset/file-list.tsv \
   --target-file-column=xml_url \
   --prediction-file-list ./example-data/pmc-sample-1943-cc-by-subset-results/grobid-tei/file-list.lst \
@@ -108,7 +108,7 @@ For example to evaluate the provide `example-data` for _cermine_ and _grobid-tei
 Or running it in the cloud with a single worker:
 
 ```bash
-./evaluate.sh \
+python -m sciencebeam_judge.evaluation_pipeline \
   --target-file-list gs://my-bucket/data/file-list-validation.tsv \
   --target-file-column=xml_url \
   --prediction-file-list gs://my-bucket/data/file-list-validation-prediction.tsv \
@@ -136,7 +136,8 @@ This evaluation is replicating closely the GROBID's [End-to-end evaluation](http
 
 It is provided as a reference evaluation.
 
-Use the `evaluate.sh` command, which will generate the GROBID output (in addition to the CSV files).
+Use the `sciencebeam_judge.evaluation_pipeline` command (see above),
+which will generate the GROBID output (in addition to the CSV files).
 
 Note: it will only include scores for the _scoring type_ `string`.
 
