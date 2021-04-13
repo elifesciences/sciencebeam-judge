@@ -1,5 +1,4 @@
 from typing import Dict, List
-from future.utils import raise_with_traceback
 
 from .scoring_types.scoring_type import ScoringType
 from .scoring_types.scoring_types import (
@@ -22,10 +21,8 @@ def document_score_key_fn(document_score):
             document_score[DocumentScoringProps.SCORING_TYPE],
             document_score[DocumentScoringProps.SCORING_METHOD]
         )
-    except TypeError:
-        raise_with_traceback(
-            TypeError('error while gettng key for %s' % document_score)
-        )
+    except TypeError as exc:
+        raise TypeError('error while gettng key for %s' % document_score) from exc
 
 
 def document_score_key_to_props(document_score_key):
