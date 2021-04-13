@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from six import raise_from
-
 from lxml import etree as ET
 
 from ..utils.config import parse_config_as_dict
@@ -28,10 +26,10 @@ def parse_ignore_namespace(source, filename=None):
         if result.root is None:
             raise RuntimeError('invalid xml {}'.format(filename or source))
         return result.root
-    except ET.XMLSyntaxError as e:
-        raise_from(RuntimeError(
+    except ET.XMLSyntaxError as exc:
+        raise RuntimeError(
             'failed to process {}'.format(filename or source)
-        ), e)
+        ) from exc
 
 
 def get_stripped_text(node):
