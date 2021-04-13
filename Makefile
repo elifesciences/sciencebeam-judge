@@ -186,7 +186,7 @@ watch: build-dev
 
 
 .update-example-data-results:
-	$(RUN) ./evaluate.sh \
+	$(RUN) python -m sciencebeam_judge.evaluation_pipeline \
 		--target-file-list /example-data/pmc-sample-1943-cc-by-subset/file-list.tsv \
 		--target-file-column=xml_url \
 		--prediction-file-list /example-data/pmc-sample-1943-cc-by-subset-results/$(TOOL)/file-list.lst \
