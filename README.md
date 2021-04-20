@@ -141,6 +141,18 @@ which will generate the GROBID output (in addition to the CSV files).
 
 Note: it will only include scores for the _scoring type_ `string`.
 
+## Extract Fields
+
+Sometimes it might be useful to see what field values the XML mapping extracts from a given XML file.
+
+The following example will print out a JSON representation of the extracted fields:
+
+```bash
+python -m sciencebeam_judge.extract_fields \
+    --xml-file="example-data/pmc-sample-1943-cc-by-subset-results/grobid-tei/Acta_Crystallogr_D_Biol_Crystallogr_2011_May_1_67(Pt_5)_463-470/d-67-00463.xml" \
+    --fields=title,abstract
+```
+
 ## Notebooks
 
 The [notebooks](./notebooks) can be run via [Jupyter](https://jupyter.org/).
