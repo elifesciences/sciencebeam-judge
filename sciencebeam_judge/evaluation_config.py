@@ -1,13 +1,25 @@
 from typing import Dict, List
 
+import yaml
+
 from sciencebeam_utils.utils.string import parse_list
 
 from .utils.string import parse_dict
 from .utils.config import parse_config_as_dict
 
 
+DEFAULT_EVALUATION_YAML_FILENAME = 'evaluation.yml'
+
+
 def parse_evaluation_config(filename_or_fp) -> Dict[str, Dict[str, str]]:
     return parse_config_as_dict(filename_or_fp)
+
+
+def parse_evaluation_yaml_config(filename_or_fp) -> dict:
+    if isinstance(filename_or_fp, str):
+        with open(filename_or_fp, 'r') as fp:
+            return yaml.safe_load(fp)
+    return yaml.safe_load(filename_or_fp)
 
 
 def parse_scoring_type_overrides(
