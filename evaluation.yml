@@ -3,8 +3,8 @@ lost_text:
   fields:
     - name: all_section_paragraphs
       expected:
-        fields:
+        field_names:
           - body_section_paragraphs
       actual:
-        fields:
+        field_names:
           - all_section_paragraphs
