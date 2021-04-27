@@ -1,0 +1,10 @@
+lost_text:
+  # Special evaluation of "lost" text
+  fields:
+    - name: all_section_paragraphs
+      expected:
+        fields:
+          - body_section_paragraphs
+      actual:
+        fields:
+          - all_section_paragraphs
