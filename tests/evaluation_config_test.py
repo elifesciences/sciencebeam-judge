@@ -4,6 +4,7 @@ from io import StringIO
 from sciencebeam_judge.evaluation_config import (
     parse_evaluation_config,
     parse_evaluation_yaml_config,
+    get_evaluation_config_object,
     get_scoring_types_by_field_map_from_config,
     DEFAULT_EVALUATION_YAML_FILENAME
 )
@@ -37,6 +38,32 @@ class TestParseEvaluationYamlConfig:
         config = parse_evaluation_yaml_config(DEFAULT_EVALUATION_YAML_FILENAME)
         assert config
         assert config.get('lost_text')
+
+
+class TestGetEvaluationConfigObject:
+    def test_should_allow_empty_config(self):
+        config = get_evaluation_config_object({})
+        assert config.lost_text is None
+
+    def test_should_parse_lost_text_config(self):
+        config = get_evaluation_config_object({
+            'lost_text': {
+                'fields': [{
+                    'name': 'field1',
+                    'expected': {
+                        'field_names': ['expected1']
+                    },
+                    'actual': {
+                        'field_names': ['actual1']
+                    }
+                }]
+            }
+        })
+        assert config.lost_text is not None
+        fields = config.lost_text.fields
+        assert fields[0].name == 'field1'
+        assert fields[0].expected.field_names == ['expected1']
+        assert fields[0].actual.field_names == ['actual1']
 
 
 class TestGetScoringTypeByFieldMapFromConfig:
