@@ -1,6 +1,6 @@
 import logging
 from pathlib import Path
-from unittest.mock import patch, DEFAULT
+from unittest.mock import patch, MagicMock, DEFAULT
 
 import pytest
 
@@ -104,6 +104,12 @@ def patch_conversion_pipeline(**kwargs):
             for k in always_mock
         }
     )
+
+
+@pytest.fixture(name='get_evaluation_config_mock')
+def _get_evaluation_config_mock():
+    with patch.object(evaluation_pipeline, 'get_evaluation_config') as mock:
+        yield mock
 
 
 def load_file_list_side_effect(file_list_map):
@@ -284,6 +290,7 @@ class TestParseArgs:
 
 
 @pytest.mark.slow
+@pytest.mark.usefixtures('get_evaluation_config_mock')
 class TestConfigurePipeline(BeamTest):
     def test_should_pass_pdf_file_list_and_limit_to_read_dict_csv_and_read_pdf_file(self):
         with patch_conversion_pipeline() as mocks:
@@ -310,7 +317,10 @@ class TestConfigurePipeline(BeamTest):
                 PREDICTION_FILE_LIST[0]
             )
 
-    def test_should_pass_around_values_with_default_pipeline(self):
+    def test_should_pass_around_values_with_default_pipeline(
+        self,
+        get_evaluation_config_mock: MagicMock
+    ):
         with patch_conversion_pipeline() as mocks:
             opt = get_default_args()
 
@@ -328,6 +338,7 @@ class TestConfigurePipeline(BeamTest):
                     PREDICTION_FILE_LIST[0]
                 ),
                 xml_mapping=mocks['parse_xml_mapping'].return_value,
+                evaluation_config=get_evaluation_config_mock.return_value,
                 scoring_types_by_field_map=get_scoring_types_by_field_map_from_config(
                     mocks['parse_evaluation_config'].return_value
                 ),

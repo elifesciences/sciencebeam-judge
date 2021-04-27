@@ -49,7 +49,11 @@ from sciencebeam_judge.parsing.xml import (
 )
 
 from sciencebeam_judge.evaluation_config import (
+    DEFAULT_EVALUATION_YAML_FILENAME,
+    EvaluationConfig,
     parse_evaluation_config,
+    parse_evaluation_yaml_config,
+    get_evaluation_config_object,
     parse_scoring_type_overrides,
     get_scoring_types_by_field_map_from_config
 )
@@ -74,7 +78,7 @@ from .evaluation.score_aggregation import (
 )
 
 from .evaluation.document_scoring import (
-    iter_score_document_fields,
+    iter_score_document_fields_using_config,
     DocumentScoringProps
 )
 
@@ -139,7 +143,7 @@ def evaluate_file_pairs(
             fields=field_names,
             filename=prediction_filename
         )
-        return list(iter_score_document_fields(
+        return list(iter_score_document_fields_using_config(
             target_xml, prediction_xml, field_names=field_names, include_values=True,
             **kwargs
         ))
@@ -314,8 +318,15 @@ def get_scoring_types_by_field_map(opt: argparse.Namespace) -> Dict[str, List[st
     }
 
 
+def get_evaluation_config(opt: argparse.Namespace) -> EvaluationConfig:
+    return get_evaluation_config_object(
+        parse_evaluation_yaml_config(opt.evaluation_yaml_config)
+    )
+
+
 def configure_pipeline(p, opt):  # pylint: disable=too-many-locals
     xml_mapping = parse_xml_mapping(opt.xml_mapping)
+    evaluation_config = get_evaluation_config(opt)
     scoring_types_by_field_map = get_scoring_types_by_field_map(opt)
     field_names = opt.fields
 
@@ -342,6 +353,7 @@ def configure_pipeline(p, opt):  # pylint: disable=too-many-locals
     evaluate_file_pairs_fn = partial(
         EvaluateFilePairs,
         xml_mapping=xml_mapping,
+        evaluation_config=evaluation_config,
         scoring_types_by_field_map=scoring_types_by_field_map,
         field_names=field_names,
         measures=opt.measures,
@@ -484,6 +496,12 @@ def add_main_args(parser):
         '--evaluation-config', type=str,
         default='evaluation.conf',
         help='filename to the evaluation configuration'
+    )
+
+    config_group.add_argument(
+        '--evaluation-yaml-config', type=str,
+        default=DEFAULT_EVALUATION_YAML_FILENAME,
+        help='filename to the evaluation configuration (yaml)'
     )
 
     config_group.add_argument(

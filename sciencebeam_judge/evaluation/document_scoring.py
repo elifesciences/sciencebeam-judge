@@ -1,10 +1,16 @@
+import logging
 from typing import Dict, List
+
+from sciencebeam_judge.evaluation_config import EvaluationConfig
 
 from .scoring_types.scoring_type import ScoringType
 from .scoring_types.scoring_types import (
     resolve_scoring_type,
     DEFAULT_SCORING_TYPE_NAME
 )
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 class DocumentScoringProps:
@@ -92,3 +98,17 @@ def iter_score_document_fields(
                     DocumentScoringProps.SCORING_METHOD: scoring_method,
                     DocumentScoringProps.MATCH_SCORE: match_score
                 }
+
+
+
+def iter_score_document_fields_using_config(
+    expected,
+    actual,
+    evaluation_config: EvaluationConfig,
+    **kwargs
+):
+    LOGGER.debug('evaluation_config: %s', evaluation_config)
+    yield from iter_score_document_fields(
+        expected, actual,
+        **kwargs
+    )
