@@ -4,6 +4,7 @@ from typing import Any, Dict, Iterable, List, Union
 
 from sciencebeam_judge.evaluation_config import EvaluationConfig, LostTextEvaluationConfig
 from sciencebeam_judge.evaluation.match_scoring import MatchScore
+from sciencebeam_judge.evaluation.special_evaluation.lost_text import LostTextEvaluation
 
 from .scoring_types.scoring_type import ScoringType
 from .scoring_types.scoring_types import (
@@ -140,19 +141,12 @@ def iter_score_lost_text(
 ) -> Iterable[dict]:
     LOGGER.debug('lost_text_evaluation_config: %s', lost_text_evaluation_config)
     for field in lost_text_evaluation_config.fields:
+        special_evaluation = LostTextEvaluation()
         yield DocumentFieldScore(
             field_name=field.name,
             scoring_type='lost_text',
             scoring_method='lost_text',
-            match_score=MatchScore(
-                expected=expected,
-                actual=actual,
-                true_positive=1,
-                true_negative=0,
-                false_positive=0,
-                false_negative=0,
-                score=1.0
-            )
+            match_score=special_evaluation.score(expected, actual)
         ).to_dict()
 
 
