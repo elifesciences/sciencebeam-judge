@@ -36,10 +36,27 @@ class MatchScore:  # pylint: disable=too-many-instance-attributes
     sub_scores: Optional[List['MatchScore']] = None
 
     def to_dict(self) -> Dict[str, Any]:
-        return vars(self)
+        props = vars(self)
+        if self.sub_scores:
+            props = {
+                **props,
+                MatchScoringProps.SUB_SCORES: [
+                    score.to_dict()
+                    for score in self.sub_scores
+                ]
+            }
+        return props
 
     @staticmethod
     def from_dict(match_score_dict: Dict[str, Any]) -> 'MatchScore':
+        if match_score_dict.get(MatchScoringProps.SUB_SCORES):
+            match_score_dict = {
+                **match_score_dict,
+                MatchScoringProps.SUB_SCORES: [
+                    MatchScore.from_dict(score)
+                    for score in match_score_dict[MatchScoringProps.SUB_SCORES]
+                ]
+            }
         return MatchScore(**match_score_dict)
 
 
