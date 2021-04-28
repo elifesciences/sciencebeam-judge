@@ -1,3 +1,10 @@
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional, Union
+
+
+T_Value = Union[str, List[str]]
+
+
 class MatchScoringProps:
     EXPECTED_SOMETHING = 'expected_something'
     ACTUAL_SOMETHING = 'actual_something'
@@ -11,6 +18,29 @@ class MatchScoringProps:
     EXPECTED = 'expected'
     ACTUAL = 'actual'
     SUB_SCORES = 'sub_scores'
+
+
+@dataclass
+class MatchScore:
+    score: float
+    expected_something: bool = True
+    actual_something: bool = True
+    true_positive: int = 0
+    true_negative: int = 0
+    false_positive: int = 0
+    false_negative: int = 0
+    binary_expected: int = 0
+    binary_actual: int = 0
+    expected: Optional[T_Value] = None
+    actual: Optional[T_Value] = None
+    sub_scores: Optional[List['MatchScore']] = None
+
+    def to_dict(self) -> Dict[str, Any]:
+        return vars(self)
+
+    @staticmethod
+    def from_dict(match_score_dict: Dict[str, Any]) -> 'MatchScore':
+        return MatchScore(**match_score_dict)
 
 
 def get_match_score_obj_for_score(expected, actual, score, threshold=1, include_values=False):

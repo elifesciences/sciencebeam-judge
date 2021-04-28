@@ -10,7 +10,7 @@ from sciencebeam_judge.evaluation_config import (
     LostTextEvaluationConfig
 )
 
-from sciencebeam_judge.evaluation.match_scoring import MatchScoringProps
+from sciencebeam_judge.evaluation.match_scoring import MatchScore
 from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
 
 from sciencebeam_judge.evaluation.document_scoring import (
@@ -114,6 +114,6 @@ class TestIterScoreLostText:
         assert [r[DocumentScoringProps.FIELD_NAME] for r in result] == [FIELD_1]
         assert [r[DocumentScoringProps.SCORING_TYPE] for r in result] == ['lost_text']
         assert [r[DocumentScoringProps.SCORING_METHOD] for r in result] == ['lost_text']
-        match_score = result[0][DocumentScoringProps.MATCH_SCORE]
+        match_score = MatchScore.from_dict(result[0][DocumentScoringProps.MATCH_SCORE])
         assert match_score
-        assert match_score[MatchScoringProps.TRUE_POSITIVE] == 1
+        assert match_score.true_positive == 1

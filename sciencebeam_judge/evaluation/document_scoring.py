@@ -2,7 +2,7 @@ import logging
 from typing import Dict, Iterable, List, Union
 
 from sciencebeam_judge.evaluation_config import EvaluationConfig, LostTextEvaluationConfig
-from sciencebeam_judge.evaluation.match_scoring import MatchScoringProps
+from sciencebeam_judge.evaluation.match_scoring import MatchScore
 
 from .scoring_types.scoring_type import ScoringType
 from .scoring_types.scoring_types import (
@@ -116,14 +116,15 @@ def iter_score_lost_text(
             DocumentScoringProps.FIELD_NAME: field.name,
             DocumentScoringProps.SCORING_TYPE: 'lost_text',
             DocumentScoringProps.SCORING_METHOD: 'lost_text',
-            DocumentScoringProps.MATCH_SCORE: {
-                MatchScoringProps.EXPECTED: expected,
-                MatchScoringProps.ACTUAL: actual,
-                MatchScoringProps.TRUE_POSITIVE: 1,
-                MatchScoringProps.TRUE_NEGATIVE: 0,
-                MatchScoringProps.FALSE_POSITIVE: 0,
-                MatchScoringProps.FALSE_NEGATIVE: 0
-            }
+            DocumentScoringProps.MATCH_SCORE: MatchScore(
+                expected=expected,
+                actual=actual,
+                true_positive=1,
+                true_negative=0,
+                false_positive=0,
+                false_negative=0,
+                score=1.0
+            ).to_dict()
         }
 
 
