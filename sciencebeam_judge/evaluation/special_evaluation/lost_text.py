@@ -52,6 +52,9 @@ class LostTextEvaluation(SpecialEvaluation):
             LOGGER.debug('match_results: %s', match_results)
             match_scores: List[MatchScore] = []
             for match_result in match_results:
+                if not match_result.value_1:
+                    # ignore extra text
+                    continue
                 match_scores.append(get_match_score_for_score(
                     score=match_result.score,
                     expected=match_result.value_1 or '',

@@ -25,3 +25,11 @@ class TestLostTextEvaluation:
         )
         assert match_score.score == 0.5
         assert match_score.false_negative == 1
+
+    def test_should_return_ignore_extra_values(self):
+        match_score = LostTextEvaluation().score(
+            expected=['value1'],
+            actual=['value1', 'value2']
+        )
+        assert match_score.score == 1.0
+        assert match_score.true_positive == 1
