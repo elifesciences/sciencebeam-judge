@@ -10,13 +10,13 @@ from sciencebeam_judge.evaluation_config import (
     LostTextEvaluationConfig
 )
 
-from sciencebeam_judge.evaluation.match_scoring import MatchScore
 from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
 
 from sciencebeam_judge.evaluation.document_scoring import (
     iter_score_document_fields,
     iter_score_lost_text,
-    DocumentScoringProps
+    DocumentScoringProps,
+    DocumentFieldScore
 )
 
 
@@ -97,7 +97,7 @@ class TestIterScoreLostText:
         assert result == []
 
     def test_should_return_one_if_all_text_was_found(self):
-        result = list(iter_score_lost_text(
+        result = list(map(DocumentFieldScore.from_dict, iter_score_lost_text(
             SCORING_DOCUMENT_1, SCORING_DOCUMENT_1,
             LostTextEvaluationConfig(fields=[
                 LostTextFieldEvaluationConfig(
@@ -110,10 +110,10 @@ class TestIterScoreLostText:
                     )
                 )
             ])
-        ))
-        assert [r[DocumentScoringProps.FIELD_NAME] for r in result] == [FIELD_1]
-        assert [r[DocumentScoringProps.SCORING_TYPE] for r in result] == ['lost_text']
-        assert [r[DocumentScoringProps.SCORING_METHOD] for r in result] == ['lost_text']
-        match_score = MatchScore.from_dict(result[0][DocumentScoringProps.MATCH_SCORE])
+        )))
+        assert [r.field_name for r in result] == [FIELD_1]
+        assert [r.scoring_type for r in result] == ['lost_text']
+        assert [r.scoring_method for r in result] == ['lost_text']
+        match_score = result[0].match_score
         assert match_score
         assert match_score.true_positive == 1

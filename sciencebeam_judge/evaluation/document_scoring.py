@@ -1,5 +1,6 @@
 import logging
-from typing import Dict, Iterable, List, Union
+from dataclasses import dataclass
+from typing import Any, Dict, Iterable, List, Union
 
 from sciencebeam_judge.evaluation_config import EvaluationConfig, LostTextEvaluationConfig
 from sciencebeam_judge.evaluation.match_scoring import MatchScore
@@ -23,6 +24,33 @@ class DocumentScoringProps:
     SCORING_TYPE = 'scoring_type'
     SCORING_METHOD = 'scoring_method'
     MATCH_SCORE = 'match_score'
+
+
+@dataclass
+class DocumentFieldScore:
+    field_name: str
+    scoring_type: str
+    scoring_method: str
+    match_score: MatchScore
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            DocumentScoringProps.FIELD_NAME: self.field_name,
+            DocumentScoringProps.SCORING_TYPE: self.scoring_type,
+            DocumentScoringProps.SCORING_METHOD: self.scoring_method,
+            DocumentScoringProps.MATCH_SCORE: self.match_score.to_dict()
+        }
+
+    @staticmethod
+    def from_dict(document_field_score_dict: Dict[str, Any]) -> 'DocumentFieldScore':
+        return DocumentFieldScore(
+            field_name=document_field_score_dict[DocumentScoringProps.FIELD_NAME],
+            scoring_type=document_field_score_dict[DocumentScoringProps.SCORING_TYPE],
+            scoring_method=document_field_score_dict[DocumentScoringProps.SCORING_METHOD],
+            match_score=MatchScore.from_dict(
+                document_field_score_dict[DocumentScoringProps.MATCH_SCORE]
+            )
+        )
 
 
 def document_score_key_fn(document_score):
@@ -112,11 +140,11 @@ def iter_score_lost_text(
 ) -> Iterable[dict]:
     LOGGER.debug('lost_text_evaluation_config: %s', lost_text_evaluation_config)
     for field in lost_text_evaluation_config.fields:
-        yield {
-            DocumentScoringProps.FIELD_NAME: field.name,
-            DocumentScoringProps.SCORING_TYPE: 'lost_text',
-            DocumentScoringProps.SCORING_METHOD: 'lost_text',
-            DocumentScoringProps.MATCH_SCORE: MatchScore(
+        yield DocumentFieldScore(
+            field_name=field.name,
+            scoring_type='lost_text',
+            scoring_method='lost_text',
+            match_score=MatchScore(
                 expected=expected,
                 actual=actual,
                 true_positive=1,
@@ -124,8 +152,8 @@ def iter_score_lost_text(
                 false_positive=0,
                 false_negative=0,
                 score=1.0
-            ).to_dict()
-        }
+            )
+        ).to_dict()
 
 
 def iter_score_document_fields_using_config(
