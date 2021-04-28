@@ -1,7 +1,8 @@
 import logging
-from typing import Dict, List
+from typing import Dict, Iterable, List, Union
 
-from sciencebeam_judge.evaluation_config import EvaluationConfig
+from sciencebeam_judge.evaluation_config import EvaluationConfig, LostTextEvaluationConfig
+from sciencebeam_judge.evaluation.match_scoring import MatchScoringProps
 
 from .scoring_types.scoring_type import ScoringType
 from .scoring_types.scoring_types import (
@@ -11,6 +12,10 @@ from .scoring_types.scoring_types import (
 
 
 LOGGER = logging.getLogger(__name__)
+
+
+T_Value = Union[str, List[str]]
+T_DocumentValues = Dict[str, T_Value]
 
 
 class DocumentScoringProps:
@@ -100,10 +105,31 @@ def iter_score_document_fields(
                 }
 
 
+def iter_score_lost_text(
+    expected: T_DocumentValues,
+    actual: T_DocumentValues,
+    lost_text_evaluation_config: LostTextEvaluationConfig
+) -> Iterable[dict]:
+    LOGGER.debug('lost_text_evaluation_config: %s', lost_text_evaluation_config)
+    for field in lost_text_evaluation_config.fields:
+        yield {
+            DocumentScoringProps.FIELD_NAME: field.name,
+            DocumentScoringProps.SCORING_TYPE: 'lost_text',
+            DocumentScoringProps.SCORING_METHOD: 'lost_text',
+            DocumentScoringProps.MATCH_SCORE: {
+                MatchScoringProps.EXPECTED: expected,
+                MatchScoringProps.ACTUAL: actual,
+                MatchScoringProps.TRUE_POSITIVE: 1,
+                MatchScoringProps.TRUE_NEGATIVE: 0,
+                MatchScoringProps.FALSE_POSITIVE: 0,
+                MatchScoringProps.FALSE_NEGATIVE: 0
+            }
+        }
+
 
 def iter_score_document_fields_using_config(
-    expected,
-    actual,
+    expected: T_DocumentValues,
+    actual: T_DocumentValues,
     evaluation_config: EvaluationConfig,
     **kwargs
 ):
@@ -112,3 +138,8 @@ def iter_score_document_fields_using_config(
         expected, actual,
         **kwargs
     )
+    if evaluation_config.lost_text:
+        yield from iter_score_lost_text(
+            expected, actual,
+            evaluation_config.lost_text
+        )

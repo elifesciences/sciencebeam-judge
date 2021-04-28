@@ -4,10 +4,18 @@ import logging
 
 from sciencebeam_utils.utils.collection import groupby_to_dict
 
+from sciencebeam_judge.evaluation_config import (
+    LostTextFieldExpectedActualEvaluationConfig,
+    LostTextFieldEvaluationConfig,
+    LostTextEvaluationConfig
+)
+
+from sciencebeam_judge.evaluation.match_scoring import MatchScoringProps
 from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
 
 from sciencebeam_judge.evaluation.document_scoring import (
     iter_score_document_fields,
+    iter_score_lost_text,
     DocumentScoringProps
 )
 
@@ -18,6 +26,11 @@ SOME_TEXT = 'test 123'
 
 FIELD_1 = 'field1'
 FIELD_2 = 'field2'
+
+
+SCORING_DOCUMENT_1 = {
+    'field': [SOME_TEXT]
+}
 
 
 class TestIterScoreDocumentFields:
@@ -73,3 +86,34 @@ class TestIterScoreDocumentFields:
         }, measures=[ScoringMethodNames.EXACT]))
         assert [r['field_name'] for r in result] == ['field', 'field']
         assert [r['scoring_type'] for r in result] == ['list', 'set']
+
+
+class TestIterScoreLostText:
+    def test_should_skip_without_any_fields(self):
+        result = list(iter_score_lost_text(
+            SCORING_DOCUMENT_1, SCORING_DOCUMENT_1,
+            LostTextEvaluationConfig(fields=[])
+        ))
+        assert result == []
+
+    def test_should_return_one_if_all_text_was_found(self):
+        result = list(iter_score_lost_text(
+            SCORING_DOCUMENT_1, SCORING_DOCUMENT_1,
+            LostTextEvaluationConfig(fields=[
+                LostTextFieldEvaluationConfig(
+                    name=FIELD_1,
+                    expected=LostTextFieldExpectedActualEvaluationConfig(
+                        field_names=['expected1']
+                    ),
+                    actual=LostTextFieldExpectedActualEvaluationConfig(
+                        field_names=['actual1']
+                    )
+                )
+            ])
+        ))
+        assert [r[DocumentScoringProps.FIELD_NAME] for r in result] == [FIELD_1]
+        assert [r[DocumentScoringProps.SCORING_TYPE] for r in result] == ['lost_text']
+        assert [r[DocumentScoringProps.SCORING_METHOD] for r in result] == ['lost_text']
+        match_score = result[0][DocumentScoringProps.MATCH_SCORE]
+        assert match_score
+        assert match_score[MatchScoringProps.TRUE_POSITIVE] == 1
