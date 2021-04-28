@@ -73,6 +73,20 @@ def get_match_score_obj_for_score(expected, actual, score, threshold=1, include_
     return d
 
 
+def get_match_score_for_score(
+    expected: T_Value,
+    actual: T_Value,
+    score: float,
+    threshold: float = 1,
+    include_values: bool = False
+):
+    return MatchScore.from_dict(get_match_score_obj_for_score(
+        actual=actual, expected=expected,
+        score=score, threshold=threshold,
+        include_values=include_values
+    ))
+
+
 def get_match_score_obj_for_score_fn(expected, actual, value_f, threshold=1, include_values=False):
     return get_match_score_obj_for_score(
         expected, actual,
