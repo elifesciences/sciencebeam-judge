@@ -18,7 +18,7 @@ class TestLostTextEvaluation:
         assert match_score.score == 0.0
         assert match_score.false_negative == 1
 
-    def test_should_return_dot_five_half_of_the_values_is_missing(self):
+    def test_should_return_dot_five_if_half_of_the_values_are_missing(self):
         match_score = LostTextEvaluation().score(
             expected=['value1', 'value2'],
             actual=['value1']
@@ -33,3 +33,11 @@ class TestLostTextEvaluation:
         )
         assert match_score.score == 1.0
         assert match_score.true_positive == 1
+
+    def test_should_return_dot_five_if_half_of_the_value_tokens_are_missing(self):
+        match_score = LostTextEvaluation().score(
+            expected=['value1 value2'],
+            actual=['value1']
+        )
+        assert match_score.score == 0.5
+        assert match_score.false_negative == 1
