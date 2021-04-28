@@ -21,7 +21,7 @@ class MatchScoringProps:
 
 
 @dataclass
-class MatchScore:
+class MatchScore:  # pylint: disable=too-many-instance-attributes
     score: float
     expected_something: bool = True
     actual_something: bool = True
