@@ -2,7 +2,11 @@ import logging
 from dataclasses import dataclass
 from typing import Any, Dict, Iterable, List, Union
 
-from sciencebeam_judge.evaluation_config import EvaluationConfig, LostTextEvaluationConfig
+from sciencebeam_judge.evaluation_config import (
+    EvaluationConfig,
+    LostTextEvaluationConfig,
+    LostTextFieldExpectedActualEvaluationConfig
+)
 from sciencebeam_judge.evaluation.match_scoring import MatchScore
 from sciencebeam_judge.evaluation.special_evaluation.lost_text import LostTextEvaluation
 
@@ -134,6 +138,17 @@ def iter_score_document_fields(
                 }
 
 
+def extract_lost_text_document_field_value(
+    document: T_DocumentValues,
+    field_selector_config: LostTextFieldExpectedActualEvaluationConfig
+):
+    return [
+        field_value
+        for field_name in field_selector_config.field_names
+        for field_value in document.get(field_name, [])
+    ]
+
+
 def iter_score_lost_text(
     expected: T_DocumentValues,
     actual: T_DocumentValues,
@@ -143,11 +158,16 @@ def iter_score_lost_text(
     for field in lost_text_evaluation_config.fields:
         special_evaluation = LostTextEvaluation()
         LOGGER.debug('special_evaluation: %s', special_evaluation)
+        expected_values = extract_lost_text_document_field_value(expected, field.expected)
+        actual_values = extract_lost_text_document_field_value(actual, field.actual)
         yield DocumentFieldScore(
             field_name=field.name,
             scoring_type='lost_text',
             scoring_method='lost_text',
-            match_score=special_evaluation.score(expected, actual)
+            match_score=special_evaluation.score(
+                expected=expected_values,
+                actual=actual_values
+            )
         ).to_dict()
 
 

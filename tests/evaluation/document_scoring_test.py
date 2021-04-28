@@ -120,16 +120,18 @@ class TestIterScoreLostText:
         lost_text_evaluation_mock: MagicMock
     ):
         lost_text_evaluation_mock.score.return_value = MATCH_SCORE_1
+        expected_document = {'expected': ['expected1']}
+        actual_document = {'actual': ['actual1']}
         result = list(map(DocumentFieldScore.from_dict, iter_score_lost_text(
-            SCORING_DOCUMENT_1, SCORING_DOCUMENT_1,
+            expected_document, actual_document,
             LostTextEvaluationConfig(fields=[
                 LostTextFieldEvaluationConfig(
                     name=FIELD_1,
                     expected=LostTextFieldExpectedActualEvaluationConfig(
-                        field_names=['expected1']
+                        field_names=['expected']
                     ),
                     actual=LostTextFieldExpectedActualEvaluationConfig(
-                        field_names=['actual1']
+                        field_names=['actual']
                     )
                 )
             ])
@@ -138,3 +140,7 @@ class TestIterScoreLostText:
         assert [r.scoring_type for r in result] == ['lost_text']
         assert [r.scoring_method for r in result] == ['lost_text']
         assert result[0].match_score == MATCH_SCORE_1
+        lost_text_evaluation_mock.score.assert_called_with(
+            expected=['expected1'],
+            actual=['actual1']
+        )
