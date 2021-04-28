@@ -142,6 +142,7 @@ def iter_score_lost_text(
     LOGGER.debug('lost_text_evaluation_config: %s', lost_text_evaluation_config)
     for field in lost_text_evaluation_config.fields:
         special_evaluation = LostTextEvaluation()
+        LOGGER.debug('special_evaluation: %s', special_evaluation)
         yield DocumentFieldScore(
             field_name=field.name,
             scoring_type='lost_text',

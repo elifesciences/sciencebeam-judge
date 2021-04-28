@@ -1,6 +1,10 @@
 from __future__ import division
 
 import logging
+from unittest.mock import patch, MagicMock
+from typing import Iterable
+
+import pytest
 
 from sciencebeam_utils.utils.collection import groupby_to_dict
 
@@ -11,7 +15,9 @@ from sciencebeam_judge.evaluation_config import (
 )
 
 from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
+from sciencebeam_judge.evaluation.match_scoring import MatchScore
 
+import sciencebeam_judge.evaluation.document_scoring as document_scoring_module
 from sciencebeam_judge.evaluation.document_scoring import (
     iter_score_document_fields,
     iter_score_lost_text,
@@ -31,6 +37,19 @@ FIELD_2 = 'field2'
 SCORING_DOCUMENT_1 = {
     'field': [SOME_TEXT]
 }
+
+MATCH_SCORE_1 = MatchScore(score=0.91)
+
+
+@pytest.fixture(name='lost_text_evaluation_class_mock')
+def _lost_text_evaluation_class_mock() -> Iterable[MagicMock]:
+    with patch.object(document_scoring_module, 'LostTextEvaluation') as mock:
+        yield mock
+
+
+@pytest.fixture(name='lost_text_evaluation_mock')
+def _lost_text_evaluation_mock(lost_text_evaluation_class_mock: MagicMock) -> MagicMock:
+    return lost_text_evaluation_class_mock.return_value
 
 
 class TestIterScoreDocumentFields:
@@ -96,7 +115,11 @@ class TestIterScoreLostText:
         ))
         assert result == []
 
-    def test_should_return_one_if_all_text_was_found(self):
+    def test_should_return_one_if_all_text_was_found(
+        self,
+        lost_text_evaluation_mock: MagicMock
+    ):
+        lost_text_evaluation_mock.score.return_value = MATCH_SCORE_1
         result = list(map(DocumentFieldScore.from_dict, iter_score_lost_text(
             SCORING_DOCUMENT_1, SCORING_DOCUMENT_1,
             LostTextEvaluationConfig(fields=[
@@ -114,6 +137,4 @@ class TestIterScoreLostText:
         assert [r.field_name for r in result] == [FIELD_1]
         assert [r.scoring_type for r in result] == ['lost_text']
         assert [r.scoring_method for r in result] == ['lost_text']
-        match_score = result[0].match_score
-        assert match_score
-        assert match_score.true_positive == 1
+        assert result[0].match_score == MATCH_SCORE_1
