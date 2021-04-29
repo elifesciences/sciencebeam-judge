@@ -10,4 +10,4 @@ CUSTOM_EVALUATION_CLASS_BY_NAME = {
 
 
 def get_custom_evaluation(name: str) -> CustomEvaluation:
-    return CUSTOM_EVALUATION_CLASS_BY_NAME[name]
+    return CUSTOM_EVALUATION_CLASS_BY_NAME[name]()
