@@ -1,6 +1,5 @@
 import logging
-from dataclasses import dataclass
-from typing import Any, Dict, Iterable, List, Union
+from typing import Any, Dict, Iterable, List, NamedTuple, Union
 
 from sciencebeam_judge.evaluation_config import (
     EvaluationConfig,
@@ -31,8 +30,7 @@ class DocumentScoringProps:
     MATCH_SCORE = 'match_score'
 
 
-@dataclass
-class DocumentFieldScore:
+class DocumentFieldScore(NamedTuple):
     field_name: str
     scoring_type: str
     scoring_method: str
