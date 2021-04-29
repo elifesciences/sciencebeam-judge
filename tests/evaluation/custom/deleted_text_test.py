@@ -39,10 +39,15 @@ class TestGetFuzzyMatchedTextFragments:
             actual=[TOKEN_1, TOKEN_1]
         )
         LOGGER.debug('result: %s', result)
-        assert len(result) == 1
-        assert result[0].value_1.text == '\n'.join([TOKEN_1, TOKEN_1])
-        assert result[0].value_2.text == result[0].value_1.text
-        assert result[0].score == 1.0
+        non_whitespace_results = [
+            fuzzy_matched_result
+            for fuzzy_matched_result in result
+            if fuzzy_matched_result.value_1.text.strip()
+        ]
+        value_1_texts = [r.value_1.text for r in non_whitespace_results]
+        value_2_texts = [r.value_2.text for r in non_whitespace_results]
+        assert '\n'.join(value_1_texts) == '\n'.join([TOKEN_1, TOKEN_1])
+        assert '\n'.join(value_2_texts) == '\n'.join([TOKEN_1, TOKEN_1])
 
 
 class TestGetCharacterBasedMatchScoreForScore:

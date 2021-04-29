@@ -1,9 +1,14 @@
 import logging
 import re
-from typing import AnyStr, List, NamedTuple
+from typing import AnyStr, List, NamedTuple,  Tuple
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
+from sciencebeam_judge.utils.distance_matching import (
+    WrappedValue,
+    DistanceMatch,
+    get_distance_matches
+)
 from sciencebeam_judge.evaluation.math import safe_mean
 
 from sciencebeam_judge.evaluation.scoring_types.list import (
@@ -12,6 +17,11 @@ from sciencebeam_judge.evaluation.scoring_types.list import (
 
 from sciencebeam_judge.evaluation.custom import CustomEvaluation
 from sciencebeam_judge.evaluation.match_scoring import MatchScore, get_match_score_for_score
+
+from sciencebeam_judge.evaluation.scoring_methods import (
+    ScoringMethodNames,
+    SCORING_METHODS_MAP
+)
 
 
 LOGGER = logging.getLogger(__name__)
@@ -50,14 +60,92 @@ class FuzzyTextFragmentMatchResult(NamedTuple):
     score: float
 
 
-def get_fuzzy_matched_characters(haystack_str, needles, threshold):
+DISTANCE_MEASURE = SCORING_METHODS_MAP[ScoringMethodNames.LEVENSHTEIN].distance_measure
+
+
+def iter_regex_split_with_index(text: str, sep_pattern: str) -> List[Tuple[int, str]]:
+    start_index = 0
+    for m in re.finditer(sep_pattern, text):
+        current_index = m.start(0)
+        if current_index > start_index:
+            yield start_index, text[start_index:current_index]
+        start_index = current_index + 1
+    if start_index < len(text):
+        yield start_index, text[start_index:]
+
+
+def get_distance_match_sort_key(
+    distance_match: DistanceMatch,
+    max_sort_key: Tuple[int, int]
+) -> Tuple[int, int]:
+    return (
+        distance_match.value_1.index if distance_match.value_1 else max_sort_key[0],
+        distance_match.value_2.index if distance_match.value_2 else max_sort_key[1]
+    )
+
+
+def get_fuzzy_matched_characters(
+    haystack_str: str,
+    needles: List[str],
+    threshold: float
+):  # pylint: disable=too-many-locals
     if not haystack_str:
         return []
+    wrapped_haystack_values = [
+        WrappedValue(value, index)
+        for index, value in iter_regex_split_with_index(haystack_str, r'\n')
+    ]
+    wrapped_needles = [
+        WrappedValue(value, index)
+        for index, value in enumerate(needles)
+    ]
+    distance_matches = get_distance_matches(
+        wrapped_haystack_values,
+        wrapped_needles,
+        distance_measure=DISTANCE_MEASURE,
+        threshold=threshold
+    )
+    LOGGER.debug('distance_matches: %s', distance_matches)
+    max_sort_key = (len(haystack_str), len(needles))
+    distance_matches = sorted(distance_matches, key=lambda distance_match: (
+        get_distance_match_sort_key(distance_match, max_sort_key)
+    ))
     haystack_matched = [False] * len(haystack_str)
-    for needle in needles:
+    remaining_needles = []
+    for distance_match in distance_matches:
+        LOGGER.debug(
+            'distance_match: %s (index: %s)',
+            distance_match,
+            distance_match.value_1.index if distance_match.value_1 else None
+        )
+        if not distance_match.value_2:
+            continue
+        if not distance_match.value_1:
+            remaining_needles.append(distance_match.value_2)
+            continue
+        sm = LocalSequenceMatcher(
+            str(distance_match.value_1),
+            str(distance_match.value_2),
+            DEFAULT_SCORING
+        )
+        mb = sm.get_matching_blocks()
+        match_count = sum(size for _, _, size in mb)
+        match_ratio = match_count / len(distance_match.value_2.value)
+        LOGGER.debug(
+            'match_count=%d, match_ratio=%s, needle=%s',
+            match_count, match_ratio, distance_match.value_2.value
+        )
+        if match_ratio < threshold:
+            remaining_needles.append(distance_match.value_2)
+            continue
+        value_1_offset = distance_match.value_1.index
+        for ai, _, size in mb:
+            match_index = value_1_offset + ai
+            haystack_matched[match_index:match_index + size] = [True] * size
+    for needle in remaining_needles:
         if not needle:
             continue
-        sm = LocalSequenceMatcher(haystack_str, needle, DEFAULT_SCORING)
+        sm = LocalSequenceMatcher(haystack_str, str(needle), DEFAULT_SCORING)
         mb = sm.get_matching_blocks()
         match_count = sum(size for _, _, size in mb)
         match_ratio = match_count / len(needle)
@@ -78,7 +166,7 @@ def get_fuzzy_matched_text_fragments(
 ) -> List[FuzzyTextFragmentMatchResult]:
     haystack_str = '\n'.join(expected)
     needles = actual
-    threshold = 0.5
+    threshold = 0.7
     if not haystack_str:
         return []
     haystack_matched = get_fuzzy_matched_characters(

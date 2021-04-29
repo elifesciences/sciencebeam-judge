@@ -24,10 +24,10 @@ class WrappedValue:
         return len(self.value)
 
     def __str__(self):
-        return self.value
+        return str(self.value)
 
     def __repr__(self):
-        return repr(self.value)
+        return '%s(%r)' % (type(self).__name__, self.value)
 
     def __hash__(self) -> int:
         return hash(self.value)
@@ -40,6 +40,13 @@ def get_unwrapped_value(wrapped_value: Optional[WrappedValue]) -> Union[str, Tup
     if wrapped_value is None:
         return None
     return wrapped_value.value
+
+
+def get_recursive_unwrapped_value(wrapped_value: Optional[WrappedValue]) -> Union[str, Tuple[str]]:
+    result = get_unwrapped_value(wrapped_value)
+    while isinstance(result, WrappedValue):
+        result = get_unwrapped_value(result)
+    return result
 
 
 def get_wrapped_value(value: Union[str, Tuple[str]], index: int) -> WrappedValue:
@@ -94,8 +101,8 @@ class CachedDistanceMeasure(DistanceMeasure):
         score = self._cache.get(key)
         if score is None:
             score = self._distance_fn(
-                get_unwrapped_value(value_1),
-                get_unwrapped_value(value_2)
+                get_recursive_unwrapped_value(value_1),
+                get_recursive_unwrapped_value(value_2)
             )
             self._cache[key] = score
             LOGGER.debug('saving score to cache: %r (%r, %d)', score, key, len(self._cache))
@@ -144,7 +151,7 @@ def get_character_counts(value: T_Optionally_Wrapped_Value) -> Counter:
         return Counter()
     if isinstance(value, WrappedValue):
         if value.char_counts is None:
-            value.char_counts = Counter(value.value)
+            value.char_counts = Counter(str(value))
         return value.char_counts
     return Counter(value)
 
