@@ -5,7 +5,7 @@ import os
 import logging
 from io import BytesIO
 from functools import partial
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 import apache_beam as beam
 from apache_beam.io.textio import WriteToText
@@ -93,6 +93,9 @@ DEFAULT_SCORE_MEASURES = [
 ]
 
 
+LOGGER = logging.getLogger(__name__)
+
+
 def get_logger():
     return logging.getLogger(__name__)
 
@@ -121,30 +124,65 @@ def ReadFilePairs(x):
     })
 
 
+def get_all_source_field_names(
+    evaluation_config: EvaluationConfig,
+    field_names: Optional[List[str]]
+) -> Optional[str]:
+    if not field_names:
+        LOGGER.debug('get_all_source_field_names: no field names')
+        return field_names
+    if not evaluation_config.custom or not evaluation_config.custom.fields:
+        LOGGER.debug('get_all_source_field_names: no custom evaluation config or fields')
+        return field_names
+    field_names = field_names.copy()
+    for custom_evaluation_field in evaluation_config.custom.fields:
+        if custom_evaluation_field.name not in field_names:
+            LOGGER.debug(
+                'get_all_source_field_names: custom field not selected: %r (selected: %r)',
+                custom_evaluation_field.name, field_names
+            )
+            continue
+        source_field_names = (
+            custom_evaluation_field.expected.field_names
+            + custom_evaluation_field.actual.field_names
+        )
+        for source_field_name in source_field_names:
+            if source_field_name in field_names:
+                continue
+            field_names.append(source_field_name)
+    return field_names
+
+
 def evaluate_file_pairs(
         target_filename, target_content,
         prediction_filename, prediction_content,
         xml_mapping, field_names,
+        evaluation_config: EvaluationConfig,
         **kwargs):
 
     try:
         get_logger().info(
             'processing: target: %s, prediction: %s', target_filename, prediction_filename
         )
+        source_field_names = get_all_source_field_names(
+            evaluation_config=evaluation_config,
+            field_names=field_names
+        )
         target_xml = parse_xml(
             BytesIO(target_content),
             xml_mapping,
-            fields=field_names,
+            fields=source_field_names,
             filename=target_filename
         )
         prediction_xml = parse_xml(
             BytesIO(prediction_content),
             xml_mapping,
-            fields=field_names,
+            fields=source_field_names,
             filename=prediction_filename
         )
         return list(iter_score_document_fields_using_config(
             target_xml, prediction_xml, field_names=field_names, include_values=True,
+            evaluation_config=evaluation_config,
             **kwargs
         ))
     except Exception as e:
@@ -239,9 +277,9 @@ def flatten_evaluation_results(evaluation_results, field_names=None):
         if field_name not in field_names:
             continue
         document_match_score = document_score[DocumentScoringProps.MATCH_SCORE]
-        match_scores = document_match_score.get(
-            MatchScoringProps.SUB_SCORES, [document_match_score]
-        )
+        match_scores = document_match_score.get(MatchScoringProps.SUB_SCORES)
+        if match_scores is None:
+            match_scores = [document_match_score]
         for match_score in match_scores:
             get_logger().debug('match_score: %s', match_score)
             flat_result.append({

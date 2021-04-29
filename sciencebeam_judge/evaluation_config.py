@@ -58,7 +58,7 @@ class CustomEvaluationConfig:
 
 @dataclass
 class EvaluationConfig:
-    custom: CustomEvaluationConfig
+    custom: CustomEvaluationConfig = CustomEvaluationConfig(evaluation_type='dummy', fields=[])
 
     @staticmethod
     def from_json(data: dict):

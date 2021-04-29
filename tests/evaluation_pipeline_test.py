@@ -19,6 +19,7 @@ import sciencebeam_judge.evaluation_pipeline as evaluation_pipeline
 from sciencebeam_judge.evaluation_pipeline import (
     flatten_evaluation_results,
     flatten_summary_results,
+    get_all_source_field_names,
     configure_pipeline,
     get_scoring_types_by_field_map,
     parse_args,
@@ -32,7 +33,13 @@ from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
 from sciencebeam_judge.evaluation.scoring_types.scoring_types import ScoringTypeNames
 from sciencebeam_judge.evaluation.document_scoring import DocumentScoringProps
 from sciencebeam_judge.evaluation.score_aggregation import SummaryScoresProps
-from sciencebeam_judge.evaluation_config import get_scoring_types_by_field_map_from_config
+from sciencebeam_judge.evaluation_config import (
+    CustomEvaluationFieldSourceConfig,
+    CustomEvaluationFieldConfig,
+    CustomEvaluationConfig,
+    EvaluationConfig,
+    get_scoring_types_by_field_map_from_config
+)
 
 
 LOGGER = logging.getLogger(__name__)
@@ -64,6 +71,7 @@ MIN_ARGV = [
 ]
 
 FIELD_1 = 'field1'
+FIELD_2 = 'field2'
 
 MATCH_SCORE_1 = {
     MatchScoringProps.EXPECTED_SOMETHING: True,
@@ -246,6 +254,52 @@ class TestFlattenSummaryResults:
                 SummaryOutputColumns.RECALL: scores['recall'],
                 SummaryOutputColumns.F1: scores['f1']
             }
+
+
+class TestGetAllSourceFieldNames:
+    def test_should_return_none_if_passed_in_field_names_is_none(self):
+        assert get_all_source_field_names(
+            evaluation_config=EvaluationConfig(),
+            field_names=None
+        ) is None
+
+    def test_should_return_passed_in_field_names_if_none_of_the_fields_match_custom_config(self):
+        assert get_all_source_field_names(
+            evaluation_config=EvaluationConfig(),
+            field_names=[FIELD_1, FIELD_2]
+        ) == [FIELD_1, FIELD_2]
+
+    def test_should_add_source_fields_from_custom_config(self):
+        assert sorted(get_all_source_field_names(
+            evaluation_config=EvaluationConfig(
+                custom=CustomEvaluationConfig(
+                    evaluation_type='dummy',
+                    fields=[CustomEvaluationFieldConfig(
+                        name=FIELD_1,
+                        expected=CustomEvaluationFieldSourceConfig(field_names=['expected1']),
+                        actual=CustomEvaluationFieldSourceConfig(field_names=['actual1'])
+                    )]
+                )
+            ),
+            field_names=[FIELD_1, FIELD_2]
+        )) == sorted([FIELD_1, FIELD_2, 'expected1', 'actual1'])
+
+    def test_should_not_add_already_existing_fields_from_custom_config(self):
+        assert sorted(get_all_source_field_names(
+            evaluation_config=EvaluationConfig(
+                custom=CustomEvaluationConfig(
+                    evaluation_type='dummy',
+                    fields=[CustomEvaluationFieldConfig(
+                        name=FIELD_1,
+                        expected=CustomEvaluationFieldSourceConfig(
+                            field_names=['expected1', FIELD_1]
+                        ),
+                        actual=CustomEvaluationFieldSourceConfig(field_names=['actual1', FIELD_2])
+                    )]
+                )
+            ),
+            field_names=[FIELD_1]
+        )) == sorted([FIELD_1, FIELD_2, 'expected1', 'actual1'])
 
 
 class TestGetScoringTypesByFieldMap:

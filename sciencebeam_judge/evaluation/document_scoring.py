@@ -117,6 +117,9 @@ def iter_score_document_fields(
         field_names = sorted(expected.keys())
 
     for field_name in field_names:
+        if field_name not in expected:
+            LOGGER.debug('field not found: %r', field_name)
+            continue
         scoring_type_names = get_field_scoring_type_names(
             scoring_types_by_field_map, field_name
         )
