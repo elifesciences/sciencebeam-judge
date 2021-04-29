@@ -4,7 +4,7 @@ from typing import List
 from sciencebeam_judge.evaluation.match_scoring import MatchScore
 
 
-class SpecialEvaluation(ABC):
+class CustomEvaluation(ABC):
     @abstractmethod
     def score(
         self,

@@ -1,4 +1,4 @@
-from sciencebeam_judge.evaluation.special_evaluation.deleted_text import (
+from sciencebeam_judge.evaluation.custom.deleted_text import (
     get_fuzzy_matched_text_fragments,
     DeletedTextEvaluation
 )

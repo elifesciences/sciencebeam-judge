@@ -8,7 +8,7 @@ from sciencebeam_judge.evaluation_config import (
     DeletedTextFieldExpectedActualEvaluationConfig
 )
 from sciencebeam_judge.evaluation.match_scoring import MatchScore
-from sciencebeam_judge.evaluation.special_evaluation.deleted_text import DeletedTextEvaluation
+from sciencebeam_judge.evaluation.custom.deleted_text import DeletedTextEvaluation
 
 from .scoring_types.scoring_type import ScoringType
 from .scoring_types.scoring_types import (

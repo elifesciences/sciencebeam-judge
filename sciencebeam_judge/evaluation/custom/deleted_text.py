@@ -10,7 +10,7 @@ from sciencebeam_judge.evaluation.scoring_types.items import (
     _get_fuzzy_matched_characters
 )
 
-from sciencebeam_judge.evaluation.special_evaluation import SpecialEvaluation
+from sciencebeam_judge.evaluation.custom import CustomEvaluation
 from sciencebeam_judge.evaluation.match_scoring import MatchScore, get_match_score_for_score
 
 
@@ -90,7 +90,7 @@ def get_fuzzy_matched_text_fragments(
     return result
 
 
-class DeletedTextEvaluation(SpecialEvaluation):
+class DeletedTextEvaluation(CustomEvaluation):
     def score(
         self,
         expected: List[str],
