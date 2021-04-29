@@ -90,7 +90,7 @@ def get_fuzzy_matched_text_fragments(
     return result
 
 
-class LostTextEvaluation(SpecialEvaluation):
+class DeletedTextEvaluation(SpecialEvaluation):
     def score(
         self,
         expected: List[str],

@@ -13,42 +13,42 @@ DEFAULT_EVALUATION_YAML_FILENAME = 'evaluation.yml'
 
 
 @dataclass
-class LostTextFieldExpectedActualEvaluationConfig:
+class DeletedTextFieldExpectedActualEvaluationConfig:
     field_names: List[str]
 
     @staticmethod
     def from_json(data: dict):
-        return LostTextFieldExpectedActualEvaluationConfig(
+        return DeletedTextFieldExpectedActualEvaluationConfig(
             field_names=data['field_names']
         )
 
 
 @dataclass
-class LostTextFieldEvaluationConfig:
+class DeletedTextFieldEvaluationConfig:
     name: str
-    expected: LostTextFieldExpectedActualEvaluationConfig
-    actual: LostTextFieldExpectedActualEvaluationConfig
+    expected: DeletedTextFieldExpectedActualEvaluationConfig
+    actual: DeletedTextFieldExpectedActualEvaluationConfig
 
     @staticmethod
     def from_json(data: dict):
-        return LostTextFieldEvaluationConfig(
+        return DeletedTextFieldEvaluationConfig(
             name=data['name'],
-            expected=LostTextFieldExpectedActualEvaluationConfig.from_json(data['expected']),
-            actual=LostTextFieldExpectedActualEvaluationConfig.from_json(data['actual'])
+            expected=DeletedTextFieldExpectedActualEvaluationConfig.from_json(data['expected']),
+            actual=DeletedTextFieldExpectedActualEvaluationConfig.from_json(data['actual'])
         )
 
 
 @dataclass
-class LostTextEvaluationConfig:
-    fields: List[LostTextFieldEvaluationConfig]
+class DeletedTextEvaluationConfig:
+    fields: List[DeletedTextFieldEvaluationConfig]
 
     @staticmethod
     def from_json(data: dict):
         if not data:
             return None
-        return LostTextEvaluationConfig(
+        return DeletedTextEvaluationConfig(
             fields=[
-                LostTextFieldEvaluationConfig.from_json(field_data)
+                DeletedTextFieldEvaluationConfig.from_json(field_data)
                 for field_data in data.get('fields')
             ]
         )
@@ -56,13 +56,13 @@ class LostTextEvaluationConfig:
 
 @dataclass
 class EvaluationConfig:
-    lost_text: LostTextEvaluationConfig
+    deleted_text: DeletedTextEvaluationConfig
 
     @staticmethod
     def from_json(data: dict):
         return EvaluationConfig(
-            lost_text=LostTextEvaluationConfig.from_json(
-                data.get('lost_text')
+            deleted_text=DeletedTextEvaluationConfig.from_json(
+                data.get('deleted_text')
             )
         )
 

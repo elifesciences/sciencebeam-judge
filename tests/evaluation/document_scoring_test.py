@@ -9,9 +9,9 @@ import pytest
 from sciencebeam_utils.utils.collection import groupby_to_dict
 
 from sciencebeam_judge.evaluation_config import (
-    LostTextFieldExpectedActualEvaluationConfig,
-    LostTextFieldEvaluationConfig,
-    LostTextEvaluationConfig
+    DeletedTextFieldExpectedActualEvaluationConfig,
+    DeletedTextFieldEvaluationConfig,
+    DeletedTextEvaluationConfig
 )
 
 from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
@@ -43,7 +43,7 @@ MATCH_SCORE_1 = MatchScore(score=0.91)
 
 @pytest.fixture(name='lost_text_evaluation_class_mock')
 def _lost_text_evaluation_class_mock() -> Iterable[MagicMock]:
-    with patch.object(document_scoring_module, 'LostTextEvaluation') as mock:
+    with patch.object(document_scoring_module, 'DeletedTextEvaluation') as mock:
         yield mock
 
 
@@ -107,11 +107,11 @@ class TestIterScoreDocumentFields:
         assert [r['scoring_type'] for r in result] == ['list', 'set']
 
 
-class TestIterScoreLostText:
+class TestIterScoreDeletedText:
     def test_should_skip_without_any_fields(self):
         result = list(iter_score_lost_text(
             SCORING_DOCUMENT_1, SCORING_DOCUMENT_1,
-            LostTextEvaluationConfig(fields=[])
+            DeletedTextEvaluationConfig(fields=[])
         ))
         assert result == []
 
@@ -124,21 +124,21 @@ class TestIterScoreLostText:
         actual_document = {'actual': ['actual1']}
         result = list(map(DocumentFieldScore.from_dict, iter_score_lost_text(
             expected_document, actual_document,
-            LostTextEvaluationConfig(fields=[
-                LostTextFieldEvaluationConfig(
+            DeletedTextEvaluationConfig(fields=[
+                DeletedTextFieldEvaluationConfig(
                     name=FIELD_1,
-                    expected=LostTextFieldExpectedActualEvaluationConfig(
+                    expected=DeletedTextFieldExpectedActualEvaluationConfig(
                         field_names=['expected']
                     ),
-                    actual=LostTextFieldExpectedActualEvaluationConfig(
+                    actual=DeletedTextFieldExpectedActualEvaluationConfig(
                         field_names=['actual']
                     )
                 )
             ])
         )))
         assert [r.field_name for r in result] == [FIELD_1]
-        assert [r.scoring_type for r in result] == ['lost_text']
-        assert [r.scoring_method for r in result] == ['lost_text']
+        assert [r.scoring_type for r in result] == ['deleted_text']
+        assert [r.scoring_method for r in result] == ['deleted_text']
         assert result[0].match_score == MATCH_SCORE_1
         lost_text_evaluation_mock.score.assert_called_with(
             expected=['expected1'],

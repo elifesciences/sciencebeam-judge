@@ -4,11 +4,11 @@ from typing import Any, Dict, Iterable, List, Union
 
 from sciencebeam_judge.evaluation_config import (
     EvaluationConfig,
-    LostTextEvaluationConfig,
-    LostTextFieldExpectedActualEvaluationConfig
+    DeletedTextEvaluationConfig,
+    DeletedTextFieldExpectedActualEvaluationConfig
 )
 from sciencebeam_judge.evaluation.match_scoring import MatchScore
-from sciencebeam_judge.evaluation.special_evaluation.lost_text import LostTextEvaluation
+from sciencebeam_judge.evaluation.special_evaluation.deleted_text import DeletedTextEvaluation
 
 from .scoring_types.scoring_type import ScoringType
 from .scoring_types.scoring_types import (
@@ -140,7 +140,7 @@ def iter_score_document_fields(
 
 def extract_lost_text_document_field_value(
     document: T_DocumentValues,
-    field_selector_config: LostTextFieldExpectedActualEvaluationConfig
+    field_selector_config: DeletedTextFieldExpectedActualEvaluationConfig
 ):
     return [
         field_value
@@ -152,18 +152,18 @@ def extract_lost_text_document_field_value(
 def iter_score_lost_text(
     expected: T_DocumentValues,
     actual: T_DocumentValues,
-    lost_text_evaluation_config: LostTextEvaluationConfig
+    lost_text_evaluation_config: DeletedTextEvaluationConfig
 ) -> Iterable[dict]:
     LOGGER.debug('lost_text_evaluation_config: %s', lost_text_evaluation_config)
     for field in lost_text_evaluation_config.fields:
-        special_evaluation = LostTextEvaluation()
+        special_evaluation = DeletedTextEvaluation()
         LOGGER.debug('special_evaluation: %s', special_evaluation)
         expected_values = extract_lost_text_document_field_value(expected, field.expected)
         actual_values = extract_lost_text_document_field_value(actual, field.actual)
         yield DocumentFieldScore(
             field_name=field.name,
-            scoring_type='lost_text',
-            scoring_method='lost_text',
+            scoring_type='deleted_text',
+            scoring_method='deleted_text',
             match_score=special_evaluation.score(
                 expected=expected_values,
                 actual=actual_values
@@ -182,8 +182,8 @@ def iter_score_document_fields_using_config(
         expected, actual,
         **kwargs
     )
-    if evaluation_config.lost_text:
+    if evaluation_config.deleted_text:
         yield from iter_score_lost_text(
             expected, actual,
-            evaluation_config.lost_text
+            evaluation_config.deleted_text
         )

@@ -1,9 +1,9 @@
-from sciencebeam_judge.evaluation.special_evaluation.lost_text import LostTextEvaluation
+from sciencebeam_judge.evaluation.special_evaluation.deleted_text import DeletedTextEvaluation
 
 
-class TestLostTextEvaluation:
+class TestDeletedTextEvaluation:
     def test_should_return_one_if_all_text_was_found(self):
-        match_score = LostTextEvaluation().score(
+        match_score = DeletedTextEvaluation().score(
             expected=['value1'],
             actual=['value1']
         )
@@ -11,7 +11,7 @@ class TestLostTextEvaluation:
         assert match_score.true_positive == 1
 
     def test_should_return_zero_if_all_text_is_missing(self):
-        match_score = LostTextEvaluation().score(
+        match_score = DeletedTextEvaluation().score(
             expected=['value1'],
             actual=[]
         )
@@ -19,7 +19,7 @@ class TestLostTextEvaluation:
         assert match_score.false_negative == 1
 
     def test_should_return_dot_five_if_half_of_the_values_are_missing(self):
-        match_score = LostTextEvaluation().score(
+        match_score = DeletedTextEvaluation().score(
             expected=['value1', 'value2'],
             actual=['value1']
         )
@@ -27,7 +27,7 @@ class TestLostTextEvaluation:
         assert match_score.false_negative == 1
 
     def test_should_return_ignore_extra_values(self):
-        match_score = LostTextEvaluation().score(
+        match_score = DeletedTextEvaluation().score(
             expected=['value1'],
             actual=['value1', 'value2']
         )
@@ -35,7 +35,7 @@ class TestLostTextEvaluation:
         assert match_score.true_positive == 1
 
     def test_should_return_dot_five_if_half_of_the_value_tokens_are_missing(self):
-        match_score = LostTextEvaluation().score(
+        match_score = DeletedTextEvaluation().score(
             expected=['value1 value2'],
             actual=['value1']
         )

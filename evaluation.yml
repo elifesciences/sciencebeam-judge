@@ -1,5 +1,5 @@
-lost_text:
-  # Special evaluation of "lost" text
+deleted_text:
+  # Special evaluation of "deleted" (or "lost") text
   fields:
     - name: all_section_paragraphs
       expected:
