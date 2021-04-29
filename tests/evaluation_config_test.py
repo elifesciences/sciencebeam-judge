@@ -1,5 +1,9 @@
+import json
 from pathlib import Path
 from io import StringIO
+
+import yaml
+import jsonschema
 
 from sciencebeam_judge.evaluation_config import (
     parse_evaluation_config,
@@ -27,6 +31,11 @@ class TestParseEvaluationConfig:
 
 
 class TestParseEvaluationYamlConfig:
+    def test_should_validate(self):
+        config_json = yaml.safe_load(Path(DEFAULT_EVALUATION_YAML_FILENAME).read_text())
+        json_schema = json.loads(Path('evaluation.schema.json').read_text())
+        jsonschema.validate(config_json, json_schema)
+
     def test_should_parse_default_config_from_stream(self):
         config = parse_evaluation_yaml_config(
             StringIO(Path(DEFAULT_EVALUATION_YAML_FILENAME).read_text())
