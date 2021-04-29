@@ -9,6 +9,7 @@ class CustomEvaluation(ABC):
     def score(
         self,
         expected: List[str],
-        actual: List[str]
+        actual: List[str],
+        include_values: bool = True
     ) -> MatchScore:
         pass

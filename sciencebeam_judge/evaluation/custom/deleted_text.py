@@ -1,5 +1,6 @@
 import logging
-from typing import List, NamedTuple
+import re
+from typing import AnyStr, List, NamedTuple
 
 from sciencebeam_judge.evaluation.math import safe_mean
 
@@ -30,6 +31,11 @@ def combine_partial_match_scores(
 class TextFragment(NamedTuple):
     text: str
 
+    def __str__(self):
+        return self.text
+
+    def __len__(self):
+        return len(self.text)
 
 class FuzzyTextFragmentMatchResult(NamedTuple):
     value_1: TextFragment
@@ -90,20 +96,47 @@ def get_fuzzy_matched_text_fragments(
     return result
 
 
+def strip_whitespace(text: str) -> str:
+    return re.sub(r'\s+', '', text)
+
+
+def get_character_based_match_score_for_score(
+    score: float,
+    expected: AnyStr,
+    actual: AnyStr,
+    include_values: bool
+) -> MatchScore:
+    expected_str = str(expected) if expected else ''
+    actual_str = str(actual) if actual else ''
+    match_score = get_match_score_for_score(
+        score=score,
+        expected=expected_str,
+        actual=actual_str,
+        include_values=include_values
+    )
+    expected_without_whitespace_str = strip_whitespace(expected_str)
+    expected_without_whitespace_len = len(expected_without_whitespace_str)
+    actual_without_whitespace_str = strip_whitespace(actual_str)
+    actual_without_whitespace_len = len(actual_without_whitespace_str)
+    # true postive: a match (we can use the exepected count, same as actual)
+    # false negative: mismatch, no actual value (use expected count)
+    # false positive: mismatch, no expected value (use actual count)
+    # true negative: nothing expected, no actual (not relevant in our case)
+    match_score.true_positive *= expected_without_whitespace_len
+    match_score.false_positive *= actual_without_whitespace_len
+    match_score.false_negative *= expected_without_whitespace_len
+    match_score.true_negative = 0
+    LOGGER.debug('match_score: %s (expected=%r, actual=%r)', match_score, expected, actual)
+    return match_score
+
+
 class DeletedTextEvaluation(CustomEvaluation):
     def score(
         self,
         expected: List[str],
-        actual: List[str]
+        actual: List[str],
+        include_values: bool = True
     ) -> MatchScore:
-        # scoring_method = SCORING_METHODS_MAP[ScoringMethodNames.LEVENSHTEIN]
-        score = 0.0
-        result_match_score = get_match_score_for_score(
-            expected=expected,
-            actual=actual,
-            score=score,
-            include_values=True
-        )
         if expected and actual:
             match_results = get_fuzzy_matched_text_fragments(
                 expected,
@@ -115,17 +148,30 @@ class DeletedTextEvaluation(CustomEvaluation):
                 if not match_result.value_1:
                     # ignore extra text
                     continue
-                match_scores.append(get_match_score_for_score(
+                match_scores.append(get_character_based_match_score_for_score(
                     score=match_result.score,
-                    expected=match_result.value_1 or '',
-                    actual=match_result.value_2 or ''
+                    expected=match_result.value_1,
+                    actual=match_result.value_2,
+                    include_values=include_values
                 ))
-            result_match_score.score = safe_mean([
-                _score.score for _score in match_scores
-            ]) if match_scores else 1.0
+            template_match_score = get_match_score_for_score(
+                expected=expected,
+                actual=actual,
+                score=safe_mean([
+                    _score.score for _score in match_scores
+                ]) if match_scores else 1.0,
+                include_values=include_values
+            )
             result_match_score = combine_partial_match_scores(
                 match_scores,
-                result_match_score
+                template_match_score
+            )
+        else:
+            result_match_score = get_character_based_match_score_for_score(
+                expected='\n'.join(expected),
+                actual='\n'.join(actual),
+                score=0.0,
+                include_values=include_values
             )
         LOGGER.debug('result_match_score: %s', result_match_score)
         return result_match_score
