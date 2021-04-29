@@ -37,6 +37,7 @@ class TextFragment(NamedTuple):
     def __len__(self):
         return len(self.text)
 
+
 class FuzzyTextFragmentMatchResult(NamedTuple):
     value_1: TextFragment
     value_2: TextFragment
