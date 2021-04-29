@@ -183,8 +183,8 @@ def iter_score_document_fields_using_config(
         expected, actual,
         **kwargs
     )
-    if evaluation_config.deleted_text:
+    if evaluation_config.custom:
         yield from iter_score_custom_evaluation(
             expected, actual,
-            evaluation_config.deleted_text
+            evaluation_config.custom
         )
