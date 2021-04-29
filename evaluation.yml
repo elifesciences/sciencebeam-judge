@@ -2,7 +2,7 @@ custom:
   # Special evaluation of "deleted" (or "lost") text
   evaluation_type: deleted_text
   fields:
-    - name: all_section_paragraphs
+    - name: all_section_paragraphs_deleted_text
       expected:
         field_names:
           - body_section_paragraphs
