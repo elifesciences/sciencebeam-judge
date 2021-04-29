@@ -9,9 +9,9 @@ import pytest
 from sciencebeam_utils.utils.collection import groupby_to_dict
 
 from sciencebeam_judge.evaluation_config import (
-    DeletedTextFieldExpectedActualEvaluationConfig,
-    DeletedTextFieldEvaluationConfig,
-    DeletedTextEvaluationConfig
+    CustomEvaluationFieldSourceConfig,
+    CustomEvaluationFieldConfig,
+    CustomEvaluationConfig
 )
 
 from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
@@ -20,7 +20,7 @@ from sciencebeam_judge.evaluation.match_scoring import MatchScore
 import sciencebeam_judge.evaluation.document_scoring as document_scoring_module
 from sciencebeam_judge.evaluation.document_scoring import (
     iter_score_document_fields,
-    iter_score_lost_text,
+    iter_score_custom_evaluation,
     DocumentScoringProps,
     DocumentFieldScore
 )
@@ -40,16 +40,18 @@ SCORING_DOCUMENT_1 = {
 
 MATCH_SCORE_1 = MatchScore(score=0.91)
 
+EVALUATION_TYPE_1 = 'evaluation_type1'
 
-@pytest.fixture(name='lost_text_evaluation_class_mock')
-def _lost_text_evaluation_class_mock() -> Iterable[MagicMock]:
-    with patch.object(document_scoring_module, 'DeletedTextEvaluation') as mock:
+
+@pytest.fixture(name='get_custom_evaluation_mock')
+def _get_custom_evaluation_mock() -> Iterable[MagicMock]:
+    with patch.object(document_scoring_module, 'get_custom_evaluation') as mock:
         yield mock
 
 
-@pytest.fixture(name='lost_text_evaluation_mock')
-def _lost_text_evaluation_mock(lost_text_evaluation_class_mock: MagicMock) -> MagicMock:
-    return lost_text_evaluation_class_mock.return_value
+@pytest.fixture(name='custom_evaluation_mock')
+def _custom_evaluation_mock(get_custom_evaluation_mock: MagicMock) -> MagicMock:
+    return get_custom_evaluation_mock.return_value
 
 
 class TestIterScoreDocumentFields:
@@ -109,38 +111,39 @@ class TestIterScoreDocumentFields:
 
 class TestIterScoreDeletedText:
     def test_should_skip_without_any_fields(self):
-        result = list(iter_score_lost_text(
+        result = list(iter_score_custom_evaluation(
             SCORING_DOCUMENT_1, SCORING_DOCUMENT_1,
-            DeletedTextEvaluationConfig(fields=[])
+            CustomEvaluationConfig(evaluation_type=EVALUATION_TYPE_1, fields=[])
         ))
         assert result == []
 
     def test_should_return_one_if_all_text_was_found(
         self,
-        lost_text_evaluation_mock: MagicMock
+        custom_evaluation_mock: MagicMock
     ):
-        lost_text_evaluation_mock.score.return_value = MATCH_SCORE_1
+        custom_evaluation_mock.score.return_value = MATCH_SCORE_1
         expected_document = {'expected': ['expected1']}
         actual_document = {'actual': ['actual1']}
-        result = list(map(DocumentFieldScore.from_dict, iter_score_lost_text(
+        result = list(map(DocumentFieldScore.from_dict, iter_score_custom_evaluation(
             expected_document, actual_document,
-            DeletedTextEvaluationConfig(fields=[
-                DeletedTextFieldEvaluationConfig(
+            CustomEvaluationConfig(
+                evaluation_type=EVALUATION_TYPE_1,
+                fields=[CustomEvaluationFieldConfig(
                     name=FIELD_1,
-                    expected=DeletedTextFieldExpectedActualEvaluationConfig(
+                    expected=CustomEvaluationFieldSourceConfig(
                         field_names=['expected']
                     ),
-                    actual=DeletedTextFieldExpectedActualEvaluationConfig(
+                    actual=CustomEvaluationFieldSourceConfig(
                         field_names=['actual']
                     )
-                )
-            ])
+                )]
+            )
         )))
         assert [r.field_name for r in result] == [FIELD_1]
-        assert [r.scoring_type for r in result] == ['deleted_text']
-        assert [r.scoring_method for r in result] == ['deleted_text']
+        assert [r.scoring_type for r in result] == [EVALUATION_TYPE_1]
+        assert [r.scoring_method for r in result] == [EVALUATION_TYPE_1]
         assert result[0].match_score == MATCH_SCORE_1
-        lost_text_evaluation_mock.score.assert_called_with(
+        custom_evaluation_mock.score.assert_called_with(
             expected=['expected1'],
             actual=['actual1']
         )

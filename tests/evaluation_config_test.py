@@ -32,22 +32,23 @@ class TestParseEvaluationYamlConfig:
             StringIO(Path(DEFAULT_EVALUATION_YAML_FILENAME).read_text())
         )
         assert config
-        assert config.get('deleted_text')
+        assert config.get('custom')
 
     def test_should_parse_default_config_from_filename(self):
         config = parse_evaluation_yaml_config(DEFAULT_EVALUATION_YAML_FILENAME)
         assert config
-        assert config.get('deleted_text')
+        assert config.get('custom')
 
 
 class TestGetEvaluationConfigObject:
     def test_should_allow_empty_config(self):
         config = get_evaluation_config_object({})
-        assert config.deleted_text is None
+        assert config.custom is None
 
-    def test_should_parse_lost_text_config(self):
+    def test_should_parse_custom_config(self):
         config = get_evaluation_config_object({
-            'deleted_text': {
+            'custom': {
+                'evaluation_type': 'test',
                 'fields': [{
                     'name': 'field1',
                     'expected': {
@@ -59,8 +60,8 @@ class TestGetEvaluationConfigObject:
                 }]
             }
         })
-        assert config.deleted_text is not None
-        fields = config.deleted_text.fields
+        assert config.custom is not None
+        fields = config.custom.fields
         assert fields[0].name == 'field1'
         assert fields[0].expected.field_names == ['expected1']
         assert fields[0].actual.field_names == ['actual1']

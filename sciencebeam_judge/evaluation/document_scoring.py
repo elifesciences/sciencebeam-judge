@@ -4,11 +4,11 @@ from typing import Any, Dict, Iterable, List, Union
 
 from sciencebeam_judge.evaluation_config import (
     EvaluationConfig,
-    DeletedTextEvaluationConfig,
-    DeletedTextFieldExpectedActualEvaluationConfig
+    CustomEvaluationConfig,
+    CustomEvaluationFieldSourceConfig
 )
 from sciencebeam_judge.evaluation.match_scoring import MatchScore
-from sciencebeam_judge.evaluation.custom.deleted_text import DeletedTextEvaluation
+from sciencebeam_judge.evaluation.custom.registry import get_custom_evaluation
 
 from .scoring_types.scoring_type import ScoringType
 from .scoring_types.scoring_types import (
@@ -138,33 +138,34 @@ def iter_score_document_fields(
                 }
 
 
-def extract_lost_text_document_field_value(
+def extract_custom_evaluation_document_field_value(
     document: T_DocumentValues,
-    field_selector_config: DeletedTextFieldExpectedActualEvaluationConfig
+    field_source_config: CustomEvaluationFieldSourceConfig
 ):
     return [
         field_value
-        for field_name in field_selector_config.field_names
+        for field_name in field_source_config.field_names
         for field_value in document.get(field_name, [])
     ]
 
 
-def iter_score_lost_text(
+def iter_score_custom_evaluation(
     expected: T_DocumentValues,
     actual: T_DocumentValues,
-    lost_text_evaluation_config: DeletedTextEvaluationConfig
+    custom_evaluation_config: CustomEvaluationConfig
 ) -> Iterable[dict]:
-    LOGGER.debug('lost_text_evaluation_config: %s', lost_text_evaluation_config)
-    for field in lost_text_evaluation_config.fields:
-        special_evaluation = DeletedTextEvaluation()
-        LOGGER.debug('special_evaluation: %s', special_evaluation)
-        expected_values = extract_lost_text_document_field_value(expected, field.expected)
-        actual_values = extract_lost_text_document_field_value(actual, field.actual)
+    LOGGER.debug('custom_evaluation_config: %s', custom_evaluation_config)
+    evaluation_type = custom_evaluation_config.evaluation_type
+    for field in custom_evaluation_config.fields:
+        custom_evaluation = get_custom_evaluation(custom_evaluation_config.evaluation_type)
+        LOGGER.debug('custom_evaluation: %s', custom_evaluation)
+        expected_values = extract_custom_evaluation_document_field_value(expected, field.expected)
+        actual_values = extract_custom_evaluation_document_field_value(actual, field.actual)
         yield DocumentFieldScore(
             field_name=field.name,
-            scoring_type='deleted_text',
-            scoring_method='deleted_text',
-            match_score=special_evaluation.score(
+            scoring_type=evaluation_type,
+            scoring_method=evaluation_type,
+            match_score=custom_evaluation.score(
                 expected=expected_values,
                 actual=actual_values
             )
@@ -183,7 +184,7 @@ def iter_score_document_fields_using_config(
         **kwargs
     )
     if evaluation_config.deleted_text:
-        yield from iter_score_lost_text(
+        yield from iter_score_custom_evaluation(
             expected, actual,
             evaluation_config.deleted_text
         )

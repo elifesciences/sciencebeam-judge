@@ -13,42 +13,44 @@ DEFAULT_EVALUATION_YAML_FILENAME = 'evaluation.yml'
 
 
 @dataclass
-class DeletedTextFieldExpectedActualEvaluationConfig:
+class CustomEvaluationFieldSourceConfig:
     field_names: List[str]
 
     @staticmethod
     def from_json(data: dict):
-        return DeletedTextFieldExpectedActualEvaluationConfig(
+        return CustomEvaluationFieldSourceConfig(
             field_names=data['field_names']
         )
 
 
 @dataclass
-class DeletedTextFieldEvaluationConfig:
+class CustomEvaluationFieldConfig:
     name: str
-    expected: DeletedTextFieldExpectedActualEvaluationConfig
-    actual: DeletedTextFieldExpectedActualEvaluationConfig
+    expected: CustomEvaluationFieldSourceConfig
+    actual: CustomEvaluationFieldSourceConfig
 
     @staticmethod
     def from_json(data: dict):
-        return DeletedTextFieldEvaluationConfig(
+        return CustomEvaluationFieldConfig(
             name=data['name'],
-            expected=DeletedTextFieldExpectedActualEvaluationConfig.from_json(data['expected']),
-            actual=DeletedTextFieldExpectedActualEvaluationConfig.from_json(data['actual'])
+            expected=CustomEvaluationFieldSourceConfig.from_json(data['expected']),
+            actual=CustomEvaluationFieldSourceConfig.from_json(data['actual'])
         )
 
 
 @dataclass
-class DeletedTextEvaluationConfig:
-    fields: List[DeletedTextFieldEvaluationConfig]
+class CustomEvaluationConfig:
+    evaluation_type: str
+    fields: List[CustomEvaluationFieldConfig]
 
     @staticmethod
     def from_json(data: dict):
         if not data:
             return None
-        return DeletedTextEvaluationConfig(
+        return CustomEvaluationConfig(
+            evaluation_type=data['evaluation_type'],
             fields=[
-                DeletedTextFieldEvaluationConfig.from_json(field_data)
+                CustomEvaluationFieldConfig.from_json(field_data)
                 for field_data in data.get('fields')
             ]
         )
@@ -56,13 +58,13 @@ class DeletedTextEvaluationConfig:
 
 @dataclass
 class EvaluationConfig:
-    deleted_text: DeletedTextEvaluationConfig
+    custom: CustomEvaluationConfig
 
     @staticmethod
     def from_json(data: dict):
         return EvaluationConfig(
-            deleted_text=DeletedTextEvaluationConfig.from_json(
-                data.get('deleted_text')
+            custom=CustomEvaluationConfig.from_json(
+                data.get('custom')
             )
         )
 
