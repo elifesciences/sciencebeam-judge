@@ -2,13 +2,12 @@ import logging
 import re
 from typing import AnyStr, List, NamedTuple
 
+from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
+
 from sciencebeam_judge.evaluation.math import safe_mean
 
 from sciencebeam_judge.evaluation.scoring_types.list import (
     _combine_partial_match_scores
-)
-from sciencebeam_judge.evaluation.scoring_types.items import (
-    _get_fuzzy_matched_characters
 )
 
 from sciencebeam_judge.evaluation.custom import CustomEvaluation
@@ -16,6 +15,13 @@ from sciencebeam_judge.evaluation.match_scoring import MatchScore, get_match_sco
 
 
 LOGGER = logging.getLogger(__name__)
+
+
+DEFAULT_SCORING = SimpleScoring(
+    match_score=2,
+    mismatch_score=-1,
+    gap_score=-2
+)
 
 
 def combine_partial_match_scores(
@@ -44,6 +50,28 @@ class FuzzyTextFragmentMatchResult(NamedTuple):
     score: float
 
 
+def get_fuzzy_matched_characters(haystack_str, needles, threshold):
+    if not haystack_str:
+        return []
+    haystack_matched = [False] * len(haystack_str)
+    for needle in needles:
+        if not needle:
+            continue
+        sm = LocalSequenceMatcher(haystack_str, needle, DEFAULT_SCORING)
+        mb = sm.get_matching_blocks()
+        match_count = sum(size for _, _, size in mb)
+        match_ratio = match_count / len(needle)
+        LOGGER.debug(
+            'match_count=%d, match_ratio=%s, needle=%s',
+            match_count, match_ratio, needle
+        )
+        if match_ratio < threshold:
+            continue
+        for ai, _, size in mb:
+            haystack_matched[ai:ai + size] = [True] * size
+    return haystack_matched
+
+
 def get_fuzzy_matched_text_fragments(
     expected: List[str],
     actual: List[str]
@@ -53,7 +81,7 @@ def get_fuzzy_matched_text_fragments(
     threshold = 0.5
     if not haystack_str:
         return []
-    haystack_matched = _get_fuzzy_matched_characters(
+    haystack_matched = get_fuzzy_matched_characters(
         haystack_str=haystack_str,
         needles=needles,
         threshold=threshold
