@@ -22,7 +22,7 @@ COPY requirements.dev.txt ./
 RUN if [ "${install_dev}" = "y" ]; then pip install -r requirements.dev.txt; fi
 
 COPY sciencebeam_judge ./sciencebeam_judge
-COPY *.conf *.sh *.in *.txt *.py evaluation.yml /srv/sciencebeam-judge/
+COPY *.conf *.sh *.in *.txt *.py evaluation.yml evaluation.schema.json /srv/sciencebeam-judge/
 
 # tests
 COPY tests ./tests
