@@ -26,6 +26,7 @@ class CustomEvaluationFieldSourceConfig:
 @dataclass
 class CustomEvaluationFieldConfig:
     name: str
+    evaluation_type: str
     expected: CustomEvaluationFieldSourceConfig
     actual: CustomEvaluationFieldSourceConfig
 
@@ -33,6 +34,7 @@ class CustomEvaluationFieldConfig:
     def from_json(data: dict):
         return CustomEvaluationFieldConfig(
             name=data['name'],
+            evaluation_type=data['evaluation_type'],
             expected=CustomEvaluationFieldSourceConfig.from_json(data['expected']),
             actual=CustomEvaluationFieldSourceConfig.from_json(data['actual'])
         )
@@ -40,7 +42,6 @@ class CustomEvaluationFieldConfig:
 
 @dataclass
 class CustomEvaluationConfig:
-    evaluation_type: str
     fields: List[CustomEvaluationFieldConfig]
 
     @staticmethod
@@ -48,7 +49,6 @@ class CustomEvaluationConfig:
         if not data:
             return None
         return CustomEvaluationConfig(
-            evaluation_type=data['evaluation_type'],
             fields=[
                 CustomEvaluationFieldConfig.from_json(field_data)
                 for field_data in data.get('fields')
@@ -58,7 +58,7 @@ class CustomEvaluationConfig:
 
 @dataclass
 class EvaluationConfig:
-    custom: CustomEvaluationConfig = CustomEvaluationConfig(evaluation_type='dummy', fields=[])
+    custom: CustomEvaluationConfig = CustomEvaluationConfig(fields=[])
 
     @staticmethod
     def from_json(data: dict):

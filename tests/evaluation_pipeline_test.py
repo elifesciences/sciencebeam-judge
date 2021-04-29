@@ -273,9 +273,9 @@ class TestGetAllSourceFieldNames:
         assert sorted(get_all_source_field_names(
             evaluation_config=EvaluationConfig(
                 custom=CustomEvaluationConfig(
-                    evaluation_type='dummy',
                     fields=[CustomEvaluationFieldConfig(
                         name=FIELD_1,
+                        evaluation_type='dummy',
                         expected=CustomEvaluationFieldSourceConfig(field_names=['expected1']),
                         actual=CustomEvaluationFieldSourceConfig(field_names=['actual1'])
                     )]
@@ -288,9 +288,9 @@ class TestGetAllSourceFieldNames:
         assert sorted(get_all_source_field_names(
             evaluation_config=EvaluationConfig(
                 custom=CustomEvaluationConfig(
-                    evaluation_type='dummy',
                     fields=[CustomEvaluationFieldConfig(
                         name=FIELD_1,
+                        evaluation_type='dummy',
                         expected=CustomEvaluationFieldSourceConfig(
                             field_names=['expected1', FIELD_1]
                         ),

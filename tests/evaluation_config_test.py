@@ -48,9 +48,9 @@ class TestGetEvaluationConfigObject:
     def test_should_parse_custom_config(self):
         config = get_evaluation_config_object({
             'custom': {
-                'evaluation_type': 'test',
                 'fields': [{
                     'name': 'field1',
+                    'evaluation_type': 'test',
                     'expected': {
                         'field_names': ['expected1']
                     },

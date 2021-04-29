@@ -113,7 +113,7 @@ class TestIterScoreDeletedText:
     def test_should_skip_without_any_fields(self):
         result = list(iter_score_custom_evaluation(
             SCORING_DOCUMENT_1, SCORING_DOCUMENT_1,
-            CustomEvaluationConfig(evaluation_type=EVALUATION_TYPE_1, fields=[])
+            CustomEvaluationConfig(fields=[])
         ))
         assert result == []
 
@@ -127,9 +127,9 @@ class TestIterScoreDeletedText:
         result = list(map(DocumentFieldScore.from_dict, iter_score_custom_evaluation(
             expected_document, actual_document,
             CustomEvaluationConfig(
-                evaluation_type=EVALUATION_TYPE_1,
                 fields=[CustomEvaluationFieldConfig(
                     name=FIELD_1,
+                    evaluation_type=EVALUATION_TYPE_1,
                     expected=CustomEvaluationFieldSourceConfig(
                         field_names=['expected']
                     ),
