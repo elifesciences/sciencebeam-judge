@@ -1,5 +1,4 @@
-from typing import Dict, List
-from dataclasses import dataclass
+from typing import Dict, List, NamedTuple
 
 import yaml
 
@@ -12,8 +11,7 @@ from .utils.config import parse_config_as_dict
 DEFAULT_EVALUATION_YAML_FILENAME = 'evaluation.yml'
 
 
-@dataclass
-class CustomEvaluationFieldSourceConfig:
+class CustomEvaluationFieldSourceConfig(NamedTuple):
     field_names: List[str]
 
     @staticmethod
@@ -23,8 +21,7 @@ class CustomEvaluationFieldSourceConfig:
         )
 
 
-@dataclass
-class CustomEvaluationFieldConfig:
+class CustomEvaluationFieldConfig(NamedTuple):
     name: str
     evaluation_type: str
     expected: CustomEvaluationFieldSourceConfig
@@ -40,8 +37,7 @@ class CustomEvaluationFieldConfig:
         )
 
 
-@dataclass
-class CustomEvaluationConfig:
+class CustomEvaluationConfig(NamedTuple):
     fields: List[CustomEvaluationFieldConfig]
 
     @staticmethod
@@ -56,8 +52,7 @@ class CustomEvaluationConfig:
         )
 
 
-@dataclass
-class EvaluationConfig:
+class EvaluationConfig(NamedTuple):
     custom: CustomEvaluationConfig = CustomEvaluationConfig(fields=[])
 
     @staticmethod
