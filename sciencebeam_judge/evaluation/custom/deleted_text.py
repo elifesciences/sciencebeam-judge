@@ -1,6 +1,7 @@
 import logging
 import re
-from typing import AnyStr, List, NamedTuple, Tuple
+from collections import deque
+from typing import AnyStr, List, NamedTuple, Deque, Tuple
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
@@ -106,13 +107,15 @@ def get_fuzzy_matched_characters(
         distance_measure=DISTANCE_MEASURE,
         threshold=threshold
     )
-    LOGGER.debug('distance_matches: %s (threshold=%s)', distance_matches, threshold)
+    haystack_matched = [False] * len(haystack_str)
+    remaining_paired_sequences: Deque[WrappedValue] = deque()
+    remaining_unpaired_sequences: Deque[WrappedValue] = deque()
+    # using distances matches to start with more likely pairings
     max_sort_key = (len(haystack_str), len(needles))
     distance_matches = sorted(distance_matches, key=lambda distance_match: (
         get_distance_match_sort_key(distance_match, max_sort_key)
     ))
-    haystack_matched = [False] * len(haystack_str)
-    remaining_needles = []
+    LOGGER.debug('distance_matches: %s (threshold=%s)', distance_matches, threshold)
     for distance_match in distance_matches:
         LOGGER.debug(
             'distance_match: %s (index: %s)',
@@ -120,57 +123,61 @@ def get_fuzzy_matched_characters(
             distance_match.value_1.index if distance_match.value_1 else None
         )
         if not distance_match.value_2:
+            # not interested in added text at the moment
             continue
         if not distance_match.value_1:
-            remaining_needles.append(distance_match.value_2)
+            remaining_unpaired_sequences.append(distance_match.value_2)
             continue
+        remaining_paired_sequences.append((distance_match.value_1, distance_match.value_2))
+        del distance_match
+    wrapped_haystack = WrappedValue(haystack_str, 0)
+    while remaining_paired_sequences or remaining_unpaired_sequences:
+        if remaining_paired_sequences:
+            # prioritise paired sequences, they will be faster to calculate
+            value_1, value_2 = remaining_paired_sequences.popleft()
+        else:
+            value_1 = wrapped_haystack
+            value_2 = remaining_unpaired_sequences.popleft()
+        LOGGER.debug(
+            'value_1: %r (index: %s), value_2: %r',
+            value_1, value_1.index, value_2
+        )
         sm = LocalSequenceMatcher(
-            str(distance_match.value_1),
-            str(distance_match.value_2),
+            str(value_1),
+            str(value_2),
             DEFAULT_SCORING
         )
         mb = sm.get_matching_blocks()
         matching_blocks = MatchingBlocks(mb).non_empty
         LOGGER.debug('matching_blocks: %s', matching_blocks)
+        if not matching_blocks:
+            # no match
+            if value_1 != wrapped_haystack:
+                # try on the whole sequence again
+                remaining_unpaired_sequences.append(value_2)
+            continue
         match_count = sum(size for _, _, size in mb)
-        match_ratio = match_count / len(distance_match.value_2.value)
+        match_ratio = match_count / len(value_2)
         LOGGER.debug(
             'match_count=%d, match_ratio=%s, mb=%s, needle=%r',
-            match_count, match_ratio, mb, distance_match.value_2.value
+            match_count, match_ratio, mb, value_2
         )
         # if match_ratio < threshold:
         #     remaining_needles.append(distance_match.value_2)
         #     continue
-        value_1_offset = distance_match.value_1.index
-        matching_blocks = matching_blocks.with_offset(value_1_offset, 0)
+        matching_blocks = matching_blocks.with_offset(value_1.index, 0)
         for ai, _, size in matching_blocks:
             haystack_matched[ai:ai + size] = [True] * size
         b_start_offset = matching_blocks.start_b
         if b_start_offset:
-            remaining_text = distance_match.value_2.value[:b_start_offset].strip()
+            remaining_text = str(value_2)[:b_start_offset].strip()
             LOGGER.debug('b_start_offset: %s (%r)', b_start_offset, remaining_text)
-            remaining_needles.append(remaining_text)
+            remaining_unpaired_sequences.append(remaining_text)
         b_end_offset = matching_blocks.end_b
-        if b_end_offset < len(distance_match.value_2):
-            remaining_text = distance_match.value_2.value[b_end_offset:].strip()
+        if b_end_offset < len(value_2):
+            remaining_text = str(value_2)[b_end_offset:].strip()
             LOGGER.debug('b_end_offset: %s (%r)', b_end_offset, remaining_text)
-            remaining_needles.append(remaining_text)
-
-    for needle in remaining_needles:
-        if not needle:
-            continue
-        sm = LocalSequenceMatcher(haystack_str, str(needle), DEFAULT_SCORING)
-        mb = sm.get_matching_blocks()
-        match_count = sum(size for _, _, size in mb)
-        match_ratio = match_count / len(needle)
-        LOGGER.debug(
-            'match_count=%d, match_ratio=%s, needle=%s',
-            match_count, match_ratio, needle
-        )
-        # if match_ratio < threshold:
-        #     continue
-        for ai, _, size in mb:
-            haystack_matched[ai:ai + size] = [True] * size
+            remaining_unpaired_sequences.append(remaining_text)
     return haystack_matched
 
 
