@@ -112,8 +112,10 @@ def get_fuzzy_matched_characters(
         threshold=threshold
     )
     # using separate mask (visible to alignmnt) and matched (used in the result)
+    # additional we use placeholder chars for already matched text
     haystack_mask = [not c.isspace() for c in haystack_str]
     haystack_matched = [False] * len(haystack_str)
+    haystack_view_chars = list(haystack_str)
     remaining_paired_sequences: Deque[WrappedValue] = deque()
     remaining_unpaired_sequences: Deque[WrappedValue] = deque()
     # using distances matches to start with more likely pairings
@@ -145,7 +147,7 @@ def get_fuzzy_matched_characters(
             value_1 = wrapped_haystack
             value_2 = remaining_unpaired_sequences.popleft()
         value_1_view = StringView(
-            str(value_1),
+            ''.join(haystack_view_chars[value_1.index:value_1.index + len(value_1)]),
             haystack_mask[value_1.index:value_1.index + len(value_1)]
         )
         value_2_view = StringView(str(value_2), [not c.isspace() for c in str(value_2)])
@@ -155,6 +157,9 @@ def get_fuzzy_matched_characters(
         )
         if not value_1_view or not value_2_view:
             LOGGER.debug('ignoring, either value 1 or value 2 are empty')
+            continue
+        if not str(value_1_view).strip() or not str(value_2_view).strip():
+            LOGGER.debug('ignoring, either value 1 or value 2 are blank')
             continue
         sm = LocalSequenceMatcher(
             str(value_1_view),
@@ -188,16 +193,31 @@ def get_fuzzy_matched_characters(
         for ai, _, size in matching_blocks:
             haystack_mask[ai:ai + size] = [False] * size
             haystack_matched[ai:ai + size] = [True] * size
+            haystack_view_chars[ai:ai + size] = [' '] * size
+        a_start_offset = matching_blocks.start_a
+        a_end_offset = matching_blocks.end_b
+        # also hide preceeding chars until the next space
+        while a_start_offset >= 1 and not haystack_str[a_start_offset - 1].isspace():
+            LOGGER.debug(
+                'also remove character at %d from view: %r',
+                a_start_offset - 1, haystack_str[a_start_offset - 1]
+            )
+            a_start_offset -= 1
+        # hide matched chars from being matched again
+        haystack_view_chars[a_start_offset:a_end_offset] = [' '] * (a_end_offset - a_start_offset)
+
         b_start_offset = matching_blocks.start_b
         if b_start_offset:
             remaining_text = str(value_2)[:b_start_offset].strip()
             LOGGER.debug('b_start_offset: %s (%r)', b_start_offset, remaining_text)
-            remaining_unpaired_sequences.append(remaining_text)
+            if len(remaining_text) > 1:
+                remaining_unpaired_sequences.append(remaining_text)
         b_end_offset = matching_blocks.end_b
         if b_end_offset < len(value_2):
             remaining_text = str(value_2)[b_end_offset:].strip()
             LOGGER.debug('b_end_offset: %s (%r)', b_end_offset, remaining_text)
-            remaining_unpaired_sequences.append(remaining_text)
+            if len(remaining_text) > 1:
+                remaining_unpaired_sequences.append(remaining_text)
     return haystack_matched
 
 

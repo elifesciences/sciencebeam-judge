@@ -115,6 +115,14 @@ class TestGetFuzzyMatchedTextFragments:
         assert get_fuzz_matched_deleted_texts(result) == ['a', '0']
         assert get_fuzz_matched_matching_texts(result) == ['b c d e f', '1 2 3 4 5']
 
+    def test_should_not_match_individual_characters_from_added_text(self):
+        result = get_fuzzy_matched_text_fragments(
+            expected=['abcdef 012345'],
+            actual=['bcdef 12345 xxxxxxxxx a 0']
+        )
+        assert get_fuzz_matched_deleted_texts(result) == ['a', '0']
+        assert get_fuzz_matched_matching_texts(result) == ['bcdef', '12345']
+
 
 class TestGetCharacterBasedMatchScoreForScore:
     def test_should_calculate_correct_true_positive_for_match(self):
