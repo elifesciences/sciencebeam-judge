@@ -1,6 +1,8 @@
 import logging
+from typing import List
 
 from sciencebeam_judge.evaluation.custom.deleted_text import (
+    FuzzyTextFragmentMatchResult,
     get_fuzzy_matched_text_fragments,
     get_character_based_match_score_for_score,
     DeletedTextEvaluation
@@ -10,6 +12,22 @@ LOGGER = logging.getLogger(__name__)
 
 TOKEN_1 = 'token1'
 TOKEN_2 = 'token2'
+
+
+def get_fuzz_matched_texts(result: List[FuzzyTextFragmentMatchResult]) -> List[str]:
+    return [r.value_1.text for r in result]
+
+
+def get_fuzz_matched_deleted_texts(
+    result: List[FuzzyTextFragmentMatchResult]
+) -> List[str]:
+    return [str(r.value_1) for r in result if r.value_2 is None]
+
+
+def get_fuzz_matched_matching_texts(
+    result: List[FuzzyTextFragmentMatchResult]
+) -> List[str]:
+    return [str(r.value_1) for r in result if r.value_2 is not None]
 
 
 class TestGetFuzzyMatchedTextFragments:
@@ -48,6 +66,38 @@ class TestGetFuzzyMatchedTextFragments:
         value_2_texts = [r.value_2.text for r in non_whitespace_results]
         assert '\n'.join(value_1_texts) == '\n'.join([TOKEN_1, TOKEN_1])
         assert '\n'.join(value_2_texts) == '\n'.join([TOKEN_1, TOKEN_1])
+
+    def test_should_find_deleted_character(self):
+        result = get_fuzzy_matched_text_fragments(
+            expected=['abcdef'],
+            actual=['bcdef']
+        )
+        assert get_fuzz_matched_deleted_texts(result) == ['a']
+        assert get_fuzz_matched_matching_texts(result) == ['bcdef']
+
+    def test_should_find_multiple_deleted_character(self):
+        result = get_fuzzy_matched_text_fragments(
+            expected=['abcdef012345'],
+            actual=['bcdef12345']
+        )
+        assert get_fuzz_matched_deleted_texts(result) == ['a', '0']
+        assert get_fuzz_matched_matching_texts(result) == ['bcdef', '12345']
+
+    def test_should_find_multiple_deleted_and_matching_character_around_long_added_text(self):
+        result = get_fuzzy_matched_text_fragments(
+            expected=['abcdef 012345'],
+            actual=['bcdef xxxxxxxxx 12345']
+        )
+        assert get_fuzz_matched_deleted_texts(result) == ['a', '0']
+        assert get_fuzz_matched_matching_texts(result) == ['bcdef ', '12345']
+
+    def test_should_matching_also_shorter_fragment(self):
+        result = get_fuzzy_matched_text_fragments(
+            expected=['abcdef 0123456789'],
+            actual=['bcdef xxxxxxxxx 123456789']
+        )
+        assert get_fuzz_matched_deleted_texts(result) == ['a', '0']
+        assert get_fuzz_matched_matching_texts(result) == ['bcdef ', '123456789']
 
 
 class TestGetCharacterBasedMatchScoreForScore:

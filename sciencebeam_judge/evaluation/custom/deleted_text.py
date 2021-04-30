@@ -1,9 +1,10 @@
 import logging
 import re
-from typing import AnyStr, List, NamedTuple,  Tuple
+from typing import AnyStr, List, NamedTuple, Tuple
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
+from sciencebeam_judge.utils.seq_matching import MatchingBlocks
 from sciencebeam_judge.utils.distance_matching import (
     WrappedValue,
     DistanceMatch,
@@ -105,7 +106,7 @@ def get_fuzzy_matched_characters(
         distance_measure=DISTANCE_MEASURE,
         threshold=threshold
     )
-    LOGGER.debug('distance_matches: %s', distance_matches)
+    LOGGER.debug('distance_matches: %s (threshold=%s)', distance_matches, threshold)
     max_sort_key = (len(haystack_str), len(needles))
     distance_matches = sorted(distance_matches, key=lambda distance_match: (
         get_distance_match_sort_key(distance_match, max_sort_key)
@@ -129,19 +130,32 @@ def get_fuzzy_matched_characters(
             DEFAULT_SCORING
         )
         mb = sm.get_matching_blocks()
+        matching_blocks = MatchingBlocks(mb).non_empty
+        LOGGER.debug('matching_blocks: %s', matching_blocks)
         match_count = sum(size for _, _, size in mb)
         match_ratio = match_count / len(distance_match.value_2.value)
         LOGGER.debug(
-            'match_count=%d, match_ratio=%s, needle=%s',
-            match_count, match_ratio, distance_match.value_2.value
+            'match_count=%d, match_ratio=%s, mb=%s, needle=%r',
+            match_count, match_ratio, mb, distance_match.value_2.value
         )
-        if match_ratio < threshold:
-            remaining_needles.append(distance_match.value_2)
-            continue
+        # if match_ratio < threshold:
+        #     remaining_needles.append(distance_match.value_2)
+        #     continue
         value_1_offset = distance_match.value_1.index
-        for ai, _, size in mb:
-            match_index = value_1_offset + ai
-            haystack_matched[match_index:match_index + size] = [True] * size
+        matching_blocks = matching_blocks.with_offset(value_1_offset, 0)
+        for ai, _, size in matching_blocks:
+            haystack_matched[ai:ai + size] = [True] * size
+        b_start_offset = matching_blocks.start_b
+        if b_start_offset:
+            remaining_text = distance_match.value_2.value[:b_start_offset].strip()
+            LOGGER.debug('b_start_offset: %s (%r)', b_start_offset, remaining_text)
+            remaining_needles.append(remaining_text)
+        b_end_offset = matching_blocks.end_b
+        if b_end_offset < len(distance_match.value_2):
+            remaining_text = distance_match.value_2.value[b_end_offset:].strip()
+            LOGGER.debug('b_end_offset: %s (%r)', b_end_offset, remaining_text)
+            remaining_needles.append(remaining_text)
+
     for needle in remaining_needles:
         if not needle:
             continue
@@ -153,8 +167,8 @@ def get_fuzzy_matched_characters(
             'match_count=%d, match_ratio=%s, needle=%s',
             match_count, match_ratio, needle
         )
-        if match_ratio < threshold:
-            continue
+        # if match_ratio < threshold:
+        #     continue
         for ai, _, size in mb:
             haystack_matched[ai:ai + size] = [True] * size
     return haystack_matched
