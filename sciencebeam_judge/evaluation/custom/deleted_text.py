@@ -111,6 +111,8 @@ def get_fuzzy_matched_characters(
         distance_measure=DISTANCE_MEASURE,
         threshold=threshold
     )
+    # using separate mask (visible to alignmnt) and matched (used in the result)
+    haystack_mask = [not c.isspace() for c in haystack_str]
     haystack_matched = [False] * len(haystack_str)
     remaining_paired_sequences: Deque[WrappedValue] = deque()
     remaining_unpaired_sequences: Deque[WrappedValue] = deque()
@@ -142,10 +144,11 @@ def get_fuzzy_matched_characters(
         else:
             value_1 = wrapped_haystack
             value_2 = remaining_unpaired_sequences.popleft()
-        value_1_view = StringView(str(value_1), [
-            not t for t in haystack_matched[value_1.index:value_1.index + len(value_1)]
-        ])
-        value_2_view = StringView(str(value_2), [True] * len(value_2))
+        value_1_view = StringView(
+            str(value_1),
+            haystack_mask[value_1.index:value_1.index + len(value_1)]
+        )
+        value_2_view = StringView(str(value_2), [not c.isspace() for c in str(value_2)])
         LOGGER.debug(
             'value_1: %r (index: %s), value_2: %r',
             value_1_view, value_1.index, value_2_view
@@ -183,6 +186,7 @@ def get_fuzzy_matched_characters(
         )
         matching_blocks = matching_blocks.with_offset(value_1.index, 0)
         for ai, _, size in matching_blocks:
+            haystack_mask[ai:ai + size] = [False] * size
             haystack_matched[ai:ai + size] = [True] * size
         b_start_offset = matching_blocks.start_b
         if b_start_offset:

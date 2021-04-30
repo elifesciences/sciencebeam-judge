@@ -21,13 +21,13 @@ def get_fuzz_matched_texts(result: List[FuzzyTextFragmentMatchResult]) -> List[s
 def get_fuzz_matched_deleted_texts(
     result: List[FuzzyTextFragmentMatchResult]
 ) -> List[str]:
-    return [str(r.value_1) for r in result if r.value_2 is None]
+    return [str(r.value_1).strip() for r in result if r.value_2 is None]
 
 
 def get_fuzz_matched_matching_texts(
     result: List[FuzzyTextFragmentMatchResult]
 ) -> List[str]:
-    return [str(r.value_1) for r in result if r.value_2 is not None]
+    return [str(r.value_1).strip() for r in result if r.value_2 is not None]
 
 
 class TestGetFuzzyMatchedTextFragments:
@@ -89,7 +89,7 @@ class TestGetFuzzyMatchedTextFragments:
             actual=['bcdef xxxxxxxxx 12345']
         )
         assert get_fuzz_matched_deleted_texts(result) == ['a', '0']
-        assert get_fuzz_matched_matching_texts(result) == ['bcdef ', '12345']
+        assert get_fuzz_matched_matching_texts(result) == ['bcdef', '12345']
 
     def test_should_matching_also_shorter_fragment(self):
         result = get_fuzzy_matched_text_fragments(
@@ -97,7 +97,23 @@ class TestGetFuzzyMatchedTextFragments:
             actual=['bcdef xxxxxxxxx 123456789']
         )
         assert get_fuzz_matched_deleted_texts(result) == ['a', '0']
-        assert get_fuzz_matched_matching_texts(result) == ['bcdef ', '123456789']
+        assert get_fuzz_matched_matching_texts(result) == ['bcdef', '123456789']
+
+    def test_should_ignore_extra_spaces_in_actual_text(self):
+        result = get_fuzzy_matched_text_fragments(
+            expected=['abcdef 012345'],
+            actual=['b c d e f  x x x x x x x x x  1 2 3 4 5']
+        )
+        assert get_fuzz_matched_deleted_texts(result) == ['a', '0']
+        assert get_fuzz_matched_matching_texts(result) == ['bcdef', '12345']
+
+    def test_should_ignore_extra_spaces_in_expected_text(self):
+        result = get_fuzzy_matched_text_fragments(
+            expected=['a b c d e f   0 1 2 3 4 5'],
+            actual=['bcdef xxxxxxxxx 12345']
+        )
+        assert get_fuzz_matched_deleted_texts(result) == ['a', '0']
+        assert get_fuzz_matched_matching_texts(result) == ['b c d e f', '1 2 3 4 5']
 
 
 class TestGetCharacterBasedMatchScoreForScore:
