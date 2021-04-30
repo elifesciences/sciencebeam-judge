@@ -5,7 +5,11 @@ from typing import AnyStr, List, NamedTuple, Deque, Tuple
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
-from sciencebeam_judge.utils.seq_matching import MatchingBlocks
+from sciencebeam_judge.utils.seq_matching import (
+    MatchingBlocks,
+    StringView,
+    translate_string_view_matching_blocks
+)
 from sciencebeam_judge.utils.distance_matching import (
     WrappedValue,
     DistanceMatch,
@@ -90,7 +94,7 @@ def get_fuzzy_matched_characters(
     haystack_str: str,
     needles: List[str],
     threshold: float
-):  # pylint: disable=too-many-locals
+):  # pylint: disable=too-many-locals, too-many-statements
     if not haystack_str:
         return []
     wrapped_haystack_values = [
@@ -138,13 +142,20 @@ def get_fuzzy_matched_characters(
         else:
             value_1 = wrapped_haystack
             value_2 = remaining_unpaired_sequences.popleft()
+        value_1_view = StringView(str(value_1), [
+            not t for t in haystack_matched[value_1.index:value_1.index + len(value_1)]
+        ])
+        value_2_view = StringView(str(value_2), [True] * len(value_2))
         LOGGER.debug(
             'value_1: %r (index: %s), value_2: %r',
-            value_1, value_1.index, value_2
+            value_1_view, value_1.index, value_2_view
         )
+        if not value_1_view or not value_2_view:
+            LOGGER.debug('ignoring, either value 1 or value 2 are empty')
+            continue
         sm = LocalSequenceMatcher(
-            str(value_1),
-            str(value_2),
+            str(value_1_view),
+            str(value_2_view),
             DEFAULT_SCORING
         )
         mb = sm.get_matching_blocks()
@@ -165,6 +176,11 @@ def get_fuzzy_matched_characters(
         # if match_ratio < threshold:
         #     remaining_needles.append(distance_match.value_2)
         #     continue
+        matching_blocks = translate_string_view_matching_blocks(
+            matching_blocks,
+            value_1_view,
+            value_2_view
+        )
         matching_blocks = matching_blocks.with_offset(value_1.index, 0)
         for ai, _, size in matching_blocks:
             haystack_matched[ai:ai + size] = [True] * size

@@ -1,7 +1,38 @@
-from typing import Optional, Tuple
+from typing import List, Optional, Tuple
 
 
-class MatchingBlocks(Tuple[int, int, int]):
+class StringView:
+    def __init__(self, original_string: str, in_view: List[bool]):
+        self.original_string = original_string
+        self.in_view = in_view
+        self.string_view = ''.join((
+            ch
+            for ch, is_included in zip(original_string, in_view)
+            if is_included
+        ))
+        self.original_index_at = [
+            index
+            for index, is_included in enumerate(in_view)
+            if is_included
+        ]
+
+    @staticmethod
+    def from_view_map(original_string: str, in_view: List[bool]) -> 'StringView':
+        return StringView(original_string, in_view)
+
+    def __len__(self):
+        return len(self.string_view)
+
+    def __str__(self):
+        return self.string_view
+
+    def __repr__(self):
+        return '%s(%r, %s)' % (
+            type(self).__name__, self.original_string, self.in_view
+        )
+
+
+class MatchingBlocks(Tuple[Tuple[int, int, int]]):
     def with_offset(self, a_offset: int, b_offset: int) -> 'MatchingBlocks':
         if not a_offset and not b_offset:
             return self
@@ -67,3 +98,23 @@ class MatchingBlocks(Tuple[int, int, int]):
     @property
     def end_b(self):
         return self.get_end_offset(1)
+
+
+def translate_string_view_matching_blocks(
+    matching_blocks: MatchingBlocks,
+    a_string_view: StringView,
+    b_string_view: StringView
+) -> MatchingBlocks:
+    return MatchingBlocks([
+        (
+            a_string_view.original_index_at[ai],
+            b_string_view.original_index_at[bi],
+            (
+                a_string_view.original_index_at[ai + size - 1]
+                - a_string_view.original_index_at[ai]
+                + 1
+            )
+        )
+        for ai, bi, size in matching_blocks
+        if size
+    ])
