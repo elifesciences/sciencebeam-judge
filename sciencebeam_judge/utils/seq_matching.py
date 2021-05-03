@@ -1,4 +1,12 @@
-from typing import List, Optional, Tuple
+import logging
+
+from typing import AnyStr, Callable, List, Optional, Tuple
+
+
+LOGGER = logging.getLogger(__name__)
+
+
+T_IsJunkFunction = Callable[[AnyStr, int], bool]
 
 
 class StringView:
@@ -15,10 +23,24 @@ class StringView:
             for index, is_included in enumerate(in_view)
             if is_included
         ]
+        self._view_index_at: Optional[List[int]] = None
 
     @staticmethod
     def from_view_map(original_string: str, in_view: List[bool]) -> 'StringView':
         return StringView(original_string, in_view)
+
+    @property
+    def view_index_at(self) -> List[int]:
+        if self._view_index_at is not None:
+            return self._view_index_at
+        view_index_at = []
+        index = 0
+        for is_included in self.in_view:
+            view_index_at.append(index)
+            if is_included:
+                index += 1
+        self._view_index_at = view_index_at
+        return view_index_at
 
     def __len__(self):
         return len(self.string_view)
@@ -32,7 +54,13 @@ class StringView:
         )
 
 
-class MatchingBlocks(Tuple[Tuple[int, int, int]]):
+class IndexRange(Tuple[int, int]):
+    @property
+    def size(self):
+        return self[1] - self[0]
+
+
+class MatchingBlocks(Tuple[Tuple[int, int, int], ...]):
     def with_offset(self, a_offset: int, b_offset: int) -> 'MatchingBlocks':
         if not a_offset and not b_offset:
             return self
@@ -99,6 +127,18 @@ class MatchingBlocks(Tuple[Tuple[int, int, int]]):
     def end_b(self):
         return self.get_end_offset(1)
 
+    @property
+    def start_end_a(self) -> IndexRange:
+        return IndexRange((self.start_a, self.end_a,))
+
+    @property
+    def start_end_b(self) -> IndexRange:
+        return IndexRange((self.start_b, self.end_b,))
+
+    @property
+    def match_count(self) -> int:
+        return sum(size for _, _, size in self)
+
 
 def translate_string_view_matching_blocks(
     matching_blocks: MatchingBlocks,
@@ -118,3 +158,74 @@ def translate_string_view_matching_blocks(
         for ai, bi, size in matching_blocks
         if size
     ])
+
+
+def space_is_junk(text: AnyStr, index: int) -> bool:
+    return text[index].isspace()
+
+
+class FuzzyMatchResult:
+    def __init__(
+        self,
+        a: AnyStr,
+        b: AnyStr,
+        matching_blocks: MatchingBlocks,
+        is_junk_fn: Optional[T_IsJunkFunction] = None
+    ):
+        self.a = a
+        self.b = b
+        self.matching_blocks = matching_blocks
+        self.non_empty_matching_blocks = matching_blocks.non_empty
+        self.is_junk_fn = is_junk_fn
+
+    def __repr__(self):
+        return (
+            '{}(matching_blocks={}, match_count={}, a_length={}, b_length={})'.format(
+                type(self).__name__,
+                self.matching_blocks,
+                self.matching_blocks.match_count,
+                len(self.a),
+                len(self.b)
+            )
+        )
+
+    def ratio_to(self, size: int) -> float:
+        if not size:
+            return 0.0
+        return self.matching_blocks.match_count / size
+
+
+def get_first_chunk_matching_blocks(
+    haystack: str,
+    needle: str,
+    matching_blocks: MatchingBlocks,
+    threshold: float,
+    is_junk_fn: T_IsJunkFunction,
+    match_score_fn: Callable[[FuzzyMatchResult], float]
+) -> MatchingBlocks:
+    matching_blocks = matching_blocks.non_empty
+    block_count = len(matching_blocks)
+    while block_count:
+        chunk_matching_blocks = MatchingBlocks(matching_blocks[:block_count])
+        chunk_needle_start = chunk_matching_blocks.start_b
+        chunk_needle_end = chunk_matching_blocks.end_b
+        LOGGER.debug(
+            'chunk_needle_start: %s, chunk_needle_end: %s',
+            chunk_needle_start, chunk_needle_end
+        )
+        if chunk_needle_end <= chunk_needle_start:
+            break
+        chunk_needle = needle[chunk_needle_start:chunk_needle_end]
+        fm = FuzzyMatchResult(
+            haystack,
+            chunk_needle,
+            chunk_matching_blocks,
+            is_junk_fn=is_junk_fn
+        )
+        ratio = match_score_fn(fm)
+        LOGGER.debug('temp fm: %s (ratio: %s)', fm, ratio)
+        if ratio >= threshold:
+            LOGGER.debug('chunk_needle: %s', chunk_needle)
+            return chunk_matching_blocks
+        block_count -= 1
+    return []

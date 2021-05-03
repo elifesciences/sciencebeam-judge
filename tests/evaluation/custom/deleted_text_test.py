@@ -21,7 +21,9 @@ def get_fuzz_matched_texts(result: List[FuzzyTextFragmentMatchResult]) -> List[s
 def get_fuzz_matched_deleted_texts(
     result: List[FuzzyTextFragmentMatchResult]
 ) -> List[str]:
-    return [str(r.value_1).strip() for r in result if r.value_2 is None]
+    return [
+        str(r.value_1).strip() for r in result if r.value_2 is None and str(r.value_1).strip()
+    ]
 
 
 def get_fuzz_matched_matching_texts(
@@ -30,9 +32,15 @@ def get_fuzz_matched_matching_texts(
     return [str(r.value_1).strip() for r in result if r.value_2 is not None]
 
 
+def get_fuzzy_matched_text_fragments_and_log_result(**kwargs):
+    result = get_fuzzy_matched_text_fragments(**kwargs)
+    LOGGER.debug('result: %s', result)
+    return result
+
+
 class TestGetFuzzyMatchedTextFragments:
     def test_should_return_complete_match(self):
-        result = get_fuzzy_matched_text_fragments(
+        result = get_fuzzy_matched_text_fragments_and_log_result(
             expected=['value1'],
             actual=['value1']
         )
@@ -42,7 +50,7 @@ class TestGetFuzzyMatchedTextFragments:
         assert result[0].score == 1.0
 
     def test_should_return_mismatch(self):
-        result = get_fuzzy_matched_text_fragments(
+        result = get_fuzzy_matched_text_fragments_and_log_result(
             expected=['abc'],
             actual=['123']
         )
@@ -52,11 +60,10 @@ class TestGetFuzzyMatchedTextFragments:
         assert result[0].score == 0.0
 
     def test_should_return_allow_exact_same_text_multiple_times(self):
-        result = get_fuzzy_matched_text_fragments(
+        result = get_fuzzy_matched_text_fragments_and_log_result(
             expected=[TOKEN_1, TOKEN_1],
             actual=[TOKEN_1, TOKEN_1]
         )
-        LOGGER.debug('result: %s', result)
         non_whitespace_results = [
             fuzzy_matched_result
             for fuzzy_matched_result in result
@@ -68,7 +75,7 @@ class TestGetFuzzyMatchedTextFragments:
         assert '\n'.join(value_2_texts) == '\n'.join([TOKEN_1, TOKEN_1])
 
     def test_should_find_deleted_character(self):
-        result = get_fuzzy_matched_text_fragments(
+        result = get_fuzzy_matched_text_fragments_and_log_result(
             expected=['abcdef'],
             actual=['bcdef']
         )
@@ -76,7 +83,7 @@ class TestGetFuzzyMatchedTextFragments:
         assert get_fuzz_matched_matching_texts(result) == ['bcdef']
 
     def test_should_find_multiple_deleted_character(self):
-        result = get_fuzzy_matched_text_fragments(
+        result = get_fuzzy_matched_text_fragments_and_log_result(
             expected=['abcdef012345'],
             actual=['bcdef12345']
         )
@@ -84,7 +91,7 @@ class TestGetFuzzyMatchedTextFragments:
         assert get_fuzz_matched_matching_texts(result) == ['bcdef', '12345']
 
     def test_should_find_multiple_deleted_and_matching_character_around_long_added_text(self):
-        result = get_fuzzy_matched_text_fragments(
+        result = get_fuzzy_matched_text_fragments_and_log_result(
             expected=['abcdef 012345'],
             actual=['bcdef xxxxxxxxx 12345']
         )
@@ -92,7 +99,7 @@ class TestGetFuzzyMatchedTextFragments:
         assert get_fuzz_matched_matching_texts(result) == ['bcdef', '12345']
 
     def test_should_matching_also_shorter_fragment(self):
-        result = get_fuzzy_matched_text_fragments(
+        result = get_fuzzy_matched_text_fragments_and_log_result(
             expected=['abcdef 0123456789'],
             actual=['bcdef xxxxxxxxx 123456789']
         )
@@ -100,7 +107,7 @@ class TestGetFuzzyMatchedTextFragments:
         assert get_fuzz_matched_matching_texts(result) == ['bcdef', '123456789']
 
     def test_should_ignore_extra_spaces_in_actual_text(self):
-        result = get_fuzzy_matched_text_fragments(
+        result = get_fuzzy_matched_text_fragments_and_log_result(
             expected=['abcdef 012345'],
             actual=['b c d e f  x x x x x x x x x  1 2 3 4 5']
         )
@@ -108,7 +115,7 @@ class TestGetFuzzyMatchedTextFragments:
         assert get_fuzz_matched_matching_texts(result) == ['bcdef', '12345']
 
     def test_should_ignore_extra_spaces_in_expected_text(self):
-        result = get_fuzzy_matched_text_fragments(
+        result = get_fuzzy_matched_text_fragments_and_log_result(
             expected=['a b c d e f   0 1 2 3 4 5'],
             actual=['bcdef xxxxxxxxx 12345']
         )
@@ -116,12 +123,28 @@ class TestGetFuzzyMatchedTextFragments:
         assert get_fuzz_matched_matching_texts(result) == ['b c d e f', '1 2 3 4 5']
 
     def test_should_not_match_individual_characters_from_added_text(self):
-        result = get_fuzzy_matched_text_fragments(
+        result = get_fuzzy_matched_text_fragments_and_log_result(
             expected=['abcdef 012345'],
             actual=['bcdef 12345 xxxxxxxxx a 0']
         )
         assert get_fuzz_matched_deleted_texts(result) == ['a', '0']
         assert get_fuzz_matched_matching_texts(result) == ['bcdef', '12345']
+
+    def test_should_not_match_individual_characters_between_matched_region(self):
+        result = get_fuzzy_matched_text_fragments_and_log_result(
+            expected=['abcdef 12345'],
+            actual=['abcdf 12345 e']
+        )
+        assert get_fuzz_matched_deleted_texts(result) == ['e']
+        assert get_fuzz_matched_matching_texts(result) == ['abcd', 'f 12345']
+
+    def test_should_not_match_individual_characters_from_distant_regions(self):
+        result = get_fuzzy_matched_text_fragments_and_log_result(
+            expected=['a bcdef 01234 5'],
+            actual=['bcdef 01234 xxxxxxxx a5']
+        )
+        assert get_fuzz_matched_deleted_texts(result) == ['a', '5']
+        assert get_fuzz_matched_matching_texts(result) == ['bcdef 01234']
 
 
 class TestGetCharacterBasedMatchScoreForScore:

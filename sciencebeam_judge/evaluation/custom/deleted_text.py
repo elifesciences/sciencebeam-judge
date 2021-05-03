@@ -1,13 +1,18 @@
 import logging
 import re
 from collections import deque
+from functools import partial
 from typing import AnyStr, List, NamedTuple, Deque, Tuple
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
 from sciencebeam_judge.utils.seq_matching import (
+    IndexRange,
     MatchingBlocks,
     StringView,
+    FuzzyMatchResult,
+    space_is_junk,
+    get_first_chunk_matching_blocks,
     translate_string_view_matching_blocks
 )
 from sciencebeam_judge.utils.distance_matching import (
@@ -90,6 +95,50 @@ def get_distance_match_sort_key(
     )
 
 
+def expand_start_index_to_token(text: str, index: int) -> int:
+    while index >= 1 and not text[index - 1].isspace():
+        index -= 1
+    return index
+
+
+def expand_end_index_to_token(text: str, index: int) -> int:
+    while index < len(text) and not text[index - 1].isspace():
+        index += 1
+    return index
+
+
+def expand_index_range_to_token(text: str, index_range: IndexRange) -> IndexRange:
+    return IndexRange((
+        expand_start_index_to_token(text, index_range[0]),
+        expand_end_index_to_token(text, index_range[1]),
+    ))
+
+
+def get_match_score(
+    fm: FuzzyMatchResult,
+    value_2_view: StringView
+) -> float:
+    b_index_range = fm.matching_blocks.start_end_b
+    translated_b_index_range = (
+        value_2_view.original_index_at[b_index_range[0]],
+        value_2_view.original_index_at[b_index_range[1] - 1] + 1
+    )
+    expanded_translated_b_index_range = expand_index_range_to_token(
+        value_2_view.original_string,
+        translated_b_index_range
+    )
+    expanded_view_b_index_range = IndexRange((
+        value_2_view.view_index_at[expanded_translated_b_index_range[0]],
+        value_2_view.view_index_at[expanded_translated_b_index_range[1] - 1] + 1
+    ))
+    LOGGER.debug(
+        'b_index_range: %s -> %s -> %s -> %s',
+        b_index_range, translated_b_index_range, expanded_translated_b_index_range,
+        expanded_view_b_index_range
+    )
+    return fm.ratio_to(expanded_view_b_index_range.size)
+
+
 def get_fuzzy_matched_characters(
     haystack_str: str,
     needles: List[str],
@@ -166,24 +215,27 @@ def get_fuzzy_matched_characters(
             str(value_2_view),
             DEFAULT_SCORING
         )
-        mb = sm.get_matching_blocks()
-        matching_blocks = MatchingBlocks(mb).non_empty
-        LOGGER.debug('matching_blocks: %s', matching_blocks)
+        original_matching_blocks = MatchingBlocks(sm.get_matching_blocks()).non_empty
+        matching_blocks = get_first_chunk_matching_blocks(
+            str(value_1_view),
+            str(value_2_view),
+            original_matching_blocks,
+            threshold=0.6,
+            is_junk_fn=space_is_junk,
+            match_score_fn=partial(
+                get_match_score,
+                value_2_view=value_2_view
+            )
+        )
+        LOGGER.debug(
+            'matching_blocks: %s (original: %s)', matching_blocks, original_matching_blocks
+        )
         if not matching_blocks:
             # no match
             if value_1 != wrapped_haystack:
                 # try on the whole sequence again
                 remaining_unpaired_sequences.append(value_2)
             continue
-        match_count = sum(size for _, _, size in mb)
-        match_ratio = match_count / len(value_2)
-        LOGGER.debug(
-            'match_count=%d, match_ratio=%s, mb=%s, needle=%r',
-            match_count, match_ratio, mb, value_2
-        )
-        # if match_ratio < threshold:
-        #     remaining_needles.append(distance_match.value_2)
-        #     continue
         matching_blocks = translate_string_view_matching_blocks(
             matching_blocks,
             value_1_view,
@@ -191,20 +243,16 @@ def get_fuzzy_matched_characters(
         )
         matching_blocks = matching_blocks.with_offset(value_1.index, 0)
         for ai, _, size in matching_blocks:
-            haystack_mask[ai:ai + size] = [False] * size
             haystack_matched[ai:ai + size] = [True] * size
             haystack_view_chars[ai:ai + size] = [' '] * size
-        a_start_offset = matching_blocks.start_a
+        a_start_offset = expand_start_index_to_token(
+            haystack_str,
+            matching_blocks.start_a
+        )
         a_end_offset = matching_blocks.end_b
-        # also hide preceeding chars until the next space
-        while a_start_offset >= 1 and not haystack_str[a_start_offset - 1].isspace():
-            LOGGER.debug(
-                'also remove character at %d from view: %r',
-                a_start_offset - 1, haystack_str[a_start_offset - 1]
-            )
-            a_start_offset -= 1
         # hide matched chars from being matched again
         haystack_view_chars[a_start_offset:a_end_offset] = [' '] * (a_end_offset - a_start_offset)
+        haystack_mask[a_start_offset:a_end_offset] = [False] * (a_end_offset - a_start_offset)
 
         b_start_offset = matching_blocks.start_b
         if b_start_offset:
