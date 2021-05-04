@@ -88,12 +88,20 @@ class FuzzyWrappedValue(WrappedValue):
 
 class TextFragment(NamedTuple):
     text: str
+    index: int = 0
 
     def __str__(self):
         return self.text
 
     def __len__(self):
         return len(self.text)
+
+    def __getitem__(self, key) -> 'TextFragment':
+        assert isinstance(key, slice)
+        return TextFragment(
+            self.text[key],
+            index=self.index + key.start
+        )
 
 
 class FuzzyTextFragmentMatchResult(NamedTuple):
@@ -360,10 +368,11 @@ def get_fuzzy_matched_text_fragments(
     match_start_index = 0
     mismatch_start_index = 0
     result = []
+    haystack_fragment = TextFragment(text=haystack_str)
     for index, is_match in enumerate(haystack_matched):
         if is_match:
             if mismatch_start_index < index:
-                text_fragment = TextFragment(text=haystack_str[mismatch_start_index:index])
+                text_fragment = haystack_fragment[mismatch_start_index:index]
                 result.append(FuzzyTextFragmentMatchResult(
                     value_1=text_fragment,
                     value_2=None,
@@ -372,7 +381,7 @@ def get_fuzzy_matched_text_fragments(
             mismatch_start_index = index + 1
             continue
         if match_start_index < index:
-            text_fragment = TextFragment(text=haystack_str[match_start_index:index])
+            text_fragment = haystack_fragment[match_start_index:index]
             result.append(FuzzyTextFragmentMatchResult(
                 value_1=text_fragment,
                 value_2=text_fragment,
@@ -380,14 +389,14 @@ def get_fuzzy_matched_text_fragments(
             ))
         match_start_index = index + 1
     if mismatch_start_index < len(haystack_str):
-        text_fragment = TextFragment(text=haystack_str[mismatch_start_index:])
+        text_fragment = haystack_fragment[mismatch_start_index:]
         result.append(FuzzyTextFragmentMatchResult(
             value_1=text_fragment,
             value_2=None,
             score=0.0
         ))
     if match_start_index < len(haystack_str):
-        text_fragment = TextFragment(text=haystack_str[match_start_index:])
+        text_fragment = haystack_fragment[match_start_index:]
         result.append(FuzzyTextFragmentMatchResult(
             value_1=text_fragment,
             value_2=text_fragment,
