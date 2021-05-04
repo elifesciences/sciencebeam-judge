@@ -241,6 +241,10 @@ class TestDeletedTextEvaluation:
         )
         assert match_score.score == 0.5
         assert match_score.false_negative == len(TOKEN_2)
+        assert (
+            str(match_score.sub_scores[0].expected_context)
+            == '\n'.join([TOKEN_1, TOKEN_2])
+        )
 
     def test_should_return_ignore_extra_values(self):
         match_score = DeletedTextEvaluation().score(

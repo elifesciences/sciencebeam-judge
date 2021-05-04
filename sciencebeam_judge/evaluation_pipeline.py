@@ -215,6 +215,7 @@ class OutputColumns:
     TN = 'tn'
     EXPECTED = 'expected'
     ACTUAL = 'actual'
+    EXPECTED_CONTEXT = 'expected_context'
 
 
 DEFAULT_OUTPUT_COLUMNS = [
@@ -228,7 +229,8 @@ DEFAULT_OUTPUT_COLUMNS = [
     OutputColumns.FN,
     OutputColumns.TN,
     OutputColumns.EXPECTED,
-    OutputColumns.ACTUAL
+    OutputColumns.ACTUAL,
+    OutputColumns.EXPECTED_CONTEXT
 ]
 
 
@@ -288,12 +290,13 @@ def flatten_evaluation_results(evaluation_results, field_names=None):
                 C.FIELD_NAME: field_name,
                 C.EVALUATION_METHOD: document_score[DocumentScoringProps.SCORING_METHOD],
                 C.SCORING_TYPE: document_score[DocumentScoringProps.SCORING_TYPE],
-                C.TP: match_score['true_positive'],
-                C.FP: match_score['false_positive'],
-                C.FN: match_score['false_negative'],
-                C.TN: match_score['true_negative'],
-                C.EXPECTED: match_score['expected'],
-                C.ACTUAL: match_score['actual']
+                C.TP: match_score[MatchScoringProps.TRUE_POSITIVE],
+                C.FP: match_score[MatchScoringProps.FALSE_POSITIVE],
+                C.FN: match_score[MatchScoringProps.FALSE_NEGATIVE],
+                C.TN: match_score[MatchScoringProps.TRUE_NEGATIVE],
+                C.EXPECTED: match_score[MatchScoringProps.EXPECTED],
+                C.ACTUAL: match_score[MatchScoringProps.ACTUAL],
+                C.EXPECTED_CONTEXT: match_score.get(MatchScoringProps.EXPECTED_CONTEXT)
             })
     return flat_result
 

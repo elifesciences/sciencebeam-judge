@@ -17,6 +17,7 @@ class MatchScoringProps:
     BINARY_ACTUAL = 'binary_actual'
     EXPECTED = 'expected'
     ACTUAL = 'actual'
+    EXPECTED_CONTEXT = 'expected_context'
     SUB_SCORES = 'sub_scores'
 
 
@@ -33,6 +34,7 @@ class MatchScore:  # pylint: disable=too-many-instance-attributes
     binary_actual: int = 0
     expected: Optional[T_Value] = None
     actual: Optional[T_Value] = None
+    expected_context: Optional[T_Value] = None
     sub_scores: Optional[List['MatchScore']] = None
 
     def to_dict(self) -> Dict[str, Any]:

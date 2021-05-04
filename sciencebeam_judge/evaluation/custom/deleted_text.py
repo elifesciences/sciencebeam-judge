@@ -88,7 +88,17 @@ class FuzzyWrappedValue(WrappedValue):
 
 class TextFragment(NamedTuple):
     text: str
-    index: int = 0
+    index: int
+    original_text: str
+
+    @staticmethod
+    def create(text: str, original_text: Optional[str] = None, index: int = 0) -> 'TextFragment':
+        # Note: using "create", due to not being able to override
+        #   __new__ or __init__ of NamedTuple
+        if original_text is None:
+            original_text = text
+            assert index == 0
+        return TextFragment(text=text, original_text=original_text, index=index)
 
     def __str__(self):
         return self.text
@@ -99,8 +109,18 @@ class TextFragment(NamedTuple):
     def __getitem__(self, key) -> 'TextFragment':
         assert isinstance(key, slice)
         return TextFragment(
-            self.text[key],
+            text=self.text[key],
+            original_text=self.original_text,
             index=self.index + key.start
+        )
+
+    def with_context(self, context_chars: int) -> 'TextFragment':
+        start = max(0, self.index - context_chars)
+        end = min(len(self.original_text), self.index + len(self) + context_chars)
+        return TextFragment(
+            text=self.original_text[start:end],
+            original_text=self.original_text,
+            index=start
         )
 
 
@@ -368,7 +388,7 @@ def get_fuzzy_matched_text_fragments(
     match_start_index = 0
     mismatch_start_index = 0
     result = []
-    haystack_fragment = TextFragment(text=haystack_str)
+    haystack_fragment = TextFragment.create(text=haystack_str)
     for index, is_match in enumerate(haystack_matched):
         if is_match:
             if mismatch_start_index < index:
@@ -417,12 +437,19 @@ def get_character_based_match_score_for_score(
 ) -> MatchScore:
     expected_str = str(expected) if expected else ''
     actual_str = str(actual) if actual else ''
+    expected_context = (
+        expected.with_context(20)
+        if isinstance(expected, TextFragment)
+        else None
+    )
+    LOGGER.debug('expected: %r, expected_context: %r', expected, expected_context)
     match_score = get_match_score_for_score(
         score=score,
         expected=expected_str,
         actual=actual_str,
         include_values=include_values
     )
+    match_score.expected_context = expected_context
     expected_without_whitespace_str = strip_whitespace(expected_str)
     expected_without_whitespace_len = len(expected_without_whitespace_str)
     actual_without_whitespace_str = strip_whitespace(actual_str)
