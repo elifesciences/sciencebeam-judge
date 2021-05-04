@@ -27,7 +27,7 @@ The default configuration contains mapping for JATS and TEI.
 The [evaluation.conf](evaluation.conf) allows further evaluation details to be configured.
 For example the *scoring type* defines, how a field should be evaluated as (e.g. `string` or `list`).
 
-An additional [evaluation.yml](evaluation.yml) has the same function but already is more structured configuration.
+An additional [evaluation.yml](evaluation.yml) has the same function as [evaluation.conf](evaluation.conf), but allows for more structured configuration.
 (The content of `evaluation.conf` will likely migrate to `evaluation.yml` in the future)
 
 ## File Lists
