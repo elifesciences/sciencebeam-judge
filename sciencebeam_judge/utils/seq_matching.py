@@ -1,6 +1,6 @@
 import logging
 
-from typing import AnyStr, Callable, List, Optional, Tuple
+from typing import AnyStr, Callable, Iterable, List, Optional, Tuple
 
 
 LOGGER = logging.getLogger(__name__)
@@ -49,8 +49,8 @@ class StringView:
         return self.string_view
 
     def __repr__(self):
-        return '%s(%r, %s)' % (
-            type(self).__name__, self.original_string, self.in_view
+        return '%s(original=%r, in_view=%s, view=%r)' % (
+            type(self).__name__, self.original_string, self.in_view, self.string_view
         )
 
 
@@ -140,23 +140,67 @@ class MatchingBlocks(Tuple[Tuple[int, int, int], ...]):
         return sum(size for _, _, size in self)
 
 
+class MatchingBlocksWithMatchedText:
+    def __init__(self, matching_blocks: Tuple[int, int, int], text: str):
+        self.matching_blocks = matching_blocks
+        self.text = text
+
+    def __iter__(self) -> Iterable[Tuple[int, int, int, str]]:
+        return (
+            (a_index, b_index, size, self.text[a_index:a_index + size])
+            for a_index, b_index, size in self.matching_blocks
+        )
+
+    def __repr__(self):
+        return str(tuple(self))
+
+
+def iter_translate_string_view_matching_block(
+    a_index: int,
+    b_index: int,
+    size: int,
+    a_string_view: StringView,
+    b_string_view: StringView
+) -> Iterable[Tuple[int, int, int]]:
+    if not size:
+        return
+    remaining_view_size = size
+    view_block_size = remaining_view_size
+    while view_block_size:
+        a_original_index = a_string_view.original_index_at[a_index]
+        b_original_index = b_string_view.original_index_at[b_index]
+        a_original_size = (
+            a_string_view.original_index_at[a_index + view_block_size - 1]
+            - a_original_index
+            + 1
+        )
+        b_original_size = (
+            b_string_view.original_index_at[b_index + view_block_size - 1]
+            - b_original_index
+            + 1
+        )
+        if a_original_size != b_original_size:
+            LOGGER.debug('a_size: %d, b_size: %d', a_original_size, b_original_size)
+            view_block_size -= 1
+            continue
+        yield a_original_index, b_original_index, a_original_size
+        a_index += view_block_size
+        b_index += view_block_size
+        remaining_view_size -= view_block_size
+        view_block_size = remaining_view_size
+
+
 def translate_string_view_matching_blocks(
     matching_blocks: MatchingBlocks,
     a_string_view: StringView,
     b_string_view: StringView
 ) -> MatchingBlocks:
     return MatchingBlocks([
-        (
-            a_string_view.original_index_at[ai],
-            b_string_view.original_index_at[bi],
-            (
-                a_string_view.original_index_at[ai + size - 1]
-                - a_string_view.original_index_at[ai]
-                + 1
-            )
-        )
+        (a_view_index, b_view_index, view_size)
         for ai, bi, size in matching_blocks
-        if size
+        for a_view_index, b_view_index, view_size in iter_translate_string_view_matching_block(
+            ai, bi, size, a_string_view=a_string_view, b_string_view=b_string_view
+        )
     ])
 
 

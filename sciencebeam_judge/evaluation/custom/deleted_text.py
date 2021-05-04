@@ -2,13 +2,14 @@ import logging
 import re
 from collections import deque
 from functools import partial
-from typing import AnyStr, List, NamedTuple, Deque, Tuple
+from typing import AnyStr, Deque, List, NamedTuple, Optional, Tuple,  T
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
 from sciencebeam_judge.utils.seq_matching import (
     IndexRange,
     MatchingBlocks,
+    MatchingBlocksWithMatchedText,
     StringView,
     FuzzyMatchResult,
     space_is_junk,
@@ -43,6 +44,11 @@ DEFAULT_SCORING = SimpleScoring(
     mismatch_score=-1,
     gap_score=-2
 )
+
+
+# the number of gaps to add after unmatched characters
+# this is to make the alignment aware of the gap after masking
+UNMATCHED_GAP_PADDING = 2
 
 
 def combine_partial_match_scores(
@@ -139,6 +145,28 @@ def get_match_score(
     return fm.ratio_to(expanded_view_b_index_range.size)
 
 
+def fill_list_between(list_: List[T], start: int, end: int, value: T):
+    if end > start:
+        list_[start:end] = [value] * (end - start)
+
+
+def mark_spaces_between_matches_as_matched(
+    matched_list: List[bool],
+    text: str
+):
+    matched_space_index: Optional[int] = None
+    was_matched: bool = False
+    for index, (is_match, c) in enumerate(zip(matched_list, text)):
+        if c.isspace():
+            if was_matched and matched_space_index is None:
+                matched_space_index = index
+            continue
+        if is_match and matched_space_index is not None:
+            fill_list_between(matched_list, matched_space_index, index, True)
+        was_matched = is_match
+        matched_space_index = None
+
+
 def get_fuzzy_matched_characters(
     haystack_str: str,
     needles: List[str],
@@ -228,7 +256,9 @@ def get_fuzzy_matched_characters(
             )
         )
         LOGGER.debug(
-            'matching_blocks: %s (original: %s)', matching_blocks, original_matching_blocks
+            'matching_blocks: %s (original: %s)',
+            MatchingBlocksWithMatchedText(matching_blocks, str(value_1_view)),
+            MatchingBlocksWithMatchedText(original_matching_blocks, str(value_1_view))
         )
         if not matching_blocks:
             # no match
@@ -242,17 +272,26 @@ def get_fuzzy_matched_characters(
             value_2_view
         )
         matching_blocks = matching_blocks.with_offset(value_1.index, 0)
+        LOGGER.debug(
+            'translated matching_blocks: %s',
+            MatchingBlocksWithMatchedText(matching_blocks, str(value_1))
+        )
         for ai, _, size in matching_blocks:
             haystack_matched[ai:ai + size] = [True] * size
-            haystack_view_chars[ai:ai + size] = [' '] * size
         a_start_offset = expand_start_index_to_token(
             haystack_str,
             matching_blocks.start_a
         )
-        a_end_offset = matching_blocks.end_b
+        a_end_offset = matching_blocks.end_a
         # hide matched chars from being matched again
-        haystack_view_chars[a_start_offset:a_end_offset] = [' '] * (a_end_offset - a_start_offset)
-        haystack_mask[a_start_offset:a_end_offset] = [False] * (a_end_offset - a_start_offset)
+        fill_list_between(haystack_view_chars, a_start_offset, a_end_offset, ' ')
+        # adding additional padding to take into account the distance between the characters
+        fill_list_between(
+            haystack_mask,
+            a_start_offset + UNMATCHED_GAP_PADDING,
+            a_end_offset - UNMATCHED_GAP_PADDING,
+            False
+        )
 
         b_start_offset = matching_blocks.start_b
         if b_start_offset:
@@ -266,6 +305,10 @@ def get_fuzzy_matched_characters(
             LOGGER.debug('b_end_offset: %s (%r)', b_end_offset, remaining_text)
             if len(remaining_text) > 1:
                 remaining_unpaired_sequences.append(remaining_text)
+    mark_spaces_between_matches_as_matched(
+        haystack_matched,
+        haystack_str
+    )
     return haystack_matched
 
 

@@ -122,6 +122,14 @@ class TestGetFuzzyMatchedTextFragments:
         assert get_fuzz_matched_deleted_texts(result) == ['a', '0']
         assert get_fuzz_matched_matching_texts(result) == ['b c d e f', '1 2 3 4 5']
 
+    def test_should_ignore_extra_spaces_in_expected_text_and_deleted_text(self):
+        result = get_fuzzy_matched_text_fragments_and_log_result(
+            expected=['a b c d e f   x x x x x x   0 1 2 3 4 5'],
+            actual=['bcdef 12345']
+        )
+        assert get_fuzz_matched_deleted_texts(result) == ['a', 'x x x x x x   0']
+        assert get_fuzz_matched_matching_texts(result) == ['b c d e f', '1 2 3 4 5']
+
     def test_should_not_match_individual_characters_from_added_text(self):
         result = get_fuzzy_matched_text_fragments_and_log_result(
             expected=['abcdef 012345'],
