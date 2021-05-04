@@ -1,4 +1,4 @@
-from sciencebeam_judge.utils.seq_matching import (
+from sciencebeam_judge.utils.fuzzy import (
     StringView,
     translate_string_view_matching_blocks
 )

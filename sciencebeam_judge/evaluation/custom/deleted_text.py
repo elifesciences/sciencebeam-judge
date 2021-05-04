@@ -6,7 +6,7 @@ from typing import AnyStr, Deque, List, NamedTuple, Optional, Tuple,  T
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
-from sciencebeam_judge.utils.seq_matching import (
+from sciencebeam_judge.utils.fuzzy import (
     IndexRange,
     MatchingBlocks,
     MatchingBlocksWithMatchedText,
