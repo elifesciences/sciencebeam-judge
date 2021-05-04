@@ -5,7 +5,7 @@ import os
 import logging
 from io import BytesIO
 from functools import partial
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 import apache_beam as beam
 from apache_beam.io.textio import WriteToText
@@ -49,7 +49,11 @@ from sciencebeam_judge.parsing.xml import (
 )
 
 from sciencebeam_judge.evaluation_config import (
+    DEFAULT_EVALUATION_YAML_FILENAME,
+    EvaluationConfig,
     parse_evaluation_config,
+    parse_evaluation_yaml_config,
+    get_evaluation_config_object,
     parse_scoring_type_overrides,
     get_scoring_types_by_field_map_from_config
 )
@@ -74,7 +78,7 @@ from .evaluation.score_aggregation import (
 )
 
 from .evaluation.document_scoring import (
-    iter_score_document_fields,
+    iter_score_document_fields_using_config,
     DocumentScoringProps
 )
 
@@ -87,6 +91,9 @@ DEFAULT_SCORE_MEASURES = [
     ScoringMethodNames.EXACT,
     ScoringMethodNames.LEVENSHTEIN
 ]
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 def get_logger():
@@ -117,30 +124,65 @@ def ReadFilePairs(x):
     })
 
 
+def get_all_source_field_names(
+    evaluation_config: EvaluationConfig,
+    field_names: Optional[List[str]]
+) -> Optional[str]:
+    if not field_names:
+        LOGGER.debug('get_all_source_field_names: no field names')
+        return field_names
+    if not evaluation_config.custom or not evaluation_config.custom.fields:
+        LOGGER.debug('get_all_source_field_names: no custom evaluation config or fields')
+        return field_names
+    field_names = field_names.copy()
+    for custom_evaluation_field in evaluation_config.custom.fields:
+        if custom_evaluation_field.name not in field_names:
+            LOGGER.debug(
+                'get_all_source_field_names: custom field not selected: %r (selected: %r)',
+                custom_evaluation_field.name, field_names
+            )
+            continue
+        source_field_names = (
+            custom_evaluation_field.expected.field_names
+            + custom_evaluation_field.actual.field_names
+        )
+        for source_field_name in source_field_names:
+            if source_field_name in field_names:
+                continue
+            field_names.append(source_field_name)
+    return field_names
+
+
 def evaluate_file_pairs(
         target_filename, target_content,
         prediction_filename, prediction_content,
         xml_mapping, field_names,
+        evaluation_config: EvaluationConfig,
         **kwargs):
 
     try:
         get_logger().info(
             'processing: target: %s, prediction: %s', target_filename, prediction_filename
         )
+        source_field_names = get_all_source_field_names(
+            evaluation_config=evaluation_config,
+            field_names=field_names
+        )
         target_xml = parse_xml(
             BytesIO(target_content),
             xml_mapping,
-            fields=field_names,
+            fields=source_field_names,
             filename=target_filename
         )
         prediction_xml = parse_xml(
             BytesIO(prediction_content),
             xml_mapping,
-            fields=field_names,
+            fields=source_field_names,
             filename=prediction_filename
         )
-        return list(iter_score_document_fields(
+        return list(iter_score_document_fields_using_config(
             target_xml, prediction_xml, field_names=field_names, include_values=True,
+            evaluation_config=evaluation_config,
             **kwargs
         ))
     except Exception as e:
@@ -173,6 +215,8 @@ class OutputColumns:
     TN = 'tn'
     EXPECTED = 'expected'
     ACTUAL = 'actual'
+    EXPECTED_CONTEXT = 'expected_context'
+    ACTUAL_CONTEXT = 'actual_context'
 
 
 DEFAULT_OUTPUT_COLUMNS = [
@@ -186,7 +230,9 @@ DEFAULT_OUTPUT_COLUMNS = [
     OutputColumns.FN,
     OutputColumns.TN,
     OutputColumns.EXPECTED,
-    OutputColumns.ACTUAL
+    OutputColumns.ACTUAL,
+    OutputColumns.EXPECTED_CONTEXT,
+    OutputColumns.ACTUAL_CONTEXT
 ]
 
 
@@ -235,9 +281,9 @@ def flatten_evaluation_results(evaluation_results, field_names=None):
         if field_name not in field_names:
             continue
         document_match_score = document_score[DocumentScoringProps.MATCH_SCORE]
-        match_scores = document_match_score.get(
-            MatchScoringProps.SUB_SCORES, [document_match_score]
-        )
+        match_scores = document_match_score.get(MatchScoringProps.SUB_SCORES)
+        if match_scores is None:
+            match_scores = [document_match_score]
         for match_score in match_scores:
             get_logger().debug('match_score: %s', match_score)
             flat_result.append({
@@ -246,12 +292,14 @@ def flatten_evaluation_results(evaluation_results, field_names=None):
                 C.FIELD_NAME: field_name,
                 C.EVALUATION_METHOD: document_score[DocumentScoringProps.SCORING_METHOD],
                 C.SCORING_TYPE: document_score[DocumentScoringProps.SCORING_TYPE],
-                C.TP: match_score['true_positive'],
-                C.FP: match_score['false_positive'],
-                C.FN: match_score['false_negative'],
-                C.TN: match_score['true_negative'],
-                C.EXPECTED: match_score['expected'],
-                C.ACTUAL: match_score['actual']
+                C.TP: match_score[MatchScoringProps.TRUE_POSITIVE],
+                C.FP: match_score[MatchScoringProps.FALSE_POSITIVE],
+                C.FN: match_score[MatchScoringProps.FALSE_NEGATIVE],
+                C.TN: match_score[MatchScoringProps.TRUE_NEGATIVE],
+                C.EXPECTED: match_score[MatchScoringProps.EXPECTED],
+                C.ACTUAL: match_score[MatchScoringProps.ACTUAL],
+                C.EXPECTED_CONTEXT: match_score.get(MatchScoringProps.EXPECTED_CONTEXT),
+                C.ACTUAL_CONTEXT: match_score.get(MatchScoringProps.ACTUAL_CONTEXT)
             })
     return flat_result
 
@@ -314,8 +362,15 @@ def get_scoring_types_by_field_map(opt: argparse.Namespace) -> Dict[str, List[st
     }
 
 
+def get_evaluation_config(opt: argparse.Namespace) -> EvaluationConfig:
+    return get_evaluation_config_object(
+        parse_evaluation_yaml_config(opt.evaluation_yaml_config)
+    )
+
+
 def configure_pipeline(p, opt):  # pylint: disable=too-many-locals
     xml_mapping = parse_xml_mapping(opt.xml_mapping)
+    evaluation_config = get_evaluation_config(opt)
     scoring_types_by_field_map = get_scoring_types_by_field_map(opt)
     field_names = opt.fields
 
@@ -342,6 +397,7 @@ def configure_pipeline(p, opt):  # pylint: disable=too-many-locals
     evaluate_file_pairs_fn = partial(
         EvaluateFilePairs,
         xml_mapping=xml_mapping,
+        evaluation_config=evaluation_config,
         scoring_types_by_field_map=scoring_types_by_field_map,
         field_names=field_names,
         measures=opt.measures,
@@ -484,6 +540,12 @@ def add_main_args(parser):
         '--evaluation-config', type=str,
         default='evaluation.conf',
         help='filename to the evaluation configuration'
+    )
+
+    config_group.add_argument(
+        '--evaluation-yaml-config', type=str,
+        default=DEFAULT_EVALUATION_YAML_FILENAME,
+        help='filename to the evaluation configuration (yaml)'
     )
 
     config_group.add_argument(

@@ -1,4 +1,6 @@
-from typing import Dict, List
+from typing import Dict, List, NamedTuple
+
+import yaml
 
 from sciencebeam_utils.utils.string import parse_list
 
@@ -6,8 +8,75 @@ from .utils.string import parse_dict
 from .utils.config import parse_config_as_dict
 
 
+DEFAULT_EVALUATION_YAML_FILENAME = 'evaluation.yml'
+
+
+class CustomEvaluationFieldSourceConfig(NamedTuple):
+    field_names: List[str]
+
+    @staticmethod
+    def from_json(data: dict):
+        return CustomEvaluationFieldSourceConfig(
+            field_names=data['field_names']
+        )
+
+
+class CustomEvaluationFieldConfig(NamedTuple):
+    name: str
+    evaluation_type: str
+    expected: CustomEvaluationFieldSourceConfig
+    actual: CustomEvaluationFieldSourceConfig
+
+    @staticmethod
+    def from_json(data: dict):
+        return CustomEvaluationFieldConfig(
+            name=data['name'],
+            evaluation_type=data['evaluation_type'],
+            expected=CustomEvaluationFieldSourceConfig.from_json(data['expected']),
+            actual=CustomEvaluationFieldSourceConfig.from_json(data['actual'])
+        )
+
+
+class CustomEvaluationConfig(NamedTuple):
+    fields: List[CustomEvaluationFieldConfig]
+
+    @staticmethod
+    def from_json(data: dict):
+        if not data:
+            return None
+        return CustomEvaluationConfig(
+            fields=[
+                CustomEvaluationFieldConfig.from_json(field_data)
+                for field_data in data.get('fields')
+            ]
+        )
+
+
+class EvaluationConfig(NamedTuple):
+    custom: CustomEvaluationConfig = CustomEvaluationConfig(fields=[])
+
+    @staticmethod
+    def from_json(data: dict):
+        return EvaluationConfig(
+            custom=CustomEvaluationConfig.from_json(
+                data.get('custom')
+            )
+        )
+
+
 def parse_evaluation_config(filename_or_fp) -> Dict[str, Dict[str, str]]:
     return parse_config_as_dict(filename_or_fp)
+
+
+def parse_evaluation_yaml_config(filename_or_fp) -> dict:
+    if isinstance(filename_or_fp, str):
+        with open(filename_or_fp, 'r') as fp:
+            return yaml.safe_load(fp)
+    return yaml.safe_load(filename_or_fp)
+
+
+def get_evaluation_config_object(evaluation_json: dict) -> EvaluationConfig:
+    return EvaluationConfig.from_json(evaluation_json)
 
 
 def parse_scoring_type_overrides(

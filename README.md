@@ -16,9 +16,19 @@ make dev-venv
 
 ## Configuration
 
+### XML Mapping
+
 The [xml-mapping.conf](xml-mapping.conf) configures how fields should be extracted from the XML.
+The format of that file is documented within the default mapping file ([xml-mapping.conf](xml-mapping.conf)).
+The default configuration contains mapping for JATS and TEI.
+
+### Evaluation Configuration
 
 The [evaluation.conf](evaluation.conf) allows further evaluation details to be configured.
+For example the *scoring type* defines, how a field should be evaluated as (e.g. `string` or `list`).
+
+An additional [evaluation.yml](evaluation.yml) has the same function but already is more structured configuration.
+(The content of `evaluation.conf` will likely migrate to `evaluation.yml` in the future)
 
 ## File Lists
 

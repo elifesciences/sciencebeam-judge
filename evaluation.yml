@@ -1,0 +1,11 @@
+custom:
+  # Special evaluation of "deleted" (or "lost") text
+  fields:
+    - name: all_section_paragraphs_deleted_text
+      evaluation_type: deleted_text
+      expected:
+        field_names:
+          - body_section_paragraphs
+      actual:
+        field_names:
+          - all_section_paragraphs

@@ -1,3 +1,10 @@
+from dataclasses import dataclass
+from typing import Any, AnyStr, Dict, List, Optional, Union
+
+
+T_Value = Union[AnyStr, List[AnyStr]]
+
+
 class MatchScoringProps:
     EXPECTED_SOMETHING = 'expected_something'
     ACTUAL_SOMETHING = 'actual_something'
@@ -10,10 +17,62 @@ class MatchScoringProps:
     BINARY_ACTUAL = 'binary_actual'
     EXPECTED = 'expected'
     ACTUAL = 'actual'
+    EXPECTED_CONTEXT = 'expected_context'
+    ACTUAL_CONTEXT = 'actual_context'
     SUB_SCORES = 'sub_scores'
 
 
-def get_match_score_obj_for_score(expected, actual, score, threshold=1, include_values=False):
+@dataclass
+class MatchScore:  # pylint: disable=too-many-instance-attributes
+    score: float
+    expected_something: bool = True
+    actual_something: bool = True
+    true_positive: int = 0
+    true_negative: int = 0
+    false_positive: int = 0
+    false_negative: int = 0
+    binary_expected: int = 0
+    binary_actual: int = 0
+    expected: Optional[T_Value] = None
+    actual: Optional[T_Value] = None
+    expected_context: Optional[T_Value] = None
+    actual_context: Optional[T_Value] = None
+    sub_scores: Optional[List['MatchScore']] = None
+
+    def to_dict(self) -> Dict[str, Any]:
+        props = vars(self)
+        if self.sub_scores:
+            props = {
+                **props,
+                MatchScoringProps.SUB_SCORES: [
+                    score.to_dict()
+                    for score in self.sub_scores
+                ]
+            }
+        return props
+
+    @staticmethod
+    def from_dict(match_score_dict: Dict[str, Any]) -> 'MatchScore':
+        if match_score_dict.get(MatchScoringProps.SUB_SCORES):
+            match_score_dict = {
+                **match_score_dict,
+                MatchScoringProps.SUB_SCORES: [
+                    MatchScore.from_dict(score)
+                    for score in match_score_dict[MatchScoringProps.SUB_SCORES]
+                ]
+            }
+        return MatchScore(**match_score_dict)
+
+
+def get_match_score_obj_for_score(
+    expected: T_Value,
+    actual: T_Value,
+    score: float,
+    threshold: float = 1.0,
+    include_values: bool = False,
+    expected_context: Optional[T_Value] = None,
+    actual_context: Optional[T_Value] = None
+):
     binary_expected = 1 if expected else 0
     # actual will be a false positive (1) if it is populated but expected is not,
     # otherwise it will be positive if it meets the threshold
@@ -40,7 +99,13 @@ def get_match_score_obj_for_score(expected, actual, score, threshold=1, include_
     if include_values:
         d[MatchScoringProps.EXPECTED] = expected
         d[MatchScoringProps.ACTUAL] = actual
+        d[MatchScoringProps.EXPECTED_CONTEXT] = expected_context
+        d[MatchScoringProps.ACTUAL_CONTEXT] = actual_context
     return d
+
+
+def get_match_score_for_score(*args, **kwargs) -> MatchScore:
+    return MatchScore.from_dict(get_match_score_obj_for_score(*args, **kwargs))
 
 
 def get_match_score_obj_for_score_fn(expected, actual, value_f, threshold=1, include_values=False):

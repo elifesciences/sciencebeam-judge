@@ -1,6 +1,6 @@
 import logging
 from pathlib import Path
-from unittest.mock import patch, DEFAULT
+from unittest.mock import patch, MagicMock, DEFAULT
 
 import pytest
 
@@ -19,6 +19,7 @@ import sciencebeam_judge.evaluation_pipeline as evaluation_pipeline
 from sciencebeam_judge.evaluation_pipeline import (
     flatten_evaluation_results,
     flatten_summary_results,
+    get_all_source_field_names,
     configure_pipeline,
     get_scoring_types_by_field_map,
     parse_args,
@@ -32,7 +33,13 @@ from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
 from sciencebeam_judge.evaluation.scoring_types.scoring_types import ScoringTypeNames
 from sciencebeam_judge.evaluation.document_scoring import DocumentScoringProps
 from sciencebeam_judge.evaluation.score_aggregation import SummaryScoresProps
-from sciencebeam_judge.evaluation_config import get_scoring_types_by_field_map_from_config
+from sciencebeam_judge.evaluation_config import (
+    CustomEvaluationFieldSourceConfig,
+    CustomEvaluationFieldConfig,
+    CustomEvaluationConfig,
+    EvaluationConfig,
+    get_scoring_types_by_field_map_from_config
+)
 
 
 LOGGER = logging.getLogger(__name__)
@@ -64,6 +71,7 @@ MIN_ARGV = [
 ]
 
 FIELD_1 = 'field1'
+FIELD_2 = 'field2'
 
 MATCH_SCORE_1 = {
     MatchScoringProps.EXPECTED_SOMETHING: True,
@@ -76,7 +84,9 @@ MATCH_SCORE_1 = {
     MatchScoringProps.BINARY_EXPECTED: 1,
     MatchScoringProps.BINARY_ACTUAL: 1,
     MatchScoringProps.EXPECTED: 'expected',
-    MatchScoringProps.ACTUAL: 'actual'
+    MatchScoringProps.ACTUAL: 'actual',
+    MatchScoringProps.EXPECTED_CONTEXT: 'expected_context1',
+    MatchScoringProps.ACTUAL_CONTEXT: 'actual_context1'
 }
 
 
@@ -104,6 +114,12 @@ def patch_conversion_pipeline(**kwargs):
             for k in always_mock
         }
     )
+
+
+@pytest.fixture(name='get_evaluation_config_mock')
+def _get_evaluation_config_mock():
+    with patch.object(evaluation_pipeline, 'get_evaluation_config') as mock:
+        yield mock
 
 
 def load_file_list_side_effect(file_list_map):
@@ -151,7 +167,9 @@ class TestFlattenEvaluationResults:
             OutputColumns.FN: MATCH_SCORE_1[MatchScoringProps.FALSE_NEGATIVE],
             OutputColumns.TN: MATCH_SCORE_1[MatchScoringProps.TRUE_NEGATIVE],
             OutputColumns.EXPECTED: MATCH_SCORE_1[MatchScoringProps.EXPECTED],
-            OutputColumns.ACTUAL: MATCH_SCORE_1[MatchScoringProps.ACTUAL]
+            OutputColumns.ACTUAL: MATCH_SCORE_1[MatchScoringProps.ACTUAL],
+            OutputColumns.EXPECTED_CONTEXT: MATCH_SCORE_1.get(MatchScoringProps.EXPECTED_CONTEXT),
+            OutputColumns.ACTUAL_CONTEXT: MATCH_SCORE_1.get(MatchScoringProps.ACTUAL_CONTEXT)
         }]
 
     def test_should_convert_sub_scores_as_individual_rows(self):
@@ -242,6 +260,52 @@ class TestFlattenSummaryResults:
             }
 
 
+class TestGetAllSourceFieldNames:
+    def test_should_return_none_if_passed_in_field_names_is_none(self):
+        assert get_all_source_field_names(
+            evaluation_config=EvaluationConfig(),
+            field_names=None
+        ) is None
+
+    def test_should_return_passed_in_field_names_if_none_of_the_fields_match_custom_config(self):
+        assert get_all_source_field_names(
+            evaluation_config=EvaluationConfig(),
+            field_names=[FIELD_1, FIELD_2]
+        ) == [FIELD_1, FIELD_2]
+
+    def test_should_add_source_fields_from_custom_config(self):
+        assert sorted(get_all_source_field_names(
+            evaluation_config=EvaluationConfig(
+                custom=CustomEvaluationConfig(
+                    fields=[CustomEvaluationFieldConfig(
+                        name=FIELD_1,
+                        evaluation_type='dummy',
+                        expected=CustomEvaluationFieldSourceConfig(field_names=['expected1']),
+                        actual=CustomEvaluationFieldSourceConfig(field_names=['actual1'])
+                    )]
+                )
+            ),
+            field_names=[FIELD_1, FIELD_2]
+        )) == sorted([FIELD_1, FIELD_2, 'expected1', 'actual1'])
+
+    def test_should_not_add_already_existing_fields_from_custom_config(self):
+        assert sorted(get_all_source_field_names(
+            evaluation_config=EvaluationConfig(
+                custom=CustomEvaluationConfig(
+                    fields=[CustomEvaluationFieldConfig(
+                        name=FIELD_1,
+                        evaluation_type='dummy',
+                        expected=CustomEvaluationFieldSourceConfig(
+                            field_names=['expected1', FIELD_1]
+                        ),
+                        actual=CustomEvaluationFieldSourceConfig(field_names=['actual1', FIELD_2])
+                    )]
+                )
+            ),
+            field_names=[FIELD_1]
+        )) == sorted([FIELD_1, FIELD_2, 'expected1', 'actual1'])
+
+
 class TestGetScoringTypesByFieldMap:
     def test_should_return_configured_scoring_types(self, temp_dir: Path):
         opt = get_default_args()
@@ -284,6 +348,7 @@ class TestParseArgs:
 
 
 @pytest.mark.slow
+@pytest.mark.usefixtures('get_evaluation_config_mock')
 class TestConfigurePipeline(BeamTest):
     def test_should_pass_pdf_file_list_and_limit_to_read_dict_csv_and_read_pdf_file(self):
         with patch_conversion_pipeline() as mocks:
@@ -310,7 +375,10 @@ class TestConfigurePipeline(BeamTest):
                 PREDICTION_FILE_LIST[0]
             )
 
-    def test_should_pass_around_values_with_default_pipeline(self):
+    def test_should_pass_around_values_with_default_pipeline(
+        self,
+        get_evaluation_config_mock: MagicMock
+    ):
         with patch_conversion_pipeline() as mocks:
             opt = get_default_args()
 
@@ -328,6 +396,7 @@ class TestConfigurePipeline(BeamTest):
                     PREDICTION_FILE_LIST[0]
                 ),
                 xml_mapping=mocks['parse_xml_mapping'].return_value,
+                evaluation_config=get_evaluation_config_mock.return_value,
                 scoring_types_by_field_map=get_scoring_types_by_field_map_from_config(
                     mocks['parse_evaluation_config'].return_value
                 ),
