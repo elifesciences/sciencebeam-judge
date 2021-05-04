@@ -3,6 +3,7 @@ editdistance==0.5.3
 future==0.18.2
 lxml==4.6.3
 natsort==7.1.1
+numpy==1.20.2
 PyYAML==5.4.1
 regex==2021.4.4
 sciencebeam-alignment==0.0.5
