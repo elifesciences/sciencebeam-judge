@@ -50,6 +50,9 @@ DEFAULT_SCORING = SimpleScoring(
 # this is to make the alignment aware of the gap after masking
 UNMATCHED_GAP_PADDING = 2
 
+MIN_TEXT_SPLIT_LENGTH = 2
+MAX_TEXT_SPLIT_COUNT = 2
+
 
 def combine_partial_match_scores(
     scores: List[MatchScore],
@@ -59,6 +62,28 @@ def combine_partial_match_scores(
         [score.to_dict() for score in scores],
         template_score.to_dict()
     ))
+
+
+class FuzzyWrappedValue(WrappedValue):
+    split_count: int = 0
+
+    def __init__(self, *args, split_count: int = 0, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.split_count = split_count
+
+    def __getitem__(self, key) -> 'FuzzyWrappedValue':
+        return FuzzyWrappedValue(
+            self.value[key],
+            index=self.index,
+            split_count=self.split_count + 1
+        )
+
+    def strip(self) -> 'FuzzyWrappedValue':
+        return FuzzyWrappedValue(
+            self.value.strip(),
+            index=self.index,
+            split_count=self.split_count
+        )
 
 
 class TextFragment(NamedTuple):
@@ -175,11 +200,11 @@ def get_fuzzy_matched_characters(
     if not haystack_str:
         return []
     wrapped_haystack_values = [
-        WrappedValue(value, index)
+        FuzzyWrappedValue(value, index)
         for index, value in iter_regex_split_with_index(haystack_str, r'\n')
     ]
     wrapped_needles = [
-        WrappedValue(value, index)
+        FuzzyWrappedValue(value, index)
         for index, value in enumerate(needles)
     ]
     distance_matches = get_distance_matches(
@@ -193,8 +218,8 @@ def get_fuzzy_matched_characters(
     haystack_mask = [not c.isspace() for c in haystack_str]
     haystack_matched = [False] * len(haystack_str)
     haystack_view_chars = list(haystack_str)
-    remaining_paired_sequences: Deque[WrappedValue] = deque()
-    remaining_unpaired_sequences: Deque[WrappedValue] = deque()
+    remaining_paired_sequences: Deque[FuzzyWrappedValue] = deque()
+    remaining_unpaired_sequences: Deque[FuzzyWrappedValue] = deque()
     # using distances matches to start with more likely pairings
     max_sort_key = (len(haystack_str), len(needles))
     distance_matches = sorted(distance_matches, key=lambda distance_match: (
@@ -215,7 +240,7 @@ def get_fuzzy_matched_characters(
             continue
         remaining_paired_sequences.append((distance_match.value_1, distance_match.value_2))
         del distance_match
-    wrapped_haystack = WrappedValue(haystack_str, 0)
+    wrapped_haystack = FuzzyWrappedValue(haystack_str, 0)
     while remaining_paired_sequences or remaining_unpaired_sequences:
         if remaining_paired_sequences:
             # prioritise paired sequences, they will be faster to calculate
@@ -295,15 +320,21 @@ def get_fuzzy_matched_characters(
 
         b_start_offset = matching_blocks.start_b
         if b_start_offset:
-            remaining_text = str(value_2)[:b_start_offset].strip()
+            remaining_text = value_2[:b_start_offset].strip()
             LOGGER.debug('b_start_offset: %s (%r)', b_start_offset, remaining_text)
-            if len(remaining_text) > 1:
+            if (
+                len(remaining_text) > MIN_TEXT_SPLIT_LENGTH
+                and remaining_text.split_count <= MAX_TEXT_SPLIT_COUNT
+            ):
                 remaining_unpaired_sequences.append(remaining_text)
         b_end_offset = matching_blocks.end_b
         if b_end_offset < len(value_2):
-            remaining_text = str(value_2)[b_end_offset:].strip()
+            remaining_text = value_2[b_end_offset:].strip()
             LOGGER.debug('b_end_offset: %s (%r)', b_end_offset, remaining_text)
-            if len(remaining_text) > 1:
+            if (
+                len(remaining_text) > MIN_TEXT_SPLIT_LENGTH
+                and remaining_text.split_count <= MAX_TEXT_SPLIT_COUNT
+            ):
                 remaining_unpaired_sequences.append(remaining_text)
     mark_spaces_between_matches_as_matched(
         haystack_matched,
