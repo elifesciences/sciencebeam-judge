@@ -1,7 +1,15 @@
 custom:
   # Special evaluation of "deleted" (or "lost") text
   fields:
-    - name: all_section_paragraphs_deleted_text
+    - name: body_section_paragraphs_only_deleted_text
+      evaluation_type: deleted_text
+      expected:
+        field_names:
+          - body_section_paragraphs
+      actual:
+        field_names:
+          - body_section_paragraphs
+    - name: body_section_paragraphs_deleted_text
       evaluation_type: deleted_text
       expected:
         field_names:
@@ -9,3 +17,31 @@ custom:
       actual:
         field_names:
           - all_section_paragraphs
+          - all_section_label_titles
+          - table_label_captions
+          - figure_label_captions
+          - abstract
+          - reference_text
+          - title
+    - name: all_section_paragraphs_only_deleted_text
+      evaluation_type: deleted_text
+      expected:
+        field_names:
+          - all_section_paragraphs
+      actual:
+        field_names:
+          - all_section_paragraphs
+    - name: all_section_paragraphs_deleted_text
+      evaluation_type: deleted_text
+      expected:
+        field_names:
+          - all_section_paragraphs
+      actual:
+        field_names:
+          - all_section_paragraphs
+          - all_section_label_titles
+          - table_label_captions
+          - figure_label_captions
+          - abstract
+          - reference_text
+          - title
