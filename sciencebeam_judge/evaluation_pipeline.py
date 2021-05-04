@@ -216,6 +216,7 @@ class OutputColumns:
     EXPECTED = 'expected'
     ACTUAL = 'actual'
     EXPECTED_CONTEXT = 'expected_context'
+    ACTUAL_CONTEXT = 'actual_context'
 
 
 DEFAULT_OUTPUT_COLUMNS = [
@@ -230,7 +231,8 @@ DEFAULT_OUTPUT_COLUMNS = [
     OutputColumns.TN,
     OutputColumns.EXPECTED,
     OutputColumns.ACTUAL,
-    OutputColumns.EXPECTED_CONTEXT
+    OutputColumns.EXPECTED_CONTEXT,
+    OutputColumns.ACTUAL_CONTEXT
 ]
 
 
@@ -296,7 +298,8 @@ def flatten_evaluation_results(evaluation_results, field_names=None):
                 C.TN: match_score[MatchScoringProps.TRUE_NEGATIVE],
                 C.EXPECTED: match_score[MatchScoringProps.EXPECTED],
                 C.ACTUAL: match_score[MatchScoringProps.ACTUAL],
-                C.EXPECTED_CONTEXT: match_score.get(MatchScoringProps.EXPECTED_CONTEXT)
+                C.EXPECTED_CONTEXT: match_score.get(MatchScoringProps.EXPECTED_CONTEXT),
+                C.ACTUAL_CONTEXT: match_score.get(MatchScoringProps.ACTUAL_CONTEXT)
             })
     return flat_result
 

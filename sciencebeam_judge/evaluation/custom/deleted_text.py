@@ -429,6 +429,14 @@ def strip_whitespace(text: str) -> str:
     return re.sub(r'\s+', '', text)
 
 
+def get_text_context(text: AnyStr) -> AnyStr:
+    return (
+        text.with_context(20)
+        if isinstance(text, TextFragment)
+        else None
+    )
+
+
 def get_character_based_match_score_for_score(
     score: float,
     expected: AnyStr,
@@ -437,19 +445,19 @@ def get_character_based_match_score_for_score(
 ) -> MatchScore:
     expected_str = str(expected) if expected else ''
     actual_str = str(actual) if actual else ''
-    expected_context = (
-        expected.with_context(20)
-        if isinstance(expected, TextFragment)
-        else None
-    )
+    expected_context = get_text_context(expected)
+    # Note: currently the actual value will be none or equal to expected
+    #   It is not trivial to get context of deleted text that we may not have found a match for.
+    actual_context = None
     LOGGER.debug('expected: %r, expected_context: %r', expected, expected_context)
     match_score = get_match_score_for_score(
         score=score,
         expected=expected_str,
         actual=actual_str,
+        expected_context=expected_context,
+        actual_context=actual_context,
         include_values=include_values
     )
-    match_score.expected_context = expected_context
     expected_without_whitespace_str = strip_whitespace(expected_str)
     expected_without_whitespace_len = len(expected_without_whitespace_str)
     actual_without_whitespace_str = strip_whitespace(actual_str)

@@ -85,7 +85,8 @@ MATCH_SCORE_1 = {
     MatchScoringProps.BINARY_ACTUAL: 1,
     MatchScoringProps.EXPECTED: 'expected',
     MatchScoringProps.ACTUAL: 'actual',
-    MatchScoringProps.EXPECTED_CONTEXT: 'expected_context1'
+    MatchScoringProps.EXPECTED_CONTEXT: 'expected_context1',
+    MatchScoringProps.ACTUAL_CONTEXT: 'actual_context1'
 }
 
 
@@ -167,7 +168,8 @@ class TestFlattenEvaluationResults:
             OutputColumns.TN: MATCH_SCORE_1[MatchScoringProps.TRUE_NEGATIVE],
             OutputColumns.EXPECTED: MATCH_SCORE_1[MatchScoringProps.EXPECTED],
             OutputColumns.ACTUAL: MATCH_SCORE_1[MatchScoringProps.ACTUAL],
-            OutputColumns.EXPECTED_CONTEXT: MATCH_SCORE_1.get(MatchScoringProps.EXPECTED_CONTEXT)
+            OutputColumns.EXPECTED_CONTEXT: MATCH_SCORE_1.get(MatchScoringProps.EXPECTED_CONTEXT),
+            OutputColumns.ACTUAL_CONTEXT: MATCH_SCORE_1.get(MatchScoringProps.ACTUAL_CONTEXT)
         }]
 
     def test_should_convert_sub_scores_as_individual_rows(self):
