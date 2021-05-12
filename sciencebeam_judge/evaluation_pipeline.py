@@ -9,7 +9,7 @@ from typing import Dict, List, Optional
 
 import apache_beam as beam
 from apache_beam.io.textio import WriteToText
-from apache_beam.options.pipeline_options import PipelineOptions, SetupOptions
+from apache_beam.options.pipeline_options import PipelineOptions, SetupOptions, DirectOptions
 
 from sciencebeam_utils.utils.collection import (
     extend_dict
@@ -613,6 +613,7 @@ def parse_args(argv=None):
     parser = argparse.ArgumentParser()
     add_main_args(parser)
     add_cloud_args(parser)
+    DirectOptions._add_argparse_args(parser)  # pylint: disable=protected-access
 
     args = parser.parse_args(argv)
 
