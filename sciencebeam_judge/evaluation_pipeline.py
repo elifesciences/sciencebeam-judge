@@ -169,7 +169,8 @@ def evaluate_file_pairs(
             evaluation_config=evaluation_config,
             field_names=field_names
         )
-        # Note: we need to register functions again, in case Apache Beam is running this on another worker
+        # Note: we need to register functions again,
+        #   in case Apache Beam is running this on another worker
         register_functions()
         target_xml = parse_xml(
             BytesIO(target_content),
