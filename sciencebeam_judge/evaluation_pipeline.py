@@ -613,7 +613,7 @@ def parse_args(argv=None):
     parser = argparse.ArgumentParser()
     add_main_args(parser)
     add_cloud_args(parser)
-    DirectOptions._add_argparse_args(parser)
+    DirectOptions._add_argparse_args(parser)  # pylint: disable=protected-access
 
     args = parser.parse_args(argv)
 
