@@ -9,7 +9,12 @@ from typing import Dict, List, Optional
 
 import apache_beam as beam
 from apache_beam.io.textio import WriteToText
-from apache_beam.options.pipeline_options import PipelineOptions, SetupOptions, DirectOptions
+from apache_beam.options.pipeline_options import (
+    PipelineOptions,
+    SetupOptions,
+    DirectOptions,
+    WorkerOptions
+)
 
 from sciencebeam_utils.utils.collection import (
     extend_dict
@@ -617,7 +622,10 @@ def parse_args(argv=None):
     parser = argparse.ArgumentParser()
     add_main_args(parser)
     add_cloud_args(parser)
-    DirectOptions._add_argparse_args(parser)  # pylint: disable=protected-access
+    direct_runner_parser = parser.add_argument_group('direct runner', conflict_handler='resolve')
+    DirectOptions._add_argparse_args(direct_runner_parser)  # pylint: disable=protected-access
+    worker_parser = parser.add_argument_group('worker', conflict_handler='resolve')
+    WorkerOptions._add_argparse_args(worker_parser)  # pylint: disable=protected-access
 
     args = parser.parse_args(argv)
 
@@ -641,7 +649,11 @@ def run(argv=None):
 
     # We use the save_main_session option because one or more DoFn's in this
     # workflow rely on global context (e.g., a module imported at module level).
-    pipeline_options = PipelineOptions.from_dictionary(vars(args))
+    pipeline_options = PipelineOptions.from_dictionary({
+        key: value
+        for key, value in vars(args).items()
+        if value is not None
+    })
     pipeline_options.view_as(SetupOptions).save_main_session = True
 
     with beam.Pipeline(args.runner, options=pipeline_options) as p:
