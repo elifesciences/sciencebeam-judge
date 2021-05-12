@@ -103,6 +103,7 @@ def get_logger():
 class MetricCounters:
     FILE_PAIRS = 'file_pairs'
     READ_ERROR = 'read_error'
+    EVALUATION_ERROR = 'evaluation_error'
 
 
 class DataProps:
@@ -168,6 +169,9 @@ def evaluate_file_pairs(
             evaluation_config=evaluation_config,
             field_names=field_names
         )
+        # Note: we need to register functions again,
+        #   in case Apache Beam is running this on another worker
+        register_functions()
         target_xml = parse_xml(
             BytesIO(target_content),
             xml_mapping,
@@ -405,7 +409,7 @@ def configure_pipeline(p, opt):  # pylint: disable=too-many-locals
     )
     evaluate_file_pairs_transform = (
         beam.Map(evaluate_file_pairs_fn) if not opt.skip_errors
-        else MapOrLog(evaluate_file_pairs_fn)
+        else MapOrLog(evaluate_file_pairs_fn, error_count=MetricCounters.EVALUATION_ERROR)
     )
 
     p_file_pairs = p | beam.Create(file_pairs)
