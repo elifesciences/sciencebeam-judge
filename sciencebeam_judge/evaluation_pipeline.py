@@ -377,6 +377,14 @@ def get_evaluation_config(opt: argparse.Namespace) -> EvaluationConfig:
     )
 
 
+def read_file_pairs_log_fn(e, v):
+    LOGGER.warning(
+        'caught exception (ignoring item): %s, target: %s, prediction: %s',
+        e, v[DataProps.TARGET_FILE_URL], v[DataProps.PREDICTION_FILE_URL],
+        exc_info=e
+    )
+
+
 def configure_pipeline(p, opt):  # pylint: disable=too-many-locals
     xml_mapping = parse_xml_mapping(opt.xml_mapping)
     evaluation_config = get_evaluation_config(opt)
@@ -427,13 +435,14 @@ def configure_pipeline(p, opt):  # pylint: disable=too-many-locals
         "ReadFilePairs" >> TransformAndCount(
             MapOrLog(
                 ReadFilePairs,
-                log_fn=lambda e, v: (
-                    get_logger().warning(
-                        'caught exception (ignoring item): %s, target: %s, prediction: %s',
-                        e, v[DataProps.TARGET_FILE_URL], v[DataProps.PREDICTION_FILE_URL],
-                        exc_info=e
-                    )
-                ),
+                log_fn=read_file_pairs_log_fn,
+                # log_fn=lambda e, v: (
+                #     LOGGER.warning(
+                #         'caught exception (ignoring item): %s, target: %s, prediction: %s',
+                #         e, v[DataProps.TARGET_FILE_URL], v[DataProps.PREDICTION_FILE_URL],
+                #         exc_info=e
+                #     )
+                # ),
                 error_count=MetricCounters.READ_ERROR
             ),
             MetricCounters.FILE_PAIRS
