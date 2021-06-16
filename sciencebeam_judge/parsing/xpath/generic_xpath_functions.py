@@ -1,4 +1,5 @@
 import logging
+from typing import List, Union
 
 from lxml import etree
 from lxml.builder import E
@@ -35,15 +36,37 @@ def fn_generic_concat_children(_, nodes, *expressions):
     ]
 
 
-def fn_generic_join_children(_, nodes, children_xpath, sep):
+def parse_xpath_or_xpaths(xpath: str) -> List[str]:
+    return xpath.split('||')
+
+
+def get_xpath_results(
+    node: etree.ElementBase,
+    xpath_or_xpaths: Union[str, List[str]]
+):
+    if isinstance(xpath_or_xpaths, str):
+        return node.xpath(xpath_or_xpaths)
+    return [
+        child
+        for xpath in xpath_or_xpaths
+        for child in node.xpath(xpath)
+    ]
+
+
+def fn_generic_join_children(
+    _,
+    nodes: List[etree.ElementBase],
+    children_xpath: str,
+    sep: str
+):
     LOGGER.debug(
-        'fn_generic_concat_children, children_xpath=%s, sep=%s, nodes: %s',
+        'fn_generic_concat_children, children_xpath=%r, sep=%r, nodes: %r',
         children_xpath, sep, nodes
     )
     return [
         sep.join(
             get_text_content(child)
-            for child in node.xpath(children_xpath)
+            for child in get_xpath_results(node, parse_xpath_or_xpaths(children_xpath))
         ).strip()
         for node in nodes
     ]
