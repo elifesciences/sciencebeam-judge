@@ -454,6 +454,61 @@ class TestTei:
                 'S2. Section Title 2'
             ]
 
+        def test_should_join_label_with_section_title_using_formatting(
+                self, default_xml_mapping):
+            xml = E.TEI(E.text(
+                E.body(E.div(
+                    E.head(E.hi('Section Title 1'), {'n': 'S1.'}),
+                    E.p('Section Paragraph 1')
+                )),
+                E.back(E.div(
+                    {'type': 'acknowledgement'},
+                    E.div(
+                        E.head(E.hi('Acknowledgement Title'), {'n': 'A.'}),
+                        E.p('Acknowledgement Paragraph')
+                    )
+                ), E.div(
+                    E.head(E.hi('Section Title 2'), {'n': 'S2.'}),
+                    E.p('Section Paragraph 2')
+                ))
+            ))
+            result = parse_xml_node(
+                xml,
+                xml_mapping=default_xml_mapping,
+                fields=[
+                    'body_section_labels',
+                    'body_section_titles',
+                    'body_section_label_titles',
+                    'back_section_labels',
+                    'back_section_titles',
+                    'back_section_label_titles',
+                    'all_section_labels',
+                    'all_section_titles',
+                    'all_section_label_titles'
+                ]
+            )
+            assert result.get('body_section_labels') == ['S1.']
+            assert result.get('body_section_titles') == ['Section Title 1']
+            assert result.get('body_section_label_titles') == ['S1. Section Title 1']
+            assert result.get('back_section_labels') == ['A.', 'S2.']
+            assert result.get('back_section_titles') == [
+                'Acknowledgement Title', 'Section Title 2'
+            ]
+            assert result.get('back_section_label_titles') == [
+                'A. Acknowledgement Title', 'S2. Section Title 2'
+            ]
+            assert result.get('all_section_labels') == ['S1.', 'A.', 'S2.']
+            assert result.get('all_section_titles') == [
+                'Section Title 1',
+                'Acknowledgement Title',
+                'Section Title 2'
+            ]
+            assert result.get('all_section_label_titles') == [
+                'S1. Section Title 1',
+                'A. Acknowledgement Title',
+                'S2. Section Title 2'
+            ]
+
     class TestTeiAcknowledgement:
         def test_should_parse_acknowledgement(
                 self, default_xml_mapping):
