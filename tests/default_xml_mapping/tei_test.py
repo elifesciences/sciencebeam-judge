@@ -321,6 +321,7 @@ class TestTei:
                     'all_section_titles',
                     'all_section_paragraphs',
                     'first_body_section_paragraphs',
+                    'first_back_section_paragraphs',
                     'first_all_section_paragraphs'
                 ]
             )
@@ -340,6 +341,9 @@ class TestTei:
             ]
             assert result.get('first_body_section_paragraphs') == (
                 result.get('body_section_paragraphs')[:1]
+            )
+            assert result.get('first_back_section_paragraphs') == (
+                result.get('back_section_paragraphs')[:1]
             )
             assert result.get('first_all_section_paragraphs') == (
                 result.get('all_section_paragraphs')[:1]
