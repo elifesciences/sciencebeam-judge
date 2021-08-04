@@ -35,6 +35,7 @@ class BodyFieldNames:
     BODY_SECTION_TITLES = 'body_section_titles'
     BODY_SECTION_LABEL_TITLES = 'body_section_label_titles'
     BODY_SECTION_PARAGRAPHS = 'body_section_paragraphs'
+    FIRST_BODY_SECTION_PARAGRAPH = 'first_body_section_paragraph'
 
     BODY_REFERENCE_CITATION_TEXT = 'body_reference_citation_text'
     BODY_ASSET_CITATION_TEXT = 'body_asset_citation_text'
@@ -47,6 +48,7 @@ class BackFieldNames:
     BACK_SECTION_TITLES = 'back_section_titles'
     BACK_SECTION_LABEL_TITLES = 'back_section_label_titles'
     BACK_SECTION_PARAGRAPHS = 'back_section_paragraphs'
+    FIRST_BACK_SECTION_PARAGRAPH = 'first_back_section_paragraph'
 
 
 class BodyBackSectionFieldNames:
@@ -54,6 +56,7 @@ class BodyBackSectionFieldNames:
     ALL_SECTION_TITLES = 'all_section_titles'
     ALL_SECTION_LABEL_TITLES = 'all_section_label_titles'
     ALL_SECTION_PARAGRAPHS = 'all_section_paragraphs'
+    FIRST_ALL_SECTION_PARAGRAPH = 'first_all_section_paragraph'
 
 
 class TableFieldNames:

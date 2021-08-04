@@ -396,7 +396,10 @@ class TestJats:
                     'back_section_titles',
                     'back_section_paragraphs',
                     'all_section_titles',
-                    'all_section_paragraphs'
+                    'all_section_paragraphs',
+                    'first_body_section_paragraph',
+                    'first_back_section_paragraph',
+                    'first_all_section_paragraph'
                 ]
             )
             assert result.get('body_section_titles') == ['Section Title 1']
@@ -413,6 +416,15 @@ class TestJats:
                 'Section Paragraph 1',
                 'Acknowledgement Paragraph', 'Section Paragraph 2'
             ]
+            assert result.get('first_body_section_paragraph') == (
+                result.get('body_section_paragraphs')[:1]
+            )
+            assert result.get('first_back_section_paragraph') == (
+                result.get('back_section_paragraphs')[:1]
+            )
+            assert result.get('first_all_section_paragraph') == (
+                result.get('all_section_paragraphs')[:1]
+            )
 
         def test_should_join_multiple_body_paragraph_blocks_of_same_section(
                 self, default_xml_mapping):
