@@ -397,9 +397,9 @@ class TestJats:
                     'back_section_paragraphs',
                     'all_section_titles',
                     'all_section_paragraphs',
-                    'first_body_section_paragraphs',
-                    'first_back_section_paragraphs',
-                    'first_all_section_paragraphs'
+                    'first_body_section_paragraph',
+                    'first_back_section_paragraph',
+                    'first_all_section_paragraph'
                 ]
             )
             assert result.get('body_section_titles') == ['Section Title 1']
@@ -416,13 +416,13 @@ class TestJats:
                 'Section Paragraph 1',
                 'Acknowledgement Paragraph', 'Section Paragraph 2'
             ]
-            assert result.get('first_body_section_paragraphs') == (
+            assert result.get('first_body_section_paragraph') == (
                 result.get('body_section_paragraphs')[:1]
             )
-            assert result.get('first_back_section_paragraphs') == (
+            assert result.get('first_back_section_paragraph') == (
                 result.get('back_section_paragraphs')[:1]
             )
-            assert result.get('first_all_section_paragraphs') == (
+            assert result.get('first_all_section_paragraph') == (
                 result.get('all_section_paragraphs')[:1]
             )
 
