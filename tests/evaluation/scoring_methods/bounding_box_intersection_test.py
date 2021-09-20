@@ -5,6 +5,14 @@ from sciencebeam_judge.evaluation.scoring_methods.bounding_box_intersection impo
 )
 
 
+class TestBoundingBox:
+    def test_should_calculate_area(self):
+        bounding_box = BoundingBox(
+            x=101, y=102, width=200, height=50
+        )
+        assert bounding_box.area == 200 * 50
+
+
 class TestPageBoundingBoxList:
     def test_should_parse_empty_none(self):
         result = PageBoundingBoxList.from_string(None)

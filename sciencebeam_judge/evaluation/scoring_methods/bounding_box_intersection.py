@@ -7,6 +7,10 @@ class BoundingBox(NamedTuple):
     width: float
     height: float
 
+    @property
+    def area(self) -> float:
+        return self.width * self.height
+
 
 class PageBoundingBox(NamedTuple):
     page_number: int
