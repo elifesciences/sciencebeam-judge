@@ -25,6 +25,11 @@ TEXT_1 = 'Some text 1'
 EMAIL_1 = 'name1@test'
 EMAIL_2 = 'name2@test'
 
+COORDS_NS = 'http://www.tei-c.org/ns/1.0'
+COORDS_NS_PREFIX = '{%s}' % COORDS_NS
+COORDS = COORDS_NS_PREFIX + 'coords'
+COORDS_1 = '101,102,103,104,105'
+
 
 class TestJats:
     class TestJatsCorrespondingAuthor:
@@ -658,22 +663,27 @@ class TestJats:
                 self, default_xml_mapping):
             xml = E.article(E.body(E.fig(
                 E.label(LABEL_1),
-                E.caption(TEXT_1)
+                E.caption(TEXT_1),
+                E.graphic({COORDS: COORDS_1})
             )))
             result = parse_xml_node(
                 xml,
                 xml_mapping=default_xml_mapping,
                 fields=[
                     'figure_labels', 'figure_captions', 'figure_label_captions',
-                    'body_figure_labels', 'body_figure_captions', 'body_figure_label_captions'
+                    'figure_graphic_coords',
+                    'body_figure_labels', 'body_figure_captions', 'body_figure_label_captions',
+                    'body_figure_graphic_coords',
                 ]
             )
             assert result.get('figure_labels') == [LABEL_1]
             assert result.get('figure_captions') == [TEXT_1]
             assert result.get('figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
+            assert result.get('figure_graphic_coords') == [COORDS_1]
             assert result.get('body_figure_labels') == [LABEL_1]
             assert result.get('body_figure_captions') == [TEXT_1]
             assert result.get('body_figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
+            assert result.get('body_figure_graphic_coords') == [COORDS_1]
 
         def test_should_parse_figure_label_and_description_in_nested_section(
                 self, default_xml_mapping):

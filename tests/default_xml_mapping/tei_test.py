@@ -10,6 +10,9 @@ from .utils import parse_xml_node
 
 LOGGER = logging.getLogger(__name__)
 
+TEI_NS = 'http://www.tei-c.org/ns/1.0'
+TEI_NS_PREFIX = '{%s}' % TEI_NS
+
 
 DOI_1 = '10.12345/abc/1'
 HTTPS_DOI_URL_PREFIX = 'https://doi.org/'
@@ -19,6 +22,9 @@ TEXT_1 = 'Some text 1'
 
 EMAIL_1 = 'name1@test'
 EMAIL_2 = 'name2@test'
+
+COORDS = TEI_NS_PREFIX + 'coords'
+COORDS_1 = '101,102,103,104,105'
 
 
 class TestTei:
@@ -660,22 +666,27 @@ class TestTei:
                 self, default_xml_mapping):
             xml = E.TEI(E.text(E.body(E.figure(
                 E.head(LABEL_1),
-                E.figDesc(TEXT_1)
+                E.figDesc(TEXT_1),
+                E.graphic({COORDS: COORDS_1})
             ))))
             result = parse_xml_node(
                 xml,
                 xml_mapping=default_xml_mapping,
                 fields=[
                     'figure_labels', 'figure_captions', 'figure_label_captions',
-                    'body_figure_labels', 'body_figure_captions', 'body_figure_label_captions'
+                    'figure_graphic_coords',
+                    'body_figure_labels', 'body_figure_captions', 'body_figure_label_captions',
+                    'body_figure_graphic_coords',
                 ]
             )
             assert result.get('figure_labels') == [LABEL_1]
             assert result.get('figure_captions') == [TEXT_1]
             assert result.get('figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
+            assert result.get('figure_graphic_coords') == [COORDS_1]
             assert result.get('body_figure_labels') == [LABEL_1]
             assert result.get('body_figure_captions') == [TEXT_1]
             assert result.get('body_figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
+            assert result.get('body_figure_graphic_coords') == [COORDS_1]
 
         def test_should_parse_figure_label_and_description_in_nested_section(
                 self, default_xml_mapping):
