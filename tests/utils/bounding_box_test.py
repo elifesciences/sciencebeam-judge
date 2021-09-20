@@ -85,7 +85,7 @@ class TestPageBoundingBox:
         assert page_bounding_box
 
     def test_should_calculate_intersection_with_same_page_number(self):
-        assert (
+        result = (
             PageBoundingBox(
                 page_number=1,
                 bounding_box=BoundingBox(110, 120, 50, 60)
@@ -94,10 +94,11 @@ class TestPageBoundingBox:
                     page_number=1,
                     bounding_box=BoundingBox(120, 110, 100, 100)
                 )
-            ) == PageBoundingBox(
-                page_number=1,
-                bounding_box=BoundingBox(120, 120, 40, 60)
             )
+        )
+        assert result == PageBoundingBox(
+            page_number=1,
+            bounding_box=BoundingBox(120, 120, 40, 60)
         )
 
     def test_should_calculate_intersection_with_different_page_number(self):
