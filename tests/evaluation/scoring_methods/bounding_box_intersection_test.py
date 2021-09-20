@@ -132,6 +132,13 @@ class TestGetPageBoundingBoxListAreaMatchScore:
         )
         assert result == 1.0
 
+    def test_should_return_one_for_two_empty_page_bounding_box_lists(self):
+        result = get_page_bounding_box_list_area_match_score(
+            EMPTY_PAGE_BOUNDING_BOX_LIST,
+            EMPTY_PAGE_BOUNDING_BOX_LIST
+        )
+        assert result == 1.0
+
     def test_should_return_dot_five_for_half_overlapping_page_bounding_box_lists(self):
         result = get_page_bounding_box_list_area_match_score(
             PageBoundingBoxList([PageBoundingBox(

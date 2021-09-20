@@ -56,6 +56,13 @@ def get_page_bounding_box_list_area_match_score(
     page_bounding_box_list_2: PageBoundingBoxList
 ) -> float:
     max_area = max(page_bounding_box_list_1.area, page_bounding_box_list_2.area)
+    if not max_area:
+        intersection_ratio = 1.0
+        LOGGER.debug(
+            'max_area=%f, intersection_ratio=%f',
+            max_area, intersection_ratio
+        )
+        return intersection_ratio
     intersection_page_bounding_box_list = page_bounding_box_list_1.intersection(
         page_bounding_box_list_2
     )
