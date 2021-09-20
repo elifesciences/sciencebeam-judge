@@ -30,7 +30,7 @@ from sciencebeam_judge.evaluation.scoring_types.list import (
 from sciencebeam_judge.evaluation.custom import CustomEvaluation
 from sciencebeam_judge.evaluation.match_scoring import MatchScore, get_match_score_for_score
 
-from sciencebeam_judge.evaluation.scoring_methods import (
+from sciencebeam_judge.evaluation.scoring_methods.scoring_methods import (
     ScoringMethodNames,
     SCORING_METHODS_MAP
 )

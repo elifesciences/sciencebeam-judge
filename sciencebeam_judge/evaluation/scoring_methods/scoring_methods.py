@@ -6,7 +6,7 @@ from difflib import SequenceMatcher
 
 import editdistance
 
-from ..utils.distance_matching import (
+from ...utils.distance_matching import (
     T_Distance_Function,
     T_Value,
     DistanceMeasure,
@@ -14,7 +14,7 @@ from ..utils.distance_matching import (
     get_character_count_based_upper_bound_score
 )
 
-from .normalization import (
+from ..normalization import (
     strip_punctuation_and_whitespace
 )
 

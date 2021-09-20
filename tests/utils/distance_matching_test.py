@@ -1,6 +1,6 @@
 import pytest
 
-from sciencebeam_judge.evaluation.scoring_methods import levenshtein_score
+from sciencebeam_judge.evaluation.scoring_methods.scoring_methods import levenshtein_score
 
 from sciencebeam_judge.utils.distance_matching import (
     DistanceMeasure,

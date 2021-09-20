@@ -71,7 +71,7 @@ from .evaluation.match_scoring import (
     MatchScoringProps
 )
 
-from .evaluation.scoring_methods import (
+from .evaluation.scoring_methods.scoring_methods import (
     ScoringMethodNames,
     ALL_SCORING_METHOD_NAMES
 )

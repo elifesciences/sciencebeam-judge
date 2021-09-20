@@ -5,7 +5,7 @@ from sciencebeam_utils.utils.collection import flatten
 
 from ..match_scoring import get_match_score_obj_for_score
 from ..normalization import normalize_string
-from ..scoring_methods import get_scoring_methods
+from ..scoring_methods.scoring_methods import get_scoring_methods
 from .scoring_type import ScoringType
 
 from .list import (

@@ -2,7 +2,7 @@ from __future__ import division
 
 import logging
 
-from sciencebeam_judge.evaluation.scoring_methods import (
+from sciencebeam_judge.evaluation.scoring_methods.scoring_methods import (
     exact_score,
     levenshtein_score,
     ratcliff_obershelp_score

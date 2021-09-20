@@ -1,6 +1,6 @@
 from ..normalization import normalize_whitespace
 
-from ..scoring_methods import get_scoring_methods
+from ..scoring_methods.scoring_methods import get_scoring_methods
 
 from ..match_scoring import get_match_score_obj_for_score_fn
 

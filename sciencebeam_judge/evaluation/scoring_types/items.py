@@ -7,7 +7,7 @@ from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
 from ..normalization import normalize_string
 
-from ..scoring_methods import ScoringMethod, ScoringMethodNames
+from ..scoring_methods.scoring_methods import ScoringMethod, ScoringMethodNames
 
 
 LOGGER = logging.getLogger(__name__)
