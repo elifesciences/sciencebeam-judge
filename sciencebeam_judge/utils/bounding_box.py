@@ -25,6 +25,13 @@ class BoundingBox(NamedTuple):
     width: float
     height: float
 
+    def __bool__(self):
+        return not self.is_empty
+
+    @property
+    def is_empty(self) -> bool:
+        return not self.width or not self.height
+
     @property
     def area(self) -> float:
         return self.width * self.height
@@ -48,9 +55,39 @@ class BoundingBox(NamedTuple):
         )
 
 
+EMPTY_BOUNDING_BOX = BoundingBox(x=0, y=0, width=0, height=0)
+
+
 class PageBoundingBox(NamedTuple):
     page_number: int
     bounding_box: BoundingBox
+
+    def __bool__(self):
+        return not self.is_empty
+
+    @property
+    def is_empty(self) -> bool:
+        return self.bounding_box.is_empty
+
+    @property
+    def area(self) -> float:
+        return self.bounding_box.area
+
+    def intersection(self, other: 'PageBoundingBox') -> 'PageBoundingBox':
+        if other.page_number != self.page_number:
+            return EMPTY_PAGE_BOUNDING_BOX
+        return PageBoundingBox(
+            page_number=self.page_number,
+            bounding_box=self.bounding_box.intersection(
+                other.bounding_box
+            )
+        )
+
+
+EMPTY_PAGE_BOUNDING_BOX = PageBoundingBox(
+    page_number=0,
+    bounding_box=EMPTY_BOUNDING_BOX
+)
 
 
 class PageBoundingBoxList(NamedTuple):
