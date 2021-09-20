@@ -28,3 +28,19 @@ def parse_page_bounding_box_list(text: str) -> PageBoundingBoxList:
         parse_page_bounding_box(fragment)
         for fragment in fragments
     ])
+
+
+def format_bounding_box(bounding_box: BoundingBox) -> str:
+    return f'{bounding_box.x},{bounding_box.y},{bounding_box.width},{bounding_box.height}'
+
+
+def format_page_bounding_box(page_bounding_box: PageBoundingBox) -> str:
+    bounding_box_text = format_bounding_box(page_bounding_box.bounding_box)
+    return f'{page_bounding_box.page_number},{bounding_box_text}'
+
+
+def format_page_bounding_box_list(page_bounding_box_list: PageBoundingBoxList) -> str:
+    return ';'.join((
+        format_page_bounding_box(page_bounding_box)
+        for page_bounding_box in page_bounding_box_list.non_empty_page_bounding_box_list
+    ))
