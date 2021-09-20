@@ -10,7 +10,7 @@ class TestBoundingBox:
         bounding_box = BoundingBox(
             x=101, y=102, width=0, height=50
         )
-        assert bounding_box.is_empty
+        assert bounding_box.is_empty()
         assert not bounding_box
         assert not bounding_box.area
 
@@ -18,7 +18,7 @@ class TestBoundingBox:
         bounding_box = BoundingBox(
             x=101, y=102, width=200, height=0
         )
-        assert bounding_box.is_empty
+        assert bounding_box.is_empty()
         assert not bounding_box
         assert not bounding_box.area
 
@@ -26,7 +26,7 @@ class TestBoundingBox:
         bounding_box = BoundingBox(
             x=101, y=102, width=200, height=50
         )
-        assert not bounding_box.is_empty
+        assert not bounding_box.is_empty()
         assert bounding_box
 
     def test_should_calculate_area(self):
@@ -71,7 +71,7 @@ class TestPageBoundingBox:
                 x=101, y=102, width=200, height=0
             )
         )
-        assert page_bounding_box.is_empty
+        assert page_bounding_box.is_empty()
         assert not page_bounding_box
         assert not page_bounding_box.area
 
@@ -82,7 +82,7 @@ class TestPageBoundingBox:
                 x=101, y=102, width=200, height=50
             )
         )
-        assert not page_bounding_box.is_empty
+        assert not page_bounding_box.is_empty()
         assert page_bounding_box
 
     def test_should_calculate_intersection_with_same_page_number(self):
@@ -114,13 +114,13 @@ class TestPageBoundingBox:
                 )
             )
         )
-        assert result.is_empty
+        assert result.is_empty()
 
 
 class TestPageBoundingBoxList:
     def test_should_indicate_empty_for_empty_list(self):
         page_bounding_box_list = PageBoundingBoxList([])
-        assert page_bounding_box_list.is_empty
+        assert page_bounding_box_list.is_empty()
         assert not page_bounding_box_list
         assert not page_bounding_box_list.area
 
@@ -131,7 +131,7 @@ class TestPageBoundingBoxList:
                 x=101, y=102, width=200, height=0
             )
         )])
-        assert page_bounding_box_list.is_empty
+        assert page_bounding_box_list.is_empty()
         assert not page_bounding_box_list
         assert not page_bounding_box_list.area
 
@@ -142,5 +142,5 @@ class TestPageBoundingBoxList:
                 x=101, y=102, width=200, height=50
             )
         )])
-        assert not page_bounding_box_list.is_empty
+        assert not page_bounding_box_list.is_empty()
         assert page_bounding_box_list

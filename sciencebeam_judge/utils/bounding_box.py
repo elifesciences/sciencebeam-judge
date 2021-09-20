@@ -26,9 +26,8 @@ class BoundingBox(NamedTuple):
     height: float
 
     def __bool__(self):
-        return not self.is_empty
+        return not self.is_empty()
 
-    @property
     def is_empty(self) -> bool:
         return not self.width or not self.height
 
@@ -63,11 +62,10 @@ class PageBoundingBox(NamedTuple):
     bounding_box: BoundingBox
 
     def __bool__(self):
-        return not self.is_empty
+        return not self.is_empty()
 
-    @property
     def is_empty(self) -> bool:
-        return self.bounding_box.is_empty
+        return self.bounding_box.is_empty()
 
     @property
     def area(self) -> float:
@@ -97,9 +95,8 @@ class PageBoundingBoxList(NamedTuple):
         return len(self.page_bounding_box_list)
 
     def __bool__(self):
-        return not self.is_empty
+        return not self.is_empty()
 
-    @property
     def is_empty(self) -> bool:
         return not self.non_empty_page_bounding_box_list
 
@@ -108,7 +105,7 @@ class PageBoundingBoxList(NamedTuple):
         return [
             page_bounding_box
             for page_bounding_box in self.page_bounding_box_list
-            if not page_bounding_box.is_empty
+            if not page_bounding_box.is_empty()
         ]
 
     @property
