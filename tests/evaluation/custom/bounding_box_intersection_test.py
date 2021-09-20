@@ -4,7 +4,7 @@ from sciencebeam_judge.utils.bounding_box import (
     PageBoundingBox,
     PageBoundingBoxList
 )
-from sciencebeam_judge.evaluation.scoring_methods.bounding_box_intersection import (
+from sciencebeam_judge.evaluation.custom.bounding_box_intersection import (
     format_page_bounding_box_list,
     get_formatted_page_bounding_box_list_area_match_score,
     get_page_bounding_box_list_area_match_score,
