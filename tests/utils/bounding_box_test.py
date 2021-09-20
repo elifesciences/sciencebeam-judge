@@ -1,6 +1,7 @@
 from sciencebeam_judge.utils.bounding_box import (
     BoundingBox,
-    PageBoundingBox
+    PageBoundingBox,
+    PageBoundingBoxList
 )
 
 
@@ -114,3 +115,32 @@ class TestPageBoundingBox:
             )
         )
         assert result.is_empty
+
+
+class TestPageBoundingBoxList:
+    def test_should_indicate_empty_for_empty_list(self):
+        page_bounding_box_list = PageBoundingBoxList([])
+        assert page_bounding_box_list.is_empty
+        assert not page_bounding_box_list
+        assert not page_bounding_box_list.area
+
+    def test_should_indicate_empty_for_empty_bounding_box(self):
+        page_bounding_box_list = PageBoundingBoxList([PageBoundingBox(
+            page_number=1,
+            bounding_box=BoundingBox(
+                x=101, y=102, width=200, height=0
+            )
+        )])
+        assert page_bounding_box_list.is_empty
+        assert not page_bounding_box_list
+        assert not page_bounding_box_list.area
+
+    def test_should_indicate_not_empty_for_non_bounding_box(self):
+        page_bounding_box_list = PageBoundingBoxList([PageBoundingBox(
+            page_number=1,
+            bounding_box=BoundingBox(
+                x=101, y=102, width=200, height=50
+            )
+        )])
+        assert not page_bounding_box_list.is_empty
+        assert page_bounding_box_list

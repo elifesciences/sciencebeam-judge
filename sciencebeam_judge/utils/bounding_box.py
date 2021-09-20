@@ -95,3 +95,25 @@ class PageBoundingBoxList(NamedTuple):
 
     def __len__(self) -> int:
         return len(self.page_bounding_box_list)
+
+    def __bool__(self):
+        return not self.is_empty
+
+    @property
+    def is_empty(self) -> bool:
+        return not self.non_empty_page_bounding_box_list
+
+    @property
+    def non_empty_page_bounding_box_list(self) -> Sequence[PageBoundingBox]:
+        return [
+            page_bounding_box
+            for page_bounding_box in self.page_bounding_box_list
+            if not page_bounding_box.is_empty
+        ]
+
+    @property
+    def area(self) -> float:
+        return sum(
+            page_bounding_box.area
+            for page_bounding_box in self.page_bounding_box_list
+        )
