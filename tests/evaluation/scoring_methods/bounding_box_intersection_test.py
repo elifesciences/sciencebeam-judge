@@ -1,7 +1,7 @@
 from sciencebeam_judge.evaluation.scoring_methods.bounding_box_intersection import (
     BoundingBox,
     PageBoundingBox,
-    PageBoundingBoxList
+    parse_page_bounding_box_list
 )
 
 
@@ -40,19 +40,19 @@ class TestBoundingBox:
         )
 
 
-class TestPageBoundingBoxList:
+class TestParsePageBoundingBoxList:
     def test_should_parse_empty_none(self):
-        result = PageBoundingBoxList.from_string(None)
+        result = parse_page_bounding_box_list(None)
         assert not result.page_bounding_box_list
         assert not result
 
     def test_should_parse_empty_string(self):
-        result = PageBoundingBoxList.from_string('')
+        result = parse_page_bounding_box_list('')
         assert not result.page_bounding_box_list
         assert not result
 
     def test_should_parse_single_bounding_box(self):
-        result = PageBoundingBoxList.from_string(
+        result = parse_page_bounding_box_list(
             '101,102.22,103.33,104.44,105.55'
         )
         assert result.page_bounding_box_list
@@ -67,7 +67,7 @@ class TestPageBoundingBoxList:
         )
 
     def test_should_parse_multiple_bounding_box(self):
-        result = PageBoundingBoxList.from_string(
+        result = parse_page_bounding_box_list(
             '101,102.22,103.33,104.44,105.55;'
             '201,202.22,203.33,204.44,205.55'
         )
