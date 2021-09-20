@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from typing import Dict, Optional, Sequence
+
 from lxml import etree as ET
 
 from ..utils.config import parse_config_as_dict
@@ -74,7 +76,12 @@ def parse_xml_items(items):
     }
 
 
-def parse_xml_field_node(field_name, node, mapping):
+def parse_xml_field_node(
+    field_name: str,
+    node: ET.ElementBase,
+    mapping: Dict[str, str],
+    namespaces: Dict[str, str]
+):
     try:
         if node.tag == 'table':
             return parse_xml_table(node)
@@ -87,23 +94,37 @@ def parse_xml_field_node(field_name, node, mapping):
     return get_text_content_and_ignore_children(
         node,
         node.xpath(
-            mapping[field_name + '.ignore']
+            mapping[field_name + '.ignore'],
+            namespaces=namespaces
         ) if field_name + '.ignore' in mapping else None
     ).strip()
 
 
-def parse_xml_field(field_name, root, mapping):
+def parse_xml_field(
+    field_name: str,
+    root: ET.ElementBase,
+    mapping: Dict[str, str],
+    namespaces: Dict[str, str]
+):
     return [
         parse_xml_field_node(
-            field_name, node, mapping
+            field_name, node, mapping,
+            namespaces=namespaces
         )
-        for node in root.xpath(mapping[field_name])
+        for node in root.xpath(mapping[field_name], namespaces=namespaces)
     ]
 
 
-def parse_xml(source, xml_mapping, fields=None, filename=None):
+def parse_xml(
+    source,
+    xml_mapping: Dict[str, Dict[str, str]],
+    fields: Optional[Sequence[str]] = None,
+    filename: Optional[str] = None
+):
     root = parse_ignore_namespace(source, filename=filename)
     root_tag = root.tag  # pylint: disable=no-member
+    assert root_tag != 'namespaces'
+    namespaces = xml_mapping.get('namespaces')
     if root_tag not in xml_mapping:
         raise Exception("unrecognised tag: {} (available: {})".format(
             root_tag, xml_mapping.sections()
@@ -115,7 +136,7 @@ def parse_xml(source, xml_mapping, fields=None, filename=None):
         if (fields is None or k in fields) and '.ignore' not in k
     ]
     result = {
-        field_name: parse_xml_field(field_name, root, mapping)
+        field_name: parse_xml_field(field_name, root, mapping, namespaces=namespaces)
         for field_name in field_names
     }
     return result
