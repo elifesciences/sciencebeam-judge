@@ -1,10 +1,12 @@
 from sciencebeam_judge.utils.bounding_box import (
+    EMPTY_PAGE_BOUNDING_BOX_LIST,
     BoundingBox,
     PageBoundingBox,
     PageBoundingBoxList
 )
 from sciencebeam_judge.evaluation.scoring_methods.bounding_box_intersection import (
     format_page_bounding_box_list,
+    get_page_bounding_box_list_area_match_score,
     parse_page_bounding_box_list
 )
 
@@ -95,3 +97,53 @@ class TestFormatPageBoundingBoxList:
             '101,102.22,103.33,104.44,105.55;'
             '201,202.22,203.33,204.44,205.55'
         )
+
+
+NON_EMPTY_PAGE_BOUNDING_BOX_LIST = PageBoundingBoxList([
+    PageBoundingBox(
+        page_number=101,
+        bounding_box=BoundingBox(
+            x=102.22, y=103.33, width=104.44, height=105.55
+        )
+    )
+])
+
+
+class TestGetPageBoundingBoxListAreaMatchScore:
+    def test_should_return_zero_for_non_empty_empty_page_bounding_box_list(self):
+        result = get_page_bounding_box_list_area_match_score(
+            NON_EMPTY_PAGE_BOUNDING_BOX_LIST,
+            EMPTY_PAGE_BOUNDING_BOX_LIST
+        )
+        assert result == 0.0
+
+    def test_should_return_zero_for_empty_non_empty_page_bounding_box_list(self):
+        result = get_page_bounding_box_list_area_match_score(
+            EMPTY_PAGE_BOUNDING_BOX_LIST,
+            NON_EMPTY_PAGE_BOUNDING_BOX_LIST
+        )
+        assert result == 0.0
+
+    def test_should_return_one_for_equal_page_bounding_box_lists(self):
+        result = get_page_bounding_box_list_area_match_score(
+            NON_EMPTY_PAGE_BOUNDING_BOX_LIST,
+            NON_EMPTY_PAGE_BOUNDING_BOX_LIST
+        )
+        assert result == 1.0
+
+    def test_should_return_dot_five_for_half_overlapping_page_bounding_box_lists(self):
+        result = get_page_bounding_box_list_area_match_score(
+            PageBoundingBoxList([PageBoundingBox(
+                page_number=101,
+                bounding_box=BoundingBox(
+                    x=102.22, y=103.33, width=200, height=100
+                )
+            )]),
+            PageBoundingBoxList([PageBoundingBox(
+                page_number=101,
+                bounding_box=BoundingBox(
+                    x=102.22, y=103.33, width=200, height=50
+                )
+            )])
+        )
+        assert round(result, 3) == 0.5

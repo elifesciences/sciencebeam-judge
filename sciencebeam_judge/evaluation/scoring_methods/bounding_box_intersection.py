@@ -1,8 +1,13 @@
+import logging
+
 from sciencebeam_judge.utils.bounding_box import (
     BoundingBox,
     PageBoundingBox,
     PageBoundingBoxList
 )
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 def parse_page_bounding_box(text: str) -> PageBoundingBox:
@@ -44,3 +49,20 @@ def format_page_bounding_box_list(page_bounding_box_list: PageBoundingBoxList) -
         format_page_bounding_box(page_bounding_box)
         for page_bounding_box in page_bounding_box_list.non_empty_page_bounding_box_list
     ))
+
+
+def get_page_bounding_box_list_area_match_score(
+    page_bounding_box_list_1: PageBoundingBoxList,
+    page_bounding_box_list_2: PageBoundingBoxList
+) -> float:
+    max_area = max(page_bounding_box_list_1.area, page_bounding_box_list_2.area)
+    intersection_page_bounding_box_list = page_bounding_box_list_1.intersection(
+        page_bounding_box_list_2
+    )
+    intersection_area = intersection_page_bounding_box_list.area
+    intersection_ratio = intersection_area / max_area
+    LOGGER.debug(
+        'intersection_area=%f, max_area=%f, intersection_ratio=%f',
+        intersection_area, max_area, intersection_ratio
+    )
+    return intersection_ratio
