@@ -135,7 +135,13 @@ SCORING_METHODS_MAP = {
 }
 
 
+def get_scoring_method(measure: Union[str, ScoringMethod]) -> List[ScoringMethod]:
+    if isinstance(measure, ScoringMethod):
+        return measure
+    return SCORING_METHODS_MAP[measure]
+
+
 def get_scoring_methods(measures: List[str] = None) -> List[ScoringMethod]:
     if not measures:
         measures = ALL_SCORING_METHOD_NAMES
-    return [SCORING_METHODS_MAP[k] for k in measures]
+    return [get_scoring_method(measure) for measure in measures]

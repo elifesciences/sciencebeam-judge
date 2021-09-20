@@ -5,6 +5,7 @@ from sciencebeam_judge.utils.bounding_box import (
     PageBoundingBoxList
 )
 from sciencebeam_judge.evaluation.custom.bounding_box_intersection import (
+    BoundingBoxIntersectionEvaluation,
     format_page_bounding_box_list,
     get_formatted_page_bounding_box_list_area_match_score,
     get_page_bounding_box_list_area_match_score,
@@ -195,3 +196,26 @@ class TestGetFormattedPageBoundingBoxListAreaMatchScore:
             )]))
         )
         assert round(result, 3) == 0.5
+
+
+class TestBoundingBoxIntersectionEvaluation:
+    def test_should_return_zero_for_non_empty_empty_page_bounding_box_list(self):
+        result = BoundingBoxIntersectionEvaluation().score(
+            [format_page_bounding_box_list(NON_EMPTY_PAGE_BOUNDING_BOX_LIST)],
+            ['']
+        )
+        assert result.score == 0.0
+
+    def test_should_return_zero_for_empty_non_empty_page_bounding_box_list(self):
+        result = BoundingBoxIntersectionEvaluation().score(
+            [''],
+            [format_page_bounding_box_list(NON_EMPTY_PAGE_BOUNDING_BOX_LIST)]
+        )
+        assert result.score == 0.0
+
+    def test_should_return_one_for_equal_page_bounding_box_lists(self):
+        result = BoundingBoxIntersectionEvaluation().score(
+            [format_page_bounding_box_list(NON_EMPTY_PAGE_BOUNDING_BOX_LIST)],
+            [format_page_bounding_box_list(NON_EMPTY_PAGE_BOUNDING_BOX_LIST)]
+        )
+        assert result.score == 1.0

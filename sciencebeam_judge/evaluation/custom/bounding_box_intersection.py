@@ -1,10 +1,18 @@
 import logging
+from typing import List
 
 from sciencebeam_judge.utils.bounding_box import (
     BoundingBox,
     PageBoundingBox,
     PageBoundingBoxList
 )
+from sciencebeam_judge.evaluation.match_scoring import MatchScore
+from sciencebeam_judge.evaluation.scoring_methods.scoring_methods import ScoringMethod
+from sciencebeam_judge.evaluation.scoring_types.scoring_types import (
+    ScoringTypeNames,
+    resolve_scoring_type
+)
+from sciencebeam_judge.evaluation.custom import CustomEvaluation
 
 
 LOGGER = logging.getLogger(__name__)
@@ -83,3 +91,31 @@ def get_formatted_page_bounding_box_list_area_match_score(
         parse_page_bounding_box_list(formatted_page_bounding_box_list_1),
         parse_page_bounding_box_list(formatted_page_bounding_box_list_2)
     )
+
+
+BOUNDING_BOX_INTERSECTION_SCORING_METHOD = ScoringMethod(
+    'bounding_box_intersection',
+    get_formatted_page_bounding_box_list_area_match_score,
+    threshold=0.8
+)
+
+
+class BoundingBoxIntersectionEvaluation(CustomEvaluation):
+    def __init__(self):
+        super().__init__()
+        self.scoring_type = resolve_scoring_type(ScoringTypeNames.PARIAL_ULIST)
+
+    def score(
+        self,
+        expected: List[str],
+        actual: List[str],
+        include_values: bool = True
+    ) -> MatchScore:
+        score_dict = self.scoring_type.score(
+            expected,
+            actual,
+            include_values=include_values,
+            measures=[BOUNDING_BOX_INTERSECTION_SCORING_METHOD]
+        )
+        LOGGER.debug('score_dict: %r', score_dict)
+        return MatchScore.from_dict(score_dict[BOUNDING_BOX_INTERSECTION_SCORING_METHOD.name])
