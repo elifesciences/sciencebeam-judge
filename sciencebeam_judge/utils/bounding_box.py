@@ -114,3 +114,25 @@ class PageBoundingBoxList(NamedTuple):
             page_bounding_box.area
             for page_bounding_box in self.page_bounding_box_list
         )
+
+    def intersection(self, other: 'PageBoundingBoxList') -> 'PageBoundingBoxList':
+        non_empty_page_bounding_box_list_1 = self.non_empty_page_bounding_box_list
+        non_empty_page_bounding_box_list_2 = other.non_empty_page_bounding_box_list
+        if not non_empty_page_bounding_box_list_1 or not non_empty_page_bounding_box_list_2:
+            return EMPTY_PAGE_BOUNDING_BOX_LIST
+        intersection_page_bounding_box_list = [
+            page_bounding_box_1.intersection(page_bounding_box_2)
+            for page_bounding_box_1 in non_empty_page_bounding_box_list_1
+            for page_bounding_box_2 in non_empty_page_bounding_box_list_2
+        ]
+        non_empty_intersection_page_bounding_box_list = [
+            page_bounding_box
+            for page_bounding_box in intersection_page_bounding_box_list
+            if not page_bounding_box.is_empty()
+        ]
+        if not non_empty_intersection_page_bounding_box_list:
+            return EMPTY_PAGE_BOUNDING_BOX_LIST
+        return PageBoundingBoxList(non_empty_intersection_page_bounding_box_list)
+
+
+EMPTY_PAGE_BOUNDING_BOX_LIST = PageBoundingBoxList(tuple([]))

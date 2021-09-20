@@ -1,8 +1,13 @@
+import logging
+
 from sciencebeam_judge.utils.bounding_box import (
     BoundingBox,
     PageBoundingBox,
     PageBoundingBoxList
 )
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 class TestBoundingBox:
@@ -144,3 +149,81 @@ class TestPageBoundingBoxList:
         )])
         assert not page_bounding_box_list.is_empty()
         assert page_bounding_box_list
+
+    def test_should_calculate_intersection_non_empty_with_empty_page_bounding_box_list(self):
+        result = (
+            PageBoundingBoxList([
+                PageBoundingBox(
+                    page_number=1,
+                    bounding_box=BoundingBox(110, 120, 50, 60)
+                )
+            ]).intersection(PageBoundingBoxList([]))
+        )
+        assert result.is_empty()
+
+    def test_should_calculate_intersection_empty_with_non_empty_page_bounding_box_list(self):
+        result = (
+            PageBoundingBoxList([]).intersection(PageBoundingBoxList([
+                PageBoundingBox(
+                    page_number=1,
+                    bounding_box=BoundingBox(120, 110, 100, 100)
+                )
+            ]))
+        )
+        assert result.is_empty()
+
+    def test_should_calculate_intersection_with_single_other_overlapping_page_bounding_box(self):
+        result = (
+            PageBoundingBoxList([
+                PageBoundingBox(
+                    page_number=1,
+                    bounding_box=BoundingBox(110, 120, 50, 60)
+                )
+            ]).intersection(PageBoundingBoxList([
+                PageBoundingBox(
+                    page_number=1,
+                    bounding_box=BoundingBox(120, 110, 100, 100)
+                )
+            ]))
+        )
+        LOGGER.debug('result: %r', result)
+        assert result == PageBoundingBoxList([PageBoundingBox(
+            page_number=1,
+            bounding_box=BoundingBox(120, 120, 40, 60)
+        )])
+
+    def test_should_calculate_intersection_with_multiple_other_overlapping_page_bounding_box(
+        self
+    ):
+        result = (
+            PageBoundingBoxList([
+                PageBoundingBox(
+                    page_number=1,
+                    bounding_box=BoundingBox(110, 120, 50, 60)
+                ),
+                PageBoundingBox(
+                    page_number=2,
+                    bounding_box=BoundingBox(110, 120, 50, 60)
+                )
+            ]).intersection(PageBoundingBoxList([
+                PageBoundingBox(
+                    page_number=2,
+                    bounding_box=BoundingBox(120, 110, 100, 100)
+                ),
+                PageBoundingBox(
+                    page_number=1,
+                    bounding_box=BoundingBox(120, 110, 100, 100)
+                )
+            ]))
+        )
+        LOGGER.debug('result: %r', result)
+        assert result == PageBoundingBoxList([
+            PageBoundingBox(
+                page_number=1,
+                bounding_box=BoundingBox(120, 120, 40, 60)
+            ),
+            PageBoundingBox(
+                page_number=2,
+                bounding_box=BoundingBox(120, 120, 40, 60)
+            )
+        ])
