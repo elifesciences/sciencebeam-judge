@@ -6,6 +6,7 @@ from sciencebeam_judge.utils.bounding_box import (
 )
 from sciencebeam_judge.evaluation.scoring_methods.bounding_box_intersection import (
     format_page_bounding_box_list,
+    get_formatted_page_bounding_box_list_area_match_score,
     get_page_bounding_box_list_area_match_score,
     parse_page_bounding_box_list
 )
@@ -145,5 +146,45 @@ class TestGetPageBoundingBoxListAreaMatchScore:
                     x=102.22, y=103.33, width=200, height=50
                 )
             )])
+        )
+        assert round(result, 3) == 0.5
+
+
+class TestGetFormattedPageBoundingBoxListAreaMatchScore:
+    def test_should_return_zero_for_non_empty_empty_page_bounding_box_list(self):
+        result = get_formatted_page_bounding_box_list_area_match_score(
+            format_page_bounding_box_list(NON_EMPTY_PAGE_BOUNDING_BOX_LIST),
+            ''
+        )
+        assert result == 0.0
+
+    def test_should_return_zero_for_empty_non_empty_page_bounding_box_list(self):
+        result = get_formatted_page_bounding_box_list_area_match_score(
+            '',
+            format_page_bounding_box_list(NON_EMPTY_PAGE_BOUNDING_BOX_LIST)
+        )
+        assert result == 0.0
+
+    def test_should_return_one_for_equal_page_bounding_box_lists(self):
+        result = get_formatted_page_bounding_box_list_area_match_score(
+            format_page_bounding_box_list(NON_EMPTY_PAGE_BOUNDING_BOX_LIST),
+            format_page_bounding_box_list(NON_EMPTY_PAGE_BOUNDING_BOX_LIST)
+        )
+        assert result == 1.0
+
+    def test_should_return_dot_five_for_half_overlapping_page_bounding_box_lists(self):
+        result = get_formatted_page_bounding_box_list_area_match_score(
+            format_page_bounding_box_list(PageBoundingBoxList([PageBoundingBox(
+                page_number=101,
+                bounding_box=BoundingBox(
+                    x=102.22, y=103.33, width=200, height=100
+                )
+            )])),
+            format_page_bounding_box_list(PageBoundingBoxList([PageBoundingBox(
+                page_number=101,
+                bounding_box=BoundingBox(
+                    x=102.22, y=103.33, width=200, height=50
+                )
+            )]))
         )
         assert round(result, 3) == 0.5

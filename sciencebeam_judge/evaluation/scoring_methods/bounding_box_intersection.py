@@ -66,3 +66,13 @@ def get_page_bounding_box_list_area_match_score(
         intersection_area, max_area, intersection_ratio
     )
     return intersection_ratio
+
+
+def get_formatted_page_bounding_box_list_area_match_score(
+    formatted_page_bounding_box_list_1: str,
+    formatted_page_bounding_box_list_2: str
+) -> float:
+    return get_page_bounding_box_list_area_match_score(
+        parse_page_bounding_box_list(formatted_page_bounding_box_list_1),
+        parse_page_bounding_box_list(formatted_page_bounding_box_list_2)
+    )
