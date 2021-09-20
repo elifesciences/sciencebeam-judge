@@ -688,19 +688,19 @@ class TestTei:
                 xml_mapping=default_xml_mapping,
                 fields=[
                     'figure_labels', 'figure_captions', 'figure_label_captions',
-                    'figure_graphic_coords',
+                    'figure_graphic_bbox',
                     'body_figure_labels', 'body_figure_captions', 'body_figure_label_captions',
-                    'body_figure_graphic_coords',
+                    'body_figure_graphic_bbox',
                 ]
             )
             assert result.get('figure_labels') == [LABEL_1]
             assert result.get('figure_captions') == [TEXT_1]
             assert result.get('figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
-            assert result.get('figure_graphic_coords') == [COORDS_1]
+            assert result.get('figure_graphic_bbox') == [COORDS_1]
             assert result.get('body_figure_labels') == [LABEL_1]
             assert result.get('body_figure_captions') == [TEXT_1]
             assert result.get('body_figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
-            assert result.get('body_figure_graphic_coords') == [COORDS_1]
+            assert result.get('body_figure_graphic_bbox') == [COORDS_1]
 
         def test_should_parse_figure_label_and_description_in_nested_section(
                 self, default_xml_mapping):
