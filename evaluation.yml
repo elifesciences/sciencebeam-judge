@@ -48,6 +48,8 @@ custom:
     # Special evaluation of "bounding box"
     - name: figure_graphic_bbox_intersection
       evaluation_type: bounding_box_intersection
+      evaluation_type_config:
+        scoring_type: partial_ulist
       expected:
         field_names:
           - figure_graphic_bbox

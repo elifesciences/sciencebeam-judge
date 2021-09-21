@@ -11,6 +11,9 @@
             "properties": {
               "name": {"type": "string"},
               "evaluation_type": {"type": "string"},
+              "evaluation_type_config": {
+                "type": "object"
+              },
               "expected": {
                 "type": "object",
                 "properties": {

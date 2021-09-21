@@ -1,5 +1,5 @@
 import logging
-from typing import List
+from typing import List, Optional
 
 from sciencebeam_judge.utils.bounding_box import (
     BoundingBox,
@@ -100,10 +100,17 @@ BOUNDING_BOX_INTERSECTION_SCORING_METHOD = ScoringMethod(
 )
 
 
+DEFAULT_BOUNDING_BOX_SCORING_TYPE_NAME = ScoringTypeNames.PARIAL_ULIST
+
+
 class BoundingBoxIntersectionEvaluation(CustomEvaluation):
-    def __init__(self):
+    def __init__(self, config: Optional[dict] = None):
         super().__init__()
-        self.scoring_type = resolve_scoring_type(ScoringTypeNames.PARIAL_ULIST)
+        self.scoring_type_name = (  # pylint: disable=consider-using-ternary
+            (config and config.get('scoring_type'))
+            or DEFAULT_BOUNDING_BOX_SCORING_TYPE_NAME
+        )
+        self.scoring_type = resolve_scoring_type(self.scoring_type_name)
 
     def score(
         self,

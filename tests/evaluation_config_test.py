@@ -59,7 +59,10 @@ class TestGetEvaluationConfigObject:
             'custom': {
                 'fields': [{
                     'name': 'field1',
-                    'evaluation_type': 'test',
+                    'evaluation_type': 'evaluation_type1',
+                    'evaluation_type_config': {
+                        'some_param': 'value1'
+                    },
                     'expected': {
                         'field_names': ['expected1']
                     },
@@ -72,6 +75,10 @@ class TestGetEvaluationConfigObject:
         assert config.custom is not None
         fields = config.custom.fields
         assert fields[0].name == 'field1'
+        assert fields[0].evaluation_type == 'evaluation_type1'
+        assert fields[0].evaluation_type_config == {
+            'some_param': 'value1'
+        }
         assert fields[0].expected.field_names == ['expected1']
         assert fields[0].actual.field_names == ['actual1']
 
