@@ -14,7 +14,7 @@ from sciencebeam_judge.evaluation_config import (
     CustomEvaluationConfig
 )
 
-from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
+from sciencebeam_judge.evaluation.scoring_methods.scoring_methods import ScoringMethodNames
 from sciencebeam_judge.evaluation.match_scoring import MatchScore
 
 import sciencebeam_judge.evaluation.document_scoring as document_scoring_module

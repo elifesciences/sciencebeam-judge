@@ -1,3 +1,5 @@
+from typing import Optional
+from sciencebeam_judge.evaluation.scoring_types.scoring_type import ScoringType
 from .list import (
     ORDERED_LIST_SCORING_TYPE,
     PARTIAL_ORDERED_LIST_SCORING_TYPE,
@@ -41,7 +43,7 @@ SCORING_TYPE_MAP = {
 }
 
 
-def resolve_scoring_type(scoring_type_str):
+def resolve_scoring_type(scoring_type_str: Optional[str]) -> ScoringType:
     try:
         return SCORING_TYPE_MAP[scoring_type_str or DEFAULT_SCORING_TYPE_NAME]
     except KeyError as exc:

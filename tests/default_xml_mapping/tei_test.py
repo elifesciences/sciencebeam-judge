@@ -1,14 +1,25 @@
 import logging
 
-from lxml.builder import E
+from lxml.builder import ElementMaker
 
 from .utils import parse_xml_node
 
-# false positive not-callable for lxml.builder.E
+# false positive not-callable for lxml.builder.TEI_E
 # pylint: disable=not-callable
 
 
 LOGGER = logging.getLogger(__name__)
+
+TEI_NS = 'http://www.tei-c.org/ns/1.0'
+TEI_NS_PREFIX = '{%s}' % TEI_NS
+
+TEI_NS_MAP = {
+    'tei': TEI_NS
+}
+
+TEI_E = ElementMaker(namespace=TEI_NS, nsmap={
+    None: TEI_NS
+})
 
 
 DOI_1 = '10.12345/abc/1'
@@ -20,22 +31,27 @@ TEXT_1 = 'Some text 1'
 EMAIL_1 = 'name1@test'
 EMAIL_2 = 'name2@test'
 
+COORDS = 'coords'
+COORDS_1 = '101,102,103,104,105'
+
 
 class TestTei:
     class TestJatsCorrespondingAuthor:
         def test_should_find_corresponding_author_via_corresp_role(
                 self, default_xml_mapping):
-            xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
-                E.author(
-                    {'role': 'corresp'},
-                    E.persName(E.forename('First1'), E.surname('Sur1')),
-                    E.email(EMAIL_1)
-                ),
-                E.author(
-                    E.persName(E.forename('First2'), E.surname('Sur2')),
-                    E.email(EMAIL_2)
-                )
-            ))))))
+            xml = TEI_E.TEI(TEI_E.teiHeader(
+                TEI_E.fileDesc(TEI_E.sourceDesc(TEI_E.biblStruct(TEI_E.analytic(
+                    TEI_E.author(
+                        {'role': 'corresp'},
+                        TEI_E.persName(TEI_E.forename('First1'), TEI_E.surname('Sur1')),
+                        TEI_E.email(EMAIL_1)
+                    ),
+                    TEI_E.author(
+                        TEI_E.persName(TEI_E.forename('First2'), TEI_E.surname('Sur2')),
+                        TEI_E.email(EMAIL_2)
+                    )
+                ))))
+            ))
             result = parse_xml_node(
                 xml,
                 xml_mapping=default_xml_mapping,
@@ -62,20 +78,22 @@ class TestTei:
     class TestTeiAuthorAffiliation:
         def test_should_parse_single_affiliation(
                 self, default_xml_mapping):
-            xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
-                E.author(E.affiliation(
-                    E.note(
-                        {'type': 'raw_affiliation'},
-                        E.label('a'),
-                        ' Institution 1, City 1, Country 1'
-                    ),
-                    E.orgName({'type': 'institution'}, 'Institution 1'),
-                    E.address(
-                        E.settlement('City 1'),
-                        E.country('Country 1')
-                    )
-                ))
-            ))))))
+            xml = TEI_E.TEI(TEI_E.teiHeader(
+                TEI_E.fileDesc(TEI_E.sourceDesc(TEI_E.biblStruct(TEI_E.analytic(
+                    TEI_E.author(TEI_E.affiliation(
+                        TEI_E.note(
+                            {'type': 'raw_affiliation'},
+                            TEI_E.label('a'),
+                            ' Institution 1, City 1, Country 1'
+                        ),
+                        TEI_E.orgName({'type': 'institution'}, 'Institution 1'),
+                        TEI_E.address(
+                            TEI_E.settlement('City 1'),
+                            TEI_E.country('Country 1')
+                        )
+                    ))
+                ))))
+            ))
             result = parse_xml_node(
                 xml,
                 xml_mapping=default_xml_mapping,
@@ -93,19 +111,21 @@ class TestTei:
 
         def test_should_join_affiliation_text_with_same_label(
                 self, default_xml_mapping):
-            xml = E.TEI(E.teiHeader(E.fileDesc(E.sourceDesc(E.biblStruct(E.analytic(
-                E.author(
-                    E.affiliation(
-                        E.note({'type': 'raw_affiliation'}, E.label('a'), ' Part 1')
-                    ),
-                    E.affiliation(
-                        E.note({'type': 'raw_affiliation'}, E.label('a'), ' Part 2')
-                    ),
-                    E.affiliation(
-                        E.note({'type': 'raw_affiliation'}, E.label('b'), ' Other')
+            xml = TEI_E.TEI(TEI_E.teiHeader(
+                TEI_E.fileDesc(TEI_E.sourceDesc(TEI_E.biblStruct(TEI_E.analytic(
+                    TEI_E.author(
+                        TEI_E.affiliation(
+                            TEI_E.note({'type': 'raw_affiliation'}, TEI_E.label('a'), ' Part 1')
+                        ),
+                        TEI_E.affiliation(
+                            TEI_E.note({'type': 'raw_affiliation'}, TEI_E.label('a'), ' Part 2')
+                        ),
+                        TEI_E.affiliation(
+                            TEI_E.note({'type': 'raw_affiliation'}, TEI_E.label('b'), ' Other')
+                        )
                     )
-                )
-            ))))))
+                ))))
+            ))
             result = parse_xml_node(
                 xml,
                 xml_mapping=default_xml_mapping,
@@ -119,17 +139,17 @@ class TestTei:
 
     class TestTeiReferenceAuthorNames:
         def test_should_parse_tei_ref_authors(self, default_xml_mapping):
-            xml = E.TEI(E.text(E.back(E.div(E.listBibl(
-                E.biblStruct(E.analytic(E.author(E.persName(
-                    E.forename('GivenName1.1', type='first'),
-                    E.surname('Surname1.1')
-                )), E.author(E.persName(
-                    E.forename('GivenName1.2', type='first'),
-                    E.surname('Surname1.2')
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.back(TEI_E.div(TEI_E.listBibl(
+                TEI_E.biblStruct(TEI_E.analytic(TEI_E.author(TEI_E.persName(
+                    TEI_E.forename('GivenName1.1', type='first'),
+                    TEI_E.surname('Surname1.1')
+                )), TEI_E.author(TEI_E.persName(
+                    TEI_E.forename('GivenName1.2', type='first'),
+                    TEI_E.surname('Surname1.2')
                 )))),
-                E.biblStruct(E.analytic(E.author(E.persName(
-                    E.forename('GivenName2.1'),
-                    E.surname('Surname2.1')
+                TEI_E.biblStruct(TEI_E.analytic(TEI_E.author(TEI_E.persName(
+                    TEI_E.forename('GivenName2.1'),
+                    TEI_E.surname('Surname2.1')
                 ))))
             )))))
             result = parse_xml_node(
@@ -155,11 +175,11 @@ class TestTei:
             ]
 
         def test_should_normalize_tei_ref_author_name(self, default_xml_mapping):
-            xml = E.TEI(E.text(E.back(E.div(E.listBibl(
-                E.biblStruct(E.analytic(E.author(E.persName(
-                    E.forename('A', type='first'),
-                    E.forename('M', type='middle'),
-                    E.surname('Smith')
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.back(TEI_E.div(TEI_E.listBibl(
+                TEI_E.biblStruct(TEI_E.analytic(TEI_E.author(TEI_E.persName(
+                    TEI_E.forename('A', type='first'),
+                    TEI_E.forename('M', type='middle'),
+                    TEI_E.surname('Smith')
                 ))))
             )))))
             result = parse_xml_node(
@@ -184,11 +204,11 @@ class TestTei:
     class TestTeiReferenceTitle:
         def test_should_parse_tei_journal_article_and_source(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(E.back(E.div(E.listBibl(
-                E.biblStruct(E.analytic(
-                    E.title('Article 1', level='a', type='main'),
-                ), E.monogr(
-                    E.title('Journal 1', level='j')
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.back(TEI_E.div(TEI_E.listBibl(
+                TEI_E.biblStruct(TEI_E.analytic(
+                    TEI_E.title('Article 1', level='a', type='main'),
+                ), TEI_E.monogr(
+                    TEI_E.title('Journal 1', level='j')
                 ))
             )))))
             result = parse_xml_node(
@@ -208,11 +228,11 @@ class TestTei:
 
         def test_should_parse_tei_book_chapter_and_source(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(E.back(E.div(E.listBibl(
-                E.biblStruct(E.analytic(
-                    E.title('Chapter 1', level='a', type='main')
-                ), E.monogr(
-                    E.title('Book 1', level='m')
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.back(TEI_E.div(TEI_E.listBibl(
+                TEI_E.biblStruct(TEI_E.analytic(
+                    TEI_E.title('Chapter 1', level='a', type='main')
+                ), TEI_E.monogr(
+                    TEI_E.title('Book 1', level='m')
                 ))
             )))))
             result = parse_xml_node(
@@ -231,14 +251,14 @@ class TestTei:
     class TestJatsReferenceExternalIdentifiers:
         def test_should_parse_mixed_style_external_identifiers(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(E.back(E.div(E.listBibl(
-                E.biblStruct(E.analytic(
-                    E.title('Chapter 1', level='a', type='main'),
-                    E.idno('doi1', type='DOI'),
-                    E.idno('pmid1', type='PMID'),
-                    E.idno('pmcid1', type='PMCID')
-                ), E.monogr(
-                    E.title('Book 1', level='m')
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.back(TEI_E.div(TEI_E.listBibl(
+                TEI_E.biblStruct(TEI_E.analytic(
+                    TEI_E.title('Chapter 1', level='a', type='main'),
+                    TEI_E.idno('doi1', type='DOI'),
+                    TEI_E.idno('pmid1', type='PMID'),
+                    TEI_E.idno('pmcid1', type='PMCID')
+                ), TEI_E.monogr(
+                    TEI_E.title('Book 1', level='m')
                 ))
             )))))
             result = parse_xml_node(
@@ -262,31 +282,31 @@ class TestTei:
 
     class TestTeiAbstractText:
         def test_should_return_without_paragraph(self, default_xml_mapping):
-            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
+            xml = TEI_E.TEI(TEI_E.teiHeader(TEI_E.profileDesc(TEI_E.abstract(
                 'abstract1'
             ))))
             result = parse_xml_node(xml, xml_mapping=default_xml_mapping)
             assert result.get('abstract') == ['abstract1']
 
         def test_should_return_with_div_and_paragraph(self, default_xml_mapping):
-            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(E.div(
-                E.p('abstract1')
+            xml = TEI_E.TEI(TEI_E.teiHeader(TEI_E.profileDesc(TEI_E.abstract(TEI_E.div(
+                TEI_E.p('abstract1')
             )))))
             result = parse_xml_node(xml, xml_mapping=default_xml_mapping)
             assert result.get('abstract') == ['abstract1']
 
         def test_should_ignore_first_head(self, default_xml_mapping):
-            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(E.div(
-                E.head('Abstract'),
-                E.p('abstract1')
+            xml = TEI_E.TEI(TEI_E.teiHeader(TEI_E.profileDesc(TEI_E.abstract(TEI_E.div(
+                TEI_E.head('Abstract'),
+                TEI_E.p('abstract1')
             )))))
             result = parse_xml_node(xml, xml_mapping=default_xml_mapping)
             assert result.get('abstract') == ['abstract1']
 
         def test_not_should_ignore_further_head_elements(self, default_xml_mapping):
-            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
-                E.div(E.head('Abstract')),
-                E.div(E.head('Sub:'), E.p('abstract1'))
+            xml = TEI_E.TEI(TEI_E.teiHeader(TEI_E.profileDesc(TEI_E.abstract(
+                TEI_E.div(TEI_E.head('Abstract')),
+                TEI_E.div(TEI_E.head('Sub:'), TEI_E.p('abstract1'))
             ))))
             result = parse_xml_node(xml, xml_mapping=default_xml_mapping)
             assert result.get('abstract') == ['Sub: abstract1']
@@ -294,20 +314,20 @@ class TestTei:
     class TestTeiBodyAndBackSections:
         def test_should_parse_body_and_back_sections(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(
-                E.body(E.div(
-                    E.head('Section Title 1'),
-                    E.p('Section Paragraph 1')
+            xml = TEI_E.TEI(TEI_E.text(
+                TEI_E.body(TEI_E.div(
+                    TEI_E.head('Section Title 1'),
+                    TEI_E.p('Section Paragraph 1')
                 )),
-                E.back(E.div(
+                TEI_E.back(TEI_E.div(
                     {'type': 'acknowledgement'},
-                    E.div(
-                        E.head('Acknowledgement Title'),
-                        E.p('Acknowledgement Paragraph')
+                    TEI_E.div(
+                        TEI_E.head('Acknowledgement Title'),
+                        TEI_E.p('Acknowledgement Paragraph')
                     )
-                ), E.div(
-                    E.head('Section Title 2'),
-                    E.p('Section Paragraph 2')
+                ), TEI_E.div(
+                    TEI_E.head('Section Title 2'),
+                    TEI_E.p('Section Paragraph 2')
                 ))
             ))
             result = parse_xml_node(
@@ -351,20 +371,20 @@ class TestTei:
 
         def test_should_join_multiple_body_paragraph_blocks_of_same_section(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(
-                E.body(E.div(
-                    E.head('Section Title 1'),
-                    E.p('Section Paragraph 1a'),
-                    E.p('Section Paragraph 1b'),
-                    E.div(
-                        E.head('Section Title 1.1'),
-                        E.p('Section Paragraph 1.1a'),
-                        E.p('Section Paragraph 1.1b')
+            xml = TEI_E.TEI(TEI_E.text(
+                TEI_E.body(TEI_E.div(
+                    TEI_E.head('Section Title 1'),
+                    TEI_E.p('Section Paragraph 1a'),
+                    TEI_E.p('Section Paragraph 1b'),
+                    TEI_E.div(
+                        TEI_E.head('Section Title 1.1'),
+                        TEI_E.p('Section Paragraph 1.1a'),
+                        TEI_E.p('Section Paragraph 1.1b')
                     )
-                ), E.div(
-                    E.head('Section Title 2'),
-                    E.p('Section Paragraph 2a'),
-                    E.p('Section Paragraph 2b')
+                ), TEI_E.div(
+                    TEI_E.head('Section Title 2'),
+                    TEI_E.p('Section Paragraph 2a'),
+                    TEI_E.p('Section Paragraph 2b')
                 ))
             ))
             result = parse_xml_node(
@@ -388,20 +408,20 @@ class TestTei:
 
         def test_should_join_multiple_back_paragraph_blocks_of_same_section(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(
-                E.back(E.div(
-                    E.head('Section Title 1'),
-                    E.p('Section Paragraph 1a'),
-                    E.p('Section Paragraph 1b'),
-                    E.div(
-                        E.head('Section Title 1.1'),
-                        E.p('Section Paragraph 1.1a'),
-                        E.p('Section Paragraph 1.1b')
+            xml = TEI_E.TEI(TEI_E.text(
+                TEI_E.back(TEI_E.div(
+                    TEI_E.head('Section Title 1'),
+                    TEI_E.p('Section Paragraph 1a'),
+                    TEI_E.p('Section Paragraph 1b'),
+                    TEI_E.div(
+                        TEI_E.head('Section Title 1.1'),
+                        TEI_E.p('Section Paragraph 1.1a'),
+                        TEI_E.p('Section Paragraph 1.1b')
                     )
-                ), E.div(
-                    E.head('Section Title 2'),
-                    E.p('Section Paragraph 2a'),
-                    E.p('Section Paragraph 2b')
+                ), TEI_E.div(
+                    TEI_E.head('Section Title 2'),
+                    TEI_E.p('Section Paragraph 2a'),
+                    TEI_E.p('Section Paragraph 2b')
                 ))
             ))
             result = parse_xml_node(
@@ -423,20 +443,20 @@ class TestTei:
 
         def test_should_join_label_with_section_title(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(
-                E.body(E.div(
-                    E.head('Section Title 1', {'n': 'S1.'}),
-                    E.p('Section Paragraph 1')
+            xml = TEI_E.TEI(TEI_E.text(
+                TEI_E.body(TEI_E.div(
+                    TEI_E.head('Section Title 1', {'n': 'S1.'}),
+                    TEI_E.p('Section Paragraph 1')
                 )),
-                E.back(E.div(
+                TEI_E.back(TEI_E.div(
                     {'type': 'acknowledgement'},
-                    E.div(
-                        E.head('Acknowledgement Title', {'n': 'A.'}),
-                        E.p('Acknowledgement Paragraph')
+                    TEI_E.div(
+                        TEI_E.head('Acknowledgement Title', {'n': 'A.'}),
+                        TEI_E.p('Acknowledgement Paragraph')
                     )
-                ), E.div(
-                    E.head('Section Title 2', {'n': 'S2.'}),
-                    E.p('Section Paragraph 2')
+                ), TEI_E.div(
+                    TEI_E.head('Section Title 2', {'n': 'S2.'}),
+                    TEI_E.p('Section Paragraph 2')
                 ))
             ))
             result = parse_xml_node(
@@ -478,20 +498,20 @@ class TestTei:
 
         def test_should_join_label_with_section_title_using_formatting(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(
-                E.body(E.div(
-                    E.head(E.hi('Section Title 1'), {'n': 'S1.'}),
-                    E.p('Section Paragraph 1')
+            xml = TEI_E.TEI(TEI_E.text(
+                TEI_E.body(TEI_E.div(
+                    TEI_E.head(TEI_E.hi('Section Title 1'), {'n': 'S1.'}),
+                    TEI_E.p('Section Paragraph 1')
                 )),
-                E.back(E.div(
+                TEI_E.back(TEI_E.div(
                     {'type': 'acknowledgement'},
-                    E.div(
-                        E.head(E.hi('Acknowledgement Title'), {'n': 'A.'}),
-                        E.p('Acknowledgement Paragraph')
+                    TEI_E.div(
+                        TEI_E.head(TEI_E.hi('Acknowledgement Title'), {'n': 'A.'}),
+                        TEI_E.p('Acknowledgement Paragraph')
                     )
-                ), E.div(
-                    E.head(E.hi('Section Title 2'), {'n': 'S2.'}),
-                    E.p('Section Paragraph 2')
+                ), TEI_E.div(
+                    TEI_E.head(TEI_E.hi('Section Title 2'), {'n': 'S2.'}),
+                    TEI_E.p('Section Paragraph 2')
                 ))
             ))
             result = parse_xml_node(
@@ -534,7 +554,7 @@ class TestTei:
     class TestTeiAcknowledgement:
         def test_should_parse_acknowledgement(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(E.back(E.div(
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.back(TEI_E.div(
                 {'type': 'acknowledgement'},
                 TEXT_1
             ))))
@@ -547,9 +567,9 @@ class TestTei:
 
     class TestTeiAbstractReferenceCitation:
         def test_should_find_body_reference_citation(self, default_xml_mapping):
-            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
+            xml = TEI_E.TEI(TEI_E.teiHeader(TEI_E.profileDesc(TEI_E.abstract(
                 'References: ',
-                E.ref({'type': 'bibr', 'target': '#ref1'}, '[1]'),
+                TEI_E.ref({'type': 'bibr', 'target': '#ref1'}, '[1]'),
             ))))
             result = parse_xml_node(
                 xml,
@@ -562,9 +582,9 @@ class TestTei:
 
     class TestTeiBodyReferenceCitation:
         def test_should_find_body_reference_citation(self, default_xml_mapping):
-            xml = E.TEI(E.text(E.body(E.div(E.p(
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.body(TEI_E.div(TEI_E.p(
                 'Reference to: [',
-                E.ref({'type': 'bibr', 'target': '#ref1'}, '1'),
+                TEI_E.ref({'type': 'bibr', 'target': '#ref1'}, '1'),
                 ']'
             )))))
             result = parse_xml_node(
@@ -577,11 +597,11 @@ class TestTei:
             assert result.get('body_reference_citation_text') == ['1']
 
         def test_should_strip_brackets(self, default_xml_mapping):
-            xml = E.TEI(E.text(E.body(E.div(E.p(
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.body(TEI_E.div(TEI_E.p(
                 'References:',
-                E.ref({'type': 'bibr', 'target': '#ref1'}, '[1]'),
-                E.ref({'type': 'bibr', 'target': '#ref2'}, '(2)'),
-                E.ref({'type': 'bibr', 'target': '#ref3'}, r'{3}')
+                TEI_E.ref({'type': 'bibr', 'target': '#ref1'}, '[1]'),
+                TEI_E.ref({'type': 'bibr', 'target': '#ref2'}, '(2)'),
+                TEI_E.ref({'type': 'bibr', 'target': '#ref3'}, r'{3}')
             )))))
             result = parse_xml_node(
                 xml,
@@ -594,10 +614,10 @@ class TestTei:
 
     class TestTeiAbstractAssetCitation:
         def test_should_find_body_asset_citation(self, default_xml_mapping):
-            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
+            xml = TEI_E.TEI(TEI_E.teiHeader(TEI_E.profileDesc(TEI_E.abstract(
                 'Assets:',
-                E.ref({'type': 'figure', 'target': '#fig_1'}, '[Figure 1]'),
-                E.ref({'type': 'table'}, '[Table 1]')
+                TEI_E.ref({'type': 'figure', 'target': '#fig_1'}, '[Figure 1]'),
+                TEI_E.ref({'type': 'table'}, '[Table 1]')
             ))))
             result = parse_xml_node(
                 xml,
@@ -610,10 +630,10 @@ class TestTei:
 
     class TestTeiBodyAssetCitation:
         def test_should_find_body_asset_citation(self, default_xml_mapping):
-            xml = E.TEI(E.text(E.body(E.div(E.p(
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.body(TEI_E.div(TEI_E.p(
                 'Assets:',
-                E.ref({'type': 'figure', 'target': '#fig_1'}, '[Figure 1]'),
-                E.ref({'type': 'table'}, '[Table 1]')
+                TEI_E.ref({'type': 'figure', 'target': '#fig_1'}, '[Figure 1]'),
+                TEI_E.ref({'type': 'table'}, '[Table 1]')
             )))))
             result = parse_xml_node(
                 xml,
@@ -627,16 +647,16 @@ class TestTei:
     class TestTeiStyles:
         def test_should_find_styles_in_abstract(
                 self, default_xml_mapping):
-            xml = E.TEI(E.teiHeader(E.profileDesc(E.abstract(
-                E.hi({'rend': 'italic'}, 'italic1'),
-                E.hi({'rend': 'bold'}, 'bold1'),
-                E.sub('subscript1'),
-                E.sup('superscript1'),
-                E.hi(
+            xml = TEI_E.TEI(TEI_E.teiHeader(TEI_E.profileDesc(TEI_E.abstract(
+                TEI_E.hi({'rend': 'italic'}, 'italic1'),
+                TEI_E.hi({'rend': 'bold'}, 'bold1'),
+                TEI_E.sub('subscript1'),
+                TEI_E.sup('superscript1'),
+                TEI_E.hi(
                     {'rend': 'italic'},
-                    E.hi(
+                    TEI_E.hi(
                         {'rend': 'bold'},
-                        E.sub(E.sup('mixed1'))
+                        TEI_E.sub(TEI_E.sup('mixed1'))
                     )
                 )
             ))))
@@ -658,30 +678,35 @@ class TestTei:
     class TestTeiFigure:
         def test_should_parse_figure_label_and_description_in_body_section(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(E.body(E.figure(
-                E.head(LABEL_1),
-                E.figDesc(TEXT_1)
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.body(TEI_E.figure(
+                TEI_E.head(LABEL_1),
+                TEI_E.figDesc(TEXT_1),
+                TEI_E.graphic({COORDS: COORDS_1})
             ))))
             result = parse_xml_node(
                 xml,
                 xml_mapping=default_xml_mapping,
                 fields=[
                     'figure_labels', 'figure_captions', 'figure_label_captions',
-                    'body_figure_labels', 'body_figure_captions', 'body_figure_label_captions'
+                    'figure_graphic_bbox',
+                    'body_figure_labels', 'body_figure_captions', 'body_figure_label_captions',
+                    'body_figure_graphic_bbox',
                 ]
             )
             assert result.get('figure_labels') == [LABEL_1]
             assert result.get('figure_captions') == [TEXT_1]
             assert result.get('figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
+            assert result.get('figure_graphic_bbox') == [COORDS_1]
             assert result.get('body_figure_labels') == [LABEL_1]
             assert result.get('body_figure_captions') == [TEXT_1]
             assert result.get('body_figure_label_captions') == [f'{LABEL_1} {TEXT_1}']
+            assert result.get('body_figure_graphic_bbox') == [COORDS_1]
 
         def test_should_parse_figure_label_and_description_in_nested_section(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(E.body(E.div(E.div(E.figure(
-                E.head(LABEL_1),
-                E.figDesc(TEXT_1)
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.body(TEI_E.div(TEI_E.div(TEI_E.figure(
+                TEI_E.head(LABEL_1),
+                TEI_E.figDesc(TEXT_1)
             ))))))
             result = parse_xml_node(
                 xml,
@@ -700,9 +725,9 @@ class TestTei:
 
         def test_should_parse_figure_label_and_description_in_back_section(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(E.back(E.figure(
-                E.head(LABEL_1),
-                E.figDesc(TEXT_1)
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.back(TEI_E.figure(
+                TEI_E.head(LABEL_1),
+                TEI_E.figDesc(TEXT_1)
             ))))
             result = parse_xml_node(
                 xml,
@@ -722,10 +747,10 @@ class TestTei:
     class TestTeiTable:
         def test_should_parse_table_label_and_description_in_body_section(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(E.body(E.figure(
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.body(TEI_E.figure(
                 {'type': 'table'},
-                E.head(LABEL_1),
-                E.figDesc(TEXT_1)
+                TEI_E.head(LABEL_1),
+                TEI_E.figDesc(TEXT_1)
             ))))
             result = parse_xml_node(
                 xml,
@@ -744,10 +769,10 @@ class TestTei:
 
         def test_should_parse_table_label_and_description_in_nested_section(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(E.body(E.div(E.div(E.figure(
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.body(TEI_E.div(TEI_E.div(TEI_E.figure(
                 {'type': 'table'},
-                E.head(LABEL_1),
-                E.figDesc(TEXT_1)
+                TEI_E.head(LABEL_1),
+                TEI_E.figDesc(TEXT_1)
             ))))))
             result = parse_xml_node(
                 xml,
@@ -766,10 +791,10 @@ class TestTei:
 
         def test_should_parse_table_label_and_description_in_back_section(
                 self, default_xml_mapping):
-            xml = E.TEI(E.text(E.back(E.figure(
+            xml = TEI_E.TEI(TEI_E.text(TEI_E.back(TEI_E.figure(
                 {'type': 'table'},
-                E.head(LABEL_1),
-                E.figDesc(TEXT_1)
+                TEI_E.head(LABEL_1),
+                TEI_E.figDesc(TEXT_1)
             ))))
             result = parse_xml_node(
                 xml,

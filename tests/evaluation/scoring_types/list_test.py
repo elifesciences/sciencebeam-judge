@@ -5,7 +5,7 @@ import logging
 from abc import ABC, abstractmethod
 
 from sciencebeam_judge.evaluation.match_scoring import MatchScoringProps
-from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
+from sciencebeam_judge.evaluation.scoring_methods.scoring_methods import ScoringMethodNames
 
 from sciencebeam_judge.evaluation.scoring_types.list import (
     ORDERED_LIST_SCORING_TYPE,

@@ -18,7 +18,7 @@ import lorem
 from sciencebeam_judge.parsing.xml import parse_xml, parse_xml_mapping
 from sciencebeam_judge.parsing.xpath.xpath_functions import register_functions
 
-from sciencebeam_judge.evaluation.scoring_methods import levenshtein_score
+from sciencebeam_judge.evaluation.scoring_methods.scoring_methods import levenshtein_score
 
 from sciencebeam_judge.utils.distance_matching import (
     DistanceMeasure,

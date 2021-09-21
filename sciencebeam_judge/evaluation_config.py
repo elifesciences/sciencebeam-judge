@@ -1,4 +1,4 @@
-from typing import Dict, List, NamedTuple
+from typing import Dict, List, NamedTuple, Optional
 
 import yaml
 
@@ -26,6 +26,7 @@ class CustomEvaluationFieldConfig(NamedTuple):
     evaluation_type: str
     expected: CustomEvaluationFieldSourceConfig
     actual: CustomEvaluationFieldSourceConfig
+    evaluation_type_config: Optional[dict] = None
 
     @staticmethod
     def from_json(data: dict):
@@ -33,7 +34,8 @@ class CustomEvaluationFieldConfig(NamedTuple):
             name=data['name'],
             evaluation_type=data['evaluation_type'],
             expected=CustomEvaluationFieldSourceConfig.from_json(data['expected']),
-            actual=CustomEvaluationFieldSourceConfig.from_json(data['actual'])
+            actual=CustomEvaluationFieldSourceConfig.from_json(data['actual']),
+            evaluation_type_config=data.get('evaluation_type_config')
         )
 
 

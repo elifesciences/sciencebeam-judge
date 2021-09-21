@@ -9,7 +9,7 @@ from six import itervalues
 
 from sciencebeam_utils.utils.collection import flatten
 
-from .evaluation.scoring_methods import ScoringMethodNames
+from .evaluation.scoring_methods.scoring_methods import ScoringMethodNames
 from .evaluation.scoring_types.scoring_types import ScoringTypeNames
 from .evaluation.document_scoring import DocumentScoringProps
 from .evaluation.score_aggregation import SummaryScoresProps

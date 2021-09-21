@@ -158,7 +158,10 @@ def iter_score_custom_evaluation(
     LOGGER.debug('custom_evaluation_config: %s', custom_evaluation_config)
     for field in custom_evaluation_config.fields:
         evaluation_type = field.evaluation_type
-        custom_evaluation = get_custom_evaluation(evaluation_type)
+        custom_evaluation = get_custom_evaluation(
+            evaluation_type,
+            field.evaluation_type_config
+        )
         LOGGER.debug('custom_evaluation: %s', custom_evaluation)
         expected_values = extract_custom_evaluation_document_field_value(expected, field.expected)
         actual_values = extract_custom_evaluation_document_field_value(actual, field.actual)

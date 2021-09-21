@@ -6,7 +6,7 @@ from difflib import SequenceMatcher
 
 import editdistance
 
-from ..utils.distance_matching import (
+from ...utils.distance_matching import (
     T_Distance_Function,
     T_Value,
     DistanceMeasure,
@@ -14,7 +14,7 @@ from ..utils.distance_matching import (
     get_character_count_based_upper_bound_score
 )
 
-from .normalization import (
+from ..normalization import (
     strip_punctuation_and_whitespace
 )
 
@@ -135,7 +135,13 @@ SCORING_METHODS_MAP = {
 }
 
 
+def get_scoring_method(measure: Union[str, ScoringMethod]) -> List[ScoringMethod]:
+    if isinstance(measure, ScoringMethod):
+        return measure
+    return SCORING_METHODS_MAP[measure]
+
+
 def get_scoring_methods(measures: List[str] = None) -> List[ScoringMethod]:
     if not measures:
         measures = ALL_SCORING_METHOD_NAMES
-    return [SCORING_METHODS_MAP[k] for k in measures]
+    return [get_scoring_method(measure) for measure in measures]

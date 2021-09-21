@@ -1,6 +1,6 @@
 import pytest
 
-from sciencebeam_judge.evaluation.scoring_methods import ScoringMethodNames
+from sciencebeam_judge.evaluation.scoring_methods.scoring_methods import ScoringMethodNames
 from sciencebeam_judge.evaluation.scoring_types.scoring_types import ScoringTypeNames
 from sciencebeam_judge.evaluation.document_scoring import DocumentScoringProps
 from sciencebeam_judge.evaluation.score_aggregation import SummaryScoresProps
