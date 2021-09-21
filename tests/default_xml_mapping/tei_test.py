@@ -31,7 +31,7 @@ TEXT_1 = 'Some text 1'
 EMAIL_1 = 'name1@test'
 EMAIL_2 = 'name2@test'
 
-COORDS = TEI_NS_PREFIX + 'coords'
+COORDS = 'coords'
 COORDS_1 = '101,102,103,104,105'
 
 
