@@ -77,6 +77,7 @@ def get_wrapped_value(
 
 T_Optionally_Wrapped_Value = Union[T_Value, WrappedValue]
 
+
 class DistanceFunctionProtocol(Protocol):
     def __call__(
         self,
