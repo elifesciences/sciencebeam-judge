@@ -79,7 +79,7 @@ def _contrib_full_name(contrib_node):
     return None
 
 
-def _contrib_email(contrib_node: etree.Element) -> str:
+def _contrib_email(contrib_node: etree.Element) -> Optional[str]:
     for email_node in contrib_node.xpath('email'):
         email = get_text_content(email_node)
         if email:
