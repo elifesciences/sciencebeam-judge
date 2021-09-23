@@ -12,8 +12,7 @@ from typing import (
     Tuple,
     T,
     Union,
-    cast,
-    overload
+    cast
 )
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
@@ -118,10 +117,6 @@ class TextFragment(NamedTuple):
 
     def __len__(self):
         return len(self.text)
-
-    @overload
-    def __getitem__(self, key: slice) -> 'TextFragment':
-        pass
 
     def __getitem__(self, key) -> 'TextFragment':
         assert isinstance(key, slice)
