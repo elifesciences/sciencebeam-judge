@@ -248,7 +248,7 @@ def iter_wrapped_distance_matches(
     threshold: float = DEFAULT_THRESHOLD,
     mismatch_threshold: float = 0.0
 ) -> Iterable[DistanceMatchResult]:
-    unmatched_set_1 = []
+    unmatched_set_1: List[WrappedValue] = []
     remaining_set_2 = list(set_2)
 
     # find best matches that meet the threshold
