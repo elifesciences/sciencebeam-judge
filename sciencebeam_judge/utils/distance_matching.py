@@ -11,7 +11,7 @@ LOGGER = logging.getLogger(__name__)
 
 DEFAULT_THRESHOLD = 0.5
 
-T_Value = Union[str, Tuple[str]]
+T_Value = Union[str, Tuple[str, ...]]
 
 
 class WrappedValue:
@@ -112,8 +112,8 @@ class CachedDistanceMeasure(DistanceMeasure):
 
 
 class DistanceMatchResult(NamedTuple):
-    value_1: T_Optionally_Wrapped_Value
-    value_2: T_Optionally_Wrapped_Value
+    value_1: Optional[T_Optionally_Wrapped_Value]
+    value_2: Optional[T_Optionally_Wrapped_Value]
     score: float
 
 
