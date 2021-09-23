@@ -338,6 +338,11 @@ def iter_distance_matches(
     distance_measure = CachedDistanceMeasure(distance_measure)
     wrapped_set_1 = [WrappedValue(s, i) for i, s in enumerate(set_1)]
     wrapped_set_2 = [WrappedValue(s, i) for i, s in enumerate(set_2)]
+    # Note: Workaround for mypy gets multiple values for keyword argument
+    kwargs = {
+        **kwargs,
+        'distance_measure': distance_measure
+    }
     return (
         DistanceMismatch(
             value_1=get_unwrapped_value(
@@ -351,7 +356,6 @@ def iter_distance_matches(
         for distance_match in iter_wrapped_distance_matches(
             wrapped_set_1, wrapped_set_2,
             *args,
-            distance_measure=distance_measure,
             **kwargs
         )
     )
