@@ -185,7 +185,7 @@ def get_first(list_: Union[List[T]]) -> T:
 
 def find_best_match(
     value: T_Optionally_Wrapped_Value,
-    other_values: List[T_Optionally_Wrapped_Value],
+    other_values: Sequence[T_Optionally_Wrapped_Value],
     distance_measure: DistanceMeasure,
     threshold: float = DEFAULT_THRESHOLD,
     approximate_threshold: float = None
