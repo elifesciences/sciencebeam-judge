@@ -85,7 +85,7 @@ def get_match_score_obj_for_score(
     tn = 1 if not actual and not expected else 0
     fp = 1 if not tp and actual else 0
     fn = 1 if not tn and not actual else 0
-    d = {
+    d: Dict[str, Any] = {
         MatchScoringProps.EXPECTED_SOMETHING: len(expected) > 0,
         MatchScoringProps.ACTUAL_SOMETHING: len(actual) > 0,
         MatchScoringProps.SCORE: score,
