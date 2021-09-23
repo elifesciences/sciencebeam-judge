@@ -2,7 +2,7 @@ import logging
 
 from collections import Counter
 from typing import (
-    Callable, Iterable, List, NamedTuple, Optional, Set, Tuple, Union, T
+    Callable, Iterable, List, NamedTuple, Optional, Sequence, Set, Tuple, Union, T
 )
 
 
@@ -238,8 +238,8 @@ def find_best_match(
 
 
 def iter_wrapped_distance_matches(
-    set_1: Set[WrappedValue],
-    set_2: Set[WrappedValue],
+    set_1: Union[Set[WrappedValue], Sequence[WrappedValue]],
+    set_2: Union[Set[WrappedValue], Sequence[WrappedValue]],
     distance_measure: DistanceMeasure,
     threshold: float = DEFAULT_THRESHOLD,
     mismatch_threshold: float = 0.0
