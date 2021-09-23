@@ -13,8 +13,10 @@ from ...utils.distance_matching import (
     T_Optionally_Wrapped_Value,
     T_Value,
     DistanceMeasure,
+    Value_Types,
     get_length_based_upper_bound_score,
-    get_character_count_based_upper_bound_score
+    get_character_count_based_upper_bound_score,
+    type_checked_distance_function
 )
 
 from ..normalization import (
@@ -115,18 +117,35 @@ class ScoringMethod:
 
 SCORING_METHODS = [
     ScoringMethod(
-        ScoringMethodNames.EXACT, exact_score
+        ScoringMethodNames.EXACT,
+        type_checked_distance_function(
+            exact_score,
+            Value_Types
+        )
     ),
     ScoringMethod(
-        ScoringMethodNames.SOFT, exact_score, preprocessing_fn=strip_punctuation_and_whitespace
+        ScoringMethodNames.SOFT,
+        type_checked_distance_function(
+            exact_score,
+            Value_Types
+        ),
+        preprocessing_fn=strip_punctuation_and_whitespace
     ),
     ScoringMethod(
-        ScoringMethodNames.LEVENSHTEIN, levenshtein_score,
+        ScoringMethodNames.LEVENSHTEIN,
+        type_checked_distance_function(
+            levenshtein_score,
+            Value_Types
+        ),
         approximate_scoring_fn_list=EDIT_DISTANCE_APPROXIMATE_FN_LIST,
         threshold=0.8
     ),
     ScoringMethod(
-        ScoringMethodNames.RATCLIFF_OBERSHELP, ratcliff_obershelp_score,
+        ScoringMethodNames.RATCLIFF_OBERSHELP,
+        type_checked_distance_function(
+            ratcliff_obershelp_score,
+            Value_Types
+        ),
         approximate_scoring_fn_list=EDIT_DISTANCE_APPROXIMATE_FN_LIST,
         threshold=0.95
     )

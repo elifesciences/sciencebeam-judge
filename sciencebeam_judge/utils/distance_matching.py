@@ -1,8 +1,9 @@
 from abc import ABC, abstractmethod
 import logging
+import functools
 from collections import Counter
 from typing import (
-    Any, Dict, Iterable, List, NamedTuple, Optional, Sequence, Set, Tuple, Union, cast
+    Any, Callable, Dict, Iterable, List, NamedTuple, Optional, Sequence, Set, Tuple, Union, cast
 )
 
 from typing_extensions import Protocol
@@ -16,6 +17,7 @@ LOGGER = logging.getLogger(__name__)
 DEFAULT_THRESHOLD = 0.5
 
 T_Value = Union[str, Tuple[str, ...]]
+Value_Types = (str, tuple, list)
 
 
 class WrappedValue:
@@ -85,6 +87,21 @@ class DistanceFunctionProtocol(Protocol):
 
 
 T_Distance_Function = DistanceFunctionProtocol
+
+
+def type_checked_distance_function(
+    fn: Callable[[T, T], float],
+    required_ypes: Union[type, Tuple[type, ...]]
+):
+    @functools.wraps(fn)
+    def wrapper(
+        value_1: T_Optionally_Wrapped_Value,
+        value_2: T_Optionally_Wrapped_Value
+    ) -> float:
+        assert isinstance(value_1, required_ypes)
+        assert isinstance(value_2, required_ypes)
+        return fn(cast(T, value_1), cast(T, value_2))
+    return wrapper
 
 
 class AbstractDistanceFunction(ABC):
