@@ -2,7 +2,7 @@ import logging
 import re
 from collections import deque
 from functools import partial
-from typing import Any, Deque, List, NamedTuple, Optional, Tuple,  T, Union, overload
+from typing import Any, Deque, List, NamedTuple, Optional, Tuple,  T, Union, cast, overload
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
@@ -18,8 +18,8 @@ from sciencebeam_judge.utils.fuzzy import (
     translate_string_view_matching_blocks
 )
 from sciencebeam_judge.utils.distance_matching import (
+    DistanceMatchResult,
     WrappedValue,
-    DistanceMatch,
     get_distance_matches
 )
 from sciencebeam_judge.evaluation.math import safe_mean
@@ -113,7 +113,7 @@ class TextFragment(NamedTuple):
 
     def __getitem__(self, key) -> 'TextFragment':
         assert isinstance(key, slice)
-        return self.get(key)
+        return self.get_slice(key)
 
     # Note: workaround because mypy isn't detecting the correct return type of __getitem__
     def get(self, start: Optional[int] = None, stop: Optional[int] = None) -> 'TextFragment':
@@ -157,13 +157,13 @@ def iter_regex_split_with_index(text: str, sep_pattern: str) -> List[Tuple[int, 
 
 
 def get_distance_match_sort_key(
-    distance_match: DistanceMatch,
+    distance_match: DistanceMatchResult,
     max_sort_key: Tuple[int, int]
 ) -> Tuple[int, int]:
-    return (
+    return cast(Tuple[int, int], (
         distance_match.value_1.index if distance_match.value_1 else max_sort_key[0],
         distance_match.value_2.index if distance_match.value_2 else max_sort_key[1]
-    )
+    ))
 
 
 def expand_start_index_to_token(text: str, index: int) -> int:
@@ -178,7 +178,10 @@ def expand_end_index_to_token(text: str, index: int) -> int:
     return index
 
 
-def expand_index_range_to_token(text: str, index_range: IndexRange) -> IndexRange:
+def expand_index_range_to_token(
+    text: str,
+    index_range: Union[IndexRange, Tuple[int, int]]
+) -> IndexRange:
     return IndexRange((
         expand_start_index_to_token(text, index_range[0]),
         expand_end_index_to_token(text, index_range[1]),
@@ -258,7 +261,7 @@ def get_fuzzy_matched_characters(
     haystack_mask = [not c.isspace() for c in haystack_str]
     haystack_matched = [False] * len(haystack_str)
     haystack_view_chars = list(haystack_str)
-    remaining_paired_sequences: Deque[FuzzyWrappedValue] = deque()
+    remaining_paired_sequences: Deque[Tuple[FuzzyWrappedValue, FuzzyWrappedValue]] = deque()
     remaining_unpaired_sequences: Deque[FuzzyWrappedValue] = deque()
     # using distances matches to start with more likely pairings
     max_sort_key = (len(haystack_str), len(needles))
@@ -267,18 +270,20 @@ def get_fuzzy_matched_characters(
     ))
     LOGGER.debug('distance_matches: %s (threshold=%s)', distance_matches, threshold)
     for distance_match in distance_matches:
+        value_1 = cast(Optional[FuzzyWrappedValue], distance_match.value_1)
+        value_2 = cast(Optional[FuzzyWrappedValue], distance_match.value_2)
         LOGGER.debug(
             'distance_match: %s (index: %s)',
             distance_match,
-            distance_match.value_1.index if distance_match.value_1 else None
+            value_1.index if value_1 else None
         )
-        if not distance_match.value_2:
+        if not value_2:
             # not interested in added text at the moment
             continue
-        if not distance_match.value_1:
-            remaining_unpaired_sequences.append(distance_match.value_2)
+        if not value_1:
+            remaining_unpaired_sequences.append(value_2)
             continue
-        remaining_paired_sequences.append((distance_match.value_1, distance_match.value_2))
+        remaining_paired_sequences.append((value_1, value_2))
         del distance_match
     wrapped_haystack = FuzzyWrappedValue(haystack_str, 0)
     while remaining_paired_sequences or remaining_unpaired_sequences:
