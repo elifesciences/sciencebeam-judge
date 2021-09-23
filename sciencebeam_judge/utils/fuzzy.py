@@ -141,7 +141,7 @@ class MatchingBlocks(Tuple[Tuple[int, int, int], ...]):
 
 
 class MatchingBlocksWithMatchedText:
-    def __init__(self, matching_blocks: Tuple[int, int, int], text: str):
+    def __init__(self, matching_blocks: Tuple[Tuple[int, int, int], ...], text: str):
         self.matching_blocks = matching_blocks
         self.text = text
 
