@@ -62,7 +62,11 @@ dev-pylint:
 	$(PYTHON) -m pylint sciencebeam_judge tests setup.py
 
 
-dev-lint: dev-flake8 dev-pylint
+dev-mypy:
+	$(PYTHON) -m mypy --ignore-missing-imports sciencebeam_judge tests setup.py
+
+
+dev-lint: dev-flake8 dev-pylint dev-mypy
 
 
 dev-pytest:
