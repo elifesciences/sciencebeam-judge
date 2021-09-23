@@ -1,5 +1,6 @@
 import logging
 import re
+from typing import List
 
 from lxml import etree
 
@@ -98,7 +99,7 @@ def normalized_whitespace(text: str) -> str:
 
 
 def get_normalized_text_content(element: etree.Element) -> str:
-    text_list = []
+    text_list: List[str] = []
     for text in element.itertext():
         if text_list and is_ends_with_word(text_list[-1]) and is_starts_with_word(text):
             text_list.append(' ')
