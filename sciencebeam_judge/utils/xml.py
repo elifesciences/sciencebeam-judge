@@ -82,11 +82,11 @@ def get_text_content_and_ignore_children(e, children_to_ignore):
 
 
 def is_ends_with_word(text: str) -> bool:
-    return re.match(r'.*\w$', text)
+    return bool(re.match(r'.*\w$', text))
 
 
 def is_starts_with_word(text: str) -> bool:
-    return re.match(r'^\w.*', text)
+    return bool(re.match(r'^\w.*', text))
 
 
 def remove_whitespace_before_punct(text: str) -> str:
