@@ -219,7 +219,7 @@ def get_character_count_based_upper_bound_score(
     return matches / max_length
 
 
-def get_first(list_: Union[List[T]]) -> T:
+def get_first(list_: Union[Sequence[T], tuple]) -> T:
     return list_[0]
 
 
