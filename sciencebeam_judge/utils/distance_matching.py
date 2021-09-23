@@ -1,9 +1,11 @@
+from abc import ABC, abstractmethod
 import logging
-
 from collections import Counter
 from typing import (
-    Callable, Iterable, List, NamedTuple, Optional, Sequence, Set, Tuple, Union
+    Iterable, List, NamedTuple, Optional, Sequence, Set, Tuple, Union
 )
+
+from typing_extensions import Protocol
 
 from sciencebeam_judge.utils.typing import T
 
@@ -59,13 +61,29 @@ def get_wrapped_value(value: Union[str, Tuple[str]], index: int) -> WrappedValue
 
 T_Optionally_Wrapped_Value = Union[T_Value, WrappedValue]
 
-T_Distance_Function = Callable[
-    [T_Optionally_Wrapped_Value, T_Optionally_Wrapped_Value],
-    float
-]
+class DistanceFunctionProtocol(Protocol):
+    def __call__(
+        self,
+        value_1: T_Optionally_Wrapped_Value,
+        value_2: T_Optionally_Wrapped_Value
+    ) -> float:
+        pass
 
 
-class DistanceMeasure(T_Distance_Function):
+T_Distance_Function = DistanceFunctionProtocol
+
+
+class AbstractDistanceFunction(ABC):
+    @abstractmethod
+    def __call__(
+        self,
+        value_1: T_Optionally_Wrapped_Value,
+        value_2: T_Optionally_Wrapped_Value
+    ) -> float:
+        pass
+
+
+class DistanceMeasure(AbstractDistanceFunction):
     def __init__(
         self,
         distance_fn: T_Distance_Function,
@@ -77,7 +95,11 @@ class DistanceMeasure(T_Distance_Function):
     def __repr__(self):
         return f'{type(self).__name__}({self._distance_fn}, {self._approximate_distance_fn_list})'
 
-    def __call__(self, value_1: str, value_2: str) -> float:
+    def __call__(
+        self,
+        value_1: T_Optionally_Wrapped_Value,
+        value_2: T_Optionally_Wrapped_Value
+    ) -> float:
         return self._distance_fn(value_1, value_2)
 
     @property
