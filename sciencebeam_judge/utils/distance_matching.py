@@ -19,7 +19,7 @@ T_Value = Union[str, Tuple[str, ...]]
 
 
 class WrappedValue:
-    def __init__(self, value: Union[str, Tuple[str]], index: int = -1):
+    def __init__(self, value: T_Value, index: int = -1):
         self.value = value
         self.index = index
         self.char_counts = None
@@ -40,7 +40,9 @@ class WrappedValue:
         return other == self.value
 
 
-def get_unwrapped_value(wrapped_value: Optional[WrappedValue]) -> Optional[Union[str, Tuple[str]]]:
+def get_unwrapped_value(
+    wrapped_value: Optional[WrappedValue]
+) -> Optional[T_Value]:
     if wrapped_value is None:
         return None
     return wrapped_value.value
@@ -48,14 +50,17 @@ def get_unwrapped_value(wrapped_value: Optional[WrappedValue]) -> Optional[Union
 
 def get_recursive_unwrapped_value(
     wrapped_value: Optional[WrappedValue]
-) -> Optional[Union[str, Tuple[str]]]:
+) -> Optional[T_Value]:
     result = get_unwrapped_value(wrapped_value)
     while isinstance(result, WrappedValue):
         result = get_unwrapped_value(result)
     return result
 
 
-def get_wrapped_value(value: Union[str, Tuple[str]], index: int) -> WrappedValue:
+def get_wrapped_value(
+    value: T_Value,
+    index: int
+) -> WrappedValue:
     return WrappedValue(value, index=index)
 
 
