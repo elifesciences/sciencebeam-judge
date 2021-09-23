@@ -99,17 +99,17 @@ class FuzzyWrappedValue(WrappedValue):
 
 class TextFragment(NamedTuple):
     text: str
-    index: int
+    start: int
     original_text: str
 
     @staticmethod
-    def create(text: str, original_text: Optional[str] = None, index: int = 0) -> 'TextFragment':
+    def create(text: str, original_text: Optional[str] = None, start: int = 0) -> 'TextFragment':
         # Note: using "create", due to not being able to override
         #   __new__ or __init__ of NamedTuple
         if original_text is None:
             original_text = text
-            assert index == 0
-        return TextFragment(text=text, original_text=original_text, index=index)
+            assert start == 0
+        return TextFragment(text=text, original_text=original_text, start=start)
 
     def __str__(self):
         return self.text
@@ -129,16 +129,16 @@ class TextFragment(NamedTuple):
         return TextFragment(
             text=self.text[key],
             original_text=self.original_text,
-            index=self.index + key.start
+            start=self.start + key.start
         )
 
     def with_context(self, context_chars: int) -> 'TextFragment':
-        start = max(0, self.index - context_chars)
-        end = min(len(self.original_text), self.index + len(self) + context_chars)
+        start = max(0, self.start - context_chars)
+        end = min(len(self.original_text), self.start + len(self) + context_chars)
         return TextFragment(
             text=self.original_text[start:end],
             original_text=self.original_text,
-            index=start
+            start=start
         )
 
 
