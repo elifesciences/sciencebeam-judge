@@ -10,14 +10,13 @@ from typing import (
     NamedTuple,
     Optional,
     Tuple,
-    T,
     Union,
     cast
 )
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
-from sciencebeam_judge.utils.typing import StrLike
+from sciencebeam_judge.utils.typing import StrLike, T
 from sciencebeam_judge.utils.fuzzy import (
     IndexRange,
     MatchingBlocks,

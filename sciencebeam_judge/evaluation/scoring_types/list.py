@@ -1,10 +1,12 @@
 import logging
 from abc import abstractmethod
-from typing import List, Tuple, Union, T
+from typing import List, Tuple, Union
 
 from six import text_type
 
 from sciencebeam_utils.utils.collection import extend_dict
+
+from sciencebeam_judge.utils.typing import T
 
 from ...utils.distance_matching import get_distance_matches
 

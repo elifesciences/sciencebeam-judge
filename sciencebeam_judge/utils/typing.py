@@ -1,4 +1,4 @@
-from typing import Union
+from typing import TypeVar, Union
 from typing_extensions import Protocol
 
 
@@ -8,3 +8,6 @@ class StrLikeProtocol(Protocol):
 
 
 StrLike = Union[str, StrLikeProtocol]
+
+
+T = TypeVar('T')
