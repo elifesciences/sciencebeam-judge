@@ -22,7 +22,7 @@ class WrappedValue:
     def __init__(self, value: T_Value, index: int = -1):
         self.value = value
         self.index = index
-        self.char_counts = None
+        self.char_counts: Optional[Counter] = None
 
     def __len__(self):
         return len(self.value)
