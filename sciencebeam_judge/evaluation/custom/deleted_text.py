@@ -2,10 +2,11 @@ import logging
 import re
 from collections import deque
 from functools import partial
-from typing import AnyStr, Deque, List, NamedTuple, Optional, Tuple,  T
+from typing import Any, Deque, List, NamedTuple, Optional, Tuple,  T, Union, overload
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
+from sciencebeam_judge.utils.typing import StrLike
 from sciencebeam_judge.utils.fuzzy import (
     IndexRange,
     MatchingBlocks,
@@ -106,8 +107,19 @@ class TextFragment(NamedTuple):
     def __len__(self):
         return len(self.text)
 
+    @overload
+    def __getitem__(self, key: slice) -> 'TextFragment':
+        pass
+
     def __getitem__(self, key) -> 'TextFragment':
         assert isinstance(key, slice)
+        return self.get(key)
+
+    # Note: workaround because mypy isn't detecting the correct return type of __getitem__
+    def get(self, start: Optional[int] = None, stop: Optional[int] = None) -> 'TextFragment':
+        return self.get_slice(slice(start, stop))
+
+    def get_slice(self, key: slice) -> 'TextFragment':
         return TextFragment(
             text=self.text[key],
             original_text=self.original_text,
@@ -126,7 +138,7 @@ class TextFragment(NamedTuple):
 
 class FuzzyTextFragmentMatchResult(NamedTuple):
     value_1: TextFragment
-    value_2: TextFragment
+    value_2: Optional[TextFragment]
     score: float
 
 
@@ -388,11 +400,14 @@ def get_fuzzy_matched_text_fragments(
     match_start_index = 0
     mismatch_start_index = 0
     result = []
-    haystack_fragment = TextFragment.create(text=haystack_str)
+    haystack_fragment: TextFragment = TextFragment.create(text=haystack_str)
+    text_fragment: TextFragment
     for index, is_match in enumerate(haystack_matched):
         if is_match:
             if mismatch_start_index < index:
-                text_fragment = haystack_fragment[mismatch_start_index:index]
+                text_fragment = haystack_fragment.get(
+                    start=mismatch_start_index, stop=index
+                )
                 result.append(FuzzyTextFragmentMatchResult(
                     value_1=text_fragment,
                     value_2=None,
@@ -401,7 +416,9 @@ def get_fuzzy_matched_text_fragments(
             mismatch_start_index = index + 1
             continue
         if match_start_index < index:
-            text_fragment = haystack_fragment[match_start_index:index]
+            text_fragment = haystack_fragment.get(
+                start=match_start_index, stop=index
+            )
             result.append(FuzzyTextFragmentMatchResult(
                 value_1=text_fragment,
                 value_2=text_fragment,
@@ -409,14 +426,14 @@ def get_fuzzy_matched_text_fragments(
             ))
         match_start_index = index + 1
     if mismatch_start_index < len(haystack_str):
-        text_fragment = haystack_fragment[mismatch_start_index:]
+        text_fragment = haystack_fragment.get(start=mismatch_start_index)
         result.append(FuzzyTextFragmentMatchResult(
             value_1=text_fragment,
             value_2=None,
             score=0.0
         ))
     if match_start_index < len(haystack_str):
-        text_fragment = haystack_fragment[match_start_index:]
+        text_fragment = haystack_fragment.get(start=match_start_index)
         result.append(FuzzyTextFragmentMatchResult(
             value_1=text_fragment,
             value_2=text_fragment,
@@ -429,7 +446,9 @@ def strip_whitespace(text: str) -> str:
     return re.sub(r'\s+', '', text)
 
 
-def get_text_context(text: AnyStr) -> AnyStr:
+def get_text_context(
+    text: Optional[Union[Any, TextFragment]]
+) -> Optional[TextFragment]:
     return (
         text.with_context(20)
         if isinstance(text, TextFragment)
@@ -439,8 +458,8 @@ def get_text_context(text: AnyStr) -> AnyStr:
 
 def get_character_based_match_score_for_score(
     score: float,
-    expected: AnyStr,
-    actual: AnyStr,
+    expected: Optional[StrLike],
+    actual: Optional[StrLike],
     include_values: bool
 ) -> MatchScore:
     expected_str = str(expected) if expected else ''
