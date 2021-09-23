@@ -211,8 +211,8 @@ def space_is_junk(text: str, index: int) -> bool:
 class FuzzyMatchResult:
     def __init__(
         self,
-        a: AnyStr,
-        b: AnyStr,
+        a: str,
+        b: str,
         matching_blocks: MatchingBlocks,
         is_junk_fn: Optional[T_IsJunkFunction] = None
     ):
