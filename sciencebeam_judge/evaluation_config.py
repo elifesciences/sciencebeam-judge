@@ -43,13 +43,13 @@ class CustomEvaluationConfig(NamedTuple):
     fields: List[CustomEvaluationFieldConfig]
 
     @staticmethod
-    def from_json(data: dict):
+    def from_json(data: Optional[dict]):
         if not data:
             return None
         return CustomEvaluationConfig(
             fields=[
                 CustomEvaluationFieldConfig.from_json(field_data)
-                for field_data in data.get('fields')
+                for field_data in data['fields']
             ]
         )
 

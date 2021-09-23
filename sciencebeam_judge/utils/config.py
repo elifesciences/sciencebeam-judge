@@ -1,11 +1,9 @@
 from configparser import ConfigParser
 
-from six import string_types
-
 
 def parse_config(filename_or_fp):
     config = ConfigParser()
-    if isinstance(filename_or_fp, string_types):
+    if isinstance(filename_or_fp, str):
         config.read(filename_or_fp)
     else:
         config.read_file(filename_or_fp)

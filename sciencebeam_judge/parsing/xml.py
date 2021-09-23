@@ -80,7 +80,7 @@ def parse_xml_field_node(
     field_name: str,
     node: ET.ElementBase,
     mapping: Dict[str, str],
-    namespaces: Dict[str, str]
+    namespaces: Optional[Dict[str, str]]
 ):
     try:
         if node.tag == 'table':
@@ -104,7 +104,7 @@ def parse_xml_field(
     field_name: str,
     root: ET.ElementBase,
     mapping: Dict[str, str],
-    namespaces: Dict[str, str]
+    namespaces: Optional[Dict[str, str]]
 ):
     return [
         parse_xml_field_node(
@@ -127,7 +127,7 @@ def parse_xml(
     namespaces = xml_mapping.get('namespaces')
     if root_tag not in xml_mapping:
         raise Exception("unrecognised tag: {} (available: {})".format(
-            root_tag, xml_mapping.sections()
+            root_tag, xml_mapping.keys()
         ))
     mapping = xml_mapping[root_tag]
     field_names = [

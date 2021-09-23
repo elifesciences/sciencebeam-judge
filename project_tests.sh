@@ -9,4 +9,7 @@ pylint sciencebeam_judge tests setup.py
 echo "running flake8"
 flake8 sciencebeam_judge tests setup.py
 
+echo "running mypy"
+python -m mypy --ignore-missing-imports sciencebeam_judge tests setup.py
+
 echo "done"

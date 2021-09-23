@@ -114,7 +114,7 @@ class MatchingBlocks(Tuple[Tuple[int, int, int], ...]):
 
     def get_end_offset(self, seq_index: int) -> int:
         last_block = self.last_block
-        if not self.last_block:
+        if not last_block:
             return 0
         last_block_size = last_block[2]
         return last_block[seq_index] + last_block_size
@@ -140,8 +140,11 @@ class MatchingBlocks(Tuple[Tuple[int, int, int], ...]):
         return sum(size for _, _, size in self)
 
 
+EMPTY_MATCHING_BLOCKS = MatchingBlocks([])
+
+
 class MatchingBlocksWithMatchedText:
-    def __init__(self, matching_blocks: Tuple[int, int, int], text: str):
+    def __init__(self, matching_blocks: Tuple[Tuple[int, int, int], ...], text: str):
         self.matching_blocks = matching_blocks
         self.text = text
 
@@ -204,15 +207,15 @@ def translate_string_view_matching_blocks(
     ])
 
 
-def space_is_junk(text: AnyStr, index: int) -> bool:
+def space_is_junk(text: str, index: int) -> bool:
     return text[index].isspace()
 
 
 class FuzzyMatchResult:
     def __init__(
         self,
-        a: AnyStr,
-        b: AnyStr,
+        a: str,
+        b: str,
         matching_blocks: MatchingBlocks,
         is_junk_fn: Optional[T_IsJunkFunction] = None
     ):
@@ -272,4 +275,4 @@ def get_first_chunk_matching_blocks(
             LOGGER.debug('chunk_needle: %s', chunk_needle)
             return chunk_matching_blocks
         block_count -= 1
-    return []
+    return EMPTY_MATCHING_BLOCKS

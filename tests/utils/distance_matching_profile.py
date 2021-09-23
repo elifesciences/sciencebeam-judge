@@ -22,26 +22,36 @@ from sciencebeam_judge.evaluation.scoring_methods.scoring_methods import levensh
 
 from sciencebeam_judge.utils.distance_matching import (
     DistanceMeasure,
+    Value_Types,
     get_length_based_upper_bound_score,
     get_character_count_based_upper_bound_score,
-    get_distance_matches
+    get_distance_matches,
+    type_checked_distance_function
 )
 
 
 LOGGER = logging.getLogger(__name__)
 
 
-DISTANCE_MEASURE_WITHOUT_APPROXIMATE = DistanceMeasure(levenshtein_score)
+LEVENSHTEIN_SCORE_DISTANCE_FUNCTION = type_checked_distance_function(
+    levenshtein_score,
+    Value_Types
+)
+
+
+DISTANCE_MEASURE_WITHOUT_APPROXIMATE = DistanceMeasure(
+    LEVENSHTEIN_SCORE_DISTANCE_FUNCTION
+)
 
 DISTANCE_MEASURE_WITH_LENGTH_ONLY_APPROXIMATE = DistanceMeasure(
-    levenshtein_score,
+    LEVENSHTEIN_SCORE_DISTANCE_FUNCTION,
     [
         get_length_based_upper_bound_score
     ]
 )
 
 DISTANCE_MEASURE_WITH_APPROXIMATE = DistanceMeasure(
-    levenshtein_score,
+    LEVENSHTEIN_SCORE_DISTANCE_FUNCTION,
     [
         get_length_based_upper_bound_score,
         get_character_count_based_upper_bound_score

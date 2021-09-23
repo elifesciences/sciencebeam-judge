@@ -1,9 +1,14 @@
+from abc import ABC, abstractmethod
 import logging
-
+import functools
 from collections import Counter
 from typing import (
-    Callable, Iterable, List, NamedTuple, Optional, Set, Tuple, Union, T
+    Any, Callable, Dict, Iterable, List, NamedTuple, Optional, Sequence, Set, Tuple, Union, cast
 )
+
+from typing_extensions import Protocol
+
+from sciencebeam_judge.utils.typing import T
 
 
 LOGGER = logging.getLogger(__name__)
@@ -11,14 +16,15 @@ LOGGER = logging.getLogger(__name__)
 
 DEFAULT_THRESHOLD = 0.5
 
-T_Value = Union[str, Tuple[str]]
+T_Value = Union[str, Tuple[str, ...]]
+Value_Types = (str, tuple, list)
 
 
 class WrappedValue:
-    def __init__(self, value: Union[str, Tuple[str]], index: int = -1):
+    def __init__(self, value: T_Value, index: int = -1):
         self.value = value
         self.index = index
-        self.char_counts = None
+        self.char_counts: Optional[Counter] = None
 
     def __len__(self):
         return len(self.value)
@@ -36,32 +42,80 @@ class WrappedValue:
         return other == self.value
 
 
-def get_unwrapped_value(wrapped_value: Optional[WrappedValue]) -> Union[str, Tuple[str]]:
+def get_unwrapped_value(
+    wrapped_value: Optional[WrappedValue]
+) -> Optional[T_Value]:
     if wrapped_value is None:
         return None
     return wrapped_value.value
 
 
-def get_recursive_unwrapped_value(wrapped_value: Optional[WrappedValue]) -> Union[str, Tuple[str]]:
-    result = get_unwrapped_value(wrapped_value)
+def get_recursive_unwrapped_value(
+    wrapped_value: Optional[Union[WrappedValue, T_Value]]
+) -> Optional[T_Value]:
+    result = wrapped_value
     while isinstance(result, WrappedValue):
         result = get_unwrapped_value(result)
     return result
 
 
-def get_wrapped_value(value: Union[str, Tuple[str]], index: int) -> WrappedValue:
+def get_required_recursive_unwrapped_value(
+    wrapped_value: Optional[Union[WrappedValue, T_Value]]
+) -> T_Value:
+    result = get_recursive_unwrapped_value(wrapped_value)
+    if result is None:
+        raise ValueError('value required: %r' % wrapped_value)
+    return result
+
+
+def get_wrapped_value(
+    value: T_Value,
+    index: int
+) -> WrappedValue:
     return WrappedValue(value, index=index)
 
 
 T_Optionally_Wrapped_Value = Union[T_Value, WrappedValue]
 
-T_Distance_Function = Callable[
-    [T_Optionally_Wrapped_Value, T_Optionally_Wrapped_Value],
-    float
-]
+
+class DistanceFunctionProtocol(Protocol):
+    def __call__(
+        self,
+        value_1: T_Optionally_Wrapped_Value,
+        value_2: T_Optionally_Wrapped_Value
+    ) -> float:
+        pass
 
 
-class DistanceMeasure(T_Distance_Function):
+T_Distance_Function = DistanceFunctionProtocol
+
+
+def type_checked_distance_function(
+    fn: Callable[[T, T], float],
+    required_ypes: Union[type, Tuple[type, ...]]
+):
+    @functools.wraps(fn)
+    def wrapper(
+        value_1: T_Optionally_Wrapped_Value,
+        value_2: T_Optionally_Wrapped_Value
+    ) -> float:
+        assert isinstance(value_1, required_ypes)
+        assert isinstance(value_2, required_ypes)
+        return fn(cast(T, value_1), cast(T, value_2))
+    return wrapper
+
+
+class AbstractDistanceFunction(ABC):
+    @abstractmethod
+    def __call__(
+        self,
+        value_1: T_Optionally_Wrapped_Value,
+        value_2: T_Optionally_Wrapped_Value
+    ) -> float:
+        pass
+
+
+class DistanceMeasure(AbstractDistanceFunction):
     def __init__(
         self,
         distance_fn: T_Distance_Function,
@@ -73,7 +127,11 @@ class DistanceMeasure(T_Distance_Function):
     def __repr__(self):
         return f'{type(self).__name__}({self._distance_fn}, {self._approximate_distance_fn_list})'
 
-    def __call__(self, value_1: str, value_2: str) -> float:
+    def __call__(
+        self,
+        value_1: T_Optionally_Wrapped_Value,
+        value_2: T_Optionally_Wrapped_Value
+    ) -> float:
         return self._distance_fn(value_1, value_2)
 
     @property
@@ -87,7 +145,7 @@ class CachedDistanceMeasure(DistanceMeasure):
             distance_measure._distance_fn,
             distance_measure._approximate_distance_fn_list
         )
-        self._cache = {}
+        self._cache: Dict[Any, float] = {}
 
     def __call__(
         self,
@@ -101,8 +159,8 @@ class CachedDistanceMeasure(DistanceMeasure):
         score = self._cache.get(key)
         if score is None:
             score = self._distance_fn(
-                get_recursive_unwrapped_value(value_1),
-                get_recursive_unwrapped_value(value_2)
+                get_required_recursive_unwrapped_value(value_1),
+                get_required_recursive_unwrapped_value(value_2)
             )
             self._cache[key] = score
             LOGGER.debug('saving score to cache: %r (%r, %d)', score, key, len(self._cache))
@@ -112,8 +170,8 @@ class CachedDistanceMeasure(DistanceMeasure):
 
 
 class DistanceMatchResult(NamedTuple):
-    value_1: T_Optionally_Wrapped_Value
-    value_2: T_Optionally_Wrapped_Value
+    value_1: Optional[T_Optionally_Wrapped_Value]
+    value_2: Optional[T_Optionally_Wrapped_Value]
     score: float
 
 
@@ -179,17 +237,17 @@ def get_character_count_based_upper_bound_score(
     return matches / max_length
 
 
-def get_first(list_: Union[List[T]]) -> T:
+def get_first(list_: Union[Sequence[T], tuple]) -> T:
     return list_[0]
 
 
 def find_best_match(
     value: T_Optionally_Wrapped_Value,
-    other_values: List[T_Optionally_Wrapped_Value],
+    other_values: Sequence[T_Optionally_Wrapped_Value],
     distance_measure: DistanceMeasure,
     threshold: float = DEFAULT_THRESHOLD,
     approximate_threshold: float = None
-) -> DistanceMatchResult:
+) -> Optional[DistanceMatchResult]:
 
     if approximate_threshold is None:
         approximate_threshold = threshold
@@ -238,13 +296,13 @@ def find_best_match(
 
 
 def iter_wrapped_distance_matches(
-    set_1: Set[WrappedValue],
-    set_2: Set[WrappedValue],
+    set_1: Union[Set[WrappedValue], Sequence[WrappedValue]],
+    set_2: Union[Set[WrappedValue], Sequence[WrappedValue]],
     distance_measure: DistanceMeasure,
     threshold: float = DEFAULT_THRESHOLD,
     mismatch_threshold: float = 0.0
 ) -> Iterable[DistanceMatchResult]:
-    unmatched_set_1 = []
+    unmatched_set_1: List[WrappedValue] = []
     remaining_set_2 = list(set_2)
 
     # find best matches that meet the threshold
@@ -257,7 +315,7 @@ def iter_wrapped_distance_matches(
         )
         if best_match:
             yield best_match
-            remaining_set_2.remove(best_match.value_2)
+            remaining_set_2.remove(cast(WrappedValue, best_match.value_2))
         else:
             unmatched_set_1.append(value_1)
 
@@ -279,7 +337,7 @@ def iter_wrapped_distance_matches(
                 value_1=value_1, value_2=best_match.value_2, score=best_match.score
             )
             unmatched_set_1.remove(value_1)
-            remaining_set_2.remove(best_match.value_2)
+            remaining_set_2.remove(cast(WrappedValue, best_match.value_2))
 
     # add remaining and unmatched items separately
     for value_1 in unmatched_set_1:
@@ -298,16 +356,24 @@ def iter_distance_matches(
     distance_measure = CachedDistanceMeasure(distance_measure)
     wrapped_set_1 = [WrappedValue(s, i) for i, s in enumerate(set_1)]
     wrapped_set_2 = [WrappedValue(s, i) for i, s in enumerate(set_2)]
+    # Note: Workaround for mypy gets multiple values for keyword argument
+    kwargs = {
+        **kwargs,
+        'distance_measure': distance_measure
+    }
     return (
         DistanceMismatch(
-            value_1=get_unwrapped_value(distance_match.value_1),
-            value_2=get_unwrapped_value(distance_match.value_2),
+            value_1=get_unwrapped_value(
+                cast(WrappedValue, distance_match.value_1)
+            ),
+            value_2=get_unwrapped_value(
+                cast(WrappedValue, distance_match.value_2)
+            ),
             score=distance_match.score
         )
         for distance_match in iter_wrapped_distance_matches(
             wrapped_set_1, wrapped_set_2,
             *args,
-            distance_measure=distance_measure,
             **kwargs
         )
     )

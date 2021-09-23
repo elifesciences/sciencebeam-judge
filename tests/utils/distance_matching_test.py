@@ -6,16 +6,26 @@ from sciencebeam_judge.utils.distance_matching import (
     DistanceMeasure,
     DistanceMatch,
     DistanceMismatch,
+    Value_Types,
     get_length_based_upper_bound_score,
     get_character_count_based_upper_bound_score,
-    get_distance_matches
+    get_distance_matches,
+    type_checked_distance_function
 )
 
 
-DEFAULT_DISTANCE_MEASURE = DistanceMeasure(levenshtein_score)
+LEVENSHTEIN_SCORE_DISTANCE_FUNCTION = type_checked_distance_function(
+    levenshtein_score,
+    Value_Types
+)
+
+
+DEFAULT_DISTANCE_MEASURE = DistanceMeasure(
+    LEVENSHTEIN_SCORE_DISTANCE_FUNCTION
+)
 
 DISTANCE_MEASURE_WITH_APPROXIMATE = DistanceMeasure(
-    levenshtein_score,
+    LEVENSHTEIN_SCORE_DISTANCE_FUNCTION,
     [
         get_length_based_upper_bound_score,
         get_character_count_based_upper_bound_score

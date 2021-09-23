@@ -2,10 +2,21 @@ import logging
 import re
 from collections import deque
 from functools import partial
-from typing import AnyStr, Deque, List, NamedTuple, Optional, Tuple,  T
+from typing import (
+    Any,
+    Deque,
+    Iterable,
+    List,
+    NamedTuple,
+    Optional,
+    Tuple,
+    Union,
+    cast
+)
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
+from sciencebeam_judge.utils.typing import StrLike, T
 from sciencebeam_judge.utils.fuzzy import (
     IndexRange,
     MatchingBlocks,
@@ -17,8 +28,8 @@ from sciencebeam_judge.utils.fuzzy import (
     translate_string_view_matching_blocks
 )
 from sciencebeam_judge.utils.distance_matching import (
+    DistanceMatchResult,
     WrappedValue,
-    DistanceMatch,
     get_distance_matches
 )
 from sciencebeam_judge.evaluation.math import safe_mean
@@ -79,6 +90,7 @@ class FuzzyWrappedValue(WrappedValue):
         )
 
     def strip(self) -> 'FuzzyWrappedValue':
+        assert isinstance(self.value, str)
         return FuzzyWrappedValue(
             self.value.strip(),
             index=self.index,
@@ -88,17 +100,17 @@ class FuzzyWrappedValue(WrappedValue):
 
 class TextFragment(NamedTuple):
     text: str
-    index: int
+    start: int
     original_text: str
 
     @staticmethod
-    def create(text: str, original_text: Optional[str] = None, index: int = 0) -> 'TextFragment':
+    def create(text: str, original_text: Optional[str] = None, start: int = 0) -> 'TextFragment':
         # Note: using "create", due to not being able to override
         #   __new__ or __init__ of NamedTuple
         if original_text is None:
             original_text = text
-            assert index == 0
-        return TextFragment(text=text, original_text=original_text, index=index)
+            assert start == 0
+        return TextFragment(text=text, original_text=original_text, start=start)
 
     def __str__(self):
         return self.text
@@ -108,32 +120,39 @@ class TextFragment(NamedTuple):
 
     def __getitem__(self, key) -> 'TextFragment':
         assert isinstance(key, slice)
+        return self.get_slice(key)
+
+    # Note: workaround because mypy isn't detecting the correct return type of __getitem__
+    def get(self, start: Optional[int] = None, stop: Optional[int] = None) -> 'TextFragment':
+        return self.get_slice(slice(start, stop))
+
+    def get_slice(self, key: slice) -> 'TextFragment':
         return TextFragment(
             text=self.text[key],
             original_text=self.original_text,
-            index=self.index + key.start
+            start=self.start + key.start
         )
 
     def with_context(self, context_chars: int) -> 'TextFragment':
-        start = max(0, self.index - context_chars)
-        end = min(len(self.original_text), self.index + len(self) + context_chars)
+        start = max(0, self.start - context_chars)
+        end = min(len(self.original_text), self.start + len(self) + context_chars)
         return TextFragment(
             text=self.original_text[start:end],
             original_text=self.original_text,
-            index=start
+            start=start
         )
 
 
 class FuzzyTextFragmentMatchResult(NamedTuple):
     value_1: TextFragment
-    value_2: TextFragment
+    value_2: Optional[TextFragment]
     score: float
 
 
 DISTANCE_MEASURE = SCORING_METHODS_MAP[ScoringMethodNames.LEVENSHTEIN].distance_measure
 
 
-def iter_regex_split_with_index(text: str, sep_pattern: str) -> List[Tuple[int, str]]:
+def iter_regex_split_with_index(text: str, sep_pattern: str) -> Iterable[Tuple[int, str]]:
     start_index = 0
     for m in re.finditer(sep_pattern, text):
         current_index = m.start(0)
@@ -145,13 +164,13 @@ def iter_regex_split_with_index(text: str, sep_pattern: str) -> List[Tuple[int, 
 
 
 def get_distance_match_sort_key(
-    distance_match: DistanceMatch,
+    distance_match: DistanceMatchResult,
     max_sort_key: Tuple[int, int]
 ) -> Tuple[int, int]:
-    return (
+    return cast(Tuple[int, int], (
         distance_match.value_1.index if distance_match.value_1 else max_sort_key[0],
         distance_match.value_2.index if distance_match.value_2 else max_sort_key[1]
-    )
+    ))
 
 
 def expand_start_index_to_token(text: str, index: int) -> int:
@@ -166,7 +185,10 @@ def expand_end_index_to_token(text: str, index: int) -> int:
     return index
 
 
-def expand_index_range_to_token(text: str, index_range: IndexRange) -> IndexRange:
+def expand_index_range_to_token(
+    text: str,
+    index_range: Union[IndexRange, Tuple[int, int]]
+) -> IndexRange:
     return IndexRange((
         expand_start_index_to_token(text, index_range[0]),
         expand_end_index_to_token(text, index_range[1]),
@@ -246,7 +268,7 @@ def get_fuzzy_matched_characters(
     haystack_mask = [not c.isspace() for c in haystack_str]
     haystack_matched = [False] * len(haystack_str)
     haystack_view_chars = list(haystack_str)
-    remaining_paired_sequences: Deque[FuzzyWrappedValue] = deque()
+    remaining_paired_sequences: Deque[Tuple[FuzzyWrappedValue, FuzzyWrappedValue]] = deque()
     remaining_unpaired_sequences: Deque[FuzzyWrappedValue] = deque()
     # using distances matches to start with more likely pairings
     max_sort_key = (len(haystack_str), len(needles))
@@ -255,18 +277,20 @@ def get_fuzzy_matched_characters(
     ))
     LOGGER.debug('distance_matches: %s (threshold=%s)', distance_matches, threshold)
     for distance_match in distance_matches:
+        value_1 = cast(Optional[FuzzyWrappedValue], distance_match.value_1)
+        value_2 = cast(Optional[FuzzyWrappedValue], distance_match.value_2)
         LOGGER.debug(
             'distance_match: %s (index: %s)',
             distance_match,
-            distance_match.value_1.index if distance_match.value_1 else None
+            value_1.index if value_1 else None
         )
-        if not distance_match.value_2:
+        if not value_2:
             # not interested in added text at the moment
             continue
-        if not distance_match.value_1:
-            remaining_unpaired_sequences.append(distance_match.value_2)
+        if not value_1:
+            remaining_unpaired_sequences.append(value_2)
             continue
-        remaining_paired_sequences.append((distance_match.value_1, distance_match.value_2))
+        remaining_paired_sequences.append((value_1, value_2))
         del distance_match
     wrapped_haystack = FuzzyWrappedValue(haystack_str, 0)
     while remaining_paired_sequences or remaining_unpaired_sequences:
@@ -388,11 +412,14 @@ def get_fuzzy_matched_text_fragments(
     match_start_index = 0
     mismatch_start_index = 0
     result = []
-    haystack_fragment = TextFragment.create(text=haystack_str)
+    haystack_fragment: TextFragment = TextFragment.create(text=haystack_str)
+    text_fragment: TextFragment
     for index, is_match in enumerate(haystack_matched):
         if is_match:
             if mismatch_start_index < index:
-                text_fragment = haystack_fragment[mismatch_start_index:index]
+                text_fragment = haystack_fragment.get(
+                    start=mismatch_start_index, stop=index
+                )
                 result.append(FuzzyTextFragmentMatchResult(
                     value_1=text_fragment,
                     value_2=None,
@@ -401,7 +428,9 @@ def get_fuzzy_matched_text_fragments(
             mismatch_start_index = index + 1
             continue
         if match_start_index < index:
-            text_fragment = haystack_fragment[match_start_index:index]
+            text_fragment = haystack_fragment.get(
+                start=match_start_index, stop=index
+            )
             result.append(FuzzyTextFragmentMatchResult(
                 value_1=text_fragment,
                 value_2=text_fragment,
@@ -409,14 +438,14 @@ def get_fuzzy_matched_text_fragments(
             ))
         match_start_index = index + 1
     if mismatch_start_index < len(haystack_str):
-        text_fragment = haystack_fragment[mismatch_start_index:]
+        text_fragment = haystack_fragment.get(start=mismatch_start_index)
         result.append(FuzzyTextFragmentMatchResult(
             value_1=text_fragment,
             value_2=None,
             score=0.0
         ))
     if match_start_index < len(haystack_str):
-        text_fragment = haystack_fragment[match_start_index:]
+        text_fragment = haystack_fragment.get(start=match_start_index)
         result.append(FuzzyTextFragmentMatchResult(
             value_1=text_fragment,
             value_2=text_fragment,
@@ -429,7 +458,9 @@ def strip_whitespace(text: str) -> str:
     return re.sub(r'\s+', '', text)
 
 
-def get_text_context(text: AnyStr) -> AnyStr:
+def get_text_context(
+    text: Optional[Union[Any, TextFragment]]
+) -> Optional[TextFragment]:
     return (
         text.with_context(20)
         if isinstance(text, TextFragment)
@@ -439,8 +470,8 @@ def get_text_context(text: AnyStr) -> AnyStr:
 
 def get_character_based_match_score_for_score(
     score: float,
-    expected: AnyStr,
-    actual: AnyStr,
+    expected: Optional[StrLike],
+    actual: Optional[StrLike],
     include_values: bool
 ) -> MatchScore:
     expected_str = str(expected) if expected else ''

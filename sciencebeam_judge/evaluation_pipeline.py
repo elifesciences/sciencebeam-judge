@@ -133,7 +133,7 @@ def ReadFilePairs(x):
 def get_all_source_field_names(
     evaluation_config: EvaluationConfig,
     field_names: Optional[List[str]]
-) -> Optional[str]:
+) -> Optional[List[str]]:
     if not field_names:
         LOGGER.debug('get_all_source_field_names: no field names')
         return field_names

@@ -3,8 +3,7 @@ from __future__ import division
 import logging
 
 from itertools import groupby
-
-from six import iteritems
+from typing import Optional, Sequence
 
 from sciencebeam_utils.utils.collection import extend_dict, iter_flatten, flatten
 
@@ -92,7 +91,7 @@ def combine_scores(list_of_scores, keys=None):
         return {}
     combined_scores = dict()
     for scores in list_of_scores:
-        for k, v in iteritems(scores):
+        for k, v in scores.items():
             if keys is None or k in keys:
                 combined_scores.setdefault(k, []).extend(
                     v if isinstance(v, list) else [v]
@@ -137,8 +136,12 @@ def combine_and_compact_document_scores_with_count(document_scores_with_count):
     )
 
 
-def summarise_binary_results(scores, keys, count=None):
-    scores = {k: force_list(x) for k, x in iteritems(scores)}
+def summarise_binary_results(
+    scores: dict,
+    keys: Sequence[str],
+    count: Optional[int] = None
+):
+    scores = {k: force_list(x) for k, x in scores.items()}
     LOGGER.debug(
         'summarise_binary_results, scores.keys=%s, keys=%s', scores.keys(), keys
     )

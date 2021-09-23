@@ -1,9 +1,8 @@
 import logging
 import re
+from typing import List
 
 from lxml import etree
-
-from six import text_type, string_types
 
 
 LOGGER = logging.getLogger(__name__)
@@ -18,7 +17,7 @@ IGNORE_MARKER_WITH_SPACE = ' ' + IGNORE_MARKER + ' '
 
 def _default_exclude_fn(node):
     tag = node.tag
-    result = not isinstance(tag, string_types)
+    result = not isinstance(tag, str)
     LOGGER.debug('_default_exclude_fn: node.tag=%s, result=%s', tag, result)
     return result
 
@@ -61,7 +60,7 @@ def get_text_content(node, exclude=None):
     if node is None:
         return ''
     if not hasattr(node, 'text'):
-        return text_type(node)
+        return str(node)
     return _get_text_content_and_exclude(node, exclude=exclude)
 
 
@@ -84,11 +83,11 @@ def get_text_content_and_ignore_children(e, children_to_ignore):
 
 
 def is_ends_with_word(text: str) -> bool:
-    return re.match(r'.*\w$', text)
+    return bool(re.match(r'.*\w$', text))
 
 
 def is_starts_with_word(text: str) -> bool:
-    return re.match(r'^\w.*', text)
+    return bool(re.match(r'^\w.*', text))
 
 
 def remove_whitespace_before_punct(text: str) -> str:
@@ -100,7 +99,7 @@ def normalized_whitespace(text: str) -> str:
 
 
 def get_normalized_text_content(element: etree.Element) -> str:
-    text_list = []
+    text_list: List[str] = []
     for text in element.itertext():
         if text_list and is_ends_with_word(text_list[-1]) and is_starts_with_word(text):
             text_list.append(' ')
