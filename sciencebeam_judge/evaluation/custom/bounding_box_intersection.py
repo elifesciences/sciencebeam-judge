@@ -1,6 +1,7 @@
 import logging
 from typing import List, Optional
 
+from sciencebeam_judge.utils.distance_matching import type_checked_distance_function
 from sciencebeam_judge.utils.bounding_box import (
     BoundingBox,
     PageBoundingBox,
@@ -95,7 +96,10 @@ def get_formatted_page_bounding_box_list_area_match_score(
 
 BOUNDING_BOX_INTERSECTION_SCORING_METHOD = ScoringMethod(
     'bounding_box_intersection',
-    get_formatted_page_bounding_box_list_area_match_score,
+    type_checked_distance_function(
+        get_formatted_page_bounding_box_list_area_match_score,
+        str
+    ),
     threshold=0.8
 )
 
