@@ -2,7 +2,19 @@ import logging
 import re
 from collections import deque
 from functools import partial
-from typing import Any, Deque, List, NamedTuple, Optional, Tuple,  T, Union, cast, overload
+from typing import (
+    Any,
+    Deque,
+    Iterable,
+    List,
+    NamedTuple,
+    Optional,
+    Tuple,
+    T,
+    Union,
+    cast,
+    overload
+)
 
 from sciencebeam_alignment.align import LocalSequenceMatcher, SimpleScoring
 
@@ -145,7 +157,7 @@ class FuzzyTextFragmentMatchResult(NamedTuple):
 DISTANCE_MEASURE = SCORING_METHODS_MAP[ScoringMethodNames.LEVENSHTEIN].distance_measure
 
 
-def iter_regex_split_with_index(text: str, sep_pattern: str) -> List[Tuple[int, str]]:
+def iter_regex_split_with_index(text: str, sep_pattern: str) -> Iterable[Tuple[int, str]]:
     start_index = 0
     for m in re.finditer(sep_pattern, text):
         current_index = m.start(0)
