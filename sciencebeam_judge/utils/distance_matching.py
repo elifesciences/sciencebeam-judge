@@ -49,11 +49,20 @@ def get_unwrapped_value(
 
 
 def get_recursive_unwrapped_value(
-    wrapped_value: Optional[WrappedValue]
+    wrapped_value: Optional[Union[WrappedValue, T_Value]]
 ) -> Optional[T_Value]:
-    result = get_unwrapped_value(wrapped_value)
+    result = wrapped_value
     while isinstance(result, WrappedValue):
         result = get_unwrapped_value(result)
+    return result
+
+
+def get_required_recursive_unwrapped_value(
+    wrapped_value: Optional[Union[WrappedValue, T_Value]]
+) -> T_Value:
+    result = get_recursive_unwrapped_value(wrapped_value)
+    if result is None:
+        raise ValueError('value required: %r' % wrapped_value)
     return result
 
 
@@ -132,8 +141,8 @@ class CachedDistanceMeasure(DistanceMeasure):
         score = self._cache.get(key)
         if score is None:
             score = self._distance_fn(
-                get_recursive_unwrapped_value(value_1),
-                get_recursive_unwrapped_value(value_2)
+                get_required_recursive_unwrapped_value(value_1),
+                get_required_recursive_unwrapped_value(value_2)
             )
             self._cache[key] = score
             LOGGER.debug('saving score to cache: %r (%r, %d)', score, key, len(self._cache))
