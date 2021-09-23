@@ -90,6 +90,7 @@ class FuzzyWrappedValue(WrappedValue):
         )
 
     def strip(self) -> 'FuzzyWrappedValue':
+        assert isinstance(self.value, str)
         return FuzzyWrappedValue(
             self.value.strip(),
             index=self.index,
