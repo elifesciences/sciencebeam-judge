@@ -140,6 +140,8 @@ class MatchingBlocks(Tuple[Tuple[int, int, int], ...]):
         return sum(size for _, _, size in self)
 
 
+EMPTY_MATCHING_BLOCKS = MatchingBlocks([])
+
 class MatchingBlocksWithMatchedText:
     def __init__(self, matching_blocks: Tuple[Tuple[int, int, int], ...], text: str):
         self.matching_blocks = matching_blocks
@@ -272,4 +274,4 @@ def get_first_chunk_matching_blocks(
             LOGGER.debug('chunk_needle: %s', chunk_needle)
             return chunk_matching_blocks
         block_count -= 1
-    return []
+    return EMPTY_MATCHING_BLOCKS
