@@ -1,6 +1,6 @@
 from __future__ import division
 from functools import wraps
-from typing import Callable, List, Tuple, Union
+from typing import Callable, List, Union
 
 from difflib import SequenceMatcher
 
@@ -10,6 +10,7 @@ from sciencebeam_judge.utils.typing import T
 
 from ...utils.distance_matching import (
     T_Distance_Function,
+    T_Optionally_Wrapped_Value,
     T_Value,
     DistanceMeasure,
     get_length_based_upper_bound_score,
@@ -60,7 +61,10 @@ def wrap_scoring_function_with_preprocessing(
         return scoring_fn
 
     @wraps(scoring_fn)
-    def wrapped(value_1: Union[str, Tuple[str]], value_2: Union[str, Tuple[str]]) -> float:
+    def wrapped(
+        value_1: T_Optionally_Wrapped_Value,
+        value_2: T_Optionally_Wrapped_Value
+    ) -> float:
         if value_1 and isinstance(value_1, str):
             value_1 = preprocessing_fn(value_1)
         if value_2 and isinstance(value_2, str):
