@@ -43,7 +43,7 @@ class CustomEvaluationConfig(NamedTuple):
     fields: List[CustomEvaluationFieldConfig]
 
     @staticmethod
-    def from_json(data: dict):
+    def from_json(data: Optional[dict]):
         if not data:
             return None
         return CustomEvaluationConfig(
