@@ -38,13 +38,15 @@ class WrappedValue:
         return other == self.value
 
 
-def get_unwrapped_value(wrapped_value: Optional[WrappedValue]) -> Union[str, Tuple[str]]:
+def get_unwrapped_value(wrapped_value: Optional[WrappedValue]) -> Optional[Union[str, Tuple[str]]]:
     if wrapped_value is None:
         return None
     return wrapped_value.value
 
 
-def get_recursive_unwrapped_value(wrapped_value: Optional[WrappedValue]) -> Union[str, Tuple[str]]:
+def get_recursive_unwrapped_value(
+    wrapped_value: Optional[WrappedValue]
+) -> Optional[Union[str, Tuple[str]]]:
     result = get_unwrapped_value(wrapped_value)
     while isinstance(result, WrappedValue):
         result = get_unwrapped_value(result)
