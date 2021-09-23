@@ -2,8 +2,10 @@ import logging
 
 from collections import Counter
 from typing import (
-    Callable, Iterable, List, NamedTuple, Optional, Sequence, Set, Tuple, Union, T
+    Callable, Iterable, List, NamedTuple, Optional, Sequence, Set, Tuple, Union
 )
+
+from sciencebeam_judge.utils.typing import T
 
 
 LOGGER = logging.getLogger(__name__)
