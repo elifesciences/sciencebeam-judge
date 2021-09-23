@@ -5,14 +5,14 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
+            target: runtime
         image: elifesciences/sciencebeam-judge:${IMAGE_TAG}
         networks: []
     sciencebeam-judge-dev:
         build:
             context: .
             dockerfile: Dockerfile
-            args:
-                install_dev: "y"
+            target: dev
         image: elifesciences/sciencebeam-judge-dev:${IMAGE_TAG}
         networks: []
     sciencebeam-judge-jupyter:
