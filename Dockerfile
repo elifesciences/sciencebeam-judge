@@ -11,11 +11,10 @@ ENV PYTHONUSERBASE=${VENV} PATH=${VENV}/bin:$PATH
 COPY requirements.build.txt ./
 RUN pip install -r requirements.build.txt
 
-COPY requirements.prereq.txt ./
-RUN pip install -r requirements.prereq.txt
-
-COPY requirements.txt ./
-RUN pip install -r requirements.txt
+COPY requirements.prereq.txt requirements.txt ./
+RUN pip install \
+  -r requirements.prereq.txt \
+  -r requirements.txt
 
 ARG install_dev
 COPY requirements.dev.txt ./
