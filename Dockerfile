@@ -1,5 +1,4 @@
-ARG base_image
-FROM ${base_image}
+FROM python:3.8.7-buster
 
 ENV PROJECT_HOME=/srv/sciencebeam-judge
 WORKDIR ${PROJECT_HOME}

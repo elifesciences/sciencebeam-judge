@@ -5,8 +5,6 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-            args:
-                base_image: ${PYTHON_BASE_IMAGE}
         image: elifesciences/sciencebeam-judge:${IMAGE_TAG}
         networks: []
     sciencebeam-judge-dev:
@@ -14,7 +12,6 @@ services:
             context: .
             dockerfile: Dockerfile
             args:
-                base_image: ${PYTHON_BASE_IMAGE}
                 install_dev: "y"
         image: elifesciences/sciencebeam-judge-dev:${IMAGE_TAG}
         networks: []
