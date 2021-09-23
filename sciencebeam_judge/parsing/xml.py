@@ -127,7 +127,7 @@ def parse_xml(
     namespaces = xml_mapping.get('namespaces')
     if root_tag not in xml_mapping:
         raise Exception("unrecognised tag: {} (available: {})".format(
-            root_tag, xml_mapping.sections()
+            root_tag, xml_mapping.keys()
         ))
     mapping = xml_mapping[root_tag]
     field_names = [
