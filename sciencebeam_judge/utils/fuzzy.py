@@ -204,7 +204,7 @@ def translate_string_view_matching_blocks(
     ])
 
 
-def space_is_junk(text: AnyStr, index: int) -> bool:
+def space_is_junk(text: str, index: int) -> bool:
     return text[index].isspace()
 
 
