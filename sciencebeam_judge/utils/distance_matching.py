@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import logging
 from collections import Counter
 from typing import (
-    Any, Dict, Iterable, List, NamedTuple, Optional, Sequence, Set, Tuple, Union
+    Any, Dict, Iterable, List, NamedTuple, Optional, Sequence, Set, Tuple, Union, cast
 )
 
 from typing_extensions import Protocol
@@ -297,7 +297,7 @@ def iter_wrapped_distance_matches(
         )
         if best_match:
             yield best_match
-            remaining_set_2.remove(best_match.value_2)
+            remaining_set_2.remove(cast(WrappedValue, best_match.value_2))
         else:
             unmatched_set_1.append(value_1)
 
@@ -319,7 +319,7 @@ def iter_wrapped_distance_matches(
                 value_1=value_1, value_2=best_match.value_2, score=best_match.score
             )
             unmatched_set_1.remove(value_1)
-            remaining_set_2.remove(best_match.value_2)
+            remaining_set_2.remove(cast(WrappedValue, best_match.value_2))
 
     # add remaining and unmatched items separately
     for value_1 in unmatched_set_1:
@@ -340,8 +340,12 @@ def iter_distance_matches(
     wrapped_set_2 = [WrappedValue(s, i) for i, s in enumerate(set_2)]
     return (
         DistanceMismatch(
-            value_1=get_unwrapped_value(distance_match.value_1),
-            value_2=get_unwrapped_value(distance_match.value_2),
+            value_1=get_unwrapped_value(
+                cast(WrappedValue, distance_match.value_1)
+            ),
+            value_2=get_unwrapped_value(
+                cast(WrappedValue, distance_match.value_2)
+            ),
             score=distance_match.score
         )
         for distance_match in iter_wrapped_distance_matches(
