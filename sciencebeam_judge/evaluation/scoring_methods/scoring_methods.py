@@ -135,7 +135,7 @@ SCORING_METHODS_MAP = {
 }
 
 
-def get_scoring_method(measure: Union[str, ScoringMethod]) -> List[ScoringMethod]:
+def get_scoring_method(measure: Union[str, ScoringMethod]) -> ScoringMethod:
     if isinstance(measure, ScoringMethod):
         return measure
     return SCORING_METHODS_MAP[measure]
