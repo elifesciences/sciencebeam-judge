@@ -1,5 +1,5 @@
 import logging
-from typing import Any, Dict, Iterable, List, NamedTuple, Union
+from typing import Any, Dict, Iterable, List, Mapping, NamedTuple, Union
 
 from sciencebeam_judge.evaluation_config import (
     EvaluationConfig,
@@ -20,7 +20,7 @@ LOGGER = logging.getLogger(__name__)
 
 
 T_Value = Union[str, List[str]]
-T_DocumentValues = Dict[str, T_Value]
+T_DocumentValues = Mapping[str, T_Value]
 
 
 class DocumentScoringProps:

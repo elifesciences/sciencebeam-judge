@@ -4,8 +4,7 @@ from __future__ import division
 
 from itertools import groupby
 import logging
-
-from six import itervalues
+from typing import Any, Dict, Sequence
 
 from sciencebeam_utils.utils.collection import flatten
 
@@ -75,10 +74,13 @@ def format_summarised_results(summarised_results, keys):
     return '\n'.join([' '.join(row) for row in rows])
 
 
-def format_summary_by_scoring_method(scores_by_scoring_method, keys):
+def format_summary_by_scoring_method(
+    scores_by_scoring_method: Dict[str, Dict[str, Any]],
+    keys: Sequence[str]
+) -> str:
     available_keys = set(flatten([
         scores_for_scoring_method['by-field'].keys()
-        for scores_for_scoring_method in itervalues(scores_by_scoring_method)
+        for scores_for_scoring_method in scores_by_scoring_method.values()
     ]))
     print('available_keys:', available_keys, ', keys:', keys)
     keys = [k for k in keys if k in available_keys]
