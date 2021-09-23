@@ -114,7 +114,7 @@ class MatchingBlocks(Tuple[Tuple[int, int, int], ...]):
 
     def get_end_offset(self, seq_index: int) -> int:
         last_block = self.last_block
-        if not self.last_block:
+        if not last_block:
             return 0
         last_block_size = last_block[2]
         return last_block[seq_index] + last_block_size
