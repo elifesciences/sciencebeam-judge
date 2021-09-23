@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import logging
 from collections import Counter
 from typing import (
-    Iterable, List, NamedTuple, Optional, Sequence, Set, Tuple, Union
+    Any, Dict, Iterable, List, NamedTuple, Optional, Sequence, Set, Tuple, Union
 )
 
 from typing_extensions import Protocol
@@ -113,7 +113,7 @@ class CachedDistanceMeasure(DistanceMeasure):
             distance_measure._distance_fn,
             distance_measure._approximate_distance_fn_list
         )
-        self._cache = {}
+        self._cache: Dict[Any, float] = {}
 
     def __call__(
         self,
