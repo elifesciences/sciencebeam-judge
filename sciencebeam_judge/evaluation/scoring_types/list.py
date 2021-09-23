@@ -2,8 +2,6 @@ import logging
 from abc import abstractmethod
 from typing import List, Optional, Tuple, Union
 
-from six import text_type
-
 from sciencebeam_utils.utils.collection import extend_dict
 
 from sciencebeam_judge.utils.typing import T
@@ -52,7 +50,7 @@ def normalize_list(value, convert_to_lower=False):
 
 
 def list_to_str(iterable):
-    return ', '.join(text_type(x) for x in iterable)
+    return ', '.join(str(x) for x in iterable)
 
 
 def pad_list(
