@@ -63,7 +63,7 @@ def wrap_scoring_function_with_preprocessing(
     def wrapped(value_1: Union[str, Tuple[str]], value_2: Union[str, Tuple[str]]) -> float:
         if value_1 and isinstance(value_1, str):
             value_1 = preprocessing_fn(value_1)
-        if value_2 and isinstance(value_1, str):
+        if value_2 and isinstance(value_2, str):
             value_2 = preprocessing_fn(value_2)
         return scoring_fn(value_1, value_2)
     return wrapped
