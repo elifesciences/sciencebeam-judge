@@ -46,9 +46,10 @@ venv-create:
 
 dev-install:
 	$(PIP) install -r requirements.build.txt
-	$(PIP) install -r requirements.txt
-	$(PIP) install -r requirements.prereq.txt
-	$(PIP) install -r requirements.dev.txt
+	$(PIP) install \
+		-r requirements.txt \
+		-r requirements.prereq.txt \
+		-r requirements.dev.txt
 
 
 dev-venv: venv-create dev-install

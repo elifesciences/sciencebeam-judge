@@ -1,21 +1,18 @@
-version: '3'
+version: '3.4'
 
 services:
     sciencebeam-judge:
         build:
             context: .
             dockerfile: Dockerfile
-            args:
-                base_image: ${PYTHON_BASE_IMAGE}
+            target: runtime
         image: elifesciences/sciencebeam-judge:${IMAGE_TAG}
         networks: []
     sciencebeam-judge-dev:
         build:
             context: .
             dockerfile: Dockerfile
-            args:
-                base_image: ${PYTHON_BASE_IMAGE}
-                install_dev: "y"
+            target: dev
         image: elifesciences/sciencebeam-judge-dev:${IMAGE_TAG}
         networks: []
     sciencebeam-judge-jupyter:
