@@ -2,12 +2,9 @@
 
 import re
 
-from six import unichr  # pylint: disable=redefined-builtin
-
-
 FULL_PUNCTUATIONS = u"([ •*,:;?.!/)-−–\"“”‘’'`$]*\u2666\u2665\u2663\u2660\u00A0"
 WHITE_SPACE = u" \t\n\r\u00A0"
-NBSP = unichr(160)
+NBSP = chr(160)
 
 FULL_PUNCTUATION_AND_WHITESPACE_REGEX = re.compile(
     u'[{}]'.format(re.escape(FULL_PUNCTUATIONS + WHITE_SPACE)))
