@@ -1,6 +1,6 @@
 import logging
 from abc import abstractmethod
-from typing import List, Tuple, Union
+from typing import List, Optional, Tuple, Union
 
 from six import text_type
 
@@ -55,14 +55,18 @@ def list_to_str(iterable):
     return ', '.join(text_type(x) for x in iterable)
 
 
-def pad_list(list_: List[T], desired_length: int, pad_value: T = None) -> List[T]:
+def pad_list(
+    list_: List[Optional[T]],
+    desired_length: int,
+    pad_value: T = None
+) -> List[Optional[T]]:
     if len(list_) == desired_length:
         return list_
     assert desired_length > len(list_)
     return list_ + [pad_value] * (desired_length - len(list_))
 
 
-def pad_longest(*lists: List[T]) -> List[List[T]]:
+def pad_longest(*lists: List[Optional[T]]) -> List[List[Optional[T]]]:
     max_len = max(len(list_) for list_ in lists)
     return [pad_list(list_, max_len) for list_ in lists]
 
