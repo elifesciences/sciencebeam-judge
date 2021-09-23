@@ -62,7 +62,7 @@ def pad_list(list_: List[T], desired_length: int, pad_value: T = None) -> List[T
     return list_ + [pad_value] * (desired_length - len(list_))
 
 
-def pad_longest(*lists: List[List[T]]) -> List[List[T]]:
+def pad_longest(*lists: List[T]) -> List[List[T]]:
     max_len = max(len(list_) for list_ in lists)
     return [pad_list(list_, max_len) for list_ in lists]
 
