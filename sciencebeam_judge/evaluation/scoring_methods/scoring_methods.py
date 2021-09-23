@@ -1,10 +1,12 @@
 from __future__ import division
 from functools import wraps
-from typing import Callable, List, Tuple, Union, T
+from typing import Callable, List, Tuple, Union
 
 from difflib import SequenceMatcher
 
 import editdistance
+
+from sciencebeam_judge.utils.typing import T
 
 from ...utils.distance_matching import (
     T_Distance_Function,
