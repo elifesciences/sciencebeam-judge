@@ -229,7 +229,7 @@ def find_best_match(
     distance_measure: DistanceMeasure,
     threshold: float = DEFAULT_THRESHOLD,
     approximate_threshold: float = None
-) -> DistanceMatchResult:
+) -> Optional[DistanceMatchResult]:
 
     if approximate_threshold is None:
         approximate_threshold = threshold
