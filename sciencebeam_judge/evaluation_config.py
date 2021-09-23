@@ -49,7 +49,7 @@ class CustomEvaluationConfig(NamedTuple):
         return CustomEvaluationConfig(
             fields=[
                 CustomEvaluationFieldConfig.from_json(field_data)
-                for field_data in data.get('fields')
+                for field_data in data['fields']
             ]
         )
 
