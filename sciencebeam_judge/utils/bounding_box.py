@@ -1,4 +1,4 @@
-from typing import NamedTuple, Sequence
+from typing import List, NamedTuple, Sequence
 
 
 class BoundingRange(NamedTuple):
@@ -136,3 +136,12 @@ class PageBoundingBoxList(NamedTuple):
 
 
 EMPTY_PAGE_BOUNDING_BOX_LIST = PageBoundingBoxList(tuple([]))
+
+
+def get_merged_page_bounding_box_lists(
+    page_bounding_box_lists: Sequence[PageBoundingBoxList]
+) -> PageBoundingBoxList:
+    _page_bounding_box_list: List[PageBoundingBox] = []
+    for page_bounding_box_list in page_bounding_box_lists:
+        _page_bounding_box_list.extend(page_bounding_box_list.non_empty_page_bounding_box_list)
+    return PageBoundingBoxList(_page_bounding_box_list)
