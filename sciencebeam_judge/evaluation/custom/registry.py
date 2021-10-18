@@ -4,13 +4,15 @@ from sciencebeam_judge.evaluation.custom.deleted_text import (
     DeletedTextEvaluation
 )
 from sciencebeam_judge.evaluation.custom.bounding_box_intersection import (
+    BoundingBoxIntersectionAreaEvaluation,
     BoundingBoxIntersectionEvaluation
 )
 
 
 CUSTOM_EVALUATION_CLASS_BY_NAME = {
     'deleted_text': DeletedTextEvaluation,
-    'bounding_box_intersection': BoundingBoxIntersectionEvaluation
+    'bounding_box_intersection': BoundingBoxIntersectionEvaluation,
+    'bounding_box_intersection_area': BoundingBoxIntersectionAreaEvaluation
 }
 
 
