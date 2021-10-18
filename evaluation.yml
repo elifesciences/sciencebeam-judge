@@ -58,6 +58,29 @@ custom:
           - figure_graphic_bbox
     - name: body_figure_graphic_bbox_intersection
       evaluation_type: bounding_box_intersection
+      evaluation_type_config:
+        scoring_type: partial_ulist
+      expected:
+        field_names:
+          - body_figure_graphic_bbox
+      actual:
+        field_names:
+          - body_figure_graphic_bbox
+    # Special evaluation of "bounding box" (docbank like)
+    - name: figure_graphic_bbox_intersection_area
+      evaluation_type: bounding_box_intersection_area
+      evaluation_type_config:
+        resolution: 1000
+      expected:
+        field_names:
+          - figure_graphic_bbox
+      actual:
+        field_names:
+          - figure_graphic_bbox
+    - name: body_figure_graphic_bbox_intersection_area
+      evaluation_type: bounding_box_intersection_area
+      evaluation_type_config:
+        resolution: 1000
       expected:
         field_names:
           - body_figure_graphic_bbox

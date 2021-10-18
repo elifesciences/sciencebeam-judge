@@ -7,6 +7,12 @@ from typing import Optional, Sequence
 
 from sciencebeam_utils.utils.collection import extend_dict, iter_flatten, flatten
 
+from sciencebeam_judge.evaluation.metrics import (
+    f1_for_precision_recall,
+    precision_for_tp_fp,
+    recall_for_tp_fn_fp
+)
+
 from .math import safe_mean
 
 from .document_scoring import (
@@ -44,18 +50,6 @@ def sum_scores_with_true_negative(scores, total_fields=None):
         tn = total_fields - tp - fp - fn
         d['true_negative'] = tn
     return d
-
-
-def precision_for_tp_fp(tp, fp, na=0):
-    return tp / (tp + fp) if tp + fp > 0 else na
-
-
-def recall_for_tp_fn_fp(tp, fn, fp, na=0):
-    return tp / (tp + fn + fp) if tp + fn > 0 else na
-
-
-def f1_for_precision_recall(precision, recall, na=0):
-    return 2 * (precision * recall) / (precision + recall) if precision + recall > 0 else na
 
 
 def summary_score(sum_scores):

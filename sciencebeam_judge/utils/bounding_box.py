@@ -1,4 +1,4 @@
-from typing import NamedTuple, Sequence
+from typing import List, NamedTuple, Sequence
 
 
 class BoundingRange(NamedTuple):
@@ -43,6 +43,17 @@ class BoundingBox(NamedTuple):
     def y_range(self):
         return BoundingRange(self.y, self.height).validate()
 
+    def round(self) -> 'BoundingBox':
+        return BoundingBox(round(self.x), round(self.y), round(self.width), round(self.height))
+
+    def scale_by(self, rx: float, ry: float) -> 'BoundingBox':
+        return BoundingBox(
+            x=self.x * rx,
+            y=self.y * ry,
+            width=self.width * rx,
+            height=self.height * ry
+        )
+
     def intersection(self, other: 'BoundingBox') -> 'BoundingBox':
         intersection_x_range = self.x_range.intersection(other.x_range)
         intersection_y_range = self.y_range.intersection(other.y_range)
@@ -70,6 +81,18 @@ class PageBoundingBox(NamedTuple):
     @property
     def area(self) -> float:
         return self.bounding_box.area
+
+    def round(self) -> 'PageBoundingBox':
+        return PageBoundingBox(
+            page_number=self.page_number,
+            bounding_box=self.bounding_box.round()
+        )
+
+    def scale_by(self, rx: float, ry: float) -> 'PageBoundingBox':
+        return PageBoundingBox(
+            page_number=self.page_number,
+            bounding_box=self.bounding_box.scale_by(rx, ry)
+        )
 
     def intersection(self, other: 'PageBoundingBox') -> 'PageBoundingBox':
         if other.page_number != self.page_number:
@@ -115,6 +138,18 @@ class PageBoundingBoxList(NamedTuple):
             for page_bounding_box in self.page_bounding_box_list
         )
 
+    def round(self) -> 'PageBoundingBoxList':
+        return PageBoundingBoxList([
+            page_bounding_box.round()
+            for page_bounding_box in self.page_bounding_box_list
+        ])
+
+    def scale_by(self, rx: float, ry: float) -> 'PageBoundingBoxList':
+        return PageBoundingBoxList([
+            page_bounding_box.scale_by(rx, ry)
+            for page_bounding_box in self.page_bounding_box_list
+        ])
+
     def intersection(self, other: 'PageBoundingBoxList') -> 'PageBoundingBoxList':
         non_empty_page_bounding_box_list_1 = self.non_empty_page_bounding_box_list
         non_empty_page_bounding_box_list_2 = other.non_empty_page_bounding_box_list
@@ -136,3 +171,12 @@ class PageBoundingBoxList(NamedTuple):
 
 
 EMPTY_PAGE_BOUNDING_BOX_LIST = PageBoundingBoxList(tuple([]))
+
+
+def get_merged_page_bounding_box_lists(
+    page_bounding_box_lists: Sequence[PageBoundingBoxList]
+) -> PageBoundingBoxList:
+    _page_bounding_box_list: List[PageBoundingBox] = []
+    for page_bounding_box_list in page_bounding_box_lists:
+        _page_bounding_box_list.extend(page_bounding_box_list.non_empty_page_bounding_box_list)
+    return PageBoundingBoxList(_page_bounding_box_list)
