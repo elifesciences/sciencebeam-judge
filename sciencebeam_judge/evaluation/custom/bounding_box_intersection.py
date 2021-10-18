@@ -25,6 +25,11 @@ from sciencebeam_judge.evaluation.custom import CustomEvaluation
 LOGGER = logging.getLogger(__name__)
 
 
+DEFAULT_BOUNDING_BOX_SCORING_TYPE_NAME = ScoringTypeNames.PARIAL_ULIST
+
+DEFAULT_BOUNDING_BOX_RESOLUTION = 1000
+
+
 def parse_page_bounding_box(text: str) -> PageBoundingBox:
     assert text
     fragments = text.split(',')
@@ -112,8 +117,15 @@ def get_formatted_page_bounding_box_list_area_match_score(
 def get_page_bounding_box_list_area_match_score_obj(
     expected_page_bounding_box_list: PageBoundingBoxList,
     actual_page_bounding_box_list: PageBoundingBoxList,
+    resolution: float = DEFAULT_BOUNDING_BOX_RESOLUTION,
     include_values: bool = True
 ) -> MatchScore:
+    expected_page_bounding_box_list = expected_page_bounding_box_list.scale_by(
+        resolution, resolution
+    ).round()
+    actual_page_bounding_box_list = actual_page_bounding_box_list.scale_by(
+        resolution, resolution
+    ).round()
     intersection_page_bounding_box_list = expected_page_bounding_box_list.intersection(
         actual_page_bounding_box_list
     )
@@ -188,9 +200,6 @@ BOUNDING_BOX_INTERSECTION_SCORING_METHOD = ScoringMethod(
 )
 
 
-DEFAULT_BOUNDING_BOX_SCORING_TYPE_NAME = ScoringTypeNames.PARIAL_ULIST
-
-
 class BoundingBoxIntersectionEvaluation(CustomEvaluation):
     """
     Calculate an evaluation metric similar to text based metrics.
@@ -242,16 +251,16 @@ class BoundingBoxIntersectionAreaEvaluation(CustomEvaluation):
     fn: Area_of_Ground_truth_tokens not in Area_of_Detected_tokens
 
     We will round the area to the nearest integer value.
+    To have a higher resolution, the bounding box coordinates may be multiplied by a fixed value
+    (e.g. 1000).
 
     Tokens here will be the figure for example, with the bounding box defining the area.
     """
     def __init__(self, config: Optional[dict] = None):
         super().__init__()
-        self.scoring_type_name = (  # pylint: disable=consider-using-ternary
-            (config and config.get('scoring_type'))
-            or DEFAULT_BOUNDING_BOX_SCORING_TYPE_NAME
+        self.resolution = float(  # pylint: disable=consider-using-ternary
+            (config and config.get('resolution')) or DEFAULT_BOUNDING_BOX_RESOLUTION
         )
-        self.scoring_type = resolve_scoring_type(self.scoring_type_name)
 
     def score(
         self,
@@ -262,7 +271,8 @@ class BoundingBoxIntersectionAreaEvaluation(CustomEvaluation):
         match_score = get_formatted_page_bounding_box_list_of_list_area_match_score_obj(
             expected_formatted_page_bounding_box_list_of_list=expected,
             actual_formatted_page_bounding_box_list_of_list=actual,
-            include_values=include_values
+            include_values=include_values,
+            resolution=self.resolution
         )
-        LOGGER.debug('match_score: %r', match_score)
+        LOGGER.debug('match_score: %r (resolution: %r)', match_score, self.resolution)
         return match_score

@@ -5,6 +5,7 @@ from sciencebeam_judge.utils.bounding_box import (
     PageBoundingBoxList
 )
 from sciencebeam_judge.evaluation.custom.bounding_box_intersection import (
+    DEFAULT_BOUNDING_BOX_RESOLUTION,
     DEFAULT_BOUNDING_BOX_SCORING_TYPE_NAME,
     BoundingBoxIntersectionAreaEvaluation,
     BoundingBoxIntersectionEvaluation,
@@ -12,6 +13,11 @@ from sciencebeam_judge.evaluation.custom.bounding_box_intersection import (
     get_formatted_page_bounding_box_list_area_match_score,
     get_page_bounding_box_list_area_match_score,
     parse_page_bounding_box_list
+)
+
+
+DEFAULT_BOUNDING_BOX_SQUARED_RESOLUTION = (
+    DEFAULT_BOUNDING_BOX_RESOLUTION * DEFAULT_BOUNDING_BOX_RESOLUTION
 )
 
 
@@ -248,7 +254,9 @@ class TestBoundingBoxIntersectionAreaEvaluation:
         assert result.score == 0.0
         assert result.true_positive == 0
         assert result.false_positive == 0
-        assert result.false_negative == round(NON_EMPTY_PAGE_BOUNDING_BOX_LIST.area)
+        assert result.false_negative == round(
+            NON_EMPTY_PAGE_BOUNDING_BOX_LIST.area * DEFAULT_BOUNDING_BOX_SQUARED_RESOLUTION
+        )
 
     def test_should_return_zero_for_empty_non_empty_page_bounding_box_list(self):
         result = BoundingBoxIntersectionAreaEvaluation().score(
@@ -257,7 +265,9 @@ class TestBoundingBoxIntersectionAreaEvaluation:
         )
         assert result.score == 0.0
         assert result.true_positive == 0
-        assert result.false_positive == round(NON_EMPTY_PAGE_BOUNDING_BOX_LIST.area)
+        assert result.false_positive == round(
+            NON_EMPTY_PAGE_BOUNDING_BOX_LIST.area * DEFAULT_BOUNDING_BOX_SQUARED_RESOLUTION
+        )
         assert result.false_negative == 0
 
     def test_should_return_one_for_equal_page_bounding_box_lists(self):
@@ -266,6 +276,22 @@ class TestBoundingBoxIntersectionAreaEvaluation:
             [format_page_bounding_box_list(NON_EMPTY_PAGE_BOUNDING_BOX_LIST)]
         )
         assert result.score == 1.0
-        assert result.true_positive == round(NON_EMPTY_PAGE_BOUNDING_BOX_LIST.area)
+        assert result.true_positive == round(
+            NON_EMPTY_PAGE_BOUNDING_BOX_LIST.area * DEFAULT_BOUNDING_BOX_SQUARED_RESOLUTION
+        )
+        assert result.false_positive == 0
+        assert result.false_negative == 0
+
+    def test_should_be_able_to_configure_resolution(self):
+        result = BoundingBoxIntersectionAreaEvaluation({
+            'resolution': 100
+        }).score(
+            [format_page_bounding_box_list(NON_EMPTY_PAGE_BOUNDING_BOX_LIST)],
+            [format_page_bounding_box_list(NON_EMPTY_PAGE_BOUNDING_BOX_LIST)]
+        )
+        assert result.score == 1.0
+        assert result.true_positive == round(
+            NON_EMPTY_PAGE_BOUNDING_BOX_LIST.scale_by(100, 100).area
+        )
         assert result.false_positive == 0
         assert result.false_negative == 0

@@ -40,6 +40,27 @@ class TestBoundingBox:
         )
         assert bounding_box.area == 200 * 50
 
+    def test_should_round_down_coordinates(self):
+        assert (
+            BoundingBox(110.1, 120.2, 50.3, 60.4).round() == BoundingBox(
+                110, 120, 50, 60
+            )
+        )
+
+    def test_should_round_up_coordinates(self):
+        assert (
+            BoundingBox(110.6, 120.7, 50.8, 60.9).round() == BoundingBox(
+                111, 121, 51, 61
+            )
+        )
+
+    def test_should_scale_by_factors(self):
+        assert (
+            BoundingBox(110, 120, 50, 60).scale_by(10, 20) == BoundingBox(
+                110 * 10, 120 * 20, 50 * 10, 60 * 20
+            )
+        )
+
     def test_should_calculate_intersection_with_identical_bounding_box(self):
         bounding_box = BoundingBox(110, 120, 50, 60)
         assert (
